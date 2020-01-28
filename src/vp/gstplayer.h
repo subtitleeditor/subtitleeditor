@@ -100,6 +100,12 @@ class GstPlayer : public Gtk::DrawingArea, public Player {
   // Realize the widget and get the xWindowId.
   void on_realize();
 
+  // Connect to toplevel configure events.
+  void on_hierarchy_changed(Widget* previous_toplevel);
+
+  // Update render rectangle of GstVideoOverlay.
+  bool on_configure_event(GdkEventConfigure* configure_event);
+
   // Create a gstreamer pipeline (Gst::PlayBin2), initialize the
   // audio and video sink with the configuration.
   // Connect the bug message to the player.
@@ -175,6 +181,9 @@ class GstPlayer : public Gtk::DrawingArea, public Player {
   // Set up the duration value of the stream if need.
   bool update_pipeline_duration();
 
+  // Update render rectangle of GstVideoOverlay.
+  void set_render_rectangle();
+
   // Return the number of audio track.
   gint get_n_audio();
 
@@ -192,7 +201,7 @@ class GstPlayer : public Gtk::DrawingArea, public Player {
   guint m_watch_id;
   // Gstreamer Elements
   Glib::RefPtr<Gst::PlayBin> m_pipeline;
-  Glib::RefPtr<Gst::VideoOverlay> m_xoverlay;
+  Glib::RefPtr<Gst::Element> m_xoverlay;
   Glib::RefPtr<Gst::TextOverlay> m_textoverlay;
 
   bool m_pipeline_async_done;

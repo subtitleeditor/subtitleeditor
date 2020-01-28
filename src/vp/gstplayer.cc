@@ -37,9 +37,14 @@
 
 #ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
-#elif defined(GDK_WINDOWING_WIN32)
+#endif
+#ifdef GDK_WINDOWING_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif
+#if defined(GDK_WINDOWING_WIN32)
 #include <gdk/gdkwin32.h>
-#elif defined(GDK_WINDOWING_QUARTZ)
+#endif
+#if defined(GDK_WINDOWING_QUARTZ)
 // #include <gdk/gdkquartz.h>
 #endif
 
@@ -540,26 +545,52 @@ void GstPlayer::on_bus_message_sync(const Glib::RefPtr<Gst::Message> &msg) {
              GST_MESSAGE_TYPE_NAME(msg->gobj()),
              GST_OBJECT_NAME(GST_MESSAGE_SRC(msg->gobj())));
 
-  // Ignore anything but 'prepare-window-handle' element messages
-  if (!gst_is_video_overlay_prepare_window_handle_message(
-          GST_MESSAGE(msg->gobj())))
-    return;
+  if (msg->get_message_type() == Gst::MESSAGE_NEED_CONTEXT) {
+#ifdef GDK_WINDOWING_WAYLAND
+    auto msgNeedContext = Glib::RefPtr<Gst::MessageNeedContext>::cast_static(msg);
 
-  GstVideoOverlay *overlay = GST_VIDEO_OVERLAY(GST_MESSAGE_SRC(msg->gobj()));
-  gst_video_overlay_set_window_handle(overlay, m_xWindowId);
+    Glib::ustring context_type;
 
-  // FIXME: open bug on gstreamermm 1.0
-  // Get the gstreamer element source
-  // Glib::RefPtr<Gst::Element> el_src =
-  // Glib::RefPtr<Gst::Element>::cast_static(msg->get_source());
-  // Has an XOverlay
-  // Glib::RefPtr< Gst::VideoOverlay > xoverlay =
-  // Glib::RefPtr<Gst::VideoOverlay>::cast_dynamic(el_src);
-  // xoverlay->set_window_handle(m_xWindowId);
+    // FIXME: https://gitlab.gnome.org/GNOME/gstreamermm/merge_requests/3
+    // msgNeedContext->parse(context_type);
+    const gchar *context_type_c = nullptr;
+    gst_message_parse_context_type (msg->gobj(), &context_type_c);
+    context_type = context_type_c;
 
-  // We don't need to keep sync message
-  Glib::RefPtr<Gst::Bus> bus = m_pipeline->get_bus();
-  bus->disable_sync_message_emission();
+    if (context_type == "GstWaylandDisplayHandleContextType") {
+      struct wl_display *wayland_display =
+          gdk_wayland_display_get_wl_display (get_display()->gobj());
+      if (wayland_display) {
+        auto context = Gst::Context::create(context_type, TRUE);
+
+        GstStructure *s = gst_context_writable_structure (context->gobj());
+        gst_structure_set (s, "display", G_TYPE_POINTER, wayland_display, NULL);
+
+        Glib::RefPtr<Gst::Element>::cast_static(msg->get_source())->set_context(context);
+      }
+    }
+#endif
+  } else if (gst_is_video_overlay_prepare_window_handle_message(msg->gobj())) {
+    m_xoverlay = Glib::RefPtr<Gst::Element>::cast_dynamic(msg->get_source());
+    if (m_xoverlay) {
+      gst_video_overlay_set_window_handle(GST_VIDEO_OVERLAY(m_xoverlay->gobj()),
+          m_xWindowId);
+
+      set_render_rectangle();
+    }
+
+    // FIXME: open bug on gstreamermm 1.0
+    // Get the gstreamer element source
+    // Glib::RefPtr<Gst::Element> el_src =
+    // Glib::RefPtr<Gst::Element>::cast_static(msg->get_source());
+    // Has an XOverlay
+    // Glib::RefPtr< Gst::VideoOverlay > xoverlay =
+    // Glib::RefPtr<Gst::VideoOverlay>::cast_dynamic(el_src);
+    // xoverlay->set_window_handle(m_xWindowId);
+
+    // We don't need to keep sync message
+    m_pipeline->get_bus()->disable_sync_message_emission();
+  }
 }
 
 // Dispatch the gstreamer message.
@@ -748,23 +779,39 @@ void GstPlayer::on_config_video_player_changed(const Glib::ustring &key,
   }
 }
 
-// Return the xwindow ID. (Support X11, WIN32 and QUARTZ)
+// Return the xwindow ID. (Support X11, Wayland, WIN32 and QUARTZ)
 // Do not call this function in a gstreamer thread, this cause crash/segfault.
 // Caused by the merge of the Client-Side Windows in GTK+.
 gulong GstPlayer::get_xwindow_id() {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
+  gulong xWindowId = 0;
+  auto gdkWindow = get_window()->gobj();
+
 #ifdef GDK_WINDOWING_X11
-  const gulong xWindowId = GDK_WINDOW_XID(get_window()->gobj());
-#elif defined(GDK_WINDOWING_WIN32)
-  const gulong xWindowId = gdk_win32_drawable_get_handle(get_window()->gobj());
-#elif defined(GDK_WINDOWING_QUARTZ)
-  // const gulong xWindowId =
-  // gdk_quartz_window_get_nswindow(get_window()->gobj());
-  const gulong xWindowId =
-      0;  // gdk_quartz_window_get_nsview(get_window()->gobj());
-#else
-#error unimplemented GTK backend
+  if (GDK_IS_X11_WINDOW(gdkWindow)) {
+    xWindowId = GDK_WINDOW_XID(gdkWindow);
+  }
+  else
+#endif
+#ifdef GDK_WINDOWING_WAYLAND
+  if (GDK_IS_WAYLAND_WINDOW(gdkWindow)) {
+    xWindowId = (gulong)gdk_wayland_window_get_wl_surface(gdkWindow);
+  }
+  else
+#endif
+#ifdef GDK_WINDOWING_WIN32
+  if (GDK_IS_WIN32_WINDOW(gdkWindow)) {
+    xWindowId = gdk_win32_drawable_get_handle(get_window()->gobj());
+  }
+  else
+#endif
+#ifdef GDK_WINDOWING_QUARTZ
+  if (GDK_IS_QUARTZ_WINDOW(gdkWindow)) {
+    xWindowId = 0;
+    // gdk_quartz_window_get_nswindow(get_window()->gobj());
+    // gdk_quartz_window_get_nsview(get_window()->gobj());
+  }
 #endif
 
   se_dbg_msg(SE_DBG_VIDEO_PLAYER, "xWindowId=%d", xWindowId);
@@ -896,4 +943,34 @@ guint GstPlayer::get_text_valignment_based_on_config() {
     alignment = 4;
   }
   return alignment;
+}
+
+void GstPlayer::on_hierarchy_changed(Widget* previous_toplevel) {
+  if (!previous_toplevel) {
+    get_toplevel()->signal_configure_event().connect(
+      sigc::mem_fun(*this, &GstPlayer::on_configure_event), false);
+  }
+}
+
+bool GstPlayer::on_configure_event(GdkEventConfigure*) {
+  set_render_rectangle();
+  return false;
+}
+
+void GstPlayer::set_render_rectangle() {
+#ifdef GDK_WINDOWING_WAYLAND
+  if (!m_xoverlay) {
+    return;
+  }
+
+  auto gdkWindow = get_window();
+
+  if (GDK_IS_WAYLAND_WINDOW(gdkWindow->gobj())) {
+    int x, y;
+    translate_coordinates(*get_toplevel(), 0, 0, x, y);
+    gst_video_overlay_set_render_rectangle(GST_VIDEO_OVERLAY(m_xoverlay->gobj()),
+        x, y, gdkWindow->get_width(), gdkWindow->get_height());
+    gst_video_overlay_expose(GST_VIDEO_OVERLAY(m_xoverlay->gobj()));
+  }
+#endif
 }
