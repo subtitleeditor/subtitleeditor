@@ -100,6 +100,12 @@ class GstPlayer : public Gtk::DrawingArea, public Player {
   // Realize the widget and get the xWindowId.
   void on_realize();
 
+  // Show the video overlay.
+  void on_map();
+
+  // Hide the video overlay.
+  void on_unmap();
+
   // Connect to toplevel configure events.
   void on_hierarchy_changed(Widget* previous_toplevel);
 
@@ -182,7 +188,7 @@ class GstPlayer : public Gtk::DrawingArea, public Player {
   bool update_pipeline_duration();
 
   // Update render rectangle of GstVideoOverlay.
-  void set_render_rectangle();
+  void set_render_rectangle(bool is_mapped = true);
 
   // Return the number of audio track.
   gint get_n_audio();

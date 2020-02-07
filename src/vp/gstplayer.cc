@@ -312,6 +312,18 @@ void GstPlayer::on_realize() {
   se_dbg_msg(SE_DBG_VIDEO_PLAYER, "try to realize... ok");
 }
 
+void GstPlayer::on_map() {
+  Gtk::DrawingArea::on_map();
+
+  set_render_rectangle();
+}
+
+void GstPlayer::on_unmap() {
+  Gtk::DrawingArea::on_unmap();
+
+  set_render_rectangle(false);
+}
+
 // Create a gstreamer pipeline (Gst::PlayBin2), initialize the
 // audio and video sink with the configuration.
 // Connect the bug message to the player.
@@ -957,7 +969,7 @@ bool GstPlayer::on_configure_event(GdkEventConfigure*) {
   return false;
 }
 
-void GstPlayer::set_render_rectangle() {
+void GstPlayer::set_render_rectangle(bool is_mapped) {
 #ifdef GDK_WINDOWING_WAYLAND
   if (!m_xoverlay) {
     return;
@@ -966,10 +978,18 @@ void GstPlayer::set_render_rectangle() {
   auto gdkWindow = get_window();
 
   if (GDK_IS_WAYLAND_WINDOW(gdkWindow->gobj())) {
-    int x, y;
+    int x, y, width, height;
+
+    if (is_mapped) {
+      width = gdkWindow->get_width();
+      height = gdkWindow->get_height();
+    } else {
+      width = height = 1;
+    }
+
     translate_coordinates(*get_toplevel(), 0, 0, x, y);
     gst_video_overlay_set_render_rectangle(GST_VIDEO_OVERLAY(m_xoverlay->gobj()),
-        x, y, gdkWindow->get_width(), gdkWindow->get_height());
+        x, y, width, height);
     gst_video_overlay_expose(GST_VIDEO_OVERLAY(m_xoverlay->gobj()));
   }
 #endif
