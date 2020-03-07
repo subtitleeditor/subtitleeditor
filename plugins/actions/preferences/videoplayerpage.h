@@ -22,6 +22,10 @@
 
 #include "preferencepage.h"
 
+#ifdef GDK_WINDOWING_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif
+
 class ComboBoxOutput : public Gtk::ComboBox {
   class Column : public Gtk::TreeModel::ColumnRecord {
    public:
@@ -111,18 +115,23 @@ class VideoPlayerPage : public PreferencePage {
 #endif
 
     // video output
-    m_comboVideoOutput->append_output(_("Autodetect"), "autovideosink");
-    m_comboVideoOutput->append_output(_("X Window System (X11/XShm/Xv)"),
-                                      "xvimagesink");
-    m_comboVideoOutput->append_output(_("X Window System (No Xv)"),
-                                      "ximagesink");
-    m_comboVideoOutput->append_output(_("SDL - Simple DirectMedia Layer"),
-                                      "sdlvideosink");
-    m_comboVideoOutput->append_output(_("GConf"), "gconfvideosink");
-    m_comboVideoOutput->append_output(_("OpenGL"), "glimagesink");
-#ifdef USE_OSX
-    m_comboVideoOutput->append_output(_("OSX"), "osxvideosink");
+#ifdef GDK_WINDOWING_WAYLAND
+    if (!GDK_IS_WAYLAND_DISPLAY(get_display()->gobj()))
 #endif
+    {
+      m_comboVideoOutput->append_output(_("Autodetect"), "autovideosink");
+      m_comboVideoOutput->append_output(_("X Window System (X11/XShm/Xv)"),
+                                        "xvimagesink");
+      m_comboVideoOutput->append_output(_("X Window System (No Xv)"),
+                                        "ximagesink");
+      m_comboVideoOutput->append_output(_("SDL - Simple DirectMedia Layer"),
+                                        "sdlvideosink");
+      m_comboVideoOutput->append_output(_("GConf"), "gconfvideosink");
+#ifdef USE_OSX
+      m_comboVideoOutput->append_output(_("OSX"), "osxvideosink");
+#endif
+    }
+    m_comboVideoOutput->append_output(_("OpenGL"), "glimagesink");
 
     Glib::ustring audiosink = cfg::get_string("video-player", "audio-sink");
     Glib::ustring videosink = cfg::get_string("video-player", "video-sink");

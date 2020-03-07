@@ -21,6 +21,11 @@
 #include <config.h>
 #include <gtkmm/accelmap.h>
 #include <algorithm>
+
+#ifdef GDK_WINDOWING_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif
+
 #include "application.h"
 #include "documents.h"
 #include "encodings.h"
@@ -147,6 +152,13 @@ void Application::load_config() {
     cfg::set_string("encodings", "encodings", "ISO-8859-15;UTF-8");
     cfg::set_boolean("encodings", "used-auto-detected", true);
   }
+
+#ifdef GDK_WINDOWING_WAYLAND
+  // default to OpenGL video output on Wayland
+  if (GDK_IS_WAYLAND_DISPLAY(get_display()->gobj())) {
+    cfg::set_string("video-player", "video-sink", "glimagesink");
+  }
+#endif
 }
 
 bool Application::on_delete_event(GdkEventAny *ev) {
