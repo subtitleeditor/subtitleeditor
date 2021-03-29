@@ -1,0 +1,4420 @@
+# Basque translation of Subtitleeditor.
+# Copyright (C) 2008 Subtitle Editor Team
+# This file is distributed under the same license as the subtitleeditor package.
+# Author: alexgabi <alexgabi@irakasle.net>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-21 23:17+0200\n"
+"PO-Revision-Date: 2021-03-29 23:35+0200\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3\n"
+
+#. comments
+#: ../plugins/actions/about/about.cc:97
+msgid "a tool for subtitles edition"
+msgstr "azpitituluen ediziorako tresna"
+
+#. translator-credits
+#: ../plugins/actions/about/about.cc:107
+msgid "translator-credits"
+msgstr "Alexander Gabilondo"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:60
+msgid "Add 100 Milliseconds"
+msgstr "Gehitu 100 segundo-milaren"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:63
+#: ../plugins/actions/adjusttime/adjusttime.cc:97
+msgid "To Start"
+msgstr "Hasierara"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:63
+msgid "Add 100 Milliseconds to start for all subtitles selected"
+msgstr "Gehitu 100 segundo-milaren hautatutako azpititulu guztien hasierari"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:67
+#: ../plugins/actions/adjusttime/adjusttime.cc:101
+msgid "To Duration"
+msgstr "Iraupenera"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:67
+msgid "Add 100 Milliseconds to duration for all subtitles selected"
+msgstr "Gehitu 100 segundo-milaren hautatutako azpititulu guztien iraupenari"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:71
+#: ../plugins/actions/adjusttime/adjusttime.cc:105
+msgid "To Start And To Duration"
+msgstr "Hasierara eta iraupenera"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:71
+msgid "Add 100 Milliseconds to all subtitles selected"
+msgstr "Gehitu 100 segundo-milaren hautatutako azpititulu guztiei"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:76
+msgid "Remove 100 Milliseconds"
+msgstr "Kendu 100 segundo milaren"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:79
+#: ../plugins/actions/adjusttime/adjusttime.cc:113
+msgid "From Start"
+msgstr "Hasieratik"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:79
+msgid "Remove 100 Milliseconds from start for all subtitles selected"
+msgstr "Kendu 100 segundo milaren hautatutako azpititulu guztien hasieratik"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:83
+#: ../plugins/actions/adjusttime/adjusttime.cc:117
+msgid "From Duration"
+msgstr "Iraupenetik"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:83
+msgid "Remove 100 Milliseconds from duration for all subtitles selected"
+msgstr "Kendu 100 segundo milaren hautatutako azpititulu guztien iraupenetik"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:87
+#: ../plugins/actions/adjusttime/adjusttime.cc:121
+msgid "From Start And From Duration"
+msgstr "Hasieratik eta iraupenetik"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:87
+msgid "Remove 100 Milliseconds from all subtitles selected"
+msgstr "Kendu 100 segundo milaren hautatutako azpititulu guztietatik"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:94
+msgid "Add 1 Frame"
+msgstr "Gehitu fotograma 1"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:97
+msgid "Add 1 Frame to start for all subtitles selected"
+msgstr "Gehitu fotograma 1 hautatutako azpititulu guztien hasierari"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:101
+msgid "Add 1 Frame to duration for all subtitles selected"
+msgstr "Gehitu fotograma 1 hautatutako azpititulu guztien iraupenari"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:105
+msgid "Add 1 Frame to all subtitles selected"
+msgstr "Gehitu fotograma 1 hautatutako azpititulu guztiei"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:110
+msgid "Remove 1 Frame"
+msgstr "Kendu fotograma 1"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:113
+msgid "Remove 1 Frame from start for all subtitles selected"
+msgstr "Kendu fotograma 1 hautatutako azpititulu guztien hasieratik"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:117
+msgid "Remove 1 Frame from duration for all subtitles selected"
+msgstr "Kendu fotograma 1 hautatutako azpititulu guztien iraupenetik"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:121
+msgid "Remove 1 Frame from all subtitles selected"
+msgstr "Kendu fotograma 1 hautatutako azpititulu guztietatik"
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:347
+#: ../plugins/actions/dialoguize/dialoguize.cc:303
+#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:120
+#: ../plugins/actions/italicize/italicize.cc:129
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:212
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:120
+msgid "Please select at least a subtitle."
+msgstr "Hautatu gutxienez azpititulu bat."
+
+#: ../plugins/actions/adjusttime/adjusttime.cc:351
+msgid "Adjust time"
+msgstr "Doitu denbora"
+
+#: ../plugins/actions/applytranslation/applytranslation.cc:56
+msgid "Apply _Translation"
+msgstr "Aplikatu _itzulpena"
+
+#: ../plugins/actions/applytranslation/applytranslation.cc:56
+msgid "Replace the text of the subtitle by the translation"
+msgstr "Ordezkatu azpitituluaren testua itzulpenarekin"
+
+#: ../plugins/actions/applytranslation/applytranslation.cc:118
+msgid "Apply translation"
+msgstr "Aplikatu itzulpena"
+
+#: ../plugins/actions/applytranslation/applytranslation.cc:131
+msgid "The translation was applied."
+msgstr "Itulpena aplikatu da."
+
+#: ../plugins/actions/bestfit/bestfit.cc:58
+msgid "_Best Fit Subtitles"
+msgstr "Azpitituluen _doikuntzarik hoberena"
+
+#: ../plugins/actions/bestfit/bestfit.cc:59
+msgid ""
+"Best fit the selected subtitles between the start of the first and the end "
+"of the last one."
+msgstr ""
+"Doitu hautatutako azpitituluak lehenengoaren hasieraren eta azkenaren "
+"bukaeraren artean."
+
+#: ../plugins/actions/bestfit/bestfit.cc:112
+msgid "Best fit"
+msgstr "Doikuntzarik hoberena"
+
+#: ../plugins/actions/bestfit/bestfit.cc:132
+msgid "Best Fit needs at least 2 subtitles to work on."
+msgstr "Doikuntzarik hoberenak gutxienez 2 azpititulu behar ditu."
+
+#: ../plugins/actions/bestfit/bestfit.cc:167
+msgid "Best Fit only works on an uninterrupted selection of subtitles."
+msgstr ""
+"Doikuntzarik hoberenak bakarrik lan egiten dut etenik gabeko azpitituluen "
+"hautaketan."
+
+#: ../plugins/actions/changeframerate/changeframerate.cc:237
+msgid "Change _Framerate"
+msgstr "Aldatu FPS"
+
+#: ../plugins/actions/changeframerate/changeframerate.cc:237
+msgid "Convert framerate"
+msgstr "Bihurtu fotograma-tasa"
+
+#: ../plugins/actions/changeframerate/changeframerate.cc:309
+#: ../plugins/actions/changeframerate/dialog-change-framerate.ui.h:1
+#: ../plugins/actions/changeframerate/changeframerate.se-plugin.in.h:1
+msgid "Change Framerate"
+msgstr "Aldatu FPS"
+
+#: ../plugins/actions/changeframerate/changeframerate.cc:328
+#, c-format
+msgid "The new framerate was applied. (%s to %s)"
+msgstr "Fotograma-emari berria aplikatu da:  (%s-tik %s-ra)"
+
+#: ../plugins/actions/changeframerate/dialog-change-framerate.ui.h:2
+msgid "<b>Framerate</b>"
+msgstr "<b>Fotograma segundoko</b>"
+
+#: ../plugins/actions/changeframerate/dialog-change-framerate.ui.h:3
+msgid "New:"
+msgstr "Berria:"
+
+#: ../plugins/actions/changeframerate/dialog-change-framerate.ui.h:4
+msgid "Current:"
+msgstr "Unekoa:"
+
+#: ../plugins/actions/changeframerate/dialog-change-framerate.ui.h:5
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:13
+#: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:8
+msgid "<b>Apply to</b>"
+msgstr "<b>Aplikatu honi</b>"
+
+#: ../plugins/actions/changeframerate/dialog-change-framerate.ui.h:6
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:14
+msgid "Current document"
+msgstr "Uneko dokumentua"
+
+#: ../plugins/actions/changeframerate/dialog-change-framerate.ui.h:7
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:15
+msgid "All documents"
+msgstr "Dokumentu guztiak"
+
+#: ../plugins/actions/clipboard/clipboard.cc:86
+msgid "_Copy"
+msgstr "_Kopiatu"
+
+#: ../plugins/actions/clipboard/clipboard.cc:87
+msgid "Copy selected subtitles to the clipboard."
+msgstr "Kopiatu hautatutako azpitituluak arbelera."
+
+#: ../plugins/actions/clipboard/clipboard.cc:90
+msgid "C_ut"
+msgstr "_Moztu"
+
+#: ../plugins/actions/clipboard/clipboard.cc:91
+msgid "Copy selected subtitles to the clipboard and delete them."
+msgstr "Kopiatu hautatutako azpitituluak arbelera eta ezabatu."
+
+#: ../plugins/actions/clipboard/clipboard.cc:94
+msgid "_Paste"
+msgstr "Itsatsi"
+
+#: ../plugins/actions/clipboard/clipboard.cc:95
+#: ../plugins/actions/clipboard/clipboard.cc:103
+msgid ""
+"Paste subtitles from the clipboard AFTER the currently selected subtitle."
+msgstr ""
+"Itsatsi azpitituluak arbeletik hautatuta dagoen azpitituluaren ONDOREN."
+
+#: ../plugins/actions/clipboard/clipboard.cc:98
+msgid "Copy With Timing"
+msgstr "Kopiatu denborarekin"
+
+#: ../plugins/actions/clipboard/clipboard.cc:99
+msgid ""
+"Copy selected subtitles and make their timing visible to text-based "
+"applications."
+msgstr ""
+"Kopiatu hautatutako azpitituluak ikusi arazteko testua oinarritutako "
+"aplikazioetan."
+
+#: ../plugins/actions/clipboard/clipboard.cc:102
+msgid "Paste At Current Player Position"
+msgstr "Itsatsi erreproduzigailuko uneko kokapenean"
+
+#: ../plugins/actions/clipboard/clipboard.cc:106
+msgid "Paste As New Document"
+msgstr "Itsatsi dokumentu berri gisa"
+
+#: ../plugins/actions/clipboard/clipboard.cc:107
+msgid "Create a new document and paste the contents of the clipboard into it."
+msgstr "Sortu dokumentu berria eta itsatsi arbeleko edukia bertan."
+
+#. actually paste the data from clipdoc to the current document
+#: ../plugins/actions/clipboard/clipboard.cc:490
+#: ../plugins/actions/clipboard/clipboard.cc:819
+msgid "Paste"
+msgstr "Itsatsi"
+
+#: ../plugins/actions/clipboard/clipboard.cc:540
+msgid "Nothing to copy. Select at least one subtitle first."
+msgstr "Ez dago ezer kopiatzeko. Hautatu gutxienez azpititulu bat aurretik."
+
+#: ../plugins/actions/clipboard/clipboard.cc:603
+msgid "Cut"
+msgstr "Moztu"
+
+#. tell the user what happened
+#: ../plugins/actions/clipboard/clipboard.cc:656
+#, c-format
+msgid "%i subtitle(s) pasted."
+msgstr "%i azpititulua(k) itsatsita."
+
+#: ../plugins/actions/combinesubtitles/combinesubtitles.cc:53
+msgid "_Combine"
+msgstr "_Konbinatu"
+
+#: ../plugins/actions/combinesubtitles/combinesubtitles.cc:53
+msgid "Merge the selected subtitles"
+msgstr "Batu hautatutako azpitituluak"
+
+#: ../plugins/actions/combinesubtitles/combinesubtitles.cc:160
+msgid "Please select at least two subtitles."
+msgstr "Hautatu gutxienez bi azpititulu."
+
+#: ../plugins/actions/combinesubtitles/combinesubtitles.cc:164
+msgid "Combine subtitles"
+msgstr "Konbinatu azpitituluak"
+
+#: ../plugins/actions/command/command.cc:57
+msgid "Undo the last action"
+msgstr "Desegin azken ekintza"
+
+#: ../plugins/actions/command/command.cc:60
+msgid "Redo the last undone action"
+msgstr "Berregin desegindako azken ekintza"
+
+#: ../plugins/actions/command/command.cc:152
+#, c-format
+msgid "Undo: %s"
+msgstr "Desegin: %s"
+
+#: ../plugins/actions/command/command.cc:175
+#, c-format
+msgid "Redo: %s"
+msgstr "Berregin: %s"
+
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:90
+msgid "Actions"
+msgstr "Ekintzak"
+
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:112
+msgid "Shortcut"
+msgstr "Lasterbidea"
+
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:314
+msgid "Invalid shortcut."
+msgstr "Lasterbide baliogabea."
+
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:334
+msgid "Shortcut \"%1\" is already taken by \"%2\"."
+msgstr "\"%1\" lasterbidea dagoeneko \"%2\"-rako hartu da."
+
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:338
+msgid "Reassigning the shortcut will cause it to be removed from \"%1\"."
+msgstr "Lasterbidea berriro esleituz gero, \"%1\"-tik kenduko da."
+
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:342
+msgid "Conflicting Shortcuts"
+msgstr "Laster-tekla gatazkatsuak"
+
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:349
+msgid "Changing shortcut failed."
+msgstr "Lasterbidearen aldaketak huts egin du."
+
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:377
+msgid "Removing shortcut failed."
+msgstr "Huts egin du lasterbidea kentzeak."
+
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:432
+msgid "Configure _Keyboard Shortcuts"
+msgstr "Ezarri _laster-teklak"
+
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:432
+#: ../plugins/actions/configurekeyboardshortcuts/dialog-configure-keyboard-shortcuts.ui.h:1
+msgid "Configure Keyboard Shortcuts"
+msgstr "Ezarri laster-teklak"
+
+#: ../plugins/actions/configurekeyboardshortcuts/dialog-configure-keyboard-shortcuts.ui.h:2
+msgid ""
+"To edit a shortcut key, click on the corresponding row and type a new "
+"accelerator, or press backspace to clear."
+msgstr ""
+"Laster-tekla bat editatzeko, egin klik dagokion lerroan eta azeleragailu "
+"berria idatzi, edo sakatu atzera-tekla garbitzeko."
+
+#: ../plugins/actions/dialoguize/dialog-dialoguize-preferences.ui.h:1
+msgid ""
+"\n"
+"Dialoguize Settings\n"
+msgstr ""
+"\n"
+"Elkarrizketarako ezarpenak\n"
+
+#: ../plugins/actions/dialoguize/dialog-dialoguize-preferences.ui.h:4
+msgid "A dialog line starts with..."
+msgstr "Honela hasten den elkarrizketa lerroa..."
+
+#: ../plugins/actions/dialoguize/dialog-dialoguize-preferences.ui.h:5
+msgid "dash and space ( \"- \" )"
+msgstr "gidoia eta espazioa ( \"- \" )"
+
+#: ../plugins/actions/dialoguize/dialog-dialoguize-preferences.ui.h:6
+msgid "only a dash ( \"-\" )"
+msgstr "marra bakar bat ( \"-\" )"
+
+#: ../plugins/actions/dialoguize/dialoguize.cc:214
+msgid "_Dialogue"
+msgstr "_Elkarrizketa"
+
+#: ../plugins/actions/dialoguize/dialoguize.cc:214
+msgid "Add or remove dialogue line"
+msgstr "Gehitu edo kendu elkarrizketa lerroa"
+
+#: ../plugins/actions/dialoguize/dialoguize.cc:313
+#: ../plugins/actions/dialoguize/dialoguize.se-plugin.in.h:1
+msgid "Dialoguize"
+msgstr "Elkarrizketa bihurtu"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:41
+msgid "Close _without Saving"
+msgstr "Itxi gorde gabe"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:49
+#, c-format
+msgid "Save the changes to document \"%s\" before closing?"
+msgstr "Nahi duzu aldaketak \"%s\" dokumentura gordetzea itxi aurretik?"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:50
+msgid "If you don't save, the last changes will be permanently lost."
+msgstr "Gordetzen ez baduzu, azkeneko aldaketak betirako galduko dira."
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:88
+msgid "Create a new document"
+msgstr "Sortu dokumentu berria"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:93
+msgid "Open a file"
+msgstr "Ireki fitxategia"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:97
+msgid "Open Project"
+msgstr "Ireki proiektua"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:97
+msgid "Open a Subtitle Editor Project"
+msgstr "Ireki Subtitle Editor proiektua"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:104
+msgid "Save the current file"
+msgstr "Gorde uneko fitxategia"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:108
+msgid "Save Project"
+msgstr "Gorde proiektua"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:108
+msgid "Save the current file as Subtitle Editor Project"
+msgstr "Gorde uneko fitxategia Subtitle Editor proiektu gisa"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:115
+msgid "Save the current file with a different name"
+msgstr "Gorde uneko fitxategia beste izen batez"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:119
+msgid "Save _All"
+msgstr "Gorde _dena"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:119
+msgid "Save all open files"
+msgstr "Gorde irekitako fitxategi guztiak"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:124
+msgid "Open _Translation"
+msgstr "Ireki itzulpena"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:124
+msgid "Open translation from file"
+msgstr "Ireki itzulpena fitxategitik"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:128
+msgid "Save Trans_lation"
+msgstr "Gorde itzu_lpena"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:128
+msgid "Save translation to file"
+msgstr "Gorde itzulpena fitxategira"
+
+#. recent files
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:132
+msgid "Open _Recent"
+msgstr "Ireki duela gutxikoa"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:151
+msgid "Close the current file"
+msgstr "Itxi uneko fitxategia"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:156
+msgid "E_xit"
+msgstr "Irten"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:156
+msgid "Quit the program"
+msgstr "Irten programatik"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:319
+msgid "I am already open"
+msgstr "Irekita nago dagoeneko"
+
+#. "The file FILENAME (FORMAT, CHARSET, NEWLINE) has not been saved."
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:353
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:414
+#, c-format
+msgid "The file %s (%s, %s, %s) has not been saved."
+msgstr "%s (%s, %s, %s) fitxategia ez da gorde."
+
+#. "Saving file FILENAME (FORMAT, CHARSET, NEWLINE)."
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:358
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:418
+#, c-format
+msgid "Saving file %s (%s, %s, %s)."
+msgstr "%s fitxategia gordetzen (%s, %s, %s)."
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:511
+msgid "Open translation"
+msgstr "Ireki itzulpena"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:539
+#, c-format
+msgid "1 subtitle was added with the translation"
+msgid_plural "%d subtitles were added with the translation"
+msgstr[0] "azpititulu 1 gehitu da itzulpenarekin"
+msgstr[1] "%d azpititulu gehitu dira itzulpenarekin"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:591
+#, c-format
+msgid "The translation file %s (%s, %s, %s) has not been saved."
+msgstr "%s (%s, %s, %s) itzulpen fitxategia ez da gorde."
+
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:594
+#, c-format
+msgid "Saving translation file %s (%s, %s, %s)."
+msgstr "%s  itzulpen fitxategia gordetzen (%s, %s, %s)."
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:53
+msgid "_Documents"
+msgstr "_Dokumentuak"
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:56
+msgid "_First Document"
+msgstr "Lehenengo dokumentua"
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:61
+msgid "_Last Document"
+msgstr "_Azken dokumentua"
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:66
+msgid "_Previous Document"
+msgstr "_Aurreko dokumentua"
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:71
+msgid "_Next Document"
+msgstr "Dokumentu _berria"
+
+#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:56
+msgid "_Duplicate"
+msgstr "_Bikoiztu"
+
+#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:56
+msgid "Duplicate the selected subtitles"
+msgstr "Bikoiztu hautatutako azpitituluak"
+
+#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:124
+msgid "Duplicate selected subtitles"
+msgstr "Bikoiztu hautatutako azpitituluak"
+
+#: ../plugins/actions/editcell/editcell.cc:56
+msgid "_Edit Cell"
+msgstr "_Editatu gelaxka"
+
+#: ../plugins/actions/editcell/editcell.cc:56
+msgid "Start the editing of the focused cell"
+msgstr "Hasi fokuratutako gelaxkaren edizioa"
+
+#: ../plugins/actions/editcell/editcell.cc:60
+msgid "Edit _Next Cell"
+msgstr "Editatu _hurrengo gelaxka"
+
+#: ../plugins/actions/editcell/editcell.cc:60
+msgid "Start the editing of the next cell"
+msgstr "Hasi hurrengo gelaxkaren edizioa"
+
+#: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:1
+msgid "Error Checking Preferences"
+msgstr "Erroreen azterketaren hobespenak"
+
+#: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:2
+#: ../plugins/actions/errorchecking/dialog-error-checking.ui.h:1
+#: ../plugins/actions/errorchecking/errorchecking.se-plugin.in.h:1
+msgid "Error Checking"
+msgstr "Erroreen azterketa"
+
+#: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:3
+msgid "Checking"
+msgstr "Aztertzen"
+
+#: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:4
+msgid "Timing Preferences"
+msgstr "Denboralizazio hobespenak"
+
+#: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:5
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:41
+msgid "Minimum characters per second:"
+msgstr "Gutxieneko karaktereak segundoko:"
+
+#: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:6
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:42
+msgid "Maximum characters per second:"
+msgstr "Gehienezko karaktereak segundoko:"
+
+#: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:7
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:43
+msgid "Maximum characters per line:"
+msgstr "Gehienezko karaktereak lerroko:"
+
+#: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:8
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:44
+msgid "Minimum gap between subtitles in mseconds:"
+msgstr "Azpitituluen arteko gutxieneko tartea msegundotan:"
+
+#: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:9
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:45
+msgid "Minimum display of the subtitle in mseconds:"
+msgstr "Azpitituluaren gutxieneko bistaratzea mssegundotan:"
+
+#: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:10
+msgid "Maximum number of lines per subtitle:"
+msgstr "Gehienezko lerro kopurua azpitituluko:"
+
+#: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:11
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:50
+#: ../plugins/actions/viewmanager/viewmanager.cc:407
+msgid "Timing"
+msgstr "Denboralizazioa"
+
+#. File
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:221
+msgid "_Error"
+msgstr "_Errorea"
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:224
+msgid "Try To _Fix All"
+msgstr "Saiatu dena konpontzen"
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:231
+msgid "_View"
+msgstr "_Ikuspegia"
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:232
+msgid "By _Categories"
+msgstr "_Kategorien arabera"
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:234
+msgid "By _Subtitles"
+msgstr "_Azpitituluen arabera"
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:237
+msgid "_Collapse All"
+msgstr "_Tolestu guztiak"
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:239
+msgid "_Expand All"
+msgstr "_Hedatu dena"
+
+#. menu option
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:244
+#: ../src/gui/menubar.cc:72
+msgid "_Options"
+msgstr "Aukerak"
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:386
+msgid "No error was found."
+msgstr "Ez da errorerik aurkitu."
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:389
+#, c-format
+msgid "1 error was found."
+msgid_plural "%d errors were found."
+msgstr[0] "errore 1 aurkitu da."
+msgstr[1] "%d errore aurkitu dira."
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:403
+#, c-format
+msgid "Subtitle n°<b>%d</b>"
+msgstr "Azpititulu zbkia. <b>%d</b>"
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:723
+#, c-format
+msgid "%s (<b>1 error</b>)"
+msgid_plural "%s (<b>%d errors</b>)"
+msgstr[0] "%s (<b>errore 1</b>)"
+msgstr[1] "%s (<b>%d errore</b>)"
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:730
+#, c-format
+msgid "Subtitle n°<b>%d</b> (<b>1 error</b>)"
+msgid_plural "Subtitle n°<b>%d</b> (<b>%d errors</b>)"
+msgstr[0] "Azpititulu zbkia.<b>%d</b> (<b>errore 1</b>)"
+msgstr[1] "Azpititulu zbkia.<b>%d</b> (<b>%d errore/b>)"
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:817
+msgid "_Error Checking"
+msgstr "_Erroreen azterketa"
+
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:817
+msgid "Launch the error checking."
+msgstr "Abiarazi erroreen bilaketa."
+
+#: ../plugins/actions/errorchecking/maxcharactersperline.h:38
+msgid "Maximum Characters per Line"
+msgstr "Gehienezko karaktereak lerroko"
+
+#: ../plugins/actions/errorchecking/maxcharactersperline.h:39
+msgid "An error is detected if a line is too long."
+msgstr "Errorea markatuko da lerroa luzeegia bada."
+
+#: ../plugins/actions/errorchecking/maxcharactersperline.h:73
+#, c-format
+msgid "Subtitle has a too long line: <b>1 character</b>"
+msgid_plural "Subtitle has a too long line: <b>%i characters</b>"
+msgstr[0] "Azpitituluak lerro luzeegia du: <b>karaktere 1</b>"
+msgstr[1] "Azpitituluak lerro luzeegia du: <b>%i karaktere</b>"
+
+#: ../plugins/actions/errorchecking/maxcharactersperline.h:76
+#, c-format
+msgid ""
+"<b>Automatic correction:</b>\n"
+"%s"
+msgstr ""
+"<b>Zuzenketa automatikoa:</b>\n"
+"%s"
+
+#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:39
+msgid "Maximum Characters per Second"
+msgstr "Gehienezko karaktereak segundoko"
+
+#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:40
+msgid ""
+"Detects and fixes subtitles when the number of characters per second is "
+"superior to the specified value."
+msgstr ""
+"Azpitituluak atzeman eta konpontzen ditu segundoko karaktere kopurua "
+"zehaztutako balioa baino handiagoa denean."
+
+#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:70
+#, c-format
+msgid "There are too many characters per second: <b>%.1f chars/s</b>"
+msgstr "Segundoko karaktere gehiegi dago: <b>%.1f kar/s</b>"
+
+#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:73
+#: ../plugins/actions/errorchecking/mincharacterspersecond.h:73
+#, c-format
+msgid "<b>Automatic correction:</b> change current subtitle duration to %s."
+msgstr ""
+"<b>Zuzenketa automatikoa:</b> uneko azpitiluluan iraupen hau jarri: %s."
+
+#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:38
+msgid "Maximum Lines per Subtitle"
+msgstr "Gehienezko lerroak azpitituluko"
+
+#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:39
+msgid "An error is detected if a subtitle has too many lines."
+msgstr "Errorea markatuko da azpitituluak lerro gehiegi baditu."
+
+#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:77
+#, c-format
+msgid "Subtitle has too many lines: <b>1 line</b>"
+msgid_plural "Subtitle has too many lines: <b>%i lines</b>"
+msgstr[0] "Azpitituluak lerro gehiegi ditu. <b>lerro 1</b>"
+msgstr[1] "Azpitituluak lerro gehiegi ditu. <b>%i lerro</b>"
+
+#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:79
+#: ../plugins/actions/errorchecking/overlapping.h:74
+msgid "<b>Automatic correction:</b> unavailable, correct the error manually."
+msgstr "<b>Zuzenketa automatikoa:</b> ezin da, eskuz zuzendu."
+
+#: ../plugins/actions/errorchecking/mincharacterspersecond.h:39
+msgid "Minimum Characters per Second"
+msgstr "Gutxieneko karaktereak segundoko"
+
+#: ../plugins/actions/errorchecking/mincharacterspersecond.h:40
+msgid ""
+"Detects and fixes subtitles when the number of characters per second is "
+"inferior to the specified value."
+msgstr ""
+"Azpitituluak atzeman eta konpontzen ditu segundoko karaktere kopurua "
+"zehaztutako balioa baino txikiagoa denean."
+
+#: ../plugins/actions/errorchecking/mincharacterspersecond.h:70
+#, c-format
+msgid "There are too few characters per second: <b>%.1f chars/s</b>"
+msgstr "Segundoko karaktere gutxiegi dago: <b>%.1f kar/s</b>"
+
+#: ../plugins/actions/errorchecking/mindisplaytime.h:38
+msgid "Minimum Display Time"
+msgstr "Gutxieneko bistaratze denbora"
+
+#: ../plugins/actions/errorchecking/mindisplaytime.h:39
+msgid ""
+"Detects and fixes subtitles when the duration is inferior to the specified "
+"value."
+msgstr ""
+"Azpitituluak atzeman eta konpontzen ditu euren iraupena zehaztutako balioa "
+"baino txikiagoa denean."
+
+#: ../plugins/actions/errorchecking/mindisplaytime.h:71
+#, c-format
+msgid "Subtitle display time is too short: <b>%s</b>"
+msgstr "Azpititulua bistaratzeko denbora laburregia da <b>%s</b>"
+
+#: ../plugins/actions/errorchecking/mindisplaytime.h:75
+#, c-format
+msgid "<b>Automatic correction:</b> to change current subtitle end to %s."
+msgstr ""
+"<b>Zuzenketa automatikoa:</b> uneko azpitituluan bukaera hau jarri: %s."
+
+#: ../plugins/actions/errorchecking/mingapbetweensubtitles.h:38
+msgid "Minimum Gap between Subtitles"
+msgstr "Azpitituluen arteko gutxieneko tartea"
+
+#: ../plugins/actions/errorchecking/mingapbetweensubtitles.h:39
+msgid ""
+"Detects and fixes subtitles when the minimum gap between subtitles is too "
+"short."
+msgstr ""
+"Azpitituluak atzeman eta konpontzen ditu azpitituluen arteko tarte minimoa "
+"txikiagoa denean."
+
+#: ../plugins/actions/errorchecking/mingapbetweensubtitles.h:81
+#, c-format
+msgid "Too short gap between subtitle: <b>%ims</b>"
+msgstr "Azpitituluen arteko tarte laburregia: <b>%ims</b>"
+
+#: ../plugins/actions/errorchecking/mingapbetweensubtitles.h:85
+#, c-format
+msgid ""
+"<b>Automatic correction:</b> to clip current subtitle end to %s and to move "
+"next subtitle start to %s."
+msgstr ""
+"<b>Zuzenketa automatikoa:</b> moztu uneko azpitituluaren bukaera hemen: %s "
+"eta mugitu hurrengo azpitituluaren hasieran hona: %s."
+
+#: ../plugins/actions/errorchecking/overlapping.h:38
+msgid "Overlapping"
+msgstr "Gainjarriz"
+
+#: ../plugins/actions/errorchecking/overlapping.h:39
+msgid "An error is detected when the subtitle overlap on next subtitle."
+msgstr "Errorea markatuko da azpititulu bat hurrengoaren gainean jartzen bada."
+
+#: ../plugins/actions/errorchecking/overlapping.h:71
+#, c-format
+msgid "Subtitle overlap on next subtitle: <b>%ims overlap</b>"
+msgstr "Azpitituluen gainjartzea azpititulu honetan: <b>%ims gainjartze</b>"
+
+#: ../plugins/actions/extendlength/extendlength.cc:53
+msgid "_Extend Length Forward"
+msgstr "Luzatu aurrerantz"
+
+#: ../plugins/actions/extendlength/extendlength.cc:53
+msgid "Extend the length of selected subtitles to the start time of the next"
+msgstr "Luzatu hautatutako azpitituluak hurrengoaren hasierara"
+
+#: ../plugins/actions/extendlength/extendlength.cc:57
+msgid "E_xtend Length Backwards"
+msgstr "Luzatu atzerantz"
+
+#: ../plugins/actions/extendlength/extendlength.cc:57
+msgid ""
+"Extend the length of selected subtitles backwards to the end time of the "
+"previous"
+msgstr "Luzatu hautatutako azpitituluak atzerantz aurrekoaren bukaerara"
+
+#: ../plugins/actions/extendlength/extendlength.cc:135
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:132
+msgid "Please select at least 1 subtitle."
+msgstr "Hautatu gutxienez azpititulu bat."
+
+#: ../plugins/actions/extendlength/extendlength.cc:141
+msgid "Extend lenght"
+msgstr "Luzatu"
+
+#: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:1
+#: ../plugins/actions/command/command.se-plugin.in.h:1
+msgid "Command"
+msgstr "Komandoa"
+
+#: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:2
+msgid ""
+"The following command parameters will\n"
+"be substituted when launching the action :"
+msgstr ""
+"Hurrengo komandoaren parametroak\n"
+"ekintza abiaraztean ordeztuko dira:"
+
+#: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:4
+msgid "<span size=\"small\">the uri to the subtitle file</span>"
+msgstr "<span size=\"small\">azpitituluen fitxategiaren URLa</span>"
+
+#: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:5
+msgid "<span size=\"small\">the path to the subtitle file</span>"
+msgstr "<span size=\"small\">azpititulu fitxategiaren bidea</span>"
+
+#: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:6
+msgid "<span size=\"small\">the uri to the video file</span>"
+msgstr "<span size=\"small\">bideo-fitxategiaren URLa</span>"
+
+#: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:7
+msgid ""
+"<span size=\"small\">the time in seconds to the current selected line</span>"
+msgstr "<span size=\"small\">segundotan hautatutako lerrorako denbora</span>"
+
+#: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:8
+msgid ""
+"<span size=\"small\">the time to the current selected line (format hh:mm:ss:"
+"ms)</span>"
+msgstr ""
+"<span size=\"small\">hautatutako lerrorako denbora (formatua hh:mm:ss:ms)</"
+"span>"
+
+#: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:9
+msgid ""
+"<span size=\"small\">the time in milliseconds to the current selected line</"
+"span>"
+msgstr ""
+"<span size=\"small\">segundo milarenetan hautatutako lerrorako denbora</span>"
+
+#: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:10
+msgid "Always use the video player file"
+msgstr "Erabili beti bideo erreproduzigailuaren fitxategia"
+
+#: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:11
+msgid "Always use the following format"
+msgstr "Erabili beti hurrengo formatua"
+
+#: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:12
+#: ../src/gui/application.cc:327 ../share/ui/dialog-save-document.ui.h:4
+msgid "Format:"
+msgstr "Formatua:"
+
+#: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:13
+msgid "Offset in mseconds:"
+msgstr "Desplazamendua msegundotan:"
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:101
+msgid "_External Video Player"
+msgstr "Kanpoko bideo erreproduzigailua"
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:104
+msgid "_Open Movie"
+msgstr "_Ireki filma"
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:104
+msgid "Open movie with external video player"
+msgstr "Ireki filma kanpoko bideo erreproduzigailuan"
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:108
+msgid "_Play Movie"
+msgstr "_Erreproduzitu filma"
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:108
+msgid "Play movie with external video player"
+msgstr "Erreproduzitu filma kanpoko erreproduzigailuan"
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:112
+msgid "External video player preferences"
+msgstr "Kanpoko bideo erreproduzigailuaren hobespenak"
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:196
+msgid "Please select a movie."
+msgstr "Hautatu film bat."
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:226
+msgid "Failed to launch the external player."
+msgstr "Huts egin du kanpoko erreproduzigailuaren abiatzeak."
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:227
+#, c-format
+msgid ""
+"%s\n"
+"\n"
+"Command: <i>%s</i>"
+msgstr ""
+"%s\n"
+"\n"
+"Komandoa <i>%s</i>"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:1
+#: ../plugins/actions/findandreplace/findandreplace.se-plugin.in.h:1
+msgid "Find And Replace"
+msgstr "Bilatu eta ordeztu"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:2
+msgid "Replace _All"
+msgstr "Ordeztu _guztiak"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:3
+#: ../plugins/actions/spellchecking/dialog-spell-checking.ui.h:6
+msgid "_Replace"
+msgstr "_Ordeztu"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:4
+msgid "Column:"
+msgstr "Zutabea:"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:5
+#: ../plugins/actions/spellchecking/dialog-spell-checking.ui.h:3
+msgid "Replace with:"
+msgstr "Ordeztu honekin:"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:6
+msgid "Pattern:"
+msgstr "Txantiloia:"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:7
+msgid "_Ignore case"
+msgstr "_Ez ikusi kasuari"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:8
+msgid "_Use regular expression"
+msgstr "Erabili adierazpen erregularra"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:9
+msgid "Search"
+msgstr "Bilatu"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:10
+msgid "<b>Columns</b>"
+msgstr "<b>Zutabeak</b>"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:11
+#: ../plugins/actions/findandreplace/findandreplace.cc:656
+#: ../src/subtitleview.cc:1587
+msgid "Text"
+msgstr "Testua"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:12
+#: ../plugins/actions/findandreplace/findandreplace.cc:658
+#: ../plugins/actions/viewmanager/viewmanager.cc:406
+#: ../src/subtitleview.cc:1588
+msgid "Translation"
+msgstr "Euskara (eu)"
+
+#: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:16
+msgid "Target"
+msgstr "Helburua"
+
+#: ../plugins/actions/findandreplace/findandreplace.cc:218
+msgid "Replace text"
+msgstr "Ordeztu testua"
+
+#: ../plugins/actions/findandreplace/findandreplace.cc:604
+#: ../plugins/actions/findandreplace/findandreplace.cc:1044
+msgid "The document is empty"
+msgstr "Dokumentua hutsa dago"
+
+#: ../plugins/actions/findandreplace/findandreplace.cc:928
+msgid "_Find And Replace"
+msgstr "_Bilatu eta ordeztu"
+
+#: ../plugins/actions/findandreplace/findandreplace.cc:928
+msgid "Search and replace text"
+msgstr "Bilatu eta ordeztu testua"
+
+#: ../plugins/actions/findandreplace/findandreplace.cc:932
+msgid "Find Ne_xt"
+msgstr "Bilatu hurrengoa"
+
+#: ../plugins/actions/findandreplace/findandreplace.cc:932
+msgid "Search forwards for the same text"
+msgstr "Bilatu aurrerantz testu bera"
+
+#: ../plugins/actions/findandreplace/findandreplace.cc:935
+msgid "Find Pre_vious"
+msgstr "Bilatu aurrekoa"
+
+#: ../plugins/actions/findandreplace/findandreplace.cc:935
+msgid "Search backwards for the same text"
+msgstr "Bilatu atzerantz testu bera"
+
+#: ../plugins/actions/findandreplace/findandreplace.cc:1056
+msgid "Not found"
+msgstr "Ez da aurkitu"
+
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:54
+msgid "Create Subtitle From Player And Keyframes"
+msgstr "Sortu azpititulua erreproduzigailua eta gako-fotogrametan oinarrituta"
+
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:54
+msgid ""
+"Create subtitle automatically according to keyframes around the position of "
+"the player."
+msgstr ""
+"Sortu azpititulua automatikoki erreproduzigailuaren kokapenaren inguruko "
+"gako-fotogrametan oinarrituta."
+
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:58
+msgid "Create Subtitles According Keyframes"
+msgstr "Sortu azpititulua gako-fotogrametan oinarrituta"
+
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:58
+msgid "Create subtitles automatically according to keyframes"
+msgstr "Sortu azpitituluak automatikoki gako-fotogrametan oinarrituta"
+
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:148
+msgid "Insert Subtitle Between Keyframes"
+msgstr "Txertatu azpititulua gako-fotogramen artean"
+
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:205
+msgid "Can't insert subtitle between keyframes, not enough keyframes."
+msgstr ""
+"Ezin izan da txertatu azpititulu gako-fotogramen artean, ez dago gako-"
+"fotograma nahikorik."
+
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:212
+msgid "Insert Subtitle Between Each Keyframes"
+msgstr "Txertatu azpititulua gako-fotograma bakoitzaren artean"
+
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:235
+#, c-format
+msgid "1 subtitle has been inserted."
+msgid_plural "%d subtitles have been inserted."
+msgstr[0] "azpititulu 1 txertatu da."
+msgstr[1] "%d azpititulu txertatu dira."
+
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:53
+msgid "Insert _Before"
+msgstr "Txertatu _aurrean"
+
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:53
+msgid "Insert blank subtitle before the selected subtitle"
+msgstr "Txertatu azpititulu huts bat hautatutako azpitituluaren aurretik"
+
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:57
+msgid "Insert _After"
+msgstr "Txertatu _ondoren"
+
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:57
+msgid "Insert blank subtitle after the selected subtitle"
+msgstr "Txertatu azpititulu huts bat hautatutako azpitituluaren ondoren"
+
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:149
+#: ../src/subtitles.cc:128
+#: ../plugins/actions/insertsubtitle/insertsubtitle.se-plugin.in.h:1
+msgid "Insert Subtitle"
+msgstr "Txertatu azpititulua"
+
+#: ../plugins/actions/italicize/italicize.cc:56
+msgid "_Italic"
+msgstr "_etzana"
+
+#: ../plugins/actions/italicize/italicize.cc:56
+msgid "Italicize the selected subtitles text"
+msgstr "Etzan hautatutako azpitituluen testua"
+
+#: ../plugins/actions/italicize/italicize.cc:133
+msgid "Italic"
+msgstr "Etzana"
+
+#: ../plugins/actions/joindocument/joindocument.cc:57
+msgid "_Join Document"
+msgstr "_Sartu dokumentuan"
+
+#: ../plugins/actions/joindocument/joindocument.cc:57
+msgid "Add subtitles from file"
+msgstr "Gehitu azpitituluak fitxategitik"
+
+#: ../plugins/actions/joindocument/joindocument.cc:143
+msgid "Join document"
+msgstr "Sartu dokumentuan"
+
+#: ../plugins/actions/joindocument/joindocument.cc:175
+#, c-format
+msgid "1 subtitle has been added at this document."
+msgid_plural "%d subtitles have been added at this document."
+msgstr[0] "azpititulu 1 gehitu da dokumentuan."
+msgstr[1] "%d azpititulu gehitu dira dokumentuan."
+
+#: ../plugins/actions/keyframesmanagement/keyframesgenerator.cc:40
+#: ../plugins/actions/keyframesmanagement/keyframesgeneratorusingframe.cc:42
+msgid "Generate Keyframes"
+msgstr "Sortu gako-fotogramak"
+
+#: ../plugins/actions/keyframesmanagement/keyframesgenerator.cc:46
+#: ../plugins/actions/keyframesmanagement/keyframesgenerator.cc:137
+#: ../plugins/actions/keyframesmanagement/keyframesgeneratorusingframe.cc:48
+#: ../plugins/actions/keyframesmanagement/keyframesgeneratorusingframe.cc:202
+#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:48
+msgid "Waiting..."
+msgstr "Itxaroten..."
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:72
+msgid "Open Keyframes"
+msgstr "Ireki gako-fotogramak"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:73
+msgid "Open keyframes from a file"
+msgstr "Ireki gako-fotogramak fitxategi batetik"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:81
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:310
+msgid "Save Keyframes"
+msgstr "Gorde gako-fotogramak"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:82
+msgid "Save keyframes to the file"
+msgstr "Gorde gako-fotogramak fitxategira"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:90
+msgid "Generate Keyframes From Video"
+msgstr "Sortu gako-fotogramak bideoan"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:91
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:98
+msgid "Generate keyframes from the current video"
+msgstr "Sortu gako-fotogramak uneko bideoan"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:97
+msgid "Generate Keyframes From Video (Using Frame)"
+msgstr "Sortu gako-fotogramak bideoan (fotograma erabilita)"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:105
+msgid "Close the keyframes"
+msgstr "Itxi gako-fotogramak"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:106
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:115
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:123
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:131
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:139
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:147
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:155
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:56
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:60
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:67
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:70
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:74
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:78
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:82
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:86
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:98
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:102
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:106
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:110
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:115
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:122
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:129
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.se-plugin.in.h:2
+#: ../plugins/actions/textcorrection/textcorrection.se-plugin.in.h:2
+msgid "FIXME"
+msgstr "KONPON NAZAZU"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:114
+msgid "Seek To Previous Keyframe"
+msgstr "Saltatu aurreko gako-fotogramara"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:122
+msgid "Seek To Next Keyframe"
+msgstr "Saltatu hurrengo gako-fotogramara"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:130
+msgid "Snap Start To Previous Keyframe"
+msgstr "Atxiki aurreko gako-fotogramaren hasiera"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:138
+msgid "Snap Start To Next Keyframe"
+msgstr "Atxiki hurrengo gako-fotogramaren hasiera"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:146
+msgid "Snap End To Previous Keyframe"
+msgstr "Atxiki aurreko gako-fotogramaren bukaera"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:154
+msgid "Snap End To Next Keyframe"
+msgstr "Atxiki hurrengo gako-fotogramaren bukaera"
+
+#. Recent files
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:159
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:338
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:147
+msgid "_Recent Files"
+msgstr "Duela gutxiko fitxategiak"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:521
+msgid "Snap Start to Keyframe"
+msgstr "Atxiki gako-fotogramaren hasiera"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:543
+msgid "Snap End to Keyframe"
+msgstr "Atxiki gako-fotogramaren bukaera"
+
+#: ../plugins/actions/keyframesmanagement/mediadecoder.h:205
+#: ../plugins/actions/keyframesmanagement/mediadecoder.h:218
+#: ../plugins/actions/waveformmanagement/mediadecoder.h:205
+#: ../plugins/actions/waveformmanagement/mediadecoder.h:218
+msgid "Media file could not be played.\n"
+msgstr "Multimedia fitxategia ezin da erreproduzitu.\n"
+
+#: ../plugins/actions/keyframesmanagement/mediadecoder.h:374
+#: ../plugins/actions/waveformmanagement/mediadecoder.h:374
+#: ../src/gstreamer_utility.cc:63
+msgid ""
+"GStreamer plugins missing.\n"
+"The playback of this movie requires the following decoders which are not "
+"installed:"
+msgstr ""
+"GStreamer plugina falta da.\n"
+"Bideo honen erreprodukzioak instalatuta ez dagoen hurrengo kodetzailea behar "
+"du:"
+
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:59
+msgid "_Minimize Duration From Start"
+msgstr "_Minimizatu iraupena hasieratik"
+
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:60
+msgid ""
+"Compact each selected subtitle to its minimum permissible duration, start "
+"time is unchanged."
+msgstr ""
+"Trinkotu hautatutako azpitituluak ahal den guztiak, hasierako denbora ez da "
+"aldatuko."
+
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:63
+msgid "M_inimize Duration From End"
+msgstr "M_inimizatu iraupena amaieratik"
+
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:64
+msgid ""
+"Compact each selected subtitle to its minimum permissible duration, end time "
+"is unchanged."
+msgstr ""
+"Trinkotu hautatutako azpitituluak ahal den guztia, bukaerako denbora ez da "
+"aldatuko."
+
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:147
+msgid "Minimize Duration needs at least 1 subtitle to work on."
+msgstr "Iraupena minimizatzeak behar du gutxienez azpititulu 1 lan egiteko."
+
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:157
+msgid "Minimize Durations"
+msgstr "Minimizatu iraupenak"
+
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:56
+msgid "_Move After Preceding"
+msgstr "_Mugitu aurretik"
+
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:56
+msgid ""
+"Move subtitle after the preceding with the respect of the minimum gap "
+"between subtitles"
+msgstr ""
+"Mugitu azpititulua aurrekoa eta gero azpitituluen artek gutxieneko tartea "
+"errepetatuta"
+
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:59
+msgid "_Move Before Next"
+msgstr "_Mugitu hurrengoa baino lehen"
+
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:59
+msgid "Move subtitle just before the next one"
+msgstr "Mugitu azpititulua hurrengoa baino lehen"
+
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:141
+msgid "Move After Preceding"
+msgstr "Mugitu aurretik"
+
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:162
+msgid "Before Next Preceding"
+msgstr "Hurrengoa baino lehen"
+
+#: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:1
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:198
+#: ../plugins/actions/movesubtitles/movesubtitles.se-plugin.in.h:1
+msgid "Move Subtitles"
+msgstr "Mugitu azpitituluak"
+
+#: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:2
+msgid "<b>Position</b>"
+msgstr "<b>Kokapena</b>"
+
+#: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:3
+#: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:5
+msgid "_New Start:"
+msgstr "_Hasiera berria:"
+
+#. init label
+#: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:4
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:53
+#: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:4
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:159
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:160
+msgid "_Start Time:"
+msgstr "_Hasteko unea:"
+
+#: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:5
+msgid "_Only selected subtitles"
+msgstr "_Bakarrik hautatutako azpitituluak"
+
+#: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:6
+msgid ""
+"If the option is activated, only the selected subtitles are moved. Without "
+"this option, it starts from the first selected subtitle until the last "
+"subtitle of the document without taking into account the selection."
+msgstr ""
+"Aukera hori aktibatuta badago, bakarrik hautatutako azpitituluak mugituko "
+"dira..."
+
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:53
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:159
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:160
+msgid "_Start Frame:"
+msgstr "_Hasi fotograma:"
+
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:119
+msgid "_Move Subtitles"
+msgstr "_Mugitu azpitituluak"
+
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:119
+msgid "All subtitles will be also moved after the first selected subtitle"
+msgstr ""
+"Azpititulu guztiak jarriko dira hautatutako lehen azpitituluaren ondoren"
+
+#: ../plugins/actions/plaintext/plaintext.cc:57
+msgid "_Import Plain Text"
+msgstr "_Inportatu formaturik gabeko testua"
+
+#: ../plugins/actions/plaintext/plaintext.cc:58
+msgid "Create a new document from any text file."
+msgstr "Sortu dokumentu berria zenbait testu fitxategitik abiatuta."
+
+#: ../plugins/actions/plaintext/plaintext.cc:62
+msgid "_Export Plain Text"
+msgstr "_Esportatu formaturik gabeko testua"
+
+#: ../plugins/actions/plaintext/plaintext.cc:62
+msgid "Export just a text in a file"
+msgstr "Esportatu soilik fitxategiko testua"
+
+#: ../plugins/actions/plaintext/plaintext.cc:132
+#, c-format
+msgid "Could not import from file \"%s\"."
+msgstr "Ezin izan da inportatu \"%s\" fitxategitik."
+
+#: ../plugins/actions/plaintext/plaintext.cc:160
+#, c-format
+msgid "Could not export to the file \"%s\"."
+msgstr "Ezin izan da esportatu \"%s\" fitxategira."
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:1
+msgid "<b>General</b>"
+msgstr "<b>Orokorra</b>"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:2
+msgid "Use _dynamic keyboard shortcuts"
+msgstr "Erabili laster-tekla dinamikoak"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:3
+msgid ""
+"When enabled, you can change keyboard shortcuts for menu items by hitting a "
+"key combination while the menu item is highlighted."
+msgstr ""
+"Gaituta dagoenean, aldatu dezakezu laster-teklak menuko elementuekin tekla-"
+"konbinazio bat sakatuta menu-elementua nabarmenduta dagoen bitartean."
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:4
+msgid "_Maximize window"
+msgstr "_Maximizatu leihoa"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:5
+msgid "Ask to save on _exit"
+msgstr "Galdetu irtetean gorde nahi den"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:6
+msgid "<b>Subtitle View</b>"
+msgstr "<b>Azpititulu ikuspegia</b>"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:7
+msgid "_Center the text of the subtitle in the column"
+msgstr "_Erdiratu azpitituluaren testua zutabean"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:8
+msgid "_Show the number of characters per line"
+msgstr "_Erakutsi lerroko karaktere kopurua"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:9
+msgid "Enable _rubberband selection"
+msgstr "Gaitu _borragoma hautaketa"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:10
+msgid "_Use Ctrl+Enter keys to confirm the change"
+msgstr "_Erabili Ctrl+Sartu teklak aldaketa berresteko"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:11
+msgid "_Do not disable the actions during editing"
+msgstr "_Ez desgaitu ekintzak edizioan zehar"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:12
+msgid "<b>File Saving</b>"
+msgstr "<b>Fitxategia gordetzen</b>"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:13
+msgid "Create a _backup copy of files before saving"
+msgstr "Sortu fitxategien _babeskopia gorde aurretik"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:14
+msgid "_Autosave files every"
+msgstr "Gorde automatikoki aldiro"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:15
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:21
+msgid "1"
+msgstr "1"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:16
+msgid "minutes"
+msgstr "minutu"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:17
+msgid "Interface"
+msgstr "Interfazea"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:18
+msgid "<b>New Document</b>"
+msgstr "<b>Dokumentu berria</b>"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:19
+msgid "_Format:"
+msgstr "_Formatua:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:20
+msgid "_Newline:"
+msgstr "_Lerro berria:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:21
+msgid "Document"
+msgstr "Dokumentua"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:22
+#: ../share/ui/dialog-script-properties.ui.h:19
+msgid "<b>Video</b>"
+msgstr "<b>Bideoa</b>"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:23
+msgid "Force aspect _ratio"
+msgstr "Behartu aspektu-erlazioa"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:24
+msgid "Automatically _choose video to open"
+msgstr "Aukeratu automatikoki zein bideo ireki"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:25
+msgid "<b>Text Subtitle</b>"
+msgstr "<b>Azpitituluaren testua</b>"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:26
+msgid "_Font:"
+msgstr "Letra-mota:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:27
+msgid "Use shaded _background"
+msgstr "Erabili atzeko-plano itzalduna"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:28
+msgid "Display _translated subtitle"
+msgstr "Erakutsi azpitituluaren itzulpena"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:29
+msgid "Display the translated subtitle instead of the original one."
+msgstr "Erakutsi azpitituluaren itzulpena jatorrizkoaren ordez."
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:30
+msgid "Vertical Alignment:"
+msgstr "Lerrokapena bertikala:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:31
+msgid "baseline"
+msgstr "oinarri-lerroa"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:32
+msgid "bottom"
+msgstr "behean"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:33
+msgid "top"
+msgstr "goian"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:34
+msgid "position"
+msgstr "kokapena"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:35
+msgid "center"
+msgstr "erdiratu"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:36
+msgid "<b>Output</b>"
+msgstr "<b>Irteera</b>"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:37
+msgid "_Audio:"
+msgstr "_Audioa:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:38
+msgid "_Video:"
+msgstr "_Bideoa:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:39
+msgid "Video Player"
+msgstr "Bideo-erreproduzigailua"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:40
+msgid "<b>Timing Preferences</b>"
+msgstr "<b>Sinkronizazio hobespenak</b>"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:46
+msgid "Maximum number of line per subtitle:"
+msgstr "Gehienezko lerro kopurua azpitituluko:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:47
+msgid "1.0"
+msgstr "1.0"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:48
+msgid "<b>Automatic Timing Check</b>"
+msgstr "<b>Sinkronizazioaren azterketa automatikoa</b>"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:49
+msgid "Automatically highlight timing errors\t"
+msgstr "Nabarmendu automatikoki sinkronizazio erroreak\t"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:51
+msgid "<b>Waveform Color</b>"
+msgstr "<b>Uhin-formaren kolorea</b>"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:52
+msgid "Background:"
+msgstr "Atzeko planoa:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:53
+msgid "Wave:"
+msgstr "Uhina:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:54
+msgid "Wave fill:"
+msgstr "Uhin betea:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:55
+msgid "Subtitle:"
+msgstr "Azpititulua:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:56
+msgid "Subtitle Selected:"
+msgstr "Azpititulua hautatua:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:57
+msgid "Subtitle Invalid:"
+msgstr "Azpititulu baliogabea:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:58
+msgid "Player Position:"
+msgstr "Erreproduzigailuko kokapena:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:59
+#: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:6
+msgid "Text:"
+msgstr "Testua:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:60
+msgid "Display background"
+msgstr "Erakutsi atzeko planoa"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:61
+msgid "Display waveform fill"
+msgstr "Erakutsi soinu-forma betea"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:62
+msgid "Display subtitle text"
+msgstr "Erakutsi azpitituluen testua"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:63
+msgid "Reset To _Defaults"
+msgstr "Berrezarri balio lehenetsiak"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:64
+msgid "<b>Waveform Generator</b>"
+msgstr "<b>Uhin-formaren sortzailea</b>"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:65
+msgid "Interval in seconds:"
+msgstr "Tartea segundotan:"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:66
+msgid "1000"
+msgstr "1000"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:67
+msgid "Waveform"
+msgstr "Uhin-forma"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:68
+msgid "<b>Activate plugins</b>"
+msgstr "<b>Aktibatu pluginak</b>"
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:69
+msgid "Plugins"
+msgstr "Pluginak"
+
+#: ../plugins/actions/preferences/preferencesplugin.cc:109
+msgid "Configure Subtitle Editor"
+msgstr "Konfiguratu Subtitle Editor"
+
+#. audio output
+#. video output
+#: ../plugins/actions/preferences/videoplayerpage.h:124
+#: ../plugins/actions/preferences/videoplayerpage.h:136
+msgid "Autodetect"
+msgstr "Atzeman automatikoki"
+
+#: ../plugins/actions/preferences/videoplayerpage.h:125
+msgid "Pulse - PulseAudio Sound Server"
+msgstr "Pulse - PulseAudio Sound Server"
+
+#: ../plugins/actions/preferences/videoplayerpage.h:126
+msgid "ALSA - Advanced Linux Sound Architecture"
+msgstr "ALSA - Advanced Linux Sound Architecture"
+
+#: ../plugins/actions/preferences/videoplayerpage.h:127
+msgid "ESD - Enlightenment Sound Daemon"
+msgstr "ESD - Enlightenment Sound Daemon"
+
+#: ../plugins/actions/preferences/videoplayerpage.h:128
+msgid "OSS - Open Sound System"
+msgstr "OSS - Open Sound System"
+
+#: ../plugins/actions/preferences/videoplayerpage.h:129
+#: ../plugins/actions/preferences/videoplayerpage.h:139
+msgid "SDL - Simple DirectMedia Layer"
+msgstr "SDL - Simple DirectMedia Layer"
+
+#: ../plugins/actions/preferences/videoplayerpage.h:130
+#: ../plugins/actions/preferences/videoplayerpage.h:140
+msgid "GConf"
+msgstr "GConf"
+
+#: ../plugins/actions/preferences/videoplayerpage.h:132
+#: ../plugins/actions/preferences/videoplayerpage.h:143
+msgid "OSX"
+msgstr "OSX"
+
+#: ../plugins/actions/preferences/videoplayerpage.h:137
+msgid "X Window System (X11/XShm/Xv)"
+msgstr "X leiho sistema (X11/XShm/Xv)"
+
+#: ../plugins/actions/preferences/videoplayerpage.h:138
+msgid "X Window System (No Xv)"
+msgstr "X leiho sistema (No Xv)"
+
+#: ../plugins/actions/preferences/videoplayerpage.h:141
+msgid "OpenGL"
+msgstr "OpenGL"
+
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:53
+msgid "Delete the selected subtitles"
+msgstr "Ezabatu hautatutako azpitituluak"
+
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:126
+msgid "Delete Subtitles"
+msgstr "Ezabatu azpitituluak"
+
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:138
+#, c-format
+msgid "1 subtitle has been deleted."
+msgid_plural "%d subtitles have been deleted."
+msgstr[0] "azpititulu 1 ezabatu da."
+msgstr[1] "%d azpititulu ezabatu dira."
+
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:56
+msgid "_Reverse Text And Translation"
+msgstr "_Alderantzikatu testua eta itzulpena"
+
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:56
+msgid "Reverse the text and the translation"
+msgstr "Alderantzikatu testua eta itzulpena"
+
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:119
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.se-plugin.in.h:1
+msgid "Reverse Text And Translation"
+msgstr "Alderantzikatu testua eta itzulpena"
+
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:134
+msgid "Reverse the text and the translation was applied."
+msgstr "Testua eta itzulpenaren alderantzikapena burutu da."
+
+#: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:1
+msgid "Scale"
+msgstr "Eskalatu"
+
+#: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:2
+msgid "<b>First Point</b>"
+msgstr "<b>Lehenengo puntua</b>"
+
+#: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:3
+msgid "Number:"
+msgstr "Zenbakia:"
+
+#: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:7
+msgid "<b>Last Point</b>"
+msgstr "<b>Azken puntua</b>"
+
+#: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:9
+msgid "_Selected Range"
+msgstr "_Hautatutako tartea"
+
+#: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:10
+msgid "_All Subtitles"
+msgstr "Azpititulu _guztiak"
+
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:82
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:88
+msgid "You can't use <i>scale</i> with this values."
+msgstr "Ezin duzu <i>eskala</i> erabili balio hauekin."
+
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:83
+msgid "The first point is superior to the last point."
+msgstr "Lehenengo puntua azken puntua baino handiagoa da."
+
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:89
+msgid "The first point is equal to the last point."
+msgstr "Lehenengo puntua eta azkena berdinak dira."
+
+#. apply change
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:104
+msgid "Scale subtitles"
+msgstr "Eskalatu azpitituluak"
+
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:126
+msgid "The scale was applied"
+msgstr "Eskala aplikatu da"
+
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:147
+msgid "You can't use <i>scale</i> with this document."
+msgstr "Ezin duzu <i>eskala</i> erabili dokumentu honekin."
+
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:343
+msgid "_Scale"
+msgstr "Eskalatu"
+
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:343
+msgid "Scale by two points"
+msgstr "Eskalatu bi puntuz"
+
+#: ../plugins/actions/selection/selection.cc:53
+msgid "Select _First Subtitle"
+msgstr "Hautatu _lehenengo azpititulua"
+
+#: ../plugins/actions/selection/selection.cc:53
+msgid "Select the first subtitle"
+msgstr "Hautatu lehenengo azpititulua"
+
+#: ../plugins/actions/selection/selection.cc:57
+msgid "Select _Last Subtitle"
+msgstr "Hautatu _azken azpititulua"
+
+#: ../plugins/actions/selection/selection.cc:57
+msgid "Select the last subtitle"
+msgstr "Hautatu azkeneko azpititulua"
+
+#: ../plugins/actions/selection/selection.cc:61
+msgid "Select _Previous Subtitle"
+msgstr "Hautatu a_urreko azpititulua"
+
+#: ../plugins/actions/selection/selection.cc:61
+msgid "Select the previous subtitle"
+msgstr "Hautatu aurreko azpititulua"
+
+#: ../plugins/actions/selection/selection.cc:65
+msgid "Select _Next Subtitle"
+msgstr "Hautatu _hurrengo azpititulua"
+
+#: ../plugins/actions/selection/selection.cc:65
+msgid "Select the next subtitle"
+msgstr "Hautatu hurrengo azpititulua"
+
+#: ../plugins/actions/selection/selection.cc:69
+msgid "Select _All Subtitles"
+msgstr "Hautatu _azpititulu guztiak"
+
+#: ../plugins/actions/selection/selection.cc:69
+msgid "Select all subtitles"
+msgstr "Hautatu azpititulu guztiak"
+
+#: ../plugins/actions/selection/selection.cc:73
+msgid "_Unselect All Subtitles"
+msgstr "_Desautatu azpititulu guztiak"
+
+#: ../plugins/actions/selection/selection.cc:73
+msgid "Unselect all the subtitles"
+msgstr "Desautatu azpititulu guztiak"
+
+#: ../plugins/actions/selection/selection.cc:77
+msgid "In_vert Selection"
+msgstr "Alderantzikatu hautaketa"
+
+#: ../plugins/actions/selection/selection.cc:77
+msgid "Invert subtitles selection"
+msgstr "Alderantzikatu azpitituluen hautaketa"
+
+#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:55
+msgid "S_ort Subtitles"
+msgstr "_Ordenatu azpitituluak"
+
+#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:55
+msgid "Sort subtitles based on their start time"
+msgstr "Ordenatu azpitituluak hasierako unearen arabera"
+
+#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:110
+#, c-format
+msgid "1 subtitle has been reordered."
+msgid_plural "%d subtitles have been reordered."
+msgstr[0] "azpititulu bat berrordenatu da."
+msgstr[1] "%d azpititulu berrordenatu dira."
+
+#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:114
+msgid "No need to sort subtitles."
+msgstr "Ez da azpitituluak ordenatu behar."
+
+#: ../plugins/actions/spellchecking/dialog-spell-checking.ui.h:1
+#: ../plugins/actions/spellchecking/spellchecking.cc:162
+#: ../plugins/actions/spellchecking/spellchecking.se-plugin.in.h:1
+msgid "Spell Checking"
+msgstr "Ortografia zuzentzen"
+
+#. Language
+#: ../plugins/actions/spellchecking/dialog-spell-checking.ui.h:2
+#: ../plugins/actions/textcorrection/patternspage.h:237
+msgid "_Language:"
+msgstr "_Hizkuntza:"
+
+#: ../plugins/actions/spellchecking/dialog-spell-checking.ui.h:4
+msgid "_Ignore"
+msgstr "_Ez ikusi"
+
+#: ../plugins/actions/spellchecking/dialog-spell-checking.ui.h:5
+msgid "Ignore _All"
+msgstr "Ez ikusi _dena"
+
+#: ../plugins/actions/spellchecking/dialog-spell-checking.ui.h:7
+msgid "A_dd Word"
+msgstr "Gehitu hitza"
+
+#: ../plugins/actions/spellchecking/spellchecking.cc:181
+msgid ""
+"The spell check is applied to the column \"text\" as default. You can check "
+"the column \"translation\" by setting the focus to this column before "
+"starting the spell check."
+msgstr ""
+"Zuzenketa ortografikoa \"testu\" zutabeari aplikatzen zaio berez. \"Itzulpena"
+"\" zutabea zuzendu dezakezu fokua zutabe honetara ezarriz ortografia "
+"zuzentzen hasi aurretik."
+
+#: ../plugins/actions/spellchecking/spellchecking.cc:187
+msgid "_Do not show this message again"
+msgstr "_Ez erakutsi mezu hau berriro"
+
+#: ../plugins/actions/spellchecking/spellchecking.cc:277
+msgid "Suggestions"
+msgstr "Proposamenak"
+
+#: ../plugins/actions/spellchecking/spellchecking.cc:673
+msgid "Completed spell checking."
+msgstr "Zuzenketa ortografikoa burutu da."
+
+#: ../plugins/actions/spellchecking/spellchecking.cc:735
+msgid "_Spell Check"
+msgstr "_Zuzenketa ortografikoa"
+
+#: ../plugins/actions/spellchecking/spellchecking.cc:735
+msgid "Launch the spell checking"
+msgstr "Abiarazi zuzentzaile ortografikoa"
+
+#: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
+#: ../plugins/actions/splitdocument/splitdocument.se-plugin.in.h:1
+msgid "Split Document"
+msgstr "Zatitu dokumentua"
+
+#: ../plugins/actions/splitdocument/dialog-split-document.ui.h:2
+msgid "The beginning for the new document:"
+msgstr "Dokumentu berriaren hasiera:"
+
+#: ../plugins/actions/splitdocument/splitdocument.cc:57
+msgid "You can't use <i>split</i> with this document."
+msgstr "Ezin duzu <i>zatitu</i> erabili dokumentu honekin."
+
+#. Remove subtitles used by the new one
+#: ../plugins/actions/splitdocument/splitdocument.cc:96
+msgid "Split document"
+msgstr "Zatitu dokumentua"
+
+#: ../plugins/actions/splitdocument/splitdocument.cc:136
+msgid "Spl_it Document"
+msgstr "_Zatitu dokumentua"
+
+#: ../plugins/actions/splitdocument/splitdocument.cc:136
+msgid "Split the current document in two"
+msgstr "Zatitu uneko dokumentua bitan"
+
+#: ../plugins/actions/splitsubtitle/splitsubtitle.cc:53
+msgid "_Split"
+msgstr "_Zatitu"
+
+#: ../plugins/actions/splitsubtitle/splitsubtitle.cc:53
+msgid "Split the selected subtitles"
+msgstr "Zatitu hautatutako azpitituluak"
+
+#: ../plugins/actions/splitsubtitle/splitsubtitle.cc:105
+#: ../plugins/actions/typewriter/typewriter.cc:156
+msgid "Please select at least one subtitle."
+msgstr "Hautatu gutxienez azpititulu bat."
+
+#: ../plugins/actions/splitsubtitle/splitsubtitle.cc:109
+#: ../plugins/actions/typewriter/typewriter.cc:160
+msgid "Split subtitles"
+msgstr "Zatitu azpitituluak"
+
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:58
+msgid "Stack Subtitles From Start"
+msgstr "Pilatu azpitituluak hasieratik"
+
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:59
+msgid ""
+"Stack selected subtitles after the first one as close together as possible."
+msgstr ""
+"Pilatu hautatutako azpitituluak lehenengoaren ondoren ahalik eta hurbilen."
+
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:63
+msgid "Stack Subtitles From End"
+msgstr "Pilatu azpitituluak bukaeratik"
+
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:64
+msgid ""
+"Stack selected subtitles before the last one as close together as possible."
+msgstr ""
+"Pilatu hautatutako azpitituluak lehenengoaren aurretik ahalik eta hurbilen."
+
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:138
+#: ../plugins/actions/stacksubtitles/stacksubtitles.se-plugin.in.h:1
+msgid "Stack Subtitles"
+msgstr "Pilatu azpitituluak"
+
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:210
+msgid "Stack Subtitles needs at least 2 subtitles to work on."
+msgstr "Azpitituluak pilatzeko gutxienez 2 azpititulu behar dira."
+
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:245
+msgid "Stack Subtitles only works on a continuous selection."
+msgstr "Azpitituluen pilaketa bakarrik funtzionatzen du hautaketa jarraian."
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:1
+msgid "Subtitle Editor - Style Editor"
+msgstr "Subtitle Editor - Estilo editorea"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
+msgid "Preview"
+msgstr "Aurrebista"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:3
+msgid "TODO"
+msgstr "EGITEKO"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:4
+msgid "Font"
+msgstr "Letra-mota"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:5
+msgid "Appearance"
+msgstr "Itxura"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:6
+msgid "Colors"
+msgstr "Koloreak"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:7
+msgid "Primary:"
+msgstr "Lehen mailakoa:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:8
+msgid "Secondary:"
+msgstr "Bigarren mailakoa:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:9
+msgid "Outline:"
+msgstr "Eskema:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:10
+msgid "Shadow:"
+msgstr "Itzala:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:11
+msgid "Border"
+msgstr "Ertza"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:12
+msgid "Outline"
+msgstr "Eskema"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:13
+msgid "Opaque Box"
+msgstr "Kutxa opakoa"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:14
+msgid "Size:"
+msgstr "Tamaina:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:15
+msgid "Distance:"
+msgstr "Distantzia:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:16
+msgid "Transformation"
+msgstr "Eraldaketa"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:17
+msgid "Angle:"
+msgstr "Angelua:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:18
+msgid "Spacing:"
+msgstr "Espazioa:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:19
+msgid "Scale X:"
+msgstr "Eskalatu X:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:20
+msgid "Scale Y:"
+msgstr "Eskalatu Y:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:22
+msgid "Margins"
+msgstr "Marjinak"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:23
+msgid "Right:"
+msgstr "Eskuina:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:24
+msgid "Vertical:"
+msgstr "Bertikala:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:25
+#: ../plugins/actions/timingfromplayer/dialog-timing-from-player-preferences.ui.h:4
+msgid "0"
+msgstr "0"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:26
+msgid "Left:"
+msgstr "Ezkerra:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:27
+msgid "Alignment"
+msgstr "Lerrokapena"
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:112
+msgid "Styles"
+msgstr "Estiloak"
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:440
+msgid "_Style Editor"
+msgstr "_Estiloaren editorea"
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:440
+msgid "Launch the style editor"
+msgstr "Abiarazi estilo-editorea"
+
+#: ../plugins/actions/stylize/stylize.cc:55
+msgid "_Stylize"
+msgstr "Estilizatu"
+
+#: ../plugins/actions/stylize/stylize.cc:55
+msgid "Stylize the selected subtitles text"
+msgstr "Estilizatu hautatutako azpitituluen testua"
+
+#: ../plugins/actions/stylize/stylize.cc:194 ../src/subtitleview.cc:1441
+msgid "Set style to selection"
+msgstr "Ezarri hautapen estiloa"
+
+#: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
+#: ../plugins/actions/textcorrection/confirmationpage.h:187
+#: ../plugins/actions/textcorrection/textcorrection.se-plugin.in.h:1
+msgid "Text Correction"
+msgstr "Testu zuzenketa"
+
+#: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:2
+msgid "_Select correction to performed text:"
+msgstr "_Hautatu egindako testuaren zuzenketa:"
+
+#: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:3
+msgid "Select Task"
+msgstr "Hautatu eginbidea"
+
+#: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:4
+msgid "Acc_ept, discard or edit changes:"
+msgstr "Onartu, bazt_ertu edo editatu aldaketak:"
+
+#: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:5
+msgid "_Mark All"
+msgstr "_Markatu dena"
+
+#: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:6
+msgid "_Unmark All"
+msgstr "_Desmarkatu guztiak"
+
+#: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:7
+msgid "_Remove all blank subtitles"
+msgstr "_Kendu azpititulu huts guztiak"
+
+#: ../plugins/actions/textcorrection/capitalizationpage.h:34
+msgid "Select Capitalization Patterns"
+msgstr "Hautatu maiuskulen ereduak"
+
+#: ../plugins/actions/textcorrection/capitalizationpage.h:35
+msgid "Capitalize texts"
+msgstr "Jarri testua maiuskulaz"
+
+#: ../plugins/actions/textcorrection/capitalizationpage.h:36
+msgid "Capitalize texts written in lower case"
+msgstr "Jarri maiuskulaz minuskulaz idatzitako testuak"
+
+#: ../plugins/actions/textcorrection/commonerrorpage.h:34
+msgid "Select Common Error Pattern"
+msgstr "Hautatu ohiko errore eredua"
+
+#: ../plugins/actions/textcorrection/commonerrorpage.h:35
+msgid "Correct common errors"
+msgstr "Zuzendu ohiko erroreak"
+
+#: ../plugins/actions/textcorrection/commonerrorpage.h:36
+msgid "Correct common errors made by humans or image recognition software"
+msgstr ""
+"Zuzendu gizakiek sortutako edo irudien ezagutzak sortutako ohiko erroreak"
+
+#: ../plugins/actions/textcorrection/confirmationpage.h:78
+#: ../src/subtitleview.cc:1584
+msgid "Num"
+msgstr "Zbakia"
+
+#: ../plugins/actions/textcorrection/confirmationpage.h:87
+msgid "Accept"
+msgstr "Onartu"
+
+#: ../plugins/actions/textcorrection/confirmationpage.h:98
+msgid "Original Text"
+msgstr "Jatorrizko testua"
+
+#: ../plugins/actions/textcorrection/confirmationpage.h:107
+msgid "Corrected Text"
+msgstr "Zuzendutako testua"
+
+#: ../plugins/actions/textcorrection/confirmationpage.h:170
+msgid "There Is No Change"
+msgstr "Ez da ezer aldatu"
+
+#: ../plugins/actions/textcorrection/confirmationpage.h:173
+msgid "Confirm %1 Change"
+msgid_plural "Confirm %1 Changes"
+msgstr[0] "Baieztu aldaketa %1"
+msgstr[1] "Baieztu %1 aldaketa"
+
+#: ../plugins/actions/textcorrection/hearingimpairedpage.h:34
+msgid "Select Hearing Impaired Patterns"
+msgstr "Hautatu entzumen urritasun ereduak"
+
+#: ../plugins/actions/textcorrection/hearingimpairedpage.h:35
+msgid "Remove hearing impaired texts"
+msgstr "Kendu entzumen arazoak dituzten testuak"
+
+#: ../plugins/actions/textcorrection/hearingimpairedpage.h:36
+msgid "Remove explanatory texts meant for the hearing impaired"
+msgstr "Kendu entzumen urritasuna dutenentzako azalpen testuak"
+
+#. Script
+#: ../plugins/actions/textcorrection/patternspage.h:230
+msgid "_Script:"
+msgstr "_Scripta:"
+
+#. Country
+#: ../plugins/actions/textcorrection/patternspage.h:244
+msgid "_Country:"
+msgstr "_Estatua:"
+
+#: ../plugins/actions/textcorrection/patternspage.h:445
+#: ../plugins/actions/textcorrection/patternspage.h:473
+#: ../plugins/actions/textcorrection/patternspage.h:501
+msgid "Other"
+msgstr "Beste bat"
+
+#: ../plugins/actions/textcorrection/taskspage.h:66
+#: ../plugins/actions/viewmanager/viewmanager.cc:129
+msgid "Display"
+msgstr "Erakutsi"
+
+#: ../plugins/actions/textcorrection/taskspage.h:77
+#: ../plugins/actions/viewmanager/viewmanager.cc:141
+#: ../plugins/actions/viewmanager/viewmanager.cc:232
+#: ../src/subtitleview.cc:1582
+msgid "Name"
+msgstr "Izena"
+
+#: ../plugins/actions/textcorrection/textcorrection.cc:233
+msgid "Text _Correction"
+msgstr "Testu _zuzenketa"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:56
+msgid "_Times"
+msgstr "_Denborak"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:60
+msgid "_Frames"
+msgstr "_Fotogramak"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:67
+msgid "_Framerate"
+msgstr "_Fotograma-emaria"
+
+#: ../plugins/actions/timingfromplayer/dialog-timing-from-player-preferences.ui.h:1
+msgid "Timing From Player Preferences"
+msgstr "Denboralizazioa erreproduzigailuaren hobespenetatik"
+
+#: ../plugins/actions/timingfromplayer/dialog-timing-from-player-preferences.ui.h:2
+msgid "Set delay to correct human reaction time"
+msgstr "Ezarri atzerapena gizakiaren erreakzioaren denbora zuzentzeko"
+
+#: ../plugins/actions/timingfromplayer/dialog-timing-from-player-preferences.ui.h:3
+msgid "Offset:"
+msgstr "Desplazamendua:"
+
+#: ../plugins/actions/timingfromplayer/dialog-timing-from-player-preferences.ui.h:5
+msgid ""
+"This offset in milliseconds will be substracted from the timecode at which "
+"actions provided in this plugin were called to correct for the fact that it "
+"takes several hundred milliseconds for the human to react (it applies only "
+"when the video player is running)"
+msgstr ""
+"Segundo milarenetako desplazamendu hau denbora-kodetik kenduko da plugin "
+"honetan emandako ekintzak zuzentzeko gizakiak ehun milisegundo behar dituela "
+"erreakzionatzeko (bideo erreproduzitzailea martxan dagoenean bakarrik "
+"aplikatzen da)"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:91
+#: ../plugins/actions/timingfromplayer/timingfromplayer.se-plugin.in.h:1
+msgid "Timing From Player"
+msgstr "Denboralizazioa erreproduzigailutik"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:92
+msgid "Use the current player position to set subtitle time"
+msgstr "Erabili erreproduzigailuko kokapena ezartzeko azpitituluaren denbora"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:97
+msgid "Set Subtitle _Start"
+msgstr "Ezarri azpitituluaren _hasiera"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:98
+msgid "Use the current player position to set the subtitle start"
+msgstr "Erabili erreproduzigailuko kokapena ezartzeko azpitituluaren hasiera"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:104
+msgid "Set Subtitle _End"
+msgstr "Ezarri azpitituluaren _bukaera"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:105
+msgid "Use the current player position to set the subtitle end"
+msgstr "Erabili erreproduzigailuko kokapena ezartzeko azpitituluaren bukaera"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:112
+msgid "Set Subtitle Start And Go Next"
+msgstr "Ezarri azpitituluaren hasiera eta hurrengora"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:113
+msgid ""
+"Use the current player position to set the start of the selected subtitle "
+"and go to the next"
+msgstr ""
+"Erabili erreproduzigailuko kokapena ezartzeko hautatutako azpitituluaren "
+"hasiera eta joan hurrengora"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:119
+msgid "Set Subtitle End And Go Next"
+msgstr "Ezarri azpitituluaren bukaera eta hurrengora"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:120
+msgid ""
+"Use the current player position to set the end of the selected subtitle and "
+"go to the next"
+msgstr ""
+"Erabili erreproduzigailuko kokapena ezartzeko hautatutako azpitituluaren "
+"bukaera eta joan hurrengora"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:127
+msgid "Set Subtitle Start And Next"
+msgstr "Ezarri azpitituluaren hasiera eta hurrengora"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:128
+msgid ""
+"Use the current player position to set the start of the current selected "
+"subtitle and the position of the next"
+msgstr ""
+"Erabili erreproduzigailuko kokapena ezartzeko hautatutako azpitituluaren "
+"hasiera eta hurrengoaren kokapena"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:134
+msgid "Set Subtitle End And Next"
+msgstr "Ezarri azpitituluaren bukaera eta hurrengora"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:135
+msgid ""
+"Use the current player position to set the end of the current selected "
+"subtitle and the position of the next"
+msgstr ""
+"Erabili erreproduzigailuko kokapena ezartzeko hautatutako azpitituluaren "
+"bukaera eta hurrengoaren kokapena"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:142
+msgid "Set Subtitle Start _And End"
+msgstr "Ezarri azpitituluaren hasiera _eta bukaera"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:143
+msgid ""
+"Use only one key to set beginning of the subtitle when the key is pressed "
+"and the end when the key is released."
+msgstr ""
+"Erabili tekla bakarra azpitituluaren hasiera ezartzeko tekla sakatzean eta "
+"amaiera tekla askatzean."
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:269
+msgid "Set subtitle start"
+msgstr "Ezarri azpitituluaren hasiera"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:271
+msgid "Set subtitle end"
+msgstr "Ezarri azpitituluaren bukaera"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:272
+msgid "Set subtitle"
+msgstr "Ezarri azpititulua"
+
+#: ../plugins/actions/typewriter/typewriter.cc:54
+msgid "_Typewriter"
+msgstr "_Idazmakina"
+
+#: ../plugins/actions/typewriter/typewriter.cc:57
+msgid "Characters - Linear"
+msgstr "Karaktereak - linearra"
+
+#: ../plugins/actions/typewriter/typewriter.cc:62
+msgid "Characters - Random"
+msgstr "Karaktereak - ausazkoa"
+
+#: ../plugins/actions/typewriter/typewriter.cc:67
+msgid "Words - Linear"
+msgstr "Hitzak - linearra"
+
+#: ../plugins/actions/typewriter/typewriter.cc:72
+msgid "Words - Random"
+msgstr "Hitzak - Ausazkoa"
+
+#. _("_Open Media"),
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
+msgid "Open a multimedia file"
+msgstr "Ireki multimedia fitxategia"
+
+#. _("_Close Media"),
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:79
+msgid "Close a multimedia file"
+msgstr "Itxi fitxategi multimedia"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:98
+msgid "_Play / Pause"
+msgstr "Erreproduzitu / Pausatu"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:99
+msgid "Play or make a pause"
+msgstr "Erreproduzitu edo egin pausa bat"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:107
+msgid "Skip _Backwards"
+msgstr "Saltatu a_tzerantz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:113
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:168
+msgid "Frame"
+msgstr "Fotograma"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:114
+msgid "Frame skip backwards"
+msgstr "Saltatu fotograma atzera"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:121
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:176
+msgid "Tiny"
+msgstr ""
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:122
+msgid "Tiny skip backwards"
+msgstr "Salto txiki-txikia atzerantz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:129
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
+msgid "Very Short"
+msgstr "Oso laburra"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:130
+msgid "Very short skip backwards"
+msgstr "Oso salto laburra atzerantz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:137
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:192
+msgid "Short"
+msgstr "Labur"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:138
+msgid "Short skip backwards"
+msgstr "Salto laburra atzerantz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:145
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:200
+msgid "Medium"
+msgstr "Ertaina"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:146
+msgid "Medium skip backwards"
+msgstr "Salto ertaina atzerantz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:153
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
+msgid "Long"
+msgstr "Luzea"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:154
+msgid "Long skip backwards"
+msgstr "Salto luzea atzerantz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:162
+msgid "Skip _Forward"
+msgstr "Saltatu a_urrerantz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:169
+msgid "Frame skip forward"
+msgstr "Saltatu fotograma aurrera"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:177
+msgid "Tiny skip forward"
+msgstr "Salto txiki-txikia aurrerantz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
+msgid "Very short skip forward"
+msgstr "Oso salto laburra aurrerantz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:193
+msgid "Short skip forward"
+msgstr "Salto laburra aurrerantz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:201
+msgid "Medium skip forward"
+msgstr "Salto ertaina aurrerantz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:209
+msgid "Long skip forward"
+msgstr "Salto luzea aurrerantz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:216
+msgid "Rate"
+msgstr "Tasa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:217
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:223
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:230
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:237
+msgid "Define the playback rate"
+msgstr "Zehaztu Irakurketa-tasa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:222
+msgid "_Slower"
+msgstr "_Polikiago"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:229
+msgid "_Faster"
+msgstr "_Azkarrago"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:236
+msgid "_Normal"
+msgstr "_Arrunta"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:244
+msgid "_Seek To Selection"
+msgstr "_Saltatu hautaketara"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:245
+msgid "Seek to the first selected subtitle"
+msgstr "Saltatu hautatutako lehenengo azpititulura"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:252
+msgid "_Seek To Selection End"
+msgstr "_Saltatu hautaketaren bukaerara"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:253
+msgid "Seek to the end of the last selected subtitle"
+msgstr "Saltatu hautatutako azken azpitituluaren bukaerara"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:262
+msgid "_Repeat"
+msgstr "_Errepikatu"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:263
+msgid "Enable or disable the repeat mode"
+msgstr "Gaitu edo desgaitu errepikapen modua"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:272
+msgid "Play _Previous Subtitle"
+msgstr "Erreproduzitu _aurreko azpititulua"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:273
+msgid "Play previous subtitle from the first selected subtitle"
+msgstr "Erreproduzitu hautatuta dagoen azpitituluaren aurrekoa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:280
+msgid "Play _Selection"
+msgstr "Erreproduzitu hautaketa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
+msgid "Play the selected subtitle"
+msgstr "Erreproduzitu hautatuta dagoen azpititulua"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:288
+msgid "Play _Next Subtitle"
+msgstr "Erreproduzitu _hurrengo azpititulua"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:289
+msgid "Play next subtitle from the first selected subtitle"
+msgstr "Erreproduzitu hautatuta dagoen azpitituluaren hurrengoa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:296
+msgid "Play Previous Second"
+msgstr "Erreproduzitu aurreko segundoa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:297
+msgid "Play the second preceding the first selected subtitle"
+msgstr "Erreproduzitu hautatuta dagoen azpitituluaren aurreko segundoa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:303
+msgid "Play First Second"
+msgstr "Erreproduzitu lehenengo segundoa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:304
+msgid "Play the first second of the subtitle currently selected"
+msgstr "Erreproduzitu hautatuta dagoen azpitituluaren lehengo segundoa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:310
+msgid "Play Last Second"
+msgstr "Erreproduzitu azken segundoa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:311
+msgid "Play the last second of the subtitle currently selected"
+msgstr "Erreproduzitu hautatutako dagoen azpitituluaren azken segundoa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:317
+msgid "Play Next Second"
+msgstr "Erreproduzitu hurrengo segundoa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:318
+msgid "Play the second following the subtitle currently selected"
+msgstr "Erreproduzitu hautatuta dagoen azpitituluaren ondorengo segundoa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:327
+msgid "_Video Player"
+msgstr "_Bideo-erreproduzigailua"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:328
+msgid "Show or hide the video player in the current window"
+msgstr "Erakutsi edo ezkutatu bideo-erreproduzigailua uneko leihoan"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:334
+msgid "Audio Track"
+msgstr "Audio-pista"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:335
+msgid "Choice of an audio track"
+msgstr "Aukeratu audio pista bat"
+
+#. A default track "Auto"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:617
+msgid "Auto"
+msgstr "Auto"
+
+#: ../plugins/actions/viewmanager/dialog-view-manager.ui.h:1
+msgid "View Editing"
+msgstr "Ikuspegiaren edizioa"
+
+#: ../plugins/actions/viewmanager/dialog-view-manager.ui.h:2
+msgid "Columns"
+msgstr "Zutabeak"
+
+#: ../plugins/actions/viewmanager/dialog-view-manager.ui.h:3
+#: ../plugins/actions/viewmanager/viewmanager.se-plugin.in.h:1
+msgid "View Manager"
+msgstr "Ikuspegiaren kudeaketa"
+
+#: ../plugins/actions/viewmanager/dialog-view-manager.ui.h:4
+msgid "View"
+msgstr "Ikuspegia"
+
+#: ../plugins/actions/viewmanager/viewmanager.cc:302
+msgid "Untitled"
+msgstr "Izenburu gabea"
+
+#: ../plugins/actions/viewmanager/viewmanager.cc:404
+msgid "Simple"
+msgstr "Sinple"
+
+#: ../plugins/actions/viewmanager/viewmanager.cc:405
+msgid "Advanced"
+msgstr "Aurreratua"
+
+#: ../plugins/actions/viewmanager/viewmanager.cc:429
+msgid "Switches to this view"
+msgstr "Ikuspegi honetara aldatzen du"
+
+#: ../plugins/actions/viewmanager/viewmanager.cc:435
+msgid "View _Manager"
+msgstr "Ikuspegiaren _kudeaketa"
+
+#: ../plugins/actions/viewmanager/viewmanager.cc:435
+msgid "Manage the views"
+msgstr "Kudeatu ikuspegiak"
+
+#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:40
+msgid "Generate Waveform"
+msgstr "Sortu uhin-forma"
+
+#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:212
+msgid "Could not determinate the duration of the stream."
+msgstr "Ezin izan da zehaztu transmisioaren iraupena."
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:75
+msgid "_Open Waveform From File"
+msgstr "_Ireki uhin-forma fitxategi batetik"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:75
+msgid "Open waveform from a file or create from a video"
+msgstr "Ireki uhin-forma fitxategi batetik edo sortu bideo batetik"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:79
+msgid "_Generate Waveform From Video"
+msgstr "_Sortu uhin-forma bideoan oinarrituta"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:80
+msgid "Generate the waveform from the current video file"
+msgstr "Sortu uhin-forma uneko bideo fitxategian oinarrituta"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:84
+msgid "_Generate Dummy Waveform"
+msgstr "_Sortu itxurazko uhin-forma (sinua)"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:85
+msgid "Generate an dummy waveform (sine)"
+msgstr "Sortu itxurazko uhin-forma (sinua)"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:89
+msgid "_Save Waveform"
+msgstr "_Gorde uhin-forma"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:89
+msgid "Save waveform to file"
+msgstr "Gorde uhin-forma fitxategira"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:93
+msgid "_Close Waveform"
+msgstr "_itxi soinu-forma"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:93
+msgid "Close waveform"
+msgstr "Itxi soinu-forma"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:98
+msgid "Zoom _In"
+msgstr "Handiagotu"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:102
+msgid "Zoom _Out"
+msgstr "Txikiagotu"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:106
+msgid "Zoom _Selection"
+msgstr "Handiagotu hautaketa"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:110
+msgid "Zoom _All"
+msgstr "Maximizatu"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:115
+msgid "_Center With Selected Subtitle"
+msgstr "_Erdiratu hautatutako azpitituluarekin"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:122
+msgid "Scrolling With _Player"
+msgstr "Korritzen _erreproduzigailuan"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:129
+msgid "Scrolling With _Selection"
+msgstr "Korritzen hautaketan"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:136
+msgid "_Respect The Timing"
+msgstr "_Errespetatu denbora"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:136
+msgid "Try to respect the timing preferences"
+msgstr "Saiatu denbora hobespenak errespetatzen"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:143
+#: ../src/gui/menubar.cc:70
+msgid "_Waveform"
+msgstr "_Uhin-forma"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:143
+msgid "Show or hide the waveform in the current window"
+msgstr "Erakutsi edo ezkutatu uhin-forma uneko leihoan"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:390
+msgid "Save Waveform"
+msgstr "Gorde uhin-forma"
+
+#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:49
+#: ../plugins/subtitleformats/substationalpha/substationalpha.cc:49
+msgid "Soft"
+msgstr "Biguna"
+
+#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:50
+#: ../plugins/subtitleformats/substationalpha/substationalpha.cc:50
+msgid "Hard"
+msgstr "Gogorra"
+
+#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:51
+#: ../plugins/subtitleformats/substationalpha/substationalpha.cc:51
+msgid "Intelligent"
+msgstr "Adimentsua"
+
+#: ../plugins/subtitleformats/advancedsubstationalpha/dialog-advancedsubstationalpha-preferences.ui.h:1
+#: ../plugins/subtitleformats/substationalpha/dialog-substationalpha-preferences.ui.h:1
+msgid "<b>Line Break Policy</b>"
+msgstr "<b>Lerro-jauzien politika</b>"
+
+#: ../plugins/subtitleformats/advancedsubstationalpha/dialog-advancedsubstationalpha-preferences.ui.h:2
+#: ../plugins/subtitleformats/substationalpha/dialog-substationalpha-preferences.ui.h:2
+msgid "Policy"
+msgstr "Politika"
+
+#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:45
+#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:55
+#: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.cc:61
+#: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.cc:74
+#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:46
+#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:70
+msgid "Failed to open the file for reading."
+msgstr "Huts egin du irakurtzek fitxategia irekitzeak."
+
+#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:114
+#: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.cc:100
+#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:103
+msgid "Failed to write to the file."
+msgstr "Huts egin du fitxategiaren irakurketak."
+
+#: ../share/subtitleeditor.desktop.in.h:1 ../share/ui/subtitleeditor.ui.h:1
+msgid "Subtitle Editor"
+msgstr "Subtitle Editor"
+
+#: ../share/subtitleeditor.desktop.in.h:2
+msgid "A subtitle editor based on GStreamer and Gtk+"
+msgstr "GStreamer eta Gtk+en oinarritutako azpitituluen editorea"
+
+#: ../src/commandsystem.cc:37
+msgid "Subtitle Selection"
+msgstr "Azpititulu hautaketa"
+
+#: ../src/document.cc:264
+#, c-format
+msgid "Could not save the file \"%s\" using the character coding %s."
+msgstr "Ezin izan da gorde \"%s\" fitxategia %s karaktere kodeketa erabiltzen."
+
+#: ../src/document.cc:266
+msgid ""
+"The document contains one or more characters that cannot be encoded using "
+"the specified character coding."
+msgstr ""
+"Dokumentuak zehaztutako karaktere kodeketaren bidez kodetu ezin diren "
+"karaktere bat edo gehiago ditu."
+
+#: ../src/document.cc:275 ../src/document.cc:279
+msgid "Save Document Failed."
+msgstr "Huts egin du dokumentuaren gordetzeak."
+
+#: ../src/document.cc:558
+#, c-format
+msgid "Could not recognize the subtitle format for the file \"%s\"."
+msgstr "Ezin izan da ezagutu \"%s\" fitxategiaren azpitituluen formatua."
+
+#: ../src/document.cc:560
+msgid "Please check that the file contains subtitles in a supported format."
+msgstr "Egiaztatu fitxategiak onartzen den formatuko azpitituluak dituela."
+
+#: ../src/document.cc:572
+#, c-format
+msgid "Could not open automatically the file \"%s\"."
+msgstr "Ezin izan da ireki automatikoki \"%s\" fitxategia."
+
+#: ../src/document.cc:573
+msgid ""
+"Subtitle Editor was not able to automatically determine the file encoding. "
+"Select a different character coding from the menu and try again."
+msgstr ""
+"Azpitituluen editoreak ezin izan du fitxategiaren kodeketa automatikoki "
+"zehaztu. Hautatu menuan beste karaktereen kodeketa eta saiatu berriro."
+
+#: ../src/document.cc:579
+#, c-format
+msgid "Could not open the file \"%s\" using the character coding %s."
+msgstr "Ezin izan da ireki \"%s\" fitxategia %s karaktere kodeketa erabiltzen."
+
+#: ../src/document.cc:581
+msgid "Select a different character coding from the menu and try again."
+msgstr "Hautatu menuan beste karaktere kodeketa eta saiatu berriro."
+
+#: ../src/document.cc:588 ../src/gui/application.cc:326
+#: ../share/ui/dialog-export-text.ui.h:2 ../share/ui/dialog-import-text.ui.h:2
+#: ../share/ui/dialog-open-document.ui.h:2
+#: ../share/ui/dialog-save-document.ui.h:3
+msgid "Character Coding:"
+msgstr "Karaktereen kodeketa:"
+
+#: ../src/document.cc:606 ../src/document.cc:615 ../src/document.cc:624
+#, c-format
+msgid "Could not open the file \"%s\""
+msgstr "Ezin izan da ireki \"%s\" fitxategia."
+
+#: ../src/document.cc:625
+msgid "An unknown error occurred while opening the file."
+msgstr "Uste-gabeko errorea gertatu da fitxategia irekitzean."
+
+#: ../src/documentsystem.cc:199
+#, c-format
+msgid "Untitled %d"
+msgstr "Izenburu gabea %d"
+
+#: ../src/encodings.cc:30 ../src/encodings.cc:43 ../src/encodings.cc:67
+#: ../src/encodings.cc:90
+msgid "Western"
+msgstr "Mendebaldekoa"
+
+#: ../src/encodings.cc:31 ../src/encodings.cc:68 ../src/encodings.cc:88
+msgid "Central European"
+msgstr "Erdialdeko Europa"
+
+#: ../src/encodings.cc:32
+msgid "South European"
+msgstr "Hego europearra"
+
+#: ../src/encodings.cc:33 ../src/encodings.cc:41 ../src/encodings.cc:95
+msgid "Baltic"
+msgstr "Baltikoa"
+
+#: ../src/encodings.cc:34 ../src/encodings.cc:69 ../src/encodings.cc:76
+#: ../src/encodings.cc:78 ../src/encodings.cc:89
+msgid "Cyrillic"
+msgstr "Zirilikoa"
+
+#: ../src/encodings.cc:35 ../src/encodings.cc:72 ../src/encodings.cc:94
+msgid "Arabic"
+msgstr "Arabiera"
+
+#: ../src/encodings.cc:36 ../src/encodings.cc:91
+msgid "Greek"
+msgstr "Grekera"
+
+#: ../src/encodings.cc:37
+msgid "Hebrew Visual"
+msgstr "Ikusizko hebreera"
+
+#: ../src/encodings.cc:38 ../src/encodings.cc:71 ../src/encodings.cc:93
+msgid "Hebrew"
+msgstr "Hebreera"
+
+#: ../src/encodings.cc:39 ../src/encodings.cc:70 ../src/encodings.cc:92
+msgid "Turkish"
+msgstr "Turkiera"
+
+#: ../src/encodings.cc:40
+msgid "Nordic"
+msgstr "Nordikoa"
+
+#: ../src/encodings.cc:42
+msgid "Celtic"
+msgstr "Zeltikoa"
+
+#: ../src/encodings.cc:44
+msgid "Romanian"
+msgstr "Errumaniera"
+
+#: ../src/encodings.cc:46 ../src/encodings.cc:47 ../src/encodings.cc:48
+#: ../src/encodings.cc:49 ../src/encodings.cc:50
+msgid "Unicode"
+msgstr "Unicode"
+
+#: ../src/encodings.cc:52
+msgid "Armenian"
+msgstr "Armeniera"
+
+#: ../src/encodings.cc:53 ../src/encodings.cc:54 ../src/encodings.cc:59
+msgid "Chinese Traditional"
+msgstr "Txinera tradizionala"
+
+#: ../src/encodings.cc:55
+msgid "Cyrillic/Russian"
+msgstr "Zirilikoa/Errusiera"
+
+#: ../src/encodings.cc:57 ../src/encodings.cc:74 ../src/encodings.cc:82
+msgid "Japanese"
+msgstr "Japoniera"
+
+#: ../src/encodings.cc:58 ../src/encodings.cc:75 ../src/encodings.cc:77
+#: ../src/encodings.cc:85
+msgid "Korean"
+msgstr "Koreera"
+
+#: ../src/encodings.cc:61 ../src/encodings.cc:62 ../src/encodings.cc:63
+#: ../src/encodings.cc:65
+msgid "Chinese Simplified"
+msgstr "Txinera sinplifikatua"
+
+#: ../src/encodings.cc:64
+msgid "Georgian"
+msgstr "Georgiera"
+
+#: ../src/encodings.cc:79
+msgid "Cyrillic/Ukrainian"
+msgstr "Zirilikoa/Ukraniera"
+
+#: ../src/encodings.cc:83 ../src/encodings.cc:86 ../src/encodings.cc:96
+msgid "Vietnamese"
+msgstr "Vietnamera"
+
+#: ../src/encodings.cc:84
+msgid "Thai"
+msgstr "Thailandiera"
+
+#: ../src/encodings.cc:182
+msgid "It's not valid UTF-8."
+msgstr "UTF-8 baliogabea."
+
+#: ../src/encodings.cc:193 ../src/encodings.cc:200 ../src/encodings.cc:205
+#, c-format
+msgid "Couldn't convert from %s to UTF-8"
+msgstr "Ezin izan da bihurtu %s-tik UTF-8-ra"
+
+#: ../src/encodings.cc:295
+msgid ""
+"subtitleeditor was not able to automatically determine the encoding of the "
+"file you want to open."
+msgstr ""
+"subtitleeditor-ek ezin izan du ireki nahi duzun fitxategiaren kodeketa "
+"automatikoki zehaztu."
+
+#: ../src/encodings.cc:315
+#, c-format
+msgid "Could not convert the text to the character coding '%s'"
+msgstr "Ezin izan da bihurtu testua '%s' kodetutako karakterera"
+
+#: ../src/filereader.cc:22 ../src/filewriter.cc:54
+msgid "Couldn't open the file."
+msgstr "Ezin izan da kopiatu fitxategira."
+
+#: ../src/filereader.cc:29
+msgid "Couldn't read the contents of the file."
+msgstr "Ezin izan da irakurri fitxategiaren edukia."
+
+#: ../src/gstreamer_utility.cc:83
+#, c-format
+msgid "Failed to create a GStreamer element '%s'."
+msgstr "Huts egin du GStreamer '%s' elementua sortzen."
+
+#: ../src/gstreamer_utility.cc:84
+msgid "Please check your GStreamer installation."
+msgstr "Egiaztatu zure GStreamer instalazioa."
+
+#: ../src/gui/application.cc:315
+msgid "Times"
+msgstr "Denborak"
+
+#: ../src/gui/application.cc:315
+msgid "Frames"
+msgstr "Fotogramak"
+
+#: ../src/gui/application.cc:324
+msgid "Name:"
+msgstr "Izena:"
+
+#: ../src/gui/application.cc:325
+msgid "Path:"
+msgstr "Bidea:"
+
+#: ../src/gui/application.cc:328
+msgid "Newline:"
+msgstr "Lerro berria:"
+
+#: ../src/gui/application.cc:329
+msgid "Timing Mode:"
+msgstr "Denboralizazio modua:"
+
+#: ../src/gui/automaticspellchecker.cc:406
+msgid "_Languages"
+msgstr "_Hizkuntzak"
+
+#: ../src/gui/automaticspellchecker.cc:471
+msgid "_Ignore all"
+msgstr "_Ez ikusi dena"
+
+#: ../src/gui/automaticspellchecker.cc:480
+msgid "_Add \"%1\" to Dictionary"
+msgstr "Gehitu \"%1\" hiztegira"
+
+#: ../src/gui/automaticspellchecker.cc:493
+msgid "(no suggested words)"
+msgstr "(proposamenik ez)"
+
+#: ../src/gui/automaticspellchecker.cc:520
+msgid "_More..."
+msgstr "_Gehiago..."
+
+#: ../src/gui/comboboxencoding.cc:120
+msgid "Auto Detected"
+msgstr "Automatikoki atzeman da"
+
+#: ../src/gui/comboboxencoding.cc:140
+msgid "Current Locale"
+msgstr "Uneko lokala"
+
+#: ../src/gui/comboboxencoding.cc:150
+msgid "Add or Remove..."
+msgstr "Gehitu edo kendu..."
+
+#: ../src/gui/comboboxvideo.cc:76
+msgid "None"
+msgstr "Bat ere ez"
+
+#. column description
+#: ../src/gui/dialogcharactercodings.cc:65
+msgid "_Description"
+msgstr "_Deskribapena"
+
+#. column encoding
+#: ../src/gui/dialogcharactercodings.cc:79
+msgid "_Encoding"
+msgstr "_Kodetzen"
+
+#: ../src/gui/dialogfilechooser.cc:47
+msgid "All files (*.*)"
+msgstr "Fitxategi guztiak (*.*)"
+
+#: ../src/gui/dialogfilechooser.cc:54
+msgid "All supported formats (*.ass, *.ssa, *.srt, ...)"
+msgstr "Onartzen diren formatu guztiak (*.ass, *.ssa, *.srt, ...)"
+
+#: ../src/gui/dialogfilechooser.cc:508
+msgid "Open Video"
+msgstr "Ireki Bideoa"
+
+#: ../src/gui/dialogfilechooser.cc:514 ../src/gui/dialogfilechooser.cc:592
+#: ../src/gui/dialogfilechooser.cc:668
+msgid "Video"
+msgstr "Bideoa"
+
+#: ../src/gui/dialogfilechooser.cc:525 ../src/gui/dialogfilechooser.cc:603
+msgid "Audio"
+msgstr "Audioa"
+
+#: ../src/gui/dialogfilechooser.cc:533 ../src/gui/dialogfilechooser.cc:612
+#: ../src/gui/dialogfilechooser.cc:679
+msgid "ALL"
+msgstr "GUZTIAK"
+
+#: ../src/gui/dialogfilechooser.cc:564
+msgid "Open Waveform"
+msgstr "Ireki uhin-forma"
+
+#: ../src/gui/dialogfilechooser.cc:570
+msgid "Waveform & Media"
+msgstr "Uhin-forma eta Multimedia"
+
+#: ../src/gui/dialogfilechooser.cc:586
+msgid "Waveform (*.wf)"
+msgstr "Uhin forma (*.wf)"
+
+#: ../src/gui/dialogfilechooser.cc:644
+msgid "Open Keyframe"
+msgstr "Ireki gako-fotograma"
+
+#: ../src/gui/dialogfilechooser.cc:650
+msgid "Keyframe & Media"
+msgstr "Gako-fotograma eta multimedia"
+
+#: ../src/gui/dialogfilechooser.cc:662
+msgid "Keyframe (*.kf)"
+msgstr "Gako-fotograma (*.kf)"
+
+#: ../src/gui/dialogutility.cc:86
+msgid "At what frame rate do you want to import?"
+msgstr "Zer FPSrekin inportatu nahi duzu?"
+
+#. == EXPORT
+#: ../src/gui/dialogutility.cc:88
+msgid "At what frame rate do you want to export?"
+msgstr "Zer FPSrekin esportatu nahi duzu?"
+
+#. label2 (framerate:)
+#: ../src/gui/dialogutility.cc:112
+msgid "_Framerate:"
+msgstr "_Fotograma-emaria:"
+
+#. create all menu
+#: ../src/gui/menubar.cc:63
+msgid "_File"
+msgstr "_Fitxategia"
+
+#: ../src/gui/menubar.cc:64
+msgid "_Selection"
+msgstr "_Hautaketa"
+
+#: ../src/gui/menubar.cc:65
+msgid "_Edit"
+msgstr "_Editatu"
+
+#: ../src/gui/menubar.cc:66
+msgid "_Timings"
+msgstr "_Denboralizazioak"
+
+#: ../src/gui/menubar.cc:67
+msgid "T_ools"
+msgstr "Tresnak"
+
+#: ../src/gui/menubar.cc:68
+msgid "_Video"
+msgstr "_Bideoa"
+
+#: ../src/gui/menubar.cc:69
+msgid "_Keyframes"
+msgstr "_Gako-fotogramak"
+
+#: ../src/gui/menubar.cc:71
+msgid "V_iew"
+msgstr "Ikuspegia"
+
+#: ../src/gui/menubar.cc:73
+msgid "E_xtensions"
+msgstr "Gehigarriak"
+
+#: ../src/gui/menubar.cc:74
+msgid "_Help"
+msgstr "_Laguntza"
+
+#. file submenu
+#: ../src/gui/menubar.cc:76
+msgid "_Open"
+msgstr "_Ireki"
+
+#: ../src/gui/menubar.cc:77
+msgid "_Save"
+msgstr "_Gorde"
+
+#: ../src/gui/menubar.cc:78
+msgid "_Import"
+msgstr "_Inportatu"
+
+#: ../src/gui/menubar.cc:79
+msgid "_Export"
+msgstr "_Esportatu"
+
+#: ../src/keyframes.cc:102 ../src/keyframes.cc:109
+#: ../src/subtitleformatsystem.cc:68
+msgid "Couldn't recognize format of the file."
+msgstr "Ezin izan da ezagutu fitxategiaren formatua."
+
+#: ../src/keyframes.cc:127
+msgid "Couldn't get the keyframe size on the file."
+msgstr "Ezin izan da eskuratu fitxategiko gako-fotogramaren neurria."
+
+#: ../src/main.cc:65
+msgid " - edit subtitles files"
+msgstr " - editatu azpitituluen fitxategiak"
+
+#: ../src/options.cc:40
+msgid "[FILE...]"
+msgstr "[FITXATEGIA...]"
+
+#: ../src/options.cc:48 ../src/options.cc:72 ../src/options.cc:80
+msgid "FILE"
+msgstr "FITXATEGIA"
+
+#: ../src/options.cc:56
+msgid "NAME"
+msgstr "IZENA"
+
+#: ../src/options.cc:64
+msgid "ENCODING"
+msgstr "KODETZEN"
+
+#: ../src/subtitleformatio.cc:63 ../src/subtitleformatio.cc:73
+msgid "This function is not implemented for this format."
+msgstr "Funtzio hau ez dago inplementatuta formatu honetarako."
+
+#: ../src/subtitleformatsystem.cc:115
+#, c-format
+msgid "Couldn't create the subtitle format '%s'."
+msgstr "Ezin izan da sortu \"%s\" fitxategi formatua."
+
+#: ../src/subtitlemodel.cc:38
+msgid "Add Subtitle"
+msgstr "Gehitu azpititulua"
+
+#: ../src/subtitlemodel.cc:76
+#: ../plugins/actions/removesubtitle/removesubtitle.se-plugin.in.h:1
+msgid "Remove Subtitle"
+msgstr "Kendu azpititulua"
+
+#: ../src/subtitlemodel.cc:500
+msgid "Reordered Subtitle"
+msgstr "Berrordenatutako azpititulua"
+
+#: ../src/subtitles.cc:37
+msgid "Append subtitle"
+msgstr "Erantsi azpititulua"
+
+#: ../src/subtitles.cc:65
+msgid "Remove Subtitles"
+msgstr "Kendu azpitituluak"
+
+#: ../src/subtitles.cc:165
+msgid "Reorder Subtitles"
+msgstr "Berrordenatu azpitituluak"
+
+#: ../src/subtitleview.cc:325
+msgid "Use Ctrl+Return for exit and Return for line-break"
+msgstr "Erabili Ctrl+Sartu irteteko eta Sartu lerro-jauzia egiteko"
+
+#: ../src/subtitleview.cc:327
+msgid "Use Return for exit and Ctrl+Return for line-break"
+msgstr "Erabili Sartu irteteko eta Ctrl+Sartu lerro-jauzia egiteko"
+
+#: ../src/subtitleview.cc:524
+msgid "The line number"
+msgstr "Lerro-zenbakia"
+
+#: ../src/subtitleview.cc:673
+msgid "When a subtitle appears on the screen."
+msgstr "Azpititulu bat pantailan agertzen denean."
+
+#: ../src/subtitleview.cc:686
+msgid "When a subtitle disappears from the screen."
+msgstr "Azpititulu bat pantailan desagertzen denean."
+
+#: ../src/subtitleview.cc:700
+msgid "The duration of the subtitle."
+msgstr "Azpitituluaren iraupena."
+
+#: ../src/subtitleview.cc:771
+msgid "The number of characters per second"
+msgstr "Segundoko karaktere kopurua"
+
+#: ../src/subtitleview.cc:1027
+msgid "Editing layer"
+msgstr "Geruza editatzen"
+
+#: ../src/subtitleview.cc:1055 ../src/subtitleview.cc:1066
+msgid "Editing start"
+msgstr "Hasiera editatzen"
+
+#: ../src/subtitleview.cc:1093 ../src/subtitleview.cc:1104
+msgid "Editing end"
+msgstr "Bukaera editatzen"
+
+#: ../src/subtitleview.cc:1131 ../src/subtitleview.cc:1142
+msgid "Editing duration"
+msgstr "Iraupena editatzen"
+
+#: ../src/subtitleview.cc:1162
+msgid "Editing text"
+msgstr "Testua editatzen"
+
+#: ../src/subtitleview.cc:1184
+msgid "Editing translation"
+msgstr "Itzulpena editatzen"
+
+#: ../src/subtitleview.cc:1204
+msgid "Editing note"
+msgstr "Oharra editatzen"
+
+#: ../src/subtitleview.cc:1223
+msgid "Editing effect"
+msgstr "Efektua editatzen"
+
+#: ../src/subtitleview.cc:1244
+msgid "Editing style"
+msgstr "Estiloa editatzen"
+
+#: ../src/subtitleview.cc:1264
+msgid "Editing name"
+msgstr "Izena editatzen"
+
+#: ../src/subtitleview.cc:1284
+msgid "Editing margin-l"
+msgstr "Ezker-marjina editatzen"
+
+#: ../src/subtitleview.cc:1304
+msgid "Editing margin-r"
+msgstr "Eskuin-marjina editatzen"
+
+#: ../src/subtitleview.cc:1324
+msgid "Editing margin-v"
+msgstr "Marjin bertikala editatzen"
+
+#: ../src/subtitleview.cc:1574
+msgid "CPS"
+msgstr "CPS"
+
+#: ../src/subtitleview.cc:1575
+msgid "Duration"
+msgstr "Iraupena"
+
+#: ../src/subtitleview.cc:1576
+msgid "Effect"
+msgstr "Efektua"
+
+#: ../src/subtitleview.cc:1577
+msgid "End"
+msgstr "Bukaera"
+
+#: ../src/subtitleview.cc:1578
+msgid "Layer"
+msgstr "Geruza"
+
+#: ../src/subtitleview.cc:1579
+msgid "L"
+msgstr "L (ezkerra)"
+
+#: ../src/subtitleview.cc:1580
+msgid "R"
+msgstr "R (eskuina)"
+
+#: ../src/subtitleview.cc:1581
+msgid "V"
+msgstr "V"
+
+#: ../src/subtitleview.cc:1583
+msgid "Note"
+msgstr "Oharra"
+
+#: ../src/subtitleview.cc:1585
+msgid "Start"
+msgstr "Hasi"
+
+#: ../src/subtitleview.cc:1586
+msgid "Style"
+msgstr "Estiloa"
+
+#: ../src/timeutility.cc:36
+msgid "23.976 fps"
+msgstr "23.976 fps"
+
+#: ../src/timeutility.cc:39
+msgid "24 fps"
+msgstr "24 fps"
+
+#: ../src/timeutility.cc:42
+msgid "25 fps"
+msgstr "25 fps"
+
+#: ../src/timeutility.cc:45
+msgid "29.97 fps"
+msgstr "29.97 fps"
+
+#: ../src/timeutility.cc:48
+msgid "30 fps"
+msgstr "30 fps"
+
+#: ../src/timeutility.cc:51
+msgid "Invalid fps"
+msgstr "FPS baliogabea"
+
+#: ../src/vp/gstplayer.cc:413
+#, c-format
+msgid ""
+"Failed to create a GStreamer audio output (%s). Please check your GStreamer "
+"installation."
+msgstr ""
+"Huts egin du GStreamer audio irteera (%s) sortzen. Begiratu zure GStreamer "
+"instalazioa."
+
+#: ../src/vp/gstplayer.cc:452
+#, c-format
+msgid ""
+"Failed to create a GStreamer converts video (%s). Please check your "
+"GStreamer installation."
+msgstr ""
+"Huts egin du GStreamer bideo irteera (%s) sortzen. Begiratu zure GStreamer "
+"instalazioa."
+
+#: ../src/vp/gstplayer.cc:461
+#, c-format
+msgid ""
+"Failed to create a GStreamer text overlay (%s). Please check your GStreamer "
+"installation."
+msgstr ""
+"Huts egin du GStreamer (%s) testu gainidazketa sortzen. Begiratu zure "
+"GStreamer instalazioa."
+
+#: ../src/vp/gstplayer.cc:474
+#, c-format
+msgid ""
+"Failed to create a GStreamer sink (%s). Please check your GStreamer "
+"installation."
+msgstr ""
+"Huts egin du GStreamer (%s) sinkronizazioa sortzen. Begiratu zure GStreamer "
+"instalazioa."
+
+#: ../src/vp/gstplayer.cc:710
+#, c-format
+msgid ""
+"Media file could not be played.\n"
+"%s"
+msgstr ""
+"Multimedia fitxategia ezin da erreproduzitu.\n"
+"%s"
+
+#: ../src/we/waveformeditor.cc:832 ../src/we/waveformeditor.cc:837
+msgid "Editing position"
+msgstr "Kokapena editatzen"
+
+#: ../src/we/waveformrenderergl.cc:392
+msgid ""
+"Window system doesn't support OpenGL.\n"
+"Please try with another renderer."
+msgstr ""
+"Leihoen sistemak ez du OpenGL onartzen.\n"
+"Saiatu beste errendatzaile batekin."
+
+#: ../share/ui/dialog-character-codings.ui.h:1
+msgid "Character Codings"
+msgstr "Karaktereen kodeketa"
+
+#: ../share/ui/dialog-character-codings.ui.h:2
+msgid "A_vailable encodings:"
+msgstr "Erabilgarriak diren kodeketak:"
+
+#: ../share/ui/dialog-character-codings.ui.h:3
+msgid "E_ncodings shown in menu:"
+msgstr "Kodeketak menuan erakusten:"
+
+#: ../share/ui/dialog-export-text.ui.h:1
+msgid "Export Text"
+msgstr "Esportatu testua"
+
+#: ../share/ui/dialog-export-text.ui.h:3
+#: ../share/ui/dialog-save-document.ui.h:2
+msgid "NewLine:"
+msgstr "Lerro berria:"
+
+#: ../share/ui/dialog-export-text.ui.h:4
+msgid "Put Blank Lines Between Subtitles"
+msgstr "Jarri lerro huts bat azpitituluen artean"
+
+#: ../share/ui/dialog-import-text.ui.h:1
+msgid "Import Text"
+msgstr "Inportatu testua"
+
+#: ../share/ui/dialog-import-text.ui.h:3
+msgid "blank lines separate subtitles"
+msgstr "lerro zuriak azpitituluen artean"
+
+#: ../share/ui/dialog-open-document.ui.h:1
+msgid "Open Document"
+msgstr "Ireki dokumentua"
+
+#: ../share/ui/dialog-open-document.ui.h:3
+msgid "Video File:"
+msgstr "Bideo-fitxategia:"
+
+#: ../share/ui/dialog-save-document.ui.h:1
+msgid "Save Document"
+msgstr "Gorde dokumentua"
+
+#: ../share/ui/dialog-script-properties.ui.h:1
+msgid "Normal"
+msgstr "Arrunta"
+
+#: ../share/ui/dialog-script-properties.ui.h:2
+msgid "Reverse"
+msgstr "Alderantzikatu"
+
+#: ../share/ui/dialog-script-properties.ui.h:3
+msgid "Script Properties"
+msgstr "Scriptaren propietateak"
+
+#: ../share/ui/dialog-script-properties.ui.h:4
+msgid "Script Type:"
+msgstr "Scripta mota:"
+
+#: ../share/ui/dialog-script-properties.ui.h:5
+msgid "Point Time: "
+msgstr "Denbora-puntua: "
+
+#: ../share/ui/dialog-script-properties.ui.h:6
+msgid "<b>Read-only info</b>"
+msgstr "<b>Soilik irakurtzeko</b>"
+
+#: ../share/ui/dialog-script-properties.ui.h:7
+msgid "Title:"
+msgstr "Izenburua:"
+
+#: ../share/ui/dialog-script-properties.ui.h:8
+msgid "Original Script:"
+msgstr "Jatorrizko scripta:"
+
+#: ../share/ui/dialog-script-properties.ui.h:9
+msgid "Original Translation:"
+msgstr "Jatorrizko itzulpena:"
+
+#: ../share/ui/dialog-script-properties.ui.h:10
+msgid "Original Editing:"
+msgstr "Jatorrizko edizioa:"
+
+#: ../share/ui/dialog-script-properties.ui.h:11
+msgid "Original Timing:"
+msgstr "Jatorrizko denboralizazioa:"
+
+#: ../share/ui/dialog-script-properties.ui.h:12
+msgid "Sync Point:"
+msgstr "Sinkronizazio puntua:"
+
+#: ../share/ui/dialog-script-properties.ui.h:13
+msgid "Script Updated By:"
+msgstr "Scripta eguneratu du:"
+
+#: ../share/ui/dialog-script-properties.ui.h:14
+msgid "Update Details:"
+msgstr "Eguneratu xehetasunak:"
+
+#: ../share/ui/dialog-script-properties.ui.h:15
+msgid "<b>Basic</b>"
+msgstr "<b>Oinarrizkoa</b>"
+
+#: ../share/ui/dialog-script-properties.ui.h:16
+msgid "PlayResX:"
+msgstr "PlayResX:"
+
+#: ../share/ui/dialog-script-properties.ui.h:17
+msgid "PlayResY:"
+msgstr "PlayResY:"
+
+#: ../share/ui/dialog-script-properties.ui.h:18
+msgid "PlayDepth:"
+msgstr "PlayDepth:"
+
+#: ../share/ui/dialog-script-properties.ui.h:20
+msgid "Collisions:"
+msgstr "Talkak:"
+
+#: ../share/ui/dialog-script-properties.ui.h:21
+msgid "Wrap Style:"
+msgstr "Biltzeko estiloa:"
+
+#: ../share/ui/dialog-script-properties.ui.h:22
+msgid "<b>Behaviour</b>"
+msgstr "<b>Jokabidea</b>"
+
+#: ../share/ui/dialog-script-properties.ui.h:23
+msgid "Timer:"
+msgstr "Tenporizadorea:"
+
+#: ../share/ui/dialog-script-properties.ui.h:24
+msgid "<b>Miscellaneous</b>"
+msgstr "<b>Askotarikoak</b>"
+
+#: ../plugins/actions/about/about.se-plugin.in.h:1
+msgid "About"
+msgstr "Honi buruz"
+
+#: ../plugins/actions/about/about.se-plugin.in.h:2
+msgid "Displays the application's information."
+msgstr "Erakutsi aplikazioaren informazioa."
+
+#: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1
+msgid "Adjust Time"
+msgstr "Doitu denbora"
+
+#: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:2
+msgid "Adjusts subtitle times."
+msgstr "Doitu azpitituluen denbora."
+
+#: ../plugins/actions/applytranslation/applytranslation.se-plugin.in.h:1
+msgid "Apply Translation"
+msgstr "Aplikatu itzulpena"
+
+#: ../plugins/actions/applytranslation/applytranslation.se-plugin.in.h:2
+msgid "Replaces the text of the subtitle by the translation."
+msgstr "Ordeztu azpitituluaren testua itzulpenarekin."
+
+#: ../plugins/actions/bestfit/bestfit.se-plugin.in.h:1
+msgid "Best Fit"
+msgstr "Doikuntzarik hoberena"
+
+#: ../plugins/actions/bestfit/bestfit.se-plugin.in.h:2
+msgid ""
+"Gives each subtitle in a selection a fair share of the total selection time."
+msgstr ""
+"Hautaketa bateko azpititulu bakoitzari hautaketa denbora guztiaren zati "
+"zuzena ematen dio."
+
+#: ../plugins/actions/changeframerate/changeframerate.se-plugin.in.h:2
+msgid "Converts the framerate."
+msgstr "Bihurtzen du fotograma-tasa."
+
+#: ../plugins/actions/clipboard/clipboard.se-plugin.in.h:1
+msgid "Clipboard"
+msgstr "Arbela"
+
+#: ../plugins/actions/clipboard/clipboard.se-plugin.in.h:2
+msgid ""
+"Provides the Three Commandments of user-friendly computing: Copy, Cut and "
+"Paste."
+msgstr ""
+"Erabilera errazten duten informatikako hiru aginduak eskaintzen ditu: "
+"Kopiatu, Ebaki eta Itsatsi."
+
+#: ../plugins/actions/combinesubtitles/combinesubtitles.se-plugin.in.h:1
+msgid "Combine Subtitles"
+msgstr "Konbinatu azpitituluak"
+
+#: ../plugins/actions/combinesubtitles/combinesubtitles.se-plugin.in.h:2
+msgid "Merges the selected subtitles."
+msgstr "Hautatutako azpitituluak batzen ditu."
+
+#: ../plugins/actions/command/command.se-plugin.in.h:2
+msgid "Manages Undo/Redo."
+msgstr "Desegin/Berregin kudeatzen du."
+
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.se-plugin.in.h:1
+msgid "Keyboard Shortcuts"
+msgstr "Laster-teklak"
+
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.se-plugin.in.h:2
+msgid "Configures keyboard shortcuts."
+msgstr "Konfiguratzen ditu laster-teklak."
+
+#: ../plugins/actions/dialoguize/dialoguize.se-plugin.in.h:2
+msgid "Adds or removes the dialogue dash."
+msgstr "Gehitu edo kendu elkarrizketa-gidoia."
+
+#: ../plugins/actions/documentmanagement/documentmanagement.se-plugin.in.h:1
+msgid "Document Management"
+msgstr "Dokumentuen kudeaketa"
+
+#: ../plugins/actions/documentmanagement/documentmanagement.se-plugin.in.h:2
+msgid "Manages the document (Open, Save, Save As...)."
+msgstr "Dokumentua kudeatzen du (Ireki, Gorde, Gorde honela...)."
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.se-plugin.in.h:1
+msgid "Documents Navigation"
+msgstr "Dokumentuen nabigazioa"
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.se-plugin.in.h:2
+#: ../plugins/actions/typewriter/typewriter.se-plugin.in.h:2
+msgid "FIXME."
+msgstr "KONPON NAZAZU."
+
+#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.se-plugin.in.h:1
+msgid "Duplicate Subtitle"
+msgstr "Bikoiztu azpititulua"
+
+#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.se-plugin.in.h:2
+msgid "Duplicates the selected subtitles."
+msgstr "Bikoizten ditu hautatutako azpitituluak."
+
+#: ../plugins/actions/editcell/editcell.se-plugin.in.h:1
+msgid "Edit Cell"
+msgstr "Editatu gelaxka"
+
+#: ../plugins/actions/editcell/editcell.se-plugin.in.h:2
+msgid "Starts editing of the focused or the next cell."
+msgstr "Hasten da fokuratutako edo hurrengo gelaxkaren edizioa."
+
+#: ../plugins/actions/errorchecking/errorchecking.se-plugin.in.h:2
+msgid "Detects and fixes errors."
+msgstr "Erroreak atzeman eta konpontzen ditu."
+
+#: ../plugins/actions/extendlength/extendlength.se-plugin.in.h:1
+msgid "Extend Length"
+msgstr "Luzatu"
+
+#: ../plugins/actions/extendlength/extendlength.se-plugin.in.h:2
+msgid "Extends the length of selected subtitles."
+msgstr "Luzatu hautatutako azpitituluak."
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.se-plugin.in.h:1
+msgid "External Video Player"
+msgstr "Kanpoko bideo erreproduzigailua"
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.se-plugin.in.h:2
+msgid "Runs external video player."
+msgstr "Abiarazten du kanpoko erreproduzigailua."
+
+#: ../plugins/actions/findandreplace/findandreplace.se-plugin.in.h:2
+msgid "Searches and replaces texts with regular expressions support."
+msgstr "Testuak bilatu eta ordezten ditu adierazpen erregularrak onartzen."
+
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.se-plugin.in.h:1
+msgid "Insert Subtitle From Keyframe"
+msgstr "Txertatu azpititulua gako-fotogramatik"
+
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.se-plugin.in.h:2
+msgid "Inserts subtitle using keyframe."
+msgstr "Azpitituluak txertatzen ditu gako-fotograma erabiliz."
+
+#: ../plugins/actions/insertsubtitle/insertsubtitle.se-plugin.in.h:2
+msgid "Inserts a blank subtitle."
+msgstr "Azpititulu huts bat txertatzen du."
+
+#: ../plugins/actions/italicize/italicize.se-plugin.in.h:1
+msgid "Italicize"
+msgstr "Etzan"
+
+#: ../plugins/actions/italicize/italicize.se-plugin.in.h:2
+msgid "Italicizes the selected subtitles text."
+msgstr "Etzan egiten du hautatutako azpitituluen testua."
+
+#: ../plugins/actions/joindocument/joindocument.se-plugin.in.h:1
+msgid "Join Document"
+msgstr "Sartu dokumentuan"
+
+#: ../plugins/actions/joindocument/joindocument.se-plugin.in.h:2
+msgid "Adds subtitles from another file."
+msgstr "Gehitu azpitituluak beste fitxategitik."
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.se-plugin.in.h:1
+msgid "Keyframes Management"
+msgstr "Gako-fotogramen kudeaketa"
+
+#: ../plugins/actions/minimizeduration/minimizeduration.se-plugin.in.h:1
+msgid "Minimize Duration"
+msgstr "Minimizatu iraupena"
+
+#: ../plugins/actions/minimizeduration/minimizeduration.se-plugin.in.h:2
+msgid "Sets subtitle duration to the minimum acceptable."
+msgstr "Ezarri onargarria den azpitituluaren gutxieneko iraupena."
+
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.se-plugin.in.h:1
+msgid "Move After Preceding Subtitle"
+msgstr "Mugitu aurreko azpititulutik"
+
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.se-plugin.in.h:2
+msgid ""
+"Moves a subtitle after the preceding one respecting the minimum gap between "
+"subtitles."
+msgstr ""
+"Mugitu azpititulua aurrekoa eta gero azpitituluen arteko gutxieneko tartea "
+"errespetatuta."
+
+#: ../plugins/actions/movesubtitles/movesubtitles.se-plugin.in.h:2
+msgid "Moves subtitles."
+msgstr "Mugitu azpitituluak."
+
+#: ../plugins/actions/plaintext/plaintext.se-plugin.in.h:1
+msgid "Plain Text"
+msgstr "Formaturik gabeko testua"
+
+#: ../plugins/actions/plaintext/plaintext.se-plugin.in.h:2
+msgid "Imports or exports any text file."
+msgstr "Edozein testu fitxategi inportatzen edo esportatzen du."
+
+#: ../plugins/actions/preferences/preferences.se-plugin.in.h:1
+msgid "Preferences"
+msgstr "Hobespenak"
+
+#: ../plugins/actions/preferences/preferences.se-plugin.in.h:2
+msgid "Manages Subtitle Editor's preferences."
+msgstr "Subtitles Editor-en hobespenak kudeatzen ditu."
+
+#: ../plugins/actions/removesubtitle/removesubtitle.se-plugin.in.h:2
+msgid "Deletes the selected subtitles."
+msgstr "Ezabatzen ditu hautatutako azpitituluak."
+
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.se-plugin.in.h:2
+msgid "Reverses the original subtitle and the translated text."
+msgstr "Alderantzikatzen ditu jatorrizko azpititulua eta itzulpena."
+
+#: ../plugins/actions/scalesubtitles/scalesubtitles.se-plugin.in.h:1
+msgid "Scale Subtitles"
+msgstr "Eskalatu azpitituluak"
+
+#: ../plugins/actions/scalesubtitles/scalesubtitles.se-plugin.in.h:2
+msgid "Scales by two points."
+msgstr "Eskalatzen du bi puntuz."
+
+#: ../plugins/actions/selection/selection.se-plugin.in.h:1
+msgid "Selection"
+msgstr "Hautaketa"
+
+#: ../plugins/actions/selection/selection.se-plugin.in.h:2
+msgid "Manages selection of subtitles."
+msgstr "Azpitituluen hautaketa kudeatzen du."
+
+#: ../plugins/actions/sortsubtitles/sortsubtitles.se-plugin.in.h:1
+msgid "Sort Subtitles"
+msgstr "Ordenatu azpitituluak"
+
+#: ../plugins/actions/sortsubtitles/sortsubtitles.se-plugin.in.h:2
+msgid "Sort subtitles based on their start time."
+msgstr "Ordenatu azpitituluak hasierako unearen arabera."
+
+#: ../plugins/actions/spellchecking/spellchecking.se-plugin.in.h:2
+msgid "Checks the spelling of the current document."
+msgstr "Uneko dokumentuaren ortografia aztertzen du."
+
+#: ../plugins/actions/splitdocument/splitdocument.se-plugin.in.h:2
+msgid "Splits the current document in two."
+msgstr "Zatitu uneko dokumentua bitan."
+
+#: ../plugins/actions/splitsubtitle/splitsubtitle.se-plugin.in.h:1
+msgid "Split Subtitle"
+msgstr "Zatitu azpititulua"
+
+#: ../plugins/actions/splitsubtitle/splitsubtitle.se-plugin.in.h:2
+msgid "Splits the selected subtitles."
+msgstr "Zatitu hautatutako azpitituluak."
+
+#: ../plugins/actions/stacksubtitles/stacksubtitles.se-plugin.in.h:2
+msgid ""
+"Moves the selected subtitles as close together as possible after the first "
+"subtitle in the selection."
+msgstr ""
+"Hautatutako azpitituluak hautaketako lehen azpititulua eta gero ahalik eta "
+"hurbilen mugitzen ditu."
+
+#: ../plugins/actions/styleeditor/styleeditor.se-plugin.in.h:1
+msgid "Style Editor"
+msgstr "Estiloaren editorea"
+
+#: ../plugins/actions/styleeditor/styleeditor.se-plugin.in.h:2
+msgid "An ASS/SSA style editor."
+msgstr "ASS/SSA estiloko editorea."
+
+#: ../plugins/actions/stylize/stylize.se-plugin.in.h:1
+msgid "Stylize"
+msgstr "Estilizatu"
+
+#: ../plugins/actions/stylize/stylize.se-plugin.in.h:2
+msgid "Stylize the selected subtitles text."
+msgstr "Estilizatu hautatutako azpitituluen testua."
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.se-plugin.in.h:1
+msgid "Time Mode Management"
+msgstr "Denbora moduaren kudeaketa"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.se-plugin.in.h:2
+msgid "Manages time modes (Framerate, Timing Mode ...)."
+msgstr "Denbora-moduak kudeatzen ditu (FPS, tenporizazio modua...)"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.se-plugin.in.h:2
+msgid "Use the current player position to set the subtitle time."
+msgstr "Erabili erreproduzigailuko kokapena ezartzeko azpitituluaren denbora."
+
+#: ../plugins/actions/typewriter/typewriter.se-plugin.in.h:1
+msgid "Type Writer"
+msgstr "Idazmakina"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.se-plugin.in.h:1
+msgid "Video Player Management"
+msgstr "Bideo-erreproduzigailuaren kudeaketa"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.se-plugin.in.h:2
+msgid "Controls the video player."
+msgstr "Kontrolatzen du bideo erreproduzigailua."
+
+#: ../plugins/actions/viewmanager/viewmanager.se-plugin.in.h:2
+msgid "Manages multiple views of the columns of a subtitle."
+msgstr "Azpititulu baten zutabeen ikuspegi anitzak kudeatzen ditu."
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.se-plugin.in.h:1
+msgid "Waveform Management"
+msgstr "Uhin-formaren kudeaketa"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.se-plugin.in.h:2
+msgid "Manages a waveform."
+msgstr "Uhin-forma kudeatzen du."
+
+#: ../plugins/subtitleformats/adobeencoredvd/adobeencoredvdntsc.se-plugin.in.h:1
+msgid "Adobe Encore DVD (NTSC)"
+msgstr "Adobe Encore DVD (NTSC)"
+
+#: ../plugins/subtitleformats/adobeencoredvd/adobeencoredvdntsc.se-plugin.in.h:2
+#: ../plugins/subtitleformats/adobeencoredvd/adobeencoredvdpal.se-plugin.in.h:2
+msgid "Adobe Encore DVD subtitles support."
+msgstr "Adobe Encore DVD onartzen dira."
+
+#: ../plugins/subtitleformats/adobeencoredvd/adobeencoredvdpal.se-plugin.in.h:1
+msgid "Adobe Encore DVD (PAL)"
+msgstr "Adobe Encore DVD (PAL)"
+
+#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.se-plugin.in.h:1
+msgid "Advanced Sub Station Alpha"
+msgstr "Advanced Sub Station Alpha"
+
+#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.se-plugin.in.h:2
+msgid "Advanced Sub Station Alpha subtitles support."
+msgstr "Advanced Sub Station Alpha azpitituluak onartzen dira."
+
+#: ../plugins/subtitleformats/avidds/avidds.se-plugin.in.h:1
+msgid "Avid DS"
+msgstr "Avid DS"
+
+#: ../plugins/subtitleformats/avidds/avidds.se-plugin.in.h:2
+msgid "Format used by the Avid software."
+msgstr "Avid software erabili duen formatua."
+
+#: ../plugins/subtitleformats/bitc/bitc.se-plugin.in.h:1
+msgid "BITC (Burnt-in timecode)"
+msgstr "BITC (Burnt-in timecode)"
+
+#: ../plugins/subtitleformats/bitc/bitc.se-plugin.in.h:2
+msgid "BITC (Burnt-in timecode) subtitles support."
+msgstr "BITC (Burnt-in timecode) azpitituluak onartzen dira."
+
+#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.se-plugin.in.h:1
+msgid "DCSubtitle"
+msgstr "DCSubtitle"
+
+#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.se-plugin.in.h:2
+msgid "DCSubtitle subtitles support."
+msgstr "DCSubtitle azpitituluak onartzen dira."
+
+#: ../plugins/subtitleformats/microdvd/microdvd.se-plugin.in.h:1
+msgid "MicroDVD"
+msgstr "MicroDVD"
+
+#: ../plugins/subtitleformats/microdvd/microdvd.se-plugin.in.h:2
+msgid "MicroDVD subtitles support."
+msgstr "MicroDVD azpitituluak onartzen ditu."
+
+#: ../plugins/subtitleformats/mpl2/mpl2.se-plugin.in.h:1
+msgid "MPL2"
+msgstr "MPL2"
+
+#: ../plugins/subtitleformats/mpl2/mpl2.se-plugin.in.h:2
+msgid "MPL2 subtitles support."
+msgstr "MPL2 azpitituluak onartzen dira."
+
+#: ../plugins/subtitleformats/mpsub/mpsub.se-plugin.in.h:1
+msgid "MPsub"
+msgstr "MPsub"
+
+#: ../plugins/subtitleformats/mpsub/mpsub.se-plugin.in.h:2
+msgid "MPsub subtitles support."
+msgstr "MPsub azpitituluak onartzen dira."
+
+#: ../plugins/subtitleformats/plaintextformat/plaintextformat.se-plugin.in.h:1
+msgid "Plain Text Format"
+msgstr "Formaturik gabeko testua"
+
+#: ../plugins/subtitleformats/plaintextformat/plaintextformat.se-plugin.in.h:2
+msgid "Plain text import and export."
+msgstr "Formaturik gabeko testuen inportazio eta esportazioa."
+
+#: ../plugins/subtitleformats/sami/sami.se-plugin.in.h:1
+msgid "Sami"
+msgstr "Sami"
+
+#: ../plugins/subtitleformats/sami/sami.se-plugin.in.h:2
+msgid "Sami subtitles support."
+msgstr "Sami azpitituluak onartzen dira."
+
+#: ../plugins/subtitleformats/sbv/sbv.se-plugin.in.h:1
+msgid "SBV"
+msgstr "SBV"
+
+#: ../plugins/subtitleformats/sbv/sbv.se-plugin.in.h:2
+msgid "SBV subtitles support."
+msgstr "SBV azpitituluak onartzen dira."
+
+#: ../plugins/subtitleformats/sprucestl/sprucestl.se-plugin.in.h:1
+msgid "Spruce STL"
+msgstr "Spruce STL"
+
+#: ../plugins/subtitleformats/sprucestl/sprucestl.se-plugin.in.h:2
+msgid "Spruce subtitles support."
+msgstr "Spruce STL azpitituluak onartzen dira."
+
+#: ../plugins/subtitleformats/subrip/subrip.se-plugin.in.h:1
+msgid "SubRip"
+msgstr "SubRip"
+
+#: ../plugins/subtitleformats/subrip/subrip.se-plugin.in.h:2
+msgid "SubRip subtitles support."
+msgstr "SubRip azpitituluak onartzen dira."
+
+#: ../plugins/subtitleformats/substationalpha/substationalpha.se-plugin.in.h:1
+msgid "Sub Station Alpha"
+msgstr "Sub Station Alpha"
+
+#: ../plugins/subtitleformats/substationalpha/substationalpha.se-plugin.in.h:2
+msgid "Sub Station Alpha subtitles support."
+msgstr "Sbu Station Alpha azpitituluak onartzen dira."
+
+#: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.se-plugin.in.h:1
+msgid "Subtitle Editor Project"
+msgstr "Subtitle Editor proiektua"
+
+#: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.se-plugin.in.h:2
+msgid "Subtitle Editor Project subtitles support."
+msgstr "Subtitle Editor Project azpitituluak onartzen dira."
+
+#: ../plugins/subtitleformats/subviewer2/subviewer2.se-plugin.in.h:1
+msgid "SubViewer2"
+msgstr "SubViewer2"
+
+#: ../plugins/subtitleformats/subviewer2/subviewer2.se-plugin.in.h:2
+msgid "SubViewer2 subtitles support."
+msgstr "SubViewer2 azpitituluak onartzen dira."
+
+#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.se-plugin.in.h:1
+msgid "Timed Text Authoring Format 1.0"
+msgstr "Timed Text Authoring Format 1.0"
+
+#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.se-plugin.in.h:2
+msgid "Timed Text Authoring Format 1.0 subtitles support."
+msgstr "Timed Text Authoring Format 1.0 azpitituluak onartzen dira."
+
+#.
+#. \u is not supported by gaupol, gaupol used a special pattern 'capitalization'.
+#. 'previousmatch' is also not supported by gaupol.
+#.
+#: ../plugins/actions/textcorrection/Latn.capitalization.se-pattern.in.h:5
+msgid "Sentence"
+msgstr "Esaldia"
+
+#.
+#. \u is not supported by gaupol, gaupol used a special pattern 'capitalization'.
+#. 'previousmatch' is also not supported by gaupol.
+#.
+#: ../plugins/actions/textcorrection/Latn.capitalization.se-pattern.in.h:10
+msgid "Capitalize the first word of a sentence"
+msgstr "Jarri maiuskulaz esaldi bakoitzaren lehen hitza"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:1
+msgid "Letter \"O\" in a number"
+msgstr "\"O\" letra zenbaki batean"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:2
+msgid "Replace letter \"O\" with a zero in a number"
+msgstr "Ordeztu \"O\" letra zerorekin zenbakietan"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:3
+msgid "Double apostrophe"
+msgstr "Apostrofo bikoitza"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:4
+msgid "Replace a double apostrophe with a quotation mark"
+msgstr "Ordeztu apostrofo bikoitza aipu batekin"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:5
+msgid "Spaces around brackets"
+msgstr "Espazioak parentesien inguruan"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:6
+msgid "Add or remove spaces around parantheses and square brackets"
+msgstr "Gehitu edo kendu espazioa parentesi eta kortxeteen inguruan"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:7
+msgid "Space after a dialogue dash"
+msgstr "Espazioa elkarrizketako gidoiaren ondoren"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:8
+msgid "Add space after a dialogue dash"
+msgstr "Gehitu espazioa elkarrizketa-gidoiaren ondoren"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:9
+#: ../plugins/actions/textcorrection/Latn-fr.common-error.se-pattern.in.h:3
+msgid "Space before punctuation marks"
+msgstr "Espazioa puntuazio ikurren aurretik"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:10
+msgid "Remove space before various punctuation marks"
+msgstr "Kendu hainbat puntuazio marken aurreko espazioa"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:11
+#: ../plugins/actions/textcorrection/Latn-fi.common-error.se-pattern.in.h:1
+msgid "Space after punctuation marks"
+msgstr "Espazioa puntuazio ikurren ondoren"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:12
+#: ../plugins/actions/textcorrection/Latn-fi.common-error.se-pattern.in.h:2
+msgid "Add space after various punctuation marks"
+msgstr "Gehitu espazioa zenbait puntuazio-marken ondoren"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:13
+msgid "Space after an ellipsis"
+msgstr "Espazioa elipsi baten ondoren"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:14
+msgid "Add space after an ellipsis"
+msgstr "Gehitu espazioa parentesi ondoren"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:15
+msgid "Space after a starting ellipsis"
+msgstr "Espazioa hasierak parentesiaren ondoren"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:16
+msgid "Remove space after an ellipsis that starts a line"
+msgstr "Kendu espazioa lerroa hasten den parentesiaren aurretik"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:17
+msgid "Spaces around a quotation mark"
+msgstr "Espazioak komatxoen inguruan"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:18
+msgid "Remove space after a starting- and before an ending quotation mark"
+msgstr "Kendu espazioa hasierako eta amaierako komatxo baten aurretik"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:19
+msgid "Multiple question- and exclamation marks"
+msgstr "Hainbat galdera eta harridura ikur"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:20
+msgid ""
+"Replace multiple consequtive question- and exclamation marks with only one"
+msgstr "Ordeztu galdera eta harridura zeinu jarraituak bakar batekin"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:21
+msgid "Periods around a punctuation mark"
+msgstr "Puntuazio ikur baten ondorengo tartea"
+
+#: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:22
+msgid "Remove period before or after various punctuation marks"
+msgstr "Kendu hainbat puntuazio ikurrak baino lehen edo ondoren dauden tarteak"
+
+#. \u is not supported by gaupol, gaupol used a special pattern 'capitalization'
+#: ../plugins/actions/textcorrection/Latn-en.capitalization.se-pattern.in.h:2
+msgid "First person pronoun"
+msgstr "Lehenengo pertsonaren izenordea"
+
+#. \u is not supported by gaupol, gaupol used a special pattern 'capitalization'
+#: ../plugins/actions/textcorrection/Latn-en.capitalization.se-pattern.in.h:4
+msgid "Capitalize the first person pronoun \"I\""
+msgstr "Jarri maiuskulaz lehenengo pertsonako izenordaina \"NI\""
+
+#: ../plugins/actions/textcorrection/Latn-en.common-error.se-pattern.in.h:1
+msgid "Letter \"I\" in a lower case word"
+msgstr "\"I\" letra minuskulako hitz batean"
+
+#: ../plugins/actions/textcorrection/Latn-en.common-error.se-pattern.in.h:2
+msgid "Replace letter \"I\" with letter \"l\" in a lower case word"
+msgstr "Ordeztu  \"I\" letra \"l\" letra minuskularekin"
+
+#: ../plugins/actions/textcorrection/Latn-en.common-error.se-pattern.in.h:3
+msgid "Letter \"l\" in an upper case word"
+msgstr "\"I\" letra maiuskulako hitz batean"
+
+#: ../plugins/actions/textcorrection/Latn-en.common-error.se-pattern.in.h:4
+msgid "Replace letter \"l\" with letter \"I\" in an upper case word"
+msgstr "Ordeztu  \"l\" letra \"I\" letra maiuskularekin"
+
+#: ../plugins/actions/textcorrection/Latn-en.common-error.se-pattern.in.h:5
+msgid "Zero in an upper case word"
+msgstr "Zeroa maiuskulazko hitz batean"
+
+#: ../plugins/actions/textcorrection/Latn-en.common-error.se-pattern.in.h:6
+msgid "Replace zero with letter \"O\" in an upper case word"
+msgstr "Ordeztu zeroa \"O\" letrarekin maiuskulazko hitzetan"
+
+#: ../plugins/actions/textcorrection/Latn-en.common-error.se-pattern.in.h:7
+msgid "Spaces around an apostrophe"
+msgstr "Espazioak apostrofoen inguruan"
+
+#: ../plugins/actions/textcorrection/Latn-en.common-error.se-pattern.in.h:8
+msgid "Remove spaces around an apostrophe"
+msgstr "Kendu espazioak apostrofo baten inguruan"
+
+#: ../plugins/actions/textcorrection/Latn-en.common-error.se-pattern.in.h:9
+msgid "Okay"
+msgstr "Ados"
+
+#: ../plugins/actions/textcorrection/Latn-en.common-error.se-pattern.in.h:10
+msgid "Convert various two-letter spellings of okay to \"OK\""
+msgstr "Bihurtu \"OK\" okay-ren bi letrako edozein grafia"
+
+#: ../plugins/actions/textcorrection/Latn-en.hearing-impaired.se-pattern.in.h:1
+msgid "Uppercase speaker before a colon"
+msgstr "Hiztuna maiuskulaz bi puntuen aurretik"
+
+#: ../plugins/actions/textcorrection/Latn-en.hearing-impaired.se-pattern.in.h:2
+msgid ""
+"Replace the uppercase name of the speaker before a colon with a dialogue dash"
+msgstr ""
+"Ordeztu maiuskulaz dagoen hiztunaren izena bi puntu baino lehen elkarrizketa "
+"marratxo batekin"
+
+#: ../plugins/actions/textcorrection/Latn-en-US.common-error.se-pattern.in.h:1
+msgid "Period after title"
+msgstr "Izenburuaren ondorengo tartea"
+
+#: ../plugins/actions/textcorrection/Latn-en-US.common-error.se-pattern.in.h:2
+msgid "Add period after a shortened title, such as \"Mr\" and \"Dr\""
+msgstr "Gehitu puntua titulu laburraren ondoren, hala nola \"Jn\" eta \"Dr\""
+
+#: ../plugins/actions/textcorrection/Latn-fr.common-error.se-pattern.in.h:1
+msgid "Spaces around guillemets"
+msgstr "Espazioak kakotxen inguruan"
+
+#: ../plugins/actions/textcorrection/Latn-fr.common-error.se-pattern.in.h:2
+msgid "Add spaces around guillemets"
+msgstr "Gehitu espazioak « » inguruan"
+
+#: ../plugins/actions/textcorrection/Latn-fr.common-error.se-pattern.in.h:4
+msgid "Add or remove space before various punctuation marks"
+msgstr "Gehitu edo kendu espazioa zenbait puntuazio marken aurretik"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:1
+msgid "Sound in brackets"
+msgstr "Soinua parentesi artean"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:2
+msgid "Remove description of a sound between square brackets"
+msgstr "Kendu kortxete arteko soinu baten deskribapena"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:3
+msgid "Sound in parantheses"
+msgstr "Soinua parentesi artean"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:4
+msgid "Remove description of a sound between parantheses"
+msgstr "Kendu parentesi arteko soinu baten deskribapena"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:5
+msgid "Song lyrics between number signs"
+msgstr "Abestian letrak zenbaki zeinuen artean"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:6
+msgid "Remove song lyrics starting with or between number signs"
+msgstr ""
+"Kendu zenbaki-zeinuekin hasi edo zenbaki-zeinuen arteko abestien letrak"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:7
+msgid "One-line song lyrics between number signs"
+msgstr "Lerro bateko abestien hitzak zenbaki zeinuen artean"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:8
+msgid "Remove one-line song lyrics starting with or between number signs"
+msgstr ""
+"Kendu lerro bat izan eta zenbaki zeinuekin hasi edo zenbaki zeinuen arteko "
+"abestien letrak"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:9
+msgid "Song lyrics between asterisks"
+msgstr "Abestien letrak izartxoen artean"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:10
+msgid "Remove song lyrics starting with or between asterisks"
+msgstr "Kendu izartxorekin hasi edo izartxoen arteko abestien letrak"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:11
+msgid "One-line song lyrics between asterisks"
+msgstr "Lerro bateko abestien hitzak izartxoen artean"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:12
+msgid "Remove one-line song lyrics starting with or between asterisks"
+msgstr ""
+"Kendu lerro bat izan eta izartxorekin hasi edo izartxoen arteko abestien "
+"letrak"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:13
+msgid "Speaker before a colon"
+msgstr "Hiztuna bi puntuen aurretik"
+
+#: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:14
+msgid "Replace the name of the speaker before a colon with a dialogue dash"
+msgstr ""
+"Ordeztu hiztunaren izena bi puntu baino lehen elkarrizketa marratxo batekin"
+
+#: ../plugins/actions/textcorrection/Zyyy.common-error.se-pattern.in.h:1
+msgid "Leading and trailing spaces"
+msgstr "Hasierako eta bukaerako espazioak"
+
+#: ../plugins/actions/textcorrection/Zyyy.common-error.se-pattern.in.h:2
+msgid "Remove spaces from the beginning and end of lines"
+msgstr "Kendu lerroaren hasierako eta bukaerako espazioak"
+
+#: ../plugins/actions/textcorrection/Zyyy.common-error.se-pattern.in.h:3
+msgid "Multiple consecutive spaces"
+msgstr "Hainbat espazio jarrai"
+
+#: ../plugins/actions/textcorrection/Zyyy.common-error.se-pattern.in.h:4
+msgid "Replace multiple consecutive spaces with only one"
+msgstr "Ordeztu espazio jarraituak espazio bakar batekin"
+
+#: ../plugins/actions/textcorrection/Zyyy.common-error.se-pattern.in.h:5
+msgid "Space between digits"
+msgstr "Espazioa digituen artean"
+
+#: ../plugins/actions/textcorrection/Zyyy.common-error.se-pattern.in.h:6
+msgid "Remove space between digits of a number"
+msgstr "Kendu zenbaki baten digituen arteko espazioa"
