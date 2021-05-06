@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component>
     <id>org.kitone.subtitleeditor.desktop</id>
-    <metadata_license>CC0</metadata_license>
+    <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0</project_license>
     <name>Subtitle Editor</name>
     <summary>GTK+3 tool to edit subtitles for GNU/Linux/*BSD</summary>
