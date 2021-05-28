@@ -1,8 +1,5 @@
 SUBDIRS = metainfo icons ui
 
-pixmapdir = $(datadir)/pixmaps
-pixmap_DATA = subtitleeditor.svg
-
 uidir = $(PACKAGE_SHARE_DIR)
 ui_DATA = menubar.xml
 
@@ -23,6 +20,6 @@ install-data-hook:
 		echo "***   $(gtk_update_icon_cache)"; \
 	fi
 
-EXTRA_DIST = $(pixmap_DATA) $(ui_DATA) $(desktop_in_files)
+EXTRA_DIST = $(ui_DATA) $(desktop_in_files)
 
 CLEANFILES = Makefile.am~ *.c~ *.h~ *.ui~ *.uip *.uip.bak $(desktop_DATA)
