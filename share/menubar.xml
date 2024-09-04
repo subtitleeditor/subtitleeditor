@@ -98,6 +98,8 @@
 			<separator/>
 			<placeholder name="apply-translation"/>
 			<placeholder name="reverse-text-and-translation"/>
+			<separator/>
+			<placeholder name="autowrap-placeholder"/>
 		</menu>
 
 		<menu action="menu-video">

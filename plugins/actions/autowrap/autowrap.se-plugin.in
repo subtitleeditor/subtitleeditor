@@ -1,0 +1,8 @@
+[SubtitleEditor Extension]
+_Name=Auto Wrap
+_Description=Automatically wraps the lines in a subtitle.
+Categorie=action
+Type=module
+Module=autowrap
+Authors=eltomito <tomaspartl at centrum dot cz>
+

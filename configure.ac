@@ -334,6 +334,7 @@ plugins/actions/Makefile
 plugins/actions/about/Makefile
 plugins/actions/adjusttime/Makefile
 plugins/actions/applytranslation/Makefile
+plugins/actions/autowrap/Makefile
 plugins/actions/bestfit/Makefile
 plugins/actions/changeframerate/Makefile
 plugins/actions/clipboard/Makefile

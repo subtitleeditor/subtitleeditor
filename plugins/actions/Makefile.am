@@ -2,6 +2,7 @@ FILES = \
 		about \
 		adjusttime \
 		applytranslation \
+		autowrap \
 		bestfit \
 		changeframerate \
 		clipboard \
