@@ -139,12 +139,7 @@ protected:
 
     for (auto& subtitle : selection) {
       Glib::ustring text = subtitle.get_text();
-      if( evenly ) {
-        size_t tlen = (int) text.size();
-        size_t minlines = ( ( tlen - 1 ) / maxcpl ) + 1;
-        linelen = tlen / minlines;
-      }
-      autowrap_text( text, linelen );
+      autowrap_text( text, linelen, evenly );
       subtitle.set_text(text);
     }
 
@@ -165,10 +160,49 @@ protected:
         length = _length;
       }
   };
-
   /** a sequence of segments
    */
   typedef std::vector<Segment> SegList;
+
+  static size_t iterdiff( Glib::ustring::iterator start, Glib::ustring::iterator end ) {
+    size_t res = 0;
+    while( start != end ) {
+      ++res;
+      ++start;
+    }
+    return res;
+  };
+
+
+  class Word {
+    public:
+      Glib::ustring::iterator start;
+      Glib::ustring::iterator end;
+
+      Word() {};
+      Word( Glib::ustring::iterator _start, Glib::ustring::iterator _end ) {
+        start = _start;
+        end = _end;
+      }
+
+      size_t length() {
+        return iterdiff( start, end );
+      };
+  };
+  typedef std::vector<Word> WordList;
+
+  /** returns the length of a line that consists
+   * of words from a WordList
+   */ 
+  size_t line_length( Segment &line, WordList &words ) {
+    size_t res = 0;
+    size_t end = line.index + line.length;
+    for( size_t i = line.index; i < end; ++i ) {
+      res += words[ i ].length();
+    }
+    res += ( line.length > 0 ) ? (line.length - 1) : 0;
+    return res;
+  }
 
   /** a lazy debugging function
    * that dumps the content of a SegList to stdout.
@@ -179,7 +213,7 @@ protected:
     }
   };
 
-  /** rewraps the supplied text IN PLACE
+  /** Rewraps the supplied text IN PLACE
     * so that there's no more than maxcpl characters
     * between newlines.
     * It only breaks lines at spaces and newlines,
@@ -187,44 +221,110 @@ protected:
     * that word will end up on a line of its own
     * and that line will be longer than maxcpl (obviously).
     */
-  void autowrap_text( Glib::ustring &text, size_t maxcpl ) {
-    SegList words = make_word_list( text );
+  void autowrap_text( Glib::ustring &text, size_t maxcpl, bool balance = false ) {
+    WordList words = make_word_list( text );
     SegList lines = word_wrap( words, maxcpl );
+    if( balance ) balance_wrap( lines, words, maxcpl );
     rewrap_text( text, words, lines );
   }
 
-  /** turns an unstring into a SegList
-   * where every segment is one word,
-   * the words are in sequence
-   * and there are no words missing.
+  /** Moves the last word of the previous line
+    * to the start of the next line
+    * if it makes the line difference smaller
+    * and if the bottom line doesn't exceed maxcpl.
+    * It works this way through all lines from the bottom up.
    */
-  SegList make_word_list( const Glib::ustring &text ) {
-    SegList res;
+  bool snake_words_down( SegList &lines, WordList &words, size_t maxcpl ) {
+    bool res = false;
+  
+    if( lines.size() < 2 ) return false;
+  
+    size_t li = lines.size() - 1;
+    size_t botlen = line_length( lines[ li ], words );
+    size_t toplen = 0;
+  
+    while( li > 0 ) {
+      toplen = line_length( lines[ li - 1 ], words );
+      int lendiff = (int)toplen - (int)botlen;
+  
+      if( lendiff > 0 ) {
+        size_t snakewordlen = ( words[ lines[ li - 1 ].index + lines[ li - 1 ].length - 1 ] ).length();
+        size_t newbotlen = botlen + snakewordlen + ( (botlen > 0 ) ? 1 : 0 );
+        size_t newtoplen = toplen - snakewordlen + ( (toplen > 1 ) ? 1 : 0 );
+        int newlendiff = (int)newtoplen - (int)newbotlen;
+  
+        if(( std::abs( newlendiff ) <= lendiff )&&( newbotlen <= maxcpl ) ) {
+          res = true;
+          lines[ li ].index -= 1;
+          lines[ li ].length += 1;
+          lines[ li - 1 ].length -= 1;
+          toplen = newtoplen;
+        }
+      }
+      botlen = toplen;
+      --li;
+    }
+  
+    return res;
+  };
+
+
+  /** Balances a SegList of lines by snaking words down
+   *  as long as possible.
+   */
+  void balance_wrap( SegList &lines, WordList &words, size_t maxcpl ) {
+    if( lines.size() < 2 ) return;
+    bool changed = true;
+    while( changed ) {
+      changed = snake_words_down( lines, words, maxcpl );
+    }
+  }
+
+  static Glib::ustring::iterator Iter_find_first_of(
+    Glib::ustring &text,
+    Glib::ustring::iterator sit,
+    Glib::ustring::iterator eit,
+    Glib::ustring what )
+  {
+    size_t s = iterdiff( text.begin(), sit );
+    size_t i = text.find_first_of( what, s );
+    if( i == Glib::ustring::npos ) {
+      return eit;
+    }
+    std::advance( sit, (int)i - (int)s );
+    return sit;
+  }
+
+  WordList make_word_list( Glib::ustring &text ) {
+    WordList res;
 
     size_t tlen = text.size();
     if( tlen == 0 ) return res;
 
-    size_t wstart = 0;
- 		size_t space = text.find_first_of(" \n", 0 );
- 		while( space != Glib::ustring::npos ) {
- 		  res.push_back( Segment( wstart, space - wstart ) );
- 		  wstart = space + 1;
- 		  if( wstart >= tlen ) break;
-   		space = text.find_first_of(" \n", wstart );
+    Glib::ustring::iterator sit = text.begin();
+    Glib::ustring::iterator eit = text.end();
+
+    Glib::ustring::iterator spaceit = Iter_find_first_of( text, sit, eit, " \n");
+ 		while( spaceit != eit ) {
+ 		  res.push_back( Word( sit, spaceit ) );
+ 		  sit = spaceit;
+ 		  ++sit;
+ 		  if( sit == eit ) break;
+   		spaceit = Iter_find_first_of( text, sit, eit, " \n");
  		}
 
-    if( (wstart + 1 ) < tlen ) {
- 		  res.push_back( Segment( wstart, tlen - wstart ) );
+	  if( sit != eit ) {
+ 		  res.push_back( Word( sit, eit ) );
     }
     return res;
   }
 
-  /** takes a SegList and arranges it into lines
+  /** takes a WordList and arranges it into lines
    * of no more than maxcpl characters.
-   * The result is another Seglist of Segments
-   * of the original SegList.
+   * The result is a Seglist of Segments
+   * of the original WordList.
    */
-  SegList word_wrap( const SegList &words, size_t maxcpl  ) {
+  SegList word_wrap( WordList &words, size_t maxcpl  ) {
     SegList res;
     size_t numwords = words.size();
     if( numwords == 0 ) return res;
@@ -234,7 +334,7 @@ protected:
     size_t wi = 0;
 
     while( wi < numwords ) {
-      size_t newlen = linelen + words[ wi ].length + ( (linelen == 0) ? 0: 1 );
+      size_t newlen = linelen + words[ wi ].length() + ( (linelen == 0) ? 0: 1 );
       if( newlen >= maxcpl ) {
 
         if( newlen > maxcpl ) {
@@ -254,34 +354,36 @@ protected:
     }
 
     if( wi > firstword ) {
-        res.push_back( Segment( firstword, wi - firstword + 1 ) );
+        res.push_back( Segment( firstword, wi - firstword ) );
     }
 
     return res;
   }
 
   /** This function rewraps a ustring according to a SegList of lines
-   * in a SegList of words in the ustring.
+   * in a WordList of words in the ustring.
    * The supplied ustring is changed in place.
    * Its length doesn't change.
    */
-  void rewrap_text( Glib::ustring &text, const SegList &words, const SegList &lines ) {
-    size_t tlen = text.size();
-    size_t prev_end = 0;
+  void rewrap_text( Glib::ustring &text, const WordList &words, const SegList &lines ) {
+    Glib::ustring::iterator prev_endit = text.begin();
+    Glib::ustring::iterator eit = text.end();
 
     //fill spaces between words with... spaces ;)
     for (auto& word : words) {
-      text.replace( prev_end, word.index - prev_end, word.index - prev_end, ' ');
-      prev_end = word.index + word.length;
+      size_t replen = iterdiff( prev_endit, word.start );
+      text.replace( prev_endit, word.start, replen, ' ');
+      prev_endit = word.end;
     }
 
     //put newlines at ends of lines
     for (auto& line : lines) {
       if( line.length > 0 ) {
-        const Segment &lastword = words[ line.index + line.length - 1 ];
-        size_t nli = lastword.index + lastword.length;
-        if( nli < tlen ) {
-          text.replace( nli, 1, 1, '\n' );
+        const Word &lastword = words[ line.index + line.length - 1 ];
+        if( lastword.end != eit ) {
+          Glib::ustring::iterator afterend = lastword.end;
+          ++afterend;
+          text.replace( lastword.end, afterend, 1, '\n' );
         }
       }
     }
