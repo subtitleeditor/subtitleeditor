@@ -108,14 +108,28 @@ protected:
       return;
     }
 
+    Subtitle closest = cursub;
+    long closestdist = LONG_MAX;
+
     while( cursub ) {
-      if(( cursub.get_start().totalmsecs <= playerpos )&&
-         ( cursub.get_end().totalmsecs > playerpos )) {
-            doc->subtitles().select( cursub );
-        		doc->emit_signal("subtitle-selection-changed");
-			}
+      long s = cursub.get_start().totalmsecs;
+      long e = cursub.get_end().totalmsecs;
+      long dist = ( playerpos >= s ) ? ( ( playerpos < e ) ? 0 : ( playerpos - e ) ) : ( s - playerpos ) ;
+      if( dist == 0 ) {
+        closest = cursub;
+        closestdist = 0;
+        break;
+      }
+      if( dist < closestdist ) {
+        closest = cursub;
+        closestdist = dist;
+      }      
 			cursub = subs.get_next( cursub );
 		}
+		if( closestdist != LONG_MAX ) {
+      doc->subtitles().select( closest );
+  		doc->emit_signal("subtitle-selection-changed");
+    }
 	}
 
 protected:
