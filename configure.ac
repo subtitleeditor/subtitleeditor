@@ -323,6 +323,11 @@ share/icons/16x16/Makefile
 share/icons/22x22/Makefile
 share/icons/24x24/Makefile
 share/icons/32x32/Makefile
+share/icons/64x64/Makefile
+share/icons/128x128/Makefile
+share/icons/256x256/Makefile
+share/icons/512x512/Makefile
+share/icons/1024x1024/Makefile
 share/icons/scalable/Makefile
 share/ui/Makefile
 docs/Makefile
