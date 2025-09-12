@@ -112,8 +112,11 @@ void get_default_config(
 
   // [external-video-player]
   config["external-video-player"]["command"] =
-      "mplayer \"#video_file\" -noautosub -sub \"#subtitle_file\" -ss #seconds "
-      "-osdlevel 2";
+	  "mpv --sub-file=\"#subtitle_uri\" --start=\"#time\" \"#video_uri\" "
+	  "--sub-auto=no --osd-level=2";
+  config["external-video-player"]["format"] = "SubRip";
+  config["external-video-player"]["use-video-player-file"] = "true";
+  config["external-video-player"]["offset"] = "500";
 
   // [dialog-check-errors]
   config["dialog-check-errors"]["check-overlapping"] = "true";
