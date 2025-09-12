@@ -85,6 +85,12 @@ class SelectionPlugin : public Action {
         sigc::mem_fun(*this, &SelectionPlugin::on_invert_selection));
 
     action_group->add(
+        Gtk::Action::create("select-to-start",
+                            _("Select to Start"),
+                            _("Select all subtitles from current to start")),
+        sigc::mem_fun(*this, &SelectionPlugin::on_select_to_start));
+
+    action_group->add(
         Gtk::Action::create("select-to-end",
                             _("Select to End"),
                             _("Select all subtitles from current to end")),
@@ -108,6 +114,7 @@ class SelectionPlugin : public Action {
               <menuitem action='select-all-subtitles'/>
               <menuitem action='unselect-all-subtitles'/>
               <menuitem action='invert-subtitles-selection'/>
+              <menuitem action='select-to-start'/>
               <menuitem action='select-to-end'/>
             </placeholder>
           </menu>
@@ -141,6 +148,7 @@ class SelectionPlugin : public Action {
     action_group->get_action("unselect-all-subtitles")->set_sensitive(visible);
     action_group->get_action("invert-subtitles-selection")
         ->set_sensitive(visible);
+    action_group->get_action("select-to-start") ->set_sensitive(visible);
     action_group->get_action("select-to-end") ->set_sensitive(visible);
   }
 
@@ -187,6 +195,12 @@ class SelectionPlugin : public Action {
     execute(INVERT);
   }
 
+  void on_select_to_start() {
+    se_dbg(SE_DBG_PLUGINS);
+
+    execute(TOSTART);
+  }
+
   void on_select_to_end() {
     se_dbg(SE_DBG_PLUGINS);
 
@@ -194,7 +208,7 @@ class SelectionPlugin : public Action {
   }
 
  protected:
-  enum TYPE { FIRST, LAST, PREVIOUS, NEXT, ALL, INVERT, UNSELECT, TOEND };
+  enum TYPE { FIRST, LAST, PREVIOUS, NEXT, ALL, INVERT, UNSELECT, TOSTART, TOEND };
 
   bool execute(TYPE type) {
     se_dbg(SE_DBG_PLUGINS);
@@ -238,6 +252,17 @@ class SelectionPlugin : public Action {
           (type == FIRST) ? subtitles.get_first() : subtitles.get_last();
       if (sub)
         subtitles.select(sub);
+    } else if ( type == TOSTART ) {
+      std::vector<Subtitle> selection = subtitles.get_selection();
+      if (!selection.empty()) {
+    		Subtitle sub = selection[ selection.size() - 1 ];
+        sub = subtitles.get_previous( sub );
+      	while( sub ) {
+      	 selection.push_back( sub );
+      	 sub = subtitles.get_previous( sub );
+      	}
+      	subtitles.select( selection );
+    	}
     } else if ( type == TOEND ) {
       std::vector<Subtitle> selection = subtitles.get_selection();
       if (!selection.empty()) {
