@@ -170,11 +170,11 @@ class MinimizeDurationPlugin : public Action {
     for (auto &sub : selection) {
       subtext = sub.get_text();
       subchars = utility::get_text_length_for_timing(subtext);
-      dur.totalmsecs = (subchars > 0) ? utility::get_min_duration_msecs(subchars, maxcps) : 0;
+      dur.totalmsecs = utility::get_min_duration_msecs(subchars, maxcps);
       // doc->flash_message ( _("duration calculated is 1000 * %i / %i = %i"),
       // (int)subchars, (int)maxcps, (int)dur.totalmsecs ); make sure we have at
       // least the minimum duration
-      if ((subchars > 0)&&(dur < mindur))
+      if (dur < mindur)
         dur = mindur;
 
       if (from_start) {
