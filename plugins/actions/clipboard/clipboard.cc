@@ -130,7 +130,7 @@ class ClipboardPlugin : public Action {
 
     ui->insert_action_group(action_group);
 
-    Glib::ustring submenu = R"(
+    Glib::ustring submenu_edit = R"(
       <ui>
         <menubar name='menubar'>
           <menu name='menu-edit' action='menu-edit'>
@@ -148,7 +148,6 @@ class ClipboardPlugin : public Action {
                 <menuitem action='clipboard-paste-over-time'/>
                 <menuitem action='clipboard-paste-unchanged'/>
               </menu>
-              <menuitem action='clipboard-select-overlap'/>
               <separator/>
             </placeholder>
           </menu>
@@ -156,8 +155,21 @@ class ClipboardPlugin : public Action {
       </ui>
     )";
 
-    ui_id = ui->add_ui_from_string(submenu);
+    ui_id = ui->add_ui_from_string(submenu_edit);
 
+    Glib::ustring submenu_selection = R"(
+      <ui>
+        <menubar name='menubar'>
+          <menu name='menu-selection' action='menu-selection'>
+            <placeholder name='clipboard_select'>
+              <menuitem action='clipboard-select-overlap'/>
+            </placeholder>
+          </menu>
+        </menubar>
+      </ui>
+    )";
+
+    ui_id = ui->add_ui_from_string(submenu_selection);
     // clear the clipdoc
     clear_clipdoc();
 
