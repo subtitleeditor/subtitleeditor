@@ -75,11 +75,11 @@ void get_default_config(
   // [interface]
   config["interface"]["use-dynamic-keyboard-shortcuts"] = "true";
   config["interface"]["maximize-window"] = "false";
-  config["interface"]["used-autosave"] = "false";
-  config["interface"]["ask-to-save-on-exit"] = "false";
+  config["interface"]["used-autosave"] = "true";
+  config["interface"]["ask-to-save-on-exit"] = "true";
   config["interface"]["create-backup-copy"] = "false";
   config["interface"]["autosave-minutes"] = "10";
-  config["interface"]["max-undo"] = "20";
+  config["interface"]["max-undo"] = "200";
 
   // [encodings]
   config["encodings"]["encodings"] = "ISO-8859-15;UTF-8";
