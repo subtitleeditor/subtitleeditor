@@ -84,7 +84,9 @@ After building with `make`, it is possible to run Subtitle Editor before install
 ```
  SE_DEV=1 ./src/subtitleeditor
 ```
-To update the translations files when strings get added, one needs to run the following in the `./po` directory:
+To update the translations files when strings or files get added, one needs to run the following in the `./po` directory:
 ```
+intltool-update --maintain
+intltool-update --headers     
 intltool-update --pot
 ```
