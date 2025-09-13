@@ -80,11 +80,11 @@ Required dependencies:
 * libxml++ >=2.20
 
 ## Developement
-After building with make, it is possible to run Subtitle Editor before installing it from the directory where it was built with:
+After building with `make`, it is possible to run Subtitle Editor before installing it from the directory where it was built with:
 ```
  SE_DEV=1 ./src/subtitleeditor
 ```
-To update the translations files when strings get added, one needs to run:
+To update the translations files when strings get added, one needs to run the following in the `./po` directory:
 ```
 intltool-update --pot
 ```
