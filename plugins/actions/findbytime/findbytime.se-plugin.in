@@ -1,8 +1,8 @@
 [SubtitleEditor Extension]
 _Name=Find By Time
-_Description=Finds the subtitle at current player position.
+_Description=Finds the subtitle nearest to the current player position.
 Categorie=action
 Type=module
 Module=findbytime
-Authors=eltomito <tomaspartl at centrum dot cz>
+Authors=eltomito <tomaspartl at centrum dot cz>, felagund <tomashnyk at gmail dot com>
 

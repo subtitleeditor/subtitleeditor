@@ -5,6 +5,7 @@
 //
 // subtitleeditor is Copyright @ 2005-2018, kitone
 // this file is Copyright 2024 Eltomito <tomaspartl@centrum.cz>
+// this file is Copyright 2025 felagund <tomashnyk@gmail.com>
 //
 // This subtitleeditor plugin finds the subtitle
 // at the current player position
@@ -24,7 +25,7 @@
 
 #include <debug.h>
 #include <extension/action.h>
-//#include <i18n.h>
+//#include <i18n.h> FIXME This is probably untranslatable in the menus?
 #include <player.h>
 #include <utility.h>
 
@@ -51,7 +52,7 @@ class FindByTimePlugin : public Action {
 
 		action_group->add(
 				Gtk::Action::create("find-by-time", _("Find Subtitle By Time"),
-				_("Finds the subtitle at the current player position.")),
+				_("Finds the subtitle nearest to the current player position.")),
 					sigc::mem_fun(*this, &FindByTimePlugin::on_find_by_time));
 
 		// ui
@@ -101,22 +102,40 @@ protected:
     Subtitles subs = doc->subtitles();
 
     long playerpos = get_subtitleeditor_window()->get_player()->get_position();
+	long min_distance = 36000000;
+	bool no_inside = true;
+	Subtitle closest_sub; 
+	long distance;
 
     Subtitle cursub = subs.get_first();
     if( !cursub ) {
-			doc->flash_message(_("No subtitles."));
-      return;
-    }
+			doc->flash_message(_("No subtitles, cannot find the nearest."));
+    return;
+  }
 
-    while( cursub ) {
-      if(( cursub.get_start().totalmsecs <= playerpos )&&
-         ( cursub.get_end().totalmsecs > playerpos )) {
-            doc->subtitles().select( cursub );
-        		doc->emit_signal("subtitle-selection-changed");
-			}
-			cursub = subs.get_next( cursub );
-		}
+    for(Subtitle cursub = subs.get_first(); cursub; cursub = subs.get_next(cursub)) {
+       if((cursub.get_start().totalmsecs <= playerpos) &&
+          (cursub.get_end().totalmsecs > playerpos)) {
+			no_inside = false;
+            doc->subtitles().select(cursub);
+            doc->emit_signal("subtitle-selection-changed");
+            break;
+          }
+	   else{
+		   std::cout << "Debug: playerpos = " << playerpos << std::endl;
+		   distance = std::min(std::abs(playerpos - cursub.get_start().totalmsecs), std::abs(playerpos - cursub.get_end().totalmsecs));
+		   if(distance < min_distance){
+		       min_distance = distance;
+			   closest_sub = cursub;
+		   }
+       }
 	}
+	if (no_inside){
+		doc->subtitles().select(closest_sub);
+        doc->emit_signal("subtitle-selection-changed");
+
+	}
+}
 
 protected:
 	Gtk::UIManager::ui_merge_id ui_id;
