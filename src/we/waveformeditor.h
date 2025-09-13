@@ -24,6 +24,7 @@
 #include "player.h"
 #include "waveformmanager.h"
 #include "waveformrenderer.h"
+#include "utility"
 
 class WaveformEditor : public WaveformManager, public Gtk::Box {
  public:
@@ -203,6 +204,16 @@ class WaveformEditor : public WaveformManager, public Gtk::Box {
   // scroll with the current time of the player.
   void scroll_with_player();
 
+  // If select with player is enabled,
+  // select current subtitles with the current time of the player.
+  std::pair<long, long>  select_with_player();
+  // Used to keep track whether player position is within a subtitle
+  // in that case no need to look for another subtitle
+  // when select_with_player is used. Though top says this optimalizations
+  // is not noticeable. Anyway, this option when enabled
+  // does not raise CPU value. 
+  std::pair<long, long> subtitle_start_and_end_times;
+
   // Try to move the beginning of the current subtitle.
   // If the option 'respect-timing' is enabled,
   // try to respect the timing preferences.
@@ -239,6 +250,7 @@ class WaveformEditor : public WaveformManager, public Gtk::Box {
   std::vector<sigc::connection> m_document_connection;
 
   bool m_cfg_scrolling_with_player;
+  bool m_cfg_select_with_player;
   bool m_cfg_scrolling_with_selection;
   bool m_cfg_respect_timing;
 

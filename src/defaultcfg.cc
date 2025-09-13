@@ -56,6 +56,7 @@ void get_default_config(
   config["waveform"]["display-background"] = "false";
   config["waveform"]["display-waveform-fill"] = "true";
   config["waveform"]["scrolling-with-player"] = "true";
+  config["waveform"]["select-with-player"] = "true";
   config["waveform"]["scrolling-with-selection"] = "true";
   config["waveform"]["respect-timing"] = "true";
   config["waveform"]["display"] = "true";

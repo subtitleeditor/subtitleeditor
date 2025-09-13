@@ -29,9 +29,9 @@
 // dans le cas ou on modifie par exemple le temps "end"
 // il faut aussi modifier le temps "duration", etc...
 // Passer par cette class evite les oublies de ce genre.
-//  /!\
-//  La durée de vie d'un Subtitle est la même que l'iter!
-//  On ne verifie pas la validiter des arguments! (pour les performances)
+// BEWARE:
+// La durée de vie d'un Subtitle est la même que l'iter!
+// On ne verifie pas la validiter des arguments! (pour les performances)
 class SubtitleCommand;
 class Subtitles;
 class Document;

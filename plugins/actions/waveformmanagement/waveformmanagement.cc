@@ -120,6 +120,18 @@ class WaveformManagement : public Action {
                                   scroll_with_player_state),
         sigc::mem_fun(*this, &WaveformManagement::on_scrolling_with_player));
 
+    // select with player
+	// FIXME: Properly speaking, this should probably be in the video menu
+	// for it should work without a waveform
+    bool select_with_player_state =
+        cfg::get_boolean("waveform", "select-with-player");
+
+    action_group->add(
+        Gtk::ToggleAction::create("waveform/select-with-player",
+                                  _("Select With _Player"), _("FIXME"),
+                                  select_with_player_state),
+        sigc::mem_fun(*this, &WaveformManagement::on_select_with_player));
+
     // scrolling with selection
     bool scroll_with_selection_state =
         cfg::get_boolean("waveform", "scrolling-with-selection");
@@ -192,6 +204,7 @@ class WaveformManagement : public Action {
               <menuitem action='waveform/center-with-selected-subtitle'/>
               <separator/>
               <menuitem action='waveform/scrolling-with-player'/>
+              <menuitem action='waveform/select-with-player'/>
               <menuitem action='waveform/scrolling-with-selection'/>
               <menuitem action='waveform/respect-timing'/>
             </placeholder>
@@ -247,6 +260,8 @@ class WaveformManagement : public Action {
 
     action_group->get_action("waveform/scrolling-with-player")
         ->set_sensitive(has_waveform);
+    action_group->get_action("waveform/select-with-player")
+        ->set_sensitive(has_document);
     action_group->get_action("waveform/scrolling-with-selection")
         ->set_sensitive(has_waveform);
     action_group->get_action("waveform/respect-timing")
@@ -436,6 +451,18 @@ class WaveformManagement : public Action {
     }
   }
 
+  void on_select_with_player() {
+    se_dbg(SE_DBG_PLUGINS);
+
+    Glib::RefPtr<Gtk::ToggleAction> action =
+        Glib::RefPtr<Gtk::ToggleAction>::cast_static(
+            action_group->get_action("waveform/select-with-player"));
+    if (action) {
+      bool state = action->get_active();
+      cfg::set_boolean("waveform", "select-with-player", state);
+    }
+  }
+
   void on_scrolling_with_selection() {
     se_dbg(SE_DBG_PLUGINS);
 
@@ -524,5 +551,6 @@ class WaveformManagement : public Action {
   Gtk::UIManager::ui_merge_id ui_id;
   Glib::RefPtr<Gtk::ActionGroup> action_group;
 };
+
 
 REGISTER_EXTENSION(WaveformManagement)

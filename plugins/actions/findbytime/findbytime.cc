@@ -25,9 +25,11 @@
 
 #include <debug.h>
 #include <extension/action.h>
-//#include <i18n.h> FIXME This is probably untranslatable in the menus?
+//#include <i18n.h>
 #include <player.h>
 #include <utility.h>
+#include <algorithm>
+#include <cmath>
 
 class FindByTimePlugin : public Action {
  public:
@@ -122,7 +124,6 @@ protected:
             break;
           }
 	   else{
-		   std::cout << "Debug: playerpos = " << playerpos << std::endl;
 		   distance = std::min(std::abs(playerpos - cursub.get_start().totalmsecs), std::abs(playerpos - cursub.get_end().totalmsecs));
 		   if(distance < min_distance){
 		       min_distance = distance;

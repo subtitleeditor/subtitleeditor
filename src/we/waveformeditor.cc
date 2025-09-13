@@ -22,6 +22,9 @@
 #include "subtitleeditorwindow.h"
 #include "utility.h"
 #include "waveformeditor.h"
+#include <utility> // the three following are for std:: min abs and pair
+#include <algorithm>
+#include <cmath>
 
 // HACK!
 WaveformRenderer *create_waveform_renderer_cairo();
@@ -63,9 +66,13 @@ WaveformEditor::WaveformEditor(BaseObjectType *cobject,
   se::documents::signal_active_changed().connect(
       sigc::mem_fun(*this, &WaveformEditor::init_document));
 
+
+  
   // FIXME init
   {
     m_cfg_scrolling_with_player = true;
+    m_cfg_select_with_player = true;
+    subtitle_start_and_end_times = {0, 0};
     m_cfg_scrolling_with_selection = true;
     // m_cfg_respect_min_display = true;
     // m_cfg_respect_gab_between_subtitles = true;
@@ -100,6 +107,9 @@ void WaveformEditor::load_config() {
 
   m_cfg_scrolling_with_player =
       cfg::get_boolean("waveform", "scrolling-with-player");
+
+  m_cfg_select_with_player =
+      cfg::get_boolean("waveform", "select-with-player");
 
   m_cfg_scrolling_with_selection =
       cfg::get_boolean("waveform", "scrolling-with-selection");
@@ -283,7 +293,11 @@ void WaveformEditor::on_player_tick(long /*current_time*/,
                                     double /*current_position*/) {
   if (has_renderer() && player() && has_waveform()) {
     scroll_with_player();
-
+	// only select new subtitle when player position is outside of the current one
+	long playerpos = player()->get_position();
+	if(!((subtitle_start_and_end_times.first <= playerpos) && (subtitle_start_and_end_times.second > playerpos))) {
+		subtitle_start_and_end_times = select_with_player();
+		}
     redraw_renderer();
   }
 }
@@ -501,7 +515,7 @@ Document *WaveformEditor::document() {
 }
 
 // This callback is connected at the current document.
-// The document has changed, it's need to redraw the view.
+// The document has changed, it's needed to redraw the view.
 void WaveformEditor::on_document_changed() {
   if ((has_renderer() && has_waveform()) == false)
     return;
@@ -510,9 +524,9 @@ void WaveformEditor::on_document_changed() {
 }
 
 // This callback is connected at the current document.
-// It's call when the selection of the subtitles has changed.
-// The view is centered with the new selection if the option is enable.
-// It's need to redraw the view.
+// It's called when the selection of the subtitles has changed.
+// The view is centered with the new selection if the option is enabled.
+// It's needed to redraw the view.
 void WaveformEditor::on_subtitle_selection_changed() {
   if ((has_renderer() && has_waveform() && has_document()) == false)
     return;
@@ -582,11 +596,29 @@ void WaveformEditor::scroll_to_position_and_center(int position) {
 void WaveformEditor::scroll_with_player() {
   if (player() && has_renderer() && m_cfg_scrolling_with_player) {
     int position = renderer()->get_pos_by_time(player()->get_position());
-
     scroll_to_position(position);
   }
 }
 
+// If Select With Player is enabled,
+// selects current subtitles with the current time of the player.
+// Only fires when player position is outside of of the selected subtitled
+// FIXME: This is hollowed out version of Find Subtitle by Time plugin, ideally they would share code
+std::pair<long, long> WaveformEditor::select_with_player() {
+	if (player() && has_document() &&m_cfg_select_with_player) {
+    Subtitles subs = document()->subtitles();
+    long playerpos = player()->get_position();
+	for(Subtitle cursub = subs.get_first(); cursub; cursub = subs.get_next(cursub)) {
+	    if((cursub.get_start().totalmsecs <= playerpos) && (cursub.get_end().totalmsecs > playerpos)) {
+	        document()->subtitles().select(cursub);
+		    document()->emit_signal("subtitle-selection-changed");
+			std::pair<long, long> sub_timecodes = {cursub.get_start().totalmsecs, cursub.get_end().totalmsecs};
+	        return sub_timecodes;
+		}
+    }
+  }
+  return {0, 0};
+}
 // Try to display the current subtitle at the center of the view.
 void WaveformEditor::center_with_selected_subtitle() {
   if (!document())
@@ -963,6 +995,8 @@ void WaveformEditor::on_config_waveform_changed(const Glib::ustring &key,
                                                 const Glib::ustring &value) {
   if (key == "scrolling-with-player") {
     m_cfg_scrolling_with_player = utility::string_to_bool(value);
+  } else if (key == "select-with-player") {
+    m_cfg_select_with_player = utility::string_to_bool(value);
   } else if (key == "scrolling-with-selection") {
     m_cfg_scrolling_with_selection = utility::string_to_bool(value);
   } else if (key == "respect-timing") {
