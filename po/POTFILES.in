@@ -33,6 +33,7 @@ plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui
 plugins/actions/externalvideoplayer/externalvideoplayer.cc
 plugins/actions/findandreplace/dialog-find-and-replace.ui
 plugins/actions/findandreplace/findandreplace.cc
+plugins/actions/findbytime/findbytime.cc
 plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc
 plugins/actions/insertsubtitle/insertsubtitle.cc
 plugins/actions/italicize/italicize.cc
@@ -60,6 +61,8 @@ plugins/actions/reversetextandtranslation/reversetextandtranslation.cc
 plugins/actions/scalesubtitles/dialog-scale-subtitles.ui
 plugins/actions/scalesubtitles/scalesubtitles.cc
 plugins/actions/selection/selection.cc
+plugins/actions/slidetimings/slidetimings.cc
+plugins/actions/slidewords/slidewords.cc
 plugins/actions/sortsubtitles/sortsubtitles.cc
 plugins/actions/spellchecking/dialog-spell-checking.ui
 plugins/actions/spellchecking/spellchecking.cc
@@ -289,6 +292,7 @@ src/writer.h
 [type: gettext/ini] plugins/actions/extendlength/extendlength.se-plugin.in
 [type: gettext/ini] plugins/actions/externalvideoplayer/externalvideoplayer.se-plugin.in
 [type: gettext/ini] plugins/actions/findandreplace/findandreplace.se-plugin.in
+[type: gettext/ini] plugins/actions/findbytime/findbytime.se-plugin.in
 [type: gettext/ini] plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.se-plugin.in
 [type: gettext/ini] plugins/actions/insertsubtitle/insertsubtitle.se-plugin.in
 [type: gettext/ini] plugins/actions/italicize/italicize.se-plugin.in
@@ -303,6 +307,8 @@ src/writer.h
 [type: gettext/ini] plugins/actions/reversetextandtranslation/reversetextandtranslation.se-plugin.in
 [type: gettext/ini] plugins/actions/scalesubtitles/scalesubtitles.se-plugin.in
 [type: gettext/ini] plugins/actions/selection/selection.se-plugin.in
+[type: gettext/ini] plugins/actions/slidetimings/slidetimings.se-plugin.in
+[type: gettext/ini] plugins/actions/slidewords/slidewords.se-plugin.in
 [type: gettext/ini] plugins/actions/sortsubtitles/sortsubtitles.se-plugin.in
 [type: gettext/ini] plugins/actions/spellchecking/spellchecking.se-plugin.in
 [type: gettext/ini] plugins/actions/splitdocument/splitdocument.se-plugin.in
