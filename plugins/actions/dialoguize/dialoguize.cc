@@ -226,17 +226,14 @@ class DialoguizeSelectedSubtitlesPlugin : public Action {
     execute();
   }
 
+  enum class TextType { TEXT, TRANSLATION };
+
   bool execute() {
     se_dbg(SE_DBG_PLUGINS);
-
     Document* doc = get_current_document();
-
     g_return_val_if_fail(doc, false);
-
     Subtitles subtitles = doc->subtitles();
-
     std::vector<Subtitle> selection = subtitles.get_selection();
-
     if (selection.empty()) {
       doc->flash_message(_("Please select at least a subtitle."));
       return false;
@@ -250,47 +247,48 @@ class DialoguizeSelectedSubtitlesPlugin : public Action {
     doc->start_command(_("Dialoguize"));
 
     Glib::ustring dash = cfg::get_string(PREF_GROUP, PREF_KEY_DASH);
-    Glib::ustring dash_escaped =
-        cfg::get_string(PREF_GROUP, PREF_KEY_DASH_ESCAPED);
+    Glib::ustring dash_escaped = cfg::get_string(PREF_GROUP, PREF_KEY_DASH_ESCAPED);
     Glib::ustring dash_regex = "^" + dash_escaped + "\\s*";
 
-    bool state = !parial_match(selection, dash_regex);
+    std::vector<TextType> text_types = {TextType::TEXT, TextType::TRANSLATION};
 
-    global_replace(selection, dash_regex, "");
-
-    if (state)
-      global_replace(selection, "^", dash);
+    for (TextType type : text_types) {
+      bool should_add_dashes = !partial_match(selection, dash_regex, type);
+      global_replace(selection, dash_regex, "", type);  // Remove existing
+      if (should_add_dashes) {
+        global_replace(selection, "^", dash, type);     // Add if needed
+      }
+    }
 
     doc->finish_command();
-
     return true;
   }
 
-  bool parial_match(std::vector<Subtitle>& subs, const std::string& pattern) {
+  bool partial_match(std::vector<Subtitle>& subs, const std::string& pattern, TextType type) {
     se_dbg(SE_DBG_PLUGINS);
-
     Glib::RefPtr<Glib::Regex> re = Glib::Regex::create(pattern);
 
     for (const auto& subtitle : subs) {
-      if (re->match(subtitle.get_text()))
+      Glib::ustring text = (type == TextType::TEXT) ? subtitle.get_text() : subtitle.get_translation();
+      if (re->match(text))
         return true;
     }
     return false;
   }
 
   void global_replace(std::vector<Subtitle>& subs, const std::string& pattern,
-                      const std::string& replace) {
+                    const std::string& replace, TextType type) {
     se_dbg(SE_DBG_PLUGINS);
 
-    Glib::RefPtr<Glib::Regex> re =
-        Glib::Regex::create(pattern, Glib::REGEX_MULTILINE);
-
+    Glib::RefPtr<Glib::Regex> re = Glib::Regex::create(pattern, Glib::REGEX_MULTILINE);
     for (auto& subtitle : subs) {
-      Glib::ustring text = subtitle.get_text();
-
-      text = re->replace_literal(text, 0, replace, (Glib::RegexMatchFlags)0);
-
-      subtitle.set_text(text);
+        Glib::ustring text = (type == TextType::TEXT) ? subtitle.get_text() : subtitle.get_translation();
+        text = re->replace_literal(text, 0, replace, (Glib::RegexMatchFlags)0);
+        if (type == TextType::TEXT) {
+            subtitle.set_text(text);
+        } else {
+            subtitle.set_translation(text);
+        }
     }
   }
 

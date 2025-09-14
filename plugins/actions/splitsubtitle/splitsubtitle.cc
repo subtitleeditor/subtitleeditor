@@ -105,8 +105,10 @@ class SplitSelectedSubtitlesPlugin : public Action {
     Glib::RefPtr<Glib::Regex> re = Glib::Regex::create("\\n");
 
     Glib::ustring text = sub.get_text();
+    Glib::ustring translation = sub.get_translation();
 
     std::vector<Glib::ustring> lines = re->split(text);
+    std::vector<Glib::ustring> translation_lines = re->split(translation);
 
     // If there's not at least two lines, it's not necessary to split
     if (lines.size() < 2)
@@ -138,7 +140,13 @@ class SplitSelectedSubtitlesPlugin : public Action {
     // Updated subtitles text with each line
     for (unsigned int i = 0; i < newsubs.size(); ++i) {
       newsubs[i].set_text(lines[i]);
-
+	  // This will split translation if it exists; if it has less lines, 
+	  // the last lines of new translation will be empty
+	  if (i < translation_lines.size()) {
+        newsubs[i].set_translation(translation_lines[i]);
+	  } else {
+        newsubs[i].set_translation("");
+	  }
       // We take the loop to calculate the total number of characters
       total_chars += utility::get_stripped_text(lines[i]).size();
     }
