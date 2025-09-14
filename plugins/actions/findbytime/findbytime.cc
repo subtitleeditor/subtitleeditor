@@ -117,7 +117,7 @@ protected:
 
     for(Subtitle cursub = subs.get_first(); cursub; cursub = subs.get_next(cursub)) {
        if((cursub.get_start().totalmsecs <= playerpos) &&
-          (cursub.get_end().totalmsecs > playerpos)) {
+          (cursub.get_end().totalmsecs >= playerpos)) {
 			no_inside = false;
             doc->subtitles().select(cursub);
             doc->emit_signal("subtitle-selection-changed");

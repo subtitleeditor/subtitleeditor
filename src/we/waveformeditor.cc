@@ -295,7 +295,7 @@ void WaveformEditor::on_player_tick(long /*current_time*/,
     scroll_with_player();
 	// only select new subtitle when player position is outside of the current one
 	long playerpos = player()->get_position();
-	if(!((subtitle_start_and_end_times.first <= playerpos) && (subtitle_start_and_end_times.second > playerpos))) {
+	if(!((subtitle_start_and_end_times.first <= playerpos) && (subtitle_start_and_end_times.second >= playerpos))) {
 		subtitle_start_and_end_times = select_with_player();
 		}
     redraw_renderer();
