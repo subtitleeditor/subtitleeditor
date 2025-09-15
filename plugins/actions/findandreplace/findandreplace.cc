@@ -150,8 +150,9 @@ class FaR {
       return false;
 
     Glib::ustring text = info.text;
-    Glib::ustring replacement = info.replacement;
-
+    Glib::ustring replacement = get_replacement();
+	
+	
     try {
       text.replace(info.start, info.len, replacement);
     } catch (const std::exception &ex) {
@@ -193,8 +194,6 @@ class FaR {
       if (beginning != Glib::ustring::npos)
         text = text.substr(beginning, text.size());
 
-      if (info)
-        info->replacement = get_replacement();
       if (!find(get_pattern(), get_pattern_options(), text, info))
         return false;
 
