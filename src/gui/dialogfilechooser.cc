@@ -370,6 +370,30 @@ DialogOpenVideo::DialogOpenVideo()
     : Gtk::FileChooserDialog(_("Open Video"), Gtk::FILE_CHOOSER_ACTION_OPEN) {
   utility::set_transient_parent(*this);
 
+  // audio or video filter
+  Glib::RefPtr<Gtk::FileFilter> m_filterAudioOrVideo = Gtk::FileFilter::create();
+  m_filterAudioOrVideo->set_name(_("Audio or Video"));
+  m_filterAudioOrVideo->add_pattern("*.mp3");
+  m_filterAudioOrVideo->add_pattern("*.ogg");
+  m_filterAudioOrVideo->add_pattern("*.wav");
+  m_filterAudioOrVideo->add_pattern("*.avi");
+  m_filterAudioOrVideo->add_pattern("*.wma");
+  m_filterAudioOrVideo->add_pattern("*.mkv");
+  m_filterAudioOrVideo->add_pattern("*.mpg");
+  m_filterAudioOrVideo->add_pattern("*.mpeg");
+  m_filterAudioOrVideo->add_mime_type("video/*");
+  m_filterAudioOrVideo->add_mime_type("audio/*");
+  add_filter(m_filterAudioOrVideo);
+
+  // audio filter
+  Glib::RefPtr<Gtk::FileFilter> m_filterAudio = Gtk::FileFilter::create();
+  m_filterAudio->set_name(_("Audio"));
+  m_filterAudio->add_pattern("*.mp3");
+  m_filterAudio->add_pattern("*.ogg");
+  m_filterAudio->add_pattern("*.wav");
+  m_filterAudio->add_mime_type("audio/*");
+  add_filter(m_filterAudio);
+
   // video filter
   Glib::RefPtr<Gtk::FileFilter> m_filterVideo = Gtk::FileFilter::create();
   m_filterVideo->set_name(_("Video"));
@@ -381,14 +405,6 @@ DialogOpenVideo::DialogOpenVideo()
   m_filterVideo->add_mime_type("video/*");
   add_filter(m_filterVideo);
 
-  // audio filter
-  Glib::RefPtr<Gtk::FileFilter> m_filterAudio = Gtk::FileFilter::create();
-  m_filterAudio->set_name(_("Audio"));
-  m_filterAudio->add_pattern("*.mp3");
-  m_filterAudio->add_pattern("*.ogg");
-  m_filterAudio->add_pattern("*.wav");
-  m_filterAudio->add_mime_type("audio/*");
-  add_filter(m_filterAudio);
 
   Glib::RefPtr<Gtk::FileFilter> m_filterAll = Gtk::FileFilter::create();
   m_filterAll->set_name(_("ALL"));
