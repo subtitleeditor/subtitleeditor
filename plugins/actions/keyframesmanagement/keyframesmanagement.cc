@@ -192,12 +192,19 @@ class KeyframesManagementPlugin : public Action {
   }
 
   void on_keyframes_changed() {
+	se_dbg(SE_DBG_PLUGINS);
     Glib::RefPtr<KeyFrames> kf = player()->get_keyframes();
-    if (kf)
-      add_in_recent_manager(kf->get_uri());
+    Glib::ustring uri;
+	if (kf){
+      uri = kf->get_uri();
+      // When waveform is first created, there is a wf object and the condition 
+      // evaluates to true, but the file is not yet saved, so the uri is empty.
+      // In such a case, do not add to recent files, as it added an empty uri, making it unsuable
+      if (!uri.empty())
+        add_in_recent_manager(uri);
+    }
     update_ui();
   }
-
   void update_ui() {
     se_dbg(SE_DBG_PLUGINS);
 

@@ -272,9 +272,17 @@ class WaveformManagement : public Action {
   }
 
   void on_waveform_changed() {
+    se_dbg(SE_DBG_PLUGINS);
     Glib::RefPtr<Waveform> wf = get_waveform_manager()->get_waveform();
-    if (wf)
-      add_in_recent_manager(wf->get_uri());
+    Glib::ustring uri;
+    if (wf){
+      uri = wf->get_uri();
+	  // When waveform is first created, there is a wf object and the condition 
+	  // evaluates to true, but the file is not yet saved, so the uri is empty.
+	  // In such a case, do not add to recent files, as it added an empty uri, making it unsuable
+	  if (!uri.empty())
+		add_in_recent_manager(uri);
+	}	
     update_ui();
   }
 
