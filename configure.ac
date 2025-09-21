@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 # AC_PREREQ(2.59)
-AC_INIT(subtitleeditor, 0.54.0)
+AC_INIT(subtitleeditor, 0.55.0)
 AM_INIT_AUTOMAKE([tar-ustar])
 
 AC_CONFIG_SRCDIR([Makefile.am])
