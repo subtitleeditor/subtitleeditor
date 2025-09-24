@@ -3436,7 +3436,7 @@ msgid "Sentence"
 msgstr "Πρόταση"
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:1
-msgid "Add or remove spaces around parantheses and square brackets"
+msgid "Add or remove spaces around parentheses and square brackets"
 msgstr "Προσθήκη ή αφαίρεση διαστημάτων γύρω από παρενθέσεις ή αγκύλες"
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:2
@@ -3613,7 +3613,7 @@ msgid "One-line song lyrics between number signs"
 msgstr "Μονόστιχα των τραγουδιών μεταξύ # #"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:3
-msgid "Remove description of a sound between parantheses"
+msgid "Remove description of a sound between parentheses"
 msgstr "Αφαίρεση περιγραφής ενός ήχου ανάμεσα σε παρενθέσεις"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:4
@@ -3653,7 +3653,7 @@ msgid "Sound in brackets"
 msgstr "Ήχος σε αγκύλες"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:13
-msgid "Sound in parantheses"
+msgid "Sound in parentheses"
 msgstr "Ήχος σε παρενθέσεις"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:14

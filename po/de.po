@@ -4229,7 +4229,7 @@ msgid "Spaces around brackets"
 msgstr "Leerzeichen um Klammern"
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:6
-msgid "Add or remove spaces around parantheses and square brackets"
+msgid "Add or remove spaces around parentheses and square brackets"
 msgstr "Fügt ein Leerzeichen um runden und eckigen Klammern ein oder entfernt dieses"
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:7
@@ -4392,11 +4392,11 @@ msgid "Remove description of a sound between square brackets"
 msgstr "Entfernt Beschreibung eines Geräusches zwischen eckigen Klammern"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:3
-msgid "Sound in parantheses"
+msgid "Sound in parentheses"
 msgstr "Geräusch in runden Klammern"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:4
-msgid "Remove description of a sound between parantheses"
+msgid "Remove description of a sound between parentheses"
 msgstr "Entfernt Beschreibung eines Geräusches zwischen runden Klammern"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:5

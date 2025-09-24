@@ -3508,7 +3508,7 @@ msgid "Sentence"
 msgstr "Frazo"
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:1
-msgid "Add or remove spaces around parantheses and square brackets"
+msgid "Add or remove spaces around parentheses and square brackets"
 msgstr "Aldoni aŭ forigi spacojn ĉirkaŭ normalaj kaj rektaj krampoj"
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:2
@@ -3690,7 +3690,7 @@ msgid "One-line song lyrics between number signs"
 msgstr "Unuliniaj kanttekstoj inter numersignoj"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:3
-msgid "Remove description of a sound between parantheses"
+msgid "Remove description of a sound between parentheses"
 msgstr "Forigi interkrampan sonpriskribon"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:4
@@ -3731,7 +3731,7 @@ msgid "Sound in brackets"
 msgstr "Sonoj en krampoj"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:13
-msgid "Sound in parantheses"
+msgid "Sound in parentheses"
 msgstr "Sonoj inter krampoj"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:14

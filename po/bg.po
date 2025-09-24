@@ -3471,7 +3471,7 @@ msgid "Sentence"
 msgstr "Изречение"
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:1
-msgid "Add or remove spaces around parantheses and square brackets"
+msgid "Add or remove spaces around parentheses and square brackets"
 msgstr "Добавяне или премахване на интервали след кръгли и квадратни скоби"
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:2
@@ -3651,7 +3651,7 @@ msgid "One-line song lyrics between number signs"
 msgstr ""
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:3
-msgid "Remove description of a sound between parantheses"
+msgid "Remove description of a sound between parentheses"
 msgstr ""
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:4
@@ -3691,7 +3691,7 @@ msgid "Sound in brackets"
 msgstr ""
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:13
-msgid "Sound in parantheses"
+msgid "Sound in parentheses"
 msgstr ""
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:14

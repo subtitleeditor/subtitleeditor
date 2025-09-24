@@ -4302,7 +4302,7 @@ msgid "Spaces around brackets"
 msgstr "Espacios alrededor de los corchetes."
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:6
-msgid "Add or remove spaces around parantheses and square brackets"
+msgid "Add or remove spaces around parentheses and square brackets"
 msgstr "Añade o elimina espacios alrededor de paréntesis y corchetes"
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:7
@@ -4469,11 +4469,11 @@ msgid "Remove description of a sound between square brackets"
 msgstr "Remover descripción de un sonido entre corchetes cuadrados."
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:3
-msgid "Sound in parantheses"
+msgid "Sound in parentheses"
 msgstr "Sonido entre paréntesis."
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:4
-msgid "Remove description of a sound between parantheses"
+msgid "Remove description of a sound between parentheses"
 msgstr "Remover descripción de un sonido entre paréntesis."
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:5

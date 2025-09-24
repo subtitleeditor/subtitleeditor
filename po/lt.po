@@ -3673,7 +3673,7 @@ msgid "Sentence"
 msgstr "Sakinys"
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:1
-msgid "Add or remove spaces around parantheses and square brackets"
+msgid "Add or remove spaces around parentheses and square brackets"
 msgstr "Pridėti ar pašalinti tarpus aplink skliaustus ir laužtinius skliaustus"
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:2
@@ -3855,7 +3855,7 @@ msgid "One-line song lyrics between number signs"
 msgstr "Vienos eilutės dainų žodžiai tarp grotelių"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:3
-msgid "Remove description of a sound between parantheses"
+msgid "Remove description of a sound between parentheses"
 msgstr "Pašalinti garso aprašymą esantį tarp skliaustų"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:4
@@ -3899,7 +3899,7 @@ msgid "Sound in brackets"
 msgstr "Garsas laužtiniuose skliaustuose"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:13
-msgid "Sound in parantheses"
+msgid "Sound in parentheses"
 msgstr "Garsas skliaustuose"
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:14

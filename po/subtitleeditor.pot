@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-13 20:27+0200\n"
+"POT-Creation-Date: 2025-09-24 20:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,7 +123,7 @@ msgid "Remove 1 Frame from all subtitles selected"
 msgstr ""
 
 #: ../plugins/actions/adjusttime/adjusttime.cc:297
-#: ../plugins/actions/dialoguize/dialoguize.cc:241
+#: ../plugins/actions/dialoguize/dialoguize.cc:238
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:95
 #: ../plugins/actions/italicize/italicize.cc:106
 #: ../plugins/actions/movesubtitles/movesubtitles.cc:173
@@ -445,7 +445,7 @@ msgstr ""
 msgid "Add or remove dialogue line"
 msgstr ""
 
-#: ../plugins/actions/dialoguize/dialoguize.cc:250
+#: ../plugins/actions/dialoguize/dialoguize.cc:247
 #: ../plugins/actions/dialoguize/dialoguize.se-plugin.in.h:1
 msgid "Dialoguize"
 msgstr ""
@@ -1051,13 +1051,13 @@ msgid "<b>Columns</b>"
 msgstr ""
 
 #: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:11
-#: ../plugins/actions/findandreplace/findandreplace.cc:538
+#: ../plugins/actions/findandreplace/findandreplace.cc:537
 #: ../src/subtitleview.cc:1263
 msgid "Text"
 msgstr ""
 
 #: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:12
-#: ../plugins/actions/findandreplace/findandreplace.cc:540
+#: ../plugins/actions/findandreplace/findandreplace.cc:539
 #: ../plugins/actions/viewmanager/viewmanager.cc:317
 #: ../src/subtitleview.cc:1264
 msgid "Translation"
@@ -1072,40 +1072,40 @@ msgstr ""
 msgid "Target"
 msgstr ""
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:165
+#: ../plugins/actions/findandreplace/findandreplace.cc:166
 msgid "Replace text"
 msgstr ""
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:496
-#: ../plugins/actions/findandreplace/findandreplace.cc:861
+#: ../plugins/actions/findandreplace/findandreplace.cc:495
+#: ../plugins/actions/findandreplace/findandreplace.cc:860
 msgid "The document is empty"
 msgstr ""
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:760
+#: ../plugins/actions/findandreplace/findandreplace.cc:759
 msgid "_Find And Replace"
 msgstr ""
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:761
+#: ../plugins/actions/findandreplace/findandreplace.cc:760
 msgid "Search and replace text"
 msgstr ""
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:766
+#: ../plugins/actions/findandreplace/findandreplace.cc:765
 msgid "Find Ne_xt"
 msgstr ""
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:767
+#: ../plugins/actions/findandreplace/findandreplace.cc:766
 msgid "Search forwards for the same text"
 msgstr ""
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:771
+#: ../plugins/actions/findandreplace/findandreplace.cc:770
 msgid "Find Pre_vious"
 msgstr ""
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:772
+#: ../plugins/actions/findandreplace/findandreplace.cc:771
 msgid "Search backwards for the same text"
 msgstr ""
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:871
+#: ../plugins/actions/findandreplace/findandreplace.cc:870
 msgid "Not found"
 msgstr ""
 
@@ -1235,7 +1235,7 @@ msgid "Open keyframes from a file"
 msgstr ""
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:59
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:257
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:264
 msgid "Save Keyframes"
 msgstr ""
 
@@ -1318,11 +1318,11 @@ msgstr ""
 msgid "_Recent Files"
 msgstr ""
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:427
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:434
 msgid "Snap Start to Keyframe"
 msgstr ""
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:447
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:454
 msgid "Snap End to Keyframe"
 msgstr ""
 
@@ -2964,7 +2964,7 @@ msgstr ""
 msgid "Show or hide the waveform in the current window"
 msgstr ""
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:378
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:386
 msgid "Save Waveform"
 msgstr ""
 
@@ -3312,41 +3312,45 @@ msgstr ""
 msgid "Open Video"
 msgstr ""
 
-#: ../src/gui/dialogfilechooser.cc:375 ../src/gui/dialogfilechooser.cc:444
-#: ../src/gui/dialogfilechooser.cc:509
-msgid "Video"
+#: ../src/gui/dialogfilechooser.cc:375
+msgid "Audio or Video"
 msgstr ""
 
-#: ../src/gui/dialogfilechooser.cc:386 ../src/gui/dialogfilechooser.cc:455
+#: ../src/gui/dialogfilechooser.cc:390 ../src/gui/dialogfilechooser.cc:471
 msgid "Audio"
 msgstr ""
 
-#: ../src/gui/dialogfilechooser.cc:394 ../src/gui/dialogfilechooser.cc:464
-#: ../src/gui/dialogfilechooser.cc:520
+#: ../src/gui/dialogfilechooser.cc:399 ../src/gui/dialogfilechooser.cc:460
+#: ../src/gui/dialogfilechooser.cc:525
+msgid "Video"
+msgstr ""
+
+#: ../src/gui/dialogfilechooser.cc:410 ../src/gui/dialogfilechooser.cc:480
+#: ../src/gui/dialogfilechooser.cc:536
 msgid "ALL"
 msgstr ""
 
-#: ../src/gui/dialogfilechooser.cc:416
+#: ../src/gui/dialogfilechooser.cc:432
 msgid "Open Waveform"
 msgstr ""
 
-#: ../src/gui/dialogfilechooser.cc:422
+#: ../src/gui/dialogfilechooser.cc:438
 msgid "Waveform & Media"
 msgstr ""
 
-#: ../src/gui/dialogfilechooser.cc:438
+#: ../src/gui/dialogfilechooser.cc:454
 msgid "Waveform (*.wf)"
 msgstr ""
 
-#: ../src/gui/dialogfilechooser.cc:485
+#: ../src/gui/dialogfilechooser.cc:501
 msgid "Open Keyframe"
 msgstr ""
 
-#: ../src/gui/dialogfilechooser.cc:491
+#: ../src/gui/dialogfilechooser.cc:507
 msgid "Keyframe & Media"
 msgstr ""
 
-#: ../src/gui/dialogfilechooser.cc:503
+#: ../src/gui/dialogfilechooser.cc:519
 msgid "Keyframe (*.kf)"
 msgstr ""
 
@@ -4472,11 +4476,11 @@ msgid "Remove description of a sound between square brackets"
 msgstr ""
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:3
-msgid "Sound in parantheses"
+msgid "Sound in parentheses"
 msgstr ""
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:4
-msgid "Remove description of a sound between parantheses"
+msgid "Remove description of a sound between parentheses"
 msgstr ""
 
 #: ../plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in.h:5

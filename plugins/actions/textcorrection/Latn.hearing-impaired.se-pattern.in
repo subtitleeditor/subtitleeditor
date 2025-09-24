@@ -3,7 +3,7 @@
   <pattern _name="Sound in brackets" _description="Remove description of a sound between square brackets" classes="">
     <rule regex="\[.*?\]" flags="DOTALL;MULTILINE;UNICODE;" replacement="" repeat=""/>
   </pattern>
-  <pattern _name="Sound in parantheses" _description="Remove description of a sound between parantheses" classes="">
+  <pattern _name="Sound in parentheses" _description="Remove description of a sound between parentheses" classes="">
     <rule regex="\(.*?\)" flags="DOTALL;MULTILINE;UNICODE;" replacement="" repeat=""/>
   </pattern>
   <pattern _name="Song lyrics between number signs" _description="Remove song lyrics starting with or between number signs" classes="">
