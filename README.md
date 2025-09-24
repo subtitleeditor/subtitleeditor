@@ -86,7 +86,9 @@ After building with `make`, it is possible to run Subtitle Editor before install
 ```
 To update the translations files when strings or files get added, one needs to run the following in the `./po` directory:
 ```
-intltool-update --maintain
-intltool-update --headers     
-intltool-update --pot
+../prepare-po.sh # checks for potential new files that could include translatable strings
+intltool-update --maintain # does the same, potentially can produce files missing and notexist listing deleted files or not-included files
+intltool-update --headers # creates headers, do not run any git commands now as a lot of unwanted files would get staged    
+intltool-update --pot #this generates a new pot file
+for po in *po; do intltool-update ${po%.po} ; done #this finally applies the changes to the master pot file to individual translations
 ```
