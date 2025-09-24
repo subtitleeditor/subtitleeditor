@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-24 20:29+0200\n"
+"POT-Creation-Date: 2025-09-24 23:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -959,6 +959,7 @@ msgid "Always use the following format"
 msgstr ""
 
 #: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:12
+#: ../plugins/actions/template/dialog-template-save-as.ui.h:3
 #: ../src/gui/application.cc:306 ../share/ui/dialog-save-document.ui.h:4
 msgid "Format:"
 msgstr ""
@@ -1284,6 +1285,7 @@ msgstr ""
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:141
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.se-plugin.in.h:2
+#: ../plugins/actions/template/template.se-plugin.in.h:2
 #: ../plugins/actions/textcorrection/textcorrection.se-plugin.in.h:2
 msgid "FIXME"
 msgstr ""
@@ -2313,6 +2315,29 @@ msgstr ""
 msgid "Set style to selection"
 msgstr ""
 
+#: ../plugins/actions/template/dialog-template-save-as.ui.h:1
+msgid "Save Template As:"
+msgstr ""
+
+#: ../plugins/actions/template/dialog-template-save-as.ui.h:2
+#: ../src/gui/application.cc:305
+msgid "Name:"
+msgstr ""
+
+#: ../plugins/actions/template/dialog-template-save-as.ui.h:4
+#: ../src/document.cc:435 ../src/gui/application.cc:305
+#: ../share/ui/dialog-export-text.ui.h:2 ../share/ui/dialog-import-text.ui.h:2
+#: ../share/ui/dialog-open-document.ui.h:2
+#: ../share/ui/dialog-save-document.ui.h:3
+msgid "Character Coding:"
+msgstr ""
+
+#: ../plugins/actions/template/dialog-template-save-as.ui.h:5
+#: ../share/ui/dialog-export-text.ui.h:3
+#: ../share/ui/dialog-save-document.ui.h:2
+msgid "NewLine:"
+msgstr ""
+
 #: ../plugins/actions/template/template.cc:105
 msgid "_Template"
 msgstr ""
@@ -3070,13 +3095,6 @@ msgstr ""
 msgid "Select a different character coding from the menu and try again."
 msgstr ""
 
-#: ../src/document.cc:435 ../src/gui/application.cc:305
-#: ../share/ui/dialog-export-text.ui.h:2 ../share/ui/dialog-import-text.ui.h:2
-#: ../share/ui/dialog-open-document.ui.h:2
-#: ../share/ui/dialog-save-document.ui.h:3
-msgid "Character Coding:"
-msgstr ""
-
 #: ../src/document.cc:451 ../src/document.cc:459 ../src/document.cc:467
 #, c-format
 msgid "Could not open the file \"%s\""
@@ -3235,10 +3253,6 @@ msgstr ""
 
 #: ../src/gui/application.cc:296
 msgid "Frames"
-msgstr ""
-
-#: ../src/gui/application.cc:305
-msgid "Name:"
 msgstr ""
 
 #: ../src/gui/application.cc:305
@@ -3696,11 +3710,6 @@ msgstr ""
 msgid "Export Text"
 msgstr ""
 
-#: ../share/ui/dialog-export-text.ui.h:3
-#: ../share/ui/dialog-save-document.ui.h:2
-msgid "NewLine:"
-msgstr ""
-
 #: ../share/ui/dialog-export-text.ui.h:4
 msgid "Put Blank Lines Between Subtitles"
 msgstr ""
@@ -4101,6 +4110,10 @@ msgstr ""
 
 #: ../plugins/actions/stylize/stylize.se-plugin.in.h:2
 msgid "Stylize the selected subtitles text."
+msgstr ""
+
+#: ../plugins/actions/template/template.se-plugin.in.h:1
+msgid "Template Management"
 msgstr ""
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.se-plugin.in.h:1

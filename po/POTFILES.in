@@ -262,6 +262,7 @@ src/writer.h
 [type: gettext/glade] plugins/actions/spellchecking/dialog-spell-checking.ui
 [type: gettext/glade] plugins/actions/splitdocument/dialog-split-document.ui
 [type: gettext/glade] plugins/actions/styleeditor/dialog-style-editor.ui
+[type: gettext/glade] plugins/actions/template/dialog-template-save-as.ui
 [type: gettext/glade] plugins/actions/textcorrection/assistant-text-correction.ui
 [type: gettext/glade] plugins/actions/timingfromplayer/dialog-timing-from-player-preferences.ui
 [type: gettext/glade] plugins/actions/viewmanager/dialog-view-manager.ui
@@ -316,6 +317,7 @@ src/writer.h
 [type: gettext/ini] plugins/actions/stacksubtitles/stacksubtitles.se-plugin.in
 [type: gettext/ini] plugins/actions/styleeditor/styleeditor.se-plugin.in
 [type: gettext/ini] plugins/actions/stylize/stylize.se-plugin.in
+[type: gettext/ini] plugins/actions/template/template.se-plugin.in
 [type: gettext/ini] plugins/actions/textcorrection/textcorrection.se-plugin.in
 [type: gettext/ini] plugins/actions/timemodemanagement/timemodemanagement.se-plugin.in
 [type: gettext/ini] plugins/actions/timingfromplayer/timingfromplayer.se-plugin.in
