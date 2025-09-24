@@ -92,3 +92,8 @@ intltool-update --headers # creates headers, do not run any git commands now as 
 intltool-update --pot #this generates a new pot file
 for po in *po; do intltool-update ${po%.po} ; done #this finally applies the changes to the master pot file to individual translations
 ```
+
+To prepare a release:
+- bump the version in configure.ac
+- check the log (git log) to create release notes in GitHub
+- draft a release, when it’s ok, add a new bumped tag
