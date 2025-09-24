@@ -85,6 +85,7 @@ config.status
 libtool
 po/POTFILES
 po/stamp-it
+po/notexist
 
 *.gmo
 *.se-pattern
@@ -96,6 +97,12 @@ share/org.kitone.subtitleeditor.desktop
 
 #joe and some other editors generate backup files by default. Ignore them:
 *~
+
+#kate stuff
+compile_commands.json
+.cache/*
+*.kate-swp
+
 
 #lock files
 *.lock
