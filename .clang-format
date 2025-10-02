@@ -1,7 +1,18 @@
 ---
 BasedOnStyle: Google
-AlignTrailingComments: true
+ColumnLimit: 150
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 2
 ReflowComments: true
-ColumnLimit: 80
+
 AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: false
+
+BinPackArguments: false
+BinPackParameters: OnePerLine
+AlignAfterOpenBracket: true
+MaxEmptyLinesToKeep: 1
+
+IndentWidth: 3
+ContinuationIndentWidth: 3
