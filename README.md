@@ -64,6 +64,7 @@ Source tarballs, installing from a source tarball:
 
 ```bash
 ./autogen.sh
+./configure
 make
 sudo make install
 ```
