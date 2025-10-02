@@ -165,24 +165,7 @@
                             <property name="y_options"/>
                           </packing>
                         </child>
-                        <child>
-                          <object class="GtkCheckButton" id="check-only-selected-subtitles">
-                            <property name="label" translatable="yes">_Only selected subtitles</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">False</property>
-                            <property name="tooltip_text" translatable="yes">If the option is activated, only the selected subtitles are moved. Without this option, it starts from the first selected subtitle until the last subtitle of the document without taking into account the selection.</property>
-                            <property name="use_underline">True</property>
-                            <property name="xalign">0</property>
-                            <property name="draw_indicator">True</property>
-                          </object>
-                          <packing>
-                            <property name="right_attach">2</property>
-                            <property name="top_attach">2</property>
-                            <property name="bottom_attach">3</property>
-                          </packing>
-                        </child>
-                      </object>
+                       </object>
                     </child>
                   </object>
                   <packing>
