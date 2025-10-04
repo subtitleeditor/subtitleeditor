@@ -103,12 +103,8 @@ compile_commands.json
 .cache/*
 *.kate-swp
 
-<<<<<<< HEAD
-=======
 #vim
-*.*.swp
-
->>>>>>> 392b72d (Add vim swap files to .gitignore)
+.*.swp
 
 #lock files
 *.lock
