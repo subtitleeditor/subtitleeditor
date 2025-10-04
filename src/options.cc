@@ -18,9 +18,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+#include "options.h"
+
 #include "debug.h"
 #include "i18n.h"
-#include "options.h"
 
 OptionGroup::OptionGroup()
     : Glib::OptionGroup("subtitleeditor...", "description...", "help...") {
@@ -39,7 +40,10 @@ OptionGroup::OptionGroup()
   Glib::OptionEntry entryFile;
   entryFile.set_long_name("file");
   entryFile.set_short_name('f');
-  entryFile.set_description("open a file (-f file1 -f file2 --file=file3)");
+  entryFile.set_description(
+      "Open a subtitle file (or multiple subtitle files: -f FILE1 -f FILE2 "
+      "--file=FILE3 "
+      "…)");
   entryFile.set_arg_description(_("FILE"));
   add_entry(entryFile, files_list);
 
@@ -47,7 +51,7 @@ OptionGroup::OptionGroup()
   Glib::OptionEntry entryProfile;
   entryProfile.set_long_name("profile");
   entryProfile.set_short_name('p');
-  entryProfile.set_description("the name of the profile used by the config");
+  entryProfile.set_description("The name of the configuration profile");
   entryProfile.set_arg_description(_("NAME"));
   add_entry(entryProfile, profile);
 
@@ -55,7 +59,7 @@ OptionGroup::OptionGroup()
   Glib::OptionEntry entryEncoding;
   entryEncoding.set_long_name("encoding");
   entryEncoding.set_short_name('e');
-  entryEncoding.set_description("encoding used to open files");
+  entryEncoding.set_description("Encoding used to open subtitled files");
   entryEncoding.set_arg_description(_("ENCODING"));
   add_entry(entryEncoding, encoding);
 
@@ -63,7 +67,7 @@ OptionGroup::OptionGroup()
   Glib::OptionEntry entryVideo;
   entryVideo.set_long_name("video");
   entryVideo.set_short_name('v');
-  entryVideo.set_description("open video file");
+  entryVideo.set_description("Open video file");
   entryVideo.set_arg_description(_("FILE"));
   add_entry(entryVideo, video);
 
@@ -71,7 +75,7 @@ OptionGroup::OptionGroup()
   Glib::OptionEntry entryWaveform;
   entryWaveform.set_long_name("waveform");
   entryWaveform.set_short_name('w');
-  entryWaveform.set_description("open waveform file");
+  entryWaveform.set_description("Open waveform file");
   entryWaveform.set_arg_description(_("FILE"));
   add_entry(entryWaveform, waveform);
 
@@ -81,23 +85,23 @@ OptionGroup::OptionGroup()
   {                                   \
     value = false;                    \
     Glib::OptionEntry e;              \
-    e.set_long_name("debug-" #name);  \
+    e.set_long_name("debug-" name);   \
     add_entry(e, value);              \
   }
 
-  add_debug_option(all, debug_all);
-  add_debug_option(app, debug_app);
-  add_debug_option(view, debug_view);
-  add_debug_option(io, debug_io);
-  add_debug_option(search, debug_search);
-  add_debug_option(regex, debug_regex);
-  add_debug_option(video-player, debug_video_player);
-  add_debug_option(spell-checking, debug_spell_checking);
-  add_debug_option(waveform, debug_waveform);
-  add_debug_option(utility, debug_utility);
-  add_debug_option(command, debug_command);
-  add_debug_option(plugins, debug_plugins);
-  add_debug_option(profiling, debug_profiling);
+  add_debug_option("all", debug_all);
+  add_debug_option("app", debug_app);
+  add_debug_option("view", debug_view);
+  add_debug_option("io", debug_io);
+  add_debug_option("search", debug_search);
+  add_debug_option("regex", debug_regex);
+  add_debug_option("video-player", debug_video_player);
+  add_debug_option("spell-checking", debug_spell_checking);
+  add_debug_option("waveform", debug_waveform);
+  add_debug_option("utility", debug_utility);
+  add_debug_option("command", debug_command);
+  add_debug_option("plugins", debug_plugins);
+  add_debug_option("profiling", debug_profiling);
 
 #undef add_debug_option
 
