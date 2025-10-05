@@ -56,8 +56,7 @@ class KeyframesManagementPlugin : public Action {
     // Save
     action_group->add(
         Gtk::Action::create("keyframes/save", Gtk::Stock::SAVE,
-                            _("Save Keyframes"),
-                            _("Save keyframes to the file")),
+                            _("Save Keyframes"), _("Save keyframes to a file")),
         Gtk::AccelKey("<Shift><Control>K"),
         sigc::mem_fun(*this, &KeyframesManagementPlugin::on_save));
     // Generate
@@ -76,45 +75,55 @@ class KeyframesManagementPlugin : public Action {
     // Close
     action_group->add(
         Gtk::Action::create("keyframes/close", Gtk::Stock::CLOSE,
-                            _("Close the keyframes"), _("FIXME")),
+                            _("Close Keyframes"),
+                            _("Close the keyframes file")),
         Gtk::AccelKey("<Alt><Control>K"),
         sigc::mem_fun(*this, &KeyframesManagementPlugin::on_close));
     // Seek
     action_group->add(
-        Gtk::Action::create("keyframes/seek-to-previous",
-                            Gtk::Stock::MEDIA_PREVIOUS,
-                            _("Seek To Previous Keyframe"), _("FIXME")),
+        Gtk::Action::create(
+            "keyframes/seek-to-previous", Gtk::Stock::MEDIA_PREVIOUS,
+            _("Seek To Previous Keyframe"), _("Seek to the previous keyframe")),
         sigc::mem_fun(*this, &KeyframesManagementPlugin::on_seek_previous));
 
     action_group->add(
         Gtk::Action::create("keyframes/seek-to-next", Gtk::Stock::MEDIA_NEXT,
-                            _("Seek To Next Keyframe"), _("FIXME")),
+                            _("Seek To Next Keyframe"),
+                            _("Seek to the next keyframe")),
         sigc::mem_fun(*this, &KeyframesManagementPlugin::on_seek_next));
     // Snap Start
     action_group->add(
         Gtk::Action::create("keyframes/snap-start-to-previous",
                             Gtk::Stock::GOTO_FIRST,
-                            _("Snap Start To Previous Keyframe"), _("FIXME")),
+                            _("Snap Start To Previous Keyframe"),
+                            _("Snap start of the first selected subtitle to "
+                              "the previous keyframe")),
         sigc::mem_fun(*this,
                       &KeyframesManagementPlugin::on_snap_start_to_previous));
 
     action_group->add(
         Gtk::Action::create("keyframes/snap-start-to-next",
                             Gtk::Stock::GOTO_LAST,
-                            _("Snap Start To Next Keyframe"), _("FIXME")),
+                            _("Snap Start To Next Keyframe"),
+                            _("Snap start of the first selected subtitle to "
+                              "the next keyframe")),
         sigc::mem_fun(*this,
                       &KeyframesManagementPlugin::on_snap_start_to_next));
     // Snap End
     action_group->add(
         Gtk::Action::create("keyframes/snap-end-to-previous",
                             Gtk::Stock::GOTO_FIRST,
-                            _("Snap End To Previous Keyframe"), _("FIXME")),
+                            _("Snap End To Previous Keyframe"),
+                            _("Snap end of the first selected subtitle to the "
+                              "previous keyframe")),
         sigc::mem_fun(*this,
                       &KeyframesManagementPlugin::on_snap_end_to_previous));
 
     action_group->add(
         Gtk::Action::create("keyframes/snap-end-to-next", Gtk::Stock::GOTO_LAST,
-                            _("Snap End To Next Keyframe"), _("FIXME")),
+                            _("Snap End To Next Keyframe"),
+                            _("Snap end of the first selected subtitle to the "
+                              "previous keyframe")),
         sigc::mem_fun(*this, &KeyframesManagementPlugin::on_snap_end_to_next));
 
     // Recent files
@@ -192,14 +201,15 @@ class KeyframesManagementPlugin : public Action {
   }
 
   void on_keyframes_changed() {
-	se_dbg(SE_DBG_PLUGINS);
+    se_dbg(SE_DBG_PLUGINS);
     Glib::RefPtr<KeyFrames> kf = player()->get_keyframes();
     Glib::ustring uri;
-	if (kf){
+    if (kf) {
       uri = kf->get_uri();
-      // When waveform is first created, there is a wf object and the condition 
+      // When waveform is first created, there is a wf object and the condition
       // evaluates to true, but the file is not yet saved, so the uri is empty.
-      // In such a case, do not add to recent files, as it added an empty uri, making it unsuable
+      // In such a case, do not add to recent files, as it added an empty uri,
+      // making it unsuable
       if (!uri.empty())
         add_in_recent_manager(uri);
     }
