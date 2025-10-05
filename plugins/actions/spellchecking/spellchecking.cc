@@ -23,6 +23,7 @@
 #include <isocodes.h>
 #include <spellchecker.h>
 #include <utility.h>
+
 #include <memory>
 
 class DialogSpellChecking : public Gtk::Dialog {
@@ -639,7 +640,8 @@ class SpellCheckingPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("spell-checking", Gtk::Stock::SPELL_CHECK,
-                            _("_Spell Check"), _("Launch the spell checking")),
+                            _("_Spell Check"),
+                            _("Launch the spellchecking dialog")),
         Gtk::AccelKey("F7"),
         sigc::mem_fun(*this, &SpellCheckingPlugin::on_execute));
 

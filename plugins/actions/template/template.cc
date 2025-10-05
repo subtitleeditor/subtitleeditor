@@ -25,6 +25,7 @@
 #include <gui/comboboxnewline.h>
 #include <gui/comboboxsubtitleformat.h>
 #include <utility.h>
+
 #include <memory>
 
 class DialogTemplate : public Gtk::Dialog {
@@ -102,12 +103,13 @@ class TemplatePlugin : public Action {
     // actions
     action_group = Gtk::ActionGroup::create("TemplatePlugin");
 
-    action_group->add(Gtk::Action::create("template", _("_Template")));
+    action_group->add(Gtk::Action::create(
+        "template", _("_Template"), _("Save a template or use a template")));
 
     action_group->add(
         Gtk::Action::create("save-as-template", Gtk::Stock::SAVE_AS,
                             _("_Save As Template"),
-                            _("Save the current document as template.")),
+                            _("Save the current document as template")),
         sigc::mem_fun(*this, &TemplatePlugin::on_save_as_template));
 
     // ui

@@ -40,15 +40,17 @@ class MoveAfterPrecedingSubtitlePlugin : public Action {
     action_group = Gtk::ActionGroup::create("MoveAfterPrecedingSubtitlePlugin");
 
     action_group->add(
-        Gtk::Action::create("move-after-preceding-subtitle",
-                            _("_Move After Preceding"),
-                            _("Move subtitle after the preceding with the "
-                              "respect of the minimum gap between subtitles")),
+        Gtk::Action::create(
+            "move-after-preceding-subtitle", _("_Move After Preceding"),
+            _("Move selected subtitles right after the previous ones (while "
+              "respecting minimum gap between subtitles)")),
         sigc::mem_fun(*this,
                       &MoveAfterPrecedingSubtitlePlugin::on_execute_after));
     action_group->add(
-        Gtk::Action::create("move-before-next-subtitle", _("_Move Before Next"),
-                            _("Move subtitle just before the next one")),
+        Gtk::Action::create(
+            "move-before-next-subtitle", _("_Move Before Next"),
+            _("Move selected subtitles right before the next ones (while "
+              "respecting minimum gap between subtitles)")),
         sigc::mem_fun(*this,
                       &MoveAfterPrecedingSubtitlePlugin::on_execute_before));
 

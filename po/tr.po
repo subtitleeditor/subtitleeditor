@@ -21,7 +21,7 @@ msgstr ""
 
 #. comments
 #: ../plugins/actions/about/about.cc:76
-msgid "a tool for subtitles edition"
+msgid "A tool for editing subtitles"
 msgstr "alt yazı düzenleme aracı"
 
 #. translator-credits
@@ -794,7 +794,7 @@ msgid "_Error Checking"
 msgstr "_Hata Denetimi"
 
 #: ../plugins/actions/errorchecking/errorcheckingplugin.cc:692
-msgid "Launch the error checking."
+msgid "Launch error checking."
 msgstr "Hata denetimini başlat"
 
 #: ../plugins/actions/errorchecking/maxcharactersperline.h:29
@@ -1196,7 +1196,7 @@ msgstr "Altyazı Ekle"
 #: ../plugins/actions/findbytime/findbytime.cc:57
 #: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
 #, fuzzy
-msgid "Finds the subtitle nearest to the current player position."
+msgid "Finds the subtitle nearest to the current player position"
 msgstr "Altyazı ekranda göründüğünde"
 
 #: ../plugins/actions/findbytime/findbytime.cc:114
@@ -1322,7 +1322,7 @@ msgid "Save Keyframes"
 msgstr ""
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:60
-msgid "Save keyframes to the file"
+msgid "Save keyframes to a file"
 msgstr ""
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:66
@@ -1340,7 +1340,7 @@ msgid "Generate Keyframes From Video (Using Frame)"
 msgstr "_Videodan Dalga Biçimi Üret"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-msgid "Close the keyframes"
+msgid "Close Keyframes"
 msgstr ""
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
@@ -2228,7 +2228,7 @@ msgid "_Spell Check"
 msgstr "_Yazım Denetimi"
 
 #: ../plugins/actions/spellchecking/spellchecking.cc:642
-msgid "Launch the spell checking"
+msgid "Launch spell-checking"
 msgstr "Dilbilgisi kontrolünü çalıştır"
 
 #: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
@@ -2241,7 +2241,7 @@ msgid "The beginning for the new document:"
 msgstr "Yeni dosya için başlangıç:"
 
 #: ../plugins/actions/splitdocument/splitdocument.cc:46
-msgid "You can't use <i>split</i> with this document."
+msgid "You can't use the <i>split</i> action with this document."
 msgstr "Bu dosya için <i>ikiye böl</i> işlemini kullanamazsınız."
 
 #. Remove subtitles used by the new one
@@ -2467,7 +2467,7 @@ msgstr ""
 
 #: ../plugins/actions/template/template.cc:110
 #, fuzzy
-msgid "Save the current document as template."
+msgid "Save the current document as template"
 msgstr "Geçerli belgeyi ikiye böler."
 
 #: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
@@ -2597,7 +2597,7 @@ msgid "Text _Correction"
 msgstr ""
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:46
-msgid "_Times"
+msgid "_Timecodes"
 msgstr "_Süre"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:53
@@ -2635,7 +2635,7 @@ msgid "Timing From Player"
 msgstr ""
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:76
-msgid "Use the current player position to set subtitle time"
+msgid "Use the current player position to set subtitle timecodes"
 msgstr ""
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:80
@@ -2730,11 +2730,11 @@ msgid "_Typewriter"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
+msgid "Characters — Linear"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
+msgid "Characters — Random"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
@@ -2742,7 +2742,7 @@ msgid "Words - Linear"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
+msgid "Words — Random"
 msgstr ""
 
 #. Already create in MenuBar.cc
@@ -2753,12 +2753,12 @@ msgstr "_Video"
 
 #. _("_Open Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:49
-msgid "Open a multimedia file"
+msgid "Open an audio file or a video file"
 msgstr "Çokluortam dosyası aç"
 
 #. _("_Close Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:56
-msgid "Close a multimedia file"
+msgid "Close an audio file or a video file"
 msgstr "Çokluortam dosyasını kapat"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:69
@@ -2766,7 +2766,7 @@ msgid "_Play / Pause"
 msgstr "_Oynat / Duraklat"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
-msgid "Play or make a pause"
+msgid "Play or pause audio or video"
 msgstr "Oynat ve duraklat"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:76
@@ -2781,7 +2781,7 @@ msgstr "_Kare"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:81
 #, fuzzy
-msgid "Frame skip backwards"
+msgid "Skip backwards by a frame"
 msgstr "Hassas geri sarma"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:88
@@ -2836,7 +2836,7 @@ msgstr "_İleri Atla"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:134
 #, fuzzy
-msgid "Frame skip forward"
+msgid "Skip forward by a frame"
 msgstr "Hassas ileri sarma"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
@@ -2869,7 +2869,7 @@ msgstr "Oran"
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
-msgid "Define the playback rate"
+msgid "Set the playback rate"
 msgstr "Oynatma hızını tanımla"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
@@ -2889,7 +2889,7 @@ msgid "_Seek To Selection"
 msgstr "_Seçime Git"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:202
-msgid "Seek to the first selected subtitle"
+msgid "Seek to start of the first selected subtitle"
 msgstr "Seçilen ilk altyazıya git"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
@@ -2931,7 +2931,7 @@ msgid "Play _Next Subtitle"
 msgstr "_Sonraki Altyazıyı Oynat"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:241
-msgid "Play next subtitle from the first selected subtitle"
+msgid "Play the subtitle that is next to the first selected subtitle"
 msgstr "İlk seçilen altyazıdan sonraki alt yazıyı oynat"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:247
@@ -2979,7 +2979,7 @@ msgid "Audio Track"
 msgstr ""
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
-msgid "Choice of an audio track"
+msgid "Choose the audio track"
 msgstr ""
 
 #. A default track "Auto"
@@ -3027,7 +3027,7 @@ msgid "View _Manager"
 msgstr "Görünüm _Yöneticisi"
 
 #: ../plugins/actions/viewmanager/viewmanager.cc:338
-msgid "Manage the views"
+msgid "Manage views"
 msgstr "Görünümleri yönet"
 
 #: ../plugins/actions/waveformmanagement/waveformgenerator.cc:32
@@ -3059,7 +3059,7 @@ msgid "_Generate Waveform From Video"
 msgstr "_Videodan Dalga Biçimi Üret"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:64
-msgid "Generate the waveform from the current video file"
+msgid "Generate a waveform from the current video file"
 msgstr "Geçerli video dosyasından dalga biçimi üret"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:70
@@ -3067,7 +3067,7 @@ msgid "_Generate Dummy Waveform"
 msgstr ""
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:71
-msgid "Generate an dummy waveform (sine)"
+msgid "Generate a dummy waveform (a sinusoidal wave)"
 msgstr ""
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
@@ -3076,7 +3076,7 @@ msgstr "_Dalga Biçimini Kaydet"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
 #, fuzzy
-msgid "Save waveform to file"
+msgid "Save the waveform to a file"
 msgstr "Dalga biçimini dosyaya kaydet"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
@@ -3086,7 +3086,7 @@ msgstr "_Dalga Biçimini Kaydet"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
 #, fuzzy
-msgid "Close waveform"
+msgid "Close the waveform"
 msgstr "Dalga Biçimini Kaydet"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
@@ -3106,11 +3106,11 @@ msgid "Zoom _All"
 msgstr "_Tamamını Göster"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-msgid "_Center With Selected Subtitle"
+msgid "_Center Selected Subtitle"
 msgstr "Seçili Altyazı İle _Ortala"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-msgid "Scrolling With _Player"
+msgid "Scrolling With _Video"
 msgstr "G"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
@@ -3401,7 +3401,7 @@ msgid "Please check your GStreamer installation."
 msgstr "Lütfen GStreamer kurulumunuzu kontrol edin."
 
 #: ../src/gui/application.cc:296
-msgid "Times"
+msgid "Timecodes"
 msgstr ""
 
 #: ../src/gui/application.cc:296
@@ -3991,7 +3991,7 @@ msgid "About"
 msgstr "Hakkında"
 
 #: ../plugins/actions/about/about.se-plugin.in.h:2
-msgid "Displays the application's information."
+msgid "Displays information about the application."
 msgstr "Uygulamanın bilgisini gösterir."
 
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1

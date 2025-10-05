@@ -23,7 +23,7 @@ msgstr ""
 
 #. comments
 #: ../plugins/actions/about/about.cc:76
-msgid "a tool for subtitles edition"
+msgid "A tool for editing subtitles"
 msgstr "一个字幕编辑的工具"
 
 #. translator-credits
@@ -785,7 +785,7 @@ msgid "_Error Checking"
 msgstr "错误检查(_E)"
 
 #: ../plugins/actions/errorchecking/errorcheckingplugin.cc:692
-msgid "Launch the error checking."
+msgid "Launch error checking."
 msgstr "启动错误检查。"
 
 #: ../plugins/actions/errorchecking/maxcharactersperline.h:29
@@ -1173,7 +1173,7 @@ msgstr "增加字幕"
 #: ../plugins/actions/findbytime/findbytime.cc:57
 #: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
 #, fuzzy
-msgid "Finds the subtitle nearest to the current player position."
+msgid "Finds the subtitle nearest to the current player position"
 msgstr "当一个字母出现在屏幕。"
 
 #: ../plugins/actions/findbytime/findbytime.cc:114
@@ -1297,7 +1297,7 @@ msgid "Save Keyframes"
 msgstr "保存关键帧"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:60
-msgid "Save keyframes to the file"
+msgid "Save keyframes to a file"
 msgstr "保存关键帧到该文件"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:66
@@ -1315,7 +1315,7 @@ msgid "Generate Keyframes From Video (Using Frame)"
 msgstr "从视频生成关键帧"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-msgid "Close the keyframes"
+msgid "Close Keyframes"
 msgstr ""
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
@@ -2200,7 +2200,7 @@ msgid "_Spell Check"
 msgstr "拼写检查(_S)"
 
 #: ../plugins/actions/spellchecking/spellchecking.cc:642
-msgid "Launch the spell checking"
+msgid "Launch spell-checking"
 msgstr "启动拼写检查"
 
 #: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
@@ -2213,7 +2213,7 @@ msgid "The beginning for the new document:"
 msgstr "作为新文件的起点："
 
 #: ../plugins/actions/splitdocument/splitdocument.cc:46
-msgid "You can't use <i>split</i> with this document."
+msgid "You can't use the <i>split</i> action with this document."
 msgstr "您无法使用<i>分割</i>以这个文件。"
 
 #. Remove subtitles used by the new one
@@ -2439,7 +2439,7 @@ msgstr ""
 
 #: ../plugins/actions/template/template.cc:110
 #, fuzzy
-msgid "Save the current document as template."
+msgid "Save the current document as template"
 msgstr "将当前文件一分为二。"
 
 #: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
@@ -2569,7 +2569,7 @@ msgid "Text _Correction"
 msgstr ""
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:46
-msgid "_Times"
+msgid "_Timecodes"
 msgstr "时间(_T)"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:53
@@ -2607,7 +2607,7 @@ msgid "Timing From Player"
 msgstr ""
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:76
-msgid "Use the current player position to set subtitle time"
+msgid "Use the current player position to set subtitle timecodes"
 msgstr ""
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:80
@@ -2702,11 +2702,11 @@ msgid "_Typewriter"
 msgstr "打字机(_T)"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
+msgid "Characters — Linear"
 msgstr "单字 - 顺序打出"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
+msgid "Characters — Random"
 msgstr "单字 - 随机打出"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
@@ -2714,7 +2714,7 @@ msgid "Words - Linear"
 msgstr "单词 - 顺序打出"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
+msgid "Words — Random"
 msgstr "单词 - 随机打出"
 
 #. Already create in MenuBar.cc
@@ -2725,12 +2725,12 @@ msgstr "视频(_V)"
 
 #. _("_Open Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:49
-msgid "Open a multimedia file"
+msgid "Open an audio file or a video file"
 msgstr "打开一个多媒体文件"
 
 #. _("_Close Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:56
-msgid "Close a multimedia file"
+msgid "Close an audio file or a video file"
 msgstr "关闭一个多媒体文件"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:69
@@ -2738,7 +2738,7 @@ msgid "_Play / Pause"
 msgstr "播放/暂停(_P)"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
-msgid "Play or make a pause"
+msgid "Play or pause audio or video"
 msgstr "播放或暂停"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:76
@@ -2753,7 +2753,7 @@ msgstr "帧数"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:81
 #, fuzzy
-msgid "Frame skip backwards"
+msgid "Skip backwards by a frame"
 msgstr "小幅向后倒"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:88
@@ -2808,7 +2808,7 @@ msgstr "快进(_F)"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:134
 #, fuzzy
-msgid "Frame skip forward"
+msgid "Skip forward by a frame"
 msgstr "小幅向前进"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
@@ -2841,7 +2841,7 @@ msgstr "比率"
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
-msgid "Define the playback rate"
+msgid "Set the playback rate"
 msgstr "定义回放率"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
@@ -2861,7 +2861,7 @@ msgid "_Seek To Selection"
 msgstr "定位到选择处(_E)"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:202
-msgid "Seek to the first selected subtitle"
+msgid "Seek to start of the first selected subtitle"
 msgstr "定位到第一被选择的字幕"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
@@ -2903,7 +2903,7 @@ msgid "Play _Next Subtitle"
 msgstr "播放下一字幕(_N)"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:241
-msgid "Play next subtitle from the first selected subtitle"
+msgid "Play the subtitle that is next to the first selected subtitle"
 msgstr "播放当前选择字幕的后一字幕"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:247
@@ -2951,7 +2951,7 @@ msgid "Audio Track"
 msgstr "音轨"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
-msgid "Choice of an audio track"
+msgid "Choose the audio track"
 msgstr "选择一个音轨"
 
 #. A default track "Auto"
@@ -2999,7 +2999,7 @@ msgid "View _Manager"
 msgstr "视图管理(_V)"
 
 #: ../plugins/actions/viewmanager/viewmanager.cc:338
-msgid "Manage the views"
+msgid "Manage views"
 msgstr "管理该视图"
 
 #: ../plugins/actions/waveformmanagement/waveformgenerator.cc:32
@@ -3031,7 +3031,7 @@ msgid "_Generate Waveform From Video"
 msgstr "从影片生成音频波形(_G)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:64
-msgid "Generate the waveform from the current video file"
+msgid "Generate a waveform from the current video file"
 msgstr "从当前影片文件生成音频波形"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:70
@@ -3039,7 +3039,7 @@ msgid "_Generate Dummy Waveform"
 msgstr "生成Dummy音频波形(_G)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:71
-msgid "Generate an dummy waveform (sine)"
+msgid "Generate a dummy waveform (a sinusoidal wave)"
 msgstr "生成一个Dummy音频波形"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
@@ -3048,7 +3048,7 @@ msgstr "保存音频波形(_S)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
 #, fuzzy
-msgid "Save waveform to file"
+msgid "Save the waveform to a file"
 msgstr "保存音频波形为文件"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
@@ -3058,7 +3058,7 @@ msgstr "保存音频波形(_S)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
 #, fuzzy
-msgid "Close waveform"
+msgid "Close the waveform"
 msgstr "保存音频波形"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
@@ -3078,11 +3078,11 @@ msgid "Zoom _All"
 msgstr "放大所有(_A)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-msgid "_Center With Selected Subtitle"
+msgid "_Center Selected Subtitle"
 msgstr "居中选择的字幕(_C)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-msgid "Scrolling With _Player"
+msgid "Scrolling With _Video"
 msgstr "跟随播放器滚动"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
@@ -3367,7 +3367,7 @@ msgid "Please check your GStreamer installation."
 msgstr "请检查你安装的 GStreamer。"
 
 #: ../src/gui/application.cc:296
-msgid "Times"
+msgid "Timecodes"
 msgstr "时间"
 
 #: ../src/gui/application.cc:296
@@ -3957,7 +3957,7 @@ msgid "About"
 msgstr "关于"
 
 #: ../plugins/actions/about/about.se-plugin.in.h:2
-msgid "Displays the application's information."
+msgid "Displays information about the application."
 msgstr "显示该应用的信息。"
 
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1

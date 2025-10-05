@@ -44,162 +44,209 @@ class VideoPlayerManagement : public Action {
     // Already create in MenuBar.cc
     action_group->add(Gtk::Action::create("menu-video", _("_Video")));
 
-    action_group->add(Gtk::Action::create("video-player/open", Gtk::Stock::OPEN,
-                                          "",  // _("_Open Media"),
-                                          _("Open a multimedia file")),
-                      Gtk::AccelKey("<Shift><Control>M"),
-                      sigc::mem_fun(*this, &VideoPlayerManagement::on_open));
+    action_group->add(
+        Gtk::Action::create("video-player/open", Gtk::Stock::OPEN,
+                            "",  // _("_Open Media"),
+                            _("Open an audio file or a video file")),
+        Gtk::AccelKey("<Shift><Control>M"),
+        sigc::mem_fun(*this, &VideoPlayerManagement::on_open));
 
     action_group->add(
         Gtk::Action::create("video-player/close", Gtk::Stock::CLOSE,
                             "",  // _("_Close Media"),
-                            _("Close a multimedia file")),
+                            _("Close an audio file or a video file")),
         Gtk::AccelKey("<Shift><Control>C"),
         sigc::mem_fun(*this, &VideoPlayerManagement::on_close));
 
     action_group->add(
-        Gtk::Action::create("video-player/play", Gtk::Stock::MEDIA_PLAY),
+        Gtk::Action::create("video-player/play", Gtk::Stock::MEDIA_PLAY,
+                            _("Play"), _("Play audio or video")),
         sigc::mem_fun(*this, &VideoPlayerManagement::on_play));
 
     action_group->add(
-        Gtk::Action::create("video-player/pause", Gtk::Stock::MEDIA_PAUSE),
+        Gtk::Action::create("video-player/pause", Gtk::Stock::MEDIA_PAUSE,
+                            _("Pause"), _("Pause audio or video")),
         sigc::mem_fun(*this, &VideoPlayerManagement::on_pause));
 
     action_group->add(
         Gtk::Action::create("video-player/play-pause", _("_Play / Pause"),
-                            _("Play or make a pause")),
+                            _("Play or pause audio or video")),
         sigc::mem_fun(*this, &VideoPlayerManagement::on_play_pause));
 
     // Seek Backwards
-    action_group->add(Gtk::Action::create("video-player/menu-skip-backwards",
-                                          Gtk::Stock::MEDIA_REWIND,
-                                          _("Skip _Backwards")));
+    // FIXME Ideally the amount by which we skip would be in the tooltip and
+    // there would be a configuration dialogue for it
+    action_group->add(Gtk::Action::create(
+        "video-player/menu-skip-backwards", Gtk::Stock::MEDIA_REWIND,
+        _("Skip _Backwards"), _("Skip Backwards")));
 
     action_group->add(
         Gtk::Action::create("video-player/skip-backwards-frame",
                             Gtk::Stock::MEDIA_REWIND, _("Frame"),
-                            _("Frame skip backwards")),
+                            _("Skip backwards by a frame")),
         sigc::bind(
             sigc::mem_fun(*this, &VideoPlayerManagement::on_skip_backwards),
             FRAME));
 
     action_group->add(
-        Gtk::Action::create("video-player/skip-backwards-tiny",
-                            Gtk::Stock::MEDIA_REWIND, _("Tiny"),
-                            _("Tiny skip backwards")),
+        Gtk::Action::create(
+            "video-player/skip-backwards-tiny", Gtk::Stock::MEDIA_REWIND,
+            _("Tiny"),
+            _("Tiny skip backwards — Configure amount in miliseconds in your "
+              "text configuration file under section [video-player]; the "
+              "configuration file is usually located at "
+              "~/.config/subtitleeditor/default/config")),
         sigc::bind(
             sigc::mem_fun(*this, &VideoPlayerManagement::on_skip_backwards),
             TINY));
 
     action_group->add(
-        Gtk::Action::create("video-player/skip-backwards-very-short",
-                            Gtk::Stock::MEDIA_REWIND, _("Very Short"),
-                            _("Very short skip backwards")),
+        Gtk::Action::create(
+            "video-player/skip-backwards-very-short", Gtk::Stock::MEDIA_REWIND,
+            _("Very Short"),
+            _("Very short skip backwards — Configure amount in seconds in your "
+              "text configuration file under section [video-player]; the "
+              "configuration file is usually located at "
+              "~/.config/subtitleeditor/default/config")),
         sigc::bind(
             sigc::mem_fun(*this, &VideoPlayerManagement::on_skip_backwards),
             VERY_SHORT));
 
     action_group->add(
-        Gtk::Action::create("video-player/skip-backwards-short",
-                            Gtk::Stock::MEDIA_REWIND, _("Short"),
-                            _("Short skip backwards")),
+        Gtk::Action::create(
+            "video-player/skip-backwards-short", Gtk::Stock::MEDIA_REWIND,
+            _("Short"),
+            _("Short skip backwards — Configure amount in seconds in your text "
+              "configuration file under section [video-player]; the "
+              "configuration file is usually located at "
+              "~/.config/subtitleeditor/default/config")),
         sigc::bind(
             sigc::mem_fun(*this, &VideoPlayerManagement::on_skip_backwards),
             SHORT));
 
     action_group->add(
-        Gtk::Action::create("video-player/skip-backwards-medium",
-                            Gtk::Stock::MEDIA_REWIND, _("Medium"),
-                            _("Medium skip backwards")),
+        Gtk::Action::create(
+            "video-player/skip-backwards-medium", Gtk::Stock::MEDIA_REWIND,
+            _("Medium"),
+            _("Medium skip backwards — Configure amount in seconds in your "
+              "text configuration file under section [video-player]; the "
+              "configuration file is usually located at "
+              "~/.config/subtitleeditor/default/config")),
         sigc::bind(
             sigc::mem_fun(*this, &VideoPlayerManagement::on_skip_backwards),
             MEDIUM));
 
     action_group->add(
-        Gtk::Action::create("video-player/skip-backwards-long",
-                            Gtk::Stock::MEDIA_REWIND, _("Long"),
-                            _("Long skip backwards")),
+        Gtk::Action::create(
+            "video-player/skip-backwards-long", Gtk::Stock::MEDIA_REWIND,
+            _("Long"),
+            _("Long skip backwards — Configure amount in seconds in your text "
+              "configuration file under section [video-player]; the "
+              "configuration file is usually located at "
+              "~/.config/subtitleeditor/default/config")),
         sigc::bind(
             sigc::mem_fun(*this, &VideoPlayerManagement::on_skip_backwards),
             LONG));
 
     // Seek Forward
-    action_group->add(Gtk::Action::create("video-player/menu-skip-forward",
-                                          Gtk::Stock::MEDIA_FORWARD,
-                                          _("Skip _Forward")));
+    action_group->add(Gtk::Action::create(
+        "video-player/menu-skip-forward", Gtk::Stock::MEDIA_FORWARD,
+        _("Skip _Forward"), _("Skip Forward")));
 
     action_group->add(
         Gtk::Action::create("video-player/skip-forward-frame",
                             Gtk::Stock::MEDIA_FORWARD, _("Frame"),
-                            _("Frame skip forward")),
+                            _("Skip forward by a frame")),
         sigc::bind(
             sigc::mem_fun(*this, &VideoPlayerManagement::on_skip_forward),
             FRAME));
 
     action_group->add(
-        Gtk::Action::create("video-player/skip-forward-tiny",
-                            Gtk::Stock::MEDIA_FORWARD, _("Tiny"),
-                            _("Tiny skip forward")),
+        Gtk::Action::create(
+            "video-player/skip-forward-tiny", Gtk::Stock::MEDIA_FORWARD,
+            _("Tiny"),
+            _("Tiny skip forward — Configure amount in miliseconds in your "
+              "text configuration file under section [video-player]; the "
+              "configuration file is usually located at "
+              "~/.config/subtitleeditor/default/config")),
         sigc::bind(
             sigc::mem_fun(*this, &VideoPlayerManagement::on_skip_forward),
             TINY));
 
     action_group->add(
-        Gtk::Action::create("video-player/skip-forward-very-short",
-                            Gtk::Stock::MEDIA_FORWARD, _("Very Short"),
-                            _("Very short skip forward")),
+        Gtk::Action::create(
+            "video-player/skip-forward-very-short", Gtk::Stock::MEDIA_FORWARD,
+            _("Very Short"),
+            _("Very short skip forward — Configure amount in seconds in your "
+              "text configuration file under section [video-player]; the "
+              "configuration file is usually located at "
+              "~/.config/subtitleeditor/default/config")),
         sigc::bind(
             sigc::mem_fun(*this, &VideoPlayerManagement::on_skip_forward),
             VERY_SHORT));
 
     action_group->add(
-        Gtk::Action::create("video-player/skip-forward-short",
-                            Gtk::Stock::MEDIA_FORWARD, _("Short"),
-                            _("Short skip forward")),
+        Gtk::Action::create(
+            "video-player/skip-forward-short", Gtk::Stock::MEDIA_FORWARD,
+            _("Short"),
+            _("Short skip forward — Configure amount in seconds in your text "
+              "configuration file under section [video-player]; the "
+              "configuration file is usually located at "
+              "~/.config/subtitleeditor/default/config")),
         sigc::bind(
             sigc::mem_fun(*this, &VideoPlayerManagement::on_skip_forward),
             SHORT));
 
     action_group->add(
-        Gtk::Action::create("video-player/skip-forward-medium",
-                            Gtk::Stock::MEDIA_FORWARD, _("Medium"),
-                            _("Medium skip forward")),
+        Gtk::Action::create(
+            "video-player/skip-forward-medium", Gtk::Stock::MEDIA_FORWARD,
+            _("Medium"),
+            _("Medium skip forward — Configure amount in seconds in your text "
+              "configuration file under section [video-player]; the "
+              "configuration file is usually located at "
+              "~/.config/subtitleeditor/default/config")),
         sigc::bind(
             sigc::mem_fun(*this, &VideoPlayerManagement::on_skip_forward),
             MEDIUM));
 
     action_group->add(
-        Gtk::Action::create("video-player/skip-forward-long",
-                            Gtk::Stock::MEDIA_FORWARD, _("Long"),
-                            _("Long skip forward")),
+        Gtk::Action::create(
+            "video-player/skip-forward-long", Gtk::Stock::MEDIA_FORWARD,
+            _("Long"),
+            _("Long skip forward — Configure amount in seconds in your text "
+              "configuration file under section [video-player]; the "
+              "configuration file is usually located at "
+              "~/.config/subtitleeditor/default/config")),
         sigc::bind(
             sigc::mem_fun(*this, &VideoPlayerManagement::on_skip_forward),
             LONG));
 
     // Rate Slower & Faster
     action_group->add(Gtk::Action::create("video-player/menu-rate", _("Rate"),
-                                          _("Define the playback rate")));
+                                          _("Set the playback rate")));
 
     action_group->add(
-        Gtk::Action::create("video-player/rate-slower", _("_Slower"),
-                            _("Define the playback rate")),
+        Gtk::Action::create(
+            "video-player/rate-slower", _("_Slower"),
+            _("Decrease the playback rate by 0.1 (in range 0.1—1.5)")),
         sigc::mem_fun(*this, &VideoPlayerManagement::on_playback_rate_slower));
 
     action_group->add(
-        Gtk::Action::create("video-player/rate-faster", _("_Faster"),
-                            _("Define the playback rate")),
+        Gtk::Action::create(
+            "video-player/rate-faster", _("_Faster"),
+            _("Increase the playback rate by 0.1 (in range 0.1—1.5)")),
         sigc::mem_fun(*this, &VideoPlayerManagement::on_playback_rate_faster));
 
     action_group->add(
         Gtk::Action::create("video-player/rate-normal", _("_Normal"),
-                            _("Define the playback rate")),
+                            _("Set the playback rate to normal (1.0)")),
         sigc::mem_fun(*this, &VideoPlayerManagement::on_playback_rate_normal));
 
     // Seek to Selection
     action_group->add(
-        Gtk::Action::create("video-player/seek-to-selection",
-                            _("_Seek To Selection"),
-                            _("Seek to the first selected subtitle")),
+        Gtk::Action::create(
+            "video-player/seek-to-selection", _("_Seek To Selection"),
+            _("Seek to the start of the first selected subtitle")),
         sigc::mem_fun(*this, &VideoPlayerManagement::on_seek_to_selection));
 
     // Seek to Selection End
@@ -221,10 +268,11 @@ class VideoPlayerManagement : public Action {
 
     // Play Subtitle
     action_group->add(
-        Gtk::Action::create(
-            "video-player/play-previous-subtitle", Gtk::Stock::MEDIA_PREVIOUS,
-            _("Play _Previous Subtitle"),
-            _("Play previous subtitle from the first selected subtitle")),
+        Gtk::Action::create("video-player/play-previous-subtitle",
+                            Gtk::Stock::MEDIA_PREVIOUS,
+                            _("Play _Previous Subtitle"),
+                            _("Play the subtitle that is previous to the first "
+                              "selected subtitle")),
         sigc::mem_fun(*this,
                       &VideoPlayerManagement::on_play_previous_subtitle));
 
@@ -238,7 +286,7 @@ class VideoPlayerManagement : public Action {
         Gtk::Action::create(
             "video-player/play-next-subtitle", Gtk::Stock::MEDIA_NEXT,
             _("Play _Next Subtitle"),
-            _("Play next subtitle from the first selected subtitle")),
+            _("Play the subtitle that is next to the first selected subtitle")),
         sigc::mem_fun(*this, &VideoPlayerManagement::on_play_next_subtitle));
 
     // Play Second
@@ -278,11 +326,12 @@ class VideoPlayerManagement : public Action {
                       &VideoPlayerManagement::on_video_player_display_toggled));
 
     action_group->add(Gtk::Action::create("menu-audio-track", _("Audio Track"),
-                                          _("Choice of an audio track")));
+                                          _("Choose an audio track")));
 
     // Recent files
-    Glib::RefPtr<Gtk::RecentAction> recentAction = Gtk::RecentAction::create(
-        "video-player/recent-files", _("_Recent Files"));
+    Glib::RefPtr<Gtk::RecentAction> recentAction =
+        Gtk::RecentAction::create("video-player/recent-files",
+                                  _("_Recent Files"), _("Open a recent file"));
 
     Glib::RefPtr<Gtk::RecentFilter> filter = Gtk::RecentFilter::create();
     filter->set_name("subtitleeditor");
@@ -727,7 +776,7 @@ class VideoPlayerManagement : public Action {
     player()->set_playback_rate(1.0);
   }
 
-  // Seek to the first selected subtitle.
+  // Seek to start of the first selected subtitle.
   // The state of the player isn't modified.
   void on_seek_to_selection() {
     Document *doc = get_current_document();

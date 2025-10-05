@@ -20,7 +20,7 @@ msgstr ""
 
 #. comments
 #: ../plugins/actions/about/about.cc:76
-msgid "a tool for subtitles edition"
+msgid "A tool for editing subtitles"
 msgstr "azpitituluen ediziorako tresna"
 
 #. translator-credits
@@ -764,7 +764,7 @@ msgid "_Error Checking"
 msgstr "_Erroreen azterketa"
 
 #: ../plugins/actions/errorchecking/errorcheckingplugin.cc:692
-msgid "Launch the error checking."
+msgid "Launch error checking."
 msgstr "Abiarazi erroreen bilaketa."
 
 #: ../plugins/actions/errorchecking/maxcharactersperline.h:29
@@ -1157,7 +1157,7 @@ msgstr "Gehitu azpititulua"
 #: ../plugins/actions/findbytime/findbytime.cc:57
 #: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
 #, fuzzy
-msgid "Finds the subtitle nearest to the current player position."
+msgid "Finds the subtitle nearest to the current player position"
 msgstr "Azpititulu bat pantailan agertzen denean."
 
 #: ../plugins/actions/findbytime/findbytime.cc:114
@@ -1287,7 +1287,7 @@ msgid "Save Keyframes"
 msgstr "Gorde gako-fotogramak"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:60
-msgid "Save keyframes to the file"
+msgid "Save keyframes to a file"
 msgstr "Gorde gako-fotogramak fitxategira"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:66
@@ -1304,7 +1304,7 @@ msgid "Generate Keyframes From Video (Using Frame)"
 msgstr "Sortu gako-fotogramak bideoan (fotograma erabilita)"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-msgid "Close the keyframes"
+msgid "Close Keyframes"
 msgstr "Itxi gako-fotogramak"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
@@ -2204,7 +2204,7 @@ msgid "_Spell Check"
 msgstr "_Zuzenketa ortografikoa"
 
 #: ../plugins/actions/spellchecking/spellchecking.cc:642
-msgid "Launch the spell checking"
+msgid "Launch spell-checking"
 msgstr "Abiarazi zuzentzaile ortografikoa"
 
 #: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
@@ -2217,7 +2217,7 @@ msgid "The beginning for the new document:"
 msgstr "Dokumentu berriaren hasiera:"
 
 #: ../plugins/actions/splitdocument/splitdocument.cc:46
-msgid "You can't use <i>split</i> with this document."
+msgid "You can't use the <i>split</i> action with this document."
 msgstr "Ezin duzu <i>zatitu</i> erabili dokumentu honekin."
 
 #. Remove subtitles used by the new one
@@ -2433,7 +2433,7 @@ msgstr ""
 
 #: ../plugins/actions/template/template.cc:110
 #, fuzzy
-msgid "Save the current document as template."
+msgid "Save the current document as template"
 msgstr "Zatitu uneko dokumentua bitan."
 
 #: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
@@ -2563,7 +2563,7 @@ msgid "Text _Correction"
 msgstr "Testu _zuzenketa"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:46
-msgid "_Times"
+msgid "_Timecodes"
 msgstr "_Denborak"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:53
@@ -2604,7 +2604,7 @@ msgid "Timing From Player"
 msgstr "Denboralizazioa erreproduzigailutik"
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:76
-msgid "Use the current player position to set subtitle time"
+msgid "Use the current player position to set subtitle timecodes"
 msgstr "Erabili erreproduzigailuko kokapena ezartzeko azpitituluaren denbora"
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:80
@@ -2700,11 +2700,11 @@ msgid "_Typewriter"
 msgstr "_Idazmakina"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
+msgid "Characters — Linear"
 msgstr "Karaktereak - linearra"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
+msgid "Characters — Random"
 msgstr "Karaktereak - ausazkoa"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
@@ -2712,7 +2712,7 @@ msgid "Words - Linear"
 msgstr "Hitzak - linearra"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
+msgid "Words — Random"
 msgstr "Hitzak - Ausazkoa"
 
 #. Already create in MenuBar.cc
@@ -2723,12 +2723,12 @@ msgstr "_Bideoa"
 
 #. _("_Open Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:49
-msgid "Open a multimedia file"
+msgid "Open an audio file or a video file"
 msgstr "Ireki multimedia fitxategia"
 
 #. _("_Close Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:56
-msgid "Close a multimedia file"
+msgid "Close an audio file or a video file"
 msgstr "Itxi fitxategi multimedia"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:69
@@ -2736,7 +2736,7 @@ msgid "_Play / Pause"
 msgstr "Erreproduzitu / Pausatu"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
-msgid "Play or make a pause"
+msgid "Play or pause audio or video"
 msgstr "Erreproduzitu edo egin pausa bat"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:76
@@ -2749,7 +2749,7 @@ msgid "Frame"
 msgstr "Fotograma"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:81
-msgid "Frame skip backwards"
+msgid "Skip backwards by a frame"
 msgstr "Saltatu fotograma atzera"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:88
@@ -2802,7 +2802,7 @@ msgid "Skip _Forward"
 msgstr "Saltatu a_urrerantz"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:134
-msgid "Frame skip forward"
+msgid "Skip forward by a frame"
 msgstr "Saltatu fotograma aurrera"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
@@ -2834,7 +2834,7 @@ msgstr "Tasa"
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
-msgid "Define the playback rate"
+msgid "Set the playback rate"
 msgstr "Zehaztu Irakurketa-tasa"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
@@ -2854,7 +2854,7 @@ msgid "_Seek To Selection"
 msgstr "_Saltatu hautaketara"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:202
-msgid "Seek to the first selected subtitle"
+msgid "Seek to start of the first selected subtitle"
 msgstr "Saltatu hautatutako lehenengo azpititulura"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
@@ -2894,7 +2894,7 @@ msgid "Play _Next Subtitle"
 msgstr "Erreproduzitu _hurrengo azpititulua"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:241
-msgid "Play next subtitle from the first selected subtitle"
+msgid "Play the subtitle that is next to the first selected subtitle"
 msgstr "Erreproduzitu hautatuta dagoen azpitituluaren hurrengoa"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:247
@@ -2942,7 +2942,7 @@ msgid "Audio Track"
 msgstr "Audio-pista"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
-msgid "Choice of an audio track"
+msgid "Choose the audio track"
 msgstr "Aukeratu audio pista bat"
 
 #. A default track "Auto"
@@ -2988,7 +2988,7 @@ msgid "View _Manager"
 msgstr "Ikuspegiaren _kudeaketa"
 
 #: ../plugins/actions/viewmanager/viewmanager.cc:338
-msgid "Manage the views"
+msgid "Manage views"
 msgstr "Kudeatu ikuspegiak"
 
 #: ../plugins/actions/waveformmanagement/waveformgenerator.cc:32
@@ -3019,7 +3019,7 @@ msgid "_Generate Waveform From Video"
 msgstr "_Sortu uhin-forma bideoan oinarrituta"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:64
-msgid "Generate the waveform from the current video file"
+msgid "Generate a waveform from the current video file"
 msgstr "Sortu uhin-forma uneko bideo fitxategian oinarrituta"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:70
@@ -3027,7 +3027,7 @@ msgid "_Generate Dummy Waveform"
 msgstr "_Sortu itxurazko uhin-forma (sinua)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:71
-msgid "Generate an dummy waveform (sine)"
+msgid "Generate a dummy waveform (a sinusoidal wave)"
 msgstr "Sortu itxurazko uhin-forma (sinua)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
@@ -3035,7 +3035,7 @@ msgid "_Save Waveform"
 msgstr "_Gorde uhin-forma"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
-msgid "Save waveform to file"
+msgid "Save the waveform to a file"
 msgstr "Gorde uhin-forma fitxategira"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
@@ -3043,7 +3043,7 @@ msgid "_Close Waveform"
 msgstr "_itxi soinu-forma"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
-msgid "Close waveform"
+msgid "Close the waveform"
 msgstr "Itxi soinu-forma"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
@@ -3063,11 +3063,11 @@ msgid "Zoom _All"
 msgstr "Maximizatu"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-msgid "_Center With Selected Subtitle"
+msgid "_Center Selected Subtitle"
 msgstr "_Erdiratu hautatutako azpitituluarekin"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-msgid "Scrolling With _Player"
+msgid "Scrolling With _Video"
 msgstr "Korritzen _erreproduzigailuan"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
@@ -3356,7 +3356,7 @@ msgid "Please check your GStreamer installation."
 msgstr "Egiaztatu zure GStreamer instalazioa."
 
 #: ../src/gui/application.cc:296
-msgid "Times"
+msgid "Timecodes"
 msgstr "Denborak"
 
 #: ../src/gui/application.cc:296
@@ -3951,7 +3951,7 @@ msgid "About"
 msgstr "Honi buruz"
 
 #: ../plugins/actions/about/about.se-plugin.in.h:2
-msgid "Displays the application's information."
+msgid "Displays information about the application."
 msgstr "Erakutsi aplikazioaren informazioa."
 
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1

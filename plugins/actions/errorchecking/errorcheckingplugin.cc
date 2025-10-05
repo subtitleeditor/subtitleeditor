@@ -21,6 +21,7 @@
 #include <extension/action.h>
 #include <gtkmm_utility.h>
 #include <utility.h>
+
 #include <memory>
 
 #include "errorchecking.h"
@@ -689,7 +690,7 @@ class ErrorCheckingPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("error-checking", _("_Error Checking"),
-                            _("Launch the error checking.")),
+                            _("Launch the error-checking dialog")),
         sigc::mem_fun(*this, &ErrorCheckingPlugin::on_error_checker));
 
     // ui

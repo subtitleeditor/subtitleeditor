@@ -19,7 +19,7 @@ msgstr ""
 
 #. comments
 #: ../plugins/actions/about/about.cc:76
-msgid "a tool for subtitles edition"
+msgid "A tool for editing subtitles"
 msgstr "Ένα εργαλείο για την επεξεργασία υπότιτλων"
 
 #. translator-credits
@@ -790,7 +790,7 @@ msgid "_Error Checking"
 msgstr "_Έλεγχος σφαλμάτων"
 
 #: ../plugins/actions/errorchecking/errorcheckingplugin.cc:692
-msgid "Launch the error checking."
+msgid "Launch error checking."
 msgstr "Έναρξη του ελέγχου σφαλμάτων"
 
 #: ../plugins/actions/errorchecking/maxcharactersperline.h:29
@@ -1208,7 +1208,7 @@ msgstr "Προσθήκη υπότιτλου"
 #: ../plugins/actions/findbytime/findbytime.cc:57
 #: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
 #, fuzzy
-msgid "Finds the subtitle nearest to the current player position."
+msgid "Finds the subtitle nearest to the current player position"
 msgstr "Πότε ένας υπότιτλος εμφανίζεται στην οθόνη"
 
 #: ../plugins/actions/findbytime/findbytime.cc:114
@@ -1335,7 +1335,7 @@ msgid "Save Keyframes"
 msgstr "Αποθήκευση Kαρέ-κλειδιών"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:60
-msgid "Save keyframes to the file"
+msgid "Save keyframes to a file"
 msgstr "Αποθήκευση καρέ-κλειδιού στο αρχείο"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:66
@@ -1353,7 +1353,7 @@ msgid "Generate Keyframes From Video (Using Frame)"
 msgstr "Δημιουργία Καρέ-κλειδιών Από Βίντεο"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-msgid "Close the keyframes"
+msgid "Close Keyframes"
 msgstr "Κλείσιμο καρέ-κλειδιού"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
@@ -2250,7 +2250,7 @@ msgid "_Spell Check"
 msgstr "_Ορθογραφικός Έλεγχος"
 
 #: ../plugins/actions/spellchecking/spellchecking.cc:642
-msgid "Launch the spell checking"
+msgid "Launch spell-checking"
 msgstr "Έναρξη ορθογραφικού ελέγχου"
 
 #: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
@@ -2263,7 +2263,7 @@ msgid "The beginning for the new document:"
 msgstr "Η αρχή για το νέο έγγραφο:"
 
 #: ../plugins/actions/splitdocument/splitdocument.cc:46
-msgid "You can't use <i>split</i> with this document."
+msgid "You can't use the <i>split</i> action with this document."
 msgstr "Δεν μπορείτε να κάνετε <i>διαχωρισμό</i> με αυτό το έγγραφο."
 
 #. Remove subtitles used by the new one
@@ -2489,7 +2489,7 @@ msgstr ""
 
 #: ../plugins/actions/template/template.cc:110
 #, fuzzy
-msgid "Save the current document as template."
+msgid "Save the current document as template"
 msgstr "Διαχωρίζει το τρέχον έγγραφο στα δύο."
 
 #: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
@@ -2621,7 +2621,7 @@ msgid "Text _Correction"
 msgstr "Διόρθωση _Κειμένου"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:46
-msgid "_Times"
+msgid "_Timecodes"
 msgstr "_Χρόνοι"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:53
@@ -2659,7 +2659,7 @@ msgid "Timing From Player"
 msgstr "Συγχρονισμός Από Τον Αναπαραγωγό"
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:76
-msgid "Use the current player position to set subtitle time"
+msgid "Use the current player position to set subtitle timecodes"
 msgstr ""
 "Χρήση της τρέχουσας θέσης του αναπαραγωγού για ρύθμιση του χρόνου του "
 "υπότιτλου"
@@ -2770,11 +2770,11 @@ msgid "_Typewriter"
 msgstr "_Γραφομηχανή"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
+msgid "Characters — Linear"
 msgstr "Χαρακτήρες - Γραμμικοί"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
+msgid "Characters — Random"
 msgstr "Χαρακτήρες - Τυχαίοι"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
@@ -2782,7 +2782,7 @@ msgid "Words - Linear"
 msgstr "Λέξεις - Γραμμικές"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
+msgid "Words — Random"
 msgstr "Λέξεις - Τυχαίες"
 
 #. Already create in MenuBar.cc
@@ -2793,12 +2793,12 @@ msgstr "_Βίντεο"
 
 #. _("_Open Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:49
-msgid "Open a multimedia file"
+msgid "Open an audio file or a video file"
 msgstr "Άνοιγμα αρχείου πολυμέσων"
 
 #. _("_Close Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:56
-msgid "Close a multimedia file"
+msgid "Close an audio file or a video file"
 msgstr "Κλείσιμο αρχείου πολυμέσων"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:69
@@ -2806,7 +2806,7 @@ msgid "_Play / Pause"
 msgstr "_Αναπαραγωγή / Παύση"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
-msgid "Play or make a pause"
+msgid "Play or pause audio or video"
 msgstr "Αναπαραγωγή ή παύση"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:76
@@ -2821,7 +2821,7 @@ msgstr "Καρέ"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:81
 #, fuzzy
-msgid "Frame skip backwards"
+msgid "Skip backwards by a frame"
 msgstr "Σύντομη παράλειψη προς τα πίσω"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:88
@@ -2876,7 +2876,7 @@ msgstr "Παράλειψη Προς Τα _Εμπρός"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:134
 #, fuzzy
-msgid "Frame skip forward"
+msgid "Skip forward by a frame"
 msgstr "Σύντομη παράλειψη προς τα εμπρός"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
@@ -2909,7 +2909,7 @@ msgstr "Ρυθμός"
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
-msgid "Define the playback rate"
+msgid "Set the playback rate"
 msgstr "Ορισμός ρυθμού αναπαραγωγής"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
@@ -2929,7 +2929,7 @@ msgid "_Seek To Selection"
 msgstr "_Αναζήτηση Επιλογής"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:202
-msgid "Seek to the first selected subtitle"
+msgid "Seek to start of the first selected subtitle"
 msgstr "Αναζήτηση του πρώτου επιλεγμένου υπότιτλου"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
@@ -2971,7 +2971,7 @@ msgid "Play _Next Subtitle"
 msgstr "Αναπαραγωγή _Επόμενου Υπότιτλου"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:241
-msgid "Play next subtitle from the first selected subtitle"
+msgid "Play the subtitle that is next to the first selected subtitle"
 msgstr "Αναπαραγωγή επόμενου υπότιτλου από τον πρώτο επιλεγμένο υπότιτλο"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:247
@@ -3022,7 +3022,7 @@ msgid "Audio Track"
 msgstr "Ηχητικό κομμάτι"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
-msgid "Choice of an audio track"
+msgid "Choose the audio track"
 msgstr "Επιλογή ηχητικού κομματιού"
 
 #. A default track "Auto"
@@ -3070,7 +3070,7 @@ msgid "View _Manager"
 msgstr "Διαχειριστής Προβολής"
 
 #: ../plugins/actions/viewmanager/viewmanager.cc:338
-msgid "Manage the views"
+msgid "Manage views"
 msgstr "Διαχείριση των προβολών"
 
 #: ../plugins/actions/waveformmanagement/waveformgenerator.cc:32
@@ -3102,7 +3102,7 @@ msgid "_Generate Waveform From Video"
 msgstr "_Δημιουργία Κυματομορφής Από Βίντεο"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:64
-msgid "Generate the waveform from the current video file"
+msgid "Generate a waveform from the current video file"
 msgstr "Δημιουργία της κυματομορφής από το τρέχον αρχείο βίντεο"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:70
@@ -3110,7 +3110,7 @@ msgid "_Generate Dummy Waveform"
 msgstr "_Δημιουργία Εικονικής Κυματομορφής"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:71
-msgid "Generate an dummy waveform (sine)"
+msgid "Generate a dummy waveform (a sinusoidal wave)"
 msgstr "Δημιουργία εικονικής κυματομορφής (ημιτονοειδούς)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
@@ -3119,7 +3119,7 @@ msgstr "_Αποθήκευση Κυματομορφής"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
 #, fuzzy
-msgid "Save waveform to file"
+msgid "Save the waveform to a file"
 msgstr "Αποθήκευση κυματομορφής σε αρχείο"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
@@ -3129,7 +3129,7 @@ msgstr "_Αποθήκευση Κυματομορφής"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
 #, fuzzy
-msgid "Close waveform"
+msgid "Close the waveform"
 msgstr "Αποθήκευση Κυματομορφής"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
@@ -3149,11 +3149,11 @@ msgid "Zoom _All"
 msgstr "Μεγέθυνση _Όλων"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-msgid "_Center With Selected Subtitle"
+msgid "_Center Selected Subtitle"
 msgstr "_Κεντράρισμα Με Τον Επιλεγμένο Υπότιτλο"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-msgid "Scrolling With _Player"
+msgid "Scrolling With _Video"
 msgstr "Κύλιση Με Τον _Αναπαραγωγό"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
@@ -3452,7 +3452,7 @@ msgid "Please check your GStreamer installation."
 msgstr "Παρακαλώ ελέγξτε την εγκατάσταση GStreamer."
 
 #: ../src/gui/application.cc:296
-msgid "Times"
+msgid "Timecodes"
 msgstr "Χρόνοι"
 
 #: ../src/gui/application.cc:296
@@ -4054,7 +4054,7 @@ msgid "About"
 msgstr "Περί"
 
 #: ../plugins/actions/about/about.se-plugin.in.h:2
-msgid "Displays the application's information."
+msgid "Displays information about the application."
 msgstr "Εμφανίζει τις πληροφορίες της εφαρμογής."
 
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1

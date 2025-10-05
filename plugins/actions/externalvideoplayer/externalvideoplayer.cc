@@ -88,28 +88,32 @@ class ExternalVideoPlayer : public Action {
     // actions
     action_group = Gtk::ActionGroup::create("ExternalVideoPlayer");
 
-    action_group->add(Gtk::Action::create("menu-external-video-player",
-                                          Gtk::Stock::MEDIA_PLAY,
-                                          _("_External Video Player")));
+    action_group->add(
+        Gtk::Action::create("menu-external-video-player",
+                            Gtk::Stock::MEDIA_PLAY, _("_External Video Player"),
+                            _("Play video or audio with an external player")));
 
     action_group->add(
-        Gtk::Action::create("external-video-player/open", Gtk::Stock::OPEN,
-                            _("_Open Movie"),
-                            _("Open movie with external video player")),
+        Gtk::Action::create(
+            "external-video-player/open", Gtk::Stock::OPEN, _("_Open Movie"),
+            _("Select a video or audio to be played by the "
+              "external video player (only works if the option to use "
+              "the video from the internal video player is unchecked in "
+              "the preferences of the external video player)")),
         Gtk::AccelKey("<Shift><Control>P"),
         sigc::mem_fun(*this, &ExternalVideoPlayer::on_open_movie));
 
     action_group->add(
         Gtk::Action::create("external-video-player/play",
                             Gtk::Stock::MEDIA_PLAY, _("_Play Movie"),
-                            _("Play movie with external video player")),
+                            _("Play a movie with the external video player")),
         Gtk::AccelKey("<Control>space"),
         sigc::mem_fun(*this, &ExternalVideoPlayer::on_play_movie));
 
     action_group->add(
         Gtk::Action::create("external-video-player/preferences",
                             Gtk::Stock::PREFERENCES, "",
-                            _("External video player preferences")),
+                            _("Configure the external video player")),
         sigc::mem_fun(*this, &ExternalVideoPlayer::create_configure_dialog));
 
     // ui
@@ -217,6 +221,7 @@ class ExternalVideoPlayer : public Action {
       return cfg::get_string("external-video-player", "command");
     }
     // write the default command in the config
+
     auto default_cmd = R"(
       mpv --sub-file="#subtitle_uri" --start="#time" "#video_uri" --sub-auto=no --osd-level=2  --force-window=yes
     )";

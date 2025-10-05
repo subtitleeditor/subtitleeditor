@@ -293,7 +293,7 @@ void Application::update_document_property(Document *doc) {
   Glib::ustring format = doc->getFormat();
   Glib::ustring newline = doc->getNewLine();
   Glib::ustring timing_mode =
-      (doc->get_timing_mode() == TIME) ? _("Times") : _("Frames");
+      (doc->get_timing_mode() == TIME) ? _("Timecodes") : _("Frames");
 
   Glib::ustring tip = build_message(
       "<b>%s</b> %s\n"

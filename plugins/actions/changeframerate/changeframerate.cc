@@ -23,6 +23,7 @@
 #include <gui/comboboxtextcolumns.h>
 #include <gui/dialogutility.h>
 #include <utility.h>
+
 #include <memory>
 
 // TODO Add FPS finder
@@ -182,8 +183,10 @@ class ChangeFrameratePlugin : public Action {
     action_group = Gtk::ActionGroup::create("ChangeFrameratePlugin");
 
     action_group->add(
-        Gtk::Action::create("change-framerate", Gtk::Stock::CONVERT,
-                            _("Change _Framerate"), _("Convert framerate")),
+        Gtk::Action::create(
+            "change-framerate", Gtk::Stock::CONVERT, _("Change _Framerate"),
+            _("Convert subtitles synced to video with one framrate to a bideo "
+              "with a different framerate")),
         sigc::mem_fun(*this, &ChangeFrameratePlugin::on_execute));
 
     // ui

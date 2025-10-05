@@ -1,6 +1,6 @@
 [SubtitleEditor Extension]
 _Name=About
-_Description=Displays the application's information.
+_Description=Displays information about the application.
 Categorie=action
 Hidden=true
 Type=module

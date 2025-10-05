@@ -24,6 +24,7 @@
 #include <player.h>
 #include <subtitleformatsystem.h>
 #include <utility.h>
+
 #include <vector>
 
 class DialogAskToSaveOnExit : public Gtk::MessageDialog {

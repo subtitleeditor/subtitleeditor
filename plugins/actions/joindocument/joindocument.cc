@@ -42,7 +42,8 @@ class JoinDocumentPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("join-document", Gtk::Stock::CONNECT,
-                            _("_Join Document"), _("Add subtitles from file")),
+                            _("_Join Document"),
+                            _("Add subtitles from file to current document")),
         sigc::mem_fun(*this, &JoinDocumentPlugin::on_execute));
 
     // ui
@@ -115,6 +116,8 @@ class JoinDocumentPlugin : public Action {
         doc->open(uri);
 
         // Moves added subtitles after the last original
+        // FIXME should also offer an action to join subtitles without changing
+        // their timecodes
         if (subtitle_size > 0) {
           // Get the last subtitle of the original document
           Subtitle last_orig_sub = doc->subtitles().get(subtitle_size);

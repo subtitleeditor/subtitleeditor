@@ -18,13 +18,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+#include "styleeditor.h"
+
 #include <color.h>
 #include <documents.h>
 #include <extension/action.h>
 #include <gtkmm_utility.h>
 #include <utility.h>
+
 #include <memory>
-#include "styleeditor.h"
 
 class ColumnNameRecorder : public Gtk::TreeModel::ColumnRecord {
  public:
@@ -438,10 +440,13 @@ class StyleEditorPlugin : public Action {
     g_return_if_fail(doc);
 
     // create dialog
+    // not sure why full path for SE_DEV must be specified for this plugin,
+    // other plugins and dialogs launch fine
     std::unique_ptr<DialogStyleEditor> dialog(
         gtkmm_utility::get_widget_derived<DialogStyleEditor>(
             SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV),
-            "dialog-style-editor.ui", "dialog-style-editor"));
+            "plugins/actions/styleeditor/dialog-style-editor.ui",
+            "dialog-style-editor"));
 
     dialog->execute(doc);
   }

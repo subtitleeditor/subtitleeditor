@@ -18,13 +18,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+#include "waveformeditor.h"
+
+#include <algorithm>
+#include <cmath>
+#include <utility>  // the three following are for std:: min abs and pair
+
 #include "documents.h"
 #include "subtitleeditorwindow.h"
 #include "utility.h"
-#include "waveformeditor.h"
-#include <utility> // the three following are for std:: min abs and pair
-#include <algorithm>
-#include <cmath>
 
 // HACK!
 WaveformRenderer *create_waveform_renderer_cairo();
@@ -66,8 +68,6 @@ WaveformEditor::WaveformEditor(BaseObjectType *cobject,
   se::documents::signal_active_changed().connect(
       sigc::mem_fun(*this, &WaveformEditor::init_document));
 
-
-  
   // FIXME init
   {
     m_cfg_scrolling_with_player = true;
@@ -108,8 +108,7 @@ void WaveformEditor::load_config() {
   m_cfg_scrolling_with_player =
       cfg::get_boolean("waveform", "scrolling-with-player");
 
-  m_cfg_select_with_player =
-      cfg::get_boolean("waveform", "select-with-player");
+  m_cfg_select_with_player = cfg::get_boolean("waveform", "select-with-player");
 
   m_cfg_scrolling_with_selection =
       cfg::get_boolean("waveform", "scrolling-with-selection");
@@ -293,11 +292,13 @@ void WaveformEditor::on_player_tick(long /*current_time*/,
                                     double /*current_position*/) {
   if (has_renderer() && player() && has_waveform()) {
     scroll_with_player();
-	// only select new subtitle when player position is outside of the current one
-	long playerpos = player()->get_position();
-	if(!((subtitle_start_and_end_times.first <= playerpos) && (subtitle_start_and_end_times.second >= playerpos))) {
-		subtitle_start_and_end_times = select_with_player();
-		}
+    // only select new subtitle when player position is outside of the current
+    // one
+    long playerpos = player()->get_position();
+    if (!((subtitle_start_and_end_times.first <= playerpos) &&
+          (subtitle_start_and_end_times.second >= playerpos))) {
+      subtitle_start_and_end_times = select_with_player();
+    }
     redraw_renderer();
   }
 }
@@ -603,18 +604,22 @@ void WaveformEditor::scroll_with_player() {
 // If Select With Player is enabled,
 // selects current subtitles with the current time of the player.
 // Only fires when player position is outside of of the selected subtitled
-// FIXME: This is hollowed out version of Find Subtitle by Time plugin, ideally they would share code
+// FIXME: This is hollowed out version of Find Subtitle by Time plugin, ideally
+// they would share code
 std::pair<long, long> WaveformEditor::select_with_player() {
-	if (player() && has_document() &&m_cfg_select_with_player) {
+  if (player() && has_document() && m_cfg_select_with_player) {
     Subtitles subs = document()->subtitles();
     long playerpos = player()->get_position();
-	for(Subtitle cursub = subs.get_first(); cursub; cursub = subs.get_next(cursub)) {
-	    if((cursub.get_start().totalmsecs <= playerpos) && (cursub.get_end().totalmsecs > playerpos)) {
-	        document()->subtitles().select(cursub);
-		    document()->emit_signal("subtitle-selection-changed");
-			std::pair<long, long> sub_timecodes = {cursub.get_start().totalmsecs, cursub.get_end().totalmsecs};
-	        return sub_timecodes;
-		}
+    for (Subtitle cursub = subs.get_first(); cursub;
+         cursub = subs.get_next(cursub)) {
+      if ((cursub.get_start().totalmsecs <= playerpos) &&
+          (cursub.get_end().totalmsecs > playerpos)) {
+        document()->subtitles().select(cursub);
+        document()->emit_signal("subtitle-selection-changed");
+        std::pair<long, long> sub_timecodes = {cursub.get_start().totalmsecs,
+                                               cursub.get_end().totalmsecs};
+        return sub_timecodes;
+      }
     }
   }
   return {0, 0};
@@ -638,17 +643,17 @@ void WaveformEditor::center_with_selected_subtitle() {
   }
 }
 
-// Increment the zoom
+// Increase the zoom
 void WaveformEditor::zoom_in() {
   set_zoom(get_zoom() + 1);
 }
 
-// Decrement the zoom
+// Decrease the zoom
 void WaveformEditor::zoom_out() {
   set_zoom(get_zoom() - 1);
 }
 
-// Décrément completely the zoom
+// Completely zoom out
 void WaveformEditor::zoom_all() {
   set_zoom(1);
 }
@@ -656,7 +661,8 @@ void WaveformEditor::zoom_all() {
 // Zooming on the current subtitle.
 void WaveformEditor::zoom_selection() {
   zoom_in();
-
+  // FIXME This should probably zoom on selected subtitles so they fill up the
+  // view, now it does almost nothing
   center_with_selected_subtitle();
 }
 
@@ -889,7 +895,7 @@ bool WaveformEditor::move_subtitle_start(const SubtitleTime &_time,
         }
       }
     }  // m_cfg_respect_timing && gab between subtitles
-  }    //! disable_respect
+  }  //! disable_respect
 
   if (subtitle.get_start() != subtitle_start && subtitle_start.totalmsecs >= 0)
     subtitle.set_start(subtitle_start);

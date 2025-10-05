@@ -21,7 +21,7 @@ msgstr ""
 
 #. comments
 #: ../plugins/actions/about/about.cc:76
-msgid "a tool for subtitles edition"
+msgid "A tool for editing subtitles"
 msgstr "ilo por modifi subtekstojn"
 
 #. translator-credits
@@ -788,7 +788,7 @@ msgid "_Error Checking"
 msgstr "_Kontroli al eraroj"
 
 #: ../plugins/actions/errorchecking/errorcheckingplugin.cc:692
-msgid "Launch the error checking."
+msgid "Launch error checking."
 msgstr "Lanĉi la kontroladon al eraroj."
 
 #: ../plugins/actions/errorchecking/maxcharactersperline.h:29
@@ -1195,7 +1195,7 @@ msgstr "Aldoni subtekston"
 #: ../plugins/actions/findbytime/findbytime.cc:57
 #: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
 #, fuzzy
-msgid "Finds the subtitle nearest to the current player position."
+msgid "Finds the subtitle nearest to the current player position"
 msgstr "Kiam subteksto aperas sur la ekrano."
 
 #: ../plugins/actions/findbytime/findbytime.cc:114
@@ -1322,7 +1322,7 @@ msgid "Save Keyframes"
 msgstr "Konservi ĉefkadrojn"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:60
-msgid "Save keyframes to the file"
+msgid "Save keyframes to a file"
 msgstr "Konservi ĉefkadrojn al la dosiero"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:66
@@ -1340,7 +1340,7 @@ msgid "Generate Keyframes From Video (Using Frame)"
 msgstr "Generi ĉefkadrojn el video"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-msgid "Close the keyframes"
+msgid "Close Keyframes"
 msgstr "Fermi la ĉefkadrojn"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
@@ -2231,7 +2231,7 @@ msgid "_Spell Check"
 msgstr "Literumada kontrolo"
 
 #: ../plugins/actions/spellchecking/spellchecking.cc:642
-msgid "Launch the spell checking"
+msgid "Launch spell-checking"
 msgstr "Lanĉas la literumadan kontrolon"
 
 #: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
@@ -2244,7 +2244,7 @@ msgid "The beginning for the new document:"
 msgstr "La komenco por la nova dokumento:"
 
 #: ../plugins/actions/splitdocument/splitdocument.cc:46
-msgid "You can't use <i>split</i> with this document."
+msgid "You can't use the <i>split</i> action with this document."
 msgstr "Ne eblas uzi <i>dividi</i> por tiu ĉi dokumento."
 
 #. Remove subtitles used by the new one
@@ -2470,7 +2470,7 @@ msgstr ""
 
 #: ../plugins/actions/template/template.cc:110
 #, fuzzy
-msgid "Save the current document as template."
+msgid "Save the current document as template"
 msgstr "Dividas la aktualan dokumenton en du."
 
 #: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
@@ -2600,7 +2600,7 @@ msgid "Text _Correction"
 msgstr "Tekst_korektado"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:46
-msgid "_Times"
+msgid "_Timecodes"
 msgstr "_Tempoj"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:53
@@ -2638,7 +2638,7 @@ msgid "Timing From Player"
 msgstr "Tempo el ludilo"
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:76
-msgid "Use the current player position to set subtitle time"
+msgid "Use the current player position to set subtitle timecodes"
 msgstr "Uzu la tempan pozicion de la nuna ludilo kiel subtekstan tempon"
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:80
@@ -2735,11 +2735,11 @@ msgid "_Typewriter"
 msgstr "_Tajpilo"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
+msgid "Characters — Linear"
 msgstr "Signoj - linearaj"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
+msgid "Characters — Random"
 msgstr "Signoj - hazardaj"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
@@ -2747,7 +2747,7 @@ msgid "Words - Linear"
 msgstr "Vortoj - linearaj"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
+msgid "Words — Random"
 msgstr "Vortoj - Hazardaj"
 
 #. Already create in MenuBar.cc
@@ -2758,12 +2758,12 @@ msgstr "_Video"
 
 #. _("_Open Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:49
-msgid "Open a multimedia file"
+msgid "Open an audio file or a video file"
 msgstr "Malfermi plurmedian dosieron"
 
 #. _("_Close Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:56
-msgid "Close a multimedia file"
+msgid "Close an audio file or a video file"
 msgstr "Fermi plurmedian dosieron"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:69
@@ -2771,7 +2771,7 @@ msgid "_Play / Pause"
 msgstr "_Ludi / Paŭzigi"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
-msgid "Play or make a pause"
+msgid "Play or pause audio or video"
 msgstr "Ludas aŭ paŭzigas"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:76
@@ -2786,7 +2786,7 @@ msgstr "Filmeroj"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:81
 #, fuzzy
-msgid "Frame skip backwards"
+msgid "Skip backwards by a frame"
 msgstr "Mallonge transsalti malantaŭen"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:88
@@ -2841,7 +2841,7 @@ msgstr "Transsalti _antaŭen"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:134
 #, fuzzy
-msgid "Frame skip forward"
+msgid "Skip forward by a frame"
 msgstr "Mallonge transsalti antaŭen"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
@@ -2874,7 +2874,7 @@ msgstr "Rapido"
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
-msgid "Define the playback rate"
+msgid "Set the playback rate"
 msgstr "Difinas la reproduktan rapidon"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
@@ -2894,7 +2894,7 @@ msgid "_Seek To Selection"
 msgstr "_Transsalti ĝis elekto"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:202
-msgid "Seek to the first selected subtitle"
+msgid "Seek to start of the first selected subtitle"
 msgstr "Transsaltas al la unue elektita subteksto"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
@@ -2936,7 +2936,7 @@ msgid "Play _Next Subtitle"
 msgstr "Ludi _sekvan subtekston"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:241
-msgid "Play next subtitle from the first selected subtitle"
+msgid "Play the subtitle that is next to the first selected subtitle"
 msgstr "Ludas la subtekston post la unue elektita subteksto"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:247
@@ -2984,7 +2984,7 @@ msgid "Audio Track"
 msgstr "Sontrako"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
-msgid "Choice of an audio track"
+msgid "Choose the audio track"
 msgstr "Elektado de sontrako"
 
 #. A default track "Auto"
@@ -3032,7 +3032,7 @@ msgid "View _Manager"
 msgstr "Vid-ad_ministrilo"
 
 #: ../plugins/actions/viewmanager/viewmanager.cc:338
-msgid "Manage the views"
+msgid "Manage views"
 msgstr "Administras la vidojn"
 
 #: ../plugins/actions/waveformmanagement/waveformgenerator.cc:32
@@ -3064,7 +3064,7 @@ msgid "_Generate Waveform From Video"
 msgstr "_Generi ondoformon el video"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:64
-msgid "Generate the waveform from the current video file"
+msgid "Generate a waveform from the current video file"
 msgstr "Generas la ondoformon el la aktuala videodosiero"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:70
@@ -3072,7 +3072,7 @@ msgid "_Generate Dummy Waveform"
 msgstr "_Generi lokokupan ondoformon"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:71
-msgid "Generate an dummy waveform (sine)"
+msgid "Generate a dummy waveform (a sinusoidal wave)"
 msgstr "Generi lokokupan ondoformon (sinuso)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
@@ -3081,7 +3081,7 @@ msgstr "_Konservi ondoformon"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
 #, fuzzy
-msgid "Save waveform to file"
+msgid "Save the waveform to a file"
 msgstr "Konservi ondoformon al dosiero"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
@@ -3091,7 +3091,7 @@ msgstr "_Konservi ondoformon"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
 #, fuzzy
-msgid "Close waveform"
+msgid "Close the waveform"
 msgstr "Savi ondoformon"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
@@ -3111,11 +3111,11 @@ msgid "Zoom _All"
 msgstr "Zomi _ĉion"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-msgid "_Center With Selected Subtitle"
+msgid "_Center Selected Subtitle"
 msgstr "_Centrigi kun elektita subteksto"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-msgid "Scrolling With _Player"
+msgid "Scrolling With _Video"
 msgstr "Rulumi kun _ludilo"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
@@ -3406,7 +3406,7 @@ msgid "Please check your GStreamer installation."
 msgstr "Bonvolu kontroli vian instalon de GStreamer."
 
 #: ../src/gui/application.cc:296
-msgid "Times"
+msgid "Timecodes"
 msgstr "Tempoj"
 
 #: ../src/gui/application.cc:296
@@ -4004,7 +4004,7 @@ msgid "About"
 msgstr "Pri"
 
 #: ../plugins/actions/about/about.se-plugin.in.h:2
-msgid "Displays the application's information."
+msgid "Displays information about the application."
 msgstr "Montras la informojn pri la aplikaĵo."
 
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1

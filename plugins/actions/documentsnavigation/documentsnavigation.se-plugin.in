@@ -1,6 +1,6 @@
 [SubtitleEditor Extension]
-_Name=Documents Navigation
-_Description=FIXME.
+_Name=Tab Navigation
+_Description=Adds actions to select tabs.
 Categorie=action
 Hidden=false
 Type=module

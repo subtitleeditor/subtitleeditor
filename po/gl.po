@@ -22,7 +22,7 @@ msgstr ""
 
 #. comments
 #: ../plugins/actions/about/about.cc:76
-msgid "a tool for subtitles edition"
+msgid "A tool for editing subtitles"
 msgstr "unha ferramenta para a edición de subtítulos"
 
 #. translator-credits
@@ -798,7 +798,7 @@ msgid "_Error Checking"
 msgstr "Verificación de _erros"
 
 #: ../plugins/actions/errorchecking/errorcheckingplugin.cc:692
-msgid "Launch the error checking."
+msgid "Launch error checking."
 msgstr "Iniciar a verificación de erros."
 
 #: ../plugins/actions/errorchecking/maxcharactersperline.h:29
@@ -1214,7 +1214,7 @@ msgstr "Engadir un subtítulo"
 #: ../plugins/actions/findbytime/findbytime.cc:57
 #: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
 #, fuzzy
-msgid "Finds the subtitle nearest to the current player position."
+msgid "Finds the subtitle nearest to the current player position"
 msgstr "Cando un subtítulo aparece na pantalla."
 
 #: ../plugins/actions/findbytime/findbytime.cc:114
@@ -1341,7 +1341,7 @@ msgid "Save Keyframes"
 msgstr "Gardar os fotogramas chave"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:60
-msgid "Save keyframes to the file"
+msgid "Save keyframes to a file"
 msgstr "Gardar os fotogramas chave nun ficheiro"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:66
@@ -1359,7 +1359,7 @@ msgid "Generate Keyframes From Video (Using Frame)"
 msgstr "Xerar os fotogramas chave desde un vídeo"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-msgid "Close the keyframes"
+msgid "Close Keyframes"
 msgstr "Pechar os fotogramas chave"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
@@ -2253,7 +2253,7 @@ msgid "_Spell Check"
 msgstr "C_omprobación ortográfica"
 
 #: ../plugins/actions/spellchecking/spellchecking.cc:642
-msgid "Launch the spell checking"
+msgid "Launch spell-checking"
 msgstr "Iniciar a verificación ortográfica"
 
 #: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
@@ -2266,7 +2266,7 @@ msgid "The beginning for the new document:"
 msgstr "Inicio do novo documento:"
 
 #: ../plugins/actions/splitdocument/splitdocument.cc:46
-msgid "You can't use <i>split</i> with this document."
+msgid "You can't use the <i>split</i> action with this document."
 msgstr "Con este documento pode usar a funcionalidade <i>dividir</i>."
 
 #. Remove subtitles used by the new one
@@ -2492,7 +2492,7 @@ msgstr ""
 
 #: ../plugins/actions/template/template.cc:110
 #, fuzzy
-msgid "Save the current document as template."
+msgid "Save the current document as template"
 msgstr "Divide en dous o documento actual."
 
 #: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
@@ -2624,7 +2624,7 @@ msgid "Text _Correction"
 msgstr "Corrección de texto"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:46
-msgid "_Times"
+msgid "_Timecodes"
 msgstr "_Tempos"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:53
@@ -2662,7 +2662,7 @@ msgid "Timing From Player"
 msgstr "Temporización desde o reprodutor"
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:76
-msgid "Use the current player position to set subtitle time"
+msgid "Use the current player position to set subtitle timecodes"
 msgstr ""
 "Usar a posición actual do reprodutor para estabelecer o tempo do subtítulo"
 
@@ -2766,11 +2766,11 @@ msgid "_Typewriter"
 msgstr "_Máquina de escribir"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
+msgid "Characters — Linear"
 msgstr "Caracteres - Lineal"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
+msgid "Characters — Random"
 msgstr "Caracteres - Aleatorio"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
@@ -2778,7 +2778,7 @@ msgid "Words - Linear"
 msgstr "Palabras - Lineal"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
+msgid "Words — Random"
 msgstr "Palabras - Aleatorio"
 
 #. Already create in MenuBar.cc
@@ -2789,12 +2789,12 @@ msgstr "_Vídeo"
 
 #. _("_Open Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:49
-msgid "Open a multimedia file"
+msgid "Open an audio file or a video file"
 msgstr "Abrir un ficheiro multimedia"
 
 #. _("_Close Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:56
-msgid "Close a multimedia file"
+msgid "Close an audio file or a video file"
 msgstr "Pechar un ficheiro multimedia"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:69
@@ -2802,7 +2802,7 @@ msgid "_Play / Pause"
 msgstr "Re_producir / Pausar"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
-msgid "Play or make a pause"
+msgid "Play or pause audio or video"
 msgstr "Reproducir ou deter"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:76
@@ -2817,7 +2817,7 @@ msgstr "Fotogramas"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:81
 #, fuzzy
-msgid "Frame skip backwards"
+msgid "Skip backwards by a frame"
 msgstr "Salto curto cara a atrás"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:88
@@ -2872,7 +2872,7 @@ msgstr "Salto cara a _adiante"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:134
 #, fuzzy
-msgid "Frame skip forward"
+msgid "Skip forward by a frame"
 msgstr "Salto curto cara a adiante"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
@@ -2905,7 +2905,7 @@ msgstr "Taxa"
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
-msgid "Define the playback rate"
+msgid "Set the playback rate"
 msgstr "Definir a taxa de reprodución"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
@@ -2925,7 +2925,7 @@ msgid "_Seek To Selection"
 msgstr "Ir á _selección"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:202
-msgid "Seek to the first selected subtitle"
+msgid "Seek to start of the first selected subtitle"
 msgstr "Ir ao primeiro subtítulo seleccionado"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
@@ -2968,7 +2968,7 @@ msgid "Play _Next Subtitle"
 msgstr "Reproducir o subtítulo segui_nte"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:241
-msgid "Play next subtitle from the first selected subtitle"
+msgid "Play the subtitle that is next to the first selected subtitle"
 msgstr ""
 "Reproducir o subtítulo seguinte desde o primeiro subtítulo seleccionado"
 
@@ -3017,7 +3017,7 @@ msgid "Audio Track"
 msgstr "Pista de son"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
-msgid "Choice of an audio track"
+msgid "Choose the audio track"
 msgstr "Elección dunha pista de son"
 
 #. A default track "Auto"
@@ -3065,7 +3065,7 @@ msgid "View _Manager"
 msgstr "Xestor de _visualización"
 
 #: ../plugins/actions/viewmanager/viewmanager.cc:338
-msgid "Manage the views"
+msgid "Manage views"
 msgstr "Xestionar as visualizacións"
 
 #: ../plugins/actions/waveformmanagement/waveformgenerator.cc:32
@@ -3097,7 +3097,7 @@ msgid "_Generate Waveform From Video"
 msgstr "_Xerar un formato Onda desde un vídeo"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:64
-msgid "Generate the waveform from the current video file"
+msgid "Generate a waveform from the current video file"
 msgstr "Xerar un formato Onda desde o ficheiro de vídeo actual"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:70
@@ -3105,7 +3105,7 @@ msgid "_Generate Dummy Waveform"
 msgstr "_Xerar unha onda de proba"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:71
-msgid "Generate an dummy waveform (sine)"
+msgid "Generate a dummy waveform (a sinusoidal wave)"
 msgstr "Xerar unha onda de proba (seno)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
@@ -3114,7 +3114,7 @@ msgstr "_Gardar o formato Onda"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
 #, fuzzy
-msgid "Save waveform to file"
+msgid "Save the waveform to a file"
 msgstr "Gardar o formato Onda nun ficheiro"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
@@ -3124,7 +3124,7 @@ msgstr "_Gardar o formato Onda"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
 #, fuzzy
-msgid "Close waveform"
+msgid "Close the waveform"
 msgstr "Gardar o formato Onda"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
@@ -3144,11 +3144,11 @@ msgid "Zoom _All"
 msgstr "_Ampliar todo"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-msgid "_Center With Selected Subtitle"
+msgid "_Center Selected Subtitle"
 msgstr "_Centrar co subtítulo seleccionado"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-msgid "Scrolling With _Player"
+msgid "Scrolling With _Video"
 msgstr "Desprazamento coa re_produción"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
@@ -3444,7 +3444,7 @@ msgid "Please check your GStreamer installation."
 msgstr "Comprobe a instalación de GStreamer."
 
 #: ../src/gui/application.cc:296
-msgid "Times"
+msgid "Timecodes"
 msgstr "Tempos"
 
 #: ../src/gui/application.cc:296
@@ -4040,7 +4040,7 @@ msgid "About"
 msgstr "Sobre"
 
 #: ../plugins/actions/about/about.se-plugin.in.h:2
-msgid "Displays the application's information."
+msgid "Displays information about the application."
 msgstr "Mostrar a información do aplicativo."
 
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1

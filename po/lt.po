@@ -21,7 +21,7 @@ msgstr ""
 
 #. comments
 #: ../plugins/actions/about/about.cc:76
-msgid "a tool for subtitles edition"
+msgid "A tool for editing subtitles"
 msgstr "subtitrų redagavimo įrankis"
 
 #. translator-credits
@@ -775,7 +775,7 @@ msgid "_Error Checking"
 msgstr "_Klaidų tikrinimas"
 
 #: ../plugins/actions/errorchecking/errorcheckingplugin.cc:692
-msgid "Launch the error checking."
+msgid "Launch error checking."
 msgstr "Paleisti klaidų tikrinimą."
 
 #: ../plugins/actions/errorchecking/maxcharactersperline.h:29
@@ -1177,7 +1177,7 @@ msgstr "Pridėti subtitrus"
 #: ../plugins/actions/findbytime/findbytime.cc:57
 #: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
 #, fuzzy
-msgid "Finds the subtitle nearest to the current player position."
+msgid "Finds the subtitle nearest to the current player position"
 msgstr "Kada subtitrai pasirodo ekrane"
 
 #: ../plugins/actions/findbytime/findbytime.cc:114
@@ -1308,7 +1308,7 @@ msgid "Save Keyframes"
 msgstr "Išsaugoti raktinius kadrus"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:60
-msgid "Save keyframes to the file"
+msgid "Save keyframes to a file"
 msgstr "Išsaugoti raktinius kadrus faile"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:66
@@ -1326,7 +1326,7 @@ msgid "Generate Keyframes From Video (Using Frame)"
 msgstr "Iš video generuoti raktinius kadrus"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-msgid "Close the keyframes"
+msgid "Close Keyframes"
 msgstr "Užverti raktinius kadrus"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
@@ -2219,7 +2219,7 @@ msgid "_Spell Check"
 msgstr "_Rašybos tikrinimas"
 
 #: ../plugins/actions/spellchecking/spellchecking.cc:642
-msgid "Launch the spell checking"
+msgid "Launch spell-checking"
 msgstr "Paleisti _rašybos tikrinimą"
 
 #: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
@@ -2232,7 +2232,7 @@ msgid "The beginning for the new document:"
 msgstr "Naujo dokumento pradžia:"
 
 #: ../plugins/actions/splitdocument/splitdocument.cc:46
-msgid "You can't use <i>split</i> with this document."
+msgid "You can't use the <i>split</i> action with this document."
 msgstr "Šiam dokumentui negalima naudoti <i>split</i>."
 
 #. Remove subtitles used by the new one
@@ -2458,7 +2458,7 @@ msgstr ""
 
 #: ../plugins/actions/template/template.cc:110
 #, fuzzy
-msgid "Save the current document as template."
+msgid "Save the current document as template"
 msgstr "Perskirti esamą dokumentą į du."
 
 #: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
@@ -2589,7 +2589,7 @@ msgid "Text _Correction"
 msgstr "Teksto _taisa"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:46
-msgid "_Times"
+msgid "_Timecodes"
 msgstr "_Laiko paskirstymas"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:53
@@ -2627,7 +2627,7 @@ msgid "Timing From Player"
 msgstr "Laiko nustatymai iš grotuvo"
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:76
-msgid "Use the current player position to set subtitle time"
+msgid "Use the current player position to set subtitle timecodes"
 msgstr "Naudoti dabartinę grotuvo poziciją nustatant subtitrų laiką"
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:80
@@ -2719,11 +2719,11 @@ msgid "_Typewriter"
 msgstr "_Spausdinimo mašinėlė"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
+msgid "Characters — Linear"
 msgstr "Simboliai - linijinis"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
+msgid "Characters — Random"
 msgstr "Simboliai - atsitiktiniai"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
@@ -2731,7 +2731,7 @@ msgid "Words - Linear"
 msgstr "Žodžiai - linijinis"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
+msgid "Words — Random"
 msgstr "Žodžiai - atsitiktinis"
 
 #. Already create in MenuBar.cc
@@ -2742,12 +2742,12 @@ msgstr "_Video"
 
 #. _("_Open Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:49
-msgid "Open a multimedia file"
+msgid "Open an audio file or a video file"
 msgstr "Atidaryti failą"
 
 #. _("_Close Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:56
-msgid "Close a multimedia file"
+msgid "Close an audio file or a video file"
 msgstr "Užverti esamą failą"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:69
@@ -2755,7 +2755,7 @@ msgid "_Play / Pause"
 msgstr "_Groti / Pauzė"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
-msgid "Play or make a pause"
+msgid "Play or pause audio or video"
 msgstr "Leisti arba pristabdyti"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:76
@@ -2770,7 +2770,7 @@ msgstr "Kadrai"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:81
 #, fuzzy
-msgid "Frame skip backwards"
+msgid "Skip backwards by a frame"
 msgstr "Šoktelti atgal"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:88
@@ -2825,7 +2825,7 @@ msgstr "Persukti į _priekį"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:134
 #, fuzzy
-msgid "Frame skip forward"
+msgid "Skip forward by a frame"
 msgstr "Trumpai į priekį"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
@@ -2858,7 +2858,7 @@ msgstr "Greitis"
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
-msgid "Define the playback rate"
+msgid "Set the playback rate"
 msgstr "Nustatyti atkūrimo greitį"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
@@ -2878,7 +2878,7 @@ msgid "_Seek To Selection"
 msgstr "_Pereiti prie pasirinkimo"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:202
-msgid "Seek to the first selected subtitle"
+msgid "Seek to start of the first selected subtitle"
 msgstr "Pereiti prie pirmo pasirinkto subtitro"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
@@ -2920,7 +2920,7 @@ msgid "Play _Next Subtitle"
 msgstr "Groti _sekantį subtitrą"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:241
-msgid "Play next subtitle from the first selected subtitle"
+msgid "Play the subtitle that is next to the first selected subtitle"
 msgstr "Groti subtitrą einantį po pasirinktojo"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:247
@@ -2968,7 +2968,7 @@ msgid "Audio Track"
 msgstr "Audio takelis"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
-msgid "Choice of an audio track"
+msgid "Choose the audio track"
 msgstr "Audio takelio pasirinkimas"
 
 #. A default track "Auto"
@@ -3016,7 +3016,7 @@ msgid "View _Manager"
 msgstr "Rodinių tvarkyklė"
 
 #: ../plugins/actions/viewmanager/viewmanager.cc:338
-msgid "Manage the views"
+msgid "Manage views"
 msgstr "Tvarkyti rodinius"
 
 #: ../plugins/actions/waveformmanagement/waveformgenerator.cc:32
@@ -3048,7 +3048,7 @@ msgid "_Generate Waveform From Video"
 msgstr "_Generuoti bangų formą iš video"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:64
-msgid "Generate the waveform from the current video file"
+msgid "Generate a waveform from the current video file"
 msgstr "Generuoti bangų formą iš dabartinio video"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:70
@@ -3056,7 +3056,7 @@ msgid "_Generate Dummy Waveform"
 msgstr "Generuoti Dummy bangų formą"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:71
-msgid "Generate an dummy waveform (sine)"
+msgid "Generate a dummy waveform (a sinusoidal wave)"
 msgstr "Generuoti Dummy bangų formą(sine)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
@@ -3065,7 +3065,7 @@ msgstr "_Išsaugoti bangų formą"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
 #, fuzzy
-msgid "Save waveform to file"
+msgid "Save the waveform to a file"
 msgstr "Išsaugoti bangų formą faile"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
@@ -3075,7 +3075,7 @@ msgstr "_Išsaugoti bangų formą"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
 #, fuzzy
-msgid "Close waveform"
+msgid "Close the waveform"
 msgstr "Išsaugoti bangų formą"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
@@ -3095,11 +3095,11 @@ msgid "Zoom _All"
 msgstr "Pritraukti _viską"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-msgid "_Center With Selected Subtitle"
+msgid "_Center Selected Subtitle"
 msgstr "_Centruoti su pasirinktu subtitru"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-msgid "Scrolling With _Player"
+msgid "Scrolling With _Video"
 msgstr "Slinktis su _grotuvu"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
@@ -3387,7 +3387,7 @@ msgid "Please check your GStreamer installation."
 msgstr "Patikrinkite GStreamer įdiegimą."
 
 #: ../src/gui/application.cc:296
-msgid "Times"
+msgid "Timecodes"
 msgstr "Laikas"
 
 #: ../src/gui/application.cc:296
@@ -3982,7 +3982,7 @@ msgid "About"
 msgstr "Apie"
 
 #: ../plugins/actions/about/about.se-plugin.in.h:2
-msgid "Displays the application's information."
+msgid "Displays information about the application."
 msgstr "Parodo programos informaciją."
 
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1
