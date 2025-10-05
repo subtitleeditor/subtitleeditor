@@ -79,6 +79,14 @@ OptionGroup::OptionGroup()
   entryWaveform.set_arg_description(_("FILE"));
   add_entry(entryWaveform, waveform);
 
+  // keyframes
+  Glib::OptionEntry entryKeyframes;
+  entryKeyframes.set_long_name("keyframes");
+  entryKeyframes.set_short_name('k');
+  entryKeyframes.set_description("Open keyframes file");
+  entryKeyframes.set_arg_description(_("FILE"));
+  add_entry(entryKeyframes, keyframes);
+
 #ifdef DEBUG
 
 #define add_debug_option(name, value) \
