@@ -1099,11 +1099,6 @@ bool SubtitleView::on_key_press_event(GdkEventKey *event) {
   return Gtk::TreeView::on_key_press_event(event);
 }
 
-bool SubtitleView::on_button_press_event(GdkEventButton *ev) {
-  // FIXME: remove this functions
-  return Gtk::TreeView::on_button_press_event(ev);
-}
-
 void SubtitleView::on_config_subtitle_view_changed(const Glib::ustring &key,
                                                    const Glib::ustring &value) {
   if (key == "columns-displayed") {
