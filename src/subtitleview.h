@@ -149,8 +149,6 @@ class SubtitleView : public Gtk::TreeView {
 
   bool on_key_press_event(GdkEventKey *event);
 
-  bool on_button_press_event(GdkEventButton *ev);
-
   // il y a eu des changements dans la configuration du groupe "subtitle-view"
   void on_config_subtitle_view_changed(const Glib::ustring &key,
                                        const Glib::ustring &value);
