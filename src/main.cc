@@ -20,7 +20,9 @@
 
 #include <config.h>
 #include <gtkmm/main.h>
+
 #include <iostream>
+
 #include "gtkmm_utility.h"
 #include "gui/application.h"
 #include "options.h"
@@ -29,6 +31,7 @@
 // #include <gdk/gdkx.h>
 #include <glib.h>
 #include <gstreamermm.h>
+
 #include <ctime>
 
 #ifdef ENABLE_GL
@@ -56,7 +59,7 @@ int main(int argc, char *argv[]) {
   // SubtitleEditor Options
   OptionGroup options;
   try {
-    Glib::OptionContext context(_(" - edit subtitles files"));
+    Glib::OptionContext context(_(" — edit subtitles files"));
     context.set_main_group(options);
 
     Glib::OptionGroup gst_group(gst_init_get_option_group());

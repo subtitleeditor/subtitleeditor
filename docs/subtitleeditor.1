@@ -1,14 +1,32 @@
-.TH "SUBTITLEEDITOR" "1" "October 29, 2006" "" ""
+.TH "SUBTITLEEDITOR" "1" "October 4, 2025" "" ""
 .\" disable hyphenation
 .nh
 .\" disable justification (adjust text to left margin only)
 .ad l
 .SH "NAME"
-subtitleeditor \- Graphical subtitle editor with sound waves representation
+subtitleeditor — Graphical subtitle editor with sound waves representation
 .SH "SYNOPSIS"
 .HP 15
 \fBsubtitleeditor\fR
+.RB
+[ \-? | \-h | \-\-help | \-\-help\-all | \-\-help\-gst | \-\-help\-gtk ]
+.PP
+\fBsubtitleeditor\fR
+.RB
+[ \-p | \-\-profile
+.IR PROFILE ]
+.RB
+[ \-v | \-\-video
+.IR FILE ]
+.RB
+[ \-w | \-\-waveform
+.IR FILE ]
+.RB
+[ \-e | \-\-encoding
+.IR ENCODING ]
+.RI [ FILE ]
 .SH "DESCRIPTION"
+
 .PP
 This manual page documents briefly the
 \fBsubtitleeditor\fR
@@ -17,114 +35,74 @@ command. As
 is a GUI program, most of its options are available through the GUI interface, rather than the command\-line.
 .PP
 \fBsubtitleeditor\fR
-is a GTK+2 tool to edit subtitles. It can be used to create new subtitles or as a tool to transform, edit, correct and refine existing subtitles.
+is a GTK+3 tool to edit subtitles. It can be used to create new subtitles or as a tool to transform, edit, correct and refine existing subtitles.
 .SH "OPTIONS"
 .PP
-This program follows the usual
-GNU
-command line syntax, with long options starting with two dashes (`\-'). A summary of options is included below.
+This program follows the usual GNU command line syntax, with long options starting with two dashes (`\-'). A summary of options is included below.
 .PP
-\fB\-?\fR \fB\-\-help\fR
+\fB\-?\fR \fB\-h\fR \fB\-\-help\fR
 .RS 3n
 Show summary of options.
 .RE
 .PP
 \fB\-\-help\-all\fR
 .RS 3n
-Show all help options
+Show all help options.
 .RE
 .PP
 \fB\-\-help\-gst\fR
 .RS 3n
-Show GStreamer options
+Show GStreamer options.
 .RE
 .PP
 \fB\-\-help\-gtk\fR
 .RS 3n
-Show Gtk+ options
+Show Gtk+ options.
 .RE
 .SH "Application Options:"
 .PP
+\fB\-f \-\-file\=FILE\fR
+.RS 3n
+Open a subtitle file (or multiple subtitled files: -f \fIFILE1\fR -f \fIFILE2\fR --file=\fIFILE3\fR …).
+.PP
+Positional arguments are treated as implicitly using this option, so
+"\fBsubtitleeditor\fR \-f \fIFILE\fR" is equivalent to "\fBsubtitleeditor\fR \fIFILE\fR".
+.RE
+.PP
 \fB\-p \-\-profile\=NAME\fR
 .RS 3n
-the name of the profile used by the config
+The name of the configuration profile. Default value is “default“. Subtitleeditor follows the XDG Base Directory Specification, so unless \fB$XDG_CONFIG_HOME\fR is set, profiles are typically stored in \fI~/.config/subtitleditor/\fR.
 .RE
 .PP
 \fB\-e \-\-encoding\=ENCODING\fR
 .RS 3n
-encoding used to open files
+Encoding used to open subtitle files.
 .RE
 .PP
 \fB\-v \-\-video\=FILE\fR
 .RS 3n
-open video file
+Open video file.
 .RE
 .PP
 \fB\-w \-\-waveform\=FILE\fR
 .RS 3n
-open waveform file
+Open waveform file.
 .RE
-.SH "FEATURES"
 .PP
-* Really easy to use
+\fB\-\-display\=DISPLAY\fR
+.RS 3n
+X display to use, if still run under X.
+.RE
+.SH SEE ALSO
 .PP
-* Can create new subtitle
-.PP
-* Can be used for timing (gstreamer)
-.PP
-* Can be used for translation
-.PP
-* Internal format is Advanced Sub Station Alpha
-.PP
-* Can edit the script header (authors, translators, timers, video information, etc.)
-.PP
-* Style Editor
-.PP
-* Framerate conversion
-.PP
-* Scale
-.PP
-* Split subtitle
-.PP
-* Joint subtitle
-.PP
-* Spell check using aspell
-.PP
-* Encoding support
-.PP
-* Edit text and adjust time (start, end)
-.PP
-* Move subtitle
-.PP
-* Find and replace (can use Regular Expression)
-.PP
-* Remove empty lines
-.PP
-* Set All end times
-.PP
-* Can play video preview (using MPlayer or other)
-.PP
-Supported Formats:
-.PP
-* Sub Station Alpha
-.PP
-* Advanced Sub Station Alpha
-.PP
-* SubRip
-.PP
-* MicroDVD
-.PP
-* MPL2
-.PP
-* MPsub (MPlayer subtitle)
-.PP
-* SubViewer 2.0
-.PP
-* Plain\-Text
+For an overview of features and further information see:
+.br
+.I https://subtitleeditor.github.io/subtitleeditor/
+
 .SH "AUTHOR"
 .PP
 This manual page was written by Amaya Rodrigo Sastre
-<amaya@debian.org> for the Debian(TM) system. It was modified by Anibal Avelar <aavelar@cofradia.org>.
+<amaya@debian.org> for the Debian(TM) system. It was modified by Anibal Avelar <aavelar@cofradia.org> and Tomáš Hnyk <tomashnyk@gmail.com>.
 .SH "AUTHOR"
 .PP
 \fBAmaya Rodrigo\fR
@@ -136,4 +114,5 @@ Copyright \(co 2006 Amaya Rodrigo Sastre
 .br
 Copyright \(co 2008 Anibal Avelar
 .br
-
+Copyright \(co 2025 Tomáš Hnyk
+.br
