@@ -217,9 +217,8 @@ class ExternalVideoPlayer : public Action {
       return cfg::get_string("external-video-player", "command");
     }
     // write the default command in the config
-	// 2025: I suspect the below is never called
     auto default_cmd = R"(
-      mpv --sub-file="#subtitle_uri" --start="#time" "#video_uri" --sub-auto=no --osd-level=2
+      mpv --sub-file="#subtitle_uri" --start="#time" "#video_uri" --sub-auto=no --osd-level=2  --force-window=yes
     )";
 
     cfg::set_string("external-video-player", "command", default_cmd);
