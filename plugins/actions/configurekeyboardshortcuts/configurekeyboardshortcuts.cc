@@ -23,6 +23,8 @@
 #include <gtkmm/accelmap.h>
 #include <gtkmm_utility.h>
 #include <utility.h>
+
+#include <algorithm>
 #include <memory>
 
 static gboolean accel_find_func(GtkAccelKey * /*key*/, GClosure *closure,
@@ -113,22 +115,138 @@ class DialogConfigureKeyboardShortcuts : public Gtk::Dialog {
     m_treeview->set_has_tooltip(true);
     m_treeview->signal_query_tooltip().connect(sigc::mem_fun(
         *this, &DialogConfigureKeyboardShortcuts::on_query_tooltip));
+
+    // separator
+    m_treeview->set_row_separator_func(
+        sigc::mem_fun(*this, &DialogConfigureKeyboardShortcuts::is_separator));
   }
 
   // Create all items (action) from the action_group.
-  // The action with menu in the name are ignored.
   void create_items() {
+    std::vector<Glib::RefPtr<Gtk::Action> > dynamic_audio_actions;
+    std::vector<Glib::RefPtr<Gtk::Action> > dynamic_documents_actions;
+    std::vector<Glib::RefPtr<Gtk::Action> > dynamic_view_actions;
+    std::vector<Glib::RefPtr<Gtk::Action> > static_actions;
+    std::vector<Glib::RefPtr<Gtk::Action> > all_actions;
+    Glib::ustring action_name;
+    Glib::ustring group_name;
     std::vector<Glib::RefPtr<Gtk::ActionGroup> > group =
         m_refUIManager->get_action_groups();
     for (unsigned int i = 0; i < group.size(); ++i) {
-      std::vector<Glib::RefPtr<Gtk::Action> > actions = group[i]->get_actions();
+      all_actions = group[i]->get_actions();
+      group_name = group[i]->get_name();
 
-      for (unsigned int j = 0; j < actions.size(); ++j) {
-        if (actions[j]->get_name().find("menu") != Glib::ustring::npos)
+      // Actions with menu in the name are ignored.
+      for (unsigned int j = 0; j < all_actions.size(); ++j) {
+        if (all_actions[j]->get_name().find("menu") != Glib::ustring::npos)
           continue;
 
-        add_action(actions[j]);
+        action_name = all_actions[j]->get_name();
+
+        // Separate dynamic documents actions
+        if (action_name.find("documentsnavigation-document-") !=
+            Glib::ustring::npos) {
+          dynamic_documents_actions.push_back(all_actions[j]);
+        }
+        // Separate dynamic audio tracks actions
+        else if (action_name.find("audio-track-") != Glib::ustring::npos) {
+          dynamic_audio_actions.push_back(all_actions[j]);
+        }
+        // Separate view manager actions (except the preferences action)
+        else if (group_name == "ViewManagerPlugin" &&
+                 action_name != "view-manager-preferences") {
+          dynamic_view_actions.push_back(all_actions[j]);
+        }
+        // Everything else is static
+        else {
+          static_actions.push_back(all_actions[j]);
+        }
       }
+    }
+
+    // Sort audio actions based on their name, auto comes first.
+    std::sort(dynamic_audio_actions.begin(), dynamic_audio_actions.end(),
+              [](const Glib::RefPtr<Gtk::Action> &a,
+                 const Glib::RefPtr<Gtk::Action> &b) {
+                Glib::ustring name_a = a->get_name();
+                Glib::ustring name_b = b->get_name();
+
+                // "audio-track-auto" should come first
+                if (name_a == "audio-track-auto")
+                  return true;
+                if (name_b == "audio-track-auto")
+                  return false;
+
+                // Extract number after audio-track-
+                size_t pos_a = name_a.find_last_of('-');
+                size_t pos_b = name_b.find_last_of('-');
+
+                // Convert the number to integer and compare
+                int num_a = std::atoi(name_a.substr(pos_a + 1).c_str());
+                int num_b = std::atoi(name_b.substr(pos_b + 1).c_str());
+                return num_a < num_b;
+              });
+
+    // Sort dynamic document actions based on their function name.
+    std::sort(dynamic_documents_actions.begin(),
+              dynamic_documents_actions.end(),
+              [](const Glib::RefPtr<Gtk::Action> &a,
+                 const Glib::RefPtr<Gtk::Action> &b) {
+                Glib::ustring name_a = a->get_name();
+                Glib::ustring name_b = b->get_name();
+
+                // Extract the number after "documentsnavigation-document-"
+                size_t pos_a = name_a.find_last_of('-');
+                size_t pos_b = name_b.find_last_of('-');
+
+                // Convert the number to integer and compare
+                int num_a = std::atoi(name_a.substr(pos_a + 1).c_str());
+                int num_b = std::atoi(name_b.substr(pos_b + 1).c_str());
+                return num_a < num_b;
+              });
+
+    // Sort view actions alphabetically by label.
+    std::sort(dynamic_view_actions.begin(), dynamic_view_actions.end(),
+              [](const Glib::RefPtr<Gtk::Action> &a,
+                 const Glib::RefPtr<Gtk::Action> &b) {
+                return a->get_name() < b->get_name();
+              });
+
+    // Sort static actions alphabetically by label.
+    std::sort(static_actions.begin(), static_actions.end(),
+              [](const Glib::RefPtr<Gtk::Action> &a,
+                 const Glib::RefPtr<Gtk::Action> &b) {
+                Glib::ustring label_a = a->property_label();
+                Glib::ustring label_b = b->property_label();
+                utility::replace(label_a, "_", "");
+                utility::replace(label_b, "_", "");
+                return label_a < label_b;
+              });
+
+    // Add dynamic document actions first.
+    for (unsigned int i = 0; i < dynamic_documents_actions.size(); ++i) {
+      add_action(dynamic_documents_actions[i]);
+    }
+
+    // Add dynamic audio actions
+    for (unsigned int i = 0; i < dynamic_audio_actions.size(); ++i) {
+      add_action(dynamic_audio_actions[i]);
+    }
+
+    // Add dynamic view actions
+    for (unsigned int i = 0; i < dynamic_view_actions.size(); ++i) {
+      add_action(dynamic_view_actions[i]);
+    }
+
+    // Add a separator row if there are any dynamic actions
+    if (!dynamic_documents_actions.empty() || !dynamic_audio_actions.empty() ||
+        !dynamic_view_actions.empty()) {
+      m_store->append();
+    }
+
+    // Then add static actions.
+    for (unsigned int i = 0; i < static_actions.size(); ++i) {
+      add_action(static_actions[i]);
     }
   }
 
@@ -269,7 +387,7 @@ class DialogConfigureKeyboardShortcuts : public Gtk::Dialog {
         accel_closure));
   }
 
-  // Try to changed the shortcut with conflict support.
+  // Try to change the shortcut with conflict support.
   void on_accel_edited(const Glib::ustring &path, guint key,
                        Gdk::ModifierType mods, guint /*keycode*/) {
     Gtk::TreeIter iter = m_store->get_iter(path);
@@ -352,6 +470,14 @@ class DialogConfigureKeyboardShortcuts : public Gtk::Dialog {
     create_items();
 
     run();
+  }
+
+  // Check if a given row should be a separator by checking
+  // whether the action column is null, which marks it as a separator.
+  bool is_separator(const Glib::RefPtr<Gtk::TreeModel> & /*model*/,
+                    const Gtk::TreeModel::iterator &iter) {
+    Glib::RefPtr<Gtk::Action> action = (*iter)[m_columns.action];
+    return !action;
   }
 
  protected:
