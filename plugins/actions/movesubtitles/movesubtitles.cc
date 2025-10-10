@@ -21,8 +21,11 @@
 #include <extension/action.h>
 #include <gtkmm_utility.h>
 #include <gui/spinbuttontime.h>
+#include <player.h>
+#include <subtitleeditorwindow.h>
 #include <utility.h>
 #include <widget_config_utility.h>
+
 #include <memory>
 
 class DialogMoveSubtitles : public Gtk::Dialog {
@@ -35,12 +38,12 @@ class DialogMoveSubtitles : public Gtk::Dialog {
     builder->get_widget("label-start-value", m_labelStartValue);
     builder->get_widget_derived("spin-start-value", m_spinStartValue);
     builder->get_widget_derived("spin-new-start", m_spinNewStart);
-    builder->get_widget("check-only-selected-subtitles",
-                        m_checkOnlySelectedSubtitles);
+    // builder->get_widget("check-only-selected-subtitles",
+    //                     m_checkOnlySelectedSubtitles);
 
-    widget_config::read_config_and_connect(m_checkOnlySelectedSubtitles,
-                                           "move-subtitles",
-                                           "only-selected-subtitles");
+    // widget_config::read_config_and_connect(m_checkOnlySelectedSubtitles,
+    //                                        "move-subtitles",
+    //                                        "only-selected-subtitles");
   }
 
   void init(Document *doc, const Subtitle &subtitle) {
@@ -58,23 +61,29 @@ class DialogMoveSubtitles : public Gtk::Dialog {
     m_spinStartValue->set_value(value);
     m_spinStartValue->set_range(value, value);
 
-    m_spinNewStart->set_value(value);
+    // Set the new start of subtitles to current player position
+    long position = value;
+    Player *player = SubtitleEditorWindow::get_instance()->get_player();
+    if (player->get_state() != Player::NONE)
+      position = player->get_position();
+
+    m_spinNewStart->set_value(position);
     m_spinNewStart->grab_focus();
   }
 
   long get_diff_value() {
     return (long)(m_spinNewStart->get_value() - m_spinStartValue->get_value());
-  }
+  }  //
 
-  bool only_selected_subtitles() {
-    return m_checkOnlySelectedSubtitles->get_active();
-  }
+  // bool only_selected_subtitles() {
+  //   return m_checkOnlySelectedSubtitles->get_active();
+  // }
 
  protected:
   Gtk::Label *m_labelStartValue;
   SpinButtonTime *m_spinStartValue;
   SpinButtonTime *m_spinNewStart;
-  Gtk::CheckButton *m_checkOnlySelectedSubtitles;
+  // Gtk::CheckButton *m_checkOnlySelectedSubtitles;
 };
 
 class MoveSubtitlesPlugin : public Action {
@@ -95,10 +104,10 @@ class MoveSubtitlesPlugin : public Action {
     action_group = Gtk::ActionGroup::create("MoveSubtitlesPlugin");
 
     action_group->add(
-        Gtk::Action::create("move-subtitles", Gtk::Stock::JUMP_TO,
-                            _("_Move Subtitles"),
-                            _("All subtitles will be also moved after the "
-                              "first selected subtitle")),
+        Gtk::Action::create(
+            "move-subtitles", Gtk::Stock::JUMP_TO, _("_Move Subtitles"),
+            _("Move selected subtitles. If only one subtitle is selected, move "
+              "it and all subsequent subtitles.")),
         Gtk::AccelKey("<Control>M"),
         sigc::mem_fun(*this, &MoveSubtitlesPlugin::on_move_subtitles));
 
@@ -150,6 +159,7 @@ class MoveSubtitlesPlugin : public Action {
             "dialog-move-subtitles.ui", "dialog-move-subtitles"));
 
     Subtitle first_selected_subtitle = doc->subtitles().get_first_selected();
+    Subtitle last_selected_subtitle = doc->subtitles().get_last_selected();
 
     if (first_selected_subtitle) {
       dialog->init(doc, first_selected_subtitle);
@@ -160,13 +170,17 @@ class MoveSubtitlesPlugin : public Action {
         if (diff != 0) {
           doc->start_command(_("Move Subtitles"));
 
-          if (dialog->only_selected_subtitles())
+          // if (dialog->only_selected_subtitles())
+          if (last_selected_subtitle != first_selected_subtitle)
             move_selected_subtitles(doc, diff);
           else
             move_first_selected_subtitle_and_next(doc, diff);
 
           doc->emit_signal("subtitle-time-changed");
           doc->finish_command();
+        } else {
+          doc->flash_message(_(
+              "Old Start Time and New Start are the same. Nothing was moved."));
         }
       }
     } else {
@@ -176,8 +190,8 @@ class MoveSubtitlesPlugin : public Action {
     return true;
   }
 
-  // Used only the first selected subtitles and move all the next
-  // subtitles selected or not.
+  // Move the first selected subtitle and all subsequent subtitles
+  // regardless of selection.
   bool move_first_selected_subtitle_and_next(Document *doc, const long &diff) {
     se_dbg(SE_DBG_PLUGINS);
 

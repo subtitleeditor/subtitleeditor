@@ -165,7 +165,7 @@
                             <property name="y_options"/>
                           </packing>
                         </child>
-                        <child>
+                        <!--<child>
                           <object class="GtkCheckButton" id="check-only-selected-subtitles">
                             <property name="label" translatable="yes">_Only selected subtitles</property>
                             <property name="visible">True</property>
@@ -181,7 +181,7 @@
                             <property name="top_attach">2</property>
                             <property name="bottom_attach">3</property>
                           </packing>
-                        </child>
+                        </child><-->
                       </object>
                     </child>
                   </object>
