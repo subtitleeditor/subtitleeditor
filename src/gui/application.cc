@@ -20,6 +20,7 @@
 
 #include <config.h>
 #include <gtkmm/accelmap.h>
+
 #include <algorithm>
 
 #ifdef GDK_WINDOWING_WAYLAND
@@ -29,11 +30,10 @@
 #include "application.h"
 #include "documents.h"
 #include "encodings.h"
-#include "utility.h"
-
 #include "extension.h"
 #include "extension/action.h"
 #include "extensionmanager.h"
+#include "utility.h"
 
 Application::Application(BaseObjectType *cobject,
                          const Glib::RefPtr<Gtk::Builder> &builder)
@@ -501,8 +501,9 @@ void Application::init(OptionGroup &options) {
   // video
   Glib::ustring video = options.video;
 
-  // s'il n'y a pas de video et s'il n'y a qu'un seule fichier sous-titre
-  // recherche une video par rapport au nom du sous-titre
+  // If video was not specified and if there was only one subtitle file
+  // specified open a video that has the same filename so subtitle -f
+  // filename.srt will open video.mp4, and if that is not found video.mkv etc.
   bool automatically_open_video =
       cfg::get_boolean("video-player", "automatically-open-video");
 
@@ -514,22 +515,24 @@ void Application::init(OptionGroup &options) {
 
     if (dot != Glib::ustring::npos) {
       tmp = tmp.substr(0, dot);
-
-      if (Glib::file_test(tmp + ".mpg", Glib::FILE_TEST_EXISTS))
-        video = tmp + ".mpg";
-      else if (Glib::file_test(tmp + ".mpeg", Glib::FILE_TEST_EXISTS))
-        video = tmp + ".mpeg";
-      else if (Glib::file_test(tmp + ".avi", Glib::FILE_TEST_EXISTS))
-        video = tmp + ".avi";
-      else if (Glib::file_test(tmp + ".ogm", Glib::FILE_TEST_EXISTS))
-        video = tmp + ".ogm";
-      else if (Glib::file_test(tmp + ".mkv", Glib::FILE_TEST_EXISTS))
-        video = tmp + ".mkv";
+      // Media extensions to check (video + audio)
+      const std::vector<Glib::ustring> media_extensions = {
+          // Video
+          ".mp4", ".mkv", ".webm", ".mov", ".avi", ".mpg", ".mpeg", ".ogm",
+          ".m4v", ".wmv",
+          // Audio
+          ".mp3", ".flac", ".wav", ".m4a", ".aac", ".ogg", ".oga", ".opus",
+          ".wma"};
+      for (const auto &ext : media_extensions) {
+        if (Glib::file_test(tmp + ext, Glib::FILE_TEST_EXISTS)) {
+          video = tmp + ext;
+          break;
+        }
+      }
     }
   }
 
-  // une vidéo ?
-  // on connect le lecteur interne
+  // Open the video file
   if (!video.empty()) {
     try {
       Glib::ustring uri =
