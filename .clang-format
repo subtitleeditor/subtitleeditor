@@ -2,6 +2,6 @@
 BasedOnStyle: Google
 AlignTrailingComments: true
 ReflowComments: true
-ColumnLimit: 80
+ColumnLimit: 180
 AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: false
