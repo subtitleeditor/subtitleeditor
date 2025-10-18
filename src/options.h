@@ -22,6 +22,7 @@
 
 #include <config.h>
 #include <glibmm.h>
+
 #include <vector>
 
 class OptionGroup : public Glib::OptionGroup {
@@ -34,10 +35,11 @@ class OptionGroup : public Glib::OptionGroup {
   std::vector<Glib::ustring> files;
   std::vector<Glib::ustring> files_list;  // simple file (glibmm Bug #526831)
 
-  Glib::ustring profile;   // profile name
-  Glib::ustring encoding;  //
-  Glib::ustring video;     // video location
-  Glib::ustring waveform;  // waveform location
+  Glib::ustring profile;    // profile name
+  Glib::ustring encoding;   // subtitle encoding to be used
+  Glib::ustring video;      // video file location
+  Glib::ustring waveform;   // waveform file location
+  Glib::ustring keyframes;  // keyframes file location
 
 #ifdef DEBUG
   bool debug_all;

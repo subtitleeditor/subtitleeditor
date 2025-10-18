@@ -568,6 +568,32 @@ void Application::init(OptionGroup &options) {
       std::cerr << ex.what() << std::endl;
     }
   }
+
+  // -----------------------------------------------------
+  // keyframes
+  Glib::ustring keyframes = options.keyframes;
+  if (keyframes.empty() && (options.files.size() == 1)) {
+    Glib::ustring tmp = options.files[0];
+    Glib::ustring::size_type dot = tmp.rfind('.');
+    if (dot != Glib::ustring::npos) {
+      tmp = tmp.substr(0, dot);
+
+      if (Glib::file_test(tmp + ".kf", Glib::FILE_TEST_EXISTS))
+        keyframes = tmp + ".kf";
+    }
+  }
+
+  if (!keyframes.empty()) {
+    try {
+      Glib::ustring uri =
+          Glib::filename_to_uri(utility::create_full_path(keyframes));
+      Glib::RefPtr<KeyFrames> kf = KeyFrames::create_from_file(uri);
+      if (kf)
+        m_video_player->player()->set_keyframes(kf);
+    } catch (const Glib::Error &ex) {
+      std::cerr << ex.what() << std::endl;
+    }
+  }
 }
 
 bool Application::on_key_press_event(GdkEventKey *ev) {
