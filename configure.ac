@@ -114,12 +114,6 @@ GSTREAMER_LIBS="$GSTREAMER_LIBS -lgstvideo-1.0 -lgstaudio-1.0 -lgstpbutils-1.0"
 
 #SE_GST_ELEMENT_CHECK_REQUIRED([0.10], [level], [gstreamer0.10-plugins-good])
 
-# check gstreamermm
-PKG_CHECK_MODULES(GSTREAMERMM, gstreamermm-1.0 >= 1.0);
-
-GSTREAMER_CFLAGS="$GSTREAMER_CFLAGS $GSTREAMERMM_CFLAGS"
-GSTREAMER_LIBS="$GSTREAMER_LIBS $GSTREAMERMM_LIBS"
-
 # =========================================================================
 # check iso-codes 639, 3166 and 15924
 
@@ -416,7 +410,6 @@ gcc version .......................... : $(gcc -dumpversion)
 gtk+ version ......................... : $(pkg-config --modversion gtk+-3.0)
 gtkmm version ........................ : $(pkg-config --modversion gtkmm-3.0)
 gstreamer version .................... : $(pkg-config --modversion gstreamer-1.0)
-gstreamermm version .................. : $(pkg-config --modversion gstreamermm-1.0)
 
 default video output ................. : $DEFAULT_PLAYER_VIDEO_SINK
 default audio output ................. : $DEFAULT_PLAYER_AUDIO_SINK

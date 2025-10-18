@@ -26,8 +26,7 @@
 
 // declared in keyframesgenerator.cc
 Glib::RefPtr<KeyFrames> generate_keyframes_from_file(const Glib::ustring &uri);
-Glib::RefPtr<KeyFrames> generate_keyframes_from_file_using_frame(
-    const Glib::ustring &uri);
+Glib::RefPtr<KeyFrames> generate_keyframes_from_file_using_frame(const Glib::ustring &uri);
 
 class KeyframesManagementPlugin : public Action {
  public:
@@ -47,79 +46,41 @@ class KeyframesManagementPlugin : public Action {
     action_group = Gtk::ActionGroup::create("KeyframesManagementPlugin");
 
     // Open
-    action_group->add(
-        Gtk::Action::create("keyframes/open", Gtk::Stock::OPEN,
-                            _("Open Keyframes"),
-                            _("Open keyframes from a file")),
-        Gtk::AccelKey("<Control>K"),
-        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_open));
+    action_group->add(Gtk::Action::create("keyframes/open", Gtk::Stock::OPEN, _("Open Keyframes"), _("Open keyframes from a file")), Gtk::AccelKey("<Control>K"),
+                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_open));
     // Save
-    action_group->add(
-        Gtk::Action::create("keyframes/save", Gtk::Stock::SAVE,
-                            _("Save Keyframes"),
-                            _("Save keyframes to the file")),
-        Gtk::AccelKey("<Shift><Control>K"),
-        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_save));
+    action_group->add(Gtk::Action::create("keyframes/save", Gtk::Stock::SAVE, _("Save Keyframes"), _("Save keyframes to the file")), Gtk::AccelKey("<Shift><Control>K"),
+                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_save));
     // Generate
-    action_group->add(
-        Gtk::Action::create("keyframes/generate", Gtk::Stock::EXECUTE,
-                            _("Generate Keyframes From Video"),
-                            _("Generate keyframes from the current video")),
-        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_generate));
-    action_group->add(
-        Gtk::Action::create("keyframes/generate-using-frame",
-                            Gtk::Stock::EXECUTE,
-                            _("Generate Keyframes From Video (Using Frame)"),
-                            _("Generate keyframes from the current video")),
-        sigc::mem_fun(*this,
-                      &KeyframesManagementPlugin::on_generate_using_frame));
+    action_group->add(Gtk::Action::create("keyframes/generate", Gtk::Stock::EXECUTE, _("Generate Keyframes From Video"), _("Generate keyframes from the current video")),
+                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_generate));
+    action_group->add(Gtk::Action::create("keyframes/generate-using-frame", Gtk::Stock::EXECUTE, _("Generate Keyframes From Video (Using Frame)"),
+                                          _("Generate keyframes from the current video")),
+                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_generate_using_frame));
     // Close
-    action_group->add(
-        Gtk::Action::create("keyframes/close", Gtk::Stock::CLOSE,
-                            _("Close the keyframes"), _("FIXME")),
-        Gtk::AccelKey("<Alt><Control>K"),
-        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_close));
+    action_group->add(Gtk::Action::create("keyframes/close", Gtk::Stock::CLOSE, _("Close the keyframes"), _("FIXME")), Gtk::AccelKey("<Alt><Control>K"),
+                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_close));
     // Seek
-    action_group->add(
-        Gtk::Action::create("keyframes/seek-to-previous",
-                            Gtk::Stock::MEDIA_PREVIOUS,
-                            _("Seek To Previous Keyframe"), _("FIXME")),
-        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_seek_previous));
+    action_group->add(Gtk::Action::create("keyframes/seek-to-previous", Gtk::Stock::MEDIA_PREVIOUS, _("Seek To Previous Keyframe"), _("FIXME")),
+                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_seek_previous));
 
-    action_group->add(
-        Gtk::Action::create("keyframes/seek-to-next", Gtk::Stock::MEDIA_NEXT,
-                            _("Seek To Next Keyframe"), _("FIXME")),
-        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_seek_next));
+    action_group->add(Gtk::Action::create("keyframes/seek-to-next", Gtk::Stock::MEDIA_NEXT, _("Seek To Next Keyframe"), _("FIXME")),
+                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_seek_next));
     // Snap Start
-    action_group->add(
-        Gtk::Action::create("keyframes/snap-start-to-previous",
-                            Gtk::Stock::GOTO_FIRST,
-                            _("Snap Start To Previous Keyframe"), _("FIXME")),
-        sigc::mem_fun(*this,
-                      &KeyframesManagementPlugin::on_snap_start_to_previous));
+    action_group->add(Gtk::Action::create("keyframes/snap-start-to-previous", Gtk::Stock::GOTO_FIRST, _("Snap Start To Previous Keyframe"), _("FIXME")),
+                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_snap_start_to_previous));
 
-    action_group->add(
-        Gtk::Action::create("keyframes/snap-start-to-next",
-                            Gtk::Stock::GOTO_LAST,
-                            _("Snap Start To Next Keyframe"), _("FIXME")),
-        sigc::mem_fun(*this,
-                      &KeyframesManagementPlugin::on_snap_start_to_next));
+    action_group->add(Gtk::Action::create("keyframes/snap-start-to-next", Gtk::Stock::GOTO_LAST, _("Snap Start To Next Keyframe"), _("FIXME")),
+                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_snap_start_to_next));
     // Snap End
-    action_group->add(
-        Gtk::Action::create("keyframes/snap-end-to-previous",
-                            Gtk::Stock::GOTO_FIRST,
-                            _("Snap End To Previous Keyframe"), _("FIXME")),
-        sigc::mem_fun(*this,
-                      &KeyframesManagementPlugin::on_snap_end_to_previous));
+    action_group->add(Gtk::Action::create("keyframes/snap-end-to-previous", Gtk::Stock::GOTO_FIRST, _("Snap End To Previous Keyframe"), _("FIXME")),
+                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_snap_end_to_previous));
 
-    action_group->add(
-        Gtk::Action::create("keyframes/snap-end-to-next", Gtk::Stock::GOTO_LAST,
-                            _("Snap End To Next Keyframe"), _("FIXME")),
-        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_snap_end_to_next));
+    action_group->add(Gtk::Action::create("keyframes/snap-end-to-next", Gtk::Stock::GOTO_LAST, _("Snap End To Next Keyframe"), _("FIXME")),
+                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_snap_end_to_next));
 
     // Recent files
-    Glib::RefPtr<Gtk::RecentAction> recentAction =
-        Gtk::RecentAction::create("keyframes/recent-files", _("_Recent Files"));
+    Glib::RefPtr<Gtk::RecentAction> recentAction = Gtk::RecentAction::create("keyframes/recent-files", _("_Recent Files"));
 
     Glib::RefPtr<Gtk::RecentFilter> filter = Gtk::RecentFilter::create();
     filter->set_name("subtitleeditor");
@@ -130,8 +91,7 @@ class KeyframesManagementPlugin : public Action {
     recentAction->set_show_tips(true);
     // recentAction->set_show_not_found(false);
     recentAction->set_sort_type(Gtk::RECENT_SORT_MRU);
-    recentAction->signal_item_activated().connect(sigc::mem_fun(
-        *this, &KeyframesManagementPlugin::on_recent_item_activated));
+    recentAction->signal_item_activated().connect(sigc::mem_fun(*this, &KeyframesManagementPlugin::on_recent_item_activated));
     action_group->add(recentAction);
 
     // ui
@@ -169,8 +129,7 @@ class KeyframesManagementPlugin : public Action {
     ui_id = ui->add_ui_from_string(submenu);
 
     // connect the player state signals
-    player()->signal_message().connect(
-        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_player_message));
+    player()->signal_message().connect(sigc::mem_fun(*this, &KeyframesManagementPlugin::on_player_message));
   }
 
   void deactivate() {
@@ -261,8 +220,7 @@ class KeyframesManagementPlugin : public Action {
   void on_save() {
     Glib::RefPtr<KeyFrames> kf = player()->get_keyframes();
     if (kf) {
-      Gtk::FileChooserDialog ui(_("Save Keyframes"),
-                                Gtk::FILE_CHOOSER_ACTION_SAVE);
+      Gtk::FileChooserDialog ui(_("Save Keyframes"), Gtk::FILE_CHOOSER_ACTION_SAVE);
       ui.add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
       ui.add_button(Gtk::Stock::OK, Gtk::RESPONSE_OK);
       ui.set_default_response(Gtk::RESPONSE_OK);
@@ -294,11 +252,9 @@ class KeyframesManagementPlugin : public Action {
   void on_recent_item_activated() {
     se_dbg(SE_DBG_PLUGINS);
 
-    Glib::RefPtr<Gtk::Action> action =
-        action_group->get_action("keyframes/recent-files");
+    Glib::RefPtr<Gtk::Action> action = action_group->get_action("keyframes/recent-files");
 
-    Glib::RefPtr<Gtk::RecentAction> recentAction =
-        Glib::RefPtr<Gtk::RecentAction>::cast_static(action);
+    Glib::RefPtr<Gtk::RecentAction> recentAction = Glib::RefPtr<Gtk::RecentAction>::cast_static(action);
 
     Glib::RefPtr<Gtk::RecentInfo> cur = recentAction->get_current_item();
     if (cur) {
@@ -310,9 +266,7 @@ class KeyframesManagementPlugin : public Action {
     }
   }
 
-  void set_default_filename_from_video(Gtk::FileChooser *fc,
-                                       const Glib::ustring &video_uri,
-                                       const Glib::ustring &ext) {
+  void set_default_filename_from_video(Gtk::FileChooser *fc, const Glib::ustring &video_uri, const Glib::ustring &ext) {
     try {
       Glib::ustring videofn = Glib::filename_from_uri(video_uri);
       Glib::ustring pathname = Glib::path_get_dirname(videofn);
@@ -320,16 +274,14 @@ class KeyframesManagementPlugin : public Action {
 
       Glib::RefPtr<Glib::Regex> re = Glib::Regex::create("^(.*)(\\.)(.*)$");
       if (re->match(basename))
-        basename =
-            re->replace(basename, 0, "\\1." + ext, Glib::RegexMatchFlags(0));
+        basename = re->replace(basename, 0, "\\1." + ext, Glib::RegexMatchFlags(0));
       else
         basename = Glib::ustring::compose("%1.%2", basename, ext);
 
       fc->set_current_folder(pathname);  // set_current_folder_uri ?
       fc->set_current_name(basename);
     } catch (const Glib::Exception &ex) {
-      std::cerr << "set_default_filename_from_video failed : " << ex.what()
-                << std::endl;
+      std::cerr << "set_default_filename_from_video failed : " << ex.what() << std::endl;
     }
   }
 
@@ -426,8 +378,7 @@ class KeyframesManagementPlugin : public Action {
 
     long pos = sub.get_start().totalmsecs;
     long kf = 0;
-    bool ret = (previous) ? get_previous_keyframe(pos, kf)
-                          : get_next_keyframe(pos, kf);
+    bool ret = (previous) ? get_previous_keyframe(pos, kf) : get_next_keyframe(pos, kf);
     if (!ret)
       return false;
 
@@ -447,8 +398,7 @@ class KeyframesManagementPlugin : public Action {
 
     long pos = sub.get_end().totalmsecs;
     long kf = 0;
-    bool ret = (previous) ? get_previous_keyframe(pos, kf)
-                          : get_next_keyframe(pos, kf);
+    bool ret = (previous) ? get_previous_keyframe(pos, kf) : get_next_keyframe(pos, kf);
     if (!ret)
       return false;
     doc->start_command(_("Snap End to Keyframe"));

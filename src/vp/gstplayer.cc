@@ -18,54 +18,38 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-#include <gstreamermm/buffer.h>
-#include <gstreamermm/bus.h>
-#include <gstreamermm/caps.h>
-#include <gstreamermm/clock.h>
-#include <gstreamermm/event.h>
-#include <gstreamermm/message.h>
-#include <gstreamermm/query.h>
-#include <gstreamermm/textoverlay.h>
-#include <gstreamermm/videooverlay.h>
+#include "gstplayer.h"
 
 #include <debug.h>
 #include <gst/pbutils/missing-plugins.h>
+#include <gst/video/video.h>
 #include <gstreamer_utility.h>
 #include <i18n.h>
 #include <utility.h>
-#include "gstplayer.h"
 
-#ifdef GDK_WINDOWING_X11
-#include <gdk/gdkx.h>
-#endif
-#ifdef GDK_WINDOWING_WAYLAND
-#include <gdk/gdkwayland.h>
-#endif
-#if defined(GDK_WINDOWING_WIN32)
-#include <gdk/gdkwin32.h>
-#endif
-#if defined(GDK_WINDOWING_QUARTZ)
-// #include <gdk/gdkquartz.h>
-#endif
+static gboolean vp_handle_message(GstBus *bus, GstMessage *msg, void *data) {
+  GstPlayer *p = static_cast<GstPlayer *>(data);
+  return p->on_bus_message(bus, msg);
+}
 
 // Constructor
 // Init values
 GstPlayer::GstPlayer() {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
-  m_xWindowId = 0;
+  m_pipeline = nullptr;
+  m_gtksink_widget = nullptr;
+  m_textoverlay = nullptr;
   m_watch_id = 0;
-  m_pipeline_state = Gst::STATE_NULL;
-  m_pipeline_duration = Gst::CLOCK_TIME_NONE;
+  m_pipeline_state = GST_STATE_NULL;
+  m_pipeline_duration = GST_CLOCK_TIME_NONE;
   m_pipeline_rate = 1.0;
   m_pipeline_async_done = false;
   m_loop_seek = cfg::get_boolean("video-player", "repeat");
 
   show();
 
-  cfg::signal_changed("video-player")
-      .connect(
-          sigc::mem_fun(*this, &GstPlayer::on_config_video_player_changed));
+  cfg::signal_changed("video-player").connect(sigc::mem_fun(*this, &GstPlayer::on_config_video_player_changed));
 }
 
 // Destructor
@@ -74,8 +58,7 @@ GstPlayer::~GstPlayer() {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
   if (m_pipeline) {
-    set_pipeline_state(Gst::STATE_NULL);
-    m_pipeline.clear();
+    set_pipeline_state(GST_STATE_NULL);
   }
 }
 
@@ -90,11 +73,10 @@ bool GstPlayer::open(const Glib::ustring &uri) {
     return false;
   }
   // setup the uri property and init the player state to paused
-  m_pipeline->property_uri() = uri;
+  g_object_set(m_pipeline, "uri", uri.c_str(), NULL);
+  m_uri = uri;
 
-  bool ret = set_pipeline_state(Gst::STATE_PAUSED);
-
-  return ret;
+  return set_pipeline_state(GST_STATE_PAUSED);
 }
 
 // Set up the pipeline to NULL.
@@ -110,14 +92,14 @@ Glib::ustring GstPlayer::get_uri() {
 
   if (!m_pipeline)
     return Glib::ustring();
-  return m_pipeline->property_current_uri();
+  return m_uri;
 }
 
 // Sets the pipeline state to playing.
 void GstPlayer::play() {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
-  set_pipeline_state(Gst::STATE_PLAYING);
+  set_pipeline_state(GST_STATE_PLAYING);
 }
 
 // Try to play the segment defined by the subtitle (from start to end).
@@ -128,95 +110,80 @@ void GstPlayer::play_subtitle(const Subtitle &sub) {
 
   if (!m_pipeline)
     return;
-  Gst::SeekFlags flags = Gst::SEEK_FLAG_FLUSH | Gst::SEEK_FLAG_ACCURATE;
+  GstSeekFlags flags = (GstSeekFlags)(GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_ACCURATE);
   if (m_loop_seek) {
-    flags |= Gst::SEEK_FLAG_SEGMENT;
+    flags = (GstSeekFlags)(GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_ACCURATE | GST_SEEK_FLAG_SEGMENT);
     m_subtitle_play = sub;
   }
   // if the seek success, we update the timeout and
   // swap the pipeline state to playing
   if (seek(sub.get_start().totalmsecs, sub.get_end().totalmsecs, flags)) {
     update_pipeline_state_and_timeout();
-    set_pipeline_state(Gst::STATE_PLAYING);
+    set_pipeline_state(GST_STATE_PLAYING);
   }
 }
 
 // Try to play the segment defined (start to end).
 // This function don't support the mode looping.
 // The state is sets to playing.
-void GstPlayer::play_segment(const SubtitleTime &start,
-                             const SubtitleTime &end) {
+void GstPlayer::play_segment(const SubtitleTime &start, const SubtitleTime &end) {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
   if (!m_pipeline)
     return;
 
-  Gst::SeekFlags flags = Gst::SEEK_FLAG_FLUSH | Gst::SEEK_FLAG_ACCURATE;
+  GstSeekFlags flags = (GstSeekFlags)(GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_ACCURATE);
 
   if (seek(start.totalmsecs, end.totalmsecs, flags))
     update_pipeline_state_and_timeout();
-    set_pipeline_state(Gst::STATE_PLAYING);
+  set_pipeline_state(GST_STATE_PLAYING);
 }
 
 // Sets the pipeline state to paused.
 void GstPlayer::pause() {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
-  set_pipeline_state(Gst::STATE_PAUSED);
+  set_pipeline_state(GST_STATE_PAUSED);
 }
 
 // Return true if the state of the pipeline is playing.
 bool GstPlayer::is_playing() {
-  se_dbg(SE_DBG_VIDEO_PLAYER);
+  // se_dbg(SE_DBG_VIDEO_PLAYER);
 
-  return (m_pipeline_state == Gst::STATE_PLAYING);
+  return (m_pipeline_state == GST_STATE_PLAYING);
 }
 
 // Return the duration of the stream or 0.
 long GstPlayer::get_duration() {
-//  se_dbg(SE_DBG_VIDEO_PLAYER);
+  // se_dbg(SE_DBG_VIDEO_PLAYER);
 
   if (!m_pipeline) {
-    se_dbg_msg(SE_DBG_VIDEO_PLAYER, "0 because no pipeline");
     return 0;
   }
-
-  if (!GST_CLOCK_TIME_IS_VALID(m_pipeline_duration))
+  if (!GST_CLOCK_TIME_IS_VALID(m_pipeline_duration)) {
     if (!update_pipeline_duration()) {
-      se_dbg_msg(SE_DBG_VIDEO_PLAYER, "0 because pipeline duration not valid");
       return 0;
-     }
-
-  long res = m_pipeline_duration / Gst::MILLI_SECOND;
-//  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "%li", res);
-  return res;
+    }
+  }
+  return GST_TIME_AS_MSECONDS(m_pipeline_duration);
 }
 
 // Return the current position in the stream.
 long GstPlayer::get_position() {
-//  se_dbg(SE_DBG_VIDEO_PLAYER);
+  // se_dbg(SE_DBG_VIDEO_PLAYER);
 
   if (!m_pipeline) {
-    se_dbg_msg(SE_DBG_VIDEO_PLAYER, "0 because no pipeline");
     return 0;
   }
 
   gint64 pos = 0;
-  Gst::Format fmt = Gst::FORMAT_TIME;
-
-  if (!m_pipeline->query_position(fmt, pos)) {
-    se_dbg_msg(SE_DBG_VIDEO_PLAYER, "0 because query_position() failed");
+  if (!gst_element_query_position(m_pipeline, GST_FORMAT_TIME, &pos))
     return 0;
-  }
-  long res = pos / Gst::MILLI_SECOND;
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "%li", res);
-  return res;
+  return GST_TIME_AS_MSECONDS(pos);
 }
 
-bool GstPlayer::seek(long start, long end, const Gst::SeekFlags &flags) {
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "try to seek %s (%d) - %s (%d)",
-             SubtitleTime(start).str().c_str(), start,
-             SubtitleTime(end).str().c_str(), end);
+bool GstPlayer::seek(long start, long end, const GstSeekFlags &flags) {
+  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "try to seek %s (%d) - %s (%d) (%d)", SubtitleTime(start).str().c_str(), start, SubtitleTime(end).str().c_str(), end, m_pipeline_rate);
 
   if (!m_pipeline)
     return false;
@@ -228,19 +195,19 @@ bool GstPlayer::seek(long start, long end, const Gst::SeekFlags &flags) {
   if (start > end)
     std::swap(start, end);
   // convert to gstreamer time
-  gint64 gstart = start * Gst::MILLI_SECOND;
-  gint64 gend = end * Gst::MILLI_SECOND;
+  gint64 gstart = start * GST_MSECOND;
+  gint64 gend = end * GST_MSECOND;
 
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER,
-             "pipeline->seek(%" GST_TIME_FORMAT ", %" GST_TIME_FORMAT ")",
-             GST_TIME_ARGS(gstart), GST_TIME_ARGS(gend));
+  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "pipeline->seek(%" GST_TIME_FORMAT ", %" GST_TIME_FORMAT ")", GST_TIME_ARGS(gstart), GST_TIME_ARGS(gend));
 
-  bool ret =
-      m_pipeline->seek(m_pipeline_rate, Gst::FORMAT_TIME, flags,
-                       Gst::SEEK_TYPE_SET, gstart, Gst::SEEK_TYPE_SET, gend);
+  // out of range ?
+  if (start == end) {
+    return false;
+  }
 
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "result of seek %s",
-             (ret) ? "true" : "false");
+  bool ret = gst_element_seek(m_pipeline, m_pipeline_rate, GST_FORMAT_TIME, flags, GST_SEEK_TYPE_SET, gstart, GST_SEEK_TYPE_SET, gend);
+
+  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "result of seek %s", (ret) ? "true" : "false");
 
   return ret;
 }
@@ -252,22 +219,21 @@ void GstPlayer::seek(long position) {
   if (!m_pipeline)
     return;
 
-  if (seek(position, get_duration(),
-           Gst::SEEK_FLAG_FLUSH | Gst::SEEK_FLAG_ACCURATE))
+  GstSeekFlags flags = (GstSeekFlags)(GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_ACCURATE);
+  if (seek(position, get_duration(), flags))
     update_pipeline_state_and_timeout();
 }
 
 // Update the text overlay with this new text.
 void GstPlayer::set_subtitle_text(const Glib::ustring &text) {
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "text='%s'", text.c_str());
+  // se_dbg_msg(SE_DBG_VIDEO_PLAYER, "text='%s'", text.c_str());
 
   if (!m_textoverlay)
     return;
 
   Glib::ustring corrected = text;
   utility::replace(corrected, "&", "&amp;");
-
-  m_textoverlay->set_property("text", corrected);
+  g_object_set(G_OBJECT(m_textoverlay), "text", corrected.c_str(), NULL);
 }
 
 // Sets the new playback rate. Used for slow or fast motion.
@@ -281,7 +247,7 @@ void GstPlayer::set_playback_rate(double value) {
 
   m_pipeline_rate = value;
 
-  if (seek(get_position(), get_duration(), Gst::SEEK_FLAG_FLUSH))
+  if (seek(get_position(), get_duration(), GST_SEEK_FLAG_FLUSH))
     update_pipeline_state_and_timeout();
 }
 
@@ -301,29 +267,6 @@ void GstPlayer::set_repeat(bool state) {
   // FIXME flush pipeline ?
 }
 
-// Realize the widget and get the xWindowId.
-void GstPlayer::on_realize() {
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "try to realize...");
-
-  Gtk::DrawingArea::on_realize();
-
-  m_xWindowId = get_xwindow_id();
-
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "try to realize... ok");
-}
-
-void GstPlayer::on_map() {
-  Gtk::DrawingArea::on_map();
-
-  set_render_rectangle();
-}
-
-void GstPlayer::on_unmap() {
-  Gtk::DrawingArea::on_unmap();
-
-  set_render_rectangle(false);
-}
-
 // Create a gstreamer pipeline (Gst::PlayBin2), initialize the
 // audio and video sink with the configuration.
 // Connect the bug message to the player.
@@ -333,152 +276,118 @@ bool GstPlayer::create_pipeline() {
   // Clean or destroy the old pipeline
   set_pipeline_null();
 
-  m_pipeline = Gst::PlayBin::create("pipeline");
+  m_pipeline = gst_element_factory_make("playbin3", NULL);
 
-  m_pipeline->property_audio_sink() = gen_audio_element();
-  m_pipeline->property_video_sink() = gen_video_element();
-  // each time the audio changed, emit the message STREAM_AUDIO_CHANGED
-  m_pipeline->signal_audio_changed().connect(
-      sigc::bind(sigc::mem_fun(*this, &GstPlayer::send_message),
-                 Player::STREAM_AUDIO_CHANGED));
+  GstElement *videosink = gen_video_element();
+  g_object_set(GST_OBJECT(m_pipeline), "video-sink", videosink, NULL);
+  if (videosink) {
+    // release our temporary reference to the element
+    gst_object_unref(videosink);
+  }
 
-  Glib::RefPtr<Gst::Bus> bus = m_pipeline->get_bus();
+  GstElement *audiosink = gen_audio_element();
+  g_object_set(GST_OBJECT(m_pipeline), "audio-sink", audiosink, NULL);
+  if (audiosink) {
+    // release our temporary reference to the element
+    gst_object_unref(audiosink);
+  }
 
-  // Enable synchronous msg emission to set up video
-  bus->enable_sync_message_emission();
+  // Use scaletempo to apply playback rates without the chipmunk effect
+  GstElement *scaletempo = gst_element_factory_make("scaletempo", "scaletempo");
+  if (scaletempo) {
+    g_object_set(GST_OBJECT(m_pipeline), "audio-filter", scaletempo, NULL);
+  }
 
-  // Connect synchronous msg to set up xoverlay with the widget
-  bus->signal_sync_message().connect(
-      sigc::mem_fun(*this, &GstPlayer::on_bus_message_sync));
+  show_all();
 
-  m_watch_id = bus->add_watch(sigc::mem_fun(*this, &GstPlayer::on_bus_message));
+  // Add a bus watch, so we get notified when a message arrives
+  GstBus *bus = gst_element_get_bus(m_pipeline);
+  m_watch_id = gst_bus_add_watch(bus, (GstBusFunc)vp_handle_message, this);
+  gst_object_unref(bus);
   return true;
 }
 
 // Return a gstreamer audio sink from the configuration option.
-Glib::RefPtr<Gst::Element> GstPlayer::gen_audio_element() {
+GstElement *GstPlayer::gen_audio_element() {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
+  // FIXME: we should remove cfg "audio-sink" ?
   Glib::ustring cfg_audiosink = cfg::get_string("video-player", "audio-sink");
 
-  try {
-    Glib::RefPtr<Gst::Element> sink =
-        Gst::ElementFactory::create_element(cfg_audiosink, "audiosink");
-    if (!sink) {
-      throw std::runtime_error(
-          build_message(_("Failed to create a GStreamer audio output (%s). "
-                          "Please check your GStreamer installation."),
-                        cfg_audiosink.c_str()));
+  // Try configured sink first
+  GstElement *sink = gst_element_factory_make(cfg_audiosink.c_str(), "audiosink");
+  if (!sink) {
+    // Warn and attempt a sensible fallback
+    const char *fmt = _("Failed to create a GStreamer audio output (%s). Please check your GStreamer installation.");
+    gchar *msg = g_strdup_printf(fmt, cfg_audiosink.c_str());
+    se_dbg_msg(SE_DBG_VIDEO_PLAYER, "%s", msg);
+    if (m_pipeline) {
+      GST_ELEMENT_WARNING(m_pipeline, RESOURCE, NOT_FOUND, ("%s", msg), (NULL));
     }
-    return sink;
-  } catch (std::runtime_error &ex) {
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wformat-security"
-    se_dbg_msg(SE_DBG_VIDEO_PLAYER, "failed to gen_audio_element '%s'",
-               ex.what());
-    GST_ELEMENT_WARNING(m_pipeline->gobj(), RESOURCE, NOT_FOUND, (ex.what()),
-                        (NULL));
-#pragma GCC diagnostic pop
+    g_free(msg);
+
+    // Fallback to autoaudiosink
+    sink = gst_element_factory_make("autoaudiosink", "audiosink");
   }
-  // Return an NULL ptr
-  return Glib::RefPtr<Gst::Element>();
+
+  return sink;  // may be nullptr if fallback also failed
 }
 
 // Return a gstreamer video sink from the configuration option.
-Glib::RefPtr<Gst::Element> GstPlayer::gen_video_element() {
+GstElement *GstPlayer::gen_video_element() {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
-  Glib::ustring cfg_videosink = cfg::get_string("video-player", "video-sink");
   Glib::ustring cfg_font_desc = cfg::get_string("video-player", "font-desc");
-  bool cfg_shaded_background =
-      cfg::get_boolean("video-player", "shaded-background");
-  bool cfg_force_aspect_ratio =
-      cfg::get_boolean("video-player", "force-aspect-ratio");
+  bool cfg_shaded_background = cfg::get_boolean("video-player", "shaded-background");
+  bool cfg_force_aspect_ratio = cfg::get_boolean("video-player", "force-aspect-ratio");
   guint cfg_text_valignment = get_text_valignment_based_on_config();
 
-  try {
-    Glib::RefPtr<Gst::Element> conv, sink;
-
-    // videoconvert
-    conv = Gst::ElementFactory::create_element("videoconvert", "conv");
-    if (!conv) {
-      throw std::runtime_error(
-          build_message(_("Failed to create a GStreamer converts video (%s). "
-                          "Please check your GStreamer installation."),
-                        "videoconvert"));
-    }
-    // textoverlay
-    m_textoverlay = Gst::TextOverlay::create("overlay");
-    if (!m_textoverlay) {
-      throw std::runtime_error(
-          build_message(_("Failed to create a GStreamer text overlay (%s). "
-                          "Please check your GStreamer installation."),
-                        "textoverlay"));
-    }
-    // videoconvert ! videoscale ! %s videosink
-    sink = Gst::Parse::create_bin(
-        Glib::ustring::compose("videoconvert name=videocsp ! "
-                               "videoscale name=videoscale ! "
-                               "%1 name=videosink",
-                               cfg_videosink),
-        true);
-    if (!sink) {
-      throw std::runtime_error(
-          build_message(_("Failed to create a GStreamer sink (%s). "
-                          "Please check your GStreamer installation."),
-                        cfg_videosink.c_str()));
-    }
-
-    Glib::RefPtr<Gst::Bin> bin = Gst::Bin::create("videobin");
-
-    // Add in the videobin and link
-    bin->add(conv)->add(m_textoverlay)->add(sink);
-
-    conv->link_pads("src", m_textoverlay, "video_sink");
-    m_textoverlay->link_pads("src", sink, "sink");
-
-    // Add sink pad to bin element
-    Glib::RefPtr<Gst::Pad> pad = conv->get_static_pad("sink");
-    bin->add_pad(Gst::GhostPad::create(pad, "sink"));
-
-    // configure text overlay
-    // m_textoverlay->set_property("halignment", 1); // "center"
-    m_textoverlay->set_property("valignment", cfg_text_valignment);
-    m_textoverlay->set_property("shaded_background", cfg_shaded_background);
-    m_textoverlay->set_property("font_desc", cfg_font_desc);
-
-    // Configure video output
-    Glib::RefPtr<Gst::Element> videosink = bin->get_element("videosink");
-    if (videosink) {
-#if defined(GDK_WINDOWING_QUARTZ)
-      // FIXME ?
-#else
-      // videosink->set_property("force-aspect-ratio", cfg_force_aspect_ratio);
-#endif
-    }
-    return bin;
-  } catch (std::runtime_error &ex) {
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wformat-security"
-    se_dbg_msg(SE_DBG_VIDEO_PLAYER, "failed to gen_video_element '%s'",
-               ex.what());
-    GST_ELEMENT_ERROR(m_pipeline->gobj(), RESOURCE, NOT_FOUND, (ex.what()),
-                      (NULL));
-#pragma GCC diagnostic pop
+  GError *error = nullptr;
+  GstElement *videobin = gst_parse_bin_from_description("textoverlay name=textoverlay ! videoconvert ! gtksink name=gtksink", true, &error);
+  if (error) {
+    g_printerr("Error trying generate video element: %s\n", error->message);
+    g_clear_error(&error);
+    return nullptr;
   }
-  // Return an NULL ptr
-  return Glib::RefPtr<Gst::Element>();
+
+  // get gtksink widget
+  GstElement *gtksink = gst_bin_get_by_name(GST_BIN(videobin), "gtksink");
+  g_object_set(GST_OBJECT(gtksink), "force-aspect-ratio", cfg_force_aspect_ratio, NULL);
+
+  g_object_get(gtksink, "widget", &m_gtksink_widget, NULL);
+  gtk_container_add(GTK_CONTAINER(gobj()), m_gtksink_widget);
+  g_object_unref(m_gtksink_widget);
+  gtk_widget_realize(m_gtksink_widget);
+  // release our temporary reference to the element
+  if (gtksink) {
+    // release our temporary reference to the element
+    gst_object_unref(gtksink);
+  }
+
+  // configure text overlay
+  // Get a pointer to the element owned by the bin; we drop our ref so the
+  // bin remains the sole owner. Do not unref this pointer during teardown.
+  m_textoverlay = gst_bin_get_by_name(GST_BIN(videobin), "textoverlay");
+  g_object_set(GST_OBJECT(m_textoverlay), "valignment", cfg_text_valignment, NULL);
+  g_object_set(GST_OBJECT(m_textoverlay), "shaded-background", cfg_shaded_background, NULL);
+  g_object_set(GST_OBJECT(m_textoverlay), "font-desc", cfg_font_desc.c_str(), NULL);
+  // Release the reference from gst_bin_get_by_name; keep only a borrowed pointer
+  gst_object_unref(m_textoverlay);
+
+  return videobin;
 }
 
 // Set the state of the pipeline.
 // The state change can be asynchronously.
-bool GstPlayer::set_pipeline_state(Gst::State state) {
-  if (m_pipeline && m_pipeline_state != state) {
-    Gst::StateChangeReturn ret = m_pipeline->set_state(state);
-    if (ret != Gst::STATE_CHANGE_FAILURE)
-      return true;
+bool GstPlayer::set_pipeline_state(GstState state) {
+  if (!m_pipeline) {
+    return false;
   }
-  return false;
+  if (m_pipeline_state == state) {
+    return false;
+  }
+  GstStateChangeReturn ret = gst_element_set_state(m_pipeline, state);
+  return (ret != GST_STATE_CHANGE_FAILURE);
 }
 
 // Sets the state of the pipeline to NULL.
@@ -488,27 +397,41 @@ void GstPlayer::set_pipeline_null() {
   if (!m_pipeline)
     return;
 
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "set up pipeline to NULL");
+  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "stop receiving bus messages before changing state to NULL...");
+  // Stop receiving bus messages before changing state to NULL.
+  if (m_watch_id) {
+    g_source_remove(m_watch_id);
+    m_watch_id = 0;
+  }
 
-  set_pipeline_state(Gst::STATE_NULL);
+  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "remove gtksink from parent");
+  // Remove the gtksink widget from its parent; don't destroy it directly
+  // since it's owned by the sink which we are tearing down.
+  if (m_gtksink_widget) {
+    GtkWidget *parent = gtk_widget_get_parent(m_gtksink_widget);
+    if (parent && GTK_IS_CONTAINER(parent)) {
+      gtk_container_remove(GTK_CONTAINER(parent), m_gtksink_widget);
+    }
+    m_gtksink_widget = nullptr;
+  }
 
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "remove watch id");
-
-  m_pipeline->get_bus()->remove_watch(m_watch_id);
+  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "release m_pipeline");
+  if (m_pipeline) {
+    se_dbg_msg(SE_DBG_VIDEO_PLAYER, "set up pipeline status to GST_STATE_NULL...");
+    gst_element_set_state(m_pipeline, GST_STATE_NULL);
+    // g_object_unref(m_pipeline);
+    m_pipeline = nullptr;
+    m_textoverlay = nullptr;
+  }
 
   se_dbg_msg(SE_DBG_VIDEO_PLAYER, "set up all values to NULL");
 
-  m_watch_id = 0;
-  m_pipeline_state = Gst::STATE_NULL;
-  m_pipeline_duration = Gst::CLOCK_TIME_NONE;
+  m_pipeline_state = GST_STATE_NULL;
+  m_pipeline_duration = GST_CLOCK_TIME_NONE;
   m_pipeline_rate = 1.0;
   m_pipeline_async_done = false;
 
   se_dbg_msg(SE_DBG_VIDEO_PLAYER, "clear RefPtr");
-
-  m_pipeline.clear();
-  m_textoverlay.clear();
-  m_xoverlay.clear();
 
   set_player_state(NONE);
 
@@ -528,19 +451,16 @@ bool GstPlayer::check_missing_plugins() {
 
 // Check if it's a Missing Plugin Message.
 // Add the description of the missing plugin in the list.
-bool GstPlayer::is_missing_plugin_message(
-    const Glib::RefPtr<Gst::MessageElement> &msg) {
+bool GstPlayer::is_missing_plugin_message(GstMessage *msg) {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
   if (!msg)
     return false;
-  GstMessage *gstmsg = GST_MESSAGE(msg->gobj());
-  if (!gstmsg)
-    return false;
-  if (!gst_is_missing_plugin_message(gstmsg))
+
+  if (!gst_is_missing_plugin_message(msg))
     return false;
 
-  gchar *description = gst_missing_plugin_message_get_description(gstmsg);
+  gchar *description = gst_missing_plugin_message_get_description(msg);
   if (!description)
     return false;
 
@@ -551,97 +471,44 @@ bool GstPlayer::is_missing_plugin_message(
   return true;
 }
 
-// Receive synchronous message emission to set up video.
-void GstPlayer::on_bus_message_sync(const Glib::RefPtr<Gst::Message> &msg) {
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "type='%s' name='%s'",
-             GST_MESSAGE_TYPE_NAME(msg->gobj()),
-             GST_OBJECT_NAME(GST_MESSAGE_SRC(msg->gobj())));
-
-  if (msg->get_message_type() == Gst::MESSAGE_NEED_CONTEXT) {
-#ifdef GDK_WINDOWING_WAYLAND
-    auto msgNeedContext = Glib::RefPtr<Gst::MessageNeedContext>::cast_static(msg);
-
-    Glib::ustring context_type;
-
-    // FIXME: https://gitlab.gnome.org/GNOME/gstreamermm/merge_requests/3
-    // msgNeedContext->parse(context_type);
-    const gchar *context_type_c = nullptr;
-    gst_message_parse_context_type (msg->gobj(), &context_type_c);
-    context_type = context_type_c;
-
-    if (context_type == "GstWaylandDisplayHandleContextType") {
-      struct wl_display *wayland_display =
-          gdk_wayland_display_get_wl_display (get_display()->gobj());
-      if (wayland_display) {
-        auto context = Gst::Context::create(context_type, TRUE);
-
-        GstStructure *s = gst_context_writable_structure (context->gobj());
-        gst_structure_set (s, "display", G_TYPE_POINTER, wayland_display, NULL);
-
-        Glib::RefPtr<Gst::Element>::cast_static(msg->get_source())->set_context(context);
-      }
-    }
-#endif
-  } else if (gst_is_video_overlay_prepare_window_handle_message(msg->gobj())) {
-    m_xoverlay = Glib::RefPtr<Gst::Element>::cast_dynamic(msg->get_source());
-    if (m_xoverlay) {
-      gst_video_overlay_set_window_handle(GST_VIDEO_OVERLAY(m_xoverlay->gobj()),
-          m_xWindowId);
-
-      set_render_rectangle();
-    }
-
-    // FIXME: open bug on gstreamermm 1.0
-    // Get the gstreamer element source
-    // Glib::RefPtr<Gst::Element> el_src =
-    // Glib::RefPtr<Gst::Element>::cast_static(msg->get_source());
-    // Has an XOverlay
-    // Glib::RefPtr< Gst::VideoOverlay > xoverlay =
-    // Glib::RefPtr<Gst::VideoOverlay>::cast_dynamic(el_src);
-    // xoverlay->set_window_handle(m_xWindowId);
-
-    // We don't need to keep sync message
-    m_pipeline->get_bus()->disable_sync_message_emission();
-  }
-}
-
 // Dispatch the gstreamer message.
-bool GstPlayer::on_bus_message(const Glib::RefPtr<Gst::Bus> & /*bus*/,
-                               const Glib::RefPtr<Gst::Message> &msg) {
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "type='%s' name='%s'",
-             GST_MESSAGE_TYPE_NAME(msg->gobj()),
-             GST_OBJECT_NAME(GST_MESSAGE_SRC(msg->gobj())));
+bool GstPlayer::on_bus_message(GstBus *bus, GstMessage *msg) {
+  // If the pipeline is tearing down or already gone, ignore messages.
+  if (!m_pipeline) {
+    return true;
+  }
+  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "type='%s' name='%s'", GST_MESSAGE_TYPE_NAME(msg), GST_OBJECT_NAME(GST_MESSAGE_SRC(msg)));
 
-  switch (msg->get_message_type()) {
-    case Gst::MESSAGE_ELEMENT:
-      on_bus_message_element(
-          Glib::RefPtr<Gst::MessageElement>::cast_static(msg));
+  GstMessageType msg_type = GST_MESSAGE_TYPE(msg);
+  switch (msg_type) {
+    case GST_MESSAGE_ELEMENT:
+      on_bus_message_element(msg);
       break;
-    case Gst::MESSAGE_EOS:
-      on_bus_message_eos(Glib::RefPtr<Gst::MessageEos>::cast_static(msg));
+    case GST_MESSAGE_EOS:
+      on_bus_message_eos(msg);
       break;
-    case Gst::MESSAGE_ERROR:
-      on_bus_message_error(Glib::RefPtr<Gst::MessageError>::cast_static(msg));
+    case GST_MESSAGE_ERROR:
+      on_bus_message_error(msg);
       break;
-    case Gst::MESSAGE_WARNING:
-      on_bus_message_warning(
-          Glib::RefPtr<Gst::MessageWarning>::cast_static(msg));
+    case GST_MESSAGE_WARNING:
+      on_bus_message_warning(msg);
       break;
-    case Gst::MESSAGE_STATE_CHANGED:
-      on_bus_message_state_changed(
-          Glib::RefPtr<Gst::MessageStateChanged>::cast_static(msg));
+    case GST_MESSAGE_STATE_CHANGED:
+      on_bus_message_state_changed(msg);
       break;
-    case Gst::MESSAGE_SEGMENT_DONE:
-      on_bus_message_segment_done(
-          Glib::RefPtr<Gst::MessageSegmentDone>::cast_static(msg));
+    case GST_MESSAGE_SEGMENT_DONE:
+      on_bus_message_segment_done(msg);
       break;
-    case Gst::MESSAGE_ASYNC_DONE:
+    case GST_MESSAGE_ASYNC_DONE:
       if (m_pipeline_async_done == false) {
         // We wait for the first async-done message, then the application
         // can ask about duration, info about the stream...
         m_pipeline_async_done = true;
         send_message(Player::STREAM_READY);
       }
+      break;
+    case GST_MESSAGE_STREAM_COLLECTION:
+      on_bus_message_stream_collection(msg);
       break;
     default:
       break;
@@ -652,83 +519,82 @@ bool GstPlayer::on_bus_message(const Glib::RefPtr<Gst::Bus> & /*bus*/,
 // Check the missing plugin.
 // If is missing add in the list of missing plugins.
 // This list should be show later.
-void GstPlayer::on_bus_message_element(
-    const Glib::RefPtr<Gst::MessageElement> &msg) {
+void GstPlayer::on_bus_message_element(GstMessage *msg) {
   se_dbg(SE_DBG_VIDEO_PLAYER);
   is_missing_plugin_message(msg);
 }
 
 // An error is detected.
 // Destroy the pipeline and show the error message in a dialog.
-void GstPlayer::on_bus_message_error(
-    const Glib::RefPtr<Gst::MessageError> &msg) {
+void GstPlayer::on_bus_message_error(GstMessage *msg) {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
   check_missing_plugins();
 
-  Glib::Error err;
-  std::string err_dbg;
-  msg->parse(err, err_dbg);
+  GError *err = nullptr;
+  gchar *err_dbg = nullptr;
+  gst_message_parse_error(msg, &err, &err_dbg);
 
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "GST_MESSAGE_ERROR : %s [%s]",
-             err.what().c_str(), err_dbg.c_str());
+  g_printerr("Error received from element %s: %s\n", GST_OBJECT_NAME(msg->src), err->message);
+  g_printerr("Debugging information: %s\n", err_dbg ? err_dbg : "none");
 
-  dialog_error(build_message(_("Media file could not be played.\n%s"),
-                             get_uri().c_str()),
-               err.what().c_str());
+  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "GST_MESSAGE_ERROR : %s [%s]", err ? err->message : "(null)", err_dbg ? err_dbg : "(null)");
+
+  dialog_error(build_message(_("Media file could not be played.\n%s"), get_uri().c_str()), err->message);
+
+  g_clear_error(&err);
+  g_free(err_dbg);
 
   set_pipeline_null();
 }
 
 // An warning message is detected.
-void GstPlayer::on_bus_message_warning(
-    const Glib::RefPtr<Gst::MessageWarning> &msg) {
+void GstPlayer::on_bus_message_warning(GstMessage *msg) {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
   check_missing_plugins();
 
-  Glib::Error err;
-  std::string err_dbg;
-  msg->parse(err, err_dbg);
+  GError *err = nullptr;
+  gchar *err_dbg = nullptr;
+  gst_message_parse_warning(msg, &err, &err_dbg);
 
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "GST_MESSAGE_WARNING : %s [%s]",
-             err.what().c_str(), err_dbg.c_str());
+  g_warning("Error received from element %s: %s\n", GST_OBJECT_NAME(msg->src), err->message);
+  g_warning("Debugging information: %s\n", err_dbg ? err_dbg : "none");
 
-  g_warning("%s [%s]", err.what().c_str(), err_dbg.c_str());
+  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "GST_MESSAGE_WARNING : %s [%s]", err ? err->message : "(null)", err_dbg ? err_dbg : "(null)");
+
+  g_clear_error(&err);
+  g_free(err_dbg);
 }
 
 // The state of the pipeline has changed.
 // Update the player state.
-void GstPlayer::on_bus_message_state_changed(
-    const Glib::RefPtr<Gst::MessageStateChanged> &msg) {
+void GstPlayer::on_bus_message_state_changed(GstMessage *msg) {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
   // We only update when it's the pipeline object
-  if (msg->get_source()->get_name() != "pipeline")
+  if (GST_MESSAGE_SRC(msg) != GST_OBJECT(m_pipeline))
     return;
 
-  Gst::State old_state, new_state, pending;
+  GstState old_state, new_state, pending;
 
-  msg->parse(old_state, new_state, pending);
+  gst_message_parse_state_changed(msg, &old_state, &new_state, &pending);
 
   // Update the current state of the pipeline
   m_pipeline_state = new_state;
 
-  if (old_state == Gst::STATE_NULL && new_state == Gst::STATE_READY) {
+  if (old_state == GST_STATE_NULL && new_state == GST_STATE_READY) {
     set_player_state(NONE);
-  } else if (old_state == Gst::STATE_READY && new_state == Gst::STATE_PAUSED) {
+  } else if (old_state == GST_STATE_READY && new_state == GST_STATE_PAUSED) {
     set_player_state(PAUSED);
-
     check_missing_plugins();
-  } else if (old_state == Gst::STATE_PAUSED &&
-             new_state == Gst::STATE_PLAYING) {
+  } else if (old_state == GST_STATE_PAUSED && new_state == GST_STATE_PLAYING) {
     set_player_state(PLAYING);
-  } else if (old_state == Gst::STATE_PLAYING &&
-             new_state == Gst::STATE_PAUSED) {
+  } else if (old_state == GST_STATE_PLAYING && new_state == GST_STATE_PAUSED) {
     set_player_state(PAUSED);
-  } else if (old_state == Gst::STATE_PAUSED && new_state == Gst::STATE_READY) {
+  } else if (old_state == GST_STATE_PAUSED && new_state == GST_STATE_READY) {
     set_player_state(NONE);
-  } else if (old_state == Gst::STATE_READY && new_state == Gst::STATE_NULL) {
+  } else if (old_state == GST_STATE_READY && new_state == GST_STATE_NULL) {
     set_player_state(NONE);
   }
 }
@@ -736,12 +602,11 @@ void GstPlayer::on_bus_message_state_changed(
 // End-of-stream (segment or stream) has been detected,
 // update the pipeline state to PAUSED.
 // Seek to the beginning if it's the end of the stream.
-void GstPlayer::on_bus_message_eos(
-    const Glib::RefPtr<Gst::MessageEos> & /*msg*/) {
+void GstPlayer::on_bus_message_eos(GstMessage *msg) {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
   // FIXME with seek_loop
-  set_pipeline_state(Gst::STATE_PAUSED);
+  set_pipeline_state(GST_STATE_PAUSED);
 
   if (get_position() == get_duration())
     seek(0);
@@ -750,85 +615,96 @@ void GstPlayer::on_bus_message_eos(
 // The pipeline completed playback of a segment.
 // If the looping is activated send new seek event.
 // Works only with play_subtitle.
-void GstPlayer::on_bus_message_segment_done(
-    const Glib::RefPtr<Gst::MessageSegmentDone> & /*msg*/) {
+void GstPlayer::on_bus_message_segment_done(GstMessage *msg) {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
   if (!(m_loop_seek && m_subtitle_play))
     return;
 
   // TODO debug information of MessageSegmentDone
+  GstSeekFlags flags = (GstSeekFlags)(GST_SEEK_FLAG_ACCURATE | GST_SEEK_FLAG_SEGMENT);
+  seek(m_subtitle_play.get_start().totalmsecs, m_subtitle_play.get_end().totalmsecs, flags);
+}
 
-  seek(m_subtitle_play.get_start().totalmsecs,
-       m_subtitle_play.get_end().totalmsecs,
-       Gst::SEEK_FLAG_ACCURATE | Gst::SEEK_FLAG_SEGMENT);
+// Handles GST_MESSAGE_STREAM_COLLECTION.
+// - Replaces any existing m_stream_collection_* with the one parsed from msg.
+void GstPlayer::on_bus_message_stream_collection(GstMessage *msg) {
+  se_dbg(SE_DBG_VIDEO_PLAYER);
+
+  m_stream_collection_audio.clear();
+  m_stream_collection_video.clear();
+
+  GstStreamCollection *stream_collection;
+  gst_message_parse_stream_collection(msg, &stream_collection);
+  if (!stream_collection) {
+    return;
+  }
+
+  guint numStreams = gst_stream_collection_get_size(stream_collection);
+  for (guint i = 0; i < numStreams; i++) {
+    GstStream *stream = gst_stream_collection_get_stream(stream_collection, i);
+
+    if (!GST_IS_STREAM(stream))
+      continue;
+
+    GstStreamType type = gst_stream_get_stream_type(stream);
+    const gchar *stream_id = gst_stream_get_stream_id(stream);
+
+    // parse tags for LANGUAGE CODE
+    Glib::ustring language;
+    GstTagList *tags = gst_stream_get_tags(stream);
+    if (tags) {
+      const GValue *tagValue = gst_tag_list_get_value_index(tags, GST_TAG_LANGUAGE_CODE, 0);
+      if (G_VALUE_HOLDS_STRING(tagValue)) {
+        gchar *str = g_value_dup_string(tagValue);
+        language = str;
+        g_free(str);
+      }
+      gst_tag_list_unref(tags);
+    }
+
+    se_dbg_msg(SE_DBG_VIDEO_PLAYER, "Stream %d: Type=%s, ID=%s, language=%s\n", i, gst_stream_type_get_name(type), stream_id, language.c_str());
+
+    switch (type) {
+      case GST_STREAM_TYPE_VIDEO:
+        m_stream_collection_video.push_back({stream_id, language});
+        break;
+      case GST_STREAM_TYPE_AUDIO:
+        m_stream_collection_audio.push_back({stream_id, language});
+        break;
+      case GST_STREAM_TYPE_TEXT:
+        break;
+      default:
+        break;
+    }
+    // Drop our reference to the retrieved GstStream.
+    gst_object_unref(stream);
+  }
+  // RELEASE our reference, we use m_stream_collection_video and m_stream_collection_audio for references
+  g_object_unref(stream_collection);
 }
 
 // The video-player configuration has changed, update the player.
-void GstPlayer::on_config_video_player_changed(const Glib::ustring &key,
-                                               const Glib::ustring &value) {
+void GstPlayer::on_config_video_player_changed(const Glib::ustring &key, const Glib::ustring &value) {
   se_dbg_msg(SE_DBG_VIDEO_PLAYER, "%s %s", key.c_str(), value.c_str());
 
   if (key == "repeat") {
     set_repeat(utility::string_to_bool(value));
-  } else if (m_pipeline) {
-    if (key == "force-aspect-ratio" && m_xoverlay) {
-#if defined(GDK_WINDOWING_QUARTZ)
-      // FIXME ?
-#else
-      // m_xoverlay->set_property("force-aspect-ratio",
-      // utility::string_to_bool(value));
-#endif
-      // g_object_set(G_OBJECT(m_xoverlay->gobj()), "force-aspect-ratio",
-      // utility::string_to_bool(value), NULL);
-      queue_draw();
-    } else if (key == "shaded-background" && m_textoverlay) {
-      m_textoverlay->set_property("shaded_background",
-                                  utility::string_to_bool(value));
-    } else if (key == "font-desc" && m_textoverlay) {
-      m_textoverlay->set_property("font_desc", value);
-    }
   }
-}
 
-// Return the xwindow ID. (Support X11, Wayland, WIN32 and QUARTZ)
-// Do not call this function in a gstreamer thread, this cause crash/segfault.
-// Caused by the merge of the Client-Side Windows in GTK+.
-gulong GstPlayer::get_xwindow_id() {
-  se_dbg(SE_DBG_VIDEO_PLAYER);
-
-  gulong xWindowId = 0;
-  auto gdkWindow = get_window()->gobj();
-
-#ifdef GDK_WINDOWING_X11
-  if (GDK_IS_X11_WINDOW(gdkWindow)) {
-    xWindowId = GDK_WINDOW_XID(gdkWindow);
+  if (!m_pipeline) {
+    return;
   }
-  else
-#endif
-#ifdef GDK_WINDOWING_WAYLAND
-  if (GDK_IS_WAYLAND_WINDOW(gdkWindow)) {
-    xWindowId = (gulong)gdk_wayland_window_get_wl_surface(gdkWindow);
-  }
-  else
-#endif
-#ifdef GDK_WINDOWING_WIN32
-  if (GDK_IS_WIN32_WINDOW(gdkWindow)) {
-    xWindowId = gdk_win32_drawable_get_handle(get_window()->gobj());
-  }
-  else
-#endif
-#ifdef GDK_WINDOWING_QUARTZ
-  if (GDK_IS_QUARTZ_WINDOW(gdkWindow)) {
-    xWindowId = 0;
-    // gdk_quartz_window_get_nswindow(get_window()->gobj());
-    // gdk_quartz_window_get_nsview(get_window()->gobj());
-  }
-#endif
 
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "xWindowId=%d", xWindowId);
-
-  return xWindowId;
+  if (key == "shaded-background" && m_textoverlay) {
+    g_object_set(G_OBJECT(m_textoverlay), "shaded-background", utility::string_to_bool(value), NULL);
+  } else if (key == "font-desc" && m_textoverlay) {
+    g_object_set(G_OBJECT(m_textoverlay), "font-desc", value.c_str(), NULL);
+  } else if (key == "force-aspect-ratio") {
+    GstElement *gtksink = gst_bin_get_by_name(GST_BIN(m_pipeline), "gtksink");
+    g_object_set(GST_OBJECT(gtksink), "force-aspect-ratio", utility::string_to_bool(value), NULL);
+    g_object_unref(gtksink);
+  }
 }
 
 void GstPlayer::update_pipeline_state_and_timeout() {
@@ -836,8 +712,8 @@ void GstPlayer::update_pipeline_state_and_timeout() {
 
   if (!m_pipeline)
     return;
-  Gst::State old_st, new_st;
-  m_pipeline->get_state(old_st, new_st, 100 * Gst::MILLI_SECOND);
+  GstState old_st, new_st;
+  gst_element_get_state(m_pipeline, &old_st, &new_st, 100 * GST_MSECOND);
   got_tick();
 }
 
@@ -848,54 +724,58 @@ bool GstPlayer::update_pipeline_duration() {
   if (!m_pipeline)
     return false;
 
-  m_pipeline_duration = Gst::CLOCK_TIME_NONE;
+  m_pipeline_duration = GST_CLOCK_TIME_NONE;
 
   gint64 dur = -1;
-  Gst::Format fmt = Gst::FORMAT_TIME;
-  if (m_pipeline->query_duration(fmt, dur) && dur != -1) {
+  if (gst_element_query_duration(m_pipeline, GST_FORMAT_TIME, &dur) && dur != -1) {
     m_pipeline_duration = dur;
-    se_dbg_msg(SE_DBG_VIDEO_PLAYER,
-               "Success to query the duration (%" GST_TIME_FORMAT ")",
-               GST_TIME_ARGS(dur));
+    se_dbg_msg(SE_DBG_VIDEO_PLAYER, "Success to query the duration (%" GST_TIME_FORMAT ")", GST_TIME_ARGS(dur));
     // send_message(STREAM_DURATION_CHANGED);
     return true;
   }
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER,
-             "The query of the duration of the stream failed");
+  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "The query of the duration of the stream failed");
   return false;
 }
 
 // Return the number of audio track.
 gint GstPlayer::get_n_audio() {
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "n_audio: %d",
-             (m_pipeline) ? m_pipeline->property_n_audio() : 0);
+  se_dbg(SE_DBG_VIDEO_PLAYER);
 
-  if (m_pipeline)
-    return m_pipeline->property_n_audio();
-  return 0;
+  if (m_pipeline == nullptr) {
+    return 0;
+  }
+  return m_stream_collection_audio.size();
 }
 
 // Sets the current audio track. (-1 = auto)
 void GstPlayer::set_current_audio(gint track) {
   se_dbg_msg(SE_DBG_VIDEO_PLAYER, "track=%d", track);
 
-  if (!m_pipeline)
+  if (m_pipeline == nullptr) {
     return;
+  }
 
-  if (track < -1)
-    track = -1;
-  m_pipeline->property_current_audio() = track;
+  if (track < 0) {
+    track = 0;  // auto, first track
+  }
+
+  GList *selected_streams = NULL;
+  if (m_stream_collection_video.size() > 0) {
+    selected_streams = g_list_append(selected_streams, (char *)m_stream_collection_video[0].first.c_str());
+  }
+  if (m_stream_collection_audio.size() > 0) {
+    // FIXME: check for size of track < m_stream_collection_audio.size()
+    selected_streams = g_list_append(selected_streams, (char *)m_stream_collection_audio[track].first.c_str());
+  }
+
+  if (selected_streams == NULL) {
+    se_dbg_msg(SE_DBG_VIDEO_PLAYER, "no stream found");
+    return;
+  }
+  gst_element_send_event(m_pipeline, gst_event_new_select_streams(selected_streams));
+  g_list_free(selected_streams);
+
   send_message(Player::STREAM_AUDIO_CHANGED);
-}
-
-// Return the current audio track.
-gint GstPlayer::get_current_audio() {
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "current_audio: %d",
-             (m_pipeline) ? m_pipeline->property_current_audio() : 0);
-
-  if (m_pipeline)
-    return m_pipeline->property_current_audio();
-  return -1;
 }
 
 // Return the framerate of the video or zero (0).
@@ -904,34 +784,77 @@ float GstPlayer::get_framerate(int *numerator, int *denominator) {
   se_dbg(SE_DBG_VIDEO_PLAYER);
 
   if (!m_pipeline)
-    return 0;
-  Glib::RefPtr<Gst::Pad> pad = m_pipeline->get_video_pad(0);
-  g_return_val_if_fail(pad, 0);
+    return 0.0f;
 
-  Glib::RefPtr<Gst::Caps> caps = pad->get_current_caps();
-  g_return_val_if_fail(caps, 0);
+  float fr = 0.0f;
+  int num = 0, den = 1;
 
-  const Gst::Structure structure = caps->get_structure(0);
-  if (structure.has_field("framerate") == false) {
-    se_dbg_msg(SE_DBG_VIDEO_PLAYER, "structure has not field \"framerate\"");
-    return 0;
+  // Prefer the 'video_sink' pad on our textoverlay inside the video bin.
+  // This sits just upstream of the actual sink and has negotiated video caps.
+  GstPad *pad = nullptr;
+  if (m_textoverlay) {
+    pad = gst_element_get_static_pad(m_textoverlay, "video_sink");
   }
 
-  Glib::ValueBase gst_value;
-  structure.get_field("framerate", gst_value);
+  // Fallback to the 'sink' pad on the configured playbin3 'video-sink'.
+  GstElement *video_sink = nullptr;
+  if (!pad) {
+    g_object_get(G_OBJECT(m_pipeline), "video-sink", &video_sink, NULL);
+    if (video_sink) {
+      pad = gst_element_get_static_pad(video_sink, "sink");
+    }
+  }
 
-  Gst::Fraction fps(gst_value);
-  float framerate = static_cast<float>(fps.num) / static_cast<float>(fps.denom);
+  if (!pad) {
+    if (video_sink)
+      gst_object_unref(video_sink);
+    return 0.0f;
+  }
 
-  if (numerator != NULL)
-    *numerator = fps.num;
-  if (denominator != NULL)
-    *denominator = fps.denom;
+  // Use negotiated caps when available; otherwise query potential caps.
+  GstCaps *caps = gst_pad_get_current_caps(pad);
+  if (!caps) {
+    caps = gst_pad_query_caps(pad, NULL);
+  }
 
-  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "framerate: %f (num: %i, denom: %i)",
-             framerate, fps.num, fps.denom);
+  if (caps) {
+    // Parse caps using GstVideoInfo to read fps numerator/denominator.
+    GstVideoInfo vinfo;
+    gst_video_info_init(&vinfo);
+    if (gst_video_info_from_caps(&vinfo, caps)) {
+      num = vinfo.fps_n;
+      den = vinfo.fps_d;
+    } else {
+      // Fallback: inspect a fixed fraction field named "framerate".
+      const GstStructure *s = gst_caps_get_structure(caps, 0);
+      const GValue *fps_val = s ? gst_structure_get_value(s, "framerate") : NULL;
+      if (fps_val && GST_VALUE_HOLDS_FRACTION(fps_val)) {
+        num = gst_value_get_fraction_numerator(fps_val);
+        den = gst_value_get_fraction_denominator(fps_val);
+      }
+    }
+    gst_caps_unref(caps);
+  }
 
-  return framerate;
+  if (den != 0) {
+    fr = static_cast<float>(num) / static_cast<float>(den);
+  }
+  if (numerator) {
+    *numerator = num;
+  }
+  if (denominator) {
+    *denominator = den;
+  }
+
+  se_dbg_msg(SE_DBG_VIDEO_PLAYER, "framerate: %f (num: %d, denom: %d)", fr, num, den);
+
+  // Release temporary references.
+  gst_object_unref(pad);
+  if (video_sink) {
+    gst_object_unref(video_sink);
+  }
+
+  return fr;
 }
 
 guint GstPlayer::get_text_valignment_based_on_config() {
@@ -955,42 +878,4 @@ guint GstPlayer::get_text_valignment_based_on_config() {
     alignment = 4;
   }
   return alignment;
-}
-
-void GstPlayer::on_hierarchy_changed(Widget* previous_toplevel) {
-  if (!previous_toplevel) {
-    get_toplevel()->signal_configure_event().connect(
-      sigc::mem_fun(*this, &GstPlayer::on_configure_event), false);
-  }
-}
-
-bool GstPlayer::on_configure_event(GdkEventConfigure*) {
-  set_render_rectangle();
-  return false;
-}
-
-void GstPlayer::set_render_rectangle(bool is_mapped) {
-#ifdef GDK_WINDOWING_WAYLAND
-  if (!m_xoverlay) {
-    return;
-  }
-
-  auto gdkWindow = get_window();
-
-  if (GDK_IS_WAYLAND_WINDOW(gdkWindow->gobj())) {
-    int x, y, width, height;
-
-    if (is_mapped) {
-      width = gdkWindow->get_width();
-      height = gdkWindow->get_height();
-    } else {
-      width = height = 1;
-    }
-
-    translate_coordinates(*get_toplevel(), 0, 0, x, y);
-    gst_video_overlay_set_render_rectangle(GST_VIDEO_OVERLAY(m_xoverlay->gobj()),
-        x, y, width, height);
-    gst_video_overlay_expose(GST_VIDEO_OVERLAY(m_xoverlay->gobj()));
-  }
-#endif
 }
