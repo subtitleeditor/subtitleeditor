@@ -21,6 +21,7 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <glibmm.h>
+
 #include "document.h"
 #include "keyframes.h"
 
@@ -112,9 +113,6 @@ class Player {
 
   // Sets the current audio track. (-1 = auto)
   virtual void set_current_audio(gint track) = 0;
-
-  // Return the current audio track.
-  virtual gint get_current_audio() = 0;
 
   // Return the framerate of the video.
   // Update numerator and denominator if the values are not null.

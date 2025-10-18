@@ -30,7 +30,7 @@
 
 // #include <gdk/gdkx.h>
 #include <glib.h>
-#include <gstreamermm.h>
+#include <gst/gst.h>
 
 #include <ctime>
 
@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
 
   se_dbg_msg(SE_DBG_APP, "Init GStreamer");
 
-  Gst::init(argc, argv);
+  gst_init(&argc, &argv);
 
   // Run Application
   Application *application = gtkmm_utility::get_widget_derived<Application>(

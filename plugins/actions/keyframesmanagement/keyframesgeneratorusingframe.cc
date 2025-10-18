@@ -19,28 +19,24 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <cfg.h>
-#include <gstreamermm.h>
 #include <gtkmm.h>
 #include <keyframes.h>
 #include <utility.h>
+
 #include <iomanip>
 #include <iostream>
+
 #include "mediadecoder.h"
 
 class KeyframesGeneratorUsingFrame : public Gtk::Dialog, public MediaDecoder {
  public:
-  KeyframesGeneratorUsingFrame(const Glib::ustring &uri,
-                               Glib::RefPtr<KeyFrames> &keyframes)
-      : Gtk::Dialog(_("Generate Keyframes"), true),
-        MediaDecoder(1000),
-        m_duration(0),
-        m_prev_frame_size(0),
-        m_prev_frame(NULL),
-        m_difference(0.2f) {
+  KeyframesGeneratorUsingFrame(const Glib::ustring &uri, Glib::RefPtr<KeyFrames> &keyframes)
+      : Gtk::Dialog(_("Generate Keyframes"), true), MediaDecoder(1000), m_duration(0), m_prev_frame_size(0), m_prev_frame(NULL), m_difference(0.2f) {
     set_border_width(12);
     set_default_size(300, -1);
     get_vbox()->pack_start(m_progressbar, false, false);
     add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
+    m_progressbar.set_show_text(true);
     m_progressbar.set_text(_("Waiting..."));
     show_all();
 
@@ -65,17 +61,20 @@ class KeyframesGeneratorUsingFrame : public Gtk::Dialog, public MediaDecoder {
   void read_config() {
     if (cfg::has_key("KeyframesGeneratorUsingFrame", "difference")) {
       cfg::set_string("KeyframesGeneratorUsingFrame", "difference", "0.2");
-      cfg::set_comment("KeyframesGeneratorUsingFrame", "difference",
-                       "difference between frames as percent");
+      cfg::set_comment("KeyframesGeneratorUsingFrame", "difference", "difference between frames as percent");
     }
     m_difference = cfg::get_float("KeyframesGeneratorUsingFrame", "difference");
   }
 
+  static void static_handoff_callback(GstElement *fakesink, GstBuffer *buffer, GstPad *pad, gpointer data) {
+    KeyframesGeneratorUsingFrame *kfg = static_cast<KeyframesGeneratorUsingFrame *>(data);
+    kfg->on_video_identity_handoff(fakesink, buffer, pad);
+  }
+
   // Check buffer and try to catch keyframes.
-  void on_video_identity_handoff(const Glib::RefPtr<Gst::Buffer> &buf,
-                                 const Glib::RefPtr<Gst::Pad> &) {
+  void on_video_identity_handoff(GstElement *, GstBuffer *buf, GstPad *) {
     GstMapInfo map;
-    gst_buffer_map(GST_BUFFER(buf->gobj()), &map, GST_MAP_READ);
+    gst_buffer_map(GST_BUFFER(buf), &map, GST_MAP_READ);
 
     // first frame or change of buffer size, alloc & push
     if (!m_prev_frame || map.size != m_prev_frame_size) {
@@ -83,18 +82,17 @@ class KeyframesGeneratorUsingFrame : public Gtk::Dialog, public MediaDecoder {
       m_prev_frame_size = map.size;
       m_prev_frame = new guint8[m_prev_frame_size];
 
-      m_values.push_back(buf->get_pts() / GST_MSECOND);
+      m_values.push_back(GST_BUFFER_PTS(buf) / GST_MSECOND);
     } else if (compare_frame(m_prev_frame, map.data, map.size)) {
-      m_values.push_back(buf->get_pts() / GST_MSECOND);
+      m_values.push_back(GST_BUFFER_PTS(buf) / GST_MSECOND);
     }
     // update the previous frame with this one
     memcpy(m_prev_frame, map.data, map.size);
 
-    gst_buffer_unmap(GST_BUFFER(buf->gobj()), &map);
+    gst_buffer_unmap(GST_BUFFER(buf), &map);
   }
 
-  bool compare_frame(const guint8 *old_frame, const guint8 *new_frame,
-                     gsize size) {
+  bool compare_frame(const guint8 *old_frame, const guint8 *new_frame, gsize size) {
     guint64 delta = 0;
     guint64 full = size / 3;
 
@@ -120,31 +118,23 @@ class KeyframesGeneratorUsingFrame : public Gtk::Dialog, public MediaDecoder {
   }
 
   // Create video bin
-  Glib::RefPtr<Gst::Element> create_element(
-      const Glib::ustring &structure_name) {
-    try {
-      // We only need and want create the video sink
-      if (structure_name.find("video") == Glib::ustring::npos)
-        return Glib::RefPtr<Gst::Element>(NULL);
+  GstElement *create_element(const Glib::ustring &structure_name) {
+    // We only need and want create the video sink
+    if (structure_name.find("video") == Glib::ustring::npos)
+      return nullptr;
 
-      Glib::RefPtr<Gst::FakeSink> fakesink = Gst::FakeSink::create("fakesink");
-      fakesink->set_sync(false);
-      fakesink->property_silent() = true;
-      fakesink->property_signal_handoffs() = true;
-      fakesink->signal_handoff().connect(sigc::mem_fun(
-          *this, &KeyframesGeneratorUsingFrame::on_video_identity_handoff));
+    GstElement *fakesink = gst_element_factory_make("fakesink", NULL);
+    // fakesink->set_sync(false);
+    g_object_set(G_OBJECT(fakesink), "silent", TRUE, NULL);
+    g_object_set(G_OBJECT(fakesink), "signal-handoffs", TRUE, NULL);
+    g_signal_connect(fakesink, "handoff", G_CALLBACK(KeyframesGeneratorUsingFrame::static_handoff_callback), this);
 
-      // Set the new sink tp READY as well
-      Gst::StateChangeReturn retst = fakesink->set_state(Gst::STATE_READY);
-      if (retst == Gst::STATE_CHANGE_FAILURE)
-        std::cerr << "Could not change state of new sink: " << retst
-                  << std::endl;
+    // Set the new sink tp READY as well
+    GstStateChangeReturn retst = gst_element_set_state(fakesink, GST_STATE_READY);
+    if (retst == GST_STATE_CHANGE_FAILURE)
+      std::cerr << "Could not change state of new sink: " << retst << std::endl;
 
-      return fakesink;
-    } catch (std::runtime_error &ex) {
-      std::cerr << "create_element runtime_error: " << ex.what() << std::endl;
-    }
-    return Glib::RefPtr<Gst::Element>(NULL);
+    return fakesink;
   }
 
   // Update the progress bar
@@ -152,11 +142,9 @@ class KeyframesGeneratorUsingFrame : public Gtk::Dialog, public MediaDecoder {
     if (!m_pipeline)
       return false;
 
-    Gst::Format fmt = Gst::FORMAT_TIME;
     gint64 pos = 0, len = 0;
-    if (m_pipeline->query_position(fmt, pos) &&
-        m_pipeline->query_duration(fmt, len)) {
-      double percent = (double)pos / (double)len;
+    if (gst_element_query_position(m_pipeline, GST_FORMAT_TIME, &pos) && gst_element_query_duration(m_pipeline, GST_FORMAT_TIME, &len)) {
+      double percent = static_cast<double>(pos) / static_cast<double>(len);
 
       percent = CLAMP(percent, 0.0, 1.0);
 
@@ -165,8 +153,6 @@ class KeyframesGeneratorUsingFrame : public Gtk::Dialog, public MediaDecoder {
       m_duration = len;
 
       return pos != len;
-    } else {
-      m_progressbar.set_text(_("Waiting..."));
     }
     return true;
   }
@@ -189,8 +175,7 @@ class KeyframesGeneratorUsingFrame : public Gtk::Dialog, public MediaDecoder {
   gfloat m_difference;
 };
 
-Glib::RefPtr<KeyFrames> generate_keyframes_from_file_using_frame(
-    const Glib::ustring &uri) {
+Glib::RefPtr<KeyFrames> generate_keyframes_from_file_using_frame(const Glib::ustring &uri) {
   Glib::RefPtr<KeyFrames> kf;
   KeyframesGeneratorUsingFrame ui(uri, kf);
   return kf;
