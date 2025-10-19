@@ -18,23 +18,23 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-#include <gstreamermm.h>
 #include <gtkmm.h>
 #include <keyframes.h>
 #include <utility.h>
+
 #include <iomanip>
 #include <iostream>
+
 #include "mediadecoder.h"
 
 class KeyframesGenerator : public Gtk::Dialog, public MediaDecoder {
  public:
-  KeyframesGenerator(const Glib::ustring &uri,
-                     Glib::RefPtr<KeyFrames> &keyframes)
-      : Gtk::Dialog(_("Generate Keyframes"), true), MediaDecoder(1000) {
+  KeyframesGenerator(const Glib::ustring &uri, Glib::RefPtr<KeyFrames> &keyframes) : Gtk::Dialog(_("Generate Keyframes"), true), MediaDecoder(1000) {
     set_border_width(12);
     set_default_size(300, -1);
     get_vbox()->pack_start(m_progressbar, false, false);
     add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
+    m_progressbar.set_show_text(true);
     m_progressbar.set_text(_("Waiting..."));
     show_all();
 
@@ -51,45 +51,36 @@ class KeyframesGenerator : public Gtk::Dialog, public MediaDecoder {
     }
   }
 
+  static void static_handoff_callback(GstElement *fakesink, GstBuffer *buffer, GstPad *pad, gpointer data) {
+    KeyframesGenerator *kfg = static_cast<KeyframesGenerator *>(data);
+    kfg->on_video_identity_handoff(fakesink, buffer, pad);
+  }
   // Check buffer and try to catch keyframes.
-  void on_video_identity_handoff(const Glib::RefPtr<Gst::Buffer> &buf,
-                                 const Glib::RefPtr<Gst::Pad> &) {
-    // FIXME: http://bugzilla.gnome.org/show_bug.cgi?id=590923
-    // if(!buf->flag_is_set(GST_BUFFER_FLAG_DELTA_UNIT))//Gst::BUFFER_FLAG_DELTA_UNIT))
-    if (!GST_BUFFER_FLAG_IS_SET(buf->gobj(), GST_BUFFER_FLAG_DELTA_UNIT)) {
-      // FIXME: gstreamer 1.0
-      // long pos = buf->get_timestamp() / GST_MSECOND;
-      long pos = buf->get_pts() / GST_MSECOND;
+  void on_video_identity_handoff(GstElement *, GstBuffer *buf, GstPad *) {
+    if (!GST_BUFFER_FLAG_IS_SET(buf, GST_BUFFER_FLAG_DELTA_UNIT)) {
+      long pos = GST_BUFFER_PTS(buf) / GST_MSECOND;
       m_values.push_back(pos);
     }
   }
 
   // Create video bin
-  Glib::RefPtr<Gst::Element> create_element(
-      const Glib::ustring &structure_name) {
-    try {
-      // We only need and want create the video sink
-      if (structure_name.find("video") == Glib::ustring::npos)
-        return Glib::RefPtr<Gst::Element>(NULL);
+  GstElement *create_element(const Glib::ustring &structure_name) {
+    // We only need and want create the video sink
+    if (structure_name.find("video") == Glib::ustring::npos)
+      return nullptr;
 
-      Glib::RefPtr<Gst::FakeSink> fakesink = Gst::FakeSink::create("fakesink");
-      fakesink->set_sync(false);
-      fakesink->property_silent() = true;
-      fakesink->property_signal_handoffs() = true;
-      fakesink->signal_handoff().connect(
-          sigc::mem_fun(*this, &KeyframesGenerator::on_video_identity_handoff));
+    GstElement *fakesink = gst_element_factory_make("fakesink", NULL);
+    // fakesink->set_sync(false);
+    g_object_set(G_OBJECT(fakesink), "silent", TRUE, NULL);
+    g_object_set(G_OBJECT(fakesink), "signal-handoffs", TRUE, NULL);
+    g_signal_connect(fakesink, "handoff", G_CALLBACK(KeyframesGenerator::static_handoff_callback), this);
 
-      // Set the new sink tp READY as well
-      Gst::StateChangeReturn retst = fakesink->set_state(Gst::STATE_READY);
-      if (retst == Gst::STATE_CHANGE_FAILURE)
-        std::cerr << "Could not change state of new sink: " << retst
-                  << std::endl;
+    // Set the new sink tp READY as well
+    GstStateChangeReturn retst = gst_element_set_state(fakesink, GST_STATE_READY);
+    if (retst == GST_STATE_CHANGE_FAILURE)
+      std::cerr << "Could not change state of new sink: " << retst << std::endl;
 
-      return fakesink;
-    } catch (std::runtime_error &ex) {
-      std::cerr << "create_element runtime_error: " << ex.what() << std::endl;
-    }
-    return Glib::RefPtr<Gst::Element>(NULL);
+    return fakesink;
   }
 
   // Update the progress bar
@@ -97,10 +88,8 @@ class KeyframesGenerator : public Gtk::Dialog, public MediaDecoder {
     if (!m_pipeline)
       return false;
 
-    Gst::Format fmt = Gst::FORMAT_TIME;
     gint64 pos = 0, len = 0;
-    if (m_pipeline->query_position(fmt, pos) &&
-        m_pipeline->query_duration(fmt, len)) {
+    if (gst_element_query_position(m_pipeline, GST_FORMAT_TIME, &pos) && gst_element_query_duration(m_pipeline, GST_FORMAT_TIME, &len)) {
       double percent = static_cast<double>(pos) / static_cast<double>(len);
 
       percent = CLAMP(percent, 0.0, 1.0);
@@ -110,8 +99,6 @@ class KeyframesGenerator : public Gtk::Dialog, public MediaDecoder {
       m_duration = len;
 
       return pos != len;
-    } else {
-      m_progressbar.set_text(_("Waiting..."));
     }
     return true;
   }
