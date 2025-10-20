@@ -141,19 +141,20 @@ DialogStyleEditor::DialogStyleEditor(BaseObjectType *cobject,
     m_treeview->get_selection()->signal_changed().connect(sigc::mem_fun(
         *this, &DialogStyleEditor::callback_style_selection_changed));
     // add styles
-    m_current_document = se::documents::active();
-
-    for (Style style = m_current_document->styles().first(); style; ++style) {
-      Gtk::TreeIter iter = m_liststore->append();
-
-      (*iter)[column_name.name] = style.get("name");
-    }
-
-    if (m_liststore->children().empty()) {
-      m_widgets["vbox-style"]->set_sensitive(false);
-    } else {
-      m_treeview->get_selection()->select(m_liststore->children().begin());
-    }
+    // m_current_document = se::documents::active();
+    //
+    // for (Style style = m_current_document->styles().first(); style; ++style)
+    // {
+    //   Gtk::TreeIter iter = m_liststore->append();
+    //
+    //   (*iter)[column_name.name] = style.get("name");
+    // }
+    //
+    // if (m_liststore->children().empty()) {
+    //   m_widgets["vbox-style"]->set_sensitive(false);
+    // } else {
+    //   m_treeview->get_selection()->select(m_liststore->children().begin());
+    // }
   }
 }
 
