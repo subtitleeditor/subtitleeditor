@@ -1293,8 +1293,8 @@ msgstr "Присъединяване на документ"
 
 #: ../plugins/actions/joindocument/joindocument.cc:142
 #, c-format
-msgid "1 subtitle has been added at this document."
-msgid_plural "%d subtitles have been added at this document."
+msgid "One subtitle has been added to this document."
+msgid_plural "%d subtitles have been added to this document."
 msgstr[0] "1 субтитри бяха добавени към документа."
 msgstr[1] "%d субтитри бяха добавени към документа."
 

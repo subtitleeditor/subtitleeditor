@@ -1266,8 +1266,8 @@ msgstr "加入文件"
 
 #: ../plugins/actions/joindocument/joindocument.cc:142
 #, c-format
-msgid "1 subtitle has been added at this document."
-msgid_plural "%d subtitles have been added at this document."
+msgid "One subtitle has been added to this document."
+msgid_plural "%d subtitles have been added to this document."
 msgstr[0] "%d 条字幕被添加到该文件。"
 
 #: ../plugins/actions/keyframesmanagement/keyframesgenerator.cc:33

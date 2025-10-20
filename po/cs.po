@@ -1284,8 +1284,8 @@ msgstr "Spojit dokument"
 
 #: ../plugins/actions/joindocument/joindocument.cc:142
 #, c-format
-msgid "1 subtitle has been added at this document."
-msgid_plural "%d subtitles have been added at this document."
+msgid "One subtitle has been added to this document."
+msgid_plural "%d subtitles have been added to this document."
 msgstr[0] "Do tohoto dokumentu byl přidán jeden titulek."
 msgstr[1] "Do tohoto dokumentu byly přidány %d titulky."
 msgstr[2] "Do tohoto dokumentu bylo přidáno %d titulků."

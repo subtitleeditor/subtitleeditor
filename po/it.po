@@ -1340,8 +1340,8 @@ msgstr "Unisci documenti"
 
 #: ../plugins/actions/joindocument/joindocument.cc:142
 #, fuzzy, c-format
-msgid "1 subtitle has been added at this document."
-msgid_plural "%d subtitles have been added at this document."
+msgid "One subtitle has been added to this document."
+msgid_plural "%d subtitles have been added to this document."
 msgstr[0] "Il sottotitolo %d è stato cancellato con successo."
 msgstr[1] "Il sottotitolo %d è stato cancellato con successo."
 
