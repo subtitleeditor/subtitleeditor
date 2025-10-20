@@ -1289,8 +1289,8 @@ msgstr "Belgeyi birleştir"
 
 #: ../plugins/actions/joindocument/joindocument.cc:142
 #, c-format
-msgid "1 subtitle has been added at this document."
-msgid_plural "%d subtitles have been added at this document."
+msgid "One subtitle has been added to this document."
+msgid_plural "%d subtitles have been added to this document."
 msgstr[0] ""
 "Bu dosyaya 1 altyazı eklendi.\r\n"
 "Bu dosyaya %d altyazı eklendi."
