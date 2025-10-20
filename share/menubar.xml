@@ -92,7 +92,8 @@
 			<separator/>
 			<placeholder name="split-document"/>
 			<placeholder name="join-document"/>
-			<separator/>
+			<placeholder name="append-document"/>
+            <separator/>
 			<placeholder name="style-editor"/>
 			<separator/>
 			<placeholder name="apply-translation"/>
