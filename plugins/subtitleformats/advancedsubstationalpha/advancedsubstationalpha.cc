@@ -23,6 +23,7 @@
 #include <gtkmm.h>
 #include <gtkmm_utility.h>
 #include <utility.h>
+
 #include <cstdio>
 #include <iomanip>
 #include <memory>
@@ -269,8 +270,18 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
       std::vector<Glib::ustring> group = re->split(line);
       if (group.size() == 1)
         continue;
-
       Subtitle sub = subtitles.append();
+
+      // layer (ASS: integer, default 0)
+      int layer = 0;
+      if (!group[1].empty()) {
+        // safe integer parse; defaults to 0 on failure
+        char *endptr = nullptr;
+        long l = std::strtol(group[1].c_str(), &endptr, 10);
+        if (endptr != group[1].c_str())  // parsed something
+          layer = static_cast<int>(l);
+      }
+      sub.set_layer(Glib::ustring::format(layer));
 
       // start, end times
       sub.set_start_and_end(from_ass_time(group[2]), from_ass_time(group[3]));
