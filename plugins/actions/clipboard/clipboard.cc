@@ -905,7 +905,7 @@ class ClipboardPlugin : public Action {
       // easily.
       need_generate_extension = true;
       // open a new document
-      doc = new Document();
+      doc = new Document(true);
       g_return_if_fail(doc);
 
       doc->setFilename(se::documents::generate_untitled_name());
