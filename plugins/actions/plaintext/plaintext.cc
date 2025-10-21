@@ -100,7 +100,7 @@ class PlainTextPlugin : public Action {
         Glib::ustring untitled_fullname =
             Glib::build_filename(ui->get_current_folder(), untitled);
 
-        Document *doc = new Document();
+        Document *doc = new Document(true);
         SubtitleFormatSystem::instance().open_from_uri(doc, uri, charset,
                                                        "Plain Text Format");
         doc->setName(untitled);
