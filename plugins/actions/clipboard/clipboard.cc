@@ -251,6 +251,7 @@ class ClipboardPlugin : public Action {
     bool paste_visible = false;
     bool paste_now_visible = false;
     bool paste_over_visible = false;
+    bool select_overlap_visible = false;
 
     if (chosen_clipboard_target != "") {
       paste_visible = true;
@@ -259,8 +260,9 @@ class ClipboardPlugin : public Action {
            Player::NONE);
     }
 
-		Document * doc = get_current_document();
-		paste_over_visible = (doc) ? !doc->subtitles().get_selection().empty() : false;
+    Document * doc = get_current_document();
+    paste_over_visible = (doc) ? !doc->subtitles().get_selection().empty() : false;
+    select_overlap_visible = (doc) ? doc->subtitles().size() > 0 : false;
 
     action_group->get_action("clipboard-paste")->set_sensitive(paste_visible);
     action_group->get_action("clipboard-paste-at-player-position")
@@ -268,13 +270,13 @@ class ClipboardPlugin : public Action {
     action_group->get_action("clipboard-paste-as-new-document")
         ->set_sensitive(paste_visible);
     action_group->get_action("clipboard-paste-over-text")
-        ->set_sensitive( paste_over_visible );
+        ->set_sensitive(paste_over_visible);
     action_group->get_action("clipboard-paste-over-time")
-        ->set_sensitive( paste_over_visible );
+        ->set_sensitive(paste_over_visible);
     action_group->get_action("clipboard-paste-unchanged")
-        ->set_sensitive( paste_visible );
+        ->set_sensitive(paste_visible);
     action_group->get_action("clipboard-select-overlap")
-        ->set_sensitive( paste_visible );
+        ->set_sensitive(select_overlap_visible);
   }
 
   void on_player_message(Player::Message) {
