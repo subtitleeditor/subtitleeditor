@@ -94,8 +94,9 @@ class PlainTextPlugin : public Action {
       Glib::ustring charset = ui->get_encoding();
 
       try {
-        Glib::ustring untitled = se::documents::generate_untitled_name();
         Glib::ustring format = cfg::get_string("document", "format");
+        Glib::ustring extension = SubtitleFormatSystem::instance().get_extension_of_format(format);
+        Glib::ustring untitled = se::documents::generate_untitled_name(extension);
         Glib::ustring untitled_fullname =
             Glib::build_filename(ui->get_current_folder(), untitled);
 
