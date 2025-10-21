@@ -126,6 +126,7 @@ class DialogConfigureKeyboardShortcuts : public Gtk::Dialog {
     std::vector<Glib::RefPtr<Gtk::Action> > dynamic_audio_actions;
     std::vector<Glib::RefPtr<Gtk::Action> > dynamic_documents_actions;
     std::vector<Glib::RefPtr<Gtk::Action> > dynamic_view_actions;
+    std::vector<Glib::RefPtr<Gtk::Action> > dynamic_stylize_actions;
     std::vector<Glib::RefPtr<Gtk::Action> > static_actions;
     std::vector<Glib::RefPtr<Gtk::Action> > all_actions;
     Glib::ustring action_name;
@@ -157,6 +158,12 @@ class DialogConfigureKeyboardShortcuts : public Gtk::Dialog {
                  action_name != "view-manager-preferences") {
           dynamic_view_actions.push_back(all_actions[j]);
         }
+        // Separate dynamic stylize actions
+        if (action_name.find("stylize-selected-subtitles-style-") !=
+            Glib::ustring::npos) {
+          dynamic_stylize_actions.push_back(all_actions[j]);
+        }
+
         // Everything else is static
         else {
           static_actions.push_back(all_actions[j]);
@@ -211,6 +218,12 @@ class DialogConfigureKeyboardShortcuts : public Gtk::Dialog {
                  const Glib::RefPtr<Gtk::Action> &b) {
                 return a->get_name() < b->get_name();
               });
+    // Sort view actions alphabetically by label.
+    std::sort(dynamic_stylize_actions.begin(), dynamic_stylize_actions.end(),
+              [](const Glib::RefPtr<Gtk::Action> &a,
+                 const Glib::RefPtr<Gtk::Action> &b) {
+                return a->get_name() < b->get_name();
+              });
 
     // Sort static actions alphabetically by label.
     std::sort(static_actions.begin(), static_actions.end(),
@@ -236,6 +249,11 @@ class DialogConfigureKeyboardShortcuts : public Gtk::Dialog {
     // Add dynamic view actions
     for (unsigned int i = 0; i < dynamic_view_actions.size(); ++i) {
       add_action(dynamic_view_actions[i]);
+    }
+
+    // Add dynamic stylize actions
+    for (unsigned int i = 0; i < dynamic_stylize_actions.size(); ++i) {
+      add_action(dynamic_stylize_actions[i]);
     }
 
     // Add a separator row if there are any dynamic actions
