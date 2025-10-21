@@ -509,6 +509,14 @@ class ClipboardPlugin : public Action {
           "clipboard target format.");
       return;
     }
+    // When we create a new document, only now we know enough to determine its format and rename the new file with the proper extension
+    if (need_generate_extension) {
+      Glib::ustring fmt = clipdoc->getFormat();
+      Glib::ustring ext =
+          SubtitleFormatSystem::instance().get_extension_of_format(fmt);
+      doc->setFilename(se::documents::generate_untitled_name(ext));
+      need_generate_extension = false;
+    }
 
     if(( paste_flags & SELECT_OVERLAP) != 0 ) { //clipboard used for selection only
       select_overlap( doc );
@@ -652,25 +660,25 @@ class ClipboardPlugin : public Action {
       doc->flash_message(_("%i subtitle(s) overwritten."), howmany );
     } else { //don't PASTE_OVER_TEXT
       paste_after = where_to_paste(subtitles);
-  
+
       // We get the new subtitles in the new_subtitles array
       create_and_insert_paste_subtitles(subtitles, paste_after, new_subtitles);
 
 			if( (flags & PASTE_UNCHANGED) == 0 ) {
         calculate_and_apply_timeshift(subtitles, paste_after, new_subtitles, flags);
       }
-  
+
       // We can now remove the old selected subtitles, only if the selection is >
       // 1
       std::vector<Subtitle> selection = subtitles.get_selection();
       if (selection.size() > 1)
         subtitles.remove(selection);
-  
+
       // We select the pasted subtitles, this way the user see where are the new
       // subtitles
       subtitles.unselect_all();
       subtitles.select(new_subtitles);
-  
+
       // show the pasted subtitles
       // FIXME tomas-kitone: this is a clumsy implementation.
       // I think we should add a show_subtitle( Subtitle &sub ) function to class
@@ -682,7 +690,7 @@ class ClipboardPlugin : public Action {
             Gtk::TreeModel::Path(Glib::ustring::compose("%1", sub_num));
         view->scroll_to_row(sub_path, 0.25);
       }
-  
+
       // tell the user what happened
       doc->flash_message(_("%i subtitle(s) pasted."), new_subtitles.size());
     }
@@ -890,6 +898,10 @@ class ClipboardPlugin : public Action {
     // what document are we pasting into?
     Document *doc = get_current_document();
     if (!doc || flags & PASTE_AS_NEW_DOCUMENT) {
+      // When we create a new document, store a flag to populate its extension
+      // later when we populate a clipdoc that enables us to get the extension
+      // easily.
+      need_generate_extension = true;
       // open a new document
       doc = new Document();
       g_return_if_fail(doc);
@@ -971,6 +983,10 @@ class ClipboardPlugin : public Action {
     SELECT_OVERLAP = 0x40  // select clipboard overlap, no pasting
   };
   unsigned long paste_flags;
+
+  // When new document is created, once we get the clipboard, we need to guess
+  // extension and apply it
+  bool need_generate_extension = false;
 
   // the best clipboard target available at the moment
   Glib::ustring chosen_clipboard_target;
