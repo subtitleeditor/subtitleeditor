@@ -52,7 +52,7 @@ class Document : protected CommandSystem {
 
   // Constructor
   // The default values of the document are set from the user config.
-  Document();
+  Document(bool create_new = true);
 
   // Constructor by copy
   Document(Document &copy, bool copy_subtitles);

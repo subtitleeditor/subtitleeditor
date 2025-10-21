@@ -18,12 +18,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+#include "document.h"
+
 #include <gtkmm.h>
+
 #include <ctime>
 #include <iostream>
 #include <memory>
+
 #include "cfg.h"
-#include "document.h"
 #include "documents.h"
 #include "encodings.h"
 #include "error.h"
@@ -34,7 +37,7 @@
 
 // Constructor
 // The default values of the document are sets from the user config.
-Document::Document()
+Document::Document(bool create_new)
     : CommandSystem(*this), m_subtitles(*this), m_styles(*this) {
   // sets default encoding value
   Glib::ustring default_encoding = cfg::get_string("encodings", "default");
@@ -55,9 +58,18 @@ Document::Document()
 
   // create models
   m_subtitleModel = Glib::RefPtr<SubtitleModel>(new SubtitleModel(this));
-
   m_styleModel = Glib::RefPtr<StyleModel>(new StyleModel);
 
+  // Add default style for formats that support styles (ASS, SSA) for new files
+  // FIXME Ideally individual documents would indicate they support it
+  // so they would not need to be listed here
+  if (create_new && (m_format == "Advanced Sub Station Alpha" ||
+                     m_format == "Sub Station Alpha" ||
+                     m_format == "Subtitle Editor Project")) {
+
+    Style style = m_styles.append();
+    style.set("name", "Default");
+  }
   // m_nameModel = Glib::RefPtr<NameModel>(new NameModel);
   CommandSystem::signal_changed().connect(
       sigc::mem_fun(*this, &Document::make_document_changed));
@@ -69,7 +81,6 @@ Document::Document(Document &src, bool copy_subtitles)
   m_timing_mode = src.m_timing_mode;
   m_edit_timing_mode = src.m_edit_timing_mode;
   m_framerate = src.m_framerate;
-
   m_subtitleModel = Glib::RefPtr<SubtitleModel>(new SubtitleModel(this));
   m_styleModel = Glib::RefPtr<StyleModel>(new StyleModel);
 
@@ -385,8 +396,8 @@ FRAMERATE Document::get_framerate() {
 }
 
 // Create a new document from an uri, if the charset is empty then it will try
-// to auto detect the good value. This function display a dialog ask or error if
-// needed. Return a new document or NULL.
+// to auto detect the good value. This function display a dialog ask or error
+// if needed. Return a new document or NULL.
 Document *Document::create_from_file(const Glib::ustring &uri,
                                      const Glib::ustring &charset) {
   se_dbg_msg(SE_DBG_APP, "uri=%s charset=%s", uri.c_str(), charset.c_str());
@@ -396,7 +407,7 @@ Document *Document::create_from_file(const Glib::ustring &uri,
   Glib::ustring label_charset = Encodings::get_label_from_charset(charset);
 
   try {
-    Document *doc = new Document;
+    Document *doc = new Document(false);
     doc->setCharset(charset);
     doc->open(uri);
     return doc;
@@ -404,8 +415,9 @@ Document *Document::create_from_file(const Glib::ustring &uri,
     Glib::ustring title = build_message(
         _("Could not recognize the subtitle format for the file \"%s\"."),
         basename.c_str());
-    Glib::ustring msg = _(
-        "Please check that the file contains subtitles in a supported format.");
+    Glib::ustring msg =
+        _("Please check that the file contains subtitles in a supported "
+          "format.");
 
     ErrorDialog dialog(title, msg);
     dialog.add_button(Gtk::Stock::OK, Gtk::RESPONSE_OK);
