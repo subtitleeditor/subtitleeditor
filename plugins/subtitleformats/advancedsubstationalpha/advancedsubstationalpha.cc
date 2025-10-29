@@ -292,10 +292,11 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
       // name
       sub.set_name(group[5]);
 
-      // margin lrv
-      sub.set_margin_l(group[6]);
-      sub.set_margin_r(group[7]);
-      sub.set_margin_v(group[8]);
+      // margin lrv - convert to int and back to remove leading zeros ("0000" to
+      // 0 to "0")
+      sub.set_margin_l(to_string(utility::string_to_int(group[6])));
+      sub.set_margin_r(to_string(utility::string_to_int(group[7])));
+      sub.set_margin_v(to_string(utility::string_to_int(group[8])));
 
       // effect
       sub.set_effect((group[9]));
