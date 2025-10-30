@@ -683,7 +683,8 @@
                             <property name="spacing">6</property>
                             <child>
                               <object class="GtkCheckButton" id="check-force-aspect-ratio">
-                                <property name="label" translatable="yes">Force aspect _ratio</property>
+                                <property name="label" translatable="yes">Do not _stretch video to fill view</property>
+                                <property name="tooltip_text" translatable="yes">When unchecked, video will be stretched and deformed to fill its view. When checked, video ratio will always be kept, creating black bands around it as necessary.</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
