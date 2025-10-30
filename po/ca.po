@@ -516,7 +516,7 @@ msgstr "Obre el document:"
 #: ../plugins/actions/documentmanagement/documentmanagement.cc:84
 #, fuzzy
 msgid "Open a Subtitle Editor Project"
-msgstr "Editor de subtítols - Preferència"
+msgstr "Editor de subtítols — Preferència"
 
 #: ../plugins/actions/documentmanagement/documentmanagement.cc:91
 #, fuzzy
@@ -1920,24 +1920,24 @@ msgid "Autodetect"
 msgstr ""
 
 #: ../plugins/actions/preferences/videoplayerpage.h:103
-msgid "Pulse - PulseAudio Sound Server"
+msgid "Pulse — PulseAudio Sound Server"
 msgstr ""
 
 #: ../plugins/actions/preferences/videoplayerpage.h:106
-msgid "ALSA - Advanced Linux Sound Architecture"
+msgid "ALSA — Advanced Linux Sound Architecture"
 msgstr ""
 
 #: ../plugins/actions/preferences/videoplayerpage.h:107
-msgid "ESD - Enlightenment Sound Daemon"
+msgid "ESD — Enlightenment Sound Daemon"
 msgstr ""
 
 #: ../plugins/actions/preferences/videoplayerpage.h:109
-msgid "OSS - Open Sound System"
+msgid "OSS — Open Sound System"
 msgstr ""
 
 #: ../plugins/actions/preferences/videoplayerpage.h:110
 #: ../plugins/actions/preferences/videoplayerpage.h:127
-msgid "SDL - Simple DirectMedia Layer"
+msgid "SDL — Simple DirectMedia Layer"
 msgstr ""
 
 #: ../plugins/actions/preferences/videoplayerpage.h:112
@@ -2386,8 +2386,8 @@ msgid "Stack Subtitles only works on a continuous selection."
 msgstr ""
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:1
-msgid "Subtitle Editor - Style Editor"
-msgstr "Editor de subtítols - Editor d'estils"
+msgid "Subtitle Editor — Style Editor"
+msgstr "Editor de subtítols — Editor d'estils"
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
 msgid "Font"
@@ -2823,19 +2823,19 @@ msgid "_Typewriter"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
+msgid "Characters — Linear"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
+msgid "Characters — Random"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
-msgid "Words - Linear"
+msgid "Words — Linear"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
+msgid "Words — Random"
 msgstr ""
 
 #. Already create in MenuBar.cc
@@ -3743,7 +3743,7 @@ msgstr ""
 
 #: ../src/main.cc:59
 #, fuzzy
-msgid " - edit subtitles files"
+msgid " — edit subtitles files"
 msgstr " Edita els subtítols"
 
 #: ../src/options.cc:35
@@ -4376,7 +4376,7 @@ msgstr ""
 #: ../plugins/actions/preferences/preferences.se-plugin.in.h:2
 #, fuzzy
 msgid "Manages Subtitle Editor's preferences."
-msgstr "Editor de subtítols - Preferències"
+msgstr "Editor de subtítols — Preferències"
 
 #: ../plugins/actions/removesubtitle/removesubtitle.se-plugin.in.h:2
 #, fuzzy
@@ -4652,7 +4652,7 @@ msgstr "Editor d'estils"
 #: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.se-plugin.in.h:2
 #, fuzzy
 msgid "Subtitle Editor Project subtitles support."
-msgstr "Editor de subtítols - Editor d'estils"
+msgstr "Editor de subtítols — Editor d'estils"
 
 #: ../plugins/subtitleformats/subviewer2/subviewer2.se-plugin.in.h:1
 msgid "SubViewer2"
@@ -5312,8 +5312,8 @@ msgstr ""
 #~ msgid "player:"
 #~ msgstr "capa"
 
-#~ msgid "Subtitle Editor - Script Properties"
-#~ msgstr "Editor de subtítols - Propietats de l'script"
+#~ msgid "Subtitle Editor — Script Properties"
+#~ msgstr "Editor de subtítols — Propietats de l'script"
 
 #~ msgid "margin left"
 #~ msgstr "marge esquerre"

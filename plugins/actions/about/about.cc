@@ -102,8 +102,7 @@ class AboutPlugin : public Action {
 
         You should have received a copy of the GNU General Public License
         along with this program; if not, write to the Free Software
-        Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111 USA
-        See gpl.txt for more information regarding the GNU General Public License.
+        Foundation, Inc., 59 Temple Place — Suite 330, Boston, MA 02111 USA
       )";
     dialog.set_license(license);
 

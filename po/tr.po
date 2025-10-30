@@ -223,7 +223,7 @@ msgstr "Yenileme Hızını değiştir"
 #: ../plugins/actions/changeframerate/changeframerate.cc:259
 #, c-format
 msgid "The new framerate was applied. (%s to %s)"
-msgstr "Yeni kare sayısı uygulandı. (%s - %s)"
+msgstr "Yeni kare sayısı uygulandı. (%s — %s)"
 
 #: ../plugins/actions/changeframerate/dialog-change-framerate.ui.h:2
 #, fuzzy
@@ -1877,25 +1877,25 @@ msgid "Autodetect"
 msgstr "Otomatik Saptama"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:103
-msgid "Pulse - PulseAudio Sound Server"
-msgstr "Pulse - PulseAudio Ses Sunucusu"
+msgid "Pulse — PulseAudio Sound Server"
+msgstr "Pulse — PulseAudio Ses Sunucusu"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:106
-msgid "ALSA - Advanced Linux Sound Architecture"
-msgstr "ALSA - Gelişmiş Linux Ses Mimarisi"
+msgid "ALSA — Advanced Linux Sound Architecture"
+msgstr "ALSA — Gelişmiş Linux Ses Mimarisi"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:107
-msgid "ESD - Enlightenment Sound Daemon"
-msgstr "ESD - Enlightenment Ses Servisi"
+msgid "ESD — Enlightenment Sound Daemon"
+msgstr "ESD — Enlightenment Ses Servisi"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:109
-msgid "OSS - Open Sound System"
-msgstr "OSS - Açık Ses Sistemi"
+msgid "OSS — Open Sound System"
+msgstr "OSS — Açık Ses Sistemi"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:110
 #: ../plugins/actions/preferences/videoplayerpage.h:127
-msgid "SDL - Simple DirectMedia Layer"
-msgstr "SDL - Basit DirectMedia Katmanı"
+msgid "SDL — Simple DirectMedia Layer"
+msgstr "SDL — Basit DirectMedia Katmanı"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:112
 #: ../plugins/actions/preferences/videoplayerpage.h:129
@@ -2305,8 +2305,8 @@ msgid "Stack Subtitles only works on a continuous selection."
 msgstr ""
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:1
-msgid "Subtitle Editor - Style Editor"
-msgstr "Altyazı Düzenleyici - Tür Düzenleyici"
+msgid "Subtitle Editor — Style Editor"
+msgstr "Altyazı Düzenleyici — Tür Düzenleyici"
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
 #, fuzzy
@@ -2730,19 +2730,19 @@ msgid "_Typewriter"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
+msgid "Characters — Linear"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
+msgid "Characters — Random"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
-msgid "Words - Linear"
+msgid "Words — Linear"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
+msgid "Words — Random"
 msgstr ""
 
 #. Already create in MenuBar.cc
@@ -3599,8 +3599,8 @@ msgid "Couldn't get the keyframe size on the file."
 msgstr ""
 
 #: ../src/main.cc:59
-msgid " - edit subtitles files"
-msgstr " - altyazı dosyalarını düzenle"
+msgid " — edit subtitles files"
+msgstr " — altyazı dosyalarını düzenle"
 
 #: ../src/options.cc:35
 msgid "[FILE...]"
