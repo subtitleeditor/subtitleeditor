@@ -61,14 +61,15 @@ Document::Document(bool create_new)
   m_styleModel = Glib::RefPtr<StyleModel>(new StyleModel);
 
   // Add default style for formats that support styles (ASS, SSA) for new files
-  // FIXME Ideally individual documents would indicate they support it
+  // FIXME Ideally individual formats would indicate they support it
   // so they would not need to be listed here
   if (create_new && (m_format == "Advanced Sub Station Alpha" ||
                      m_format == "Sub Station Alpha" ||
                      m_format == "Subtitle Editor Project")) {
-
+    m_scriptInfo = this->m_scriptInfo;
+    ASS::set_default_playres(m_scriptInfo);
     Style style = m_styles.append();
-    style.set("name", "Default");
+    ASS::set_default_style(style);
   }
   // m_nameModel = Glib::RefPtr<NameModel>(new NameModel);
   CommandSystem::signal_changed().connect(

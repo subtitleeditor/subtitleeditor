@@ -216,39 +216,7 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
         continue;
 
       Style style = styles.append();
-
-      style.set("name", group[1]);
-
-      style.set("font-name", group[2]);
-      style.set("font-size", group[3]);
-
-      style.set("primary-color", from_ass_color(group[4]));
-      style.set("secondary-color", from_ass_color(group[5]));
-      style.set("outline-color", from_ass_color(group[6]));
-      style.set("shadow-color", from_ass_color(group[7]));
-
-      style.set("bold", from_ass_bool(group[8]));
-      style.set("italic", from_ass_bool(group[9]));
-      style.set("underline", from_ass_bool(group[10]));
-      style.set("strikeout", from_ass_bool(group[11]));
-
-      style.set("scale-x", group[12]);
-      style.set("scale-y", group[13]);
-
-      style.set("spacing", group[14]);
-      style.set("angle", group[15]);
-
-      style.set("border-style", group[16]);
-      style.set("outline", group[17]);
-      style.set("shadow", group[18]);
-
-      style.set("alignment", group[19]);
-
-      style.set("margin-l", group[20]);
-      style.set("margin-r", group[21]);
-      style.set("margin-v", group[22]);
-
-      style.set("encoding", group[23]);
+      ASS::set_style_from_string(style, group);
     }
   }
 
@@ -325,19 +293,11 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
       file.write(i.first + ": " + i.second + "\n");
     }
 
-    // Only if one of PlayRes is missing
-    guint width, height;
-    if (get_screen_resolution(width, height) &&
-        has_play_res(scriptInfo) == false) {
-      file.write(
-          Glib::ustring::compose("PlayResX: %1\n"
-                                 "PlayResY: %2\n",
-                                 width, height));
-    }
-
     // End of block, empty line
     file.write("\n");
   }
+
+
 
   // Write the block [V4+ Styles]
   void write_styles(Writer &file) {
@@ -351,7 +311,7 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
         "BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, "
         "Encoding\n");
 
-    // Default style if it's empty
+    //Default style if it's empty
     if (document()->styles().size() == 0) {
       Glib::ustring default_style;
 
@@ -364,49 +324,18 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
         cfg::set_string("AdvancedSubStationAlpha", "default-style",
                         default_style);
         cfg::set_comment("AdvancedSubStationAlpha", "default-style",
-                         "Without style, this one will be used during save");
+                         "Default style to be used");
       } else {
         default_style =
             cfg::get_string("AdvancedSubStationAlpha", "default-style");
       }
 
-      // write without changing the document
+      // write file
       file.write("Style: " + default_style + "\n");
-
-      // Style style = document()->styles().append();
-      // style.set("name", "Default");
     }
 
     for (Style style = document()->styles().first(); style; ++style) {
-      file.write(Glib::ustring::compose(
-          "Style: %1,%2,%3,%4,%5,%6,%7\n",
-          Glib::ustring::compose("%1,%2,%3", style.get("name"),
-                                 style.get("font-name"),
-                                 style.get("font-size")),
-
-          Glib::ustring::compose("%1,%2,%3,%4",
-                                 to_ass_color(style.get("primary-color")),
-                                 to_ass_color(style.get("secondary-color")),
-                                 to_ass_color(style.get("outline-color")),
-                                 to_ass_color(style.get("shadow-color"))),
-
-          Glib::ustring::compose("%1,%2,%3,%4", to_ass_bool(style.get("bold")),
-                                 to_ass_bool(style.get("italic")),
-                                 to_ass_bool(style.get("underline")),
-                                 to_ass_bool(style.get("strikeout"))),
-
-          Glib::ustring::compose("%1,%2,%3,%4", style.get("scale-x"),
-                                 style.get("scale-y"), style.get("spacing"),
-                                 style.get("angle")),
-
-          Glib::ustring::compose("%1,%2,%3,%4", style.get("border-style"),
-                                 style.get("outline"), style.get("shadow"),
-                                 style.get("alignment")),
-
-          Glib::ustring::compose("%1,%2,%3", style.get("margin-l"),
-                                 style.get("margin-r"), style.get("margin-v")),
-
-          style.get("encoding")));
+      file.write("Style: " + ASS::style_to_string(style) + "\n");
     }
 
     // End of block, empty line
@@ -475,67 +404,7 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
     return SubtitleTime::null();
   }
 
-  // Convert bool from SE to ASS
-  // ASS: false == 0, true == -1
-  Glib::ustring to_ass_bool(const Glib::ustring &value) {
-    return (value == "0") ? "0" : "-1";
-  }
 
-  // Convert bool from ASS to SE
-  // ASS: 0 == false, -1 == true
-  Glib::ustring from_ass_bool(const Glib::ustring &value) {
-    return (value == "0") ? "0" : "1";
-  }
-
-  // Convert color from SE to ASS
-  Glib::ustring to_ass_color(const Color &color) {
-    Color c(color);
-
-    unsigned int r = c.getR();
-    unsigned int g = c.getG();
-    unsigned int b = c.getB();
-    unsigned int a = 255 - c.getA();
-
-    unsigned int abgr = a << 24 | b << 16 | g << 8 | r << 0;
-
-    return build_message("&H%08X", abgr);
-  }
-
-  // Convert color from ASS to SE
-  Glib::ustring from_ass_color(const Glib::ustring &str) {
-    try {
-      Glib::ustring value = str;
-
-      if (value.size() > 2) {
-        if (value[0] == '&')
-          value.erase(0, 1);
-        if (value[0] == 'h' || value[0] == 'H')
-          value.erase(0, 1);
-        if (value[value.size()] == '&')
-          value.erase(value.size() - 1, 1);
-      }
-
-      long temp[4] = {0, 0, 0, 0};
-
-      for (int i = 0; i < 4; ++i) {
-        if (value.size() > 0) {
-          Glib::ustring tmp = value.substr(value.size() - 2, 2);
-
-          temp[i] = strtoll(tmp.c_str(), NULL, 16);
-
-          value = value.substr(0, value.size() - 2);
-        }
-      }
-      return Color(static_cast<unsigned int>(temp[0]),
-                   static_cast<unsigned int>(temp[1]),
-                   static_cast<unsigned int>(temp[2]),
-                   static_cast<unsigned int>(255 - temp[3]))
-          .to_string();
-    } catch (...) {
-    }
-
-    return Color(255, 255, 255, 255).to_string();
-  }
 
   // Convert time from SE to SSA
   Glib::ustring to_ssa_time(const SubtitleTime &t) {
@@ -543,24 +412,6 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
                          t.seconds(), (t.mseconds() + 5) / 10);
   }
 
-  bool get_screen_resolution(guint &width, guint &height) {
-    Glib::RefPtr<Gdk::Screen> screen =
-        Gdk::Display::get_default()->get_default_screen();
-    if (!screen)
-      return false;
-
-    width = screen->get_width();
-    height = screen->get_height();
-
-    return true;
-  }
-
-  bool has_play_res(const ScriptInfo &script) {
-    if (script.data.find("PlayResX") != script.data.end() ||
-        script.data.find("PlayResY") != script.data.end())
-      return true;
-    return false;
-  }
 };
 
 class AdvancedSubStationAlphaPlugin : public SubtitleFormat {
