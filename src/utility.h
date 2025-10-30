@@ -29,6 +29,10 @@
 #include <sstream>
 #include "debug.h"
 #include "i18n.h"
+#include "style.h"
+#include "color.h"
+#include "scriptinfo.h"
+
 
 // Check whether a gtkmm version equal to or greater than
 // major.minor.micro is present.
@@ -157,3 +161,34 @@ void set_transient_parent(Gtk::Window &window);
 Glib::ustring add_or_replace_extension(const Glib::ustring &filename,
                                        const Glib::ustring &extension);
 }  // namespace utility
+
+namespace ASS {
+  // Convert bool from ASS to SE
+  // ASS: 0 == false, -1 == true
+  Glib::ustring from_ass_bool(const Glib::ustring &value);
+
+  // Convert color from ASS to SE
+  Glib::ustring from_ass_color(const Glib::ustring &str);
+
+  // Convert bool from SE to ASS
+  // ASS: false == 0, true == -1
+  Glib::ustring to_ass_bool(const Glib::ustring &value);
+
+  // Convert color from SE to ASS
+  Glib::ustring to_ass_color(const Color &color);
+
+  // Returns style written as string, like for example this:
+  // Default,Sans,40,&H00FFFFFF,&H00FFFFFF,&H00FFFFFF,&H00FFFFFF,0,0,0,0,100,100,0,0,1,0,0,20,20,20,20,0
+  Glib::ustring style_to_string(const Style &style);
+
+  // Sets style from string (typically something like
+  // Default,Sans,18,&H00FFFFFF,&H0000FFFF,&H000078B4,&H00000000,0,0,0,0,100,100,0,0,1,0,0,2,20,20,20,0
+  // expects the first member of the vector of strings to be empty
+  void set_style_from_string(Style &style, std::vector<Glib::ustring> group);
+
+  // sets_default style from config (if no config is set, a hardcoded value set by styles.append is used
+  void set_default_style(Style &style);
+
+  // sets PlayResX and PlayResY for the current document (and write default values to config if they are not there yet)
+  void set_default_playres(ScriptInfo &scriptInfo);
+}

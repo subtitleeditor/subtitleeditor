@@ -47,6 +47,7 @@ class DialogStyleEditor : public Gtk::Dialog {
   void callback_radio_toggled(Gtk::RadioButton *w, const Glib::ustring &key);
   void callback_alignment_changed(Gtk::RadioButton *w, unsigned int num);
   void callback_style_selection_changed();
+  void callback_playres_changed(Gtk::SpinButton *w, const Glib::ustring &key);
 
  protected:
   Document *m_current_document;

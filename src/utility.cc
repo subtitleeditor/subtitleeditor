@@ -24,9 +24,11 @@
 #include <sstream>
 #include <string>
 #include "cfg.h"
+#include "scriptinfo.h"
 #include "subtitleeditorwindow.h"
-#include "subtitletime.h"
 #include "utility.h"
+#include "style.h"
+#include "color.h"
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -340,3 +342,172 @@ Glib::ustring add_or_replace_extension(const Glib::ustring &filename,
 }
 
 }  // namespace utility
+
+namespace ASS {
+  // Convert bool from ASS to SE
+  // ASS: 0 == false, -1 == true
+  Glib::ustring from_ass_bool(const Glib::ustring &value) {
+    return (value == "0") ? "0" : "1";
+  }
+
+  // Convert color from ASS to SE
+  Glib::ustring from_ass_color(const Glib::ustring &str) {
+    try {
+      Glib::ustring value = str;
+
+      if (value.size() > 2) {
+        if (value[0] == '&')
+          value.erase(0, 1);
+        if (value[0] == 'h' || value[0] == 'H')
+          value.erase(0, 1);
+        if (value[value.size()] == '&')
+          value.erase(value.size() - 1, 1);
+      }
+
+      long temp[4] = {0, 0, 0, 0};
+
+      for (int i = 0; i < 4; ++i) {
+        if (value.size() > 0) {
+          Glib::ustring tmp = value.substr(value.size() - 2, 2);
+
+          temp[i] = strtoll(tmp.c_str(), NULL, 16);
+
+          value = value.substr(0, value.size() - 2);
+        }
+      }
+      return Color(static_cast<unsigned int>(temp[0]),
+                   static_cast<unsigned int>(temp[1]),
+                   static_cast<unsigned int>(temp[2]),
+                   static_cast<unsigned int>(255 - temp[3]))
+          .to_string();
+    } catch (...) {
+    }
+
+    return Color(255, 255, 255, 255).to_string();
+  }
+
+  // Convert bool from SE to ASS
+  // ASS: false == 0, true == -1
+  Glib::ustring to_ass_bool(const Glib::ustring &value) {
+    return (value == "0") ? "0" : "-1";
+  }
+
+  // Convert color from SE to ASS
+  Glib::ustring to_ass_color(const Color &color) {
+    Color c(color);
+
+    unsigned int r = c.getR();
+    unsigned int g = c.getG();
+    unsigned int b = c.getB();
+    unsigned int a = 255 - c.getA();
+
+    unsigned int abgr = a << 24 | b << 16 | g << 8 | r << 0;
+
+    return build_message("&H%08X", abgr);
+  }
+
+  // Returns style written as string, like for example this:
+  // Default,Sans,40,&H00FFFFFF,&H00FFFFFF,&H00FFFFFF,&H00FFFFFF,0,0,0,0,100,100,0,0,1,0,0,20,20,20,20,0
+  Glib::ustring style_to_string(const Style &style) {
+    Glib::ustring style_string = Glib::ustring::compose(
+      "%1,%2,%3,%4,%5,%6,%7",
+      Glib::ustring::compose("%1,%2,%3", style.get("name"),
+                              style.get("font-name"),
+                              style.get("font-size")),
+      Glib::ustring::compose("%1,%2,%3,%4",
+                              to_ass_color(style.get("primary-color")),
+                              to_ass_color(style.get("secondary-color")),
+                              to_ass_color(style.get("outline-color")),
+                              to_ass_color(style.get("shadow-color"))),
+      Glib::ustring::compose("%1,%2,%3,%4", to_ass_bool(style.get("bold")),
+                              to_ass_bool(style.get("italic")),
+                              to_ass_bool(style.get("underline")),
+                              to_ass_bool(style.get("strikeout"))),
+      Glib::ustring::compose("%1,%2,%3,%4", style.get("scale-x"),
+                              style.get("scale-y"), style.get("spacing"),
+                              style.get("angle")),
+      Glib::ustring::compose("%1,%2,%3,%4", style.get("border-style"),
+                              style.get("outline"), style.get("shadow"),
+                              style.get("alignment")),
+      Glib::ustring::compose("%1,%2,%3", style.get("margin-l"),
+                              style.get("margin-r"), style.get("margin-v")),
+      style.get("encoding"));
+
+    return style_string;
+  }
+
+  // Sets style from string (typically something like
+  // Default,Sans,18,&H00FFFFFF,&H0000FFFF,&H000078B4,&H00000000,0,0,0,0,100,100,0,0,1,0,0,2,20,20,20,0
+  // expects the first member of the vector of strings to be empty
+  void set_style_from_string(Style &style, std::vector<Glib::ustring> group) {
+
+      style.set("name", group[1]);
+
+      style.set("font-name", group[2]);
+      style.set("font-size", group[3]);
+
+      style.set("primary-color", ASS::from_ass_color(group[4]));
+      style.set("secondary-color", ASS::from_ass_color(group[5]));
+      style.set("outline-color", ASS::from_ass_color(group[6]));
+      style.set("shadow-color", ASS::from_ass_color(group[7]));
+
+      style.set("bold", ASS::from_ass_bool(group[8]));
+      style.set("italic", ASS::from_ass_bool(group[9]));
+      style.set("underline", ASS::from_ass_bool(group[10]));
+      style.set("strikeout", ASS::from_ass_bool(group[11]));
+
+      style.set("scale-x", group[12]);
+      style.set("scale-y", group[13]);
+
+      style.set("spacing", group[14]);
+      style.set("angle", group[15]);
+
+      style.set("border-style", group[16]);
+      style.set("outline", group[17]);
+      style.set("shadow", group[18]);
+
+      style.set("alignment", group[19]);
+
+      style.set("margin-l", group[20]);
+      style.set("margin-r", group[21]);
+      style.set("margin-v", group[22]);
+
+      style.set("encoding", group[23]);
+    }
+
+  // Sets_default style from config (if no config is set, a hardcoded value set by styles.append is used
+  void set_default_style(Style &style) {
+    if (cfg::has_key("AdvancedSubStationAlpha", "default-style") == true) {
+      Glib::ustring default_style =
+            cfg::get_string("AdvancedSubStationAlpha", "default-style");
+      // when we read an ASS file, the group we get starts with empty item, so add it here
+      default_style = "," + default_style;
+      std::vector<Glib::ustring> group = Glib::Regex::split_simple(",", default_style);
+      ASS::set_style_from_string(style, group);
+    }
+  }
+
+  // sets PlayResX and PlayResY for the current document (and write default values to config if they are not there yet)
+  void set_default_playres(ScriptInfo &scriptInfo) {
+    Glib::ustring play_res_x;
+    Glib::ustring play_res_y;
+
+    if (cfg::has_key("AdvancedSubStationAlpha", "default-playres-x") == false) {
+        cfg::set_string("AdvancedSubStationAlpha", "default-playres-x",
+                        "1920");
+        play_res_x = "1920";
+    } else {
+        play_res_x = cfg::get_string("AdvancedSubStationAlpha", "default-playres-x");
+    }
+
+    if (cfg::has_key("AdvancedSubStationAlpha", "default-playres-y") == false) {
+        cfg::set_string("AdvancedSubStationAlpha", "default-playres-y",
+                        "1080");
+        play_res_y = "1080";
+    } else {
+        play_res_y = cfg::get_string("AdvancedSubStationAlpha", "default-playres-y");
+    }
+    scriptInfo.data["PlayResY"] = play_res_y;
+    scriptInfo.data["PlayResX"] = play_res_x;
+  }
+}
