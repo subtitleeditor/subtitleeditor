@@ -110,9 +110,10 @@ void Style::set(const Glib::ustring &name, const Glib::ustring &value) {
   else if (name == "encoding")
     (*m_iter)[column.encoding] = utility::string_to_int(value);
   else
-    std::cerr << "Style::set " << name << " UNKNOW" << std::endl;
+    std::cerr << "Style::set " << name << " UNKNOWN" << std::endl;
 
   m_document->emit_signal("style-changed");
+
 }
 
 Glib::ustring Style::get(const Glib::ustring &name) const {
@@ -165,7 +166,7 @@ Glib::ustring Style::get(const Glib::ustring &name) const {
   else if (name == "encoding")
     return to_string((*m_iter)[column.encoding]);
   else
-    std::cerr << "Style::get: " << name << " UNKNOW!" << std::endl;
+    std::cerr << "Style::get: " << name << " UNKNOWN!" << std::endl;
 
   return Glib::ustring();
 }
