@@ -51,23 +51,33 @@
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
   </object>
+  <object class="GtkAdjustment" id="adjustment-spin-playres-x">
+    <property name="lower">0</property>
+    <property name="upper">9999</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">100</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment-spin-playres-y">
+    <property name="lower">0</property>
+    <property name="upper">9999</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">100</property>
+  </object>
   <object class="GtkImage" id="image-clone">
     <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="hexpand">True</property>
-    <property name="icon_name">gtk-copy</property>
+    <property name="stock">gtk-copy</property>
   </object>
   <object class="GtkImage" id="image-delete">
     <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="hexpand">True</property>
     <property name="stock">gtk-remove</property>
   </object>
   <object class="GtkImage" id="image-new">
     <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="hexpand">True</property>
     <property name="stock">gtk-add</property>
+  </object>
+  <object class="GtkImage" id="image-default">
+    <property name="visible">True</property>
+    <property name="stock">gtk-home</property>
   </object>
   <object class="GtkDialog" id="dialog-style-editor">
     <property name="can_focus">False</property>
@@ -87,7 +97,7 @@
             <property name="baseline_position">bottom</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="closebutton1">
+              <object class="GtkButton" id="closebutton">
                 <property name="label">gtk-close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -95,6 +105,7 @@
                 <property name="receives_default">False</property>
                 <property name="valign">center</property>
                 <property name="use_stock">True</property>
+                <property name="tooltip_text" translatable="yes">Close the dialog (changes to styles are saved on the fly)</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -136,6 +147,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
+                        <property name="tooltip_text" translatable="yes">New Style</property>
                         <property name="image">image-new</property>
                       </object>
                       <packing>
@@ -148,7 +160,7 @@
                       <object class="GtkButton" id="button-delete-style">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="receives_default">True</property>
+                        <property name="tooltip_text" translatable="yes">Delete Style</property>
                         <property name="image">image-delete</property>
                       </object>
                       <packing>
@@ -161,15 +173,26 @@
                       <object class="GtkButton" id="button-copy-style">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="receives_default">True</property>
-                        <property name="hexpand">True</property>
-                        <property name="resize_mode">queue</property>
+                        <property name="tooltip_text" translatable="yes">Duplicate Style</property>
                         <property name="image">image-clone</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button-set-default">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Set as Default ASS Style</property>
+                        <property name="image">image-default</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
                       </packing>
                     </child>
                   </object>
@@ -218,6 +241,107 @@
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
+                  <object class="GtkBox" id="box-playres">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkLabel" id="label-playres">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">0</property>
+                        <property name="label" translatable="yes">Video Resolution</property>
+                         <property name="tooltip_text" translatable="yes">If it is disabled, it means your document has not set it. You can add it (recommended) by adding a new style.</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkAlignment" id="alignment-playres">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkGrid" id="grid-playres">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_left">12</property>
+                            <property name="row_spacing">6</property>
+                            <property name="column_spacing">6</property>
+                            <child>
+                              <object class="GtkLabel" id="label-playres-x">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="halign">end</property>
+                                <property name="xalign">1</property>
+                                <property name="label" translatable="yes">PlayResX:</property>
+                                <property name="tooltip_text" translatable="yes">Reference width for subtitle positioning and scaling. If it is disabled, it means your document has not set it. You can add it (recommended) by adding a new style.</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">0</property>
+                                <property name="top_attach">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label-playres-y">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="halign">end</property>
+                                <property name="xalign">1</property>
+                                <property name="label" translatable="yes">PlayResY:</property>
+                                <property name="tooltip_text" translatable="yes">Reference height for subtitle positioning and scaling. If it is disabled, it means your document has not set it. You can add it (recommended) by adding a new style.</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">0</property>
+                                <property name="top_attach">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkSpinButton" id="spin-playres-x">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="adjustment">adjustment-spin-playres-x</property>
+                                <property name="tooltip_text" translatable="yes">Reference width for subtitle positioning and scaling. If it is disabled, it means your document has not set it. You can add it (recommended) by adding a new style.</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="top_attach">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkSpinButton" id="spin-playres-y">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="tooltip_text" translatable="yes">Reference height for subtitle positioning and scaling. If it is disabled, it means your document has not set it. You can add it (recommended) by adding a new style.</property>
+                                <property name="adjustment">adjustment-spin-playres-y</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="top_attach">1</property>
+                              </packing>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
                   <object class="GtkBox" id="box-fonts">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
@@ -228,6 +352,7 @@
                         <property name="can_focus">False</property>
                         <property name="xalign">0</property>
                         <property name="label" translatable="yes">Font</property>
+                        <property name="tooltip_text" translatable="yes">Change font properties</property>
                         <attributes>
                           <attribute name="weight" value="bold"/>
                         </attributes>
@@ -258,6 +383,7 @@
                                 <property name="resize_mode">queue</property>
                                 <property name="font">Sans 12</property>
                                 <property name="preview_text"/>
+                                <property name="tooltip_text" translatable="yes">Change font and its size</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -277,6 +403,7 @@
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">True</property>
                                     <property name="use_stock">True</property>
+                                    <property name="tooltip_text" translatable="yes">Toggle bold</property>
                                   </object>
                                   <packing>
                                     <property name="expand">True</property>
@@ -291,6 +418,7 @@
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">True</property>
                                     <property name="use_stock">True</property>
+                                    <property name="tooltip_text" translatable="yes">Toggle italic</property>
                                   </object>
                                   <packing>
                                     <property name="expand">True</property>
@@ -305,6 +433,7 @@
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">True</property>
                                     <property name="use_stock">True</property>
+                                    <property name="tooltip_text" translatable="yes">Toggle underline</property>
                                   </object>
                                   <packing>
                                     <property name="expand">True</property>
@@ -319,6 +448,7 @@
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">True</property>
                                     <property name="use_stock">True</property>
+                                    <property name="tooltip_text" translatable="yes">Toggle strikethrough</property>
                                   </object>
                                   <packing>
                                     <property name="expand">True</property>
@@ -360,11 +490,12 @@
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
-                          <object class="GtkLabel" id="label3">
+                          <object class="GtkLabel" id="label-appearance">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="xalign">0</property>
                             <property name="label" translatable="yes">Appearance</property>
+                            <property name="tooltip_text" translatable="yes">Set subtitle color and background</property>
                             <attributes>
                               <attribute name="weight" value="bold"/>
                             </attributes>
@@ -395,6 +526,7 @@
                                     <property name="valign">baseline</property>
                                     <property name="xalign">0</property>
                                     <property name="label" translatable="yes">Colors</property>
+                                    <property name="tooltip_text" translatable="yes">Set subtitle colors</property>
                                     <property name="ellipsize">start</property>
                                     <attributes>
                                       <attribute name="weight" value="bold"/>
@@ -414,12 +546,13 @@
                                     <property name="row_spacing">6</property>
                                     <property name="column_spacing">6</property>
                                     <child>
-                                      <object class="GtkLabel" id="label5">
+                                      <object class="GtkLabel" id="label-primary-color">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">end</property>
                                         <property name="xalign">1</property>
                                         <property name="label" translatable="yes">Primary:</property>
+                                        <property name="tooltip_text" translatable="yes">Set font color</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -427,12 +560,13 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="label6">
+                                      <object class="GtkLabel" id="label-secondary-color">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">end</property>
                                         <property name="xalign">1</property>
                                         <property name="label" translatable="yes">Secondary:</property>
+                                        <property name="tooltip_text" translatable="yes">Set secondary font color (only used for some karaoke effects)</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -440,12 +574,13 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="label7">
+                                      <object class="GtkLabel" id="label-outline-color">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">end</property>
                                         <property name="xalign">1</property>
                                         <property name="label" translatable="yes">Outline:</property>
+                                        <property name="tooltip_text" translatable="yes">Set outline color</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -453,12 +588,13 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="label8">
+                                      <object class="GtkLabel" id="label-shadow-color">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">end</property>
                                         <property name="xalign">1</property>
                                         <property name="label" translatable="yes">Shadow:</property>
+                                        <property name="tooltip_text" translatable="yes">Set shadow color</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -472,6 +608,7 @@
                                         <property name="receives_default">True</property>
                                         <property name="hexpand">True</property>
                                         <property name="use_alpha">True</property>
+                                        <property name="tooltip_text" translatable="yes">Set font color</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
@@ -485,6 +622,7 @@
                                         <property name="receives_default">True</property>
                                         <property name="hexpand">True</property>
                                         <property name="use_alpha">True</property>
+                                        <property name="tooltip_text" translatable="yes">Set secondary font color (only used for some karaoke effects)</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
@@ -498,6 +636,7 @@
                                         <property name="receives_default">True</property>
                                         <property name="hexpand">True</property>
                                         <property name="use_alpha">True</property>
+                                        <property name="tooltip_text" translatable="yes">Set outline color</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
@@ -511,6 +650,7 @@
                                         <property name="receives_default">True</property>
                                         <property name="hexpand">True</property>
                                         <property name="use_alpha">True</property>
+                                        <property name="tooltip_text" translatable="yes">Set shadow color</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
@@ -529,7 +669,8 @@
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="xalign">0</property>
-                                    <property name="label" translatable="yes">Border</property>
+                                    <property name="label" translatable="yes">Background</property>
+                                    <property name="tooltip_text" translatable="yes">Set background</property>
                                     <attributes>
                                       <attribute name="weight" value="bold"/>
                                     </attributes>
@@ -559,6 +700,7 @@
                                         <property name="xalign">0</property>
                                         <property name="active">True</property>
                                         <property name="draw_indicator">True</property>
+                                        <property name="tooltip_text" translatable="yes">Letters will have an outline and a shadow in the colors set by Outline and Shadow (if Outline Size and Shadow Size are non-zero respectively)</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -567,8 +709,8 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkRadioButton" id="radio-opaque-box">
-                                        <property name="label" translatable="yes">Opaque Box</property>
+                                      <object class="GtkRadioButton" id="radio-box-per-line">
+                                        <property name="label" translatable="yes">Box per Line</property>
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="receives_default">False</property>
@@ -577,39 +719,60 @@
                                         <property name="active">True</property>
                                         <property name="draw_indicator">True</property>
                                         <property name="group">radio-outline</property>
+                                        <property name="tooltip_text" translatable="yes">There will be rectangular boxes drawn for each line separately with the Color set by Outline (Outline Size sets the margin of the boxes and non-zero Shadow Size will draw shadow boxes)</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
-                                        <property name="top_attach">3</property>
+                                        <property name="top_attach">1</property>
                                         <property name="width">2</property>
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="label4">
+                                     <object class="GtkRadioButton" id="radio-rectangular-box">
+                                        <property name="label" translatable="yes">Rectangular Box</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">False</property>
+                                        <property name="halign">start</property>
+                                        <property name="xalign">0</property>
+                                        <property name="draw_indicator">True</property>
+                                        <property name="group">radio-outline</property>
+                                        <property name="tooltip_text" translatable="yes">There will be a rectangular box drawn for the whole subtitle with the Color set by Shadow . Only players based on libass support this. That is all players on Linux, but Windows players using legacy VSFilter not based on libass might struggle.</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left_attach">0</property>
+                                        <property name="top_attach">2</property>
+                                        <property name="width">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkLabel" id="size-outline">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">start</property>
                                         <property name="margin_left">12</property>
                                         <property name="xalign">1</property>
-                                        <property name="label" translatable="yes">Size:</property>
+                                        <property name="label" translatable="yes">Outline size:</property>
+                                        <property name="tooltip_text" translatable="yes">Set the outline size</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
-                                        <property name="top_attach">1</property>
+                                        <property name="top_attach">3</property>
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="label9">
+                                      <object class="GtkLabel" id="size-shadow">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">end</property>
                                         <property name="margin_left">12</property>
                                         <property name="xalign">1</property>
-                                        <property name="label" translatable="yes">Distance:</property>
+                                        <property name="label" translatable="yes">Shadow size:</property>
+                                        <property name="tooltip_text" translatable="yes">Set the shadow size</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
-                                        <property name="top_attach">2</property>
+                                        <property name="top_attach">4</property>
                                       </packing>
                                     </child>
                                     <child>
@@ -617,10 +780,11 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="adjustment">adjustment-spin-outline</property>
+                                        <property name="tooltip_text" translatable="yes">Set the outline size</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
-                                        <property name="top_attach">1</property>
+                                        <property name="top_attach">3</property>
                                       </packing>
                                     </child>
                                     <child>
@@ -628,10 +792,11 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="adjustment">adjustment-spin-shadow</property>
+                                        <property name="tooltip_text" translatable="yes">Set the shadow size</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
-                                        <property name="top_attach">2</property>
+                                        <property name="top_attach">4</property>
                                       </packing>
                                     </child>
                                   </object>
@@ -679,11 +844,12 @@
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
-                          <object class="GtkLabel" id="label10">
+                          <object class="GtkLabel" id="label-transformation-position">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="xalign">0</property>
-                            <property name="label" translatable="yes">Transformation</property>
+                            <property name="label" translatable="yes">Transformatio&amp;Position</property>
+                            <property name="tooltip_text" translatable="yes">Set subtitle position and effects</property>
                             <attributes>
                               <attribute name="weight" value="bold"/>
                             </attributes>
@@ -707,11 +873,12 @@
                                 <property name="orientation">vertical</property>
                                 <property name="spacing">6</property>
                                 <child>
-                                  <object class="GtkLabel" id="label-font">
+                                  <object class="GtkLabel" id="label-font-effects">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="xalign">0</property>
                                     <property name="label" translatable="yes">Font</property>
+                                    <property name="tooltip_text" translatable="yes">Font effects</property>
                                     <attributes>
                                       <attribute name="weight" value="bold"/>
                                     </attributes>
@@ -723,7 +890,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkGrid" id="grid-colors1">
+                                  <object class="GtkGrid" id="grid-effects">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="halign">start</property>
@@ -732,12 +899,13 @@
                                     <property name="column_spacing">6</property>
                                     <property name="row_homogeneous">True</property>
                                     <child>
-                                      <object class="GtkLabel" id="label11">
+                                      <object class="GtkLabel" id="label-angle">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">end</property>
                                         <property name="xalign">1</property>
                                         <property name="label" translatable="yes">Angle:</property>
+                                        <property name="tooltip_text" translatable="yes">Set rotation of the subtitle (breaks Rectangular box background)</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -745,13 +913,14 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="label12">
+                                      <object class="GtkLabel" id="label-spacing">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">end</property>
                                         <property name="valign">baseline</property>
                                         <property name="xalign">1</property>
                                         <property name="label" translatable="yes">Spacing:</property>
+                                        <property name="tooltip_text" translatable="yes">Set letter spacing</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -759,12 +928,13 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="label13">
+                                      <object class="GtkLabel" id="label-scale-x">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">end</property>
                                         <property name="xalign">1</property>
                                         <property name="label" translatable="yes">Scale X:</property>
+                                        <property name="tooltip_text" translatable="yes">Set X scale, values under 100 will squeeze letters horizontally, values above 100 will expand letters horizontally</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -772,12 +942,13 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="label14">
+                                      <object class="GtkLabel" id="label-scale-y">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">end</property>
                                         <property name="xalign">1</property>
                                         <property name="label" translatable="yes">Scale Y:</property>
+                                        <property name="tooltip_text" translatable="yes">Set Y scale, values under 100 will squeeze letters vertically, values above 100 will prolong letters vertically</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -790,6 +961,7 @@
                                         <property name="can_focus">True</property>
                                         <property name="text" translatable="yes">1</property>
                                         <property name="adjustment">adjustment-spin-angle</property>
+                                        <property name="tooltip_text" translatable="yes">Set rotation of the subtitle (breaks Rectangular box background)</property>
                                         <property name="value">1</property>
                                       </object>
                                       <packing>
@@ -803,6 +975,7 @@
                                         <property name="can_focus">True</property>
                                         <property name="text" translatable="yes">1</property>
                                         <property name="adjustment">adjustment-spin-spacing</property>
+                                        <property name="tooltip_text" translatable="yes">Set letter spacing</property>
                                         <property name="value">1</property>
                                       </object>
                                       <packing>
@@ -817,6 +990,7 @@
                                         <property name="text" translatable="yes">1</property>
                                         <property name="adjustment">adjustment-spin-scale-x</property>
                                         <property name="value">1</property>
+                                        <property name="tooltip_text" translatable="yes">Set X scale, values under 100 will squeeze letters horizontally, values above 100 will expand letters horizontally</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
@@ -830,6 +1004,7 @@
                                         <property name="text" translatable="yes">1</property>
                                         <property name="adjustment">adjustment-spin-scale-y</property>
                                         <property name="value">1</property>
+                                        <property name="tooltip_text" translatable="yes">Set Y scale, values under 100 will squeeze letters vertically, values above 100 will prolong letters vertically</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
@@ -844,11 +1019,12 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkLabel" id="label-border1">
+                                  <object class="GtkLabel" id="label-margins">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="xalign">0</property>
                                     <property name="label" translatable="yes">Margins</property>
+                                    <property name="tooltip_text" translatable="yes">Set margins</property>
                                     <attributes>
                                       <attribute name="weight" value="bold"/>
                                     </attributes>
@@ -860,7 +1036,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkGrid" id="grid-border1">
+                                  <object class="GtkGrid" id="grid-margin">
                                     <property name="name">12</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
@@ -869,12 +1045,13 @@
                                     <property name="row_spacing">6</property>
                                     <property name="column_spacing">6</property>
                                     <child>
-                                      <object class="GtkLabel" id="label15">
+                                      <object class="GtkLabel" id="label-margin-right">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">end</property>
                                         <property name="xalign">1</property>
                                         <property name="label" translatable="yes">Right:</property>
+                                        <property name="tooltip_text" translatable="yes">Size of the right margin (subtitles will be offset by this amount from the right edge of the video)</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -882,12 +1059,13 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="label16">
+                                      <object class="GtkLabel" id="label-vertical">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">end</property>
                                         <property name="xalign">1</property>
                                         <property name="label" translatable="yes">Vertical:</property>
+                                        <property name="tooltip_text" translatable="yes">Size of the vertical margin (subtitles will be offset by this amount from the top or bottom edge of the video depending on Alignment)</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -901,6 +1079,7 @@
                                         <property name="text" translatable="yes">1</property>
                                         <property name="adjustment">adjustment-spin-margin-r</property>
                                         <property name="value">1</property>
+                                        <property name="tooltip_text" translatable="yes">Size of the right margin (subtitles will be offset by this amount from the right edge of the video)</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
@@ -913,6 +1092,7 @@
                                         <property name="can_focus">True</property>
                                         <property name="text" translatable="yes">0</property>
                                         <property name="adjustment">adjustment-spin-margin-v</property>
+                                        <property name="tooltip_text" translatable="yes">Size of the vertical margin (subtitles will be offset by this amount from the top or bottom edge of the video depending on Alignment)</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
@@ -920,12 +1100,13 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="label17">
+                                      <object class="GtkLabel" id="label-left">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="halign">end</property>
                                         <property name="xalign">1</property>
                                         <property name="label" translatable="yes">Left:</property>
+                                        <property name="tooltip_text" translatable="yes">Size of the left margin (subtitles will be offset by this amount from the left edge of the video)</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -939,6 +1120,7 @@
                                         <property name="text" translatable="yes">1</property>
                                         <property name="adjustment">adjustment-spin-margin-l</property>
                                         <property name="value">1</property>
+                                        <property name="tooltip_text" translatable="yes">Size of the left margin (subtitles will be offset by this amount from the left edge of the video)</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">1</property>
@@ -953,11 +1135,12 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkLabel" id="label-border2">
+                                  <object class="GtkLabel" id="label-alignment">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="xalign">0</property>
                                     <property name="label" translatable="yes">Alignment</property>
+                                    <property name="tooltip_text" translatable="yes">Set alignment of the text and default position of the subtitle</property>
                                     <attributes>
                                       <attribute name="weight" value="bold"/>
                                     </attributes>
@@ -986,9 +1169,7 @@
                                         <property name="xalign">0.5</property>
                                         <property name="active">True</property>
                                         <property name="draw_indicator">False</property>
-                                        <child>
-                                          <placeholder/>
-                                        </child>
+                                        <property name="tooltip_text" translatable="yes">Position left bottom corner, text aligns to the left</property>
                                       </object>
                                       <packing>
                                         <property name="left_attach">0</property>
@@ -1004,6 +1185,7 @@
                                         <property name="active">True</property>
                                         <property name="draw_indicator">False</property>
                                         <property name="group">button-alignment-1</property>
+                                        <property name="tooltip_text" translatable="yes">Position bottom centre, text aligns to the centre</property>
                                         <child>
                                           <object class="GtkImage" id="image-bottom">
                                             <property name="visible">True</property>
@@ -1026,6 +1208,7 @@
                                         <property name="xalign">0.5</property>
                                         <property name="draw_indicator">False</property>
                                         <property name="group">button-alignment-1</property>
+                                        <property name="tooltip_text" translatable="yes">Position right bottom corner, text aligns to the right</property>
                                         <child>
                                           <placeholder/>
                                         </child>
@@ -1043,6 +1226,8 @@
                                         <property name="xalign">0.5</property>
                                         <property name="draw_indicator">False</property>
                                         <property name="group">button-alignment-1</property>
+                                        <property name="tooltip_text" translatable="yes">Position left centre, text aligns to the left</property>
+
                                         <child>
                                           <object class="GtkImage" id="image-left">
                                             <property name="visible">True</property>
@@ -1064,10 +1249,8 @@
                                         <property name="xalign">0.5</property>
                                         <property name="draw_indicator">False</property>
                                         <property name="group">button-alignment-1</property>
-                                        <child>
-                                          <placeholder/>
-                                        </child>
-                                      </object>
+                                        <property name="tooltip_text" translatable="yes">Position centre, text aligns to the centre</property>
+                                        </object>
                                       <packing>
                                         <property name="left_attach">1</property>
                                         <property name="top_attach">1</property>
@@ -1081,6 +1264,7 @@
                                         <property name="xalign">0.5</property>
                                         <property name="draw_indicator">False</property>
                                         <property name="group">button-alignment-1</property>
+                                        <property name="tooltip_text" translatable="yes">Position right centre, text aligns to the right</property>
                                         <child>
                                           <object class="GtkImage" id="image-back">
                                             <property name="visible">True</property>
@@ -1103,6 +1287,8 @@
                                         <property name="xalign">0.5</property>
                                         <property name="draw_indicator">False</property>
                                         <property name="group">button-alignment-1</property>
+                                        <property name="tooltip_text" translatable="yes">Position left top corner, text aligns to the left</property>
+
                                         <child>
                                           <placeholder/>
                                         </child>
@@ -1120,6 +1306,7 @@
                                         <property name="xalign">0.5</property>
                                         <property name="draw_indicator">False</property>
                                         <property name="group">button-alignment-1</property>
+                                        <property name="tooltip_text" translatable="yes">Position top centre, text aligns to the centre</property>
                                         <child>
                                           <object class="GtkImage" id="image-top">
                                             <property name="visible">True</property>
@@ -1142,6 +1329,7 @@
                                         <property name="xalign">0.5</property>
                                         <property name="draw_indicator">False</property>
                                         <property name="group">button-alignment-1</property>
+                                        <property name="tooltip_text" translatable="yes">Position right top corner, text aligns to the right</property>
                                         <child>
                                           <placeholder/>
                                         </child>
@@ -1198,7 +1386,7 @@
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-7">closebutton1</action-widget>
+      <action-widget response="-7">closebutton</action-widget>
     </action-widgets>
   </object>
 </interface>
