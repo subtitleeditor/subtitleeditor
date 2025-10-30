@@ -18,13 +18,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+#include "styleeditor.h"
+
 #include <color.h>
 #include <documents.h>
 #include <extension/action.h>
 #include <gtkmm_utility.h>
 #include <utility.h>
+
 #include <memory>
-#include "styleeditor.h"
 
 class ColumnNameRecorder : public Gtk::TreeModel::ColumnRecord {
  public:
@@ -176,10 +178,10 @@ void DialogStyleEditor::callback_button_clicked(Gtk::Button *,
     ColumnNameRecorder column;
     Gtk::TreeIter iter = m_liststore->append();
 
-    (*iter)[column.name] = "Undefinied";
+    (*iter)[column.name] = "Undefined";
 
     Style style = m_current_document->styles().append();
-    style.set("name", "Undefinied");
+    style.set("name", "Undefined");
   } else if (action == "delete-style") {
     if (m_current_style) {
       m_current_document->styles().remove(m_current_style);

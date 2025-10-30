@@ -21,9 +21,11 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <sigc++/sigc++.h>
+
 #include <map>
 #include <string>
 #include <vector>
+
 #include "commandsystem.h"
 #include "scriptinfo.h"
 #include "stylemodel.h"
@@ -49,7 +51,7 @@ class Document : protected CommandSystem {
       const Glib::ustring &uri, const Glib::ustring &charset = Glib::ustring());
 
   // Constructor
-  // The default values of the document are sets from the user config.
+  // The default values of the document are set from the user config.
   Document();
 
   // Constructor by copy
@@ -212,7 +214,7 @@ class Document : protected CommandSystem {
   //  more styles have been changed.
   // "style-deleted"
   //  one or more styles have been removed.
-  // "style-insered"
+  // "style-inserted"
   //  one or more styles have been created.
   sigc::signal<void> &get_signal(const std::string &name);
 
@@ -263,7 +265,7 @@ class Document : protected CommandSystem {
   // Styles interface to modify the style model (do not used directly the
   // StyleModel)
   Styles m_styles;
-  // ScriptInfo attached to the docment
+  // ScriptInfo attached to the document
   ScriptInfo m_scriptInfo;
   // StyleModel attached to the document
   Glib::RefPtr<StyleModel> m_styleModel;
