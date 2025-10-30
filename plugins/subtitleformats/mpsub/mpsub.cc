@@ -1,7 +1,7 @@
 // subtitleeditor -- a tool to create or edit subtitle
 //
-// https://kitone.github.io/subtitleeditor/
-// https://github.com/kitone/subtitleeditor/
+// https://subtitleeditor.github.io/subtitleeditor/
+// https://github.com/subtitleeditor/subtitleeditor/
 //
 // Copyright @ 2005-2018, kitone
 //
@@ -92,7 +92,7 @@ class MPsub : public SubtitleFormatIO {
     file.write(Glib::ustring::compose(
         "FORMAT=TIME\n"
         "# This script was created by subtitleeditor (%1)\n"
-        "# https://kitone.github.io/subtitleeditor/\n"
+        "# https://subtitleeditor.github.io/subtitleeditor/\n"
         "\n",
         Glib::ustring(VERSION)));
 

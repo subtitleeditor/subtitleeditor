@@ -1,7 +1,7 @@
 // subtitleeditor -- a tool to create or edit subtitle
 //
-// https://kitone.github.io/subtitleeditor/
-// https://github.com/kitone/subtitleeditor/
+// https://subtitleeditor.github.io/subtitleeditor/
+// https://github.com/subtitleeditor/subtitleeditor/
 //
 // Copyright @ 2005-2018, kitone
 //
@@ -86,7 +86,7 @@ class AboutPlugin : public Action {
     dialog.set_translator_credits(_("translator-credits"));
 
     // website
-    dialog.set_website("https://kitone.github.io/subtitleeditor/");
+    dialog.set_website("https://subtitleeditor.github.io/subtitleeditor/");
 
     // license
     Glib::ustring license = R"(
