@@ -100,7 +100,7 @@ class StylizeSelectedSubtitlesPlugin : public Action {
   void on_document_signals(Document *, const std::string &signal) {
     if (signal == "style-changed")
       rebuild_styles_menu();
-    else if (signal == "style-insered")
+    else if (signal == "style-inserted")
       rebuild_styles_menu();
     else if (signal == "style-removed")
       rebuild_styles_menu();

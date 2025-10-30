@@ -18,8 +18,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-#include "document.h"
 #include "styles.h"
+
+#include "document.h"
 #include "utility.h"
 
 Styles::Styles(Document &doc) : m_document(doc) {
@@ -52,7 +53,7 @@ Style Styles::last() {
 
 Style Styles::append() {
   Style style(&m_document, m_document.get_style_model()->append());
-  m_document.emit_signal("style-insered");
+  m_document.emit_signal("style-inserted");
   return style;
 }
 
