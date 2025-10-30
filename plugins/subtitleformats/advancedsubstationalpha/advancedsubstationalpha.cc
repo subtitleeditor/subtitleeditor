@@ -525,7 +525,11 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
           value = value.substr(0, value.size() - 2);
         }
       }
-      return Color(temp[0], temp[1], temp[2], 255 - temp[3]).to_string();
+      return Color(static_cast<unsigned int>(temp[0]),
+                   static_cast<unsigned int>(temp[1]),
+                   static_cast<unsigned int>(temp[2]),
+                   static_cast<unsigned int>(255 - temp[3]))
+          .to_string();
     } catch (...) {
     }
 
