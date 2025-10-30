@@ -68,17 +68,28 @@ class DCSubtitle : public SubtitleFormatIO {
       // xml_dcsubtitle->add_child("SubtitleID");
       // element MovieTitle
       // xmlpp::Element* xml_movietitle =
-      xml_dcsubtitle->add_child("MovieTitle");
+
+      #ifdef HAVE_LIBXMLXX_3
+      xml_dcsubtitle->add_child_element("MovieTitle");
       // element ReelNumber
+      xmlpp::Element *xml_reelnumber = xml_dcsubtitle->add_child_element("ReelNumber");
+      xml_reelnumber->set_first_child_text("1");
+      #else
+      xml_dcsubtitle->add_child("MovieTitle");
       xmlpp::Element *xml_reelnumber = xml_dcsubtitle->add_child("ReelNumber");
       xml_reelnumber->set_child_text("1");
+      #endif
       // element Language
       // xmlpp::Element* xml_language = xml_dcsubtitle->add_child("Language");
       // element LoadFont
       // xmlpp::Element* xml_loadfont = xml_dcsubtitle->add_child("LoadFont");
 
       // Font
+      #ifdef HAVE_LIBXMLXX_3
+      xmlpp::Element *xml_font = xml_dcsubtitle->add_child_element("Font");
+      #else
       xmlpp::Element *xml_font = xml_dcsubtitle->add_child("Font");
+      #endif
       {
         // attribute Id
         // attribute Color
@@ -156,7 +167,11 @@ class DCSubtitle : public SubtitleFormatIO {
       // attribute VPosition
 
       // text (child)
+      #ifdef HAVE_LIBXMLXX_3
+      Glib::ustring text = xml_text->get_first_child_text()->get_content();
+      #else
       Glib::ustring text = xml_text->get_child_text()->get_content();
+      #endif
 
       if (!subtitle.get_text().empty())  // Add break line if needs
         text = "\n" + text;
@@ -172,7 +187,11 @@ class DCSubtitle : public SubtitleFormatIO {
     Glib::ustring FadeUpTime = "0";
     Glib::ustring FadeDownTime = "0";
 
+    #ifdef HAVE_LIBXMLXX_3
+    xmlpp::Element *xml_subtitle = xml_root->add_child_element("Subtitle");
+    #else
     xmlpp::Element *xml_subtitle = xml_root->add_child("Subtitle");
+    #endif
 
     xml_subtitle->set_attribute("SpotNumber", SpotNumber);
     xml_subtitle->set_attribute("TimeIn", TimeIn);
@@ -190,14 +209,22 @@ class DCSubtitle : public SubtitleFormatIO {
       Glib::ustring VAlign = "bottom";
       Glib::ustring VPosition = "0.0";  // FIXME ?
 
+      #ifdef HAVE_LIBXMLXX_3
+      xmlpp::Element *xml_text = xml_subtitle->add_child_element("Text");
+      #else
       xmlpp::Element *xml_text = xml_subtitle->add_child("Text");
+      #endif
 
       xml_text->set_attribute("Direction", Direction);
       xml_text->set_attribute("HAlign", HAlign);
       xml_text->set_attribute("HPosition", HPosition);
       xml_text->set_attribute("VAlign", VAlign);
       xml_text->set_attribute("VPosition", VPosition);
+      #ifdef HAVE_LIBXMLXX_3
+      xml_text->set_first_child_text(line);
+      #else
       xml_text->set_child_text(line);
+      #endif
     }
   }
 
