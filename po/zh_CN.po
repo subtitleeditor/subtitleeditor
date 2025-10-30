@@ -1850,25 +1850,25 @@ msgid "Autodetect"
 msgstr "自动检测"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:103
-msgid "Pulse - PulseAudio Sound Server"
+msgid "Pulse — PulseAudio Sound Server"
 msgstr ""
 
 #: ../plugins/actions/preferences/videoplayerpage.h:106
-msgid "ALSA - Advanced Linux Sound Architecture"
-msgstr "ALSA - 先进的Linux 声音架构"
+msgid "ALSA — Advanced Linux Sound Architecture"
+msgstr "ALSA — 先进的Linux 声音架构"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:107
-msgid "ESD - Enlightenment Sound Daemon"
-msgstr "ESD - Enlightenment 声音守护进程"
+msgid "ESD — Enlightenment Sound Daemon"
+msgstr "ESD — Enlightenment 声音守护进程"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:109
-msgid "OSS - Open Sound System"
-msgstr "OSS - 开放声音系统"
+msgid "OSS — Open Sound System"
+msgstr "OSS — 开放声音系统"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:110
 #: ../plugins/actions/preferences/videoplayerpage.h:127
-msgid "SDL - Simple DirectMedia Layer"
-msgstr "SDL - 简单 DirectMedia 层"
+msgid "SDL — Simple DirectMedia Layer"
+msgstr "SDL — 简单 DirectMedia 层"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:112
 #: ../plugins/actions/preferences/videoplayerpage.h:129
@@ -2277,7 +2277,7 @@ msgid "Stack Subtitles only works on a continuous selection."
 msgstr ""
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:1
-msgid "Subtitle Editor - Style Editor"
+msgid "Subtitle Editor — Style Editor"
 msgstr "字幕编辑器-样式编辑器"
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
@@ -2702,20 +2702,20 @@ msgid "_Typewriter"
 msgstr "打字机(_T)"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
-msgstr "单字 - 顺序打出"
+msgid "Characters — Linear"
+msgstr "单字 — 顺序打出"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
-msgstr "单字 - 随机打出"
+msgid "Characters — Random"
+msgstr "单字 — 随机打出"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
-msgid "Words - Linear"
-msgstr "单词 - 顺序打出"
+msgid "Words — Linear"
+msgstr "单词 — 顺序打出"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
-msgstr "单词 - 随机打出"
+msgid "Words — Random"
+msgstr "单词 — 随机打出"
 
 #. Already create in MenuBar.cc
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:45
@@ -3567,8 +3567,8 @@ msgid "Couldn't get the keyframe size on the file."
 msgstr "无法获取该文件的关键帧尺寸。"
 
 #: ../src/main.cc:59
-msgid " - edit subtitles files"
-msgstr " - 编辑字幕文件"
+msgid " — edit subtitles files"
+msgstr " — 编辑字幕文件"
 
 #: ../src/options.cc:35
 msgid "[FILE...]"
@@ -4735,7 +4735,7 @@ msgstr ""
 #~ "mplayer \"#video_file\" -sub \"#subtitle_file\" -ss #seconds"
 #~ msgstr ""
 #~ "mplayer示例:\n"
-#~ "mplayer \"#视频文件\" - sub\"#字幕文件 \"- ss #秒"
+#~ "mplayer \"#视频文件\" — sub\"#字幕文件 \"- ss #秒"
 
 #~ msgid "<b>Font</b>"
 #~ msgstr "<b>字体</b>"

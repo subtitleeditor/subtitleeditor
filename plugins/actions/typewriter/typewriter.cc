@@ -44,26 +44,26 @@ class TypewriterPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("typewriter-characters-linear",
-                            _("Characters - Linear")),
+                            _("Characters — Linear")),
         sigc::bind(
             sigc::mem_fun(*this, &TypewriterPlugin::split_selected_subtitles),
             CHARACTERS, LINEAR));
 
     action_group->add(
         Gtk::Action::create("typewriter-characters-random",
-                            _("Characters - Random")),
+                            _("Characters — Random")),
         sigc::bind(
             sigc::mem_fun(*this, &TypewriterPlugin::split_selected_subtitles),
             CHARACTERS, RANDOM));
 
     action_group->add(
-        Gtk::Action::create("typewriter-words-linear", _("Words - Linear")),
+        Gtk::Action::create("typewriter-words-linear", _("Words — Linear")),
         sigc::bind(
             sigc::mem_fun(*this, &TypewriterPlugin::split_selected_subtitles),
             WORDS, LINEAR));
 
     action_group->add(
-        Gtk::Action::create("typewriter-words-random", _("Words - Random")),
+        Gtk::Action::create("typewriter-words-random", _("Words — Random")),
         sigc::bind(
             sigc::mem_fun(*this, &TypewriterPlugin::split_selected_subtitles),
             WORDS, RANDOM));

@@ -1949,25 +1949,25 @@ msgid "Autodetect"
 msgstr "Automatica"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:103
-msgid "Pulse - PulseAudio Sound Server"
+msgid "Pulse — PulseAudio Sound Server"
 msgstr ""
 
 #: ../plugins/actions/preferences/videoplayerpage.h:106
-msgid "ALSA - Advanced Linux Sound Architecture"
-msgstr "ALSA - Architettura Sonora Linux Avanzata"
+msgid "ALSA — Advanced Linux Sound Architecture"
+msgstr "ALSA — Architettura Sonora Linux Avanzata"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:107
-msgid "ESD - Enlightenment Sound Daemon"
+msgid "ESD — Enlightenment Sound Daemon"
 msgstr "Demone sonoro di Enlightement"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:109
-msgid "OSS - Open Sound System"
-msgstr "OSS - Open Sound System"
+msgid "OSS — Open Sound System"
+msgstr "OSS — Open Sound System"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:110
 #: ../plugins/actions/preferences/videoplayerpage.h:127
-msgid "SDL - Simple DirectMedia Layer"
-msgstr "SDL - Simple DirectMedia Layer"
+msgid "SDL — Simple DirectMedia Layer"
+msgstr "SDL — Simple DirectMedia Layer"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:112
 #: ../plugins/actions/preferences/videoplayerpage.h:129
@@ -2406,8 +2406,8 @@ msgid "Stack Subtitles only works on a continuous selection."
 msgstr ""
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:1
-msgid "Subtitle Editor - Style Editor"
-msgstr "Subtitle Editor - Modifica Stile"
+msgid "Subtitle Editor — Style Editor"
+msgstr "Subtitle Editor — Modifica Stile"
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
 #, fuzzy
@@ -2842,20 +2842,20 @@ msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
 #, fuzzy
-msgid "Characters - Linear"
+msgid "Characters — Linear"
 msgstr "Codifica:"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
 #, fuzzy
-msgid "Characters - Random"
+msgid "Characters — Random"
 msgstr "Numero minimo di caratteri al secondo:"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
-msgid "Words - Linear"
+msgid "Words — Linear"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
+msgid "Words — Random"
 msgstr ""
 
 #. Already create in MenuBar.cc
@@ -3763,8 +3763,8 @@ msgid "Couldn't get the keyframe size on the file."
 msgstr ""
 
 #: ../src/main.cc:59
-msgid " - edit subtitles files"
-msgstr " - edita i sottotitoli"
+msgid " — edit subtitles files"
+msgstr " — edita i sottotitoli"
 
 #: ../src/options.cc:35
 msgid "[FILE...]"
@@ -4184,7 +4184,7 @@ msgstr ""
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:2
 #, fuzzy
 msgid "Adjusts subtitle times."
-msgstr " - edita i sottotitoli"
+msgstr " — edita i sottotitoli"
 
 #: ../plugins/actions/applytranslation/applytranslation.se-plugin.in.h:1
 #, fuzzy
@@ -4671,7 +4671,7 @@ msgstr "Subtitle Editor"
 #: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.se-plugin.in.h:2
 #, fuzzy
 msgid "Subtitle Editor Project subtitles support."
-msgstr "Subtitle Editor - Modifica Stile"
+msgstr "Subtitle Editor — Modifica Stile"
 
 #: ../plugins/subtitleformats/subviewer2/subviewer2.se-plugin.in.h:1
 msgid "SubViewer2"

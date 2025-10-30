@@ -1846,25 +1846,25 @@ msgid "Autodetect"
 msgstr "Automatikus felismerés"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:103
-msgid "Pulse - PulseAudio Sound Server"
+msgid "Pulse — PulseAudio Sound Server"
 msgstr ""
 
 #: ../plugins/actions/preferences/videoplayerpage.h:106
-msgid "ALSA - Advanced Linux Sound Architecture"
-msgstr "ALSA - Advanced Linux Sound Architecture"
+msgid "ALSA — Advanced Linux Sound Architecture"
+msgstr "ALSA — Advanced Linux Sound Architecture"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:107
-msgid "ESD - Enlightenment Sound Daemon"
-msgstr "ESD - Enlightenment Sound Daemon"
+msgid "ESD — Enlightenment Sound Daemon"
+msgstr "ESD — Enlightenment Sound Daemon"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:109
-msgid "OSS - Open Sound System"
-msgstr "OSS - Open Sound System"
+msgid "OSS — Open Sound System"
+msgstr "OSS — Open Sound System"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:110
 #: ../plugins/actions/preferences/videoplayerpage.h:127
-msgid "SDL - Simple DirectMedia Layer"
-msgstr "SDL - Simple DirectMedia Layer"
+msgid "SDL — Simple DirectMedia Layer"
+msgstr "SDL — Simple DirectMedia Layer"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:112
 #: ../plugins/actions/preferences/videoplayerpage.h:129
@@ -2272,8 +2272,8 @@ msgid "Stack Subtitles only works on a continuous selection."
 msgstr ""
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:1
-msgid "Subtitle Editor - Style Editor"
-msgstr "Subtitle Editor - Stílusszerkesztő"
+msgid "Subtitle Editor — Style Editor"
+msgstr "Subtitle Editor — Stílusszerkesztő"
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
 #, fuzzy
@@ -2695,20 +2695,20 @@ msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
 #, fuzzy
-msgid "Characters - Linear"
+msgid "Characters — Linear"
 msgstr "Karakterkódolás:"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
 #, fuzzy
-msgid "Characters - Random"
+msgid "Characters — Random"
 msgstr "Karakterkódolás:"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
-msgid "Words - Linear"
+msgid "Words — Linear"
 msgstr ""
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
+msgid "Words — Random"
 msgstr ""
 
 #. Already create in MenuBar.cc
@@ -3572,8 +3572,8 @@ msgid "Couldn't get the keyframe size on the file."
 msgstr ""
 
 #: ../src/main.cc:59
-msgid " - edit subtitles files"
-msgstr " - feliratfájlok szerkesztése"
+msgid " — edit subtitles files"
+msgstr " — feliratfájlok szerkesztése"
 
 #: ../src/options.cc:35
 msgid "[FILE...]"
@@ -3980,7 +3980,7 @@ msgstr "Idő beállítása"
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:2
 #, fuzzy
 msgid "Adjusts subtitle times."
-msgstr " - feliratfájlok szerkesztése"
+msgstr " — feliratfájlok szerkesztése"
 
 #: ../plugins/actions/applytranslation/applytranslation.se-plugin.in.h:1
 #, fuzzy
@@ -4453,7 +4453,7 @@ msgstr "Subtitle Editor"
 #: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.se-plugin.in.h:2
 #, fuzzy
 msgid "Subtitle Editor Project subtitles support."
-msgstr "Subtitle Editor - Stílusszerkesztő"
+msgstr "Subtitle Editor — Stílusszerkesztő"
 
 #: ../plugins/subtitleformats/subviewer2/subviewer2.se-plugin.in.h:1
 msgid "SubViewer2"

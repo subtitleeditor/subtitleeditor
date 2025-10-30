@@ -1837,25 +1837,25 @@ msgid "Autodetect"
 msgstr "自動偵測"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:103
-msgid "Pulse - PulseAudio Sound Server"
-msgstr "Pulse - PulseAudio 聲音伺服器"
+msgid "Pulse — PulseAudio Sound Server"
+msgstr "Pulse — PulseAudio 聲音伺服器"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:106
-msgid "ALSA - Advanced Linux Sound Architecture"
-msgstr "ALSA - 先進的 Linux 聲音架構"
+msgid "ALSA — Advanced Linux Sound Architecture"
+msgstr "ALSA — 先進的 Linux 聲音架構"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:107
-msgid "ESD - Enlightenment Sound Daemon"
-msgstr "ESD - Enlightenment 聲音守護程式"
+msgid "ESD — Enlightenment Sound Daemon"
+msgstr "ESD — Enlightenment 聲音守護程式"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:109
-msgid "OSS - Open Sound System"
-msgstr "OSS - 開放聲音系統"
+msgid "OSS — Open Sound System"
+msgstr "OSS — 開放聲音系統"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:110
 #: ../plugins/actions/preferences/videoplayerpage.h:127
-msgid "SDL - Simple DirectMedia Layer"
-msgstr "SDL - 簡單 DirectMedia 層"
+msgid "SDL — Simple DirectMedia Layer"
+msgstr "SDL — 簡單 DirectMedia 層"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:112
 #: ../plugins/actions/preferences/videoplayerpage.h:129
@@ -2263,8 +2263,8 @@ msgid "Stack Subtitles only works on a continuous selection."
 msgstr ""
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:1
-msgid "Subtitle Editor - Style Editor"
-msgstr "字幕編輯器 - 樣式編輯器"
+msgid "Subtitle Editor — Style Editor"
+msgstr "字幕編輯器 — 樣式編輯器"
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
 #, fuzzy
@@ -2678,20 +2678,20 @@ msgid "_Typewriter"
 msgstr "打字機(_T)"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
-msgstr "字元 - 順序打出"
+msgid "Characters — Linear"
+msgstr "字元 — 順序打出"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
-msgstr "字元 - 隨機打出"
+msgid "Characters — Random"
+msgstr "字元 — 隨機打出"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
-msgid "Words - Linear"
-msgstr "字詞 - 順序打出"
+msgid "Words — Linear"
+msgstr "字詞 — 順序打出"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
-msgstr "字詞 - 隨機打出"
+msgid "Words — Random"
+msgstr "字詞 — 隨機打出"
 
 #. Already create in MenuBar.cc
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:45
@@ -3540,8 +3540,8 @@ msgid "Couldn't get the keyframe size on the file."
 msgstr "無法獲取該檔案的關鍵影格尺寸。"
 
 #: ../src/main.cc:59
-msgid " - edit subtitles files"
-msgstr " - 編輯字幕檔案"
+msgid " — edit subtitles files"
+msgstr " — 編輯字幕檔案"
 
 #: ../src/options.cc:35
 msgid "[FILE...]"
