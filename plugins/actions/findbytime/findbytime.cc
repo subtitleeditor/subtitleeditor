@@ -1,7 +1,7 @@
 // subtitleeditor -- a tool to create or edit subtitle
 //
-// https://kitone.github.io/subtitleeditor/
-// https://github.com/kitone/subtitleeditor/
+// https://subtitleeditor.github.io/subtitleeditor/
+// https://github.com/subtitleeditor/subtitleeditor/
 //
 // subtitleeditor is Copyright @ 2005-2018, kitone
 // this file is Copyright 2024 Eltomito <tomaspartl@centrum.cz>

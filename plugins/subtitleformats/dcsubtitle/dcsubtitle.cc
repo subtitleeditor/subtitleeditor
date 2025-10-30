@@ -1,7 +1,7 @@
 // subtitleeditor -- a tool to create or edit subtitle
 //
-// https://kitone.github.io/subtitleeditor/
-// https://github.com/kitone/subtitleeditor/
+// https://subtitleeditor.github.io/subtitleeditor/
+// https://github.com/subtitleeditor/subtitleeditor/
 //
 // Copyright @ 2005-2018, kitone
 //
@@ -57,7 +57,7 @@ class DCSubtitle : public SubtitleFormatIO {
         doc.add_comment(date.format_string(" %Y-%m-%d "));
         doc.add_comment(Glib::ustring::compose(
             " Created by subtitleeditor version %1 ", VERSION));
-        doc.add_comment(" https://kitone.github.io/subtitleeditor/ ");
+        doc.add_comment(" https://subtitleeditor.github.io/subtitleeditor/ ");
       }
       xmlpp::Element *xml_dcsubtitle = doc.create_root_node("DCSubtitle");
 
