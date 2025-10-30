@@ -1,7 +1,7 @@
 // subtitleeditor -- a tool to create or edit subtitle
 //
-// https://kitone.github.io/subtitleeditor/
-// https://github.com/kitone/subtitleeditor/
+// https://subtitleeditor.github.io/subtitleeditor/
+// https://github.com/subtitleeditor/subtitleeditor/
 //
 // Copyright @ 2005-2018, kitone
 // Authors: eltomito <tomaspartl at centrum dot cz>
@@ -113,7 +113,7 @@ class AvidDS : public SubtitleFormatIO {
     // write header
     file.write(
         "@ File created by SubtitleEditor "
-        "(https://kitone.github.io/subtitleeditor/)\n\n<begin subtitles>\n");
+        "(https://subtitleeditor.github.io/subtitleeditor/)\n\n<begin subtitles>\n");
 
     for (Subtitle sub = document()->subtitles().get_first(); sub; ++sub) {
       Glib::ustring text = sub.get_text();

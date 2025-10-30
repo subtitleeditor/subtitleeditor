@@ -1,7 +1,7 @@
 // subtitleeditor -- a tool to create or edit subtitle
 //
-// https://kitone.github.io/subtitleeditor/
-// https://github.com/kitone/subtitleeditor/
+// https://subtitleeditor.github.io/subtitleeditor/
+// https://github.com/subtitleeditor/subtitleeditor/
 //
 // Copyright @ 2005-2018, kitone
 //
@@ -282,7 +282,7 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
     file.write(Glib::ustring::compose(
         "[Script Info]\n"
         "; This script was created by subtitleeditor (%1)\n"
-        "; https://kitone.github.io/subtitleeditor/\n",
+        "; https://subtitleeditor.github.io/subtitleeditor/\n",
         Glib::ustring(VERSION)));
 
     ScriptInfo &scriptInfo = document()->get_script_info();
@@ -297,8 +297,6 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
     file.write("\n");
   }
 
-
-
   // Write the block [V4+ Styles]
   void write_styles(Writer &file) {
     file.write("[V4+ Styles]\n");
@@ -311,7 +309,7 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
         "BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, "
         "Encoding\n");
 
-    //Default style if it's empty
+    // Default style if it's empty
     if (document()->styles().size() == 0) {
       Glib::ustring default_style;
 
@@ -404,14 +402,11 @@ class AdvancedSubStationAlpha : public SubtitleFormatIO {
     return SubtitleTime::null();
   }
 
-
-
   // Convert time from SE to SSA
   Glib::ustring to_ssa_time(const SubtitleTime &t) {
     return build_message("%01i:%02i:%02i.%02i", t.hours(), t.minutes(),
                          t.seconds(), (t.mseconds() + 5) / 10);
   }
-
 };
 
 class AdvancedSubStationAlphaPlugin : public SubtitleFormat {

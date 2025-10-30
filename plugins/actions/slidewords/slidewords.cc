@@ -2,8 +2,8 @@
 // SlideWords plugin Copyright 2022 Tomáš Pártl, tomaspartl@centrum.cz.
 // This file is a part of subtitleeditor Copyright @ 2005-2022, kitone.
 //
-// https://kitone.github.io/subtitleeditor/
-// https://github.com/kitone/subtitleeditor/
+// https://subtitleeditor.github.io/subtitleeditor/
+// https://github.com/subtitleeditor/subtitleeditor/
 //
 // This plugin allows the user to slide words between lines and subtitles.
 //

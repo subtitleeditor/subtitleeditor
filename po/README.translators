@@ -7,7 +7,7 @@ The character set of the .po file must be UTF-8.
 
 First, please check the latest list of existing translations at the 
 git trunk.
-https://github.com/kitone/subtitleeditor/tree/master/po/
+https://github.com/subtitleeditor/subtitleeditor/tree/master/po/
 
 
 To start a new translation:

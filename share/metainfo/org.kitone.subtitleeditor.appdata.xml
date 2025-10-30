@@ -16,10 +16,10 @@
     </description>
 	<screenshots>
 		<screenshot type="default">
-			<image>https://kitone.github.io/subtitleeditor/docs/screenshoot.png</image>
+			<image>https://subtitleeditor.github.io/subtitleeditor/docs/screenshoot.png</image>
 		</screenshot>
 	</screenshots>
-	<url type="homepage">https://kitone.github.io/subtitleeditor/</url>
+	<url type="homepage">https://subtitleeditor.github.io/subtitleeditor/</url>
 	<update_contact>kitone@free.fr</update_contact>
 	<keywords>
 		<keyword>subtitles</keyword>
