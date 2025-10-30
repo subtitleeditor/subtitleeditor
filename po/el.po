@@ -1896,25 +1896,25 @@ msgid "Autodetect"
 msgstr "Αυτόματη ανίχνευση"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:103
-msgid "Pulse - PulseAudio Sound Server"
-msgstr "Pulse - Εξυπηρετητής ήχου PulseAudio"
+msgid "Pulse — PulseAudio Sound Server"
+msgstr "Pulse — Εξυπηρετητής ήχου PulseAudio"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:106
-msgid "ALSA - Advanced Linux Sound Architecture"
-msgstr "ALSA - Advanced Linux Sound Architecture"
+msgid "ALSA — Advanced Linux Sound Architecture"
+msgstr "ALSA — Advanced Linux Sound Architecture"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:107
-msgid "ESD - Enlightenment Sound Daemon"
-msgstr "ESD - Enlightenment Sound Daemon"
+msgid "ESD — Enlightenment Sound Daemon"
+msgstr "ESD — Enlightenment Sound Daemon"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:109
-msgid "OSS - Open Sound System"
-msgstr "OSS - Open Sound System"
+msgid "OSS — Open Sound System"
+msgstr "OSS — Open Sound System"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:110
 #: ../plugins/actions/preferences/videoplayerpage.h:127
-msgid "SDL - Simple DirectMedia Layer"
-msgstr "SDL - Simple DirectMedia Layer"
+msgid "SDL — Simple DirectMedia Layer"
+msgstr "SDL — Simple DirectMedia Layer"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:112
 #: ../plugins/actions/preferences/videoplayerpage.h:129
@@ -2327,7 +2327,7 @@ msgid "Stack Subtitles only works on a continuous selection."
 msgstr ""
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:1
-msgid "Subtitle Editor - Style Editor"
+msgid "Subtitle Editor — Style Editor"
 msgstr "Επεξεργαστής Υπότιτλων / Επεξεργαστής Στυλ"
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
@@ -2770,20 +2770,20 @@ msgid "_Typewriter"
 msgstr "_Γραφομηχανή"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
-msgstr "Χαρακτήρες - Γραμμικοί"
+msgid "Characters — Linear"
+msgstr "Χαρακτήρες — Γραμμικοί"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
-msgstr "Χαρακτήρες - Τυχαίοι"
+msgid "Characters — Random"
+msgstr "Χαρακτήρες — Τυχαίοι"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
-msgid "Words - Linear"
-msgstr "Λέξεις - Γραμμικές"
+msgid "Words — Linear"
+msgstr "Λέξεις — Γραμμικές"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
-msgstr "Λέξεις - Τυχαίες"
+msgid "Words — Random"
+msgstr "Λέξεις — Τυχαίες"
 
 #. Already create in MenuBar.cc
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:45
@@ -3654,8 +3654,8 @@ msgid "Couldn't get the keyframe size on the file."
 msgstr "Αδυναμία λήψης του μεγέθους του καρέ-κλειδιού στο αρχείο."
 
 #: ../src/main.cc:59
-msgid " - edit subtitles files"
-msgstr " - επεξεργασία αρχείων υπότιτλων"
+msgid " — edit subtitles files"
+msgstr " — επεξεργασία αρχείων υπότιτλων"
 
 #: ../src/options.cc:35
 msgid "[FILE...]"

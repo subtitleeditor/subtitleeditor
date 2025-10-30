@@ -100,14 +100,14 @@ class VideoPlayerPage : public PreferencePage {
 
     // audio output
     m_comboAudioOutput->append_output(_("Autodetect"), "autoaudiosink");
-    m_comboAudioOutput->append_output(_("Pulse - PulseAudio Sound Server"),
+    m_comboAudioOutput->append_output(_("Pulse — PulseAudio Sound Server"),
                                       "pulsesink");
     m_comboAudioOutput->append_output(
-        _("ALSA - Advanced Linux Sound Architecture"), "alsasink");
-    m_comboAudioOutput->append_output(_("ESD - Enlightenment Sound Daemon"),
+        _("ALSA — Advanced Linux Sound Architecture"), "alsasink");
+    m_comboAudioOutput->append_output(_("ESD — Enlightenment Sound Daemon"),
                                       "esdsink");
-    m_comboAudioOutput->append_output(_("OSS - Open Sound System"), "osssink");
-    m_comboAudioOutput->append_output(_("SDL - Simple DirectMedia Layer"),
+    m_comboAudioOutput->append_output(_("OSS — Open Sound System"), "osssink");
+    m_comboAudioOutput->append_output(_("SDL — Simple DirectMedia Layer"),
                                       "sdlaudiosink");
     m_comboAudioOutput->append_output(_("GConf"), "gconfaudiosink");
 #ifdef USE_OSX
@@ -124,7 +124,7 @@ class VideoPlayerPage : public PreferencePage {
                                         "xvimagesink");
       m_comboVideoOutput->append_output(_("X Window System (No Xv)"),
                                         "ximagesink");
-      m_comboVideoOutput->append_output(_("SDL - Simple DirectMedia Layer"),
+      m_comboVideoOutput->append_output(_("SDL — Simple DirectMedia Layer"),
                                         "sdlvideosink");
       m_comboVideoOutput->append_output(_("GConf"), "gconfvideosink");
 #ifdef USE_OSX

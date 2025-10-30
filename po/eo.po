@@ -1879,25 +1879,25 @@ msgid "Autodetect"
 msgstr "Aŭtomate rekoni"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:103
-msgid "Pulse - PulseAudio Sound Server"
-msgstr "Pulse - Sonservilo de PulseAudio"
+msgid "Pulse — PulseAudio Sound Server"
+msgstr "Pulse — Sonservilo de PulseAudio"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:106
-msgid "ALSA - Advanced Linux Sound Architecture"
-msgstr "ALSA - Progresita Linuksa sonarkitekturo"
+msgid "ALSA — Advanced Linux Sound Architecture"
+msgstr "ALSA — Progresita Linuksa sonarkitekturo"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:107
-msgid "ESD - Enlightenment Sound Daemon"
-msgstr "ESD - Iluminanta sondemono"
+msgid "ESD — Enlightenment Sound Daemon"
+msgstr "ESD — Iluminanta sondemono"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:109
-msgid "OSS - Open Sound System"
-msgstr "OSS - Malferma Sonsistemo"
+msgid "OSS — Open Sound System"
+msgstr "OSS — Malferma Sonsistemo"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:110
 #: ../plugins/actions/preferences/videoplayerpage.h:127
-msgid "SDL - Simple DirectMedia Layer"
-msgstr "SDL - Simpla DirectMedia-tavolo"
+msgid "SDL — Simple DirectMedia Layer"
+msgstr "SDL — Simpla DirectMedia-tavolo"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:112
 #: ../plugins/actions/preferences/videoplayerpage.h:129
@@ -2308,8 +2308,8 @@ msgid "Stack Subtitles only works on a continuous selection."
 msgstr ""
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:1
-msgid "Subtitle Editor - Style Editor"
-msgstr "Subtekstredaktilo - Stilredaktilo"
+msgid "Subtitle Editor — Style Editor"
+msgstr "Subtekstredaktilo — Stilredaktilo"
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
 #, fuzzy
@@ -2735,20 +2735,20 @@ msgid "_Typewriter"
 msgstr "_Tajpilo"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
-msgstr "Signoj - linearaj"
+msgid "Characters — Linear"
+msgstr "Signoj — linearaj"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
-msgstr "Signoj - hazardaj"
+msgid "Characters — Random"
+msgstr "Signoj — hazardaj"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
-msgid "Words - Linear"
-msgstr "Vortoj - linearaj"
+msgid "Words — Linear"
+msgstr "Vortoj — linearaj"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
-msgstr "Vortoj - Hazardaj"
+msgid "Words — Random"
+msgstr "Vortoj — Hazardaj"
 
 #. Already create in MenuBar.cc
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:45
@@ -3604,8 +3604,8 @@ msgid "Couldn't get the keyframe size on the file."
 msgstr "Ne eblis akiri ĉefkadran grandon per la dosiero."
 
 #: ../src/main.cc:59
-msgid " - edit subtitles files"
-msgstr " - redakti subtekstdosierojn"
+msgid " — edit subtitles files"
+msgstr " — redakti subtekstdosierojn"
 
 #: ../src/options.cc:35
 msgid "[FILE...]"

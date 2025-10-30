@@ -1917,25 +1917,25 @@ msgid "Autodetect"
 msgstr "Détection automatique"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:103
-msgid "Pulse - PulseAudio Sound Server"
-msgstr "Pulse - PulseAudio Sound Server"
+msgid "Pulse — PulseAudio Sound Server"
+msgstr "Pulse — PulseAudio Sound Server"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:106
-msgid "ALSA - Advanced Linux Sound Architecture"
-msgstr "ALSA - Advanced Linux Sound Architecture"
+msgid "ALSA — Advanced Linux Sound Architecture"
+msgstr "ALSA — Advanced Linux Sound Architecture"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:107
-msgid "ESD - Enlightenment Sound Daemon"
-msgstr "ESD - Enlightenment Sound Daemon"
+msgid "ESD — Enlightenment Sound Daemon"
+msgstr "ESD — Enlightenment Sound Daemon"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:109
-msgid "OSS - Open Sound System"
-msgstr "OSS - Open Sound System"
+msgid "OSS — Open Sound System"
+msgstr "OSS — Open Sound System"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:110
 #: ../plugins/actions/preferences/videoplayerpage.h:127
-msgid "SDL - Simple DirectMedia Layer"
-msgstr "SDL - Simple DirectMedia Layer"
+msgid "SDL — Simple DirectMedia Layer"
+msgstr "SDL — Simple DirectMedia Layer"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:112
 #: ../plugins/actions/preferences/videoplayerpage.h:129
@@ -2348,8 +2348,8 @@ msgid "Stack Subtitles only works on a continuous selection."
 msgstr ""
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:1
-msgid "Subtitle Editor - Style Editor"
-msgstr "Subtitle Editor - Éditeur de style"
+msgid "Subtitle Editor — Style Editor"
+msgstr "Subtitle Editor — Éditeur de style"
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
 #, fuzzy
@@ -2773,20 +2773,20 @@ msgid "_Typewriter"
 msgstr "_Machine à écrire"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
-msgstr "Caractères - Linéaire"
+msgid "Characters — Linear"
+msgstr "Caractères — Linéaire"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
-msgstr "Caractères - Aléatoire"
+msgid "Characters — Random"
+msgstr "Caractères — Aléatoire"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
-msgid "Words - Linear"
-msgstr "Mots - Linéaire"
+msgid "Words — Linear"
+msgstr "Mots — Linéaire"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
-msgstr "Mots - Aléatoire"
+msgid "Words — Random"
+msgstr "Mots — Aléatoire"
 
 #. Already create in MenuBar.cc
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:45
@@ -3654,8 +3654,8 @@ msgid "Couldn't get the keyframe size on the file."
 msgstr " Impossible d'obtenir le nombre d'images-clés dans le fichier."
 
 #: ../src/main.cc:59
-msgid " - edit subtitles files"
-msgstr " - editer fichiers sous-titres"
+msgid " — edit subtitles files"
+msgstr " — editer fichiers sous-titres"
 
 #: ../src/options.cc:35
 msgid "[FILE...]"

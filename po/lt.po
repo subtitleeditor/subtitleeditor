@@ -1865,25 +1865,25 @@ msgid "Autodetect"
 msgstr "Automatiškai nustatyti"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:103
-msgid "Pulse - PulseAudio Sound Server"
-msgstr "Pulse - PulseAudio Garso serveris"
+msgid "Pulse — PulseAudio Sound Server"
+msgstr "Pulse — PulseAudio Garso serveris"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:106
-msgid "ALSA - Advanced Linux Sound Architecture"
-msgstr "ALSA - Advanced Linux Sound Architecture"
+msgid "ALSA — Advanced Linux Sound Architecture"
+msgstr "ALSA — Advanced Linux Sound Architecture"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:107
-msgid "ESD - Enlightenment Sound Daemon"
-msgstr "ESD - Enlightenment Sound Daemon"
+msgid "ESD — Enlightenment Sound Daemon"
+msgstr "ESD — Enlightenment Sound Daemon"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:109
-msgid "OSS - Open Sound System"
-msgstr "OSS - Open Sound System"
+msgid "OSS — Open Sound System"
+msgstr "OSS — Open Sound System"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:110
 #: ../plugins/actions/preferences/videoplayerpage.h:127
-msgid "SDL - Simple DirectMedia Layer"
-msgstr "SDL - Simple DirectMedia Layer"
+msgid "SDL — Simple DirectMedia Layer"
+msgstr "SDL — Simple DirectMedia Layer"
 
 #: ../plugins/actions/preferences/videoplayerpage.h:112
 #: ../plugins/actions/preferences/videoplayerpage.h:129
@@ -2296,8 +2296,8 @@ msgid "Stack Subtitles only works on a continuous selection."
 msgstr ""
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:1
-msgid "Subtitle Editor - Style Editor"
-msgstr "Subtitle Editor - Stilių redaktorius"
+msgid "Subtitle Editor — Style Editor"
+msgstr "Subtitle Editor — Stilių redaktorius"
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
 #, fuzzy
@@ -2719,20 +2719,20 @@ msgid "_Typewriter"
 msgstr "_Spausdinimo mašinėlė"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
-msgid "Characters - Linear"
-msgstr "Simboliai - linijinis"
+msgid "Characters — Linear"
+msgstr "Simboliai — linijinis"
 
 #: ../plugins/actions/typewriter/typewriter.cc:54
-msgid "Characters - Random"
-msgstr "Simboliai - atsitiktiniai"
+msgid "Characters — Random"
+msgstr "Simboliai — atsitiktiniai"
 
 #: ../plugins/actions/typewriter/typewriter.cc:60
-msgid "Words - Linear"
-msgstr "Žodžiai - linijinis"
+msgid "Words — Linear"
+msgstr "Žodžiai — linijinis"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
-msgid "Words - Random"
-msgstr "Žodžiai - atsitiktinis"
+msgid "Words — Random"
+msgstr "Žodžiai — atsitiktinis"
 
 #. Already create in MenuBar.cc
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:45
@@ -3585,7 +3585,7 @@ msgid "Couldn't get the keyframe size on the file."
 msgstr "Nepavyko gauti raktinių kadrų dydžio faile."
 
 #: ../src/main.cc:59
-msgid " - edit subtitles files"
+msgid " — edit subtitles files"
 msgstr "- taisyti subtitrų failus"
 
 #: ../src/options.cc:35
@@ -4545,7 +4545,7 @@ msgstr "Tarpai aplink kabutes"
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:18
 msgid "Remove space after a starting- and before an ending quotation mark"
 msgstr ""
-"Pašalinti tarpą prieš pradžioj esantį - ir prieš pabaigoj esančias kabutes"
+"Pašalinti tarpą prieš pradžioj esantį — ir prieš pabaigoj esančias kabutes"
 
 #: ../plugins/actions/textcorrection/Latn.common-error.se-pattern.in.h:19
 msgid "Multiple question- and exclamation marks"
