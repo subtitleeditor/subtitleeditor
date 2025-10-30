@@ -47,7 +47,11 @@ class TimedTextAuthoringFormat1 : public SubtitleFormatIO {
             body->get_children("div").front());
 
         if (div) {
+#ifdef HAVE_LIBXMLXX_3
+          xmlpp::Node::const_NodeList list = div->get_children();
+#else
           xmlpp::Node::NodeList list = div->get_children();
+#endif
           for (const auto &node : list) {
             read_subtitle(dynamic_cast<const xmlpp::Element *>(node));
           }
@@ -66,10 +70,18 @@ class TimedTextAuthoringFormat1 : public SubtitleFormatIO {
       tt->set_attribute("xml:lang", "");
       tt->set_attribute("xmlns", "http://www.w3.org/2006/10/ttaf1");
 
+#ifdef HAVE_LIBXMLXX_3
+      xmlpp::Element *body = tt->add_child_element("body");
+#else
       xmlpp::Element *body = tt->add_child("body");
+#endif
 
       // div subtitles
+#ifdef HAVE_LIBXMLXX_3
+      xmlpp::Element *div = body->add_child_element("div");
+#else
       xmlpp::Element *div = body->add_child("div");
+#endif
 
       div->set_attribute("xml:lang", "en");
 
@@ -116,9 +128,15 @@ class TimedTextAuthoringFormat1 : public SubtitleFormatIO {
     if (p->has_child_text()) {
       Glib::ustring text;
 
+#ifdef HAVE_LIBXMLXX_3
+      xmlpp::Node::const_NodeList children = p->get_children();
+      for (auto &node : children) {
+        const xmlpp::ContentNode *cn = dynamic_cast<const xmlpp::ContentNode *>(node);
+#else
       xmlpp::Node::NodeList children = p->get_children();
       for (const auto &node : children) {
         xmlpp::ContentNode *cn = dynamic_cast<xmlpp::ContentNode *>(node);
+#endif
         if (cn == NULL)
           continue;
         if (!text.empty())
@@ -135,12 +153,20 @@ class TimedTextAuthoringFormat1 : public SubtitleFormatIO {
 
     utility::replace(text, "\n", "<br/>");
 
+#ifdef HAVE_LIBXMLXX_3
+    xmlpp::Element *p = root->add_child_element("p");
+#else
     xmlpp::Element *p = root->add_child("p");
+#endif
 
     p->set_attribute("begin", time_to_ttaf1(sub.get_start()));
     p->set_attribute("end", time_to_ttaf1(sub.get_end()));
     p->set_attribute("dur", time_to_ttaf1(sub.get_duration()));
+#ifdef HAVE_LIBXMLXX_3
+    p->set_first_child_text(text);
+#else
     p->set_child_text(text);
+#endif
   }
 
   // Convert SE time to TT time.

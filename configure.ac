@@ -89,9 +89,12 @@ fi
 # =========================================================================
 # check libxml++
 
-PKG_CHECK_MODULES(LIBXML, libxml++-2.6 >= 2.20)
-AC_SUBST(LIBXML_CFLAGS)
-AC_SUBST(LIBXML_LIBS)
+# PKG_CHECK_MODULES(LIBXML, libxml++-2.6 >= 2.20)
+PKG_CHECK_MODULES(LIBXML, [libxml++-3.0 >= 3.0.0], [
+  AC_DEFINE([HAVE_LIBXMLXX_3], [1], [Define if libxml++-3.0 is available])
+], [
+  PKG_CHECK_MODULES(LIBXML, [libxml++-2.6 >= 2.20])
+])
 
 # =========================================================================
 # check gstreamer
