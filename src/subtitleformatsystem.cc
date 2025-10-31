@@ -56,6 +56,8 @@ Glib::ustring SubtitleFormatSystem::get_subtitle_format_from_small_contents(
   se_dbg_msg(SE_DBG_APP, "Trying to determinate the file format...");
 
   auto list_of_sf = get_subtitle_format_list();
+
+  // Try pattern matching first
   for (const auto &sf : list_of_sf) {
     SubtitleFormatInfo sfi = sf->get_info();
 
@@ -68,6 +70,29 @@ Glib::ustring SubtitleFormatSystem::get_subtitle_format_from_small_contents(
 
       se_dbg_msg(SE_DBG_APP, "Determine the format as '%s'", name.c_str());
       return name;
+    }
+  }
+
+  // If pattern matching fails and we have a FileReader, try matching by extension if the file is empty
+  FileReader *filereader = dynamic_cast<FileReader *>(reader);
+  if (filereader != nullptr && contents.empty()) {
+    Glib::ustring uri = filereader->get_uri();
+    Glib::ustring filename = Glib::filename_from_uri(uri);
+
+    // Extract extension
+    auto pos = filename.find_last_of('.');
+    if (pos != Glib::ustring::npos) {
+      Glib::ustring ext = filename.substr(pos + 1);
+
+      // Try to match extension with format info
+      for (const auto &sf : list_of_sf) {
+        SubtitleFormatInfo sfi = sf->get_info();
+        if (sfi.extension == ext) {
+          se_dbg_msg(SE_DBG_APP, "Determined format as '%s' from extension",
+                     sfi.name.c_str());
+          return sfi.name;
+        }
+      }
     }
   }
 
