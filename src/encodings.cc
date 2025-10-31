@@ -148,21 +148,21 @@ Glib::ustring convert_to_utf8_from_charset(const std::string &content,
   se_dbg_msg(SE_DBG_UTILITY, "Trying to convert from %s to UTF-8",
              charset.c_str());
 
+  Glib::ustring utf8_content;
+
   // Only if it's UTF-8 to UTF-8
   if (charset == "UTF-8") {
     if (Glib::ustring(content).validate() == false)
       throw EncodingConvertError(_("It's not valid UTF-8."));
 
-    return content;
+    utf8_content = content;
   } else {
     try {
-      Glib::ustring utf8_content = Glib::convert(content, "UTF-8", charset);
+      utf8_content = Glib::convert(content, "UTF-8", charset);
 
       if (!utf8_content.validate() || utf8_content.empty())
         throw EncodingConvertError(build_message(
             _("Couldn't convert from %s to UTF-8"), charset.c_str()));
-
-      return utf8_content;
     } catch (const Glib::ConvertError &ex) {
       se_dbg_msg(SE_DBG_UTILITY, "Glib::ConvertError: %s", ex.what().c_str());
       throw EncodingConvertError(build_message(
@@ -173,6 +173,15 @@ Glib::ustring convert_to_utf8_from_charset(const std::string &content,
           _("Couldn't convert from %s to UTF-8"), charset.c_str()));
     }
   }
+
+  // Remove BOM (U+FEFF) if present at the beginning
+  // This handles UTF-8 BOM and BOMs from other encodings after conversion
+  if (!utf8_content.empty() && utf8_content[0] == 0xFEFF) {
+    utf8_content.erase(0, 1);
+    se_dbg_msg(SE_DBG_UTILITY, "Removed BOM from beginning of content");
+  }
+
+  return utf8_content;
 }
 
 // Trying to autodetect the charset and convert to UTF-8.
@@ -196,13 +205,13 @@ Glib::ustring convert_to_utf8(const std::string &content,
 
     if (utf8_content.validate() && utf8_content.empty() == false) {
       charset = "UTF-8";
-      return content;
+      return utf8_content;
     }
   } catch (const EncodingConvertError &ex) {
     se_dbg_msg(SE_DBG_UTILITY, "EncodingConvertError: %s", ex.what());
   }
 
-  // Try to automatically dectect the encoding
+  // Try to automatically detect the encoding
 
   // With the user charset preferences...
   se_dbg_msg(SE_DBG_UTILITY, "Trying with user encodings preferences...");
