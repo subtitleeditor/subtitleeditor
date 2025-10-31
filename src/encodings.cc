@@ -41,6 +41,7 @@ static EncodingInfo encodings_info[] = {
     {"ISO-8859-16", N_("Romanian")},
 
     {"UTF-8", N_("Unicode")},
+    {"UTF-8-BOM", N_("Unicode (with BOM)")},
     {"UTF-7", N_("Unicode")},
     {"UTF-16", N_("Unicode")},
     {"UCS-2", N_("Unicode")},
@@ -148,29 +149,33 @@ Glib::ustring convert_to_utf8_from_charset(const std::string &content,
   se_dbg_msg(SE_DBG_UTILITY, "Trying to convert from %s to UTF-8",
              charset.c_str());
 
-  Glib::ustring utf8_content;
+  // glib does not know about BOM,so we need to handle it manually
+  Glib::ustring m_charset = charset;
+  if (m_charset == "UTF-8-BOM")
+    m_charset = "UTF-8";
 
+  Glib::ustring utf8_content;
   // Only if it's UTF-8 to UTF-8
-  if (charset == "UTF-8") {
+  if (m_charset == "UTF-8") {
     if (Glib::ustring(content).validate() == false)
       throw EncodingConvertError(_("It's not valid UTF-8."));
 
     utf8_content = content;
   } else {
     try {
-      utf8_content = Glib::convert(content, "UTF-8", charset);
+      utf8_content = Glib::convert(content, "UTF-8", m_charset);
 
       if (!utf8_content.validate() || utf8_content.empty())
         throw EncodingConvertError(build_message(
-            _("Couldn't convert from %s to UTF-8"), charset.c_str()));
+            _("Couldn't convert from %s to UTF-8"), m_charset.c_str()));
     } catch (const Glib::ConvertError &ex) {
       se_dbg_msg(SE_DBG_UTILITY, "Glib::ConvertError: %s", ex.what().c_str());
       throw EncodingConvertError(build_message(
-          _("Couldn't convert from %s to UTF-8"), charset.c_str()));
+          _("Couldn't convert from %s to UTF-8"), m_charset.c_str()));
     } catch (...) {
       se_dbg_msg(SE_DBG_UTILITY, "Unknow error");
       throw EncodingConvertError(build_message(
-          _("Couldn't convert from %s to UTF-8"), charset.c_str()));
+          _("Couldn't convert from %s to UTF-8"), m_charset.c_str()));
     }
   }
 
@@ -266,9 +271,18 @@ std::string convert_from_utf8_to_charset(const Glib::ustring &utf8_content,
              charset.c_str());
 
   try {
+    // glib does not know about BOM, so add it manually and then treat it as UTF-8
+    if (charset == "UTF-8-BOM") {
+        std::string content = Glib::convert(utf8_content, "UTF-8", "UTF-8");
+        // Prepend UTF-8 BOM (EF BB BF)
+        static const unsigned char bom[] = {0xEF, 0xBB, 0xBF};
+        content = std::string(reinterpret_cast<const char*>(bom), 3) + content;
+        return content;
+    } else {
     std::string content = Glib::convert(utf8_content, charset, "UTF-8");
-
     return content;
+    }
+
   } catch (const Glib::ConvertError &ex) {
     throw EncodingConvertError(build_message(
         _("Could not convert the text to the character coding '%s'"),
