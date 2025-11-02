@@ -23,6 +23,7 @@
 #include <gtkmm.h>
 #include "cfg.h"
 #include "stylemodel.h"
+#include "subtitle.h"
 
 class Document;
 class SubtitleModel;
@@ -40,7 +41,7 @@ class SubtitleView : public Gtk::TreeView {
                              bool start_editing = false);
 
   // This is a static function.
-  // Return the humain label by the internal name of the column.
+  // Return the human label by the internal name of the column.
   static Glib::ustring get_column_label_by_name(const Glib::ustring &name);
 
   // Return the name of the current column focus.
@@ -192,6 +193,7 @@ class SubtitleView : public Gtk::TreeView {
   bool check_timing;
   long min_gap;
   long min_duration;
+  long max_cpl;
   double min_cps;
   double max_cps;
 };

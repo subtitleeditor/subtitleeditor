@@ -120,6 +120,8 @@ int OptionGroup::get_debug_flags() {
   int flags = 0;
 
 #ifdef DEBUG
+  if (debug_profiling)
+    flags |= SE_DBG_PROFILING;
   if (debug_all) {
     flags |= SE_DBG_ALL;
     return flags;
@@ -147,8 +149,6 @@ int OptionGroup::get_debug_flags() {
     flags |= SE_DBG_COMMAND;
   if (debug_plugins)
     flags |= SE_DBG_PLUGINS;
-  if (debug_profiling)
-    flags |= SE_DBG_PROFILING;
 
 #endif  // DEBUG
 
