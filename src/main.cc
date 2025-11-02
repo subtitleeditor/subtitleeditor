@@ -62,6 +62,10 @@ int main(int argc, char *argv[]) {
     Glib::OptionContext context(_(" — edit subtitles files"));
     context.set_main_group(options);
 
+#ifdef DEBUG
+    context.add_group(options.get_debug_group());
+#endif
+
     Glib::OptionGroup gst_group(gst_init_get_option_group());
     context.add_group(gst_group);
 

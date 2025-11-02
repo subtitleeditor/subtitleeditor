@@ -24,7 +24,12 @@
 #include "i18n.h"
 
 OptionGroup::OptionGroup()
-    : Glib::OptionGroup("subtitleeditor...", "description...", "help...") {
+    : Glib::OptionGroup("subtitleeditor", _("Application Options"), _("Edit subtitle files"))
+#ifdef DEBUG
+    , debug_group("debug", _("Debug Options"), _("Show debug-related options"))
+#endif
+
+{
   se_dbg(SE_DBG_APP);
 
   set_translation_domain(GETTEXT_PACKAGE);
@@ -89,27 +94,30 @@ OptionGroup::OptionGroup()
 
 #ifdef DEBUG
 
-#define add_debug_option(name, value) \
-  {                                   \
-    value = false;                    \
-    Glib::OptionEntry e;              \
-    e.set_long_name("debug-" name);   \
-    add_entry(e, value);              \
+#define add_debug_option(name, value, desc) \
+  {                                         \
+    value = false;                          \
+    Glib::OptionEntry e;                    \
+    e.set_long_name("debug-" name);         \
+    e.set_description(desc);                \
+    debug_group.add_entry(e, value);        \
   }
 
-  add_debug_option("all", debug_all);
-  add_debug_option("app", debug_app);
-  add_debug_option("view", debug_view);
-  add_debug_option("io", debug_io);
-  add_debug_option("search", debug_search);
-  add_debug_option("regex", debug_regex);
-  add_debug_option("video-player", debug_video_player);
-  add_debug_option("spell-checking", debug_spell_checking);
-  add_debug_option("waveform", debug_waveform);
-  add_debug_option("utility", debug_utility);
-  add_debug_option("command", debug_command);
-  add_debug_option("plugins", debug_plugins);
-  add_debug_option("profiling", debug_profiling);
+  add_debug_option("all", debug_all,
+                   "Shows all debug output (in effect like passing all options below except no-profiling)");
+  add_debug_option("no-profiling", debug_no_profiling, "Disable timestamps of functions call in debug output");
+  add_debug_option("app", debug_app, "Application debug messages");
+  add_debug_option("view", debug_view, "View/UI debug messages");
+  add_debug_option("io", debug_io, "File I/O debug messages");
+  add_debug_option("search", debug_search, "Search debug messages");
+  add_debug_option("regex", debug_regex, "Regex debug messages");
+  add_debug_option("video-player", debug_video_player, "Video player debug messages");
+  add_debug_option("spell-checking", debug_spell_checking,
+                   "Spell checker debug messages");
+  add_debug_option("waveform", debug_waveform, "Waveform debug messages");
+  add_debug_option("utility", debug_utility, "Utility debug messages");
+  add_debug_option("command", debug_command, "Command system debug");
+  add_debug_option("plugins", debug_plugins, "Plugins debug messages");
 
 #undef add_debug_option
 
@@ -120,6 +128,10 @@ int OptionGroup::get_debug_flags() {
   int flags = 0;
 
 #ifdef DEBUG
+  // This is here first so that "--debug-all --debug-no-profiling" does not show timestamps
+  if (debug_no_profiling)
+    flags |= SE_DBG_NO_PROFILING;
+
   if (debug_all) {
     flags |= SE_DBG_ALL;
     return flags;
@@ -147,8 +159,6 @@ int OptionGroup::get_debug_flags() {
     flags |= SE_DBG_COMMAND;
   if (debug_plugins)
     flags |= SE_DBG_PLUGINS;
-  if (debug_profiling)
-    flags |= SE_DBG_PROFILING;
 
 #endif  // DEBUG
 
