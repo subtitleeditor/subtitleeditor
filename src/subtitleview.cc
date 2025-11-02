@@ -287,6 +287,7 @@ SubtitleView::SubtitleView(Document &doc) {
 
   // Setup my own copy of needed timing variables
   min_duration = cfg::get_int("timing", "min-display");
+  max_cpl = cfg::get_int("timing", "max-characters-per-line");
   min_gap = cfg::get_int("timing", "min-gap-between-subtitles");
   min_cps = cfg::get_double("timing", "min-characters-per-second");
   max_cps = cfg::get_double("timing", "max-characters-per-second");
@@ -302,6 +303,8 @@ void SubtitleView::on_config_timing_changed(const Glib::ustring &key,
                                             const Glib::ustring &value) {
   if (key == "min-gap-between-subtitles")
     min_gap = utility::string_to_long(value);
+  else if (key == "max-characters-per-line")
+    max_cpl = utility::string_to_int(value);
   else if (key == "do-auto-timing-check")
     check_timing = utility::string_to_bool(value);
   else if (key == "min-display")
@@ -435,17 +438,59 @@ void SubtitleView::cps_data_func(const Gtk::CellRenderer *renderer,
   Subtitle cur_sub(m_refDocument, iter);
 
   Glib::ustring color("black");  // default
-
+  Glib::ustring cps_text_string =
+      cur_sub.get_characters_per_second_text_string();
   if (check_timing) {
     const int cmp = cur_sub.check_cps_text(min_cps, max_cps);
-    if (cmp > 0)
+    if (cmp > 0) {
       color = "red";
-    else if (cmp < 0)
+      cps_text_string = "<b>" + cps_text_string + "</b>";
+    } else if (cmp < 0)
       color = "blue";
   }
-  trenderer->property_markup() =
-      Glib::ustring::compose("<span foreground=\"%1\">%2</span>", color,
-                             cur_sub.get_characters_per_second_text_string());
+  trenderer->property_markup() = Glib::ustring::compose(
+      "<span foreground=\"%1\">%2</span>", color, cps_text_string);
+}
+
+void SubtitleView::cpl_text_data_func(const Gtk::CellRenderer *renderer,
+                                      const Gtk::TreeModel::iterator &iter) {
+  Gtk::CellRendererText *trenderer = (Gtk::CellRendererText *)renderer;
+  Subtitle cur_sub(m_refDocument, iter);
+  Glib::ustring cpl_text = cur_sub.get_characters_per_line_text();
+
+  if (check_timing) {
+    // Parse each line and build markup with colors per line
+    std::istringstream ss(cpl_text);
+    std::string line;
+    std::vector<std::string> lines;
+
+    while (std::getline(ss, line)) {
+      int cpl = utility::string_to_int(line);
+
+      if (cpl > max_cpl) {
+        // This line exceeds limit - make it red
+        lines.push_back(Glib::ustring::compose(
+            "<span foreground=\"red\"><b>%1</b></span>", line));
+      } else {
+        // This line is OK - keep it black
+        lines.push_back(Glib::ustring::compose(
+            "<span foreground=\"black\" font-weight=\"200\">%1</span>", line));
+      }
+    }
+
+    // Join lines with newline
+    Glib::ustring markup;
+    for (size_t i = 0; i < lines.size(); ++i) {
+      if (i > 0)
+        markup += "\n";
+      markup += lines[i];
+    }
+
+    trenderer->property_markup() = markup;
+  } else {
+    // When check_timing is off, just display plain text
+    trenderer->property_text() = cpl_text;
+  }
 }
 
 void SubtitleView::duration_data_func(const Gtk::CellRenderer *renderer,
@@ -635,10 +680,9 @@ void SubtitleView::createColumnText() {
     renderer = manage(new Gtk::CellRendererText);
 
     column->pack_start(*renderer, false);
-    column->add_attribute(renderer->property_text(),
-                          m_column.characters_per_line_text);
+    column->set_cell_data_func(
+        *renderer, sigc::mem_fun(*this, &SubtitleView::cpl_text_data_func));
     renderer->property_yalign() = 0;
-    renderer->property_weight() = Pango::WEIGHT_ULTRALIGHT;
     renderer->property_xalign() = 1.0;
     renderer->property_alignment() = Pango::ALIGN_RIGHT;
 
