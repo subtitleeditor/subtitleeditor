@@ -683,6 +683,7 @@ void SubtitleView::createColumnText() {
     column->set_cell_data_func(
         *renderer, sigc::mem_fun(*this, &SubtitleView::cpl_text_data_func));
     renderer->property_yalign() = 0;
+    // renderer->property_weight() = Pango::WEIGHT_ULTRALIGHT;
     renderer->property_xalign() = 1.0;
     renderer->property_alignment() = Pango::ALIGN_RIGHT;
 
@@ -1107,6 +1108,13 @@ void SubtitleView::on_edited_margin_v(const Glib::ustring &path,
   }
 }
 
+// Return true if column is only for data display, not editing
+bool SubtitleView::is_column_skippable(Gtk::TreeViewColumn *column) {
+  Glib::ustring col_name = get_name_of_column(column);
+  bool skippable = (col_name == "number" || col_name == "cps");
+  return skippable;
+}
+
 void SubtitleView::select_and_set_cursor(const Gtk::TreeIter &iter,
                                          bool start_editing) {
   se_dbg(SE_DBG_VIEW);
@@ -1127,9 +1135,78 @@ void SubtitleView::select_and_set_cursor(const Gtk::TreeIter &iter,
   scroll_to_row(path_from_iter, 0.5);
 }
 
-bool SubtitleView::on_key_press_event(GdkEventKey *event) {
+// Finds next nonskippable column. if it does not exists Returns nullptr 
+Gtk::TreeViewColumn *SubtitleView::find_next_nonskippable_column(bool going_right) {
+  se_dbg(SE_DBG_VIEW);
 
-  if ((event->string != nullptr)&& cfg::get_boolean("subtitle-view", "enable-goto-subtitle-number")) {
+  if (!m_currentColumn) {
+    return nullptr;
+  }
+
+  // Get all visible columns in display order
+  std::vector<Gtk::TreeViewColumn *> all_columns = get_columns();
+  std::vector<Gtk::TreeViewColumn *> visible_columns;
+  for (auto col : all_columns) {
+    if (col->get_visible()) {
+      visible_columns.push_back(col);
+    }
+  }
+
+  // Find current column index
+  auto current_it = std::find(visible_columns.begin(), visible_columns.end(),
+                              m_currentColumn);
+  if (current_it == visible_columns.end()) {
+    return nullptr;
+  }
+
+  int current_idx = std::distance(visible_columns.begin(), current_it);
+
+  // Search in the specified direction
+  int step = going_right ? 1 : -1;
+  
+  int idx = current_idx + step;
+  while (idx >= 0 && idx < static_cast<int>(visible_columns.size())) {
+    Gtk::TreeViewColumn *candidate = visible_columns[idx];
+    Glib::ustring candidate_name = get_name_of_column(candidate);
+    bool skippable = is_column_skippable(candidate);
+
+    if (!skippable) {
+      return candidate;
+    }
+
+    idx += step;
+  }
+  // If we reached her a non-skippable column was not found
+  return nullptr;
+}
+
+// Sets active column
+void SubtitleView::set_column(Gtk::TreeViewColumn *target_column,
+                              bool change_cursor) {
+  se_dbg(SE_DBG_VIEW);
+  Gtk::TreeModel::Path path;
+  se_dbg_msg(SE_DBG_VIEW, get_name_of_column(m_currentColumn).c_str());
+  get_cursor(path, m_currentColumn);
+  set_cursor(path, *target_column, false);
+  se_dbg_msg(SE_DBG_VIEW, "Moved to column: %s",
+             get_name_of_column(target_column).c_str());
+  if (change_cursor)
+    on_cursor_changed();
+}
+
+bool SubtitleView::on_key_press_event(GdkEventKey *event) {
+  if (event->keyval == GDK_KEY_Left || event->keyval == GDK_KEY_Right) {
+    bool going_right = (event->keyval == GDK_KEY_Right);
+
+    Gtk::TreeViewColumn *target_column = find_next_nonskippable_column(going_right);
+
+    if (target_column)
+      set_column(target_column, true);
+    
+    return true;
+  }
+
+  if ((event->string != nullptr) && cfg::get_boolean("subtitle-view", "enable-goto-subtitle-number")) {
     int num;
     std::istringstream ss(event->string);
     bool is_num = static_cast<bool>(ss >> num) != 0;
@@ -1326,6 +1403,8 @@ void SubtitleView::on_cursor_changed() {
 
   // get the focused column
   Gtk::TreeViewColumn *focused_column = nullptr;
+  Gtk::TreeViewColumn *original_column = m_currentColumn;
+
   Gtk::TreeModel::Path path;
   get_cursor(path, focused_column);
 
@@ -1340,13 +1419,23 @@ void SubtitleView::on_cursor_changed() {
 
     m_currentColumn = nullptr;
   }
-  // bold the new current column
+  // bold the new column
   if (focused_column) {
-    Gtk::Label *label =
+    if (!is_column_skippable(focused_column)) {
+      Gtk::Label *label =
         dynamic_cast<Gtk::Label *>(focused_column->get_widget());
-    label->set_attributes(active);
-
-    m_currentColumn = focused_column;
+      label->set_attributes(active);
+      m_currentColumn = focused_column;
+    // if column cannot be changed, do not bold it and go to original column
+    }
+    else if (original_column != nullptr) {
+      se_dbg_msg(SE_DBG_VIEW, get_name_of_column(m_currentColumn).c_str());
+      set_column(original_column, false);
+      m_currentColumn = original_column;
+      Gtk::Label *label =
+          dynamic_cast<Gtk::Label *>(original_column->get_widget());
+      label->set_attributes(active);
+    }
   }
 }
 

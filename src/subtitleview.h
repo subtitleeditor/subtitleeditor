@@ -147,6 +147,9 @@ class SubtitleView : public Gtk::TreeView {
   // The position of the cursor (focused cell) has changed.
   // Update the column title (bold).
   void on_cursor_changed();
+  
+
+  void set_column(Gtk::TreeViewColumn *column, bool change_cursor);
 
   bool on_key_press_event(GdkEventKey *event);
 
@@ -155,6 +158,15 @@ class SubtitleView : public Gtk::TreeView {
                                        const Glib::ustring &value);
 
   void set_tooltips(Gtk::TreeViewColumn *column, const Glib::ustring &text);
+
+  // Returns true if column is only for data display, not editing
+  bool is_column_skippable(Gtk::TreeViewColumn *column);
+   
+  // Finds next nonskippable column. if it does not exists Returns nullptr 
+  Gtk::TreeViewColumn *find_next_nonskippable_column(bool going_right);
+
+  void cpl_text_data_func(const Gtk::CellRenderer *renderer,
+                          const Gtk::TreeModel::iterator &iter);
 
   void cps_data_func(const Gtk::CellRenderer *renderer,
                      const Gtk::TreeModel::iterator &iter);
