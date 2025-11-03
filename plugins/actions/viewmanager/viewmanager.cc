@@ -21,6 +21,7 @@
 #include <extension/action.h>
 #include <gtkmm_utility.h>
 #include <utility.h>
+
 #include <memory>
 
 class DialogViewEdit : public Gtk::Dialog {
@@ -318,21 +319,60 @@ class ViewManagerPlugin : public Action {
     cfg::set_string(group, _("Timing"), "number;start;end;duration;cps;text");
   }
 
-  void activate() {
-    check_config();
-
-    action_group = Gtk::ActionGroup::create("ViewManagerPlugin");
-
-    // user settings
+  // Gets current view, returns empty when unsuccesfull
+  Glib::ustring get_current_view() {
+    se_dbg(SE_DBG_VIEW);
+    // Get current column configuration
+    Glib::ustring current_columns =
+        cfg::get_string("subtitle-view", "columns-displayed");
+    Glib::ustring current_view = "";
+    // Find which view matches the current columns
     auto keys = cfg::get_keys("view-manager");
     for (const auto& name : keys) {
-      action_group->add(
-          Gtk::Action::create(name, name, _("Switches to this view")),
-          sigc::bind(sigc::mem_fun(*this, &ViewManagerPlugin::on_set_view),
-                     name));
+      Glib::ustring view_columns = cfg::get_string("view-manager", name);
+      if (view_columns == current_columns)
+        current_view = name;
+    }
+    return current_view;
+  }
+
+  void activate() {
+    se_dbg(SE_DBG_VIEW);
+    if (m_current_view_name.empty()) {
+      m_current_view_name = get_current_view();
+    }
+    check_config();
+
+    // Set up menu items for views
+    action_group = Gtk::ActionGroup::create("ViewManagerPlugin");
+    Gtk::RadioAction::Group view_group;
+    auto keys = cfg::get_keys("view-manager");
+    for (const auto& name : keys) {
+      if (!m_current_view_name.empty()) {
+        // If the current displayed columns are from a view, display
+        // radiobuttons
+        // Note that on X11 with appmentu-gtk3 (aka global menus),  this will
+        // not work if we first load from config column configuration that does
+        // not correspond to any view, then until restarted, no radio buttons
+        // will show even if we later set up a menu
+        Glib::RefPtr<Gtk::RadioAction> radio_action = Gtk::RadioAction::create(
+            view_group, name, name, _("Switches to this view"));
+        action_group->add(
+            radio_action,
+            sigc::bind(sigc::mem_fun(*this, &ViewManagerPlugin::on_set_view),
+                       name));
+      } else {
+        // Create as regular menu item if no defined view is set
+        Glib::RefPtr<Gtk::Action> regular_action =
+            Gtk::Action::create(name, name, _("Switches to this view"));
+        action_group->add(
+            regular_action,
+            sigc::bind(sigc::mem_fun(*this, &ViewManagerPlugin::on_set_view),
+                       name));
+      }
     }
 
-    // Set View...
+    // Set View preferences menu item
     action_group->add(
         Gtk::Action::create("view-manager-preferences", Gtk::Stock::PREFERENCES,
                             _("View _Manager"), _("Manage the views")),
@@ -347,55 +387,91 @@ class ViewManagerPlugin : public Action {
         <menubar name='menubar'>
           <menu name='menu-view' action='menu-view'>
             <placeholder name='view-manager'>
-              <placeholder name='placeholder'/>
-              <menuitem action='view-manager-preferences'/>
+                <placeholder name='view-manager-placeholder'/>
+                <separator/>
+                <menuitem action='view-manager-preferences'/>
             </placeholder>
           </menu>
         </menubar>
       </ui>
     )";
 
-    ui_id = get_ui_manager()->add_ui_from_string(submenu);
+    ui_id = ui->add_ui_from_string(submenu);
 
-    // create items for the user view
     for (const auto& name : keys) {
-      ui->add_ui(ui_id, "/menubar/menu-view/view-manager/placeholder", name,
-                 name, Gtk::UI_MANAGER_AUTO, false);
+      ui->add_ui(ui_id,
+                 "/menubar/menu-view/view-manager/view-manager-placeholder",
+                 name, name, Gtk::UI_MANAGER_AUTO, false);
     }
-    get_ui_manager()->ensure_update();
+    update_ui();
+    ui->ensure_update();
   }
 
   void deactivate() {
     se_dbg(SE_DBG_PLUGINS);
-
     Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
     ui->remove_ui(ui_id);
     ui->remove_action_group(action_group);
+    ui->ensure_update();
   }
 
   // Updates the configuration with the columns to display.
   void on_set_view(const Glib::ustring& name) {
+    se_dbg(SE_DBG_VIEW);
+    bool was_empty = m_current_view_name.empty();
+    m_current_view_name = name;
     Glib::ustring columns = cfg::get_string("view-manager", name);
-
     cfg::set_string("subtitle-view", "columns-displayed", columns);
+    // if we do not do this check, we enter an endless loop
+    // we only do this when previously empty to display radio buttons
+    // this is a niche thing when in config there is different column
+    // configuration not corresponding to a view
+    if (was_empty) {
+      deactivate();
+      activate();
+    }
   }
 
   void on_view_manager() {
+    se_dbg(SE_DBG_VIEW);
     std::unique_ptr<DialogViewManager> dialog(
         gtkmm_utility::get_widget_derived<DialogViewManager>(
             SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV),
             "dialog-view-manager.ui", "dialog-view-manager"));
 
     dialog->execute();
-
+    on_set_view(m_current_view_name);
     deactivate();
     activate();
+  }
+
+  void update_ui() {
+    se_dbg(SE_DBG_VIEW);
+    // Find which view matches the current view
+    if (!m_current_view_name.empty()) {
+      auto keys = cfg::get_keys("view-manager");
+      for (const auto& view_name : keys) {
+        if (m_current_view_name == view_name) {
+          // Found matching view, activate its radio button
+          Glib::RefPtr<Gtk::Action> action =
+              action_group->get_action(view_name);
+          if (action) {
+            Glib::RefPtr<Gtk::RadioAction> radio =
+                Glib::RefPtr<Gtk::RadioAction>::cast_static(action);
+            if (radio)
+              radio->set_active(true);
+          }
+          break;
+        }
+      }
+    }
   }
 
  protected:
   Gtk::UIManager::ui_merge_id ui_id;
   Glib::RefPtr<Gtk::ActionGroup> action_group;
+  Glib::ustring m_current_view_name;
 };
 
 REGISTER_EXTENSION(ViewManagerPlugin)
