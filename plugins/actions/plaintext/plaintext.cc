@@ -59,9 +59,9 @@ class PlainTextPlugin : public Action {
 
     ui->insert_action_group(action_group);
 
-    ui->add_ui(ui_id, "/menubar/menu-file/menu-import/placeholder",
+    ui->add_ui(ui_id, "/menubar/menu-file/plain-text-import",
                "plain-text-import", "plain-text-import");
-    ui->add_ui(ui_id, "/menubar/menu-file/menu-export/placeholder",
+    ui->add_ui(ui_id, "/menubar/menu-file/plain-text-export",
                "plain-text-export", "plain-text-export");
   }
 
