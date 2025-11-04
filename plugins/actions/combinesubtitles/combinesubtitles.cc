@@ -41,7 +41,7 @@ class CombineSelectedSubtitlesPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("combine-selected-subtitles", _("_Combine"),
-                            _("Merge the selected subtitles")),
+                            _("Merge selected subtitles into one, with start being set by the start of the first selected subtitle and end being set by the end of the last selected subtitle")),
         sigc::mem_fun(
             *this,
             &CombineSelectedSubtitlesPlugin::on_combine_selected_subtitles));

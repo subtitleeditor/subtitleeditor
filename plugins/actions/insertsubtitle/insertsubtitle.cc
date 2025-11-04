@@ -42,14 +42,14 @@ class InsertSubtitlePlugin : public Action {
     action_group->add(
         Gtk::Action::create(
             "insert-subtitle-before", Gtk::Stock::GO_UP, _("Insert _Before"),
-            _("Insert blank subtitle before the selected subtitle")),
+            _("Insert a blank subtitle before the first selected subtitle")),
         Gtk::AccelKey("<Control>Insert"),
         sigc::mem_fun(*this, &InsertSubtitlePlugin::on_insert_subtitle_before));
 
     action_group->add(
         Gtk::Action::create(
             "insert-subtitle-after", Gtk::Stock::GO_DOWN, _("Insert _After"),
-            _("Insert blank subtitle after the selected subtitle")),
+            _("Insert a blank subtitle after the first selected subtitle")),
         Gtk::AccelKey("Insert"),
         sigc::mem_fun(*this, &InsertSubtitlePlugin::on_insert_subtitle_after));
 

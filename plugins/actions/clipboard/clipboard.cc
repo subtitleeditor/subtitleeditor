@@ -68,22 +68,22 @@ class ClipboardPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("clipboard-copy", _("_Copy"),
-                            _("Copy selected subtitles to the clipboard.")),
+                            _("Copy selected subtitles to the clipboard")),
         sigc::mem_fun(*this, &ClipboardPlugin::on_copy));
     action_group->add(
         Gtk::Action::create(
             "clipboard-cut", _("C_ut"),
-            _("Copy selected subtitles to the clipboard and delete them.")),
+            _("Copy selected subtitles to the clipboard and delete them")),
         sigc::mem_fun(*this, &ClipboardPlugin::on_cut));
     action_group->add(
         Gtk::Action::create("clipboard-paste", _("_Paste"),
                             _("Paste subtitles from the clipboard AFTER the "
-                              "currently selected subtitle.")),
+                              "currently selected subtitle, keeping their duration and gaps between them but setting the start of the first one right after with respect to the minimal gap between subtitles setting )")),
         sigc::mem_fun(*this, &ClipboardPlugin::on_paste));
     action_group->add(
         Gtk::Action::create("clipboard-copy-with-timing", _("Copy With Timing"),
                             _("Copy selected subtitles and make their timing "
-                              "visible to text-based applications.")),
+                              "visible to text-based applications")),
         sigc::mem_fun(*this, &ClipboardPlugin::on_copy_with_timing));
 
     action_group->add(Gtk::Action::create("menu-edit/menu-paste-special",
@@ -93,34 +93,35 @@ class ClipboardPlugin : public Action {
         Gtk::Action::create("clipboard-paste-at-player-position",
                             _("Paste At Current Player Position"),
                             _("Paste subtitles from the clipboard AFTER the "
-                              "currently selected subtitle.")),
+                              "currently selected subtitle, keeping their duration and gaps between them but setting the start of the first at the current player position")),
         sigc::mem_fun(*this, &ClipboardPlugin::on_paste_at_player_position));
     action_group->add(
         Gtk::Action::create("clipboard-paste-as-new-document",
                             _("Paste As New Document"),
                             _("Create a new document and paste the contents of "
-                              "the clipboard into it.")),
+                              "the clipboard into it, keeping timecodes intact")),
         sigc::mem_fun(*this, &ClipboardPlugin::on_paste_as_new_document));
     action_group->add(
         Gtk::Action::create("clipboard-paste-over-text",
                             _("Paste Over Text"),
-                            _("Overwrite subtitle text with clipboard content.")),
+                            _("Overwrite text of the first selected subtitle with clipboard content (if your clipboard holds copied subtitles and more subtitles are selected, their texts will get overwritten one by one)")),
         sigc::mem_fun(*this, &ClipboardPlugin::on_paste_over_text));
     action_group->add(
         Gtk::Action::create("clipboard-paste-over-time",
                             _("Paste Over Time"),
-                            _("Overwrite subtitle time with clipboard content.")),
+                            _("Overwrite time of the first selected subtitle with clipboard content (if your clipboard holds copied subtitles and more subtitles are selected, their times will get overwritten one by one)")),
         sigc::mem_fun(*this, &ClipboardPlugin::on_paste_over_time));
     action_group->add(
         Gtk::Action::create("clipboard-paste-unchanged",
                             _("Paste Unchanged"),
-                            _("Paste without changing the time codes.")),
+                            _("Paste subtitles from clipboard after AFTER the "
+                              "currently selected subtitle without changing their time codes at all")),
         sigc::mem_fun(*this, &ClipboardPlugin::on_paste_unchanged));
 
     action_group->add(
         Gtk::Action::create("clipboard-select-overlap",
                             _("Select Clipboard Overlap"),
-                            _("Select subtitles that overlap clipboard content.")),
+                            _("Select subtitles that overlap with subtitles in the clipboard")),
         sigc::mem_fun(*this, &ClipboardPlugin::on_select_overlap));
 
     // ui

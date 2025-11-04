@@ -42,11 +42,11 @@ class DocumentsNavigationPlugin : public Action {
     action_group = Gtk::ActionGroup::create("DocumentsNavigationPlugin");
 
     action_group->add(
-        Gtk::Action::create("documentsnavigation", _("_Documents")));
+        Gtk::Action::create("documentsnavigation", _("_Tabs"),  _("Select a tab")));
 
     action_group->add(
         Gtk::Action::create("documentsnavigation-first-document",
-                            Gtk::Stock::GOTO_FIRST, _("_First Document")),
+                            Gtk::Stock::GOTO_FIRST, _("_First Tab"), _("Select the first (left-most) tab")),
         sigc::bind<int>(
             sigc::mem_fun(*this,
                           &DocumentsNavigationPlugin::on_select_document),
@@ -54,7 +54,7 @@ class DocumentsNavigationPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("documentsnavigation-last-document",
-                            Gtk::Stock::GOTO_LAST, _("_Last Document")),
+                            Gtk::Stock::GOTO_LAST, _("_Last Tab"), _("Select the last (right-most) tab")),
         sigc::bind<int>(
             sigc::mem_fun(*this,
                           &DocumentsNavigationPlugin::on_select_document),
@@ -62,7 +62,7 @@ class DocumentsNavigationPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("documentsnavigation-previous-document",
-                            Gtk::Stock::GO_BACK, _("_Previous Document")),
+                            Gtk::Stock::GO_BACK, _("_Previous Tab"), _("Select the tab on the left (or cycle to the right-most one)")),
         sigc::bind<int>(
             sigc::mem_fun(*this,
                           &DocumentsNavigationPlugin::on_select_document),
@@ -70,7 +70,7 @@ class DocumentsNavigationPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("documentsnavigation-next-document",
-                            Gtk::Stock::GO_FORWARD, _("_Next Document")),
+                            Gtk::Stock::GO_FORWARD, _("_Next Tab"),  _("Select the tab on the right (or cycle to the left-most one)")),
         sigc::bind<int>(
             sigc::mem_fun(*this,
                           &DocumentsNavigationPlugin::on_select_document),

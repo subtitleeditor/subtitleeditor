@@ -52,8 +52,8 @@ class WaveformManagement : public Action {
     // open & save
     action_group->add(
         Gtk::Action::create(
-            "waveform/open", Gtk::Stock::OPEN, _("_Open Waveform From File"),
-            _("Open waveform from a file or create from a video")),
+            "waveform/open", Gtk::Stock::OPEN, _("_Create Waveform From File"),
+            _("Create a waveform from a video file or an audio file")),
         Gtk::AccelKey("<Control><Alt>O"),
         sigc::mem_fun(*this, &WaveformManagement::on_open_waveform));
 
@@ -61,52 +61,58 @@ class WaveformManagement : public Action {
         Gtk::Action::create(
             "waveform/generate-from-player-file",
             _("_Generate Waveform From Video"),
-            _("Generate the waveform from the current video file")),
+            _("Generate a waveform from the current video or audio file")),
         sigc::mem_fun(*this,
                       &WaveformManagement::on_generate_from_player_file));
 
     action_group->add(
         Gtk::Action::create("waveform/generate-dummy",
                             _("_Generate Dummy Waveform"),
-                            _("Generate an dummy waveform (sine)")),
+                            _("Generate a dummy waveform (a sinusoidal wave)")),
         sigc::mem_fun(*this, &WaveformManagement::on_generate_dummy));
 
     action_group->add(
         Gtk::Action::create("waveform/save", Gtk::Stock::SAVE,
-                            _("_Save Waveform"), _("Save waveform to file")),
+                            _("_Save Waveform"),
+                            _("Save the waveform to a file")),
         Gtk::AccelKey("<Control><Alt>S"),
         sigc::mem_fun(*this, &WaveformManagement::on_save_waveform));
 
     action_group->add(
         Gtk::Action::create("waveform/close", Gtk::Stock::CLOSE,
-                            _("_Close Waveform"), _("Close waveform")),
+                            _("_Close Waveform"), _("Close the waveform")),
         sigc::mem_fun(*this, &WaveformManagement::on_close_waveform));
 
     // zoom
     action_group->add(
         Gtk::Action::create("waveform/zoom-in", Gtk::Stock::ZOOM_IN,
-                            _("Zoom _In"), _("FIXME")),
+                            _("Zoom _In"), _("Zoom in a little")),
         sigc::mem_fun(*this, &WaveformManagement::on_zoom_in));
 
     action_group->add(
         Gtk::Action::create("waveform/zoom-out", Gtk::Stock::ZOOM_OUT,
-                            _("Zoom _Out"), _("FIXME")),
+                            _("Zoom _Out"), _("Zoom out a little")),
         sigc::mem_fun(*this, &WaveformManagement::on_zoom_out));
 
     action_group->add(
-        Gtk::Action::create("waveform/zoom-selection", Gtk::Stock::ZOOM_FIT,
-                            _("Zoom _Selection"), _("FIXME")),
+        Gtk::Action::create(
+            "waveform/zoom-selection", Gtk::Stock::ZOOM_FIT,
+            _("Zoom _Selection"),
+            _("Center the selected subtitle and zoom in a little")),
         sigc::mem_fun(*this, &WaveformManagement::on_zoom_selection));
 
     action_group->add(
         Gtk::Action::create("waveform/zoom-all", Gtk::Stock::ZOOM_100,
-                            _("Zoom _All"), _("FIXME")),
+                            _("Zoom _All"),
+                            _("Zoom out so the whole waveform is visible")),
         sigc::mem_fun(*this, &WaveformManagement::on_zoom_all));
 
     // center
     action_group->add(
-        Gtk::Action::create("waveform/center-with-selected-subtitle",
-                            _("_Center With Selected Subtitle"), _("FIXME")),
+        Gtk::Action::create(
+            "waveform/center-with-selected-subtitle",
+            _("_Center Selected Subtitle"),
+            _("Center the waveform view on the first selected subtitle")),
         sigc::mem_fun(*this,
                       &WaveformManagement::on_center_with_selected_subtitle));
 
@@ -115,21 +121,24 @@ class WaveformManagement : public Action {
         cfg::get_boolean("waveform", "scrolling-with-player");
 
     action_group->add(
-        Gtk::ToggleAction::create("waveform/scrolling-with-player",
-                                  _("Scrolling With _Player"), _("FIXME"),
-                                  scroll_with_player_state),
+        Gtk::ToggleAction::create(
+            "waveform/scrolling-with-player", _("Scrolling With _Video"),
+            _("Scroll waveform as the video plays so they keep in sync"),
+            scroll_with_player_state),
         sigc::mem_fun(*this, &WaveformManagement::on_scrolling_with_player));
 
     // select with player
-	// FIXME: Properly speaking, this should probably be in the video menu
-	// for it should work without a waveform
+    // FIXME: Properly speaking, this should probably be in the video menu
+    // for it should work without a waveform
     bool select_with_player_state =
         cfg::get_boolean("waveform", "select-with-player");
 
     action_group->add(
-        Gtk::ToggleAction::create("waveform/select-with-player",
-                                  _("Select With _Player"), _("FIXME"),
-                                  select_with_player_state),
+        Gtk::ToggleAction::create(
+            "waveform/select-with-player", _("Select With _Player"),
+            _("Select subtitles as video or audio plays so the "
+              "selected subtitle is synchronized with what is playing"),
+            select_with_player_state),
         sigc::mem_fun(*this, &WaveformManagement::on_select_with_player));
 
     // scrolling with selection
@@ -137,9 +146,11 @@ class WaveformManagement : public Action {
         cfg::get_boolean("waveform", "scrolling-with-selection");
 
     action_group->add(
-        Gtk::ToggleAction::create("waveform/scrolling-with-selection",
-                                  _("Scrolling With _Selection"), _("FIXME"),
-                                  scroll_with_selection_state),
+        Gtk::ToggleAction::create(
+            "waveform/scrolling-with-selection", _("Scrolling With _Selection"),
+            _("Scroll the waveform when subtitle selection changes so that "
+              "waveform display is in sync with the first selected subtitle"),
+            scroll_with_selection_state),
         sigc::mem_fun(*this, &WaveformManagement::on_scrolling_with_selection));
 
     // Respect the timing
@@ -147,8 +158,10 @@ class WaveformManagement : public Action {
 
     action_group->add(
         Gtk::ToggleAction::create(
-            "waveform/respect-timing", _("_Respect The Timing"),
-            _("Try to respect the timing preferences"), respect_timing_state),
+            "waveform/respect-timing", _("_Respect Timing"),
+            _("Try to respect the timing preferences when manipulating "
+              "subtitles by dragging the mouse over waveform"),
+            respect_timing_state),
         sigc::mem_fun(*this, &WaveformManagement::on_respect_timing));
 
     // Waveform Display
@@ -162,8 +175,8 @@ class WaveformManagement : public Action {
         sigc::mem_fun(*this, &WaveformManagement::on_waveform_display));
 
     // Recent files
-    Glib::RefPtr<Gtk::RecentAction> recentAction =
-        Gtk::RecentAction::create("waveform/recent-files", _("_Recent Files"));
+    Glib::RefPtr<Gtk::RecentAction> recentAction = Gtk::RecentAction::create(
+        "waveform/recent-files", _("_Recent Files"), _("Open a recent file"));
 
     Glib::RefPtr<Gtk::RecentFilter> filter = Gtk::RecentFilter::create();
     filter->set_name("subtitleeditor");

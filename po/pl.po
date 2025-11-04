@@ -382,7 +382,7 @@ msgid "_Combine"
 msgstr "P_ołącz"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:44
-msgid "Merge the selected subtitles"
+msgid "Merge selected subtitles"
 msgstr "Scal wybrane napisy"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:135
@@ -647,10 +647,6 @@ msgstr "Po_dziel dokument"
 msgid "_Duplicate"
 msgstr "_Powiel"
 
-#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:44
-msgid "Duplicate the selected subtitles"
-msgstr "Sklonuj zaznaczone napisy"
-
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:99
 msgid "Duplicate selected subtitles"
 msgstr "Sklonuj zaznaczone napisy"
@@ -660,7 +656,7 @@ msgid "_Edit Cell"
 msgstr "_Edytuj komórkę"
 
 #: ../plugins/actions/editcell/editcell.cc:44
-msgid "Start the editing of the focused cell"
+msgid "Start editing the focused cell"
 msgstr "Rozpocznij edycję komórki"
 
 #: ../plugins/actions/editcell/editcell.cc:49
@@ -668,7 +664,7 @@ msgid "Edit _Next Cell"
 msgstr "Edytuj _następną komórkę"
 
 #: ../plugins/actions/editcell/editcell.cc:50
-msgid "Start the editing of the next cell"
+msgid "Start editing the next cell"
 msgstr "Rozpocznij edycję następnej komórki"
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:1
@@ -1256,7 +1252,7 @@ msgid "Insert _Before"
 msgstr "Wstaw _przed"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:45
-msgid "Insert blank subtitle before the selected subtitle"
+msgid "Insert a blank subtitle before the first selected subtitle"
 msgstr "Wstaw pusty napis przed wybranym napisem"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:51
@@ -1264,7 +1260,7 @@ msgid "Insert _After"
 msgstr "Wstaw _za"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:52
-msgid "Insert blank subtitle after the selected subtitle"
+msgid "Insert a blank subtitle after the first selected subtitle"
 msgstr "Wstaw pusty napis po wybranym napisie"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:117
@@ -1278,7 +1274,7 @@ msgid "_Italic"
 msgstr "_Kursywa"
 
 #: ../plugins/actions/italicize/italicize.cc:45
-msgid "Italicize the selected subtitles text"
+msgid "Italicize the text of the selected subtitles"
 msgstr "Zmień styl wybranych napisów na kursywę"
 
 #: ../plugins/actions/italicize/italicize.cc:110
@@ -1936,7 +1932,7 @@ msgid "OpenGL"
 msgstr "OpenGL"
 
 #: ../plugins/actions/removesubtitle/removesubtitle.cc:44
-msgid "Delete the selected subtitles"
+msgid "Delete selected subtitles"
 msgstr "Usuń zaznaczone napisy"
 
 #: ../plugins/actions/removesubtitle/removesubtitle.cc:104
@@ -2281,7 +2277,7 @@ msgid "_Split"
 msgstr "_Podziel"
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:45
-msgid "Split the selected subtitles"
+msgid "Split selected subtitles"
 msgstr "Podziel wybrane napisy"
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:94

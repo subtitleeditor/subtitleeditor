@@ -73,18 +73,21 @@ class TimingFromPlayer : public Action {
     // Set Subtitle Time
     action_group->add(Gtk::Action::create(
         "menu-timing-from-player", _("Timing From Player"),
-        _("Use the current player position to set subtitle time")));
+        _("Use the current player position to set subtitle timecodes")));
     // set current subtitle
     action_group->add(
         Gtk::Action::create(
             "timing-from-player/set-subtitle-start", _("Set Subtitle _Start"),
-            _("Use the current player position to set the subtitle start")),
+            _("Use the current player position to set the start of the first "
+              "selected subtitle and then move all the other selected "
+              "subtitles by the same distance (like the tool Move Subtitles, but without dialogue)")),
         sigc::mem_fun(*this, &TimingFromPlayer::set_subtitle_start));
 
     action_group->add(
-        Gtk::Action::create(
-            "timing-from-player/set-subtitle-end", _("Set Subtitle _End"),
-            _("Use the current player position to set the subtitle end")),
+        Gtk::Action::create("timing-from-player/set-subtitle-end",
+                            _("Set Subtitle _End"),
+                            _("Use the current player position to set the end "
+                              "of the first selected subtitle")),
         sigc::mem_fun(*this, &TimingFromPlayer::set_subtitle_end));
 
     // set current subtitle and go to the next
@@ -92,8 +95,10 @@ class TimingFromPlayer : public Action {
         Gtk::Action::create(
             "timing-from-player/set-subtitle-start-and-go-next",
             _("Set Subtitle Start And Go Next"),
-            _("Use the current player position to set the start of the "
-              "selected subtitle and go to the next")),
+            _("Use the current player position to set the start of the first "
+              "selected subtitle, then move all the other selected subtitles "
+              "by the same amount and select the subtitle next to the first "
+              "selected one")),
         sigc::mem_fun(*this,
                       &TimingFromPlayer::set_subtitle_start_and_go_next));
 
@@ -101,7 +106,8 @@ class TimingFromPlayer : public Action {
         Gtk::Action::create("timing-from-player/set-subtitle-end-and-go-next",
                             _("Set Subtitle End And Go Next"),
                             _("Use the current player position to set the end "
-                              "of the selected subtitle and go to the next")),
+                              "of the first selected subtitle and select the "
+                              "subtitle next to the first selected one")),
         sigc::mem_fun(*this, &TimingFromPlayer::set_subtitle_end_and_go_next));
 
     // set current subtitle and define the next
@@ -110,7 +116,9 @@ class TimingFromPlayer : public Action {
             "timing-from-player/set-subtitle-start-and-next",
             _("Set Subtitle Start And Next"),
             _("Use the current player position to set the start of the current "
-              "selected subtitle and the position of the next")),
+              "selected subtitle and then create a new subtitle next to it — "
+              "use this action only when your selected subtitle is the last "
+              "one, otherwise the results are funny")),
         sigc::mem_fun(*this, &TimingFromPlayer::set_subtitle_start_and_next));
 
     action_group->add(
@@ -118,7 +126,9 @@ class TimingFromPlayer : public Action {
             "timing-from-player/set-subtitle-end-and-next",
             _("Set Subtitle End And Next"),
             _("Use the current player position to set the end of the current "
-              "selected subtitle and the position of the next")),
+              "selected subtitle and then create a new subtitle next to it — "
+              "use this action only when your selected subtitle is the last "
+              "one, otherwise the results are funny")),
         sigc::mem_fun(*this, &TimingFromPlayer::set_subtitle_end_and_next));
 
     // set current subtile start and with one key
@@ -126,15 +136,18 @@ class TimingFromPlayer : public Action {
         Gtk::Action::create(
             "timing-from-player/set-subtitle-start-and-end-with-one-key",
             _("Set Subtitle Start _And End"),
-            _("Use only one key to set beginning of the subtitle when the key "
-              "is pressed and the end when the key is released.")),
+            _("Use this to time all your subtitles in one go as video plays. "
+              "Press the associated (ideally) one-key shortcut to set the "
+              "beginning and release to set the end of the subtitle. Then the "
+              "next subtitle is selected or a new one created.")),
         sigc::mem_fun(
             *this, &TimingFromPlayer::set_subtitle_start_and_end_with_one_key));
 
     // preferences
     action_group->add(
         Gtk::Action::create("timing-from-player/preferences",
-                            Gtk::Stock::PREFERENCES),
+                            Gtk::Stock::PREFERENCES, _("Preferences"),
+                            _("Configure this submenu")),
         sigc::mem_fun(*this, &TimingFromPlayer::create_configure_dialog));
 
     // ui

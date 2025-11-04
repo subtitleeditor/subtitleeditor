@@ -23,6 +23,7 @@
 #include <gtkmm.h>
 #include <gtkmm_utility.h>
 #include <utility.h>
+
 #include "capitalizationpage.h"
 #include "commonerrorpage.h"
 #include "confirmationpage.h"
@@ -178,7 +179,8 @@ class TextCorrectionPlugin : public Action {
     // actions
     action_group = Gtk::ActionGroup::create("TextCorrectionPlugin");
     action_group->add(
-        Gtk::Action::create("text-correction", _("Text _Correction")),
+        Gtk::Action::create("text-correction", _("Text _Correction"),
+                            _("Launch the text correction dialogue")),
         sigc::mem_fun(*this, &TextCorrectionPlugin::on_execute));
 
     // ui

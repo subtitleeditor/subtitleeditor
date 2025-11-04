@@ -42,7 +42,7 @@ class ItalicizeSelectedSubtitlesPlugin : public Action {
     action_group->add(
         Gtk::Action::create("italicize-selected-subtitles", Gtk::Stock::ITALIC,
                             _("_Italic"),
-                            _("Italicize the selected subtitles text")),
+                            _("Italicize the text of the selected subtitles — note that this only works for Subrip (SRT) files")),
         Gtk::AccelKey("I"),
         sigc::mem_fun(*this, &ItalicizeSelectedSubtitlesPlugin::on_execute));
 

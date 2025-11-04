@@ -169,7 +169,7 @@ class DialoguizeSelectedSubtitlesPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("dialoguize-selected-subtitles", _("_Dialogue"),
-                            _("Add or remove dialogue line")),
+                            _("Add or remove symbols indicating that given line is a dialogue (symbols to be used can be set in plugin preferences)")),
         Gtk::AccelKey("D"),
         sigc::mem_fun(*this, &DialoguizeSelectedSubtitlesPlugin::on_execute));
 

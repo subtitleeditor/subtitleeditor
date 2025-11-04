@@ -40,15 +40,19 @@ class ExtendLengthPlugin : public Action {
     action_group = Gtk::ActionGroup::create("ExtendLengthPlugin");
 
     action_group->add(
-        Gtk::Action::create("extend-length", _("_Extend Length Forward"),
-                            _("Extend the length of selected subtitles to the "
-                              "start time of the next")),
+        Gtk::Action::create(
+            "extend-length", _("_Extend Length Forward"),
+            _("Extend the length of the selected subtitles to the "
+              "start time of the next subtitle (while respecting minimum gap "
+              "between subtitles)")),
         sigc::mem_fun(*this, &ExtendLengthPlugin::on_extend_length_fwd));
 
     action_group->add(
-        Gtk::Action::create("extend-length-bwd", _("E_xtend Length Backwards"),
-                            _("Extend the length of selected subtitles "
-                              "backwards to the end time of the previous")),
+        Gtk::Action::create(
+            "extend-length-bwd", _("E_xtend Length Backwards"),
+            _("Extend the length of selected selected subtitles "
+              "backwards to the end time of the previous subtitle (while "
+              "respecting minimum gap between subtitles)")),
         sigc::mem_fun(*this, &ExtendLengthPlugin::on_extend_length_bwd));
     // ui
     Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();

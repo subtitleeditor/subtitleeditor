@@ -24,7 +24,7 @@ msgstr ""
 
 #. comments
 #: ../plugins/actions/about/about.cc:76
-msgid "a tool for subtitles edition"
+msgid "A tool for editing subtitles"
 msgstr "Средство редактирования субтитров"
 
 #. translator-credits
@@ -389,7 +389,7 @@ msgid "_Combine"
 msgstr "О_бъединить"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:44
-msgid "Merge the selected subtitles"
+msgid "Merge selected subtitles"
 msgstr "Объединить выделенные субтитры"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:135
@@ -655,10 +655,6 @@ msgstr "Раз_делить документ"
 msgid "_Duplicate"
 msgstr "К_лонировать"
 
-#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:44
-msgid "Duplicate the selected subtitles"
-msgstr "Создание копии текущего субтитра"
-
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:99
 msgid "Duplicate selected subtitles"
 msgstr "Создание копии текущего субтитра"
@@ -668,7 +664,7 @@ msgid "_Edit Cell"
 msgstr "_Редактировать ячейку"
 
 #: ../plugins/actions/editcell/editcell.cc:44
-msgid "Start the editing of the focused cell"
+msgid "Start editing the focused cell"
 msgstr "Начать редактирование текущей ячейки"
 
 #: ../plugins/actions/editcell/editcell.cc:49
@@ -676,7 +672,7 @@ msgid "Edit _Next Cell"
 msgstr "Сл_едующая ячейка"
 
 #: ../plugins/actions/editcell/editcell.cc:50
-msgid "Start the editing of the next cell"
+msgid "Start editing the next cell"
 msgstr "Начать редактирование следующей ячейки"
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:1
@@ -807,7 +803,7 @@ msgid "_Error Checking"
 msgstr "Поиск о_шибок"
 
 #: ../plugins/actions/errorchecking/errorcheckingplugin.cc:692
-msgid "Launch the error checking."
+msgid "Launch error checking."
 msgstr "Запуск проверки на наличие ошибок."
 
 #: ../plugins/actions/errorchecking/maxcharactersperline.h:29
@@ -1207,7 +1203,7 @@ msgstr "По номеру"
 #: ../plugins/actions/findbytime/findbytime.cc:57
 #: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
 #, fuzzy
-msgid "Finds the subtitle nearest to the current player position."
+msgid "Finds the subtitle nearest to the current player position"
 msgstr "Добавить субтитры из файла к текущему проекту"
 
 #: ../plugins/actions/findbytime/findbytime.cc:114
@@ -1259,7 +1255,7 @@ msgid "Insert _Before"
 msgstr "Вставить п_еред"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:45
-msgid "Insert blank subtitle before the selected subtitle"
+msgid "Insert a blank subtitle before the first selected subtitle"
 msgstr "Вставить пустой субтитр перед выделенным"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:51
@@ -1267,7 +1263,7 @@ msgid "Insert _After"
 msgstr "Вставить по_сле"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:52
-msgid "Insert blank subtitle after the selected subtitle"
+msgid "Insert a blank subtitle after the first selected subtitle"
 msgstr "Вставить пустой субтитр после выделенного"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:117
@@ -1281,7 +1277,7 @@ msgid "_Italic"
 msgstr "К_урсив"
 
 #: ../plugins/actions/italicize/italicize.cc:45
-msgid "Italicize the selected subtitles text"
+msgid "Italicize the text of the selected subtitles"
 msgstr "Выделить выделенные субтитры курсивом."
 
 #: ../plugins/actions/italicize/italicize.cc:110
@@ -1336,7 +1332,7 @@ msgid "Save Keyframes"
 msgstr "Сохранить сцены"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:60
-msgid "Save keyframes to the file"
+msgid "Save keyframes to a file"
 msgstr "Сохранить сцены в файл"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:66
@@ -1354,7 +1350,7 @@ msgid "Generate Keyframes From Video (Using Frame)"
 msgstr "Создать из видео"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-msgid "Close the keyframes"
+msgid "Close Keyframes"
 msgstr "Закрыть сцены"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
@@ -1935,7 +1931,7 @@ msgid "OpenGL"
 msgstr "OpenGL"
 
 #: ../plugins/actions/removesubtitle/removesubtitle.cc:44
-msgid "Delete the selected subtitles"
+msgid "Delete selected subtitles"
 msgstr "Удалить выделенные субтитры"
 
 #: ../plugins/actions/removesubtitle/removesubtitle.cc:104
@@ -2248,7 +2244,7 @@ msgid "_Spell Check"
 msgstr "Проверка ор_фографии"
 
 #: ../plugins/actions/spellchecking/spellchecking.cc:642
-msgid "Launch the spell checking"
+msgid "Launch spell-checking"
 msgstr "Начать проверку орфографии"
 
 #: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
@@ -2261,7 +2257,7 @@ msgid "The beginning for the new document:"
 msgstr "Начало нового документа"
 
 #: ../plugins/actions/splitdocument/splitdocument.cc:46
-msgid "You can't use <i>split</i> with this document."
+msgid "You can't use the <i>split</i> action with this document."
 msgstr "Нельзя <i>разделять</i> данный документ."
 
 #. Remove subtitles used by the new one
@@ -2282,7 +2278,7 @@ msgid "_Split"
 msgstr "_Разделить"
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:45
-msgid "Split the selected subtitles"
+msgid "Split selected subtitles"
 msgstr "Разделить выделенные субтитры"
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:94
@@ -2489,7 +2485,7 @@ msgstr "_Вставить шаблон"
 
 #: ../plugins/actions/template/template.cc:110
 #, fuzzy
-msgid "Save the current document as template."
+msgid "Save the current document as template"
 msgstr "Сохранить текущий документ"
 
 #: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
@@ -2621,7 +2617,7 @@ msgid "Text _Correction"
 msgstr "Исправ_ить текст"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:46
-msgid "_Times"
+msgid "_Timecodes"
 msgstr "_Время"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:53
@@ -2660,7 +2656,7 @@ msgid "Timing From Player"
 msgstr ""
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:76
-msgid "Use the current player position to set subtitle time"
+msgid "Use the current player position to set subtitle timecodes"
 msgstr "Использовать плеер для указания времени субтитров"
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:80
@@ -2778,12 +2774,12 @@ msgstr "Ви_део"
 
 #. _("_Open Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:49
-msgid "Open a multimedia file"
+msgid "Open an audio file or a video file"
 msgstr "Открыть видеофайл"
 
 #. _("_Close Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:56
-msgid "Close a multimedia file"
+msgid "Close an audio file or a video file"
 msgstr "Закрыть видеофайл"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:69
@@ -2791,7 +2787,7 @@ msgid "_Play / Pause"
 msgstr "_Проиграть / Приостановить"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
-msgid "Play or make a pause"
+msgid "Play or pause audio or video"
 msgstr "Воспроизвести или приостановить видео"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:76
@@ -2806,7 +2802,7 @@ msgstr "Кадры"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:81
 #, fuzzy
-msgid "Frame skip backwards"
+msgid "Skip backwards by a frame"
 msgstr "Короткий шаг назад"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:88
@@ -2861,7 +2857,7 @@ msgstr "Шаг впе_рёд"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:134
 #, fuzzy
-msgid "Frame skip forward"
+msgid "Skip forward by a frame"
 msgstr "Короткий шаг вперёд"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
@@ -2894,7 +2890,7 @@ msgstr "Скорость"
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
-msgid "Define the playback rate"
+msgid "Set the playback rate"
 msgstr "Определить скорость воспроизведения"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
@@ -2914,7 +2910,7 @@ msgid "_Seek To Selection"
 msgstr "Перейти _к выделению"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:202
-msgid "Seek to the first selected subtitle"
+msgid "Seek to start of the first selected subtitle"
 msgstr "Перейти к первому выделенному субтитру"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
@@ -2956,7 +2952,7 @@ msgid "Play _Next Subtitle"
 msgstr "Воспроизвести сл_едующий"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:241
-msgid "Play next subtitle from the first selected subtitle"
+msgid "Play the subtitle that is next to the first selected subtitle"
 msgstr "Воспроизвести субтитр, следующий за первом выделенным"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:247
@@ -3004,7 +3000,7 @@ msgid "Audio Track"
 msgstr "Звуковая дорожка"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
-msgid "Choice of an audio track"
+msgid "Choose the audio track"
 msgstr "Выбор требуемой звуковой дорожки"
 
 #. A default track "Auto"
@@ -3051,7 +3047,7 @@ msgid "View _Manager"
 msgstr "Редактор в_идов"
 
 #: ../plugins/actions/viewmanager/viewmanager.cc:338
-msgid "Manage the views"
+msgid "Manage views"
 msgstr "Управление видами"
 
 #: ../plugins/actions/waveformmanagement/waveformgenerator.cc:32
@@ -3083,7 +3079,7 @@ msgid "_Generate Waveform From Video"
 msgstr "Со_здать график из видео"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:64
-msgid "Generate the waveform from the current video file"
+msgid "Generate a waveform from the current video file"
 msgstr "Создать график звука для текущего видеофайла"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:70
@@ -3091,7 +3087,7 @@ msgid "_Generate Dummy Waveform"
 msgstr "Со_здать пример графика"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:71
-msgid "Generate an dummy waveform (sine)"
+msgid "Generate a dummy waveform (a sinusoidal wave)"
 msgstr "Создать пример графика (синусоиду)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
@@ -3100,7 +3096,7 @@ msgstr "_Сохранить график"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
 #, fuzzy
-msgid "Save waveform to file"
+msgid "Save the waveform to a file"
 msgstr "Сохранить график в файл"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
@@ -3110,7 +3106,7 @@ msgstr "_Сохранить график"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
 #, fuzzy
-msgid "Close waveform"
+msgid "Close the waveform"
 msgstr "Сохранить график"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
@@ -3130,11 +3126,11 @@ msgid "Zoom _All"
 msgstr "_Уместить весь"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-msgid "_Center With Selected Subtitle"
+msgid "_Center Selected Subtitle"
 msgstr "_Центрировать по текущему субтитру"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-msgid "Scrolling With _Player"
+msgid "Scrolling With _Video"
 msgstr "Прокручивать к поз_иции"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
@@ -3422,7 +3418,7 @@ msgid "Please check your GStreamer installation."
 msgstr "Проверьте правильность установки GStreamer."
 
 #: ../src/gui/application.cc:296
-msgid "Times"
+msgid "Timecodes"
 msgstr "Время"
 
 #: ../src/gui/application.cc:296
@@ -4020,7 +4016,7 @@ msgid "About"
 msgstr "О модуле"
 
 #: ../plugins/actions/about/about.se-plugin.in.h:2
-msgid "Displays the application's information."
+msgid "Displays information about the application."
 msgstr "Сведения о приложении."
 
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1

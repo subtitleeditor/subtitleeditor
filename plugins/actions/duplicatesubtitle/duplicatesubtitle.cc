@@ -41,7 +41,7 @@ class DuplicateSelectedSubtitlesPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("duplicate-selected-subtitles", _("_Duplicate"),
-                            _("Duplicate the selected subtitles")),
+                            _("Duplicate selected subtitles, inserting identical subtitle after each selected subtitle")),
         sigc::mem_fun(*this, &DuplicateSelectedSubtitlesPlugin::on_execute));
 
     // ui

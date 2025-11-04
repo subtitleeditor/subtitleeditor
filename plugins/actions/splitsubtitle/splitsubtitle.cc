@@ -42,7 +42,7 @@ class SplitSelectedSubtitlesPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("split-selected-subtitles", _("_Split"),
-                            _("Split the selected subtitles")),
+                            _("Split selected subtitles by lines (for each selected subtitle, as many new subtitles as it has lines will be created, with their total duration equaling the selected subtitle and set proportionately to their length while respecting the minimal gap between subtitles setting")),
         sigc::mem_fun(*this,
                       &SplitSelectedSubtitlesPlugin::split_selected_subtitles));
 

@@ -40,8 +40,8 @@ class DeleteSelectedSubtitlePlugin : public Action {
     action_group = Gtk::ActionGroup::create("DeleteSelectedSubtitlePlugin");
 
     action_group->add(
-        Gtk::Action::create("delete-selected-subtitles", Gtk::Stock::DELETE, "",
-                            _("Delete the selected subtitles")),
+        Gtk::Action::create("delete-selected-subtitles", Gtk::Stock::DELETE, _("_Delete"),
+                            _("Delete selected subtitles")),
         Gtk::AccelKey("<Control>Delete"),
         sigc::mem_fun(
             *this,

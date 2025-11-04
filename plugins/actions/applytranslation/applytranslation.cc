@@ -42,7 +42,7 @@ class ApplyTranslationPlugin : public Action {
     action_group->add(
         Gtk::Action::create(
             "apply-translation", Gtk::Stock::APPLY, _("Apply _Translation"),
-            _("Replace the text of the subtitle by the translation")),
+            _("Replace the text of all subtitles by the translation")),
         sigc::mem_fun(*this, &ApplyTranslationPlugin::on_execute));
 
     // ui
