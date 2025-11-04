@@ -47,17 +47,16 @@ class AutoWrapPlugin : public Action {
 		// actions
 		action_group = Gtk::ActionGroup::create("AutoWrapPlugin");
 
-    action_group->add(Gtk::Action::create(
-        "menu-autowrap", _("Wrap Text")));
+    action_group->add(Gtk::Action::create("menu-autowrap", _("Wrap Text"), _("Reflow the text of the selected subtitles ")));
 
 		action_group->add(
 				Gtk::Action::create("autowrap-wide", _("Wrap Text Wide"),
-				_("Wraps the text fitting as many words on each line as possible.")),
+				_("Reflow the text of selected subtitles fitting as many words on each line as possible while respecting the maximum characters per line setting")),
 					sigc::mem_fun(*this, &AutoWrapPlugin::on_autowrap_wide));
 
 		action_group->add(
 				Gtk::Action::create("autowrap-evenly", _("Wrap Text Evenly"),
-				_("Wraps the text into lines of a similar width.")),
+				_("Reflow the text of the selected subtitles into lines of a similar width while respecting the maximum characters per line setting")),
 					sigc::mem_fun(*this, &AutoWrapPlugin::on_autowrap_evenly));
 
 		// ui
