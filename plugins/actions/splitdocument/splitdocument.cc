@@ -22,6 +22,7 @@
 #include <extension/action.h>
 #include <gtkmm_utility.h>
 #include <utility.h>
+
 #include <memory>
 
 class DialogSplitDocument : public Gtk::Dialog {
@@ -43,8 +44,9 @@ class DialogSplitDocument : public Gtk::Dialog {
 
     if (size == 0) {
       dialog_warning(
-          _("You can't use <i>split</i> with this document."),
-          build_message("The document <b>%s</b> has not subtitle, it's empty.",
+          _("You can't use the <i>split</i> action with this document"),
+          build_message(_("There are no subtitles in document <b>%s</b>. It's "
+                          "empty and there is nothing to split."),
                         doc->getName().c_str()));
       return;
     }

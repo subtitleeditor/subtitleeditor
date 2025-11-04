@@ -49,7 +49,7 @@ class BestFitPlugin : public Action {
 
 		action_group->add(
 				Gtk::Action::create("best-fit", _("_Best Fit Subtitles"),
-				_("Best fit the selected subtitles between the start of the first and the end of the last one.")),
+				_("Equalize the speed (in CPS) of the selected subtitles between the start of the first and the end of the last (while respecting the minimum gap between subtitles and their minima duration)")),
 					sigc::mem_fun(*this, &BestFitPlugin::on_best_fit));
 
 		// ui

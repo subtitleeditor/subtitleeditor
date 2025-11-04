@@ -47,16 +47,16 @@ class SlideWordsPlugin : public Action {
 		action_group = Gtk::ActionGroup::create("SlideWordsPlugin");
 
     action_group->add(Gtk::Action::create(
-        "menu-slide-words", _("Slide Words")));
+        "menu-slide-words", _("Slide Words"), _("Move one word between lines or between two subtitles")));
 
 		action_group->add(
 				Gtk::Action::create("slide-word-next-line", _("Slide Word To Next Line"),
-				_("Slides one word from the end of the first line to the beginning of the second one.")),
+				_("Slides one word from the end of the first line to the beginning of the second one (this also works when exactly two subtitles are selected, moving the words between them then)")),
 					sigc::mem_fun(*this, &SlideWordsPlugin::on_slide_word_next_line));
 
 		action_group->add(
 				Gtk::Action::create("slide-word-prev-line", _("Slide Word To Previous Line"),
-				_("Slides one word from the beginning of the second line to the end of the first one.")),
+				_("Slides one word from the beginning of the second line to the end of the first one (this also works when exactly two subtitles are selected, moving the words between them then)")),
 					sigc::mem_fun(*this, &SlideWordsPlugin::on_slide_word_prev_line));
 
 		// ui

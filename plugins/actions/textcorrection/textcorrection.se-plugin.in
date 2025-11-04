@@ -1,6 +1,6 @@
 [SubtitleEditor Extension]
 _Name=Text Correction
-_Description=FIXME
+_Description=Provides tools to automatically common errors in subtitle text cause by people or by OCR software.
 Categorie=action
 Type=module
 Module=textcorrection

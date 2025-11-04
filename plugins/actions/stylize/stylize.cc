@@ -42,7 +42,7 @@ class StylizeSelectedSubtitlesPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("stylize-selected-subtitles", _("_Stylize"),
-                            _("Stylize the selected subtitles text")));
+                            _("Apply style to the selected subtitles (note that this will get saved only when using style-supporting format such as ASS)")));
 
     // ui
     Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();

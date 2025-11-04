@@ -44,7 +44,7 @@ class AdjustTimePlugin : public Action {
 
     // menu add
     action_group->add(Gtk::Action::create(
-        "menu-adjust-time-add", Gtk::Stock::ADD, _("Add 100 Milliseconds")));
+        "menu-adjust-time-add", Gtk::Stock::ADD, _("Add 100 Milliseconds"), _("Add 100 Milliseconds")));
 
     action_group->add(
         Gtk::Action::create(
@@ -68,7 +68,7 @@ class AdjustTimePlugin : public Action {
     // menu remove
     action_group->add(Gtk::Action::create("menu-adjust-time-remove",
                                           Gtk::Stock::REMOVE,
-                                          _("Remove 100 Milliseconds")));
+                                          _("Remove 100 Milliseconds"), _("Remove 100 Milliseconds")));
 
     action_group->add(
         Gtk::Action::create(
@@ -94,7 +94,7 @@ class AdjustTimePlugin : public Action {
 
     // menu add
     action_group->add(Gtk::Action::create("menu-adjust-time-add-frame",
-                                          Gtk::Stock::ADD, _("Add 1 Frame")));
+                                          Gtk::Stock::ADD, _("Add 1 Frame"), _("Add 1 Frame")));
 
     action_group->add(
         Gtk::Action::create(
@@ -118,7 +118,7 @@ class AdjustTimePlugin : public Action {
     // menu remove
     action_group->add(Gtk::Action::create("menu-adjust-time-remove-frame",
                                           Gtk::Stock::REMOVE,
-                                          _("Remove 1 Frame")));
+                                          _("Remove 1 Frame"), _("Remove 1 Frame")));
 
     action_group->add(
         Gtk::Action::create(

@@ -603,7 +603,8 @@ void WaveformEditor::scroll_with_player() {
 // If Select With Player is enabled,
 // selects current subtitles with the current time of the player.
 // Only fires when player position is outside of of the selected subtitled
-// FIXME: This is hollowed out version of Find Subtitle by Time plugin, ideally they would share code
+// FIXME: This is hollowed out version of Find Subtitle by Time plugin, ideally
+// they would share code
 std::pair<long, long> WaveformEditor::select_with_player() {
 	if (player() && has_document() &&m_cfg_select_with_player) {
     Subtitles subs = document()->subtitles();
@@ -638,17 +639,17 @@ void WaveformEditor::center_with_selected_subtitle() {
   }
 }
 
-// Increment the zoom
+// Increase the zoom
 void WaveformEditor::zoom_in() {
   set_zoom(get_zoom() + 1);
 }
 
-// Decrement the zoom
+// Decrease the zoom
 void WaveformEditor::zoom_out() {
   set_zoom(get_zoom() - 1);
 }
 
-// Décrément completely the zoom
+// Completely zoom out
 void WaveformEditor::zoom_all() {
   set_zoom(1);
 }
@@ -656,7 +657,8 @@ void WaveformEditor::zoom_all() {
 // Zooming on the current subtitle.
 void WaveformEditor::zoom_selection() {
   zoom_in();
-
+  // FIXME This should probably zoom on selected subtitles so they fill up the
+  // view, now it does almost nothing
   center_with_selected_subtitle();
 }
 

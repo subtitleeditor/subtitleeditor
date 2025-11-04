@@ -41,13 +41,13 @@ class EditCellPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("edit-cell", Gtk::Stock::EDIT, _("_Edit Cell"),
-                            _("Start the editing of the focused cell")),
+                            _("Start editing the focused cell (it is determined by active column (indicated by its label being bold) and the first selected subtitle)")),
         sigc::mem_fun(*this, &EditCellPlugin::on_edit_cell));
 
     action_group->add(
         Gtk::Action::create("edit-next-cell", Gtk::Stock::EDIT,
                             _("Edit _Next Cell"),
-                            _("Start the editing of the next cell")),
+                            _("Start editing the next focused cell (it is determined by active column (indicated by its label being bold) and the subtitle next to the selected one)")),
         sigc::mem_fun(*this, &EditCellPlugin::on_edit_next_cell));
 
     // ui

@@ -1,6 +1,6 @@
 [SubtitleEditor Extension]
 _Name=Keyframes Management
-_Description=FIXME
+_Description=Adds support for keyframes, or scene cuts.
 Categorie=action
 Type=module
 Module=keyframesmanagement

@@ -40,30 +40,44 @@ class TypewriterPlugin : public Action {
     // actions
     action_group = Gtk::ActionGroup::create("TypewriterPlugin");
 
-    action_group->add(Gtk::Action::create("typewriter", _("_Typewriter")));
+    action_group->add(Gtk::Action::create("typewriter", _("_Typewriter"), _("Produces a typewriter effect by creating several head-to-head subtitles instead of the selected ones in the same total duration making it appear as if letters or words are being added gradually")));
 
     action_group->add(
-        Gtk::Action::create("typewriter-characters-linear",
-                            _("Characters — Linear")),
+        Gtk::Action::create(
+            "typewriter-characters-linear", _("Characters — Linear"),
+            _("Produces a typewriter effect growing character by "
+              "character with even delay "
+              "between the characters")),
         sigc::bind(
             sigc::mem_fun(*this, &TypewriterPlugin::split_selected_subtitles),
             CHARACTERS, LINEAR));
 
     action_group->add(
         Gtk::Action::create("typewriter-characters-random",
-                            _("Characters — Random")),
+                            _("Characters — Random"),
+                            _("Produces a typewriter effect growing character "
+                              "by character with random "
+                              "delay between the characters")),
         sigc::bind(
             sigc::mem_fun(*this, &TypewriterPlugin::split_selected_subtitles),
             CHARACTERS, RANDOM));
 
     action_group->add(
-        Gtk::Action::create("typewriter-words-linear", _("Words — Linear")),
+        Gtk::Action::create(
+            "typewriter-words-linear", _("Words — Linear"),
+            _("Produces a typewriter effect growing word by word with "
+              "even delay between "
+              "the characters")),
         sigc::bind(
             sigc::mem_fun(*this, &TypewriterPlugin::split_selected_subtitles),
             WORDS, LINEAR));
 
     action_group->add(
-        Gtk::Action::create("typewriter-words-random", _("Words — Random")),
+        Gtk::Action::create(
+            "typewriter-words-random", _("Words — Random"),
+            _("Produces a typewriter effect growing word by word with "
+              "random delay between "
+              "the characters")),
         sigc::bind(
             sigc::mem_fun(*this, &TypewriterPlugin::split_selected_subtitles),
             WORDS, RANDOM));

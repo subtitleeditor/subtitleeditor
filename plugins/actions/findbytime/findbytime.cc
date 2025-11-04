@@ -54,7 +54,7 @@ class FindByTimePlugin : public Action {
 
 		action_group->add(
 				Gtk::Action::create("find-by-time", _("Find Subtitle By Time"),
-				_("Finds the subtitle nearest to the current player position.")),
+				_("Find the subtitle nearest to the current player position")),
 					sigc::mem_fun(*this, &FindByTimePlugin::on_find_by_time));
 
 		// ui

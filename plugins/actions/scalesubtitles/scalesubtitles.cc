@@ -69,11 +69,11 @@ class DialogScaleSubtitles : public Gtk::Dialog {
       unsigned int lastNumber = (unsigned int)m_spinLastNumber->get_value();
 
       if (firstNumber > lastNumber) {
-        dialog_warning(_("You can't use <i>scale</i> with this values."),
-                       _("The first point is superior to the last point."));
+        dialog_warning(_("You can't use <i>scale</i> with these values."),
+                       _("The first point is before the last point."));
       } else if (firstNumber == lastNumber) {
-        dialog_warning(_("You can't use <i>scale</i> with this values."),
-                       _("The first point is equal to the last point."));
+        dialog_warning(_("You can't use <i>scale</i> with these values."),
+                       _("The first point is the same as the last point."));
       } else {
         Subtitle firstSubtitle = subtitles.get(firstNumber);
         Subtitle lastSubtitle = subtitles.get(lastNumber);
@@ -107,7 +107,7 @@ class DialogScaleSubtitles : public Gtk::Dialog {
 
         doc->emit_signal("subtitle-time-changed");
         doc->finish_command();
-        doc->flash_message(_("The scale was applied"));
+        doc->flash_message(_("The subtitles were scaled"));
       }
     }
     hide();
@@ -123,10 +123,11 @@ class DialogScaleSubtitles : public Gtk::Dialog {
 
     unsigned int subtitle_size = subtitles.size();
 
-    if (subtitle_size == 0) {
+    if (subtitle_size <= 2) {
       dialog_warning(
-          _("You can't use <i>scale</i> with this document."),
-          build_message("The document <b>%s</b> has not subtitle, it's empty.",
+          _("You can't use the <i>scale</i> action with this document."),
+          build_message("There are either no subtitles or too few subtitles in "
+                        "document <b>%s</b>. It is impossible to scale it.",
                         doc->getName().c_str()));
       return false;
     }
@@ -304,8 +305,10 @@ class ScaleSubtitlesPlugin : public Action {
     action_group = Gtk::ActionGroup::create("ScaleSubtitlesPlugin");
 
     action_group->add(
-        Gtk::Action::create("scale-subtitles", Gtk::Stock::CONVERT, _("_Scale"),
-                            _("Scale by two points")),
+        Gtk::Action::create(
+            "scale-subtitles", Gtk::Stock::CONVERT, _("_Scale"),
+            _("Scale subtitles by two points — this is a generalized version "
+              "of the Change Framerate action")),
         sigc::mem_fun(*this, &ScaleSubtitlesPlugin::on_scale_subtitles));
 
     // ui

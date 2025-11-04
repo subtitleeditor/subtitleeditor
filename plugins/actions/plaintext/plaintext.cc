@@ -44,12 +44,12 @@ class PlainTextPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("plain-text-import", _("_Import Plain Text"),
-                            _("Create a new document from any text file.")),
+                            _("Create a new document from a text file (one or more consecutive blank lines separate chunks of text that will be imported as separate subtitles) ")),
         sigc::mem_fun(*this, &PlainTextPlugin::on_import_transcript));
 
     action_group->add(
         Gtk::Action::create("plain-text-export", _("_Export Plain Text"),
-                            _("Export just a text in a file")),
+                            _("Export text of subtitles into a file (blank lines separating the text of individual subtitles)")),
         sigc::mem_fun(*this, &PlainTextPlugin::on_export_transcript));
 
     // ui

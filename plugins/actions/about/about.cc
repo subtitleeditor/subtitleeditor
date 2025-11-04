@@ -37,8 +37,10 @@ class AboutPlugin : public Action {
     // actions
     action_group = Gtk::ActionGroup::create("AboutPlugin");
 
-    action_group->add(Gtk::Action::create("about", Gtk::Stock::ABOUT),
-                      sigc::mem_fun(*this, &AboutPlugin::on_about));
+    action_group->add(
+        Gtk::Action::create("about", Gtk::Stock::ABOUT, _("About"),
+                            _("Display information about the program")),
+        sigc::mem_fun(*this, &AboutPlugin::on_about));
 
     // ui
     Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
@@ -73,7 +75,7 @@ class AboutPlugin : public Action {
     // copyright
     dialog.set_copyright("kitone (IDJAAD djamel)");
     // comments
-    dialog.set_comments(_("a tool for subtitles edition"));
+    dialog.set_comments(_("A tool for editing subtitles"));
     // logo
     dialog.set_logo_icon_name("subtitleeditor");
     // authors

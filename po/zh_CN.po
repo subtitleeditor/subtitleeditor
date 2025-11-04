@@ -378,7 +378,7 @@ msgid "_Combine"
 msgstr "组合(_C)"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:44
-msgid "Merge the selected subtitles"
+msgid "Merge selected subtitles"
 msgstr "合并选择的字幕"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:135
@@ -640,19 +640,15 @@ msgid "_Duplicate"
 msgstr "复制(_D)"
 
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:44
-msgid "Duplicate the selected subtitles"
-msgstr "复制选择的字幕"
-
-#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:99
 msgid "Duplicate selected subtitles"
-msgstr "复制品被选择加字幕"
+msgstr "复制选择的字幕"
 
 #: ../plugins/actions/editcell/editcell.cc:43
 msgid "_Edit Cell"
 msgstr "编辑单元(_E)"
 
 #: ../plugins/actions/editcell/editcell.cc:44
-msgid "Start the editing of the focused cell"
+msgid "Start editing the focused cell"
 msgstr "开始编辑当前单元"
 
 #: ../plugins/actions/editcell/editcell.cc:49
@@ -660,7 +656,7 @@ msgid "Edit _Next Cell"
 msgstr "编辑下一单元(_N)"
 
 #: ../plugins/actions/editcell/editcell.cc:50
-msgid "Start the editing of the next cell"
+msgid "Start editing the next cell"
 msgstr "开始编辑下一单元"
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:1
@@ -1222,7 +1218,7 @@ msgid "Insert _Before"
 msgstr "在字幕前插入(_B)"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:45
-msgid "Insert blank subtitle before the selected subtitle"
+msgid "Insert a blank subtitle before the first selected subtitle"
 msgstr "在选择的字幕之前插入空白的字幕"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:51
@@ -1230,7 +1226,7 @@ msgid "Insert _After"
 msgstr "在字幕后插入(_A)"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:52
-msgid "Insert blank subtitle after the selected subtitle"
+msgid "Insert a blank subtitle after the first selected subtitle"
 msgstr "在选择的字幕后面插入空白的字幕"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:117
@@ -1244,7 +1240,7 @@ msgid "_Italic"
 msgstr "斜体字(_I)"
 
 #: ../plugins/actions/italicize/italicize.cc:45
-msgid "Italicize the selected subtitles text"
+msgid "Italicize the text of the selected subtitles"
 msgstr "用斜体字印刷选择的字幕文本"
 
 #: ../plugins/actions/italicize/italicize.cc:110
@@ -1893,7 +1889,7 @@ msgid "OpenGL"
 msgstr "开放图形语言"
 
 #: ../plugins/actions/removesubtitle/removesubtitle.cc:44
-msgid "Delete the selected subtitles"
+msgid "Delete selected subtitles"
 msgstr "删除选择的字幕"
 
 #: ../plugins/actions/removesubtitle/removesubtitle.cc:104
@@ -2234,7 +2230,7 @@ msgid "_Split"
 msgstr "分割(_S)"
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:45
-msgid "Split the selected subtitles"
+msgid "Split selected subtitles"
 msgstr "分割选择的字幕"
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:94

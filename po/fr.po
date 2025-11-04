@@ -398,7 +398,7 @@ msgid "_Combine"
 msgstr "_Combiner"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:44
-msgid "Merge the selected subtitles"
+msgid "Merge selected subtitles"
 msgstr "Fusionner les sous-titres sélectionnés"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:135
@@ -667,10 +667,6 @@ msgstr "Scinder le document"
 msgid "_Duplicate"
 msgstr "_Dupliquer"
 
-#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:44
-msgid "Duplicate the selected subtitles"
-msgstr "Dupliquer les sous-titres sélectionnés"
-
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:99
 msgid "Duplicate selected subtitles"
 msgstr "Dupliquer les sous-titres sélectionnés"
@@ -680,7 +676,7 @@ msgid "_Edit Cell"
 msgstr "_Éditer la cellule"
 
 #: ../plugins/actions/editcell/editcell.cc:44
-msgid "Start the editing of the focused cell"
+msgid "Start editing the focused cell"
 msgstr "Débuter l'édition de la cellule courante"
 
 #: ../plugins/actions/editcell/editcell.cc:49
@@ -688,7 +684,7 @@ msgid "Edit _Next Cell"
 msgstr "Éditer la cellule _suivante"
 
 #: ../plugins/actions/editcell/editcell.cc:50
-msgid "Start the editing of the next cell"
+msgid "Start editing the next cell"
 msgstr "Débuter l'édition de la cellule suivante"
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:1
@@ -1280,7 +1276,7 @@ msgid "Insert _Before"
 msgstr "Insérer avant"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:45
-msgid "Insert blank subtitle before the selected subtitle"
+msgid "Insert a blank subtitle before the first selected subtitle"
 msgstr "Insérer un sous-titre blanc avant le sous-titre sélectionné"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:51
@@ -1288,7 +1284,7 @@ msgid "Insert _After"
 msgstr "Insérer _après"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:52
-msgid "Insert blank subtitle after the selected subtitle"
+msgid "Insert a blank subtitle after the first selected subtitle"
 msgstr "Insérer un sous-titre blanc après le sous-titre sélectionné"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:117
@@ -1302,7 +1298,7 @@ msgid "_Italic"
 msgstr "_Italique"
 
 #: ../plugins/actions/italicize/italicize.cc:45
-msgid "Italicize the selected subtitles text"
+msgid "Italicize the text of the selected subtitles"
 msgstr "Inverse l'italique du texte"
 
 #: ../plugins/actions/italicize/italicize.cc:110
@@ -1960,7 +1956,7 @@ msgid "OpenGL"
 msgstr "OpenGL"
 
 #: ../plugins/actions/removesubtitle/removesubtitle.cc:44
-msgid "Delete the selected subtitles"
+msgid "Delete selected subtitles"
 msgstr "Supprimer les sous-titres sélectionnés"
 
 #: ../plugins/actions/removesubtitle/removesubtitle.cc:104
@@ -2305,7 +2301,7 @@ msgid "_Split"
 msgstr "_Scinder"
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:45
-msgid "Split the selected subtitles"
+msgid "Split selected subtitles"
 msgstr "Scinder les sous-titres sélectionnés."
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:94

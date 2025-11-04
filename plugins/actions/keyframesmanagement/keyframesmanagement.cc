@@ -46,41 +46,88 @@ class KeyframesManagementPlugin : public Action {
     action_group = Gtk::ActionGroup::create("KeyframesManagementPlugin");
 
     // Open
-    action_group->add(Gtk::Action::create("keyframes/open", Gtk::Stock::OPEN, _("Open Keyframes"), _("Open keyframes from a file")), Gtk::AccelKey("<Control>K"),
-                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_open));
+    action_group->add(
+        Gtk::Action::create("keyframes/open", Gtk::Stock::OPEN,
+                            _("Open Keyframes"),
+                            _("Open keyframes from a file")),
+        Gtk::AccelKey("<Control>K"),
+        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_open));
     // Save
-    action_group->add(Gtk::Action::create("keyframes/save", Gtk::Stock::SAVE, _("Save Keyframes"), _("Save keyframes to the file")), Gtk::AccelKey("<Shift><Control>K"),
-                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_save));
+    action_group->add(
+        Gtk::Action::create("keyframes/save", Gtk::Stock::SAVE,
+                            _("Save Keyframes"), _("Save keyframes to a file")),
+        Gtk::AccelKey("<Shift><Control>K"),
+        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_save));
     // Generate
-    action_group->add(Gtk::Action::create("keyframes/generate", Gtk::Stock::EXECUTE, _("Generate Keyframes From Video"), _("Generate keyframes from the current video")),
-                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_generate));
-    action_group->add(Gtk::Action::create("keyframes/generate-using-frame", Gtk::Stock::EXECUTE, _("Generate Keyframes From Video (Using Frame)"),
-                                          _("Generate keyframes from the current video")),
-                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_generate_using_frame));
+    action_group->add(
+        Gtk::Action::create("keyframes/generate", Gtk::Stock::EXECUTE,
+                            _("Generate Keyframes From Video"),
+                            _("Generate keyframes from the current video")),
+        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_generate));
+    action_group->add(
+        Gtk::Action::create("keyframes/generate-using-frame",
+                            Gtk::Stock::EXECUTE,
+                            _("Generate Keyframes From Video (Using Frame)"),
+                            _("Generate keyframes from the current video")),
+        sigc::mem_fun(*this,
+                      &KeyframesManagementPlugin::on_generate_using_frame));
     // Close
-    action_group->add(Gtk::Action::create("keyframes/close", Gtk::Stock::CLOSE, _("Close the keyframes"), _("FIXME")), Gtk::AccelKey("<Alt><Control>K"),
-                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_close));
+    action_group->add(
+        Gtk::Action::create("keyframes/close", Gtk::Stock::CLOSE,
+                            _("Close keyframes"),
+                            _("Close the keyframes file")),
+        Gtk::AccelKey("<Alt><Control>K"),
+        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_close));
     // Seek
-    action_group->add(Gtk::Action::create("keyframes/seek-to-previous", Gtk::Stock::MEDIA_PREVIOUS, _("Seek To Previous Keyframe"), _("FIXME")),
-                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_seek_previous));
+    action_group->add(
+        Gtk::Action::create(
+            "keyframes/seek-to-previous", Gtk::Stock::MEDIA_PREVIOUS,
+            _("Seek To Previous Keyframe"), _("Seek to the previous keyframe")),
+        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_seek_previous));
 
-    action_group->add(Gtk::Action::create("keyframes/seek-to-next", Gtk::Stock::MEDIA_NEXT, _("Seek To Next Keyframe"), _("FIXME")),
-                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_seek_next));
+    action_group->add(
+        Gtk::Action::create("keyframes/seek-to-next", Gtk::Stock::MEDIA_NEXT,
+                            _("Seek To Next Keyframe"),
+                            _("Seek to the next keyframe")),
+        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_seek_next));
     // Snap Start
-    action_group->add(Gtk::Action::create("keyframes/snap-start-to-previous", Gtk::Stock::GOTO_FIRST, _("Snap Start To Previous Keyframe"), _("FIXME")),
-                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_snap_start_to_previous));
+    action_group->add(
+        Gtk::Action::create("keyframes/snap-start-to-previous",
+                            Gtk::Stock::GOTO_FIRST,
+                            _("Snap Start To Previous Keyframe"),
+                            _("Snap the start of the first selected subtitle "
+                              "to the previous keyframe")),
+        sigc::mem_fun(*this,
+                      &KeyframesManagementPlugin::on_snap_start_to_previous));
 
-    action_group->add(Gtk::Action::create("keyframes/snap-start-to-next", Gtk::Stock::GOTO_LAST, _("Snap Start To Next Keyframe"), _("FIXME")),
-                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_snap_start_to_next));
+    action_group->add(
+        Gtk::Action::create("keyframes/snap-start-to-next",
+                            Gtk::Stock::GOTO_LAST,
+                            _("Snap Start To Next Keyframe"),
+                            _("Snap the start of the first selected subtitle "
+                              "to the next keyframe")),
+        sigc::mem_fun(*this,
+                      &KeyframesManagementPlugin::on_snap_start_to_next));
     // Snap End
-    action_group->add(Gtk::Action::create("keyframes/snap-end-to-previous", Gtk::Stock::GOTO_FIRST, _("Snap End To Previous Keyframe"), _("FIXME")),
-                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_snap_end_to_previous));
+    action_group->add(
+        Gtk::Action::create("keyframes/snap-end-to-previous",
+                            Gtk::Stock::GOTO_FIRST,
+                            _("Snap End To Previous Keyframe"),
+                            _("Snap the end of the first selected subtitle to "
+                              "the previous keyframe")),
+        sigc::mem_fun(*this,
+                      &KeyframesManagementPlugin::on_snap_end_to_previous));
 
-    action_group->add(Gtk::Action::create("keyframes/snap-end-to-next", Gtk::Stock::GOTO_LAST, _("Snap End To Next Keyframe"), _("FIXME")),
-                      sigc::mem_fun(*this, &KeyframesManagementPlugin::on_snap_end_to_next));
+    action_group->add(
+        Gtk::Action::create("keyframes/snap-end-to-next", Gtk::Stock::GOTO_LAST,
+                            _("Snap End To Next Keyframe"),
+                            _("Snap the end of the first selected subtitle to "
+                              "the next keyframe")),
+        sigc::mem_fun(*this, &KeyframesManagementPlugin::on_snap_end_to_next));
 
     // Recent files
-    Glib::RefPtr<Gtk::RecentAction> recentAction = Gtk::RecentAction::create("keyframes/recent-files", _("_Recent Files"));
+    Glib::RefPtr<Gtk::RecentAction> recentAction = Gtk::RecentAction::create(
+        "keyframes/recent-files", _("_Recent Files"), _("Open a recent file"));
 
     Glib::RefPtr<Gtk::RecentFilter> filter = Gtk::RecentFilter::create();
     filter->set_name("subtitleeditor");

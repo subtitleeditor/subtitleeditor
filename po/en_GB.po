@@ -21,8 +21,8 @@ msgstr ""
 
 #. comments
 #: ../plugins/actions/about/about.cc:76
-msgid "a tool for subtitles edition"
-msgstr "a tool for subtitles edition"
+msgid "A tool for editing subtitles"
+msgstr "A tool for editing subtitles"
 
 #. translator-credits
 #: ../plugins/actions/about/about.cc:86
@@ -156,8 +156,8 @@ msgid "Apply _Translation"
 msgstr "Apply _Translation"
 
 #: ../plugins/actions/applytranslation/applytranslation.cc:45
-msgid "Replace the text of the subtitle by the translation"
-msgstr "Replace the text of the subtitle by the translation"
+msgid "Replace the text of all subtitles by the translation"
+msgstr "Replace the text of all subtitles by the translation"
 
 #: ../plugins/actions/applytranslation/applytranslation.cc:94
 msgid "Apply translation"
@@ -265,7 +265,7 @@ msgstr "_Faster"
 #, fuzzy
 msgid ""
 "Paste subtitles from the clipboard AFTER the currently selected subtitle."
-msgstr "Play next subtitle from the first selected subtitle"
+msgstr "Play the subtitle that is next to the first selected subtitle"
 
 #: ../plugins/actions/clipboard/clipboard.cc:84
 msgid "Copy With Timing"
@@ -370,8 +370,8 @@ msgid "_Combine"
 msgstr "_Combine"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:44
-msgid "Merge the selected subtitles"
-msgstr "Merge the selected subtitles"
+msgid "Merge selected subtitles"
+msgstr "Merge selected subtitles"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:135
 msgid "Please select at least two subtitles."
@@ -641,10 +641,6 @@ msgid "_Duplicate"
 msgstr "_Duplicate"
 
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:44
-msgid "Duplicate the selected subtitles"
-msgstr "Duplicate the selected subtitles"
-
-#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:99
 msgid "Duplicate selected subtitles"
 msgstr "Duplicate selected subtitles"
 
@@ -654,7 +650,7 @@ msgid "_Edit Cell"
 msgstr "_Edit"
 
 #: ../plugins/actions/editcell/editcell.cc:44
-msgid "Start the editing of the focused cell"
+msgid "Start editing the focused cell"
 msgstr ""
 
 #: ../plugins/actions/editcell/editcell.cc:49
@@ -662,7 +658,7 @@ msgid "Edit _Next Cell"
 msgstr ""
 
 #: ../plugins/actions/editcell/editcell.cc:50
-msgid "Start the editing of the next cell"
+msgid "Start editing the next cell"
 msgstr ""
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:1
@@ -797,7 +793,7 @@ msgstr "Spell Checking"
 
 #: ../plugins/actions/errorchecking/errorcheckingplugin.cc:692
 #, fuzzy
-msgid "Launch the error checking."
+msgid "Launch error checking."
 msgstr "Launch the errors checking"
 
 #: ../plugins/actions/errorchecking/maxcharactersperline.h:29
@@ -1216,7 +1212,7 @@ msgstr "Add Subtitle"
 
 #: ../plugins/actions/findbytime/findbytime.cc:57
 #: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
-msgid "Finds the subtitle nearest to the current player position."
+msgid "Finds the subtitle nearest to the current player position"
 msgstr ""
 
 #: ../plugins/actions/findbytime/findbytime.cc:114
@@ -1266,16 +1262,16 @@ msgid "Insert _Before"
 msgstr "Insert _Before"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:45
-msgid "Insert blank subtitle before the selected subtitle"
-msgstr "Insert blank subtitle before the selected subtitle"
+msgid "Insert a blank subtitle before the first selected subtitle"
+msgstr "Insert a blank subtitle before the first selected subtitle"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:51
 msgid "Insert _After"
 msgstr "Insert _After"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:52
-msgid "Insert blank subtitle after the selected subtitle"
-msgstr "Insert blank subtitle after the selected subtitle"
+msgid "Insert a blank subtitle after the first selected subtitle"
+msgstr "Insert a blank subtitle after the first selected subtitle"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:117
 #: ../src/subtitles.cc:108
@@ -1288,8 +1284,8 @@ msgid "_Italic"
 msgstr "_Italic"
 
 #: ../plugins/actions/italicize/italicize.cc:45
-msgid "Italicize the selected subtitles text"
-msgstr "Italicize the selected subtitles text"
+msgid "Italicize the text of the selected subtitles"
+msgstr "Italicize the text of the selected subtitles"
 
 #: ../plugins/actions/italicize/italicize.cc:110
 msgid "Italic"
@@ -1347,7 +1343,7 @@ msgstr "Save Waveform"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:60
 #, fuzzy
-msgid "Save keyframes to the file"
+msgid "Save keyframes to a file"
 msgstr "Save wavefrom to file"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:66
@@ -1365,7 +1361,7 @@ msgstr ""
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
 #, fuzzy
-msgid "Close the keyframes"
+msgid "Close Keyframes"
 msgstr "Close the current file"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
@@ -1955,8 +1951,8 @@ msgid "OpenGL"
 msgstr "OpenGL"
 
 #: ../plugins/actions/removesubtitle/removesubtitle.cc:44
-msgid "Delete the selected subtitles"
-msgstr "Delete the selected subtitles"
+msgid "Delete selected subtitles"
+msgstr "Delete selected subtitles"
 
 #: ../plugins/actions/removesubtitle/removesubtitle.cc:104
 msgid "Delete Subtitles"
@@ -1974,8 +1970,8 @@ msgid "_Reverse Text And Translation"
 msgstr "_Reverse Text And Translation"
 
 #: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:45
-msgid "Reverse the text and the translation"
-msgstr "Reverse the text and the translation"
+msgid "Reverse the text and the translation of all subtitles (selected or not)"
+msgstr "Reverse the text and the translation of all subtitles (selected or not)"
 
 #: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:96
 #: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.se-plugin.in.h:1
@@ -2269,8 +2265,8 @@ msgid "_Spell Check"
 msgstr "_Spell Check"
 
 #: ../plugins/actions/spellchecking/spellchecking.cc:642
-msgid "Launch the spell checking"
-msgstr "Launch the spell checking"
+msgid "Launch spell-checking"
+msgstr "Launch spell-checking"
 
 #: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
 #: ../plugins/actions/splitdocument/splitdocument.se-plugin.in.h:1
@@ -2282,8 +2278,8 @@ msgid "The beginning for the new document:"
 msgstr "The beginning for the new document:"
 
 #: ../plugins/actions/splitdocument/splitdocument.cc:46
-msgid "You can't use <i>split</i> with this document."
-msgstr "You can't use <i>split</i> with this document."
+msgid "You can't use the <i>split</i> action with this document."
+msgstr "You can't use the <i>split</i> action with this document."
 
 #. Remove subtitles used by the new one
 #: ../plugins/actions/splitdocument/splitdocument.cc:81
@@ -2303,8 +2299,8 @@ msgid "_Split"
 msgstr "_Split"
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:45
-msgid "Split the selected subtitles"
-msgstr "Split the selected subtitles"
+msgid "Split selected subtitles"
+msgstr "Split selected subtitles"
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:94
 #: ../plugins/actions/typewriter/typewriter.cc:139
@@ -2469,7 +2465,7 @@ msgstr "Styles"
 #: ../plugins/actions/stylize/stylize.cc:45
 #, fuzzy
 msgid "Stylize the selected subtitles text"
-msgstr "Italicize the selected subtitles text"
+msgstr "Italicize the text of the selected subtitles"
 
 #: ../plugins/actions/stylize/stylize.cc:163 ../src/subtitleview.cc:1152
 msgid "Set style to selection"
@@ -2508,7 +2504,7 @@ msgstr ""
 
 #: ../plugins/actions/template/template.cc:110
 #, fuzzy
-msgid "Save the current document as template."
+msgid "Save the current document as template"
 msgstr "Split the current document in two"
 
 #: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
@@ -2642,8 +2638,8 @@ msgid "Text _Correction"
 msgstr ""
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:46
-msgid "_Times"
-msgstr "_Times"
+msgid "_Timecodes"
+msgstr "_Timecodes"
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:53
 msgid "_Frames"
@@ -2681,7 +2677,7 @@ msgid "Timing From Player"
 msgstr "Editing layer"
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:76
-msgid "Use the current player position to set subtitle time"
+msgid "Use the current player position to set subtitle timecodes"
 msgstr ""
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:80
@@ -2798,21 +2794,21 @@ msgstr "_Video"
 
 #. _("_Open Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:49
-msgid "Open a multimedia file"
-msgstr "Open a multimedia file"
+msgid "Open an audio file or a video file"
+msgstr "Open an audio file or a video file"
 
 #. _("_Close Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:56
-msgid "Close a multimedia file"
-msgstr "Close a multimedia file"
+msgid "Close an audio file or a video file"
+msgstr "Close an audio file or a video file"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:69
 msgid "_Play / Pause"
 msgstr "_Play / Pause"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
-msgid "Play or make a pause"
-msgstr "Play or make a pause"
+msgid "Play or pause audio or video"
+msgstr "Play or pause audio or video"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:76
 msgid "Skip _Backwards"
@@ -2826,7 +2822,7 @@ msgstr "_Frames"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:81
 #, fuzzy
-msgid "Frame skip backwards"
+msgid "Skip backwards by a frame"
 msgstr "Skip _Backwards"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:88
@@ -2885,7 +2881,7 @@ msgstr "Skip _Forward"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:134
 #, fuzzy
-msgid "Frame skip forward"
+msgid "Skip forward by a frame"
 msgstr "Skip _Forward"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
@@ -2921,8 +2917,8 @@ msgstr "Rate"
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
-msgid "Define the playback rate"
-msgstr "Define the playback rate"
+msgid "Set the playback rate"
+msgstr "Set the playback rate"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
 msgid "_Slower"
@@ -2941,8 +2937,8 @@ msgid "_Seek To Selection"
 msgstr "_Seek To Selection"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:202
-msgid "Seek to the first selected subtitle"
-msgstr "Seek to the first selected subtitle"
+msgid "Seek to start of the first selected subtitle"
+msgstr "Seek to start of the first selected subtitle"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
 #, fuzzy
@@ -2952,7 +2948,7 @@ msgstr "_Seek To Selection"
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:209
 #, fuzzy
 msgid "Seek to the end of the last selected subtitle"
-msgstr "Seek to the first selected subtitle"
+msgstr "Seek to start of the first selected subtitle"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:216
 msgid "_Repeat"
@@ -2983,8 +2979,8 @@ msgid "Play _Next Subtitle"
 msgstr "Play _Next Subtitle"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:241
-msgid "Play next subtitle from the first selected subtitle"
-msgstr "Play next subtitle from the first selected subtitle"
+msgid "Play the subtitle that is next to the first selected subtitle"
+msgstr "Play the subtitle that is next to the first selected subtitle"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:247
 msgid "Play Previous Second"
@@ -3032,7 +3028,7 @@ msgid "Audio Track"
 msgstr "Audio"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
-msgid "Choice of an audio track"
+msgid "Choose the audio track"
 msgstr ""
 
 #. A default track "Auto"
@@ -3080,7 +3076,7 @@ msgstr "View _Manager"
 
 #: ../plugins/actions/viewmanager/viewmanager.cc:338
 #, fuzzy
-msgid "Manage the views"
+msgid "Manage views"
 msgstr "Manage Styles"
 
 #: ../plugins/actions/waveformmanagement/waveformgenerator.cc:32
@@ -3115,7 +3111,7 @@ msgstr "Generate Waveform"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:64
 #, fuzzy
-msgid "Generate the waveform from the current video file"
+msgid "Generate a waveform from the current video file"
 msgstr "Show or hide the waveform in the current window"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:70
@@ -3125,7 +3121,7 @@ msgstr "Generate Waveform"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:71
 #, fuzzy
-msgid "Generate an dummy waveform (sine)"
+msgid "Generate a dummy waveform (a sinusoidal wave)"
 msgstr "Generate Waveform"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
@@ -3134,7 +3130,7 @@ msgstr "_Save Waveform"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
 #, fuzzy
-msgid "Save waveform to file"
+msgid "Save the waveform to a file"
 msgstr "Save wavefrom to file"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
@@ -3144,7 +3140,7 @@ msgstr "_Save Waveform"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
 #, fuzzy
-msgid "Close waveform"
+msgid "Close the waveform"
 msgstr "Save Waveform"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
@@ -3164,25 +3160,25 @@ msgid "Zoom _All"
 msgstr "Zoom _All"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-msgid "_Center With Selected Subtitle"
-msgstr "_Center With Selected Subtitle"
+msgid "_Center Selected Subtitle"
+msgstr "_Center Selected Subtitle"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-msgid "Scrolling With _Player"
-msgstr "Scrolling With _Player"
+msgid "Scrolling With _Video"
+msgstr "Scrolling With _Video"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
 #, fuzzy
 msgid "Select With _Player"
-msgstr "Scrolling With _Player"
+msgstr "Scrolling With _Video"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:141
 msgid "Scrolling With _Selection"
 msgstr "Scrolling With _Selection"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:150
-msgid "_Respect The Timing"
-msgstr "_Respect The Timing"
+msgid "_Respect Timing"
+msgstr "_Respect Timing"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:151
 msgid "Try to respect the timing preferences"
@@ -3459,8 +3455,8 @@ msgstr "Please check your GStreamer installation."
 
 #: ../src/gui/application.cc:296
 #, fuzzy
-msgid "Times"
-msgstr "_Times"
+msgid "Timecodes"
+msgstr "_Timecodes"
 
 #: ../src/gui/application.cc:296
 #, fuzzy
@@ -4086,7 +4082,7 @@ msgid "About"
 msgstr ""
 
 #: ../plugins/actions/about/about.se-plugin.in.h:2
-msgid "Displays the application's information."
+msgid "Displays information about the application."
 msgstr ""
 
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1
@@ -4107,7 +4103,7 @@ msgstr "Apply _Translation"
 #: ../plugins/actions/applytranslation/applytranslation.se-plugin.in.h:2
 #, fuzzy
 msgid "Replaces the text of the subtitle by the translation."
-msgstr "Replace the text of the subtitle by the translation"
+msgstr "Replace the text of all subtitles by the translation"
 
 #: ../plugins/actions/bestfit/bestfit.se-plugin.in.h:1
 msgid "Best Fit"
@@ -4141,7 +4137,7 @@ msgstr "Combine subtitles"
 #: ../plugins/actions/combinesubtitles/combinesubtitles.se-plugin.in.h:2
 #, fuzzy
 msgid "Merges the selected subtitles."
-msgstr "Merge the selected subtitles"
+msgstr "Merge selected subtitles"
 
 #: ../plugins/actions/command/command.se-plugin.in.h:2
 msgid "Manages Undo/Redo."
@@ -4189,7 +4185,7 @@ msgstr "Delete Subtitles"
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.se-plugin.in.h:2
 #, fuzzy
 msgid "Duplicates the selected subtitles."
-msgstr "Duplicate the selected subtitles"
+msgstr "Duplicate selected subtitles"
 
 #: ../plugins/actions/editcell/editcell.se-plugin.in.h:1
 #, fuzzy
@@ -4212,7 +4208,7 @@ msgstr "_Extend Length"
 #: ../plugins/actions/extendlength/extendlength.se-plugin.in.h:2
 #, fuzzy
 msgid "Extends the length of selected subtitles."
-msgstr "Delete the selected subtitles"
+msgstr "Delete selected subtitles"
 
 #: ../plugins/actions/externalvideoplayer/externalvideoplayer.se-plugin.in.h:1
 #, fuzzy
@@ -4255,7 +4251,7 @@ msgstr "Italic"
 #: ../plugins/actions/italicize/italicize.se-plugin.in.h:2
 #, fuzzy
 msgid "Italicizes the selected subtitles text."
-msgstr "Italicize the selected subtitles text"
+msgstr "Italicize the text of the selected subtitles"
 
 #: ../plugins/actions/joindocument/joindocument.se-plugin.in.h:1
 #, fuzzy
@@ -4319,12 +4315,12 @@ msgstr "Configure Subtitle Editor"
 #: ../plugins/actions/removesubtitle/removesubtitle.se-plugin.in.h:2
 #, fuzzy
 msgid "Deletes the selected subtitles."
-msgstr "Delete the selected subtitles"
+msgstr "Delete selected subtitles"
 
 #: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.se-plugin.in.h:2
 #, fuzzy
 msgid "Reverses the original subtitle and the translated text."
-msgstr "Reverse the text and the translation"
+msgstr "Reverses the original subtitle and the translated text."
 
 #: ../plugins/actions/scalesubtitles/scalesubtitles.se-plugin.in.h:1
 #, fuzzy
@@ -4344,7 +4340,7 @@ msgstr "_Selection"
 #: ../plugins/actions/selection/selection.se-plugin.in.h:2
 #, fuzzy
 msgid "Manages selection of subtitles."
-msgstr "Merge the selected subtitles"
+msgstr "Merge selected subtitles"
 
 #: ../plugins/actions/slidetimings/slidetimings.se-plugin.in.h:1
 #, fuzzy
@@ -4389,7 +4385,7 @@ msgstr "Split subtitles"
 #: ../plugins/actions/splitsubtitle/splitsubtitle.se-plugin.in.h:2
 #, fuzzy
 msgid "Splits the selected subtitles."
-msgstr "Split the selected subtitles"
+msgstr "Split selected subtitles"
 
 #: ../plugins/actions/stacksubtitles/stacksubtitles.se-plugin.in.h:2
 msgid ""
@@ -4415,7 +4411,7 @@ msgstr "Styles"
 #: ../plugins/actions/stylize/stylize.se-plugin.in.h:2
 #, fuzzy
 msgid "Stylize the selected subtitles text."
-msgstr "Italicize the selected subtitles text"
+msgstr "Italicize the text of the selected subtitles"
 
 #: ../plugins/actions/template/template.se-plugin.in.h:1
 #, fuzzy

@@ -21,7 +21,7 @@ msgstr ""
 
 #. comments
 #: ../plugins/actions/about/about.cc:76
-msgid "a tool for subtitles edition"
+msgid "A tool for editing subtitles"
 msgstr "egy eszköz feliratok szerkesztésére"
 
 #. translator-credits
@@ -367,7 +367,7 @@ msgid "_Combine"
 msgstr ""
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:44
-msgid "Merge the selected subtitles"
+msgid "Merge selected subtitles"
 msgstr "Kijelölt feliratok egyesítése"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:135
@@ -633,10 +633,6 @@ msgstr "Felirat megnyitása"
 msgid "_Duplicate"
 msgstr ""
 
-#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:44
-msgid "Duplicate the selected subtitles"
-msgstr ""
-
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:99
 msgid "Duplicate selected subtitles"
 msgstr ""
@@ -646,7 +642,7 @@ msgid "_Edit Cell"
 msgstr ""
 
 #: ../plugins/actions/editcell/editcell.cc:44
-msgid "Start the editing of the focused cell"
+msgid "Start editing the focused cell"
 msgstr ""
 
 #: ../plugins/actions/editcell/editcell.cc:49
@@ -654,7 +650,7 @@ msgid "Edit _Next Cell"
 msgstr ""
 
 #: ../plugins/actions/editcell/editcell.cc:50
-msgid "Start the editing of the next cell"
+msgid "Start editing the next cell"
 msgstr ""
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:1
@@ -782,7 +778,7 @@ msgid "_Error Checking"
 msgstr ""
 
 #: ../plugins/actions/errorchecking/errorcheckingplugin.cc:692
-msgid "Launch the error checking."
+msgid "Launch error checking."
 msgstr ""
 
 #: ../plugins/actions/errorchecking/maxcharactersperline.h:29
@@ -1165,7 +1161,7 @@ msgstr ""
 
 #: ../plugins/actions/findbytime/findbytime.cc:57
 #: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
-msgid "Finds the subtitle nearest to the current player position."
+msgid "Finds the subtitle nearest to the current player position"
 msgstr ""
 
 #: ../plugins/actions/findbytime/findbytime.cc:114
@@ -1214,7 +1210,7 @@ msgid "Insert _Before"
 msgstr ""
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:45
-msgid "Insert blank subtitle before the selected subtitle"
+msgid "Insert a blank subtitle before the first selected subtitle"
 msgstr "Üres felirat beszúrása a kijelölt felirat elé"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:51
@@ -1222,7 +1218,7 @@ msgid "Insert _After"
 msgstr ""
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:52
-msgid "Insert blank subtitle after the selected subtitle"
+msgid "Insert a blank subtitle after the first selected subtitle"
 msgstr "Üres felirat beszúrása a kijelölt felirat után"
 
 #: ../plugins/actions/insertsubtitle/insertsubtitle.cc:117
@@ -1236,7 +1232,7 @@ msgid "_Italic"
 msgstr ""
 
 #: ../plugins/actions/italicize/italicize.cc:45
-msgid "Italicize the selected subtitles text"
+msgid "Italicize the text of the selected subtitles"
 msgstr ""
 
 #: ../plugins/actions/italicize/italicize.cc:110
@@ -1293,7 +1289,7 @@ msgid "Save Keyframes"
 msgstr "Hanghullám mentése"
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:60
-msgid "Save keyframes to the file"
+msgid "Save keyframes to a file"
 msgstr ""
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:66
@@ -1310,7 +1306,7 @@ msgid "Generate Keyframes From Video (Using Frame)"
 msgstr ""
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-msgid "Close the keyframes"
+msgid "Close Keyframes"
 msgstr ""
 
 #: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
@@ -1889,7 +1885,7 @@ msgid "OpenGL"
 msgstr ""
 
 #: ../plugins/actions/removesubtitle/removesubtitle.cc:44
-msgid "Delete the selected subtitles"
+msgid "Delete selected subtitles"
 msgstr "Kiválasztott feliratok törlése"
 
 #: ../plugins/actions/removesubtitle/removesubtitle.cc:104
@@ -2197,7 +2193,7 @@ msgid "_Spell Check"
 msgstr ""
 
 #: ../plugins/actions/spellchecking/spellchecking.cc:642
-msgid "Launch the spell checking"
+msgid "Launch spell-checking"
 msgstr "Helyesírás-ellenőrző indítása"
 
 #: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
@@ -2210,7 +2206,7 @@ msgid "The beginning for the new document:"
 msgstr "Az új felirat kezdete:"
 
 #: ../plugins/actions/splitdocument/splitdocument.cc:46
-msgid "You can't use <i>split</i> with this document."
+msgid "You can't use the <i>split</i> action with this document."
 msgstr "Nem tudja a <i>kettévágás</i>-t használni ebben a feliratban."
 
 #. Remove subtitles used by the new one
@@ -2231,7 +2227,7 @@ msgid "_Split"
 msgstr ""
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:45
-msgid "Split the selected subtitles"
+msgid "Split selected subtitles"
 msgstr "Kijelölt felirat kettévágása"
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:94
@@ -2434,7 +2430,7 @@ msgstr ""
 
 #: ../plugins/actions/template/template.cc:110
 #, fuzzy
-msgid "Save the current document as template."
+msgid "Save the current document as template"
 msgstr "Aktuális felira kettévágása"
 
 #: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
@@ -2567,7 +2563,7 @@ msgid "Text _Correction"
 msgstr ""
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:46
-msgid "_Times"
+msgid "_Timecodes"
 msgstr ""
 
 #: ../plugins/actions/timemodemanagement/timemodemanagement.cc:53
@@ -2606,7 +2602,7 @@ msgid "Timing From Player"
 msgstr "Videólejátszó"
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:76
-msgid "Use the current player position to set subtitle time"
+msgid "Use the current player position to set subtitle timecodes"
 msgstr ""
 
 #: ../plugins/actions/timingfromplayer/timingfromplayer.cc:80
@@ -2719,12 +2715,12 @@ msgstr ""
 
 #. _("_Open Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:49
-msgid "Open a multimedia file"
+msgid "Open an audio file or a video file"
 msgstr ""
 
 #. _("_Close Media"),
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:56
-msgid "Close a multimedia file"
+msgid "Close an audio file or a video file"
 msgstr ""
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:69
@@ -2732,7 +2728,7 @@ msgid "_Play / Pause"
 msgstr ""
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
-msgid "Play or make a pause"
+msgid "Play or pause audio or video"
 msgstr "Lejátszás vagy szünet"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:76
@@ -2745,7 +2741,7 @@ msgid "Frame"
 msgstr ""
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:81
-msgid "Frame skip backwards"
+msgid "Skip backwards by a frame"
 msgstr ""
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:88
@@ -2802,7 +2798,7 @@ msgid "Skip _Forward"
 msgstr ""
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:134
-msgid "Frame skip forward"
+msgid "Skip forward by a frame"
 msgstr ""
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
@@ -2838,7 +2834,7 @@ msgstr ""
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
-msgid "Define the playback rate"
+msgid "Set the playback rate"
 msgstr ""
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
@@ -2858,7 +2854,7 @@ msgid "_Seek To Selection"
 msgstr ""
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:202
-msgid "Seek to the first selected subtitle"
+msgid "Seek to start of the first selected subtitle"
 msgstr "Ugrás az első kijelölt részhez"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
@@ -2900,7 +2896,7 @@ msgid "Play _Next Subtitle"
 msgstr ""
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:241
-msgid "Play next subtitle from the first selected subtitle"
+msgid "Play the subtitle that is next to the first selected subtitle"
 msgstr "Az első kijelölt felirat utáni felirat lejátszása"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:247
@@ -2948,7 +2944,7 @@ msgid "Audio Track"
 msgstr ""
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
-msgid "Choice of an audio track"
+msgid "Choose the audio track"
 msgstr ""
 
 #. A default track "Auto"
@@ -2996,7 +2992,7 @@ msgstr ""
 
 #: ../plugins/actions/viewmanager/viewmanager.cc:338
 #, fuzzy
-msgid "Manage the views"
+msgid "Manage views"
 msgstr "Stílusok kezelése"
 
 #: ../plugins/actions/waveformmanagement/waveformgenerator.cc:32
@@ -3029,7 +3025,7 @@ msgid "_Generate Waveform From Video"
 msgstr "Hanghullám generálása"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:64
-msgid "Generate the waveform from the current video file"
+msgid "Generate a waveform from the current video file"
 msgstr ""
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:70
@@ -3039,7 +3035,7 @@ msgstr "Hanghullám generálása"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:71
 #, fuzzy
-msgid "Generate an dummy waveform (sine)"
+msgid "Generate a dummy waveform (a sinusoidal wave)"
 msgstr "Hanghullám generálása"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
@@ -3048,7 +3044,7 @@ msgstr ""
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
 #, fuzzy
-msgid "Save waveform to file"
+msgid "Save the waveform to a file"
 msgstr "Hanghullám mentése"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
@@ -3058,7 +3054,7 @@ msgstr "_Hanghullám"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
 #, fuzzy
-msgid "Close waveform"
+msgid "Close the waveform"
 msgstr "Hanghullám mentése"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
@@ -3078,11 +3074,11 @@ msgid "Zoom _All"
 msgstr ""
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-msgid "_Center With Selected Subtitle"
+msgid "_Center Selected Subtitle"
 msgstr ""
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-msgid "Scrolling With _Player"
+msgid "Scrolling With _Video"
 msgstr ""
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
@@ -3365,7 +3361,7 @@ msgid "Please check your GStreamer installation."
 msgstr ""
 
 #: ../src/gui/application.cc:296
-msgid "Times"
+msgid "Timecodes"
 msgstr ""
 
 #: ../src/gui/application.cc:296
@@ -3969,7 +3965,7 @@ msgid "About"
 msgstr "_Névjegy"
 
 #: ../plugins/actions/about/about.se-plugin.in.h:2
-msgid "Displays the application's information."
+msgid "Displays information about the application."
 msgstr ""
 
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1

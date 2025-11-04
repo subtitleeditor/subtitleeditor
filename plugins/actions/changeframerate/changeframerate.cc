@@ -182,8 +182,9 @@ class ChangeFrameratePlugin : public Action {
     action_group = Gtk::ActionGroup::create("ChangeFrameratePlugin");
 
     action_group->add(
-        Gtk::Action::create("change-framerate", Gtk::Stock::CONVERT,
-                            _("Change _Framerate"), _("Convert framerate")),
+          Gtk::Action::create(
+            "change-framerate", Gtk::Stock::CONVERT, _("Change _Framerate"),
+            _("Convert subtitles synced to video that has one framerate to a video with a different framerate")),
         sigc::mem_fun(*this, &ChangeFrameratePlugin::on_execute));
 
     // ui

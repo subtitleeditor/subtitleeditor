@@ -82,7 +82,7 @@ class DocumentManagementPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("open-project", _("Open Project"),
-                            _("Open a Subtitle Editor Project")),
+                            _("Open a Subtitle Editor Project file")),
         sigc::mem_fun(*this, &DocumentManagementPlugin::on_open_project));
 #if GTKMM_CHECK_VERSION(2, 16, 0)
     action_group->get_action("open-project")->set_stock_id(Gtk::Stock::OPEN);
@@ -96,7 +96,7 @@ class DocumentManagementPlugin : public Action {
     action_group->add(
         Gtk::Action::create(
             "save-project", _("Save Project"),
-            _("Save the current file as Subtitle Editor Project")),
+            _("Save the current file as Subtitle Editor Project file")),
         sigc::mem_fun(*this, &DocumentManagementPlugin::on_save_project));
 #if GTKMM_CHECK_VERSION(2, 16, 0)
     action_group->get_action("save-project")->set_stock_id(Gtk::Stock::SAVE);
@@ -104,7 +104,7 @@ class DocumentManagementPlugin : public Action {
 
     action_group->add(
         Gtk::Action::create("save-as-document", Gtk::Stock::SAVE_AS, "",
-                            _("Save the current file with a different name")),
+                            _("Save the current file with a different name or format")),
         Gtk::AccelKey("<Shift><Control>S"),
         sigc::mem_fun(*this, &DocumentManagementPlugin::on_save_as));
 
@@ -117,20 +117,20 @@ class DocumentManagementPlugin : public Action {
     action_group->add(
         Gtk::Action::create("open-translation", Gtk::Stock::OPEN,
                             _("Open _Translation"),
-                            _("Open translation from file")),
+                            _("Open a translation from a file (this will populate and overwrite the Translation column, taking only text from the opened file, which does not have to have the same timecodes or number of subtitles as your document)")),
         Gtk::AccelKey("<Control>T"),
         sigc::mem_fun(*this, &DocumentManagementPlugin::on_open_translation));
 
     action_group->add(
         Gtk::Action::create("save-translation", Gtk::Stock::SAVE,
                             _("Save Trans_lation"),
-                            _("Save translation to file")),
+                            _("Save translation to a file (like Save As, but instead using of Text for the text of the subtitles, Translation is used)")),
         Gtk::AccelKey("<Shift><Control>T"),
         sigc::mem_fun(*this, &DocumentManagementPlugin::on_save_translation));
 
     // recent files
     Glib::RefPtr<Gtk::RecentAction> recentAction = Gtk::RecentAction::create(
-        "menu-recent-open-document", _("Open _Recent"));
+        "menu-recent-open-document", _("Open _Recent"), _("Open Recent files"));
 
     Glib::RefPtr<Gtk::RecentFilter> filter = Gtk::RecentFilter::create();
     filter->set_name("subtitleeditor");
@@ -150,7 +150,7 @@ class DocumentManagementPlugin : public Action {
     // close
     action_group->add(
         Gtk::Action::create("close-document", Gtk::Stock::CLOSE, "",
-                            _("Close the current file")),
+                            _("Close the current document")),
         sigc::mem_fun(*this, &DocumentManagementPlugin::on_close));
 
     // quit the program

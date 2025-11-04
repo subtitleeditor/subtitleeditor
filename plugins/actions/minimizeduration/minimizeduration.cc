@@ -46,30 +46,34 @@ class MinimizeDurationPlugin : public Action {
     action_group->add(
         Gtk::Action::create(
             "minimize-duration", _("Minimize Duration From Start"),
-            _("Compact each selected subtitle to its minimum permissible "
-              "duration, start time is unchanged.")),
+            _("Compact all selected subtitles to their minimum permissible "
+              "duration set in preferences by decreasing the end timecode, so "
+              "start time is unchanged")),
         sigc::mem_fun(
             *this, &MinimizeDurationPlugin::on_minimize_duration_from_start));
     action_group->add(
-        Gtk::Action::create("minimize-duration-from-end",
-                            _("Minimize Duration From End"),
-                            _("Compact each selected subtitle to its minimum "
-                              "permissible duration, end time is unchanged.")),
+        Gtk::Action::create(
+            "minimize-duration-from-end", _("Minimize Duration From End"),
+            _("Compact all selected subtitles to their minimum permissible "
+              "duration set in preferences by increasing the start timecode, "
+              "so end time is unchanged")),
         sigc::mem_fun(*this,
                       &MinimizeDurationPlugin::on_minimize_duration_from_end));
 
     action_group->add(
-        Gtk::Action::create(
-            "idealize-duration", _("_Idealize Duration From Start"),
-            _("Compact each selected subtitle to its ideal "
-              "duration, start time is unchanged.")),
+        Gtk::Action::create("idealize-duration",
+                            _("_Idealize Duration From Start"),
+                            _("Compact all selected subtitles to their ideal "
+                              "duration set in preferences by decreasing the "
+                              "end timecode, so start time is unchanged")),
         sigc::mem_fun(
             *this, &MinimizeDurationPlugin::on_idealize_duration_from_start));
     action_group->add(
         Gtk::Action::create("idealize-duration-from-end",
                             _("_Idealize Duration From End"),
-                            _("Compact each selected subtitle to its ideal "
-                              "duration, end time is unchanged.")),
+                            _("Compact all selected subtitles to their ideal "
+                              "duration set in preferences by increasing the "
+                              "start timecode, so end time is unchanged")),
         sigc::mem_fun(*this,
                       &MinimizeDurationPlugin::on_idealize_duration_from_end));
 
@@ -152,7 +156,7 @@ class MinimizeDurationPlugin : public Action {
 
     if (selection.size() < 1) {
       doc->flash_message(
-          _("Minimize Duration needs at least 1 subtitle to work on."));
+          _("This action needs at least one subtitle to work on."));
       return false;
     }
 

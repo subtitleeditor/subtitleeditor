@@ -1,6 +1,6 @@
 [SubtitleEditor Extension]
 _Name=Template Management
-_Description=FIXME
+_Description=Provides subtitle templates functionality.
 Categorie=action
 Hidden=true
 Type=module

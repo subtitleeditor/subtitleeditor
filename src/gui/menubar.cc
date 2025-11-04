@@ -58,8 +58,8 @@ void MenuBar::create(Gtk::Window &window, Statusbar &statusbar) {
   actiongroup->add(Gtk::Action::create("menu-extensions", _("E_xtensions")));
   actiongroup->add(Gtk::Action::create("menu-help", _("_Help")));
   // file submenu
-  actiongroup->add(Gtk::Action::create("menu-open", _("_Open")));
-  actiongroup->add(Gtk::Action::create("menu-save", _("_Save")));
+  actiongroup->add(Gtk::Action::create("menu-open", _("_Open"), _("Open a document or translation")));
+  actiongroup->add(Gtk::Action::create("menu-save", _("_Save"), _("Save document, documents or translation")));
   actiongroup->add(Gtk::Action::create("menu-import", _("_Import")));
   actiongroup->add(Gtk::Action::create("menu-export", _("_Export")));
   // If we add the stock_id when we create the actions,
