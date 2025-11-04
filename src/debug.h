@@ -26,6 +26,7 @@
 
 #include <glib.h>
 #include <stdio.h>
+#include <string>
 
 enum SE_DBG_MESSAGE_FLAG {
   SE_NO_DEBUG = 0,
@@ -43,7 +44,7 @@ enum SE_DBG_MESSAGE_FLAG {
   SE_DBG_UTILITY = 1 << 9,
   SE_DBG_COMMAND = 1 << 10,
   SE_DBG_PLUGINS = 1 << 11,
-  SE_DBG_PROFILING = 1 << 12,
+  SE_DBG_NO_PROFILING = 1 << 12,
 
   SE_DBG_ALL = 1 << 20
 };
@@ -52,10 +53,13 @@ void __se_dbg_init(int flags);
 
 bool se_dbg_check_flags(int flags);
 
-void __se_dbg(int flag, const gchar* file, gint line, const gchar* fonction);
+void __se_dbg(int flag, const gchar* file, gint line, const gchar* function);
 
-void __se_dbg_msg(int flag, const gchar* file, gint line, const gchar* fonction,
+void __se_dbg_msg(int flag, const gchar* file, gint line, const gchar* function,
                   const char* string, ...);
+
+void __se_dbg_msg(int flag, const gchar* file, gint line, const gchar* function,
+                  const std::string& message);
 
 #ifdef DEBUG
 

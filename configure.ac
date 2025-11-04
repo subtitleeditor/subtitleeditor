@@ -265,7 +265,7 @@ fi
 # profile options (default no)
 
 AC_ARG_ENABLE(profile,
-							[AC_HELP_STRING([--enable-profile], [turn on profiling [default=no]])],,
+							[AC_HELP_STRING([--enable-profile], [turn on gprof profiling [default=no]])],,
 							[enable_profile=no])
 
 if test "$enable_profile" = "yes"; then
