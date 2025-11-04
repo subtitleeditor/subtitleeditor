@@ -31,6 +31,12 @@ class OptionGroup : public Glib::OptionGroup {
 
   int get_debug_flags();
 
+#ifdef DEBUG
+  Glib::OptionGroup& get_debug_group() {
+    return debug_group;
+  }
+#endif
+
  public:
   std::vector<Glib::ustring> files;
   std::vector<Glib::ustring> files_list;  // simple file (glibmm Bug #526831)
@@ -42,6 +48,8 @@ class OptionGroup : public Glib::OptionGroup {
   Glib::ustring keyframes;  // keyframes file location
 
 #ifdef DEBUG
+  Glib::OptionGroup debug_group;
+
   bool debug_all;
   bool debug_app;
   bool debug_view;
@@ -54,6 +62,6 @@ class OptionGroup : public Glib::OptionGroup {
   bool debug_utility;
   bool debug_command;
   bool debug_plugins;
-  bool debug_profiling;
+  bool debug_no_profiling;
 #endif  // DEBUG
 };
