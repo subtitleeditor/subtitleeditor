@@ -65,35 +65,40 @@ class ClipboardPlugin : public Action {
 
     // actions
     action_group = Gtk::ActionGroup::create("ClipboardPlugin");
-
+    action_group->add(Gtk::Action::create("menu-edit/menu-copy",
+                                          _("Copy"), _("Copy")));
+    // see comment in menubar.cc why we do this (to avoid setting a shortcut)
+    action_group->get_action("menu-edit/menu-copy")->set_stock_id(Gtk::Stock::COPY);
     action_group->add(
         Gtk::Action::create("clipboard-copy", _("_Copy"),
-                            _("Copy selected subtitles to the clipboard")),
+                            _("Copy selected subtitles to the clipboard, making only their text visible to other clipboard-using aplications")),
         sigc::mem_fun(*this, &ClipboardPlugin::on_copy));
-    action_group->add(
-        Gtk::Action::create(
-            "clipboard-cut", _("C_ut"),
-            _("Copy selected subtitles to the clipboard and delete them")),
-        sigc::mem_fun(*this, &ClipboardPlugin::on_cut));
-    action_group->add(
-        Gtk::Action::create("clipboard-paste", _("_Paste"),
-                            _("Paste subtitles from the clipboard AFTER the "
-                              "currently selected subtitle, keeping their duration and gaps between them but setting the start of the first one right after with respect to the minimal gap between subtitles setting )")),
-        sigc::mem_fun(*this, &ClipboardPlugin::on_paste));
-    action_group->add(
+     action_group->add(
         Gtk::Action::create("clipboard-copy-with-timing", _("Copy With Timing"),
                             _("Copy selected subtitles and make their timing "
-                              "visible to text-based applications")),
+                              "visible to other clipboard-using applications")),  Gtk::AccelKey("<Control>c"),
         sigc::mem_fun(*this, &ClipboardPlugin::on_copy_with_timing));
 
-    action_group->add(Gtk::Action::create("menu-edit/menu-paste-special",
-                                          _("Paste Special")));
+    action_group->add(
+        Gtk::Action::create(
+            "clipboard-cut", Gtk::Stock::CUT, _("C_ut"),
+            _("Copy selected subtitles to the clipboard and delete them")), Gtk::AccelKey("<Control>x"),
+        sigc::mem_fun(*this, &ClipboardPlugin::on_cut));
+
+    action_group->add(Gtk::Action::create("menu-edit/menu-paste",
+                                          _("Paste"), _("Paste")));
+    action_group->get_action("menu-edit/menu-paste")->set_stock_id(Gtk::Stock::PASTE);
+    action_group->add(
+        Gtk::Action::create("clipboard-paste",  Gtk::Stock::PASTE, _("_Paste"),
+                            _("Paste subtitles from the clipboard AFTER the "
+                              "currently selected subtitle, keeping their duration and gaps between them but setting the start of the first one right after with respect to the minimal gap between subtitles setting )")),  Gtk::AccelKey("<Control>v"),
+        sigc::mem_fun(*this, &ClipboardPlugin::on_paste));
 
     action_group->add(
         Gtk::Action::create("clipboard-paste-at-player-position",
                             _("Paste At Current Player Position"),
                             _("Paste subtitles from the clipboard AFTER the "
-                              "currently selected subtitle, keeping their duration and gaps between them but setting the start of the first at the current player position")),
+                              "currently selected subtitle, keeping their duration and gaps between them but setting the start of the first at the current player position")), Gtk::AccelKey("<Control><Shift>v"),
         sigc::mem_fun(*this, &ClipboardPlugin::on_paste_at_player_position));
     action_group->add(
         Gtk::Action::create("clipboard-paste-as-new-document",
@@ -137,12 +142,13 @@ class ClipboardPlugin : public Action {
           <menu name='menu-edit' action='menu-edit'>
             <placeholder name='clipboard'>
               <separator/>
-              <menuitem action='clipboard-copy'/>
+              <menu action='menu-edit/menu-copy'>
+                <menuitem action='clipboard-copy'/>
+                <menuitem action='clipboard-copy-with-timing'/>
+              </menu>
               <menuitem action='clipboard-cut'/>
-              <menuitem action='clipboard-paste'/>
-              <separator/>
-              <menuitem action='clipboard-copy-with-timing'/>
-              <menu action='menu-edit/menu-paste-special'>
+              <menu action='menu-edit/menu-paste'>
+                <menuitem action='clipboard-paste'/>
                 <menuitem action='clipboard-paste-at-player-position'/>
                 <menuitem action='clipboard-paste-as-new-document'/>
                 <menuitem action='clipboard-paste-over-text'/>
