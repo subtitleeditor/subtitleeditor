@@ -18,13 +18,9 @@
 			</menu>
 			<separator/>
 			<!-- placeholder name="properties"/ -->
-			<separator/>
-			<menu action="menu-import" name="menu-import">
-				<placeholder name="placeholder"/>
-			</menu>
-			<menu action="menu-export" name="menu-export">
-				<placeholder name="placeholder"/>
-			</menu>
+			<!--<separator/>-->
+            <placeholder name="plain-text-import"/>
+            <placeholder name="plain-text-export"/>
 			<separator/>
 			<placeholder name="close-document"/>
 			<placeholder name="exit"/>

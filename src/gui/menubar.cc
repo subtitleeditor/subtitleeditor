@@ -60,8 +60,6 @@ void MenuBar::create(Gtk::Window &window, Statusbar &statusbar) {
   // file submenu
   actiongroup->add(Gtk::Action::create("menu-open", _("_Open"), _("Open a document or translation")));
   actiongroup->add(Gtk::Action::create("menu-save", _("_Save"), _("Save document, documents or translation")));
-  actiongroup->add(Gtk::Action::create("menu-import", _("_Import")));
-  actiongroup->add(Gtk::Action::create("menu-export", _("_Export")));
   // If we add the stock_id when we create the actions,
   // they will automatically set up with the
   // default shortcut (Open: Ctrl+O, Save: Ctrl+S).
