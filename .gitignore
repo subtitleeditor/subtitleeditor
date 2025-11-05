@@ -102,6 +102,7 @@ share/org.kitone.subtitleeditor.desktop
 compile_commands.json
 .cache/*
 *.kate-swp
+.kateproject
 
 #vim
 .*.swp
