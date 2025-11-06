@@ -135,6 +135,8 @@ int WaveformRenderer::get_end_area() {
 // return the time of the position in the area
 // time is in msec (SubtitleTime.totalmsecs)
 long WaveformRenderer::get_time_by_pos(int pos) {
+  if (!m_waveform)
+    return 0;
   float width = static_cast<float>(widget()->get_width()) * zoom();
   float percent = static_cast<float>(pos) / width;
   return static_cast<long>(m_waveform->get_duration() * percent);

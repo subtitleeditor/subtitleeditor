@@ -740,7 +740,7 @@ bool WaveformEditor::on_button_release_event_renderer(GdkEventButton * /*ev*/) {
 bool WaveformEditor::on_motion_notify_event_renderer(GdkEventMotion *ev) {
   se_dbg(SE_DBG_WAVEFORM);
 
-  if (!(has_renderer() && has_document()))
+  if (!(has_renderer() && has_document() && has_waveform()))
     return true;
 
   Subtitle subtitle = document()->subtitles().get_first_selected();
