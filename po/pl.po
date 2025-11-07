@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-24 23:47+0200\n"
+"POT-Creation-Date: 2025-11-07 13:22+0100\n"
 "PO-Revision-Date: 2010-12-21 21:29+0100\n"
 "Last-Translator: Franciszek Janowski <nobange@poczta.onet.pl>\n"
 "Language-Team: Polish <none@none.org>\n"
@@ -20,9 +20,19 @@ msgstr ""
 "X-Launchpad-Export-Date: 2008-11-27 19:41+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
+#: ../plugins/actions/about/about.cc:40
+#: ../plugins/actions/about/about.se-plugin.in.h:1
+msgid "About"
+msgstr "Informacje o..."
+
+#: ../plugins/actions/about/about.cc:40
+msgid "Display information about the program"
+msgstr ""
+
 #. comments
 #: ../plugins/actions/about/about.cc:76
-msgid "a tool for subtitles edition"
+#, fuzzy
+msgid "A tool for editing subtitles"
 msgstr "narzędzie do edycji napisów"
 
 #. translator-credits
@@ -39,123 +49,128 @@ msgstr ""
 "  swistakmc https://launchpad.net/~czescik\n"
 "  Łukasz Wyszyński https://launchpad.net/~darzki"
 
+#. -- 100 ms --
+#. menu add
 #: ../plugins/actions/adjusttime/adjusttime.cc:47
 msgid "Add 100 Milliseconds"
 msgstr "Dodaj 100 Milisekund"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:51
-#: ../plugins/actions/adjusttime/adjusttime.cc:101
+#: ../plugins/actions/adjusttime/adjusttime.cc:49
+#: ../plugins/actions/adjusttime/adjusttime.cc:83
 msgid "To Start"
 msgstr "Do początku"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:52
+#: ../plugins/actions/adjusttime/adjusttime.cc:49
 msgid "Add 100 Milliseconds to start for all subtitles selected"
 msgstr "Dodaj 100 Milisekund do początku wszystkich zaznaczonych napisów"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:57
-#: ../plugins/actions/adjusttime/adjusttime.cc:107
+#: ../plugins/actions/adjusttime/adjusttime.cc:52
+#: ../plugins/actions/adjusttime/adjusttime.cc:86
 msgid "To Duration"
 msgstr "Do czasu trwania"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:58
+#: ../plugins/actions/adjusttime/adjusttime.cc:52
 msgid "Add 100 Milliseconds to duration for all subtitles selected"
 msgstr "Dodaj 100 Milisekund czasu trwania dla wszytkich zaznaczonych napisów"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:63
-#: ../plugins/actions/adjusttime/adjusttime.cc:113
+#: ../plugins/actions/adjusttime/adjusttime.cc:56
+#: ../plugins/actions/adjusttime/adjusttime.cc:90
 #, fuzzy
 msgid "To Start And To Duration"
 msgstr "Do początku i czasu trwania"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:64
+#: ../plugins/actions/adjusttime/adjusttime.cc:56
 msgid "Add 100 Milliseconds to all subtitles selected"
 msgstr "Dodaj 100 Milisekund do wszystkich zaznaczonych napisów"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:71
+#: ../plugins/actions/adjusttime/adjusttime.cc:61
 msgid "Remove 100 Milliseconds"
 msgstr "Usuń 100 Milisekund"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:75
-#: ../plugins/actions/adjusttime/adjusttime.cc:125
+#: ../plugins/actions/adjusttime/adjusttime.cc:64
+#: ../plugins/actions/adjusttime/adjusttime.cc:96
 #, fuzzy
 msgid "From Start"
 msgstr "Do początku"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:76
+#: ../plugins/actions/adjusttime/adjusttime.cc:64
 #, fuzzy
 msgid "Remove 100 Milliseconds from start for all subtitles selected"
 msgstr "Usuń 100 Milisekund od początku wszystkich zaznaczonych napisów"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:80
-#: ../plugins/actions/adjusttime/adjusttime.cc:131
+#: ../plugins/actions/adjusttime/adjusttime.cc:68
+#: ../plugins/actions/adjusttime/adjusttime.cc:100
 #, fuzzy
 msgid "From Duration"
 msgstr "Do czasu trwania"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:81
+#: ../plugins/actions/adjusttime/adjusttime.cc:69
 #, fuzzy
 msgid "Remove 100 Milliseconds from duration for all subtitles selected"
 msgstr "Usuń 100 Milisekund od czasu trwania wszystkich zaznaczonych napisów"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:88
-#: ../plugins/actions/adjusttime/adjusttime.cc:137
+#: ../plugins/actions/adjusttime/adjusttime.cc:75
+#: ../plugins/actions/adjusttime/adjusttime.cc:105
 #, fuzzy
 msgid "From Start And From Duration"
 msgstr "Do początku i czasu trwania"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:89
+#: ../plugins/actions/adjusttime/adjusttime.cc:75
 #, fuzzy
 msgid "Remove 100 Milliseconds from all subtitles selected"
 msgstr "Usuń 100 Milisekund ze wszystkich zaznaczonych napisów"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:97
+#. -- 1 frame --
+#. menu add
+#: ../plugins/actions/adjusttime/adjusttime.cc:81
 msgid "Add 1 Frame"
 msgstr ""
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:102
+#: ../plugins/actions/adjusttime/adjusttime.cc:83
 #, fuzzy
 msgid "Add 1 Frame to start for all subtitles selected"
 msgstr "Dodaj 100 Milisekund do początku wszystkich zaznaczonych napisów"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:108
+#: ../plugins/actions/adjusttime/adjusttime.cc:86
 #, fuzzy
 msgid "Add 1 Frame to duration for all subtitles selected"
 msgstr "Dodaj 100 Milisekund czasu trwania dla wszytkich zaznaczonych napisów"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:114
+#: ../plugins/actions/adjusttime/adjusttime.cc:90
 #, fuzzy
 msgid "Add 1 Frame to all subtitles selected"
 msgstr "Dodaj 100 Milisekund do wszystkich zaznaczonych napisów"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:121
+#. menu remove
+#: ../plugins/actions/adjusttime/adjusttime.cc:94
 msgid "Remove 1 Frame"
 msgstr ""
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:126
+#: ../plugins/actions/adjusttime/adjusttime.cc:96
 #, fuzzy
 msgid "Remove 1 Frame from start for all subtitles selected"
 msgstr "Usuń 100 Milisekund od początku wszystkich zaznaczonych napisów"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:132
+#: ../plugins/actions/adjusttime/adjusttime.cc:100
 #, fuzzy
 msgid "Remove 1 Frame from duration for all subtitles selected"
 msgstr "Usuń 100 Milisekund od czasu trwania wszystkich zaznaczonych napisów"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:138
+#: ../plugins/actions/adjusttime/adjusttime.cc:105
 #, fuzzy
 msgid "Remove 1 Frame from all subtitles selected"
 msgstr "Usuń 100 Milisekund ze wszystkich zaznaczonych napisów"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:297
-#: ../plugins/actions/dialoguize/dialoguize.cc:238
-#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:95
-#: ../plugins/actions/italicize/italicize.cc:106
-#: ../plugins/actions/movesubtitles/movesubtitles.cc:173
-#: ../plugins/actions/removesubtitle/removesubtitle.cc:98
+#: ../plugins/actions/adjusttime/adjusttime.cc:260
+#: ../plugins/actions/dialoguize/dialoguize.cc:228
+#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:93
+#: ../plugins/actions/italicize/italicize.cc:105
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:167
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:92
 msgid "Please select at least a subtitle."
 msgstr "Proszę wybrać przynajmniej jeden napis."
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:301
+#: ../plugins/actions/adjusttime/adjusttime.cc:264
 msgid "Adjust time"
 msgstr "Dopasuj czas"
 
@@ -163,60 +178,107 @@ msgstr "Dopasuj czas"
 msgid "Apply _Translation"
 msgstr "Zatwiedź _tłumaczenie"
 
-#: ../plugins/actions/applytranslation/applytranslation.cc:45
-msgid "Replace the text of the subtitle by the translation"
+#: ../plugins/actions/applytranslation/applytranslation.cc:44
+#, fuzzy
+msgid "Replace the text of all subtitles by the translation"
 msgstr "Zastąp napis jego przetłumaczoną wersją"
 
-#: ../plugins/actions/applytranslation/applytranslation.cc:94
+#: ../plugins/actions/applytranslation/applytranslation.cc:92
 msgid "Apply translation"
 msgstr "Zatwierdź tłumaczenie"
 
-#: ../plugins/actions/applytranslation/applytranslation.cc:105
+#: ../plugins/actions/applytranslation/applytranslation.cc:103
 msgid "The translation was applied."
 msgstr "Tłumaczenie zostało zatwierdzone."
 
-#: ../plugins/actions/bestfit/bestfit.cc:51
+#: ../plugins/actions/autowrap/autowrap.cc:48
+#, fuzzy
+msgid "Wrap Text"
+msgstr "Oryginalny tekst"
+
+#: ../plugins/actions/autowrap/autowrap.cc:48
+#, fuzzy
+msgid "Reflow the text of the selected subtitles "
+msgstr "Zmień styl wybranych napisów na kursywę"
+
+#: ../plugins/actions/autowrap/autowrap.cc:51
+msgid "Wrap Text Wide"
+msgstr ""
+
+#: ../plugins/actions/autowrap/autowrap.cc:52
+msgid ""
+"Reflow the text of selected subtitles fitting as many words on each line as "
+"possible while respecting the maximum characters per line setting"
+msgstr ""
+
+#: ../plugins/actions/autowrap/autowrap.cc:57
+msgid "Wrap Text Evenly"
+msgstr ""
+
+#: ../plugins/actions/autowrap/autowrap.cc:58
+msgid ""
+"Reflow the text of the selected subtitles into lines of a similar width "
+"while respecting the maximum characters per line setting"
+msgstr ""
+
+#: ../plugins/actions/autowrap/autowrap.cc:125
+#: ../plugins/actions/slidetimings/slidetimings.cc:106
+#: ../plugins/actions/slidetimings/slidetimings.cc:134
+#: ../plugins/actions/slidewords/slidewords.cc:124
+#: ../plugins/actions/splitsubtitle/splitsubtitle.cc:89
+#: ../plugins/actions/typewriter/typewriter.cc:140
+msgid "Please select at least one subtitle."
+msgstr "Proszę wybrać przynajmniej jeden napis."
+
+#: ../plugins/actions/autowrap/autowrap.cc:129
+msgid "Wrap text into lines"
+msgstr ""
+
+#: ../plugins/actions/bestfit/bestfit.cc:49
 #, fuzzy
 msgid "_Best Fit Subtitles"
 msgstr "Wybierz _pierwszy napis"
 
-#: ../plugins/actions/bestfit/bestfit.cc:52
+#: ../plugins/actions/bestfit/bestfit.cc:50
 #, fuzzy
 msgid ""
-"Best fit the selected subtitles between the start of the first and the end "
-"of the last one."
+"Equalize the speed (in CPS) of the selected subtitles between the start of "
+"the first and the end of the last (while respecting the minimum gap between "
+"subtitles and their minima duration)"
 msgstr ""
 "Zwiększ długość wybranych napisów do chwili rozpoczęcia wyświetlania "
 "kolejnych"
 
-#: ../plugins/actions/bestfit/bestfit.cc:105
+#: ../plugins/actions/bestfit/bestfit.cc:100
 msgid "Best fit"
 msgstr ""
 
-#: ../plugins/actions/bestfit/bestfit.cc:125
+#: ../plugins/actions/bestfit/bestfit.cc:117
 #, fuzzy
 msgid "Best Fit needs at least 2 subtitles to work on."
 msgstr "Proszę zaznaczyć co najmniej dwa napisy"
 
-#: ../plugins/actions/bestfit/bestfit.cc:160
+#: ../plugins/actions/bestfit/bestfit.cc:147
 msgid "Best Fit only works on an uninterrupted selection of subtitles."
 msgstr ""
 
-#: ../plugins/actions/changeframerate/changeframerate.cc:186
+#: ../plugins/actions/changeframerate/changeframerate.cc:177
 msgid "Change _Framerate"
 msgstr "Zmień _liczbę klatek/s"
 
-#: ../plugins/actions/changeframerate/changeframerate.cc:186
-msgid "Convert framerate"
-msgstr "Zamień ilość klatek na sekundę"
+#: ../plugins/actions/changeframerate/changeframerate.cc:178
+msgid ""
+"Convert subtitles synced to video that has one framerate to a video with a "
+"different framerate"
+msgstr ""
 
-#: ../plugins/actions/changeframerate/changeframerate.cc:241
+#: ../plugins/actions/changeframerate/changeframerate.cc:229
 #: ../plugins/actions/changeframerate/dialog-change-framerate.ui.h:1
 #: ../plugins/actions/changeframerate/changeframerate.se-plugin.in.h:1
 msgid "Change Framerate"
 msgstr "Zmień liczbę klatek/s"
 
-#: ../plugins/actions/changeframerate/changeframerate.cc:259
+#: ../plugins/actions/changeframerate/changeframerate.cc:247
 #, c-format
 msgid "The new framerate was applied. (%s to %s)"
 msgstr "Zastosowano nową liczbę klatek/s. (z %s na %s)"
@@ -250,129 +312,153 @@ msgid "All documents"
 msgstr "Wszystkich dokumentów"
 
 #: ../plugins/actions/clipboard/clipboard.cc:70
+msgid "Copy"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:75
 msgid "_Copy"
 msgstr ""
 
-#: ../plugins/actions/clipboard/clipboard.cc:71
-#, fuzzy
-msgid "Copy selected subtitles to the clipboard."
-msgstr "_Tylko wybrane napisy"
-
-#: ../plugins/actions/clipboard/clipboard.cc:75
-msgid "C_ut"
-msgstr ""
-
 #: ../plugins/actions/clipboard/clipboard.cc:76
-msgid "Copy selected subtitles to the clipboard and delete them."
+msgid ""
+"Copy selected subtitles to the clipboard, making only their text visible to "
+"other clipboard-using aplications"
 msgstr ""
 
 #: ../plugins/actions/clipboard/clipboard.cc:79
-#, fuzzy
-msgid "_Paste"
-msgstr "_Szybciej"
-
-#: ../plugins/actions/clipboard/clipboard.cc:80
-#: ../plugins/actions/clipboard/clipboard.cc:95
-#, fuzzy
-msgid ""
-"Paste subtitles from the clipboard AFTER the currently selected subtitle."
-msgstr "Odtwarzaj fragment następujący po pierwszym z zaznaczonych napisów"
-
-#: ../plugins/actions/clipboard/clipboard.cc:84
 msgid "Copy With Timing"
 msgstr ""
 
-#: ../plugins/actions/clipboard/clipboard.cc:85
+#: ../plugins/actions/clipboard/clipboard.cc:80
+#, fuzzy
 msgid ""
-"Copy selected subtitles and make their timing visible to text-based "
-"applications."
+"Copy selected subtitles and make their timing visible to other clipboard-"
+"using applications"
+msgstr "_Tylko wybrane napisy"
+
+#: ../plugins/actions/clipboard/clipboard.cc:86
+msgid "C_ut"
 msgstr ""
 
-#: ../plugins/actions/clipboard/clipboard.cc:90
-msgid "Paste Special"
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:94
+#: ../plugins/actions/clipboard/clipboard.cc:86
 #, fuzzy
-msgid "Paste At Current Player Position"
-msgstr "Pozycja odtwarzacza"
-
-#: ../plugins/actions/clipboard/clipboard.cc:100
-#, fuzzy
-msgid "Paste As New Document"
-msgstr "Utwórz nowy dokument"
-
-#: ../plugins/actions/clipboard/clipboard.cc:101
-msgid "Create a new document and paste the contents of the clipboard into it."
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:106
-msgid "Paste Over Text"
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:107
-msgid "Overwrite subtitle text with clipboard content."
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:111
-msgid "Paste Over Time"
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:112
-msgid "Overwrite subtitle time with clipboard content."
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:116
-msgid "Paste Unchanged"
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:117
-msgid "Paste without changing the time codes."
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:122
-msgid "Select Clipboard Overlap"
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:123
-msgid "Select subtitles that overlap clipboard content."
-msgstr ""
+msgid "Copy selected subtitles to the clipboard and delete them"
+msgstr "_Tylko wybrane napisy"
 
 #. clipboard will be pasted
 #. actually paste the data from clipdoc to the current document
-#: ../plugins/actions/clipboard/clipboard.cc:518
-#: ../plugins/actions/clipboard/clipboard.cc:902
+#: ../plugins/actions/clipboard/clipboard.cc:90
+#: ../plugins/actions/clipboard/clipboard.cc:504
+#: ../plugins/actions/clipboard/clipboard.cc:870
 #, fuzzy
 msgid "Paste"
 msgstr "_Szybciej"
 
-#: ../plugins/actions/clipboard/clipboard.cc:558
+#: ../plugins/actions/clipboard/clipboard.cc:94
+#, fuzzy
+msgid "_Paste"
+msgstr "_Szybciej"
+
+#: ../plugins/actions/clipboard/clipboard.cc:95
+msgid ""
+"Paste subtitles from the clipboard AFTER the currently selected subtitle, "
+"keeping their duration and gaps between them but setting the start of the "
+"first one right after with respect to the minimal gap between subtitles "
+"setting )"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:102
+#, fuzzy
+msgid "Paste At Current Player Position"
+msgstr "Pozycja odtwarzacza"
+
+#: ../plugins/actions/clipboard/clipboard.cc:103
+msgid ""
+"Paste subtitles from the clipboard AFTER the currently selected subtitle, "
+"keeping their duration and gaps between them but setting the start of the "
+"first at the current player position"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:109
+#, fuzzy
+msgid "Paste As New Document"
+msgstr "Utwórz nowy dokument"
+
+#: ../plugins/actions/clipboard/clipboard.cc:110
+msgid ""
+"Create a new document and paste the contents of the clipboard into it, "
+"keeping timecodes intact"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:114
+msgid "Paste Over Text"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:115
+msgid ""
+"Overwrite text of the first selected subtitle with clipboard content (if "
+"your clipboard holds copied subtitles and more subtitles are selected, their "
+"texts will get overwritten one by one)"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:119
+msgid "Paste Over Time"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:120
+msgid ""
+"Overwrite time of the first selected subtitle with clipboard content (if "
+"your clipboard holds copied subtitles and more subtitles are selected, their "
+"times will get overwritten one by one)"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:124
+msgid "Paste Unchanged"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:125
+#, fuzzy
+msgid ""
+"Paste subtitles from clipboard after AFTER the currently selected subtitle "
+"without changing their time codes at all"
+msgstr "Odtwarzaj fragment następujący po pierwszym z zaznaczonych napisów"
+
+#: ../plugins/actions/clipboard/clipboard.cc:131
+msgid "Select Clipboard Overlap"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:131
+#, fuzzy
+msgid "Select subtitles that overlap with subtitles in the clipboard"
+msgstr "_Tylko wybrane napisy"
+
+#: ../plugins/actions/clipboard/clipboard.cc:543
 #, fuzzy
 msgid "Nothing to copy. Select at least one subtitle first."
 msgstr "Proszę wybrać przynajmniej jeden napis."
 
-#: ../plugins/actions/clipboard/clipboard.cc:611
+#: ../plugins/actions/clipboard/clipboard.cc:596
 msgid "Cut"
 msgstr ""
 
 #. tell the user what happened
-#: ../plugins/actions/clipboard/clipboard.cc:652
+#: ../plugins/actions/clipboard/clipboard.cc:635
 #, fuzzy, c-format
 msgid "%i subtitle(s) overwritten."
 msgstr "Obsługa napisów SubRip."
 
 #. tell the user what happened
-#: ../plugins/actions/clipboard/clipboard.cc:687
+#: ../plugins/actions/clipboard/clipboard.cc:669
 #, fuzzy, c-format
 msgid "%i subtitle(s) pasted."
 msgstr "Skasowano napisy."
 
-#: ../plugins/actions/clipboard/clipboard.cc:808
+#: ../plugins/actions/clipboard/clipboard.cc:775
 #, fuzzy
 msgid "No subtitles on the clipboard."
 msgstr "Sortuj napisy wg momentu pojawienia się napisu."
 
-#: ../plugins/actions/clipboard/clipboard.cc:822
+#: ../plugins/actions/clipboard/clipboard.cc:789
 #, fuzzy, c-format
 msgid "Selected %i subtitles."
 msgstr "Wybierz wszystkie napisy"
@@ -382,72 +468,78 @@ msgid "_Combine"
 msgstr "P_ołącz"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:44
-msgid "Merge selected subtitles"
-msgstr "Scal wybrane napisy"
+#, fuzzy
+msgid ""
+"Merge selected subtitles into one, with start being set by the start of the "
+"first selected subtitle and end being set by the end of the last selected "
+"subtitle"
+msgstr ""
+"Zwiększ długość wybranych napisów do chwili rozpoczęcia wyświetlania "
+"kolejnych"
 
-#: ../plugins/actions/combinesubtitles/combinesubtitles.cc:135
+#: ../plugins/actions/combinesubtitles/combinesubtitles.cc:132
 msgid "Please select at least two subtitles."
 msgstr "Proszę zaznaczyć co najmniej dwa napisy"
 
-#: ../plugins/actions/combinesubtitles/combinesubtitles.cc:139
+#: ../plugins/actions/combinesubtitles/combinesubtitles.cc:136
 msgid "Combine subtitles"
 msgstr "Połącz napisy"
 
-#: ../plugins/actions/command/command.cc:43
+#: ../plugins/actions/command/command.cc:42
 msgid "Undo the last action"
 msgstr "Cofnięcie ostatniej operacji"
 
-#: ../plugins/actions/command/command.cc:47
+#: ../plugins/actions/command/command.cc:45
 msgid "Redo the last undone action"
 msgstr "Ponowienie ostatniej cofniętej operacji"
 
-#: ../plugins/actions/command/command.cc:105
+#: ../plugins/actions/command/command.cc:102
 #, c-format
 msgid "Undo: %s"
 msgstr "Cofnij: %s"
 
-#: ../plugins/actions/command/command.cc:123
+#: ../plugins/actions/command/command.cc:119
 #, c-format
 msgid "Redo: %s"
 msgstr "Przywróć: %s"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:74
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:73
 msgid "Actions"
 msgstr "Działania"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:96
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:95
 msgid "Shortcut"
 msgstr "Skrót"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:283
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:374
 msgid "Invalid shortcut."
 msgstr "Niepoprawny skrót."
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:304
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:393
 msgid "Shortcut \"%1\" is already taken by \"%2\"."
 msgstr "Skrót \"%1\" jest już zajęty przez \"%2\"."
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:308
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:395
 msgid "Reassigning the shortcut will cause it to be removed from \"%1\"."
 msgstr "Zmiana przypisania skrótu spowoduje jego usunięcie z \"%1\"."
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:314
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:400
 msgid "Conflicting Shortcuts"
 msgstr "Skróty będące w konflikcie"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:320
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:405
 msgid "Changing shortcut failed."
 msgstr "Zmiana skrótu nie powiodła się."
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:342
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:426
 msgid "Removing shortcut failed."
 msgstr "Nie można usunąć skrótu."
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:383
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:471
 msgid "Configure _Keyboard Shortcuts"
 msgstr "Konfiguracja skrótów _klawiszowych."
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:384
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:471
 #: ../plugins/actions/configurekeyboardshortcuts/dialog-configure-keyboard-shortcuts.ui.h:1
 msgid "Configure Keyboard Shortcuts"
 msgstr "Konfiguracja skrótów klawiszowych"
@@ -479,15 +571,17 @@ msgstr ""
 msgid "only a dash ( \"-\" )"
 msgstr ""
 
-#: ../plugins/actions/dialoguize/dialoguize.cc:171
+#: ../plugins/actions/dialoguize/dialoguize.cc:162
 msgid "_Dialogue"
 msgstr "_Dialogi"
 
-#: ../plugins/actions/dialoguize/dialoguize.cc:172
-msgid "Add or remove dialogue line"
-msgstr "Dodaj lub usuń linię dialogową"
+#: ../plugins/actions/dialoguize/dialoguize.cc:163
+msgid ""
+"Add or remove symbols indicating that given line is a dialogue (symbols to "
+"be used can be set in plugin preferences)"
+msgstr ""
 
-#: ../plugins/actions/dialoguize/dialoguize.cc:247
+#: ../plugins/actions/dialoguize/dialoguize.cc:237
 #: ../plugins/actions/dialoguize/dialoguize.se-plugin.in.h:1
 msgid "Dialoguize"
 msgstr "Dialoguj"
@@ -496,111 +590,128 @@ msgstr "Dialoguj"
 msgid "Close _without Saving"
 msgstr "Zamknij _bez zapisywania"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:43
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:42
 #, c-format
 msgid "Save the changes to document \"%s\" before closing?"
 msgstr "Zapisać zmiany w dokumencie \"%s\" przed zamknięciem?"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:46
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:43
 msgid "If you don't save, the last changes will be permanently lost."
 msgstr "Jeśli nie zapiszesz zmian, zostaną one trwale utracone."
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:74
+#. new document
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:70
 msgid "Create a new document"
 msgstr "Utwórz nowy dokument"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:79
+#. open & save document
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:74
 msgid "Open a file"
 msgstr "Otwórz plik"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:83
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:77
 msgid "Open Project"
 msgstr "Otwórz projekt"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:84
-msgid "Open a Subtitle Editor Project"
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:77
+#, fuzzy
+msgid "Open a Subtitle Editor Project file"
 msgstr "Otwiera projekt Subtitle Editora"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:91
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:83
 msgid "Save the current file"
 msgstr "Zapisz bieżący plik"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:97
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:87
 msgid "Save Project"
 msgstr "Zapisz projekt"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:98
-msgid "Save the current file as Subtitle Editor Project"
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:87
+#, fuzzy
+msgid "Save the current file as Subtitle Editor Project file"
 msgstr "Zapisuje bieżący plik jako projekt Subtitle Editora"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:106
-msgid "Save the current file with a different name"
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:94
+#, fuzzy
+msgid "Save the current file with a different name or format"
 msgstr "Zapisuje bieżący plik pod inną nazwą"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:112
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:98
 msgid "Save _All"
 msgstr "Zapisz _wszystko"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:112
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:98
 msgid "Save all open files"
 msgstr "Zapisz wszystkie otwarte pliki"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:118
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:105
 msgid "Open _Translation"
 msgstr "Otwórz _tłumaczenie"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:119
-msgid "Open translation from file"
-msgstr "Otwórz tłumaczenie z pliku"
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:106
+msgid ""
+"Open a translation from a file (this will populate and overwrite the "
+"Translation column, taking only text from the opened file, which does not "
+"have to have the same timecodes or number of subtitles as your document)"
+msgstr ""
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:125
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:115
 msgid "Save Trans_lation"
 msgstr "Zapisz tłuma_czenie"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:126
-msgid "Save translation to file"
-msgstr "Zapisz tłumaczenie do pliku"
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:116
+msgid ""
+"Save translation to a file (like Save As, but instead using of Text for the "
+"text of the subtitles, Translation is used)"
+msgstr ""
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:132
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:122
 msgid "Open _Recent"
 msgstr "Otwórz _ostatnio używane"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:152
-msgid "Close the current file"
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:122
+#, fuzzy
+msgid "Open Recent files"
+msgstr "Otwórz _ostatnio używane"
+
+#. close
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:139
+#, fuzzy
+msgid "Close the current document"
 msgstr "Zamknij bieżący plik"
 
 #. quit the program
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:156
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:143
 msgid "E_xit"
 msgstr "Za_kończ"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:157
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:143
 msgid "Quit the program"
 msgstr "Zakończ program"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:309
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:275
 msgid "I am already open"
 msgstr "Dokument jest już otwarty"
 
 #. "The file FILENAME (FORMAT, CHARSET, NEWLINE) has not been saved."
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:339
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:396
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:305
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:354
 #, c-format
 msgid "The file %s (%s, %s, %s) has not been saved."
 msgstr "Plik %s (%s, %s, %s) nie został zapisany."
 
 #. "Saving file FILENAME (FORMAT, CHARSET, NEWLINE)."
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:345
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:401
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:309
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:357
 #, c-format
 msgid "Saving file %s (%s, %s, %s)."
 msgstr "Zapisywanie pliku %s (%s, %s, %s)."
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:478
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:433
 msgid "Open translation"
 msgstr "Otwórz tłumaczenie"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:503
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:457
 #, c-format
 msgid "1 subtitle was added with the translation"
 msgid_plural "%d subtitles were added with the translation"
@@ -608,64 +719,98 @@ msgstr[0] "1 napis dodano do tłumaczenia"
 msgstr[1] "%d napisy dodano do tłumaczenia"
 msgstr[2] "%d napisów dodano do tłumaczenia"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:552
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:504
 #, c-format
 msgid "The translation file %s (%s, %s, %s) has not been saved."
 msgstr "Plik z tłumaczeniem %s (%s, %s, %s) nie został zapisany."
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:555
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:507
 #, c-format
 msgid "Saving translation file %s (%s, %s, %s)."
 msgstr "Zapisywanie pliku z tłumaczeniem %s (%s, %s, %s)."
 
 #: ../plugins/actions/documentsnavigation/documentsnavigation.cc:45
-#, fuzzy
-msgid "_Documents"
-msgstr "Dokument"
+msgid "_Tabs"
+msgstr ""
 
-#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:49
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:45
 #, fuzzy
-msgid "_First Document"
-msgstr "Po_dziel dokument"
+msgid "Select a tab"
+msgstr "Wybierz _ostatni napis"
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:48
+#, fuzzy
+msgid "_First Tab"
+msgstr "Pierwsza"
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:48
+#, fuzzy
+msgid "Select the first (left-most) tab"
+msgstr "Wybierz pierwszy napis"
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:52
+#, fuzzy
+msgid "_Last Tab"
+msgstr "Ostatnia"
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:52
+#, fuzzy
+msgid "Select the last (right-most) tab"
+msgstr "Wybierz ostatni napis"
 
 #: ../plugins/actions/documentsnavigation/documentsnavigation.cc:57
 #, fuzzy
-msgid "_Last Document"
-msgstr "Po_dziel dokument"
-
-#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:65
-#, fuzzy
-msgid "_Previous Document"
+msgid "_Previous Tab"
 msgstr "_Złącz dokument"
 
-#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:73
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:58
+msgid "Select the tab on the left (or cycle to the right-most one)"
+msgstr ""
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:63
 #, fuzzy
-msgid "_Next Document"
-msgstr "Po_dziel dokument"
+msgid "_Next Tab"
+msgstr "Następny"
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:64
+msgid "Select the tab on the right (or cycle to the left-most one)"
+msgstr ""
 
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:43
 msgid "_Duplicate"
 msgstr "_Powiel"
 
-#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:99
+#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:44
+#, fuzzy
+msgid ""
+"Duplicate selected subtitles, inserting identical subtitle after each "
+"selected subtitle"
+msgstr "Wszystkie napisy będą przesunięte za pierwszy zaznaczony fragment"
+
+#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:97
 msgid "Duplicate selected subtitles"
 msgstr "Sklonuj zaznaczone napisy"
 
-#: ../plugins/actions/editcell/editcell.cc:43
+#: ../plugins/actions/editcell/editcell.cc:44
 msgid "_Edit Cell"
 msgstr "_Edytuj komórkę"
 
-#: ../plugins/actions/editcell/editcell.cc:44
-msgid "Start editing the focused cell"
-msgstr "Rozpocznij edycję komórki"
+#: ../plugins/actions/editcell/editcell.cc:45
+msgid ""
+"Start editing the focused cell (it is determined by active column (indicated "
+"by its label being bold) and the first selected subtitle)"
+msgstr ""
 
-#: ../plugins/actions/editcell/editcell.cc:49
+#: ../plugins/actions/editcell/editcell.cc:51
 msgid "Edit _Next Cell"
 msgstr "Edytuj _następną komórkę"
 
-#: ../plugins/actions/editcell/editcell.cc:50
-msgid "Start editing the next cell"
-msgstr "Rozpocznij edycję następnej komórki"
+#: ../plugins/actions/editcell/editcell.cc:52
+msgid ""
+"Start editing the next focused cell (it is determined by active column "
+"(indicated by its label being bold) and the subtitle next to the selected "
+"one)"
+msgstr ""
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:1
 msgid "Error Checking Preferences"
@@ -687,81 +832,81 @@ msgid "Timing Preferences"
 msgstr "<b>Preferencje czasu wyświetlania</b>"
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:5
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:44
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:45
 msgid "Minimum characters per second:"
 msgstr "Minimalna liczba znaków na sekundę:"
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:6
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:45
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:46
 msgid "Maximum characters per second:"
 msgstr "Maksymalna liczba znaków na sekundę:"
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:7
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:47
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:48
 msgid "Maximum characters per line:"
 msgstr "Maksymalna liczba znaków w wierszu:"
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:8
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:48
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:49
 msgid "Minimum gap between subtitles in mseconds:"
 msgstr "Minimalny odstęp między napisami w milisekundach:"
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:9
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:49
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:50
 msgid "Minimum display of the subtitle in mseconds:"
 msgstr "Minimalny czas wyświetlania napisu w milisekundach:"
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:10
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:50
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:51
 msgid "Maximum number of lines per subtitle:"
 msgstr "Maksymalna liczba wierszy na napisy:"
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:11
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:56
-#: ../plugins/actions/viewmanager/viewmanager.cc:318
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:57
+#: ../plugins/actions/viewmanager/viewmanager.cc:302
 msgid "Timing"
 msgstr "Synchronizacja"
 
 #. File
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:175
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:171
 msgid "_Error"
 msgstr "_Błąd"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:181
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:174
 msgid "Try To _Fix All"
 msgstr "Spróbuj _naprawić wszystko"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:189
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:181
 msgid "_View"
 msgstr "_Widok"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:192
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:182
 msgid "By _Categories"
 msgstr "Według _kategorii"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:198
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:185
 msgid "By _Subtitles"
 msgstr "Według _napisów"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:204
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:190
 msgid "_Collapse All"
 msgstr "_Zwiń wszystko"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:208
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:192
 msgid "_Expand All"
 msgstr "_Rozwiń wszystko"
 
 #. menu option
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:212
-#: ../src/gui/menubar.cc:57
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:195
+#: ../src/gui/menubar.cc:54
 msgid "_Options"
 msgstr "_Opcje"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:328
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:306
 msgid "No error was found."
 msgstr "Nie znaleziono błędu"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:331
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:308
 #, c-format
 msgid "1 error was found."
 msgid_plural "%d errors were found."
@@ -769,12 +914,12 @@ msgstr[0] "Znaleziono 1 błąd"
 msgstr[1] "Znaleziono %d błędy"
 msgstr[2] "Znaleziono %d błędów"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:343
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:317
 #, c-format
 msgid "Subtitle n°<b>%d</b>"
 msgstr "Napis nr<b>%d</b>"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:614
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:584
 #, c-format
 msgid "%s (<b>1 error</b>)"
 msgid_plural "%s (<b>%d errors</b>)"
@@ -782,7 +927,7 @@ msgstr[0] "%s (<b>1 błąd</b>)"
 msgstr[1] "%s (<b>%d błędy</b>)"
 msgstr[2] "%s (<b>%d błędów</b>)"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:620
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:588
 #, c-format
 msgid "Subtitle n°<b>%d</b> (<b>1 error</b>)"
 msgid_plural "Subtitle n°<b>%d</b> (<b>%d errors</b>)"
@@ -790,24 +935,25 @@ msgstr[0] "Napis n°<b>%d</b> (<b>1 błąd</b>)"
 msgstr[1] "Napis n°<b>%d</b> (<b>%d błędy</b>)"
 msgstr[2] "Napis n°<b>%d</b> (<b>%d błędów</b>)"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:691
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:654
 msgid "_Error Checking"
 msgstr "_Sprawdzanie błędów"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:692
-msgid "Launch the error checking."
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:654
+#, fuzzy
+msgid "Launch the error-checking dialog"
 msgstr "Uruchom sprawdzanie błędów"
 
-#: ../plugins/actions/errorchecking/maxcharactersperline.h:29
+#: ../plugins/actions/errorchecking/maxcharactersperline.h:28
 #, fuzzy
 msgid "Maximum Characters per Line"
 msgstr "Maksymalna liczba znaków w wierszu:"
 
-#: ../plugins/actions/errorchecking/maxcharactersperline.h:30
+#: ../plugins/actions/errorchecking/maxcharactersperline.h:28
 msgid "An error is detected if a line is too long."
 msgstr "Wykrywa błąd jeśli wiersz jest zbyt długi."
 
-#: ../plugins/actions/errorchecking/maxcharactersperline.h:53
+#: ../plugins/actions/errorchecking/maxcharactersperline.h:50
 #, c-format
 msgid "Subtitle has a too long line: <b>1 character</b>"
 msgid_plural "Subtitle has a too long line: <b>%i characters</b>"
@@ -815,19 +961,19 @@ msgstr[0] "Napisy mają za długi wiersz: <b>1 znak</b>"
 msgstr[1] "Napisy mają za długi wiersz: <b>%i znaki</b>"
 msgstr[2] "Napisy mają za długi wiersz: <b>%i znaków</b>"
 
-#: ../plugins/actions/errorchecking/maxcharactersperline.h:58
+#: ../plugins/actions/errorchecking/maxcharactersperline.h:52
 #, fuzzy, c-format
 msgid ""
 "<b>Automatic correction:</b>\n"
 "%s"
 msgstr "<b>Automatyczna korekcja:</b>zmienia koniec napisów na %s."
 
-#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:30
+#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:31
 #, fuzzy
 msgid "Maximum Characters per Second"
 msgstr "Maksymalna liczba znaków na sekundę:"
 
-#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:31
+#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:32
 msgid ""
 "Detects and fixes subtitles when the number of characters per second is "
 "superior to the specified value."
@@ -840,22 +986,22 @@ msgstr ""
 msgid "There are too many characters per second: <b>%.1f chars/s</b>"
 msgstr "Ilość znaków na sekundę"
 
-#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:56
-#: ../plugins/actions/errorchecking/mincharacterspersecond.h:57
+#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:55
+#: ../plugins/actions/errorchecking/mincharacterspersecond.h:55
 #, fuzzy, c-format
 msgid "<b>Automatic correction:</b> change current subtitle duration to %s."
 msgstr "<b>Automatyczna korekcja:</b>zmienia koniec napisów na %s."
 
-#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:29
+#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:28
 #, fuzzy
 msgid "Maximum Lines per Subtitle"
 msgstr "Maksymalnie wierszy na napis"
 
-#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:30
+#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:28
 msgid "An error is detected if a subtitle has too many lines."
 msgstr "Występuje błąd gdy napis posiada za dużo wierszy."
 
-#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:56
+#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:54
 #, c-format
 msgid "Subtitle has too many lines: <b>1 line</b>"
 msgid_plural "Subtitle has too many lines: <b>%i lines</b>"
@@ -863,17 +1009,17 @@ msgstr[0] "Napis posiada za dużo wierszy: <b>1 wiersz</b>"
 msgstr[1] "Napis posiada za dużo wierszy: <b>%i wiersze</b>"
 msgstr[2] "Napis posiada za dużo wierszy: <b>%i wierszy</b>"
 
-#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:60
-#: ../plugins/actions/errorchecking/overlapping.h:57
+#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:56
+#: ../plugins/actions/errorchecking/overlapping.h:56
 msgid "<b>Automatic correction:</b> unavailable, correct the error manually."
 msgstr "<b>Automatyczna korekcja: </b>niedostępna, popraw błąd ręcznie."
 
-#: ../plugins/actions/errorchecking/mincharacterspersecond.h:30
+#: ../plugins/actions/errorchecking/mincharacterspersecond.h:31
 #, fuzzy
 msgid "Minimum Characters per Second"
 msgstr "Minimalna liczba znaków na sekundę:"
 
-#: ../plugins/actions/errorchecking/mincharacterspersecond.h:31
+#: ../plugins/actions/errorchecking/mincharacterspersecond.h:32
 msgid ""
 "Detects and fixes subtitles when the number of characters per second is "
 "inferior to the specified value."
@@ -881,17 +1027,17 @@ msgstr ""
 "Rozpoznaje i naprawia napisy jeśli liczba znaków na sekundę jest mniejsza "
 "niż założona w ustawieniach."
 
-#: ../plugins/actions/errorchecking/mincharacterspersecond.h:54
+#: ../plugins/actions/errorchecking/mincharacterspersecond.h:53
 #, fuzzy, c-format
 msgid "There are too few characters per second: <b>%.1f chars/s</b>"
 msgstr "Ilość znaków na sekundę"
 
-#: ../plugins/actions/errorchecking/mindisplaytime.h:28
+#: ../plugins/actions/errorchecking/mindisplaytime.h:29
 #, fuzzy
 msgid "Minimum Display Time"
 msgstr "Minimalny czas wyświetlania"
 
-#: ../plugins/actions/errorchecking/mindisplaytime.h:29
+#: ../plugins/actions/errorchecking/mindisplaytime.h:30
 msgid ""
 "Detects and fixes subtitles when the duration is inferior to the specified "
 "value."
@@ -899,12 +1045,12 @@ msgstr ""
 "Rozpoznaje i naprawia napisy gdy czas trwania jest mniejszy niż wskazany w "
 "ustawieniach."
 
-#: ../plugins/actions/errorchecking/mindisplaytime.h:53
+#: ../plugins/actions/errorchecking/mindisplaytime.h:52
 #, c-format
 msgid "Subtitle display time is too short: <b>%s</b>"
 msgstr "Czas wyświetlania jest za krótki. <b>%s</b>"
 
-#: ../plugins/actions/errorchecking/mindisplaytime.h:57
+#: ../plugins/actions/errorchecking/mindisplaytime.h:54
 #, c-format
 msgid "<b>Automatic correction:</b> to change current subtitle end to %s."
 msgstr "<b>Automatyczna korekcja:</b>zmienia koniec napisów na %s."
@@ -922,12 +1068,13 @@ msgstr ""
 "Wykrywa i naprawia napisy jeśli przerwa miedzy dwoma kolejnymi jest za "
 "krótka."
 
-#: ../plugins/actions/errorchecking/mingapbetweensubtitles.h:64
+#. only error & solution
+#: ../plugins/actions/errorchecking/mingapbetweensubtitles.h:62
 #, c-format
 msgid "Too short gap between subtitle: <b>%ims</b>"
 msgstr "Za krótka przerwa między napisami: <b>%ims</b>"
 
-#: ../plugins/actions/errorchecking/mingapbetweensubtitles.h:67
+#: ../plugins/actions/errorchecking/mingapbetweensubtitles.h:64
 #, c-format
 msgid ""
 "<b>Automatic correction:</b> to clip current subtitle end to %s and to move "
@@ -936,15 +1083,15 @@ msgstr ""
 "<b>Automatyczna korekcja: </b>obcina obecny koniec napisów do %s i przesuwa "
 "start następnych na %s."
 
-#: ../plugins/actions/errorchecking/overlapping.h:28
+#: ../plugins/actions/errorchecking/overlapping.h:29
 msgid "Overlapping"
 msgstr "Nakładanie się na siebie"
 
-#: ../plugins/actions/errorchecking/overlapping.h:29
+#: ../plugins/actions/errorchecking/overlapping.h:30
 msgid "An error is detected when the subtitle overlap on next subtitle."
 msgstr "Błąd jest wykrywany gdy kolejne napisy nakładają się na siebie."
 
-#: ../plugins/actions/errorchecking/overlapping.h:54
+#: ../plugins/actions/errorchecking/overlapping.h:53
 #, c-format
 msgid "Subtitle overlap on next subtitle: <b>%ims overlap</b>"
 msgstr "Napisy zachodzą na następne napisy: <b>%ims zachodzenia</b>"
@@ -955,27 +1102,30 @@ msgid "_Extend Length Forward"
 msgstr "_Zwiększ długość"
 
 #: ../plugins/actions/extendlength/extendlength.cc:44
-msgid "Extend the length of selected subtitles to the start time of the next"
+#, fuzzy
+msgid ""
+"Extend the length of the selected subtitles to the start time of the next "
+"subtitle (while respecting minimum gap between subtitles)"
 msgstr ""
 "Zwiększ długość wybranych napisów do chwili rozpoczęcia wyświetlania "
 "kolejnych"
 
-#: ../plugins/actions/extendlength/extendlength.cc:49
+#: ../plugins/actions/extendlength/extendlength.cc:50
 #, fuzzy
 msgid "E_xtend Length Backwards"
 msgstr "Zwiększ długość"
 
-#: ../plugins/actions/extendlength/extendlength.cc:50
+#: ../plugins/actions/extendlength/extendlength.cc:51
 #, fuzzy
 msgid ""
-"Extend the length of selected subtitles backwards to the end time of the "
-"previous"
+"Extend the length of selected selected subtitles backwards to the end time "
+"of the previous subtitle (while respecting minimum gap between subtitles)"
 msgstr ""
 "Zwiększ długość wybranych napisów do chwili rozpoczęcia wyświetlania "
 "kolejnych"
 
 #: ../plugins/actions/extendlength/extendlength.cc:109
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:114
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:107
 #, fuzzy
 msgid "Please select at least 1 subtitle."
 msgstr "Proszę wybrać przynajmniej jeden napis."
@@ -1041,7 +1191,7 @@ msgstr ""
 
 #: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:12
 #: ../plugins/actions/template/dialog-template-save-as.ui.h:3
-#: ../src/gui/application.cc:306 ../share/ui/dialog-save-document.ui.h:4
+#: ../src/gui/application.cc:283 ../share/ui/dialog-save-document.ui.h:4
 msgid "Format:"
 msgstr "FOrmat:"
 
@@ -1050,39 +1200,49 @@ msgstr "FOrmat:"
 msgid "Offset in mseconds:"
 msgstr "Odstęp w sekundach:"
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:93
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:83
 msgid "_External Video Player"
 msgstr "Z_ewnętrzny odtwarzacz wideo"
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:97
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:83
+#, fuzzy
+msgid "Play video or audio with an external player"
+msgstr "Odtwarzaj plik za pomocą zewnętrznego odtwarzacza wideo."
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:87
 msgid "_Open Movie"
 msgstr "_Otwórz film"
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:98
-msgid "Open movie with external video player"
-msgstr "Otwórz plik za pomocą zewnętrznego odtwarzacza wideo."
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:88
+msgid ""
+"Select a video or audio to be played by the external video player (only "
+"works if the option to use the video from the internal video player is "
+"unchecked in the preferences of the external video player)"
+msgstr ""
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:104
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:97
 msgid "_Play Movie"
 msgstr "_Odtwórz film"
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:105
-msgid "Play movie with external video player"
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:97
+#, fuzzy
+msgid "Play a movie with the external video player"
 msgstr "Odtwarzaj plik za pomocą zewnętrznego odtwarzacza wideo."
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:112
-msgid "External video player preferences"
-msgstr "Preferencje zewnętrznego odtwarzacza wideo"
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:102
+#, fuzzy
+msgid "Configure the external video player"
+msgstr "Otwórz plik za pomocą zewnętrznego odtwarzacza wideo."
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:179
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:169
 msgid "Please select a movie."
 msgstr "Proszę wybrać film"
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:206
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:195
 msgid "Failed to launch the external player."
 msgstr "Uruchomienie zewnętrznego odtwarzacza nie powiodło się."
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:207
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:196
 #, c-format
 msgid ""
 "%s\n"
@@ -1134,15 +1294,15 @@ msgid "<b>Columns</b>"
 msgstr "<b>Kolumny</b>"
 
 #: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:11
-#: ../plugins/actions/findandreplace/findandreplace.cc:537
-#: ../src/subtitleview.cc:1263
+#: ../plugins/actions/findandreplace/findandreplace.cc:508
+#: ../src/subtitleview.cc:1300
 msgid "Text"
 msgstr "Tekst"
 
 #: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:12
-#: ../plugins/actions/findandreplace/findandreplace.cc:539
-#: ../plugins/actions/viewmanager/viewmanager.cc:317
-#: ../src/subtitleview.cc:1264
+#: ../plugins/actions/findandreplace/findandreplace.cc:510
+#: ../plugins/actions/viewmanager/viewmanager.cc:301
+#: ../src/subtitleview.cc:1301
 msgid "Translation"
 msgstr "Tłumaczenie"
 
@@ -1155,91 +1315,90 @@ msgstr "<b>Zastosuj do</b>"
 msgid "Target"
 msgstr "Cel"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:166
+#: ../plugins/actions/findandreplace/findandreplace.cc:164
 msgid "Replace text"
 msgstr "Zastąp tekst"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:495
-#: ../plugins/actions/findandreplace/findandreplace.cc:860
+#: ../plugins/actions/findandreplace/findandreplace.cc:469
+#: ../plugins/actions/findandreplace/findandreplace.cc:820
 msgid "The document is empty"
 msgstr "Dokument jest pusty"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:759
+#: ../plugins/actions/findandreplace/findandreplace.cc:725
 msgid "_Find And Replace"
 msgstr "_Znajdź i zamień"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:760
+#: ../plugins/actions/findandreplace/findandreplace.cc:725
 msgid "Search and replace text"
 msgstr "Znajdz i zamień tekst"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:765
+#: ../plugins/actions/findandreplace/findandreplace.cc:729
 msgid "Find Ne_xt"
 msgstr "Znajdź _następne"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:766
+#: ../plugins/actions/findandreplace/findandreplace.cc:729
 msgid "Search forwards for the same text"
 msgstr "Wyszukuje kolejne wystąpienie tego samego tekstu"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:770
+#: ../plugins/actions/findandreplace/findandreplace.cc:732
 msgid "Find Pre_vious"
 msgstr "Znajdź p_oprzednie"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:771
+#: ../plugins/actions/findandreplace/findandreplace.cc:732
 msgid "Search backwards for the same text"
 msgstr "Wyszukuje poprzednie wystąpienie tego samego tekstu"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:870
+#: ../plugins/actions/findandreplace/findandreplace.cc:829
 msgid "Not found"
 msgstr "Nie znaleziono"
 
-#: ../plugins/actions/findbytime/findbytime.cc:56
+#: ../plugins/actions/findbytime/findbytime.cc:55
 #, fuzzy
 msgid "Find Subtitle By Time"
 msgstr "Dodaj napisy"
 
-#: ../plugins/actions/findbytime/findbytime.cc:57
-#: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
+#: ../plugins/actions/findbytime/findbytime.cc:55
 #, fuzzy
-msgid "Finds the subtitle nearest to the current player position."
+msgid "Find the subtitle nearest to the current player position"
 msgstr "Moment pojawienia się napisu."
 
-#: ../plugins/actions/findbytime/findbytime.cc:114
+#: ../plugins/actions/findbytime/findbytime.cc:108
 #, fuzzy
 msgid "No subtitles, cannot find the nearest."
 msgstr "Sortuj napisy wg momentu pojawienia się napisu."
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:47
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:46
 msgid "Create Subtitle From Player And Keyframes"
 msgstr ""
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:48
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:47
 msgid ""
 "Create subtitle automatically according to keyframes around the position of "
 "the player."
 msgstr ""
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:56
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:53
 msgid "Create Subtitles According Keyframes"
 msgstr ""
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:57
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:54
 msgid "Create subtitles automatically according to keyframes"
 msgstr ""
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:135
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:128
 #, fuzzy
 msgid "Insert Subtitle Between Keyframes"
 msgstr "Wstaw napisy"
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:183
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:175
 msgid "Can't insert subtitle between keyframes, not enough keyframes."
 msgstr ""
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:190
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:182
 msgid "Insert Subtitle Between Each Keyframes"
 msgstr ""
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:210
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:202
 #, fuzzy, c-format
 msgid "1 subtitle has been inserted."
 msgid_plural "%d subtitles have been inserted."
@@ -1251,20 +1410,20 @@ msgstr[2] "Skasowano %d napisów."
 msgid "Insert _Before"
 msgstr "Wstaw _przed"
 
-#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:45
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:44
 msgid "Insert a blank subtitle before the first selected subtitle"
 msgstr "Wstaw pusty napis przed wybranym napisem"
 
-#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:51
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:50
 msgid "Insert _After"
 msgstr "Wstaw _za"
 
-#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:52
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:50
 msgid "Insert a blank subtitle after the first selected subtitle"
 msgstr "Wstaw pusty napis po wybranym napisie"
 
-#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:117
-#: ../src/subtitles.cc:108
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:115
+#: ../src/subtitles.cc:104
 #: ../plugins/actions/insertsubtitle/insertsubtitle.se-plugin.in.h:1
 msgid "Insert Subtitle"
 msgstr "Wstaw napisy"
@@ -1274,27 +1433,67 @@ msgid "_Italic"
 msgstr "_Kursywa"
 
 #: ../plugins/actions/italicize/italicize.cc:45
-msgid "Italicize the text of the selected subtitles"
+#, fuzzy
+msgid ""
+"Italicize the text of the selected subtitles — note that this only works for "
+"Subrip (SRT) files"
 msgstr "Zmień styl wybranych napisów na kursywę"
 
-#: ../plugins/actions/italicize/italicize.cc:110
+#: ../plugins/actions/italicize/italicize.cc:109
 msgid "Italic"
 msgstr "Kursywa"
 
-#: ../plugins/actions/joindocument/joindocument.cc:45
+#: ../plugins/actions/joindocument/dialog-join-offset.ui.h:1
+#, fuzzy
+msgid "Join Subtitles"
+msgstr "Połącz napisy"
+
+#: ../plugins/actions/joindocument/dialog-join-offset.ui.h:2
+msgid "_Offset:"
+msgstr ""
+
+#: ../plugins/actions/joindocument/dialog-join-offset.ui.h:3
+msgid ""
+"Subtitles from the new file will be joined with this offset. If a video is "
+"open, its duration is offered as offset. If no video is open, the end time "
+"of the last subtitle is offered as the offset."
+msgstr ""
+
+#: ../plugins/actions/joindocument/joindocument.cc:85
 msgid "_Join Document"
 msgstr "_Złącz dokument"
 
-#: ../plugins/actions/joindocument/joindocument.cc:45
-msgid "Add subtitles from file"
-msgstr "Dodaj napisy z pliku"
+#: ../plugins/actions/joindocument/joindocument.cc:86
+msgid ""
+"Add subtitles from a file to the current document, adjusting timecodes by "
+"given offset. If a video is open, its duration is offered as the offset. If "
+"no video is open, the end time of the last subtitle is offered as the offset."
+msgstr ""
+
+#: ../plugins/actions/joindocument/joindocument.cc:93
+#, fuzzy
+msgid "_Append Document"
+msgstr "Otwórz dokument"
+
+#: ../plugins/actions/joindocument/joindocument.cc:93
+msgid "Append subtitles from file without changing timecodes"
+msgstr ""
+
+#: ../plugins/actions/joindocument/joindocument.cc:187
+msgid "Join cancelled."
+msgstr ""
 
 #. needs with Document::open
-#: ../plugins/actions/joindocument/joindocument.cc:113
+#: ../plugins/actions/joindocument/joindocument.cc:197
 msgid "Join document"
 msgstr "Złącz dokument"
 
-#: ../plugins/actions/joindocument/joindocument.cc:142
+#: ../plugins/actions/joindocument/joindocument.cc:197
+#, fuzzy
+msgid "Append document"
+msgstr "Otwórz dokument"
+
+#: ../plugins/actions/joindocument/joindocument.cc:235
 #, c-format
 msgid "One subtitle has been added to this document."
 msgid_plural "%d subtitles have been added to this document."
@@ -1307,125 +1506,134 @@ msgstr[2] "%d napisów zostało dodanych do tego dokumentu"
 msgid "Generate Keyframes"
 msgstr "Generuj klatki kluczowe"
 
-#: ../plugins/actions/keyframesmanagement/keyframesgenerator.cc:38
-#: ../plugins/actions/keyframesmanagement/keyframesgenerator.cc:114
-#: ../plugins/actions/keyframesmanagement/keyframesgeneratorusingframe.cc:44
-#: ../plugins/actions/keyframesmanagement/keyframesgeneratorusingframe.cc:169
-#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:42
+#: ../plugins/actions/keyframesmanagement/keyframesgenerator.cc:39
+#: ../plugins/actions/keyframesmanagement/keyframesgeneratorusingframe.cc:45
+#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:41
 msgid "Waiting..."
 msgstr "Oczekiwanie..."
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:52
+#. Open
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:49
 msgid "Open Keyframes"
 msgstr "Otwórz klatki kluczowe"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:53
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:49
 msgid "Open keyframes from a file"
 msgstr "Otwórz klatki kluczowe z pliku"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:59
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:264
+#. Save
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:53
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:250
 msgid "Save Keyframes"
 msgstr "Zapisz klatki kluczowe"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:60
-msgid "Save keyframes to the file"
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:53
+#, fuzzy
+msgid "Save keyframes to a file"
 msgstr "Zapisz klatki kluczowe do pliku"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:66
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:59
 msgid "Generate Keyframes From Video"
 msgstr "_Generuj klatki kluczowe z wideo"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:67
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:73
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:59
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:64
 msgid "Generate keyframes from the current video"
 msgstr "Generuje klatki kluczowe z bieżącego pliku wideo"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:72
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:63
 #, fuzzy
 msgid "Generate Keyframes From Video (Using Frame)"
 msgstr "_Generuj klatki kluczowe z wideo"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-msgid "Close the keyframes"
+#. Close
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:67
+#, fuzzy
+msgid "Close keyframes"
 msgstr "Zamknij klatki kluczowe"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:86
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:91
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:97
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:104
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:111
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:117
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:47
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:54
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:63
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:68
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:74
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:80
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:87
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:93
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:93
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:98
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:103
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:141
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.se-plugin.in.h:2
-#: ../plugins/actions/template/template.se-plugin.in.h:2
-#: ../plugins/actions/textcorrection/textcorrection.se-plugin.in.h:2
-msgid "FIXME"
-msgstr "NAPRAW_MNIE"
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:67
+#, fuzzy
+msgid "Close the keyframes file"
+msgstr "Zamknij klatki kluczowe"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:86
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:73
 msgid "Seek To Previous Keyframe"
 msgstr "Przeszukaj do poprzedniej klatki kluczowej"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:91
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:73
+#, fuzzy
+msgid "Seek to the previous keyframe"
+msgstr "Przeszukaj do poprzedniej klatki kluczowej"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:77
 msgid "Seek To Next Keyframe"
 msgstr "Przeszukaj do następnej klatki kluczowej"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:97
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:77
+#, fuzzy
+msgid "Seek to the next keyframe"
+msgstr "Przeszukaj do następnej klatki kluczowej"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:82
 msgid "Snap Start To Previous Keyframe"
 msgstr "Przesuń początek do poprzedniej klatki kluczowej"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:104
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:83
+#, fuzzy
+msgid "Snap the start of the first selected subtitle to the previous keyframe"
+msgstr "Przewiń do pierwszych z zaznaczonych napisów"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:89
 msgid "Snap Start To Next Keyframe"
 msgstr "Przesuń początek do następnej klatki kluczowej"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:111
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:90
+#, fuzzy
+msgid "Snap the start of the first selected subtitle to the next keyframe"
+msgstr "Przewiń do pierwszych z zaznaczonych napisów"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:96
 msgid "Snap End To Previous Keyframe"
 msgstr "Przesuń koniec do poprzedniej klatki kluczowej"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:117
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:97
+#, fuzzy
+msgid "Snap the end of the first selected subtitle to the previous keyframe"
+msgstr "Przewiń do pierwszych z zaznaczonych napisów"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:103
 msgid "Snap End To Next Keyframe"
 msgstr "Przesuń koniec do następnej klatki kluczowej"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:122
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:285
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:166
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:104
+#, fuzzy
+msgid "Snap the end of the first selected subtitle to the next keyframe"
+msgstr "Przewiń do pierwszych z zaznaczonych napisów"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:110
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:252
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:147
 msgid "_Recent Files"
 msgstr ""
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:434
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:110
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:252
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:147
+#, fuzzy
+msgid "Open a recent file"
+msgstr "Otwórz plik"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:412
 msgid "Snap Start to Keyframe"
 msgstr "Przesuń początek do klatki kluczowej"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:454
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:431
 msgid "Snap End to Keyframe"
 msgstr "Przesuń koniec do klatki kluczowej"
 
-#: ../plugins/actions/keyframesmanagement/mediadecoder.h:172
-#: ../plugins/actions/keyframesmanagement/mediadecoder.h:183
-#: ../plugins/actions/waveformmanagement/mediadecoder.h:172
-#: ../plugins/actions/waveformmanagement/mediadecoder.h:183
-msgid "Media file could not be played.\n"
-msgstr "Nie można odtworzyć pliku.\n"
-
-#: ../plugins/actions/keyframesmanagement/mediadecoder.h:305
-#: ../plugins/actions/waveformmanagement/mediadecoder.h:305
+#: ../plugins/actions/keyframesmanagement/mediadecoder.h:320
+#: ../plugins/actions/waveformmanagement/mediadecoder.h:320
 #: ../src/gstreamer_utility.cc:50
 msgid ""
 "GStreamer plugins missing.\n"
@@ -1436,88 +1644,95 @@ msgstr ""
 "Odtwarzanie tego filmu wymaga następujących dekoderów, które nie są "
 "zainstalowane:"
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:48
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:47
 msgid "Minimize Duration From Start"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:49
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:48
 msgid ""
-"Compact each selected subtitle to its minimum permissible duration, start "
-"time is unchanged."
+"Compact all selected subtitles to their minimum permissible duration set in "
+"preferences by decreasing the end timecode, so start time is unchanged"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:55
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:53
 msgid "Minimize Duration From End"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:56
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:54
 msgid ""
-"Compact each selected subtitle to its minimum permissible duration, end time "
-"is unchanged."
+"Compact all selected subtitles to their minimum permissible duration set in "
+"preferences by increasing the start timecode, so end time is unchanged"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:63
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:60
 msgid "_Idealize Duration From Start"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:64
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:61
 msgid ""
-"Compact each selected subtitle to its ideal duration, start time is "
-"unchanged."
+"Compact all selected subtitles to their ideal duration set in preferences by "
+"decreasing the end timecode, so start time is unchanged"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:70
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:66
 msgid "_Idealize Duration From End"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:71
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:67
 msgid ""
-"Compact each selected subtitle to its ideal duration, end time is unchanged."
+"Compact all selected subtitles to their ideal duration set in preferences by "
+"increasing the start timecode, so end time is unchanged"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:155
-msgid "Minimize Duration needs at least 1 subtitle to work on."
-msgstr ""
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:144
+#, fuzzy
+msgid "This action needs at least one subtitle to work on."
+msgstr "Proszę zaznaczyć co najmniej dwa napisy"
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:162
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:151
 #, fuzzy
 msgid "Minimize Durations"
 msgstr "Do czasu trwania"
 
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:44
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:43
 msgid "_Move After Preceding"
 msgstr "Przesuń _przed poprzedni"
 
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:45
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:44
+#, fuzzy
 msgid ""
-"Move subtitle after the preceding with the respect of the minimum gap "
-"between subtitles"
+"Move selected subtitles right after the previous ones (while respecting "
+"minimum gap between subtitles)"
 msgstr ""
 "Przesuń fragment za poprzedzające napisy uwzględniając minimalną przerwę "
 "między napisami"
 
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:50
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:48
 msgid "_Move Before Next"
 msgstr ""
 
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:51
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:49
 #, fuzzy
-msgid "Move subtitle just before the next one"
-msgstr "Skasowano napisy."
+msgid ""
+"Move selected subtitles right before the next ones (while respecting minimum "
+"gap between subtitles)"
+msgstr ""
+"Przesuń fragment za poprzedzające napisy uwzględniając minimalną przerwę "
+"między napisami"
 
 #. move after preceding
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:122
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:115
 msgid "Move After Preceding"
 msgstr "Przesuń _za poprzedni"
 
 #. move before next
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:138
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:131
 #, fuzzy
 msgid "Before Next Preceding"
 msgstr "Przesuń _za poprzedni"
 
 #: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:1
-#: ../plugins/actions/movesubtitles/movesubtitles.cc:161
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:153
 #: ../plugins/actions/movesubtitles/movesubtitles.se-plugin.in.h:1
 msgid "Move Subtitles"
 msgstr "Przenieś napisy"
@@ -1531,62 +1746,61 @@ msgstr "<b>Położenie</b>"
 msgid "_New Start:"
 msgstr "_Nowy start"
 
+#. init label
 #: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:4
-#: ../plugins/actions/movesubtitles/movesubtitles.cc:49
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:44
 #: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:4
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:142
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:144
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:133
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:134
 msgid "_Start Time:"
 msgstr "_Czas startu"
 
-#: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:5
-msgid "_Only selected subtitles"
-msgstr "_Tylko wybrane napisy"
-
-#: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:6
-msgid ""
-"If the option is activated, only the selected subtitles are moved. Without "
-"this option, it starts from the first selected subtitle until the last "
-"subtitle of the document without taking into account the selection."
-msgstr ""
-
-#: ../plugins/actions/movesubtitles/movesubtitles.cc:50
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:142
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:144
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:44
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:133
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:134
 msgid "_Start Frame:"
 msgstr "_Pierwsza klatka"
 
-#: ../plugins/actions/movesubtitles/movesubtitles.cc:99
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:93
 msgid "_Move Subtitles"
 msgstr "_Przesuń napisy"
 
-#: ../plugins/actions/movesubtitles/movesubtitles.cc:100
-msgid "All subtitles will be also moved after the first selected subtitle"
-msgstr "Wszystkie napisy będą przesunięte za pierwszy zaznaczony fragment"
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:94
+msgid ""
+"Move selected subtitles. If only one subtitle is selected, move it and all "
+"subsequent subtitles."
+msgstr ""
+
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:163
+msgid "Old Start Time and New Start are the same. Nothing was moved."
+msgstr ""
 
 #: ../plugins/actions/plaintext/plaintext.cc:46
 msgid "_Import Plain Text"
 msgstr "_Importuj zwykły tekst"
 
 #: ../plugins/actions/plaintext/plaintext.cc:47
-#, fuzzy
-msgid "Create a new document from any text file."
-msgstr "Utwórz nowy dokument z jakimkolwiek plikiem tekstowym"
+msgid ""
+"Create a new document from a text file (one or more consecutive blank lines "
+"separate chunks of text that will be imported as separate subtitles) "
+msgstr ""
 
-#: ../plugins/actions/plaintext/plaintext.cc:51
+#: ../plugins/actions/plaintext/plaintext.cc:52
 msgid "_Export Plain Text"
 msgstr "_Eksportuj zwykły tekst"
 
-#: ../plugins/actions/plaintext/plaintext.cc:52
-msgid "Export just a text in a file"
-msgstr "Eksportuj tylko tekst z pliku"
+#: ../plugins/actions/plaintext/plaintext.cc:53
+msgid ""
+"Export text of subtitles into a file (blank lines separating the text of "
+"individual subtitles)"
+msgstr ""
 
-#: ../plugins/actions/plaintext/plaintext.cc:112
+#: ../plugins/actions/plaintext/plaintext.cc:109
 #, fuzzy, c-format
 msgid "Could not import from file \"%s\"."
 msgstr "Nie można zaimportować z pliku \"%s\"."
 
-#: ../plugins/actions/plaintext/plaintext.cc:133
+#: ../plugins/actions/plaintext/plaintext.cc:128
 #, c-format
 msgid "Could not export to the file \"%s\"."
 msgstr "Nie można wyeksportowac do pliku \"%s\"."
@@ -1666,7 +1880,7 @@ msgid "_Autosave files every"
 msgstr "_Automatyczny zapis pliku co"
 
 #: ../plugins/actions/preferences/dialog-preferences.ui.h:18
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:19
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:55
 msgid "1"
 msgstr ""
 
@@ -1700,246 +1914,258 @@ msgid "<b>Video</b>"
 msgstr "<b>Wideo</b>"
 
 #: ../plugins/actions/preferences/dialog-preferences.ui.h:26
-msgid "Force aspect _ratio"
-msgstr "Wymuszaj _proporcje obrazu"
+msgid "Do not _stretch video to fill view"
+msgstr ""
 
 #: ../plugins/actions/preferences/dialog-preferences.ui.h:27
+msgid ""
+"When unchecked, video will be stretched and deformed to fill its view. When "
+"checked, video ratio will always be kept, creating black bands around it as "
+"necessary."
+msgstr ""
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:28
 msgid "Automatically _choose video to open"
 msgstr "Automatycznie _wybierz wideo do otwarcia."
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:28
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:29
 msgid "<b>Text Subtitle</b>"
 msgstr "<b>Tekst napisu</b>"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:29
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:30
 msgid "_Font:"
 msgstr "_Czcionka:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:30
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:31
 msgid "Use shaded _background"
 msgstr "Używaj _cieniowanego tła"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:31
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:32
 msgid "Display _translated subtitle"
 msgstr "Wyświetl prze_tłumaczony napis"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:32
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:33
 msgid "Display the translated subtitle instead of the original one."
 msgstr "Wyświetl przetłumaczone napisy zamiast oryginalnych."
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:33
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:34
 #, fuzzy
 msgid "Vertical Alignment:"
 msgstr "Pionowo:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:34
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:35
 #, fuzzy
 msgid "baseline"
 msgstr "Nowa linia:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:35
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:36
 msgid "bottom"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:36
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:37
 #, fuzzy
 msgid "top"
 msgstr "Stop"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:37
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:38
 #, fuzzy
 msgid "position"
 msgstr "Zmiana pozycji"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:38
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:39
 msgid "center"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:39
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:40
 msgid "<b>Output</b>"
 msgstr "<b>Wyjście</b>"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:40
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:41
 msgid "_Audio:"
 msgstr "_Audio:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:41
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:42
 msgid "_Video:"
 msgstr "_Wideo:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:42
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:43
 msgid "Video Player"
 msgstr "Odtwarzacz wideo"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:43
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:44
 msgid "<b>Timing Preferences</b>"
 msgstr "<b>Preferencje czasu wyświetlania</b>"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:46
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:47
 #, fuzzy
 msgid "Ideal characters per second:"
 msgstr "Maksymalna liczba znaków na sekundę:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:51
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:52
 msgid "1.0"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:52
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:53
 #, fuzzy
 msgid "_Ignore space in subtitle"
 msgstr "Wstawia pusty napis."
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:53
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:54
 msgid "This setting takes effect only after Subtitle Editor is restarted"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:54
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:55
 msgid "<b>Automatic Timing Check</b>"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:55
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:56
 msgid "Automatically highlight timing errors\t"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:57
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:58
 msgid "<b>Waveform Color</b>"
 msgstr "<b>Kolor wykresu dźwięku</b>"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:58
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:59
 msgid "Background:"
 msgstr "Tło:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:59
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:60
 msgid "Wave:"
 msgstr "Fala:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:60
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:61
 msgid "Wave fill:"
 msgstr "Wypełnienie fali:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:61
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:62
 msgid "Subtitle:"
 msgstr "Napis:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:62
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:63
 msgid "Subtitle Selected:"
 msgstr "Napis wybrany:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:63
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:64
 msgid "Subtitle Invalid:"
 msgstr "Napis nieprawidłowy:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:64
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:65
 msgid "Player Position:"
 msgstr "Pozycja odtwarzacza"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:65
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:66
 #: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:6
 msgid "Text:"
 msgstr "Tekst:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:66
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:67
 msgid "Display background"
 msgstr "Wyświetlaj tło"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:67
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:68
 msgid "Display waveform fill"
 msgstr "Wyświetlaj wypełnienie wykresu dźwięku"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:68
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:69
 msgid "Display subtitle text"
 msgstr "Wyświetl tekst napisów"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:69
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:70
 msgid "Reset To _Defaults"
 msgstr "P_rzywróć domyślne"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:70
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:71
 msgid "<b>Waveform Generator</b>"
 msgstr "<b>Generator wykresu dźwięku</b>"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:71
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:72
 msgid "Interval in seconds:"
 msgstr "Odstęp w sekundach:"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:72
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:73
 msgid "1000"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:73
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:74
 msgid "Waveform"
 msgstr "Wykres dźwięku"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:74
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:75
 msgid "<b>Activate plugins</b>"
 msgstr "<b>Uaktywnij wtyczki</b>"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:75
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:76
 msgid "Plugins"
 msgstr "Wtyczki"
 
-#: ../plugins/actions/preferences/preferencesplugin.cc:86
+#: ../plugins/actions/preferences/preferencesplugin.cc:82
 msgid "Configure Subtitle Editor"
 msgstr "Konfiguruj Edytor Napisów"
 
 #. audio output
-#: ../plugins/actions/preferences/videoplayerpage.h:102
-#: ../plugins/actions/preferences/videoplayerpage.h:122
+#: ../plugins/actions/preferences/videoplayerpage.h:94
+#: ../plugins/actions/preferences/videoplayerpage.h:110
 msgid "Autodetect"
 msgstr "Automatyczne wykrycie"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:103
+#: ../plugins/actions/preferences/videoplayerpage.h:95
 msgid "Pulse — PulseAudio Sound Server"
 msgstr "Pulse — serwer dźwięku PulseAudio"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:106
+#: ../plugins/actions/preferences/videoplayerpage.h:96
 msgid "ALSA — Advanced Linux Sound Architecture"
 msgstr "ALSA — Advanced Linux Sound Architecture"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:107
+#: ../plugins/actions/preferences/videoplayerpage.h:97
 msgid "ESD — Enlightenment Sound Daemon"
 msgstr "ESD — Enlightenment Sound Daemon"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:109
+#: ../plugins/actions/preferences/videoplayerpage.h:98
 msgid "OSS — Open Sound System"
 msgstr "OSS — Open Sound System"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:110
-#: ../plugins/actions/preferences/videoplayerpage.h:127
+#: ../plugins/actions/preferences/videoplayerpage.h:99
+#: ../plugins/actions/preferences/videoplayerpage.h:113
 msgid "SDL — Simple DirectMedia Layer"
 msgstr "SDL — Simple DirectMedia Layer"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:112
-#: ../plugins/actions/preferences/videoplayerpage.h:129
+#: ../plugins/actions/preferences/videoplayerpage.h:100
+#: ../plugins/actions/preferences/videoplayerpage.h:114
 msgid "GConf"
 msgstr "GConf"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:114
-#: ../plugins/actions/preferences/videoplayerpage.h:131
+#: ../plugins/actions/preferences/videoplayerpage.h:102
+#: ../plugins/actions/preferences/videoplayerpage.h:116
 msgid "OSX"
 msgstr "OSX"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:123
+#: ../plugins/actions/preferences/videoplayerpage.h:111
 msgid "X Window System (X11/XShm/Xv)"
 msgstr "X Window System (X11/XShm/Xv)"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:125
+#: ../plugins/actions/preferences/videoplayerpage.h:112
 msgid "X Window System (No Xv)"
 msgstr "X Window System (nie Xv)"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:134
+#: ../plugins/actions/preferences/videoplayerpage.h:119
 msgid "OpenGL"
 msgstr "OpenGL"
 
-#: ../plugins/actions/removesubtitle/removesubtitle.cc:44
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:42
+#, fuzzy
+msgid "_Delete"
+msgstr "Skasuj styl"
+
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:42
 msgid "Delete selected subtitles"
 msgstr "Usuń zaznaczone napisy"
 
-#: ../plugins/actions/removesubtitle/removesubtitle.cc:104
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:98
 msgid "Delete Subtitles"
 msgstr "Usuń napisy"
 
-#: ../plugins/actions/removesubtitle/removesubtitle.cc:116
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:109
 #, c-format
 msgid "1 subtitle has been deleted."
 msgid_plural "%d subtitles have been deleted."
@@ -1947,20 +2173,20 @@ msgstr[0] "Skasowano napisy."
 msgstr[1] "Skasowano %d napisy."
 msgstr[2] "Skasowano %d napisów."
 
-#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:44
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:43
 msgid "_Reverse Text And Translation"
 msgstr "_Odwróć tekst i tłumaczenie"
 
-#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:45
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:43
 msgid "Reverse the text and the translation"
 msgstr "Przywróć tekst sprzed tłumaczenia"
 
-#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:96
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:92
 #: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.se-plugin.in.h:1
 msgid "Reverse Text And Translation"
 msgstr "Odwróć tekst i tłumaczenie"
 
-#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:110
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:106
 msgid "Reverse the text and the translation was applied."
 msgstr "Odwrócenie tekstu i tłumaczenia zostało wykonane"
 
@@ -1988,199 +2214,204 @@ msgstr "_Zaznaczenie"
 msgid "_All Subtitles"
 msgstr "_Wszystkie napisy"
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:72
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:75
-msgid "You can't use <i>scale</i> with this values."
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:68
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:70
+#, fuzzy
+msgid "You can't use <i>scale</i> with these values."
 msgstr "Nie możesz użyć <i>scale</i> z tymi wartościami."
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:73
-msgid "The first point is superior to the last point."
-msgstr "Pierwszy punkt jest nadrzędny względem ostatniego punktu."
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:68
+#, fuzzy
+msgid "The first point is before the last point."
+msgstr "Pierwszy punkt jest równy ostatniemu punktowi."
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:76
-msgid "The first point is equal to the last point."
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:70
+#, fuzzy
+msgid "The first point is the same as the last point."
 msgstr "Pierwszy punkt jest równy ostatniemu punktowi."
 
 #. apply change
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:91
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:83
 msgid "Scale subtitles"
 msgstr "Skaluj napisy"
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:110
-msgid "The scale was applied"
-msgstr "Skalowanie zostało wykonane"
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:102
+#, fuzzy
+msgid "The subtitles were scaled"
+msgstr "Skasowano napisy."
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:128
-msgid "You can't use <i>scale</i> with this document."
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:119
+#, fuzzy
+msgid "You can't use the <i>scale</i> action with this document."
 msgstr "Nie możesz użyć <i>scale</i> w tym dokumencie."
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:307
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:291
 msgid "_Scale"
 msgstr "_Skalowanie"
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:308
-msgid "Scale by two points"
-msgstr "Skaluj o dwie jednostki"
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:292
+msgid ""
+"Scale subtitles by two points — this is a generalized version of the Change "
+"Framerate action"
+msgstr ""
 
-#: ../plugins/actions/selection/selection.cc:44
+#: ../plugins/actions/selection/selection.cc:43
 msgid "Select _First Subtitle"
 msgstr "Wybierz _pierwszy napis"
 
-#: ../plugins/actions/selection/selection.cc:45
+#: ../plugins/actions/selection/selection.cc:43
 msgid "Select the first subtitle"
 msgstr "Wybierz pierwszy napis"
 
-#: ../plugins/actions/selection/selection.cc:50
+#: ../plugins/actions/selection/selection.cc:46
 msgid "Select _Last Subtitle"
 msgstr "Wybierz _ostatni napis"
 
-#: ../plugins/actions/selection/selection.cc:51
+#: ../plugins/actions/selection/selection.cc:46
 msgid "Select the last subtitle"
 msgstr "Wybierz ostatni napis"
 
-#: ../plugins/actions/selection/selection.cc:56
+#: ../plugins/actions/selection/selection.cc:50
 msgid "Select _Previous Subtitle"
 msgstr "Wybierz _poprzedni napis"
 
-#: ../plugins/actions/selection/selection.cc:57
+#: ../plugins/actions/selection/selection.cc:50
 msgid "Select the previous subtitle"
 msgstr "Wybierz poprzedni napis"
 
-#: ../plugins/actions/selection/selection.cc:62
+#: ../plugins/actions/selection/selection.cc:54
 msgid "Select _Next Subtitle"
 msgstr "Wybierz _następny napis"
 
-#: ../plugins/actions/selection/selection.cc:63
+#: ../plugins/actions/selection/selection.cc:54
 msgid "Select the next subtitle"
 msgstr "Wybierz następny napis"
 
-#: ../plugins/actions/selection/selection.cc:69
+#: ../plugins/actions/selection/selection.cc:58
 msgid "Select _All Subtitles"
 msgstr "Wybierz _wszystkie napisy"
 
-#: ../plugins/actions/selection/selection.cc:69
+#: ../plugins/actions/selection/selection.cc:58
 msgid "Select all subtitles"
 msgstr "Wybierz wszystkie napisy"
 
-#: ../plugins/actions/selection/selection.cc:75
+#: ../plugins/actions/selection/selection.cc:62
 #, fuzzy
 msgid "_Unselect All Subtitles"
 msgstr "Wybierz _wszystkie napisy"
 
-#: ../plugins/actions/selection/selection.cc:76
+#: ../plugins/actions/selection/selection.cc:62
 #, fuzzy
 msgid "Unselect all the subtitles"
 msgstr "Wybierz wszystkie napisy"
 
-#: ../plugins/actions/selection/selection.cc:82
+#: ../plugins/actions/selection/selection.cc:66
 msgid "In_vert Selection"
 msgstr "O_dwróć zaznaczenie"
 
-#: ../plugins/actions/selection/selection.cc:83
+#: ../plugins/actions/selection/selection.cc:66
 msgid "Invert subtitles selection"
 msgstr "Odwróć zaznaczenie napisów"
 
-#: ../plugins/actions/selection/selection.cc:89
+#: ../plugins/actions/selection/selection.cc:70
 #, fuzzy
 msgid "Select to Start"
 msgstr "Wybierz _ostatni napis"
 
-#: ../plugins/actions/selection/selection.cc:90
+#: ../plugins/actions/selection/selection.cc:70
 #, fuzzy
 msgid "Select all subtitles from current to start"
 msgstr "Wybierz wszystkie napisy"
 
-#: ../plugins/actions/selection/selection.cc:95
+#: ../plugins/actions/selection/selection.cc:73
 #, fuzzy
 msgid "Select to End"
 msgstr "Zaznaczenie"
 
-#: ../plugins/actions/selection/selection.cc:96
+#: ../plugins/actions/selection/selection.cc:73
 #, fuzzy
 msgid "Select all subtitles from current to end"
 msgstr "Wybierz wszystkie napisy"
 
-#: ../plugins/actions/slidetimings/slidetimings.cc:58
+#: ../plugins/actions/slidetimings/slidetimings.cc:54
 msgid "_Bump Text Up"
 msgstr ""
 
-#: ../plugins/actions/slidetimings/slidetimings.cc:59
+#: ../plugins/actions/slidetimings/slidetimings.cc:54
 msgid ""
 "Moves the text field to the previous subtitle for all subtitles from the "
 "current one to the end."
 msgstr ""
 
-#: ../plugins/actions/slidetimings/slidetimings.cc:63
+#: ../plugins/actions/slidetimings/slidetimings.cc:59
 msgid "_Bump Text Down"
 msgstr ""
 
-#: ../plugins/actions/slidetimings/slidetimings.cc:64
+#: ../plugins/actions/slidetimings/slidetimings.cc:59
 msgid ""
 "Moves the text field to the next subtitle for all subtitles from the current "
 "one to the end."
 msgstr ""
 
-#: ../plugins/actions/slidetimings/slidetimings.cc:116
-#: ../plugins/actions/slidetimings/slidetimings.cc:146
-#: ../plugins/actions/slidewords/slidewords.cc:131
-#: ../plugins/actions/splitsubtitle/splitsubtitle.cc:90
-#: ../plugins/actions/typewriter/typewriter.cc:135
-msgid "Please select at least one subtitle."
-msgstr "Proszę wybrać przynajmniej jeden napis."
-
-#: ../plugins/actions/slidetimings/slidetimings.cc:120
+#: ../plugins/actions/slidetimings/slidetimings.cc:110
 msgid "Bump Down"
 msgstr ""
 
-#: ../plugins/actions/slidetimings/slidetimings.cc:150
+#: ../plugins/actions/slidetimings/slidetimings.cc:138
 msgid "Bump Up"
 msgstr ""
 
-#: ../plugins/actions/slidewords/slidewords.cc:50
+#: ../plugins/actions/slidewords/slidewords.cc:47
 #: ../plugins/actions/slidewords/slidewords.se-plugin.in.h:1
 #, fuzzy
 msgid "Slide Words"
 msgstr "_Dodaj słowo"
 
-#: ../plugins/actions/slidewords/slidewords.cc:53
+#: ../plugins/actions/slidewords/slidewords.cc:47
+msgid "Move one word between lines or between two subtitles"
+msgstr ""
+
+#: ../plugins/actions/slidewords/slidewords.cc:50
 msgid "Slide Word To Next Line"
 msgstr ""
 
-#: ../plugins/actions/slidewords/slidewords.cc:54
+#: ../plugins/actions/slidewords/slidewords.cc:51
 msgid ""
 "Slides one word from the end of the first line to the beginning of the "
-"second one."
+"second one (this also works when exactly two subtitles are selected, moving "
+"the words between them then)"
 msgstr ""
 
-#: ../plugins/actions/slidewords/slidewords.cc:58
+#: ../plugins/actions/slidewords/slidewords.cc:56
 #, fuzzy
 msgid "Slide Word To Previous Line"
 msgstr "Przeszukaj do poprzedniej klatki kluczowej"
 
-#: ../plugins/actions/slidewords/slidewords.cc:59
+#: ../plugins/actions/slidewords/slidewords.cc:57
 msgid ""
 "Slides one word from the beginning of the second line to the end of the "
-"first one."
+"first one (this also works when exactly two subtitles are selected, moving "
+"the words between them then)"
 msgstr ""
 
-#: ../plugins/actions/slidewords/slidewords.cc:135
+#: ../plugins/actions/slidewords/slidewords.cc:128
 msgid "Slide one word to the next line"
 msgstr ""
 
-#: ../plugins/actions/slidewords/slidewords.cc:135
+#: ../plugins/actions/slidewords/slidewords.cc:128
 #, fuzzy
 msgid "Slide one word to the previous line"
 msgstr "Wybierz poprzedni napis"
 
-#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:44
+#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:43
 msgid "S_ort Subtitles"
 msgstr "S_ortuj napisy"
 
-#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:45
+#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:43
 msgid "Sort subtitles based on their start time"
 msgstr "Sortuj napisy wg czasu pojawiania się"
 
-#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:91
+#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:87
 #, c-format
 msgid "1 subtitle has been reordered."
 msgid_plural "%d subtitles have been reordered."
@@ -2188,19 +2419,19 @@ msgstr[0] "Pozycja napisu została skorygowana."
 msgstr[1] "Pozycja %d napisów została skorygowana."
 msgstr[2] "Pozycja %d napisów została skorygowana."
 
-#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:95
+#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:90
 msgid "No need to sort subtitles."
 msgstr "Sortowanie napisów nie jest konieczne."
 
 #: ../plugins/actions/spellchecking/dialog-spell-checking.ui.h:1
-#: ../plugins/actions/spellchecking/spellchecking.cc:138
+#: ../plugins/actions/spellchecking/spellchecking.cc:134
 #: ../plugins/actions/spellchecking/spellchecking.se-plugin.in.h:1
 msgid "Spell Checking"
 msgstr "Sprawdzanie pisowni"
 
 #. Language
 #: ../plugins/actions/spellchecking/dialog-spell-checking.ui.h:2
-#: ../plugins/actions/textcorrection/patternspage.h:188
+#: ../plugins/actions/textcorrection/patternspage.h:186
 msgid "_Language:"
 msgstr "_Język:"
 
@@ -2216,7 +2447,7 @@ msgstr "Ignoruj _wszystkie"
 msgid "A_dd Word"
 msgstr "_Dodaj słowo"
 
-#: ../plugins/actions/spellchecking/spellchecking.cc:155
+#: ../plugins/actions/spellchecking/spellchecking.cc:151
 msgid ""
 "The spell check is applied to the column \"text\" as default. You can check "
 "the column \"translation\" by setting the focus to this column before "
@@ -2226,24 +2457,25 @@ msgstr ""
 "sprawdzać kolumnę \"translation\" uaktywniając ją zanim rozpoczniesz "
 "sprawdzanie pisowni."
 
-#: ../plugins/actions/spellchecking/spellchecking.cc:161
+#: ../plugins/actions/spellchecking/spellchecking.cc:157
 msgid "_Do not show this message again"
 msgstr "_Nie pokazuj więcej tego komunikatu"
 
-#: ../plugins/actions/spellchecking/spellchecking.cc:243
+#: ../plugins/actions/spellchecking/spellchecking.cc:227
 msgid "Suggestions"
 msgstr "Sugestie"
 
-#: ../plugins/actions/spellchecking/spellchecking.cc:587
+#: ../plugins/actions/spellchecking/spellchecking.cc:550
 msgid "Completed spell checking."
 msgstr "Zakończono sprawdzanie pisowni."
 
-#: ../plugins/actions/spellchecking/spellchecking.cc:642
+#: ../plugins/actions/spellchecking/spellchecking.cc:603
 msgid "_Spell Check"
 msgstr "_Sprawdź pisownię"
 
-#: ../plugins/actions/spellchecking/spellchecking.cc:642
-msgid "Launch the spell checking"
+#: ../plugins/actions/spellchecking/spellchecking.cc:603
+#, fuzzy
+msgid "Launch the spellchecking dialog"
 msgstr "Uruchoma sprawdzanie pisownii"
 
 #: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
@@ -2255,20 +2487,28 @@ msgstr "Podziel dokument"
 msgid "The beginning for the new document:"
 msgstr "Początek nowego dokumentu:"
 
-#: ../plugins/actions/splitdocument/splitdocument.cc:46
-msgid "You can't use <i>split</i> with this document."
+#: ../plugins/actions/splitdocument/splitdocument.cc:44
+#, fuzzy
+msgid "You can't use the <i>split</i> action with this document"
 msgstr "Nie możesz użyć <i>split</i> z tym dokumentem."
 
+#: ../plugins/actions/splitdocument/splitdocument.cc:45
+#, c-format
+msgid ""
+"There are no subtitles in document <b>%s</b>. It's empty and there is "
+"nothing to split."
+msgstr ""
+
 #. Remove subtitles used by the new one
-#: ../plugins/actions/splitdocument/splitdocument.cc:81
+#: ../plugins/actions/splitdocument/splitdocument.cc:80
 msgid "Split document"
 msgstr "Podziel dokument"
 
-#: ../plugins/actions/splitdocument/splitdocument.cc:111
+#: ../plugins/actions/splitdocument/splitdocument.cc:108
 msgid "Spl_it Document"
 msgstr "Po_dziel dokument"
 
-#: ../plugins/actions/splitdocument/splitdocument.cc:112
+#: ../plugins/actions/splitdocument/splitdocument.cc:108
 msgid "Split the current document in two"
 msgstr "Podziel bieżący dokument na dwa"
 
@@ -2277,11 +2517,15 @@ msgid "_Split"
 msgstr "_Podziel"
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:45
-msgid "Split selected subtitles"
-msgstr "Podziel wybrane napisy"
+msgid ""
+"Split selected subtitles by lines (for each selected subtitle, as many new "
+"subtitles as it has lines will be created, with their total duration "
+"equaling the selected subtitle and set proportionately to their length while "
+"respecting the minimal gap between subtitles setting"
+msgstr ""
 
-#: ../plugins/actions/splitsubtitle/splitsubtitle.cc:94
-#: ../plugins/actions/typewriter/typewriter.cc:139
+#: ../plugins/actions/splitsubtitle/splitsubtitle.cc:93
+#: ../plugins/actions/typewriter/typewriter.cc:144
 msgid "Split subtitles"
 msgstr "Podziel napisy"
 
@@ -2295,27 +2539,27 @@ msgid ""
 "Stack selected subtitles after the first one as close together as possible."
 msgstr ""
 
-#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:55
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:53
 #, fuzzy
 msgid "Stack Subtitles From End"
 msgstr "Ustaw _koniec napisów"
 
-#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:56
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:54
 msgid ""
 "Stack selected subtitles before the last one as close together as possible."
 msgstr ""
 
-#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:119
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:113
 #: ../plugins/actions/stacksubtitles/stacksubtitles.se-plugin.in.h:1
 #, fuzzy
 msgid "Stack Subtitles"
 msgstr "Sortuj napisy"
 
-#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:178
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:170
 msgid "Stack Subtitles needs at least 2 subtitles to work on."
 msgstr ""
 
-#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:209
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:200
 msgid "Stack Subtitles only works on a continuous selection."
 msgstr ""
 
@@ -2324,128 +2568,396 @@ msgid "Subtitle Editor — Style Editor"
 msgstr "Edytor Napisów — Edytor stylów"
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
+msgid "Close the dialog (changes to styles are saved on the fly)"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:3
+#, fuzzy
+msgid "New Style"
+msgstr "Stwórz nowy styl"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:4
+msgid "Delete Style"
+msgstr "Skasuj styl"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:5
+#, fuzzy
+msgid "Duplicate Style"
+msgstr "Zduplikuj napis"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:6
+msgid "Set as Default ASS Style"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:7
+msgid "Video Resolution"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:8
+msgid ""
+"If it is disabled, it means your document has not set it. You can add it "
+"(recommended) by adding a new style."
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:9
+#: ../share/ui/dialog-script-properties.ui.h:16
+msgid "PlayResX:"
+msgstr "RozdzielczośćX:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:10
+msgid ""
+"Reference width for subtitle positioning and scaling. If it is disabled, it "
+"means your document has not set it. You can add it (recommended) by adding a "
+"new style."
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:11
+#: ../share/ui/dialog-script-properties.ui.h:17
+msgid "PlayResY:"
+msgstr "RozdzielczośćY:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:12
+msgid ""
+"Reference height for subtitle positioning and scaling. If it is disabled, it "
+"means your document has not set it. You can add it (recommended) by adding a "
+"new style."
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:13
 #, fuzzy
 msgid "Font"
 msgstr "_Czcionka:"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:3
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:14
+#, fuzzy
+msgid "Change font properties"
+msgstr "Zmień liczbę klatek/s"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:15
+msgid "Change font and its size"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:16
+msgid "Toggle bold"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:17
+msgid "Toggle italic"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:18
+msgid "Toggle underline"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:19
+msgid "Toggle strikethrough"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:20
 #, fuzzy
 msgid "Appearance"
 msgstr "<b>Wygląd</b>"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:4
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:21
+#, fuzzy
+msgid "Set subtitle color and background"
+msgstr "Ustaw _początek i koniec napisów"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:22
 #, fuzzy
 msgid "Colors"
 msgstr "<b>Kolory</b>"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:5
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:23
+#, fuzzy
+msgid "Set subtitle colors"
+msgstr "Ustaw koniec napisów"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:24
 msgid "Primary:"
 msgstr "Pirwszorzędne:"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:6
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:25
+msgid "Set font color"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:26
 msgid "Secondary:"
 msgstr "Drugorzędne:"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:7
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:27
+msgid "Set secondary font color (only used for some karaoke effects)"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:28
 msgid "Outline:"
 msgstr "Tło:"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:8
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:29
+msgid "Set outline color"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:30
 msgid "Shadow:"
 msgstr "Cień:"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:9
-#, fuzzy
-msgid "Border"
-msgstr "<b>Ograniczenie</b>"
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:31
+msgid "Set shadow color"
+msgstr ""
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:10
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:32
+#, fuzzy
+msgid "Background"
+msgstr "Tło:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:33
+#, fuzzy
+msgid "Set background"
+msgstr "Tło:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:34
 msgid "Outline"
 msgstr "Tło"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:11
-msgid "Opaque Box"
-msgstr "Prostokątne nieprzezroczyste tło"
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:35
+msgid ""
+"Letters will have an outline and a shadow in the colors set by Outline and "
+"Shadow (if Outline Size and Shadow Size are non-zero respectively)"
+msgstr ""
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:12
-msgid "Size:"
-msgstr "Rozmiar:"
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:36
+msgid "Box per Line"
+msgstr ""
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:13
-msgid "Distance:"
-msgstr "Dystans:"
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:37
+msgid ""
+"There will be rectangular boxes drawn for each line separately with the "
+"Color set by Outline (Outline Size sets the margin of the boxes and non-zero "
+"Shadow Size will draw shadow boxes)"
+msgstr ""
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:14
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:38
+msgid "Rectangular Box"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:39
+msgid ""
+"There will be a rectangular box drawn for the whole subtitle with the Color "
+"set by Shadow . Only players based on libass support this. That is all "
+"players on Linux, but Windows players using legacy VSFilter not based on "
+"libass might struggle."
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:40
 #, fuzzy
-msgid "Transformation"
+msgid "Outline size:"
+msgstr "Tło:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:41
+#, fuzzy
+msgid "Set the outline size"
+msgstr "Wybierz następny napis"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:42
+#, fuzzy
+msgid "Shadow size:"
+msgstr "Cień:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:43
+#, fuzzy
+msgid "Set the shadow size"
+msgstr "Wybierz ostatni napis"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:44
+#, fuzzy
+msgid "Transformatio&Position"
 msgstr "<b>Przejście</b>"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:15
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:45
+#, fuzzy
+msgid "Set subtitle position and effects"
+msgstr "Ustaw początek napisów"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:46
+#, fuzzy
+msgid "Font effects"
+msgstr "efekt"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:47
 msgid "Angle:"
 msgstr "Kąt:"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:16
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:48
+msgid "Set rotation of the subtitle (breaks Rectangular box background)"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:49
 msgid "Spacing:"
 msgstr "Odstępy:"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:17
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:50
+#, fuzzy
+msgid "Set letter spacing"
+msgstr "Zmień styl na wybrany"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:51
 msgid "Scale X:"
 msgstr "Skala X:"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:18
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:52
+msgid ""
+"Set X scale, values under 100 will squeeze letters horizontally, values "
+"above 100 will expand letters horizontally"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:53
 msgid "Scale Y:"
 msgstr "Skala Y:"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:20
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:54
+msgid ""
+"Set Y scale, values under 100 will squeeze letters vertically, values above "
+"100 will prolong letters vertically"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:56
 #, fuzzy
 msgid "Margins"
 msgstr "<b>Marginesy</b>"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:21
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:57
+#, fuzzy
+msgid "Set margins"
+msgstr "<b>Marginesy</b>"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:58
 msgid "Right:"
 msgstr "Prawo:"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:22
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:59
+msgid ""
+"Size of the right margin (subtitles will be offset by this amount from the "
+"right edge of the video)"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:60
 msgid "Vertical:"
 msgstr "Pionowo:"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:23
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:61
+msgid ""
+"Size of the vertical margin (subtitles will be offset by this amount from "
+"the top or bottom edge of the video depending on Alignment)"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:62
 #: ../plugins/actions/timingfromplayer/dialog-timing-from-player-preferences.ui.h:4
 msgid "0"
 msgstr ""
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:24
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:63
 msgid "Left:"
 msgstr "Lewo:"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:25
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:64
+msgid ""
+"Size of the left margin (subtitles will be offset by this amount from the "
+"left edge of the video)"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:65
 #, fuzzy
 msgid "Alignment"
 msgstr "<b>Ułożenie</b>"
 
-#: ../plugins/actions/styleeditor/styleeditor.cc:128
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:66
+msgid "Set alignment of the text and default position of the subtitle"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:67
+msgid "Position left bottom corner, text aligns to the left"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:68
+msgid "Position bottom centre, text aligns to the centre"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:69
+msgid "Position right bottom corner, text aligns to the right"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:70
+msgid "Position left centre, text aligns to the left"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:71
+msgid "Position centre, text aligns to the centre"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:72
+msgid "Position right centre, text aligns to the right"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:73
+msgid "Position left top corner, text aligns to the left"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:74
+msgid "Position top centre, text aligns to the centre"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:75
+msgid "Position right top corner, text aligns to the right"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:112
 msgid "Styles"
 msgstr "Style"
 
-#: ../plugins/actions/styleeditor/styleeditor.cc:402
+#: ../plugins/actions/styleeditor/styleeditor.cc:151
+msgid "Problems"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:153
+msgid "PlayResX or PlayResY not set"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:154
+msgid "Missing PlayRes Information"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:159
+msgid "Apply default PlayRes"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:237
+msgid "Default Style and PlayRes saved to configuration file"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:239
+msgid "Default Style saved to configuration file"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:468
 msgid "_Style Editor"
 msgstr "_Edytor stylu"
 
-#: ../plugins/actions/styleeditor/styleeditor.cc:402
+#: ../plugins/actions/styleeditor/styleeditor.cc:468
 msgid "Launch the style editor"
 msgstr "Uruchom edytor napisów"
 
-#: ../plugins/actions/stylize/stylize.cc:44
+#: ../plugins/actions/stylize/stylize.cc:45
 #, fuzzy
 msgid "_Stylize"
 msgstr "Styl"
 
-#: ../plugins/actions/stylize/stylize.cc:45
-#, fuzzy
-msgid "Stylize the selected subtitles text"
-msgstr "Zmień styl wybranych napisów na kursywę"
+#: ../plugins/actions/stylize/stylize.cc:46
+msgid ""
+"Apply style to the selected subtitles (note that this will get saved only "
+"when using style-supporting format such as ASS)"
+msgstr ""
 
-#: ../plugins/actions/stylize/stylize.cc:163 ../src/subtitleview.cc:1152
+#: ../plugins/actions/stylize/stylize.cc:156 ../src/subtitleview.cc:1192
 msgid "Set style to selection"
 msgstr "Zmień styl na wybrany"
 
@@ -2454,12 +2966,12 @@ msgid "Save Template As:"
 msgstr ""
 
 #: ../plugins/actions/template/dialog-template-save-as.ui.h:2
-#: ../src/gui/application.cc:305
+#: ../src/gui/application.cc:277
 msgid "Name:"
 msgstr "Nazwa:"
 
 #: ../plugins/actions/template/dialog-template-save-as.ui.h:4
-#: ../src/document.cc:435 ../src/gui/application.cc:305
+#: ../src/document.cc:432 ../src/gui/application.cc:281
 #: ../share/ui/dialog-export-text.ui.h:2 ../share/ui/dialog-import-text.ui.h:2
 #: ../share/ui/dialog-open-document.ui.h:2
 #: ../share/ui/dialog-save-document.ui.h:3
@@ -2476,17 +2988,22 @@ msgstr "NowaLinia:"
 msgid "_Template"
 msgstr ""
 
-#: ../plugins/actions/template/template.cc:109
+#: ../plugins/actions/template/template.cc:105
+#, fuzzy
+msgid "Save a template or use a template"
+msgstr "Dzieli obecny dokument na dwa."
+
+#: ../plugins/actions/template/template.cc:108
 msgid "_Save As Template"
 msgstr ""
 
-#: ../plugins/actions/template/template.cc:110
+#: ../plugins/actions/template/template.cc:108
 #, fuzzy
-msgid "Save the current document as template."
+msgid "Save the current document as template"
 msgstr "Dzieli obecny dokument na dwa."
 
 #: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
-#: ../plugins/actions/textcorrection/confirmationpage.h:164
+#: ../plugins/actions/textcorrection/confirmationpage.h:150
 #: ../plugins/actions/textcorrection/textcorrection.se-plugin.in.h:1
 msgid "Text Correction"
 msgstr "Korekta tekstu"
@@ -2520,48 +3037,48 @@ msgstr "_Usuń wszystkie puste napisy"
 msgid "Select Capitalization Patterns"
 msgstr "Wybierz wzory pisowni wielkich liter"
 
-#: ../plugins/actions/textcorrection/capitalizationpage.h:29
+#: ../plugins/actions/textcorrection/capitalizationpage.h:28
 msgid "Capitalize texts"
 msgstr "Kapitalizuj tekst"
 
-#: ../plugins/actions/textcorrection/capitalizationpage.h:30
+#: ../plugins/actions/textcorrection/capitalizationpage.h:28
 msgid "Capitalize texts written in lower case"
 msgstr "Zamienia małe litery na wielkie w tekście"
 
-#: ../plugins/actions/textcorrection/commonerrorpage.h:28
+#: ../plugins/actions/textcorrection/commonerrorpage.h:29
 msgid "Select Common Error Pattern"
 msgstr "Wybierz najczęstszy rodzaj błedu"
 
-#: ../plugins/actions/textcorrection/commonerrorpage.h:29
+#: ../plugins/actions/textcorrection/commonerrorpage.h:30
 msgid "Correct common errors"
 msgstr "Korekta typowych błędów"
 
-#: ../plugins/actions/textcorrection/commonerrorpage.h:30
+#: ../plugins/actions/textcorrection/commonerrorpage.h:31
 msgid "Correct common errors made by humans or image recognition software"
 msgstr "Korekta typowych błędów ludzi lub programów OCR"
 
-#: ../plugins/actions/textcorrection/confirmationpage.h:66
-#: ../src/subtitleview.cc:1260
+#: ../plugins/actions/textcorrection/confirmationpage.h:64
+#: ../src/subtitleview.cc:1297
 msgid "Num"
 msgstr "Num"
 
-#: ../plugins/actions/textcorrection/confirmationpage.h:76
+#: ../plugins/actions/textcorrection/confirmationpage.h:73
 msgid "Accept"
 msgstr "Akceptuj"
 
-#: ../plugins/actions/textcorrection/confirmationpage.h:88
+#: ../plugins/actions/textcorrection/confirmationpage.h:83
 msgid "Original Text"
 msgstr "Oryginalny tekst"
 
-#: ../plugins/actions/textcorrection/confirmationpage.h:99
+#: ../plugins/actions/textcorrection/confirmationpage.h:92
 msgid "Corrected Text"
 msgstr "Poprawiony tekst"
 
-#: ../plugins/actions/textcorrection/confirmationpage.h:151
+#: ../plugins/actions/textcorrection/confirmationpage.h:138
 msgid "There Is No Change"
 msgstr "Brak zmian"
 
-#: ../plugins/actions/textcorrection/confirmationpage.h:154
+#: ../plugins/actions/textcorrection/confirmationpage.h:140
 msgid "Confirm %1 Change"
 msgid_plural "Confirm %1 Changes"
 msgstr[0] "Potwierdź zmianę"
@@ -2581,48 +3098,94 @@ msgid "Remove explanatory texts meant for the hearing impaired"
 msgstr ""
 
 #. Script
-#: ../plugins/actions/textcorrection/patternspage.h:181
+#: ../plugins/actions/textcorrection/patternspage.h:179
 msgid "_Script:"
 msgstr "Typ skryptu:"
 
 #. Country
-#: ../plugins/actions/textcorrection/patternspage.h:195
+#: ../plugins/actions/textcorrection/patternspage.h:193
 msgid "_Country:"
 msgstr "_Kraj:"
 
-#: ../plugins/actions/textcorrection/patternspage.h:355
-#: ../plugins/actions/textcorrection/patternspage.h:380
-#: ../plugins/actions/textcorrection/patternspage.h:406
+#: ../plugins/actions/textcorrection/patternspage.h:344
+#: ../plugins/actions/textcorrection/patternspage.h:369
+#: ../plugins/actions/textcorrection/patternspage.h:395
 msgid "Other"
 msgstr "Inne"
 
-#: ../plugins/actions/textcorrection/taskspage.h:53
-#: ../plugins/actions/viewmanager/viewmanager.cc:105
+#: ../plugins/actions/textcorrection/taskspage.h:51
+#: ../plugins/actions/viewmanager/viewmanager.cc:101
 msgid "Display"
 msgstr "Pokaż"
 
-#: ../plugins/actions/textcorrection/taskspage.h:64
-#: ../plugins/actions/viewmanager/viewmanager.cc:117
-#: ../plugins/actions/viewmanager/viewmanager.cc:188
-#: ../src/subtitleview.cc:1258
+#: ../plugins/actions/textcorrection/taskspage.h:61
+#: ../plugins/actions/viewmanager/viewmanager.cc:112
+#: ../plugins/actions/viewmanager/viewmanager.cc:178
+#: ../src/subtitleview.cc:1295
 msgid "Name"
 msgstr "Nazwa"
 
-#: ../plugins/actions/textcorrection/textcorrection.cc:181
+#: ../plugins/actions/textcorrection/textcorrection.cc:177
 msgid "Text _Correction"
 msgstr "_Korekta tekstu"
 
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:46
-msgid "_Times"
+#: ../plugins/actions/textcorrection/textcorrection.cc:177
+#, fuzzy
+msgid "Launch the text correction dialogue"
+msgstr "Uruchoma sprawdzanie pisownii"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:45
+#, fuzzy
+msgid "_Timecodes"
 msgstr "_Czasy"
 
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:53
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:45
+#, fuzzy
+msgid "Use timecodes"
+msgstr "Unikod"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:48
 msgid "_Frames"
 msgstr "_Klatki"
 
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:63
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:48
+#, fuzzy
+msgid "Use frames"
+msgstr "_Klatki kluczowe"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:54
 msgid "_Framerate"
 msgstr "_Klatki na sekundę"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:54
+#, fuzzy
+msgid "Set subtitle framerate"
+msgstr "Ustaw początek napisów"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:57
+#, fuzzy
+msgid "Set subtitle framerate to 23.976"
+msgstr "Ustaw początek napisów"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:61
+#, fuzzy
+msgid "Set subtitle framerate to 24"
+msgstr "Ustaw początek napisów"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:65
+#, fuzzy
+msgid "Set subtitle framerate to 25"
+msgstr "Ustaw początek napisów"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:69
+#, fuzzy
+msgid "Set subtitle framerate to 29.7"
+msgstr "Ustaw początek napisów"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:73
+#, fuzzy
+msgid "Set subtitle framerate to 30"
+msgstr "Ustaw początek napisów"
 
 #: ../plugins/actions/timingfromplayer/dialog-timing-from-player-preferences.ui.h:1
 #, fuzzy
@@ -2645,363 +3208,486 @@ msgid ""
 "when the video player is running)"
 msgstr ""
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:75
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:71
 #: ../plugins/actions/timingfromplayer/timingfromplayer.se-plugin.in.h:1
 msgid "Timing From Player"
 msgstr "Czasy z odtwarzacza"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:76
-msgid "Use the current player position to set subtitle time"
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:71
+#, fuzzy
+msgid "Use the current player position to set subtitle timecodes"
 msgstr "Użyj bieżącej pozycji odtwarzacza jako czasu napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:80
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:74
 msgid "Set Subtitle _Start"
 msgstr "Ustaw _początek napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:81
-msgid "Use the current player position to set the subtitle start"
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:75
+#, fuzzy
+msgid ""
+"Use the current player position to set the start of the first selected "
+"subtitle and then move all the other selected subtitles by the same distance "
+"(like the tool Move Subtitles, but without dialogue)"
 msgstr "Użyj bieżącej pozycji odtwarzacza jako początku napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:86
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:81
 msgid "Set Subtitle _End"
 msgstr "Ustaw _koniec napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:87
-msgid "Use the current player position to set the subtitle end"
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:82
+#, fuzzy
+msgid ""
+"Use the current player position to set the end of the first selected subtitle"
 msgstr "Użyj bieżącej pozycji odtwarzacza jako końca napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:94
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:88
 #, fuzzy
 msgid "Set Subtitle Start And Go Next"
 msgstr "Ustaw _początek i koniec napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:95
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:89
 #, fuzzy
 msgid ""
-"Use the current player position to set the start of the selected subtitle "
-"and go to the next"
-msgstr "Użyj bieżącej pozycji odtwarzacza jako końca napisów"
+"Use the current player position to set the start of the first selected "
+"subtitle, then move all the other selected subtitles by the same amount and "
+"select the subtitle next to the first selected one"
+msgstr "Użyj bieżącej pozycji odtwarzacza jako początku napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:102
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:96
 #, fuzzy
 msgid "Set Subtitle End And Go Next"
 msgstr "Ustaw _koniec napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:103
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:97
 #, fuzzy
 msgid ""
-"Use the current player position to set the end of the selected subtitle and "
-"go to the next"
-msgstr "Użyj bieżącej pozycji odtwarzacza jako końca napisów"
+"Use the current player position to set the end of the first selected "
+"subtitle and select the subtitle next to the first selected one"
+msgstr "Użyj bieżącej pozycji odtwarzacza jako początku napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:111
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:104
 #, fuzzy
 msgid "Set Subtitle Start And Next"
 msgstr "Ustaw _początek i koniec napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:112
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:105
 #, fuzzy
 msgid ""
 "Use the current player position to set the start of the current selected "
-"subtitle and the position of the next"
+"subtitle and then create a new subtitle next to it — use this action only "
+"when your selected subtitle is the last one, otherwise the results are funny"
 msgstr "Użyj bieżącej pozycji odtwarzacza jako początku napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:119
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:112
 #, fuzzy
 msgid "Set Subtitle End And Next"
 msgstr "Ustaw _koniec napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:120
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:113
 #, fuzzy
 msgid ""
 "Use the current player position to set the end of the current selected "
-"subtitle and the position of the next"
+"subtitle and then create a new subtitle next to it — use this action only "
+"when your selected subtitle is the last one, otherwise the results are funny"
 msgstr "Użyj bieżącej pozycji odtwarzacza jako początku napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:128
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:121
 msgid "Set Subtitle Start _And End"
 msgstr "Ustaw _początek i koniec napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:129
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:122
 msgid ""
-"Use only one key to set beginning of the subtitle when the key is pressed "
-"and the end when the key is released."
+"Use this to time all your subtitles in one go as video plays. Press the "
+"associated (ideally) one-key shortcut to set the beginning and release to "
+"set the end of the subtitle. Then the next subtitle is selected or a new one "
+"created."
 msgstr ""
-"Użyj tylko jednego klawisza do wyznaczenia początku napisu, gdy klawisz jest "
-"wciśnięty i końca, gdy zostanie zwolniony."
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:250
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:130
+#: ../plugins/actions/preferences/preferences.se-plugin.in.h:1
+msgid "Preferences"
+msgstr "Właściwości"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:130
+msgid "Configure this submenu"
+msgstr ""
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:230
 msgid "Set subtitle start"
 msgstr "Ustaw początek napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:252
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:232
 msgid "Set subtitle end"
 msgstr "Ustaw koniec napisów"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:253
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:233
 #, fuzzy
 msgid "Set subtitle"
 msgstr "Ustaw koniec napisów"
 
-#: ../plugins/actions/typewriter/typewriter.cc:43
+#: ../plugins/actions/typewriter/typewriter.cc:46
 msgid "_Typewriter"
 msgstr "_Maszyna do pisania"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
+msgid ""
+"Produces a typewriter effect by creating several head-to-head subtitles "
+"instead of the selected ones in the same total duration making it appear as "
+"if letters or words are being added gradually"
+msgstr ""
+
+#: ../plugins/actions/typewriter/typewriter.cc:51
 msgid "Characters — Linear"
 msgstr "Znaki — liniowo"
 
-#: ../plugins/actions/typewriter/typewriter.cc:54
+#: ../plugins/actions/typewriter/typewriter.cc:52
+msgid ""
+"Produces a typewriter effect growing character by character with even delay "
+"between the characters"
+msgstr ""
+
+#: ../plugins/actions/typewriter/typewriter.cc:58
 msgid "Characters — Random"
 msgstr "Znaki — losowo"
 
-#: ../plugins/actions/typewriter/typewriter.cc:60
+#: ../plugins/actions/typewriter/typewriter.cc:59
+msgid ""
+"Produces a typewriter effect growing character by character with random "
+"delay between the characters"
+msgstr ""
+
+#: ../plugins/actions/typewriter/typewriter.cc:65
 msgid "Words — Linear"
 msgstr "Wyrazy — liniowo"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
+msgid ""
+"Produces a typewriter effect growing word by word with even delay between "
+"the characters"
+msgstr ""
+
+#: ../plugins/actions/typewriter/typewriter.cc:72
 msgid "Words — Random"
 msgstr "Wyrazy — losowo"
 
+#: ../plugins/actions/typewriter/typewriter.cc:73
+msgid ""
+"Produces a typewriter effect growing word by word with random delay between "
+"the characters"
+msgstr ""
+
 #. Already create in MenuBar.cc
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:45
-#: ../src/gui/menubar.cc:53
+#: ../src/gui/menubar.cc:50
 msgid "_Video"
 msgstr "_Wideo"
 
 #. _("_Open Media"),
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:49
-msgid "Open a multimedia file"
-msgstr "Otwórz plik multimedialny"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:50
+#, fuzzy
+msgid "Open an audio file or a video file"
+msgstr "Otwórz tłumaczenie z pliku"
 
 #. _("_Close Media"),
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:56
-msgid "Close a multimedia file"
-msgstr "Zamknij plik multimedialny"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:57
+msgid "Close an audio file or a video file"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:69
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:61
+#, fuzzy
+msgid "Play"
+msgstr "RozdzielczośćX:"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:61
+#, fuzzy
+msgid "Play audio or video"
+msgstr "_Odtwórz film"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:64
+msgid "Pause"
+msgstr ""
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:64
+msgid "Pause audio or video"
+msgstr ""
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:67
 msgid "_Play / Pause"
 msgstr "_Odtwarzanie/Pauza"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
-msgid "Play or make a pause"
-msgstr "Odtwarzaj lub pauzuj"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:67
+msgid "Play or pause audio or video"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:76
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:74
 msgid "Skip _Backwards"
 msgstr "Przejdź _wstecz"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:80
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:133
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:74
+#, fuzzy
+msgid "Skip Backwards"
+msgstr "Przejdź _wstecz"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:77
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:128
 #, fuzzy
 msgid "Frame"
 msgstr "Klatki"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:81
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:77
 #, fuzzy
-msgid "Frame skip backwards"
-msgstr "Krótki skok do tyłu"
+msgid "Skip backwards by a frame"
+msgstr "Przejdź _wstecz"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:88
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:141
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:82
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:133
 msgid "Tiny"
 msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:89
-#, fuzzy
-msgid "Tiny skip backwards"
-msgstr "Długi skok do tyłu"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:83
+msgid ""
+"Tiny skip backwards — Configure amount in miliseconds in your text "
+"configuration file under section [video-player]; the configuration file is "
+"usually located at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:96
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:149
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:91
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
 msgid "Very Short"
 msgstr "Bardzo krótki"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:97
-msgid "Very short skip backwards"
-msgstr "Bardzo krótki skok do tyłu"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:92
+msgid ""
+"Very short skip backwards — Configure amount in seconds in your text "
+"configuration file under section [video-player]; the configuration file is "
+"usually located at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:104
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:157
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:100
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:151
 msgid "Short"
 msgstr "Krótki"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:105
-msgid "Short skip backwards"
-msgstr "Krótki skok do tyłu"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:101
+msgid ""
+"Short skip backwards — Configure amount in seconds in your text "
+"configuration file under section [video-player]; the configuration file is "
+"usually located at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:112
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:165
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:109
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:160
 msgid "Medium"
 msgstr "Średni"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:113
-msgid "Medium skip backwards"
-msgstr "Średni skok do tyłu"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:110
+msgid ""
+"Medium skip backwards — Configure amount in seconds in your text "
+"configuration file under section [video-player]; the configuration file is "
+"usually located at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:120
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:173
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:118
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:169
 msgid "Long"
 msgstr "Długi"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:121
-msgid "Long skip backwards"
-msgstr "Długi skok do tyłu"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:119
+msgid ""
+"Long skip backwards — Configure amount in seconds in your text configuration "
+"file under section [video-player]; the configuration file is usually located "
+"at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:129
+#. Seek Forward
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:126
 msgid "Skip _Forward"
 msgstr "Przejdź _naprzód"
 
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:126
+#, fuzzy
+msgid "Skip Forward"
+msgstr "Przejdź _naprzód"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:128
+#, fuzzy
+msgid "Skip forward by a frame"
+msgstr "Przejdź _naprzód"
+
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:134
-#, fuzzy
-msgid "Frame skip forward"
-msgstr "Krótki skok do przodu"
+msgid ""
+"Tiny skip forward — Configure amount in miliseconds in your text "
+"configuration file under section [video-player]; the configuration file is "
+"usually located at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
-#, fuzzy
-msgid "Tiny skip forward"
-msgstr "Długi skok do przodu"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:143
+msgid ""
+"Very short skip forward — Configure amount in seconds in your text "
+"configuration file under section [video-player]; the configuration file is "
+"usually located at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:150
-msgid "Very short skip forward"
-msgstr "Bardzo krótki skok do przodu"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:152
+msgid ""
+"Short skip forward — Configure amount in seconds in your text configuration "
+"file under section [video-player]; the configuration file is usually located "
+"at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:158
-msgid "Short skip forward"
-msgstr "Krótki skok do przodu"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:161
+msgid ""
+"Medium skip forward — Configure amount in seconds in your text configuration "
+"file under section [video-player]; the configuration file is usually located "
+"at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:166
-msgid "Medium skip forward"
-msgstr "Średni skok do przodu"
-
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:174
-msgid "Long skip forward"
-msgstr "Długi skok do przodu"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:170
+msgid ""
+"Long skip forward — Configure amount in seconds in your text configuration "
+"file under section [video-player]; the configuration file is usually located "
+"at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
 #. Rate Slower & Faster
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:180
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:177
 msgid "Rate"
 msgstr "Współczynnik"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:181
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
-msgid "Define the playback rate"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:177
+#, fuzzy
+msgid "Set the playback rate"
 msgstr "Zdefiniuj tempo odtwarzania"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:179
 msgid "_Slower"
 msgstr "_Wolniej"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:189
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:179
+msgid "Decrease the playback rate by 0.1 (in range 0.1—1.5)"
+msgstr ""
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:182
 msgid "_Faster"
 msgstr "_Szybciej"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:194
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:182
+msgid "Increase the playback rate by 0.1 (in range 0.1—1.5)"
+msgstr ""
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
 msgid "_Normal"
 msgstr "_Normalnie"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:201
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
+#, fuzzy
+msgid "Set the playback rate to normal (1.0)"
+msgstr "Zdefiniuj tempo odtwarzania"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
 msgid "_Seek To Selection"
 msgstr "_Przeszukaj do zaznaczenia"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:202
-msgid "Seek to the first selected subtitle"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
+#, fuzzy
+msgid "Seek to the start of the first selected subtitle"
 msgstr "Przewiń do pierwszych z zaznaczonych napisów"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
 #, fuzzy
 msgid "_Seek To Selection End"
 msgstr "_Przeszukaj do zaznaczenia"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:209
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
 #, fuzzy
 msgid "Seek to the end of the last selected subtitle"
 msgstr "Przewiń do pierwszych z zaznaczonych napisów"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:216
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:201
 msgid "_Repeat"
 msgstr "_Powtórz"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:217
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:201
 msgid "Enable or disable the repeat mode"
 msgstr "Włącz lub wyłącz tryb powtarzania"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:226
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:207
 msgid "Play _Previous Subtitle"
 msgstr "Odtwórz _poprzednie napisy"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:227
-msgid "Play previous subtitle from the first selected subtitle"
-msgstr "Odtwarzaj fragment poprzedzający pierwszy z zaznaczonych napisów"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
+#, fuzzy
+msgid "Play the subtitle that is previous to the first selected subtitle"
+msgstr "Odtwarzaj fragment następujący po pierwszym z zaznaczonych napisów"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:233
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:213
 msgid "Play _Selection"
 msgstr "Odtwórz _zaznaczenie"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:234
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:213
 msgid "Play the selected subtitle"
 msgstr "Odtwórz wybrane napisy"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:240
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:218
 msgid "Play _Next Subtitle"
 msgstr "Odtwórz następne napisy"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:241
-msgid "Play next subtitle from the first selected subtitle"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:219
+#, fuzzy
+msgid "Play the subtitle that is next to the first selected subtitle"
 msgstr "Odtwarzaj fragment następujący po pierwszym z zaznaczonych napisów"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:247
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:225
 msgid "Play Previous Second"
 msgstr "Graj poprzednią sekundę"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:248
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:225
 msgid "Play the second preceding the first selected subtitle"
 msgstr "Odtwórz sekundę poprzedzającą pierwszy zaznaczony napis"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:253
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:230
 msgid "Play First Second"
 msgstr "Graj pierwszą sekundę"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:254
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:230
 msgid "Play the first second of the subtitle currently selected"
 msgstr "Graj pierwszą sekundę obecnie wybranych napisów"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:259
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:234
 msgid "Play Last Second"
 msgstr "Graj ostatnią sekundę"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:260
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:234
 msgid "Play the last second of the subtitle currently selected"
 msgstr "Graj oststnią sekundę obecnie wybranych napisów"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:265
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:238
 msgid "Play Next Second"
 msgstr "Graj następną sekundę"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:266
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:238
 msgid "Play the second following the subtitle currently selected"
 msgstr "Odtwórz sekundę następującą po aktualnie wybranym napisie"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:274
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:245
 msgid "_Video Player"
 msgstr "_Odtwarzacz wideo"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:275
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:245
 msgid "Show or hide the video player in the current window"
 msgstr "Pokaż lub ukryj obraz wideo w aktualnym oknie"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:280
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:248
 msgid "Audio Track"
 msgstr "Ścieżka dźwiękowa"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
-msgid "Choice of an audio track"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:248
+#, fuzzy
+msgid "Choose an audio track"
 msgstr "Wybór ścieżki dźwiękowej"
 
 #. A default track "Auto"
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:550
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:502
 msgid "Auto"
 msgstr "Auto"
 
@@ -3024,150 +3710,206 @@ msgstr "Pokaż menadżera"
 msgid "View"
 msgstr "_Widok"
 
-#: ../plugins/actions/viewmanager/viewmanager.cc:238
+#: ../plugins/actions/viewmanager/viewmanager.cc:226
 msgid "Untitled"
 msgstr "Bez nazwy"
 
-#: ../plugins/actions/viewmanager/viewmanager.cc:314
+#: ../plugins/actions/viewmanager/viewmanager.cc:299
 msgid "Simple"
 msgstr "Prosty"
 
-#: ../plugins/actions/viewmanager/viewmanager.cc:315
+#: ../plugins/actions/viewmanager/viewmanager.cc:300
 msgid "Advanced"
 msgstr "Zaawansowany"
 
-#: ../plugins/actions/viewmanager/viewmanager.cc:330
+#. If the current displayed columns are from a view, display
+#. radiobuttons
+#. Note that on X11 with appmentu-gtk3 (aka global menus),  this will
+#. not work if we first load from config column configuration that does
+#. not correspond to any view, then until restarted, no radio buttons
+#. will show even if we later set up a menu
+#. Create as regular menu item if no defined view is set
+#: ../plugins/actions/viewmanager/viewmanager.cc:340
+#: ../plugins/actions/viewmanager/viewmanager.cc:344
 msgid "Switches to this view"
 msgstr "Przełącza do tego widoku"
 
-#: ../plugins/actions/viewmanager/viewmanager.cc:338
+#. Set View preferences menu item
+#: ../plugins/actions/viewmanager/viewmanager.cc:350
 msgid "View _Manager"
 msgstr "_Menadżer podglądu"
 
-#: ../plugins/actions/viewmanager/viewmanager.cc:338
+#: ../plugins/actions/viewmanager/viewmanager.cc:350
 msgid "Manage the views"
 msgstr "Zarządzaj widokami"
 
-#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:32
+#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:33
 msgid "Generate Waveform"
 msgstr "Generuj wykres dźwięku"
 
-#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:179
+#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:164
 msgid "Could not determinate the duration of the stream."
 msgstr "Nie można określić długości potoku."
 
 #. Already create in MenuBar.cc
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:50
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:159
-#: ../src/gui/menubar.cc:55
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:142
+#: ../src/gui/menubar.cc:52
 msgid "_Waveform"
 msgstr "_Wykres dźwięku"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:55
-msgid "_Open Waveform From File"
+#, fuzzy
+msgid "_Create Waveform From File"
 msgstr "_Otwórz wykres dźwięku z pliku"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:56
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:55
 #, fuzzy
-msgid "Open waveform from a file or create from a video"
+msgid "Create a waveform from a video file or an audio file"
 msgstr "Otwórz wykres dźwięku z pliku lub utwórz z wideo"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:63
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:60
 msgid "_Generate Waveform From Video"
 msgstr "_Generuj wykres dźwięku z wideo"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:64
-msgid "Generate the waveform from the current video file"
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:61
+#, fuzzy
+msgid "Generate a waveform from the current video or audio file"
 msgstr "Wygeneruj wykres dźwięku dla bieżącego pliku wideo"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:70
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:65
 msgid "_Generate Dummy Waveform"
 msgstr "_Generuj pusty wykres dźwięku"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:71
-msgid "Generate an dummy waveform (sine)"
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:65
+#, fuzzy
+msgid "Generate a dummy waveform (a sinusoidal wave)"
 msgstr "Generuje pusty wykres dźwięku (sinusoida)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:68
 msgid "_Save Waveform"
 msgstr "_Zapisz wykres dźwięku"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:68
 #, fuzzy
-msgid "Save waveform to file"
+msgid "Save the waveform to a file"
 msgstr "Zapisz wykres dźwięku do pliku"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:72
 #, fuzzy
 msgid "_Close Waveform"
 msgstr "_Zapisz wykres dźwięku"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:72
 #, fuzzy
-msgid "Close waveform"
+msgid "Close the waveform"
 msgstr "Zapisz wykres dźwięku"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
+#. zoom
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
 msgid "Zoom _In"
 msgstr "_Powiększ"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:93
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
+msgid "Zoom in a little"
+msgstr ""
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:79
 msgid "Zoom _Out"
 msgstr "_Pomniejsz"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:98
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:79
+msgid "Zoom out a little"
+msgstr ""
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:84
 msgid "Zoom _Selection"
 msgstr "Powiększ _zaznaczenie"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:103
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:84
+#, fuzzy
+msgid "Center the selected subtitle and zoom in a little"
+msgstr "Zmień styl wybranych napisów na kursywę"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
 msgid "Zoom _All"
 msgstr "Powiększ _całość"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-msgid "_Center With Selected Subtitle"
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
+msgid "Zoom out so the whole waveform is visible"
+msgstr ""
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:93
+#, fuzzy
+msgid "_Center Selected Subtitle"
 msgstr "_Wyśrodkuj na zaznaczonych napisach"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-msgid "Scrolling With _Player"
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:94
+#, fuzzy
+msgid "Center the waveform view on the first selected subtitle"
+msgstr "Przewiń do pierwszych z zaznaczonych napisów"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:101
+#, fuzzy
+msgid "Scrolling With _Video"
 msgstr "Przewiń według _odtwarzacza"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:102
+msgid "Scroll waveform as the video plays so they keep in sync"
+msgstr ""
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:112
 #, fuzzy
 msgid "Select With _Player"
 msgstr "Przewiń według _odtwarzacza"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:141
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:113
+msgid ""
+"Select subtitles as video or audio plays so the selected subtitle is "
+"synchronized with what is playing"
+msgstr ""
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:122
 msgid "Scrolling With _Selection"
 msgstr "Przewiń według _zaznaczenia"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:150
-msgid "_Respect The Timing"
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:123
+msgid ""
+"Scroll the waveform when subtitle selection changes so that waveform display "
+"is in sync with the first selected subtitle"
+msgstr ""
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:132
+#, fuzzy
+msgid "_Respect Timing"
 msgstr "_Uwzględniaj ustawienia czasu"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:151
-msgid "Try to respect the timing preferences"
-msgstr "Staraj się uwzględniać ustawienia czasu wyświetlania"
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:133
+msgid ""
+"Try to respect the timing preferences when manipulating subtitles by "
+"dragging the mouse over waveform"
+msgstr ""
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:160
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:142
 msgid "Show or hide the waveform in the current window"
 msgstr "Pokaż lub ukryj wykres dźwięku w aktualnym oknie"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:386
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:353
 msgid "Save Waveform"
 msgstr "Zapisz wykres dźwięku"
 
+#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:36
+#: ../plugins/subtitleformats/substationalpha/substationalpha.cc:36
+msgid "Soft"
+msgstr ""
+
 #: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:37
 #: ../plugins/subtitleformats/substationalpha/substationalpha.cc:37
-msgid "Soft"
+msgid "Hard"
 msgstr ""
 
 #: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:38
 #: ../plugins/subtitleformats/substationalpha/substationalpha.cc:38
-msgid "Hard"
-msgstr ""
-
-#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:39
-#: ../plugins/subtitleformats/substationalpha/substationalpha.cc:39
 msgid "Intelligent"
 msgstr ""
 
@@ -3183,17 +3925,17 @@ msgid "Policy"
 msgstr ""
 
 #: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:36
-#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:45
+#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:44
 #: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.cc:52
 #: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.cc:63
 #: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:36
-#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:57
+#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:59
 msgid "Failed to open the file for reading."
 msgstr "Nie udało się otworzyć pliku w celu odczytu"
 
-#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:100
+#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:109
 #: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.cc:83
-#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:82
+#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:92
 msgid "Failed to write to the file."
 msgstr "Błąd zapisu do pliku."
 
@@ -3215,12 +3957,12 @@ msgstr ""
 msgid "Subtitle Selection"
 msgstr "Wybór napisów"
 
-#: ../src/document.cc:201
+#: ../src/document.cc:203
 #, c-format
 msgid "Could not save the file \"%s\" using the character coding %s."
 msgstr "Nie można zapisać pliku \"%s\" używając kodowania %s."
 
-#: ../src/document.cc:204
+#: ../src/document.cc:205
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character coding."
@@ -3228,25 +3970,25 @@ msgstr ""
 "Dokument zawiera jeden lub więcej znaków, które nie mogą zostać zapisane w "
 "wybranym kodowaniu."
 
-#: ../src/document.cc:211 ../src/document.cc:213
+#: ../src/document.cc:212 ../src/document.cc:214
 msgid "Save Document Failed."
 msgstr "Zapisanie dokumentu nie powiodło się."
 
-#: ../src/document.cc:405
+#: ../src/document.cc:404
 #, c-format
 msgid "Could not recognize the subtitle format for the file \"%s\"."
 msgstr "Nie można rozpoznać formatu napisów w pliku \"%s\""
 
-#: ../src/document.cc:408
+#: ../src/document.cc:406
 msgid "Please check that the file contains subtitles in a supported format."
 msgstr "Upewnij się czy plik zawiera napisy w obsługiwanym formacie"
 
-#: ../src/document.cc:417
+#: ../src/document.cc:416
 #, c-format
 msgid "Could not open automatically the file \"%s\"."
 msgstr "Nie można otworzyć automatycznie pliku \"%s\""
 
-#: ../src/document.cc:420
+#: ../src/document.cc:418
 msgid ""
 "Subtitle Editor was not able to automatically determine the file encoding. "
 "Select a different character coding from the menu and try again."
@@ -3254,35 +3996,35 @@ msgstr ""
 "Edytor Napisów nie był w stanie automatycznie określić kodowania pliku. "
 "Wybierz inne kodowanie znaków z menu i spróbuj ponownie."
 
-#: ../src/document.cc:425
+#: ../src/document.cc:422
 #, c-format
 msgid "Could not open the file \"%s\" using the character coding %s."
 msgstr "Nie można otworzyć pliku \"%s\" używając kodowania %s"
 
-#: ../src/document.cc:428
+#: ../src/document.cc:425
 msgid "Select a different character coding from the menu and try again."
 msgstr "Proszę wybrać inne kodowanie znaków w menu i spróbować ponownie."
 
-#: ../src/document.cc:451 ../src/document.cc:459 ../src/document.cc:467
+#: ../src/document.cc:447 ../src/document.cc:454 ../src/document.cc:461
 #, c-format
 msgid "Could not open the file \"%s\""
 msgstr "Nie można otworzyć pliku \"%s\""
 
-#: ../src/document.cc:468
+#: ../src/document.cc:462
 msgid "An unknown error occurred while opening the file."
 msgstr "Wystąpił nieznany błąd podczas otwierania pliku."
 
-#: ../src/documents.cc:113 ../src/documents.cc:116
+#: ../src/documents.cc:114 ../src/documents.cc:117
 #, c-format
 msgid "Untitled %d"
 msgstr "Bez tytułu %d"
 
-#: ../src/encodings.cc:27 ../src/encodings.cc:40 ../src/encodings.cc:64
-#: ../src/encodings.cc:86
+#: ../src/encodings.cc:27 ../src/encodings.cc:40 ../src/encodings.cc:65
+#: ../src/encodings.cc:87
 msgid "Western"
 msgstr "Zachodni"
 
-#: ../src/encodings.cc:28 ../src/encodings.cc:65 ../src/encodings.cc:84
+#: ../src/encodings.cc:28 ../src/encodings.cc:66 ../src/encodings.cc:85
 msgid "Central European"
 msgstr "Środkowoeuropejski"
 
@@ -3290,20 +4032,20 @@ msgstr "Środkowoeuropejski"
 msgid "South European"
 msgstr "Południowoeuropejski"
 
-#: ../src/encodings.cc:30 ../src/encodings.cc:38 ../src/encodings.cc:91
+#: ../src/encodings.cc:30 ../src/encodings.cc:38 ../src/encodings.cc:92
 msgid "Baltic"
 msgstr "Bałtycki"
 
-#: ../src/encodings.cc:31 ../src/encodings.cc:66 ../src/encodings.cc:73
-#: ../src/encodings.cc:75 ../src/encodings.cc:85
+#: ../src/encodings.cc:31 ../src/encodings.cc:67 ../src/encodings.cc:74
+#: ../src/encodings.cc:76 ../src/encodings.cc:86
 msgid "Cyrillic"
 msgstr "Cyrylica"
 
-#: ../src/encodings.cc:32 ../src/encodings.cc:69 ../src/encodings.cc:90
+#: ../src/encodings.cc:32 ../src/encodings.cc:70 ../src/encodings.cc:91
 msgid "Arabic"
 msgstr "Arabski"
 
-#: ../src/encodings.cc:33 ../src/encodings.cc:87
+#: ../src/encodings.cc:33 ../src/encodings.cc:88
 msgid "Greek"
 msgstr "Grecki"
 
@@ -3311,11 +4053,11 @@ msgstr "Grecki"
 msgid "Hebrew Visual"
 msgstr "Hebrajski wizualny"
 
-#: ../src/encodings.cc:35 ../src/encodings.cc:68 ../src/encodings.cc:89
+#: ../src/encodings.cc:35 ../src/encodings.cc:69 ../src/encodings.cc:90
 msgid "Hebrew"
 msgstr "Hebrajski"
 
-#: ../src/encodings.cc:36 ../src/encodings.cc:67 ../src/encodings.cc:88
+#: ../src/encodings.cc:36 ../src/encodings.cc:68 ../src/encodings.cc:89
 msgid "Turkish"
 msgstr "Turecki"
 
@@ -3331,63 +4073,67 @@ msgstr "Celtycki"
 msgid "Romanian"
 msgstr "Romański"
 
-#: ../src/encodings.cc:43 ../src/encodings.cc:44 ../src/encodings.cc:45
-#: ../src/encodings.cc:46 ../src/encodings.cc:47
+#: ../src/encodings.cc:43 ../src/encodings.cc:45 ../src/encodings.cc:46
+#: ../src/encodings.cc:47 ../src/encodings.cc:48
 msgid "Unicode"
 msgstr "Unikod"
 
-#: ../src/encodings.cc:49
+#: ../src/encodings.cc:44
+msgid "Unicode (with BOM)"
+msgstr ""
+
+#: ../src/encodings.cc:50
 msgid "Armenian"
 msgstr "Armeński"
 
-#: ../src/encodings.cc:50 ../src/encodings.cc:51 ../src/encodings.cc:56
+#: ../src/encodings.cc:51 ../src/encodings.cc:52 ../src/encodings.cc:57
 msgid "Chinese Traditional"
 msgstr "Chiński tradycyjny"
 
-#: ../src/encodings.cc:52
+#: ../src/encodings.cc:53
 msgid "Cyrillic/Russian"
 msgstr "Cyrylica/Rosyjski"
 
-#: ../src/encodings.cc:54 ../src/encodings.cc:71 ../src/encodings.cc:78
+#: ../src/encodings.cc:55 ../src/encodings.cc:72 ../src/encodings.cc:79
 msgid "Japanese"
 msgstr "Japoński"
 
-#: ../src/encodings.cc:55 ../src/encodings.cc:72 ../src/encodings.cc:74
-#: ../src/encodings.cc:81
+#: ../src/encodings.cc:56 ../src/encodings.cc:73 ../src/encodings.cc:75
+#: ../src/encodings.cc:82
 msgid "Korean"
 msgstr "Koreański"
 
-#: ../src/encodings.cc:58 ../src/encodings.cc:59 ../src/encodings.cc:60
-#: ../src/encodings.cc:62
+#: ../src/encodings.cc:59 ../src/encodings.cc:60 ../src/encodings.cc:61
+#: ../src/encodings.cc:63
 msgid "Chinese Simplified"
 msgstr "Chiński uproszczony"
 
-#: ../src/encodings.cc:61
+#: ../src/encodings.cc:62
 msgid "Georgian"
 msgstr "Gruziński"
 
-#: ../src/encodings.cc:76
+#: ../src/encodings.cc:77
 msgid "Cyrillic/Ukrainian"
 msgstr "Cyrylica/Ukraiński"
 
-#: ../src/encodings.cc:79 ../src/encodings.cc:82 ../src/encodings.cc:92
+#: ../src/encodings.cc:80 ../src/encodings.cc:83 ../src/encodings.cc:93
 msgid "Vietnamese"
 msgstr "Wietnamski"
 
-#: ../src/encodings.cc:80
+#: ../src/encodings.cc:81
 msgid "Thai"
 msgstr "Tajski"
 
-#: ../src/encodings.cc:154
+#: ../src/encodings.cc:159
 msgid "It's not valid UTF-8."
 msgstr "To nie jest prawidłowy UTF-8"
 
-#: ../src/encodings.cc:163 ../src/encodings.cc:169 ../src/encodings.cc:173
+#: ../src/encodings.cc:167 ../src/encodings.cc:170 ../src/encodings.cc:173
 #, c-format
 msgid "Couldn't convert from %s to UTF-8"
 msgstr "Konwersja z %s do UTF-8 nie powiodła się"
 
-#: ../src/encodings.cc:248
+#: ../src/encodings.cc:254
 msgid ""
 "subtitleeditor was not able to automatically determine the encoding of the "
 "file you want to open."
@@ -3395,432 +4141,459 @@ msgstr ""
 "Edytor Napisów nie był w stanie automatycznie rozpoznać kodowania pliku "
 "który chcesz otworzyć"
 
-#: ../src/encodings.cc:265
+#: ../src/encodings.cc:277
 #, c-format
 msgid "Could not convert the text to the character coding '%s'"
 msgstr "Nie można przekonwertować tekstu do kodowania '%s'"
 
-#: ../src/filereader.cc:43 ../src/filewriter.cc:48
+#: ../src/filereader.cc:41 ../src/filewriter.cc:46
 msgid "Couldn't open the file."
 msgstr "Ni można otworzyć pliku."
 
-#: ../src/filereader.cc:50
+#: ../src/filereader.cc:48
 msgid "Couldn't read the contents of the file."
 msgstr "Nie można odczytać zawartości pliku."
 
-#: ../src/gstreamer_utility.cc:68
+#: ../src/gstreamer_utility.cc:67
 #, c-format
 msgid "Failed to create a GStreamer element '%s'."
 msgstr "Nie udało się utworzyć elementu '%s' biblioteki GStreamer."
 
-#: ../src/gstreamer_utility.cc:70
+#: ../src/gstreamer_utility.cc:67
 msgid "Please check your GStreamer installation."
 msgstr "Sprawdź poprawność instalacji biblioteki GStreamer."
 
-#: ../src/gui/application.cc:296
+#: ../src/gui/application.cc:268
 msgid "Times"
 msgstr "Czasy"
 
-#: ../src/gui/application.cc:296
+#: ../src/gui/application.cc:268
 msgid "Frames"
 msgstr "Klatki"
 
-#: ../src/gui/application.cc:305
+#: ../src/gui/application.cc:279
 msgid "Path:"
 msgstr "Ścieżka:"
 
-#: ../src/gui/application.cc:306
+#: ../src/gui/application.cc:285
 msgid "Newline:"
 msgstr "Nowa linia:"
 
-#: ../src/gui/application.cc:307
+#: ../src/gui/application.cc:287
 msgid "Timing Mode:"
 msgstr "Tryb czasowy:"
 
-#: ../src/gui/automaticspellchecker.cc:343
+#: ../src/gui/automaticspellchecker.cc:318
 msgid "_Languages"
 msgstr "_Języki"
 
-#: ../src/gui/automaticspellchecker.cc:405
+#. ignore all
+#: ../src/gui/automaticspellchecker.cc:375
 msgid "_Ignore all"
 msgstr "Ignoruj _wszystkie"
 
-#: ../src/gui/automaticspellchecker.cc:413
+#: ../src/gui/automaticspellchecker.cc:381
 msgid "_Add \"%1\" to Dictionary"
 msgstr "_Dodaj \"%1\" do słownika"
 
-#: ../src/gui/automaticspellchecker.cc:425
+#: ../src/gui/automaticspellchecker.cc:391
 msgid "(no suggested words)"
 msgstr "(brak sugerowanych wyrazów)"
 
-#: ../src/gui/automaticspellchecker.cc:449
+#. menu more
+#: ../src/gui/automaticspellchecker.cc:412
 msgid "_More..."
 msgstr "_Więcej..."
 
-#: ../src/gui/comboboxencoding.cc:96
+#: ../src/gui/comboboxencoding.cc:91
 msgid "Auto Detected"
 msgstr "Wykryty automatycznie"
 
-#: ../src/gui/comboboxencoding.cc:111
+#: ../src/gui/comboboxencoding.cc:106
 msgid "Current Locale"
 msgstr "Bieżące ustawienia lokalne"
 
-#: ../src/gui/comboboxencoding.cc:120
+#: ../src/gui/comboboxencoding.cc:115
 msgid "Add or Remove..."
 msgstr "Dodaj lub usuń..."
 
-#: ../src/gui/comboboxvideo.cc:66
+#: ../src/gui/comboboxvideo.cc:63
 msgid "None"
 msgstr "Brak"
 
 #. column description
-#: ../src/gui/dialogcharactercodings.cc:58
+#: ../src/gui/dialogcharactercodings.cc:54
 msgid "_Description"
 msgstr "_Opis"
 
 #. column encoding
-#: ../src/gui/dialogcharactercodings.cc:71
+#: ../src/gui/dialogcharactercodings.cc:67
 msgid "_Encoding"
 msgstr "_Kodowanie"
 
-#: ../src/gui/dialogfilechooser.cc:41
+#: ../src/gui/dialogfilechooser.cc:42
 msgid "All files (*.*)"
 msgstr "Wszystkie pliki (*.*)"
 
 #. all supported formats
-#: ../src/gui/dialogfilechooser.cc:47
+#: ../src/gui/dialogfilechooser.cc:48
 msgid "All supported formats (*.ass, *.ssa, *.srt, ...)"
 msgstr "Wszystkie obsługiwane formaty (*.ass, *.ssa, *.srt, ...)"
 
-#: ../src/gui/dialogfilechooser.cc:370
+#. Open Movie
+#: ../src/gui/dialogfilechooser.cc:350
 msgid "Open Video"
 msgstr "Otwórz wideo"
 
-#: ../src/gui/dialogfilechooser.cc:375
+#: ../src/gui/dialogfilechooser.cc:355
 msgid "Audio or Video"
 msgstr ""
 
-#: ../src/gui/dialogfilechooser.cc:390 ../src/gui/dialogfilechooser.cc:471
+#: ../src/gui/dialogfilechooser.cc:370 ../src/gui/dialogfilechooser.cc:447
 msgid "Audio"
 msgstr "Dźwięk"
 
-#: ../src/gui/dialogfilechooser.cc:399 ../src/gui/dialogfilechooser.cc:460
-#: ../src/gui/dialogfilechooser.cc:525
+#: ../src/gui/dialogfilechooser.cc:379 ../src/gui/dialogfilechooser.cc:436
+#: ../src/gui/dialogfilechooser.cc:498
 msgid "Video"
 msgstr "Wideo"
 
-#: ../src/gui/dialogfilechooser.cc:410 ../src/gui/dialogfilechooser.cc:480
-#: ../src/gui/dialogfilechooser.cc:536
+#: ../src/gui/dialogfilechooser.cc:389 ../src/gui/dialogfilechooser.cc:456
+#: ../src/gui/dialogfilechooser.cc:509
 msgid "ALL"
 msgstr "WSZYSTKO"
 
-#: ../src/gui/dialogfilechooser.cc:432
+#. Waveform or Audio/Video
+#: ../src/gui/dialogfilechooser.cc:409
 msgid "Open Waveform"
 msgstr "Otwórz wykres dźwięku"
 
-#: ../src/gui/dialogfilechooser.cc:438
+#: ../src/gui/dialogfilechooser.cc:414
 msgid "Waveform & Media"
 msgstr "Wykres dźwięku & Media"
 
-#: ../src/gui/dialogfilechooser.cc:454
+#: ../src/gui/dialogfilechooser.cc:430
 msgid "Waveform (*.wf)"
 msgstr "Waveform (*.wf)"
 
-#: ../src/gui/dialogfilechooser.cc:501
+#. Keyframes or Video
+#: ../src/gui/dialogfilechooser.cc:475
 msgid "Open Keyframe"
 msgstr "Otwórz klatki kluczowe"
 
-#: ../src/gui/dialogfilechooser.cc:507
+#: ../src/gui/dialogfilechooser.cc:480
 msgid "Keyframe & Media"
 msgstr "Klatki kluczowe & Media"
 
-#: ../src/gui/dialogfilechooser.cc:519
+#: ../src/gui/dialogfilechooser.cc:492
 msgid "Keyframe (*.kf)"
 msgstr "Keyframe (*.kf)"
 
-#: ../src/gui/dialogutility.cc:71
+#: ../src/gui/dialogutility.cc:66
 msgid "At what frame rate do you want to import?"
 msgstr "Przy jakiej wartości ramki/sek chcesz zaimportować?"
 
 #. == EXPORT
-#: ../src/gui/dialogutility.cc:73
+#: ../src/gui/dialogutility.cc:68
 msgid "At what frame rate do you want to export?"
 msgstr "Przy jakiej wartości ramki/sek chcesz wyeksportować?"
 
 #. label2 (framerate:)
-#: ../src/gui/dialogutility.cc:99
+#: ../src/gui/dialogutility.cc:92
 msgid "_Framerate:"
 msgstr "_Klatki na sekundę:"
 
 #. create all menu
-#: ../src/gui/menubar.cc:48
+#: ../src/gui/menubar.cc:45
 msgid "_File"
 msgstr "_Plik"
 
-#: ../src/gui/menubar.cc:49
+#: ../src/gui/menubar.cc:46
 msgid "_Selection"
 msgstr "_Zaznaczenie"
 
-#: ../src/gui/menubar.cc:50
+#: ../src/gui/menubar.cc:47
 msgid "_Edit"
 msgstr "_Edytuj"
 
-#: ../src/gui/menubar.cc:51
+#: ../src/gui/menubar.cc:48
 msgid "_Timings"
 msgstr "_Czasy"
 
-#: ../src/gui/menubar.cc:52
+#: ../src/gui/menubar.cc:49
 msgid "T_ools"
 msgstr "_Narzędzia"
 
-#: ../src/gui/menubar.cc:54
+#: ../src/gui/menubar.cc:51
 msgid "_Keyframes"
 msgstr "_Klatki kluczowe"
 
-#: ../src/gui/menubar.cc:56
+#: ../src/gui/menubar.cc:53
 msgid "V_iew"
 msgstr "W_idok"
 
-#: ../src/gui/menubar.cc:58
+#: ../src/gui/menubar.cc:55
 msgid "E_xtensions"
 msgstr "_Rozszerzenia"
 
-#: ../src/gui/menubar.cc:59
+#: ../src/gui/menubar.cc:56
 msgid "_Help"
 msgstr "_Pomoc"
 
 #. file submenu
-#: ../src/gui/menubar.cc:61
+#: ../src/gui/menubar.cc:58
 msgid "_Open"
 msgstr "_Otwórz"
 
-#: ../src/gui/menubar.cc:62
+#: ../src/gui/menubar.cc:58
+#, fuzzy
+msgid "Open a document or translation"
+msgstr "Otwórz tłumaczenie"
+
+#: ../src/gui/menubar.cc:59
 msgid "_Save"
 msgstr "_Zapisz"
 
-#: ../src/gui/menubar.cc:63
-msgid "_Import"
-msgstr "_Import"
+#: ../src/gui/menubar.cc:59
+#, fuzzy
+msgid "Save document, documents or translation"
+msgstr "Dzieli obecny dokument na dwa."
 
-#: ../src/gui/menubar.cc:64
-msgid "_Export"
-msgstr "_Eksport"
-
-#: ../src/keyframes.cc:72 ../src/keyframes.cc:79
-#: ../src/subtitleformatsystem.cc:74
+#: ../src/keyframes.cc:74 ../src/keyframes.cc:81
+#: ../src/subtitleformatsystem.cc:99
 msgid "Couldn't recognize format of the file."
 msgstr "Nie można rozpoznać typu pliku."
 
-#: ../src/keyframes.cc:95
+#: ../src/keyframes.cc:96
 msgid "Couldn't get the keyframe size on the file."
 msgstr "Nie można pobrać wielkości klatki kluczowej z pliku."
 
-#: ../src/main.cc:59
+#: ../src/main.cc:62
 msgid " — edit subtitles files"
 msgstr " — edytuje pliki z napisami"
 
-#: ../src/options.cc:35
+#: ../src/options.cc:27
+msgid "Application Options"
+msgstr ""
+
+#: ../src/options.cc:27
+#, fuzzy
+msgid "Edit subtitle files"
+msgstr " — edytuje pliki z napisami"
+
+#: ../src/options.cc:30
+#, fuzzy
+msgid "Debug Options"
+msgstr "_Opcje"
+
+#: ../src/options.cc:30
+msgid "Show debug-related options"
+msgstr ""
+
+#: ../src/options.cc:42
 msgid "[FILE...]"
 msgstr "[Plik...]"
 
-#: ../src/options.cc:43 ../src/options.cc:67 ../src/options.cc:75
+#: ../src/options.cc:53 ../src/options.cc:77 ../src/options.cc:85
+#: ../src/options.cc:93
 msgid "FILE"
 msgstr "Plik"
 
-#: ../src/options.cc:51
+#: ../src/options.cc:61
 msgid "NAME"
 msgstr "Nazwa"
 
-#: ../src/options.cc:59
+#: ../src/options.cc:69
 msgid "ENCODING"
 msgstr "Kodowanie"
 
 #. reader
 #. writer
-#: ../src/subtitleformatio.cc:40 ../src/subtitleformatio.cc:44
+#: ../src/subtitleformatio.cc:41 ../src/subtitleformatio.cc:45
 msgid "This function is not implemented for this format."
 msgstr "Ta funkcja nie została zaimplementowana dla tego formatu."
 
-#: ../src/subtitleformatsystem.cc:115
+#: ../src/subtitleformatsystem.cc:134
 #, c-format
 msgid "Couldn't create the subtitle format '%s'."
 msgstr "Nie można utworzyć formatu napisów '%s'."
 
-#: ../src/subtitlemodel.cc:31
+#: ../src/subtitlemodel.cc:32
 msgid "Add Subtitle"
 msgstr "Dodaj napisy"
 
-#: ../src/subtitlemodel.cc:64
+#: ../src/subtitlemodel.cc:62
 #: ../plugins/actions/removesubtitle/removesubtitle.se-plugin.in.h:1
 msgid "Remove Subtitle"
 msgstr "Usuń napis"
 
-#: ../src/subtitlemodel.cc:394
+#: ../src/subtitlemodel.cc:384
 msgid "Reordered Subtitle"
 msgstr "Uporządkowane napisy"
 
-#: ../src/subtitles.cc:31
+#: ../src/subtitles.cc:32
 msgid "Append subtitle"
 msgstr "Zawieś napis"
 
-#: ../src/subtitles.cc:55
+#: ../src/subtitles.cc:54
 msgid "Remove Subtitles"
 msgstr "Usuń napisy"
 
-#: ../src/subtitles.cc:141
+#: ../src/subtitles.cc:136
 #, fuzzy
 msgid "Reorder Subtitles"
 msgstr "Uporządkowane napisy"
 
-#: ../src/subtitleview.cc:242
+#: ../src/subtitleview.cc:232
 msgid "Use Ctrl+Return for exit and Return for line-break"
 msgstr "Użyj Ctrl+Return by zakończyć i Return by zakończyć stronę"
 
-#: ../src/subtitleview.cc:245
+#: ../src/subtitleview.cc:234
 msgid "Use Return for exit and Ctrl+Return for line-break"
 msgstr "Użyj Return by zakończyć i Ctrl+Return by zakończyć stronę"
 
-#: ../src/subtitleview.cc:406
+#: ../src/subtitleview.cc:387
 msgid "The line number"
 msgstr "Numer linii"
 
-#: ../src/subtitleview.cc:534
+#: ../src/subtitleview.cc:541
 msgid "When a subtitle appears on the screen."
 msgstr "Moment pojawienia się napisu."
 
-#: ../src/subtitleview.cc:541
+#: ../src/subtitleview.cc:549
 msgid "When a subtitle disappears from the screen."
 msgstr "Moment zniknięcia napisu."
 
-#: ../src/subtitleview.cc:548
+#: ../src/subtitleview.cc:557
 msgid "The duration of the subtitle."
 msgstr "Czas trwania napisu."
 
-#: ../src/subtitleview.cc:609
+#: ../src/subtitleview.cc:614
 msgid "The number of characters per second"
 msgstr "Ilość znaków na sekundę"
 
-#: ../src/subtitleview.cc:824
+#: ../src/subtitleview.cc:814
 msgid "Editing layer"
 msgstr "Edytuj warstwę"
 
-#: ../src/subtitleview.cc:848 ../src/subtitleview.cc:857
+#: ../src/subtitleview.cc:837 ../src/subtitleview.cc:846
 msgid "Editing start"
 msgstr "Rozpoczęcie edycji"
 
-#: ../src/subtitleview.cc:881 ../src/subtitleview.cc:890
+#: ../src/subtitleview.cc:869 ../src/subtitleview.cc:878
 msgid "Editing end"
 msgstr "Zakończenie edycji"
 
-#: ../src/subtitleview.cc:914 ../src/subtitleview.cc:923
+#: ../src/subtitleview.cc:901 ../src/subtitleview.cc:910
 msgid "Editing duration"
 msgstr "Zmiana czasu trwania"
 
-#: ../src/subtitleview.cc:938
+#: ../src/subtitleview.cc:924
 msgid "Editing text"
 msgstr "Edycja tekstu"
 
-#: ../src/subtitleview.cc:955
+#: ../src/subtitleview.cc:940
 msgid "Editing translation"
 msgstr "Edycja tłumaczenia"
 
-#: ../src/subtitleview.cc:970
+#: ../src/subtitleview.cc:954
 msgid "Editing note"
 msgstr "Edycja notatki"
 
-#: ../src/subtitleview.cc:984
+#: ../src/subtitleview.cc:967
 msgid "Editing effect"
 msgstr "Zmiana efektu"
 
-#: ../src/subtitleview.cc:999
+#: ../src/subtitleview.cc:981
 msgid "Editing style"
 msgstr "Edycja stylu"
 
-#: ../src/subtitleview.cc:1014
+#: ../src/subtitleview.cc:995
 msgid "Editing name"
 msgstr "Edycja nazwy"
 
-#: ../src/subtitleview.cc:1029
+#: ../src/subtitleview.cc:1009
 msgid "Editing margin-l"
 msgstr "Edycja marginesu lewego"
 
-#: ../src/subtitleview.cc:1044
+#: ../src/subtitleview.cc:1023
 msgid "Editing margin-r"
 msgstr "Edycja marginesu prawego"
 
-#: ../src/subtitleview.cc:1059
+#: ../src/subtitleview.cc:1037
 msgid "Editing margin-v"
 msgstr "Edycja marginesu poziomego"
 
-#: ../src/subtitleview.cc:1250
+#: ../src/subtitleview.cc:1287
 msgid "CPS"
 msgstr "CPS"
 
-#: ../src/subtitleview.cc:1251
+#: ../src/subtitleview.cc:1288
 msgid "Duration"
 msgstr "Długość"
 
-#: ../src/subtitleview.cc:1252
+#: ../src/subtitleview.cc:1289
 msgid "Effect"
 msgstr "Efekt"
 
-#: ../src/subtitleview.cc:1253
+#: ../src/subtitleview.cc:1290
 msgid "End"
 msgstr "Koniec"
 
-#: ../src/subtitleview.cc:1254
+#: ../src/subtitleview.cc:1291
 msgid "Layer"
 msgstr "Poziom"
 
-#: ../src/subtitleview.cc:1255
+#: ../src/subtitleview.cc:1292
 msgid "L"
 msgstr "L"
 
-#: ../src/subtitleview.cc:1256
+#: ../src/subtitleview.cc:1293
 msgid "R"
 msgstr "P"
 
-#: ../src/subtitleview.cc:1257
+#: ../src/subtitleview.cc:1294
 msgid "V"
 msgstr "V"
 
-#: ../src/subtitleview.cc:1259
+#: ../src/subtitleview.cc:1296
 msgid "Note"
 msgstr "Notatka"
 
-#: ../src/subtitleview.cc:1261
+#: ../src/subtitleview.cc:1298
 msgid "Start"
 msgstr "Początek"
 
-#: ../src/subtitleview.cc:1262
+#: ../src/subtitleview.cc:1299
 msgid "Style"
 msgstr "Styl"
 
-#: ../src/timeutility.cc:30
+#: ../src/timeutility.cc:31
 msgid "23.976 fps"
 msgstr "23.976 fps"
 
-#: ../src/timeutility.cc:33
+#: ../src/timeutility.cc:34
 msgid "24 fps"
 msgstr "24 fps"
 
-#: ../src/timeutility.cc:36
+#: ../src/timeutility.cc:37
 msgid "25 fps"
 msgstr "25 fps"
 
-#: ../src/timeutility.cc:39
+#: ../src/timeutility.cc:40
 msgid "29.97 fps"
 msgstr "29.97 fps"
 
-#: ../src/timeutility.cc:42
+#: ../src/timeutility.cc:43
 msgid "30 fps"
 msgstr "30 fps"
 
-#: ../src/timeutility.cc:45
+#: ../src/timeutility.cc:46
 msgid "Invalid fps"
 msgstr "Niewłaściwy fps"
 
-#: ../src/vp/gstplayer.cc:369
+#. Warn and attempt a sensible fallback
+#: ../src/vp/gstplayer.cc:327
 #, c-format
 msgid ""
 "Failed to create a GStreamer audio output (%s). Please check your GStreamer "
@@ -3829,34 +4602,7 @@ msgstr ""
 "Nie udało się utworzyć potoku '%s' biblioteki GStreamer. Sprawdź poprawność "
 "instalacji biblioteki GStreamer."
 
-#: ../src/vp/gstplayer.cc:406
-#, c-format
-msgid ""
-"Failed to create a GStreamer converts video (%s). Please check your "
-"GStreamer installation."
-msgstr ""
-"Stworzenie konwersji wideo (%s) nie powiodło się. Proszę sprawdzić swoją "
-"instalację GStreamer'a."
-
-#: ../src/vp/gstplayer.cc:414
-#, fuzzy, c-format
-msgid ""
-"Failed to create a GStreamer text overlay (%s). Please check your GStreamer "
-"installation."
-msgstr ""
-"Stworzenie nakładania napisów (%s) nie powiodło się. Proszę sprawdzić swoją "
-"instalację GStreamer'a."
-
-#: ../src/vp/gstplayer.cc:427
-#, c-format
-msgid ""
-"Failed to create a GStreamer sink (%s). Please check your GStreamer "
-"installation."
-msgstr ""
-"Nie udało się utworzyć potoku '%s' biblioteki GStreamer. Sprawdź poprawność "
-"instalacji biblioteki GStreamer."
-
-#: ../src/vp/gstplayer.cc:676
+#: ../src/vp/gstplayer.cc:549
 #, c-format
 msgid ""
 "Media file could not be played.\n"
@@ -3865,11 +4611,11 @@ msgstr ""
 "Plik multimedialny nie mógł zostać odtworzony.\n"
 "%s"
 
-#: ../src/we/waveformeditor.cc:707 ../src/we/waveformeditor.cc:711
+#: ../src/we/waveformeditor.cc:679 ../src/we/waveformeditor.cc:682
 msgid "Editing position"
 msgstr "Zmiana pozycji"
 
-#: ../src/we/waveformrenderergl.cc:297
+#: ../src/we/waveformrenderergl.cc:285
 msgid ""
 "Window system doesn't support OpenGL.\n"
 "Please try with another renderer."
@@ -3979,14 +4725,6 @@ msgstr "Szczegóły poprawek:"
 msgid "<b>Basic</b>"
 msgstr "<b>Podstawowe</b>"
 
-#: ../share/ui/dialog-script-properties.ui.h:16
-msgid "PlayResX:"
-msgstr "RozdzielczośćX:"
-
-#: ../share/ui/dialog-script-properties.ui.h:17
-msgid "PlayResY:"
-msgstr "RozdzielczośćY:"
-
 #: ../share/ui/dialog-script-properties.ui.h:18
 msgid "PlayDepth:"
 msgstr "Głębia:"
@@ -4011,12 +4749,9 @@ msgstr "Czasomierz:"
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>Pozostałe</b>"
 
-#: ../plugins/actions/about/about.se-plugin.in.h:1
-msgid "About"
-msgstr "Informacje o..."
-
 #: ../plugins/actions/about/about.se-plugin.in.h:2
-msgid "Displays the application's information."
+#, fuzzy
+msgid "Displays information about the application."
 msgstr "Pokazuje informacje o aplikacji."
 
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1
@@ -4034,6 +4769,15 @@ msgstr "Zastosuj tłumaczenie"
 #: ../plugins/actions/applytranslation/applytranslation.se-plugin.in.h:2
 msgid "Replaces the text of the subtitle by the translation."
 msgstr "Zastępuje tekst napisów przez tłumaczenie"
+
+#: ../plugins/actions/autowrap/autowrap.se-plugin.in.h:1
+#, fuzzy
+msgid "Auto Wrap"
+msgstr "Auto"
+
+#: ../plugins/actions/autowrap/autowrap.se-plugin.in.h:2
+msgid "Automatically wraps the lines in a subtitle."
+msgstr ""
 
 #: ../plugins/actions/bestfit/bestfit.se-plugin.in.h:1
 msgid "Best Fit"
@@ -4092,13 +4836,12 @@ msgstr "Zarządza dokumentem (Otwórz, Zapisz, Zapisz jako...)."
 
 #: ../plugins/actions/documentsnavigation/documentsnavigation.se-plugin.in.h:1
 #, fuzzy
-msgid "Documents Navigation"
+msgid "Tab Navigation"
 msgstr "Zarządzanie dokumentem"
 
 #: ../plugins/actions/documentsnavigation/documentsnavigation.se-plugin.in.h:2
-#: ../plugins/actions/typewriter/typewriter.se-plugin.in.h:2
-msgid "FIXME."
-msgstr "NAPRAW_MNIE"
+msgid "Adds actions to select tabs."
+msgstr ""
 
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.se-plugin.in.h:1
 msgid "Duplicate Subtitle"
@@ -4145,6 +4888,11 @@ msgstr "Znajduje i zastępuje tekst z obsługą wyrażeń regularnych."
 msgid "Find By Time"
 msgstr "Minimalny czas wyświetlania"
 
+#: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
+#, fuzzy
+msgid "Finds the subtitle nearest to the current player position."
+msgstr "Moment pojawienia się napisu."
+
 #: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.se-plugin.in.h:1
 #, fuzzy
 msgid "Insert Subtitle From Keyframe"
@@ -4179,6 +4927,10 @@ msgstr "Dodaje napisy z innego pliku."
 msgid "Keyframes Management"
 msgstr "Zarządzanie klatkami kluczowymi"
 
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.se-plugin.in.h:2
+msgid "Adds support for keyframes, or scene cuts."
+msgstr ""
+
 #: ../plugins/actions/minimizeduration/minimizeduration.se-plugin.in.h:1
 #, fuzzy
 msgid "Minimize Duration"
@@ -4209,10 +4961,6 @@ msgstr "Zwykły tekst"
 #: ../plugins/actions/plaintext/plaintext.se-plugin.in.h:2
 msgid "Imports or exports any text file."
 msgstr "Importuje lub eksportuje dowolny plik tekstowy."
-
-#: ../plugins/actions/preferences/preferences.se-plugin.in.h:1
-msgid "Preferences"
-msgstr "Właściwości"
 
 #: ../plugins/actions/preferences/preferences.se-plugin.in.h:2
 msgid "Manages Subtitle Editor's preferences."
@@ -4310,6 +5058,16 @@ msgstr "Zmienia zaznaczone napisy na kursywę."
 msgid "Template Management"
 msgstr "Zarządzanie trybem czasu"
 
+#: ../plugins/actions/template/template.se-plugin.in.h:2
+msgid "Provides subtitle templates functionality."
+msgstr ""
+
+#: ../plugins/actions/textcorrection/textcorrection.se-plugin.in.h:2
+msgid ""
+"Provides tools to automatically common errors in subtitle text cause by "
+"people or by OCR software."
+msgstr ""
+
 #: ../plugins/actions/timemodemanagement/timemodemanagement.se-plugin.in.h:1
 msgid "Time Mode Management"
 msgstr "Zarządzanie trybem czasu"
@@ -4325,6 +5083,10 @@ msgstr "Użyj bieżącej pozycji odtwarzacza jako czasu napisów"
 #: ../plugins/actions/typewriter/typewriter.se-plugin.in.h:1
 msgid "Type Writer"
 msgstr "Maszyna do pisania"
+
+#: ../plugins/actions/typewriter/typewriter.se-plugin.in.h:2
+msgid "FIXME."
+msgstr "NAPRAW_MNIE"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.se-plugin.in.h:1
 msgid "Video Player Management"
@@ -4760,6 +5522,198 @@ msgstr "Spacja pomiędzy cyframi"
 msgid "Remove space between digits of a number"
 msgstr "Usuń spacje pomiędzy cyframi numeru"
 
+#~ msgid "Convert framerate"
+#~ msgstr "Zamień ilość klatek na sekundę"
+
+#~ msgid "Merge selected subtitles"
+#~ msgstr "Scal wybrane napisy"
+
+#~ msgid "Add or remove dialogue line"
+#~ msgstr "Dodaj lub usuń linię dialogową"
+
+#~ msgid "Save translation to file"
+#~ msgstr "Zapisz tłumaczenie do pliku"
+
+#, fuzzy
+#~ msgid "_Documents"
+#~ msgstr "Dokument"
+
+#, fuzzy
+#~ msgid "_First Document"
+#~ msgstr "Po_dziel dokument"
+
+#, fuzzy
+#~ msgid "_Last Document"
+#~ msgstr "Po_dziel dokument"
+
+#, fuzzy
+#~ msgid "_Next Document"
+#~ msgstr "Po_dziel dokument"
+
+#~ msgid "Start editing the focused cell"
+#~ msgstr "Rozpocznij edycję komórki"
+
+#~ msgid "Start editing the next cell"
+#~ msgstr "Rozpocznij edycję następnej komórki"
+
+#~ msgid "External video player preferences"
+#~ msgstr "Preferencje zewnętrznego odtwarzacza wideo"
+
+#~ msgid "Add subtitles from file"
+#~ msgstr "Dodaj napisy z pliku"
+
+#~ msgid "FIXME"
+#~ msgstr "NAPRAW_MNIE"
+
+#~ msgid "Media file could not be played.\n"
+#~ msgstr "Nie można odtworzyć pliku.\n"
+
+#, fuzzy
+#~ msgid "Move subtitle just before the next one"
+#~ msgstr "Skasowano napisy."
+
+#~ msgid "_Only selected subtitles"
+#~ msgstr "_Tylko wybrane napisy"
+
+#, fuzzy
+#~ msgid "Create a new document from any text file."
+#~ msgstr "Utwórz nowy dokument z jakimkolwiek plikiem tekstowym"
+
+#~ msgid "Export just a text in a file"
+#~ msgstr "Eksportuj tylko tekst z pliku"
+
+#~ msgid "Force aspect _ratio"
+#~ msgstr "Wymuszaj _proporcje obrazu"
+
+#~ msgid "The first point is superior to the last point."
+#~ msgstr "Pierwszy punkt jest nadrzędny względem ostatniego punktu."
+
+#~ msgid "The scale was applied"
+#~ msgstr "Skalowanie zostało wykonane"
+
+#~ msgid "Scale by two points"
+#~ msgstr "Skaluj o dwie jednostki"
+
+#~ msgid "Split selected subtitles"
+#~ msgstr "Podziel wybrane napisy"
+
+#, fuzzy
+#~ msgid "Border"
+#~ msgstr "<b>Ograniczenie</b>"
+
+#~ msgid "Opaque Box"
+#~ msgstr "Prostokątne nieprzezroczyste tło"
+
+#~ msgid "Size:"
+#~ msgstr "Rozmiar:"
+
+#~ msgid "Distance:"
+#~ msgstr "Dystans:"
+
+#~ msgid "Use the current player position to set the subtitle start"
+#~ msgstr "Użyj bieżącej pozycji odtwarzacza jako początku napisów"
+
+#~ msgid "Use the current player position to set the subtitle end"
+#~ msgstr "Użyj bieżącej pozycji odtwarzacza jako końca napisów"
+
+#, fuzzy
+#~ msgid ""
+#~ "Use the current player position to set the start of the selected subtitle "
+#~ "and go to the next"
+#~ msgstr "Użyj bieżącej pozycji odtwarzacza jako końca napisów"
+
+#~ msgid ""
+#~ "Use only one key to set beginning of the subtitle when the key is pressed "
+#~ "and the end when the key is released."
+#~ msgstr ""
+#~ "Użyj tylko jednego klawisza do wyznaczenia początku napisu, gdy klawisz "
+#~ "jest wciśnięty i końca, gdy zostanie zwolniony."
+
+#~ msgid "Open a multimedia file"
+#~ msgstr "Otwórz plik multimedialny"
+
+#~ msgid "Close a multimedia file"
+#~ msgstr "Zamknij plik multimedialny"
+
+#~ msgid "Play or make a pause"
+#~ msgstr "Odtwarzaj lub pauzuj"
+
+#, fuzzy
+#~ msgid "Frame skip backwards"
+#~ msgstr "Krótki skok do tyłu"
+
+#, fuzzy
+#~ msgid "Tiny skip backwards"
+#~ msgstr "Długi skok do tyłu"
+
+#~ msgid "Very short skip backwards"
+#~ msgstr "Bardzo krótki skok do tyłu"
+
+#~ msgid "Short skip backwards"
+#~ msgstr "Krótki skok do tyłu"
+
+#~ msgid "Medium skip backwards"
+#~ msgstr "Średni skok do tyłu"
+
+#~ msgid "Long skip backwards"
+#~ msgstr "Długi skok do tyłu"
+
+#, fuzzy
+#~ msgid "Frame skip forward"
+#~ msgstr "Krótki skok do przodu"
+
+#, fuzzy
+#~ msgid "Tiny skip forward"
+#~ msgstr "Długi skok do przodu"
+
+#~ msgid "Very short skip forward"
+#~ msgstr "Bardzo krótki skok do przodu"
+
+#~ msgid "Short skip forward"
+#~ msgstr "Krótki skok do przodu"
+
+#~ msgid "Medium skip forward"
+#~ msgstr "Średni skok do przodu"
+
+#~ msgid "Long skip forward"
+#~ msgstr "Długi skok do przodu"
+
+#~ msgid "Play previous subtitle from the first selected subtitle"
+#~ msgstr "Odtwarzaj fragment poprzedzający pierwszy z zaznaczonych napisów"
+
+#~ msgid "Try to respect the timing preferences"
+#~ msgstr "Staraj się uwzględniać ustawienia czasu wyświetlania"
+
+#~ msgid "_Import"
+#~ msgstr "_Import"
+
+#~ msgid "_Export"
+#~ msgstr "_Eksport"
+
+#, c-format
+#~ msgid ""
+#~ "Failed to create a GStreamer converts video (%s). Please check your "
+#~ "GStreamer installation."
+#~ msgstr ""
+#~ "Stworzenie konwersji wideo (%s) nie powiodło się. Proszę sprawdzić swoją "
+#~ "instalację GStreamer'a."
+
+#, fuzzy, c-format
+#~ msgid ""
+#~ "Failed to create a GStreamer text overlay (%s). Please check your "
+#~ "GStreamer installation."
+#~ msgstr ""
+#~ "Stworzenie nakładania napisów (%s) nie powiodło się. Proszę sprawdzić "
+#~ "swoją instalację GStreamer'a."
+
+#, c-format
+#~ msgid ""
+#~ "Failed to create a GStreamer sink (%s). Please check your GStreamer "
+#~ "installation."
+#~ msgstr ""
+#~ "Nie udało się utworzyć potoku '%s' biblioteki GStreamer. Sprawdź "
+#~ "poprawność instalacji biblioteki GStreamer."
+
 #~ msgid "<b>Framerate</b>"
 #~ msgstr "<b>Liczba klatek/s</b>"
 
@@ -4807,12 +5761,6 @@ msgstr "Usuń spacje pomiędzy cyframi numeru"
 
 #~ msgid "Copy Style"
 #~ msgstr "Skopiuj styl"
-
-#~ msgid "Create New Style"
-#~ msgstr "Stwórz nowy styl"
-
-#~ msgid "Delete Style"
-#~ msgstr "Skasuj styl"
 
 #~ msgid "Manage Styles"
 #~ msgstr "Zarządzaj stylami"
@@ -4923,9 +5871,6 @@ msgstr "Usuń spacje pomiędzy cyframi numeru"
 #~ msgid "name"
 #~ msgstr "nazwa"
 
-#~ msgid "effect"
-#~ msgstr "efekt"
-
 #~ msgid "<b>End Of Document.</b>"
 #~ msgstr "<b>Koniec Dokumentu.</b>"
 
@@ -4979,12 +5924,6 @@ msgstr "Usuń spacje pomiędzy cyframi numeru"
 
 #~ msgid "<b>Window</b>"
 #~ msgstr "<b>Okno</b>"
-
-#~ msgid "Last"
-#~ msgstr "Ostatnia"
-
-#~ msgid "Next"
-#~ msgstr "Następny"
 
 #~ msgid "Play current subtitle"
 #~ msgstr "Graj obecny napis"
@@ -5099,6 +6038,3 @@ msgstr "Usuń spacje pomiędzy cyframi numeru"
 
 #~ msgid "General"
 #~ msgstr "Podstawowe"
-
-#~ msgid "First"
-#~ msgstr "Pierwsza"
