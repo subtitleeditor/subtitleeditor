@@ -21,77 +21,74 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <gtkmm.h>
+
 #include "document.h"
 
 class ErrorChecking {
- public:
-  class Info {
    public:
-    Document *document;
+    class Info {
+       public:
+        Document *document;
 
-    Subtitle currentSub;
-    Subtitle nextSub;
-    Subtitle previousSub;
+        Subtitle currentSub;
+        Subtitle nextSub;
+        Subtitle previousSub;
 
-    bool tryToFix;
+        bool tryToFix;
 
-    Glib::ustring error;
-    Glib::ustring solution;
-  };
+        Glib::ustring error;
+        Glib::ustring solution;
+    };
 
-  ErrorChecking(const Glib::ustring &name, const Glib::ustring &label,
-                const Glib::ustring &description)
-      : m_name(name),
-        m_label(label),
-        m_description(description),
-        m_has_configuration(false) {
-  }
-
-  virtual ~ErrorChecking() {
-  }
-
-  Glib::ustring get_name() const {
-    return m_name;
-  }
-
-  Glib::ustring get_label() const {
-    return m_label;
-  }
-
-  Glib::ustring get_description() const {
-    return m_description;
-  }
-
-  void set_active(bool state) {
-    cfg::set_boolean(get_name(), "enabled", state);
-  }
-
-  bool get_active() {
-    if (cfg::has_key(get_name(), "enabled") == false) {
-      set_active(true);
+    ErrorChecking(const Glib::ustring &name, const Glib::ustring &label, const Glib::ustring &description)
+        : m_name(name), m_label(label), m_description(description), m_has_configuration(false) {
     }
-    return cfg::get_boolean(get_name(), "enabled");
-  }
 
-  bool has_configuration() const {
-    return m_has_configuration;
-  }
+    virtual ~ErrorChecking() {
+    }
 
-  virtual void create_configuration() {
-    // nothing
-  }
+    Glib::ustring get_name() const {
+        return m_name;
+    }
 
-  virtual void init() {
-    // init from your preferences values
-  }
+    Glib::ustring get_label() const {
+        return m_label;
+    }
 
-  virtual bool execute(Info &) {
-    return false;
-  }
+    Glib::ustring get_description() const {
+        return m_description;
+    }
 
- protected:
-  Glib::ustring m_name;
-  Glib::ustring m_label;
-  Glib::ustring m_description;
-  bool m_has_configuration;
+    void set_active(bool state) {
+        cfg::set_boolean(get_name(), "enabled", state);
+    }
+
+    bool get_active() {
+        if (cfg::has_key(get_name(), "enabled") == false) {
+            set_active(true);
+        }
+        return cfg::get_boolean(get_name(), "enabled");
+    }
+
+    bool has_configuration() const {
+        return m_has_configuration;
+    }
+
+    virtual void create_configuration() {
+        // nothing
+    }
+
+    virtual void init() {
+        // init from your preferences values
+    }
+
+    virtual bool execute(Info &) {
+        return false;
+    }
+
+   protected:
+    Glib::ustring m_name;
+    Glib::ustring m_label;
+    Glib::ustring m_description;
+    bool m_has_configuration;
 };

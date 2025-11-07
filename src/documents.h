@@ -21,8 +21,10 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <glibmm/ustring.h>
+
 #include <string>
 #include <vector>
+
 #include "document.h"
 
 namespace se {
