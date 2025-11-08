@@ -2,6 +2,7 @@
 plugins/actions/about/about.cc
 plugins/actions/adjusttime/adjusttime.cc
 plugins/actions/applytranslation/applytranslation.cc
+plugins/actions/autowrap/autowrap.cc
 plugins/actions/bestfit/bestfit.cc
 plugins/actions/changeframerate/changeframerate.cc
 plugins/actions/changeframerate/dialog-change-framerate.ui
@@ -37,6 +38,7 @@ plugins/actions/findbytime/findbytime.cc
 plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc
 plugins/actions/insertsubtitle/insertsubtitle.cc
 plugins/actions/italicize/italicize.cc
+plugins/actions/joindocument/dialog-join-offset.ui
 plugins/actions/joindocument/joindocument.cc
 plugins/actions/keyframesmanagement/keyframesgenerator.cc
 plugins/actions/keyframesmanagement/keyframesgeneratorusingframe.cc
@@ -256,6 +258,7 @@ src/writer.h
 [type: gettext/glade] plugins/actions/errorchecking/dialog-error-checking.ui
 [type: gettext/glade] plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui
 [type: gettext/glade] plugins/actions/findandreplace/dialog-find-and-replace.ui
+[type: gettext/glade] plugins/actions/joindocument/dialog-join-offset.ui
 [type: gettext/glade] plugins/actions/movesubtitles/dialog-move-subtitles.ui
 [type: gettext/glade] plugins/actions/preferences/dialog-preferences.ui
 [type: gettext/glade] plugins/actions/scalesubtitles/dialog-scale-subtitles.ui
@@ -278,6 +281,7 @@ src/writer.h
 [type: gettext/ini] plugins/actions/about/about.se-plugin.in
 [type: gettext/ini] plugins/actions/adjusttime/adjusttime.se-plugin.in
 [type: gettext/ini] plugins/actions/applytranslation/applytranslation.se-plugin.in
+[type: gettext/ini] plugins/actions/autowrap/autowrap.se-plugin.in
 [type: gettext/ini] plugins/actions/bestfit/bestfit.se-plugin.in
 [type: gettext/ini] plugins/actions/changeframerate/changeframerate.se-plugin.in
 [type: gettext/ini] plugins/actions/clipboard/clipboard.se-plugin.in

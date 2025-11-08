@@ -22,6 +22,7 @@
 
 #include <glibmm.h>
 #include <sigc++/sigc++.h>
+
 #include <map>
 #include <vector>
 
@@ -56,8 +57,7 @@ void set_string(const ustring &group, const ustring &key, const ustring &value);
 ustring get_string(const ustring &group, const ustring &key);
 
 // set the string values to the key
-void set_string_list(const ustring &group, const ustring &key,
-                     const vector<ustring> &values);
+void set_string_list(const ustring &group, const ustring &key, const vector<ustring> &values);
 
 // return a strings value of the key
 vector<ustring> get_string_list(const ustring &group, const ustring &key);

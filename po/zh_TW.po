@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: subtitleeditor 0.39.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-24 23:47+0200\n"
+"POT-Creation-Date: 2025-11-07 13:22+0100\n"
 "PO-Revision-Date: 2011-06-18 15:53+0800\n"
 "Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -18,9 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: ../plugins/actions/about/about.cc:40
+#: ../plugins/actions/about/about.se-plugin.in.h:1
+msgid "About"
+msgstr "關於"
+
+#: ../plugins/actions/about/about.cc:40
+msgid "Display information about the program"
+msgstr ""
+
 #. comments
 #: ../plugins/actions/about/about.cc:76
-msgid "a tool for subtitles edition"
+#, fuzzy
+msgid "A tool for editing subtitles"
 msgstr "一個編輯字幕的工具"
 
 #. translator-credits
@@ -35,116 +45,121 @@ msgstr ""
 "  帅勇健 https://launchpad.net/~kaisfm\n"
 "趙惟倫 <chaoweilun@gmail.com>"
 
+#. -- 100 ms --
+#. menu add
 #: ../plugins/actions/adjusttime/adjusttime.cc:47
 msgid "Add 100 Milliseconds"
 msgstr "增加 100 毫秒"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:51
-#: ../plugins/actions/adjusttime/adjusttime.cc:101
+#: ../plugins/actions/adjusttime/adjusttime.cc:49
+#: ../plugins/actions/adjusttime/adjusttime.cc:83
 msgid "To Start"
 msgstr "開始"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:52
+#: ../plugins/actions/adjusttime/adjusttime.cc:49
 msgid "Add 100 Milliseconds to start for all subtitles selected"
 msgstr "增加 100 毫秒到所有所選擇的字幕開始處"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:57
-#: ../plugins/actions/adjusttime/adjusttime.cc:107
+#: ../plugins/actions/adjusttime/adjusttime.cc:52
+#: ../plugins/actions/adjusttime/adjusttime.cc:86
 msgid "To Duration"
 msgstr "期間"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:58
+#: ../plugins/actions/adjusttime/adjusttime.cc:52
 msgid "Add 100 Milliseconds to duration for all subtitles selected"
 msgstr "增加 100 毫秒在所有所選擇的字幕之間"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:63
-#: ../plugins/actions/adjusttime/adjusttime.cc:113
+#: ../plugins/actions/adjusttime/adjusttime.cc:56
+#: ../plugins/actions/adjusttime/adjusttime.cc:90
 msgid "To Start And To Duration"
 msgstr "開始和期間"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:64
+#: ../plugins/actions/adjusttime/adjusttime.cc:56
 msgid "Add 100 Milliseconds to all subtitles selected"
 msgstr "增加 100 毫秒到所有所選擇的字幕"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:71
+#: ../plugins/actions/adjusttime/adjusttime.cc:61
 msgid "Remove 100 Milliseconds"
 msgstr "去除 100 毫秒"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:75
-#: ../plugins/actions/adjusttime/adjusttime.cc:125
+#: ../plugins/actions/adjusttime/adjusttime.cc:64
+#: ../plugins/actions/adjusttime/adjusttime.cc:96
 msgid "From Start"
 msgstr "從開始"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:76
+#: ../plugins/actions/adjusttime/adjusttime.cc:64
 msgid "Remove 100 Milliseconds from start for all subtitles selected"
 msgstr "從所有所選擇的字幕開始處刪除 100 毫秒"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:80
-#: ../plugins/actions/adjusttime/adjusttime.cc:131
+#: ../plugins/actions/adjusttime/adjusttime.cc:68
+#: ../plugins/actions/adjusttime/adjusttime.cc:100
 msgid "From Duration"
 msgstr "從期間"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:81
+#: ../plugins/actions/adjusttime/adjusttime.cc:69
 msgid "Remove 100 Milliseconds from duration for all subtitles selected"
 msgstr "從所有所選擇的字幕期間刪除 100 毫秒"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:88
-#: ../plugins/actions/adjusttime/adjusttime.cc:137
+#: ../plugins/actions/adjusttime/adjusttime.cc:75
+#: ../plugins/actions/adjusttime/adjusttime.cc:105
 msgid "From Start And From Duration"
 msgstr "從開始和從期間"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:89
+#: ../plugins/actions/adjusttime/adjusttime.cc:75
 msgid "Remove 100 Milliseconds from all subtitles selected"
 msgstr "從所有選擇的字幕刪除 100 毫秒"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:97
+#. -- 1 frame --
+#. menu add
+#: ../plugins/actions/adjusttime/adjusttime.cc:81
 msgid "Add 1 Frame"
 msgstr ""
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:102
+#: ../plugins/actions/adjusttime/adjusttime.cc:83
 #, fuzzy
 msgid "Add 1 Frame to start for all subtitles selected"
 msgstr "增加 100 毫秒到所有所選擇的字幕開始處"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:108
+#: ../plugins/actions/adjusttime/adjusttime.cc:86
 #, fuzzy
 msgid "Add 1 Frame to duration for all subtitles selected"
 msgstr "增加 100 毫秒在所有所選擇的字幕之間"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:114
+#: ../plugins/actions/adjusttime/adjusttime.cc:90
 #, fuzzy
 msgid "Add 1 Frame to all subtitles selected"
 msgstr "增加 100 毫秒到所有所選擇的字幕"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:121
+#. menu remove
+#: ../plugins/actions/adjusttime/adjusttime.cc:94
 msgid "Remove 1 Frame"
 msgstr ""
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:126
+#: ../plugins/actions/adjusttime/adjusttime.cc:96
 #, fuzzy
 msgid "Remove 1 Frame from start for all subtitles selected"
 msgstr "從所有所選擇的字幕開始處刪除 100 毫秒"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:132
+#: ../plugins/actions/adjusttime/adjusttime.cc:100
 #, fuzzy
 msgid "Remove 1 Frame from duration for all subtitles selected"
 msgstr "從所有所選擇的字幕期間刪除 100 毫秒"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:138
+#: ../plugins/actions/adjusttime/adjusttime.cc:105
 #, fuzzy
 msgid "Remove 1 Frame from all subtitles selected"
 msgstr "從所有選擇的字幕刪除 100 毫秒"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:297
-#: ../plugins/actions/dialoguize/dialoguize.cc:238
-#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:95
-#: ../plugins/actions/italicize/italicize.cc:106
-#: ../plugins/actions/movesubtitles/movesubtitles.cc:173
-#: ../plugins/actions/removesubtitle/removesubtitle.cc:98
+#: ../plugins/actions/adjusttime/adjusttime.cc:260
+#: ../plugins/actions/dialoguize/dialoguize.cc:228
+#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:93
+#: ../plugins/actions/italicize/italicize.cc:105
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:167
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:92
 msgid "Please select at least a subtitle."
 msgstr "請選擇至少一個字幕。"
 
-#: ../plugins/actions/adjusttime/adjusttime.cc:301
+#: ../plugins/actions/adjusttime/adjusttime.cc:264
 msgid "Adjust time"
 msgstr "調整時間"
 
@@ -152,58 +167,105 @@ msgstr "調整時間"
 msgid "Apply _Translation"
 msgstr "套用翻譯(_T)"
 
-#: ../plugins/actions/applytranslation/applytranslation.cc:45
-msgid "Replace the text of the subtitle by the translation"
+#: ../plugins/actions/applytranslation/applytranslation.cc:44
+#, fuzzy
+msgid "Replace the text of all subtitles by the translation"
 msgstr "用翻譯替換字幕的文字"
 
-#: ../plugins/actions/applytranslation/applytranslation.cc:94
+#: ../plugins/actions/applytranslation/applytranslation.cc:92
 msgid "Apply translation"
 msgstr "套用翻譯"
 
-#: ../plugins/actions/applytranslation/applytranslation.cc:105
+#: ../plugins/actions/applytranslation/applytranslation.cc:103
 msgid "The translation was applied."
 msgstr "翻譯被套用。"
 
-#: ../plugins/actions/bestfit/bestfit.cc:51
+#: ../plugins/actions/autowrap/autowrap.cc:48
+#, fuzzy
+msgid "Wrap Text"
+msgstr "原始文字"
+
+#: ../plugins/actions/autowrap/autowrap.cc:48
+#, fuzzy
+msgid "Reflow the text of the selected subtitles "
+msgstr "用斜體字印刷選擇的字幕文字"
+
+#: ../plugins/actions/autowrap/autowrap.cc:51
+msgid "Wrap Text Wide"
+msgstr ""
+
+#: ../plugins/actions/autowrap/autowrap.cc:52
+msgid ""
+"Reflow the text of selected subtitles fitting as many words on each line as "
+"possible while respecting the maximum characters per line setting"
+msgstr ""
+
+#: ../plugins/actions/autowrap/autowrap.cc:57
+msgid "Wrap Text Evenly"
+msgstr ""
+
+#: ../plugins/actions/autowrap/autowrap.cc:58
+msgid ""
+"Reflow the text of the selected subtitles into lines of a similar width "
+"while respecting the maximum characters per line setting"
+msgstr ""
+
+#: ../plugins/actions/autowrap/autowrap.cc:125
+#: ../plugins/actions/slidetimings/slidetimings.cc:106
+#: ../plugins/actions/slidetimings/slidetimings.cc:134
+#: ../plugins/actions/slidewords/slidewords.cc:124
+#: ../plugins/actions/splitsubtitle/splitsubtitle.cc:89
+#: ../plugins/actions/typewriter/typewriter.cc:140
+msgid "Please select at least one subtitle."
+msgstr "請至少選擇一個字幕"
+
+#: ../plugins/actions/autowrap/autowrap.cc:129
+msgid "Wrap text into lines"
+msgstr ""
+
+#: ../plugins/actions/bestfit/bestfit.cc:49
 #, fuzzy
 msgid "_Best Fit Subtitles"
 msgstr "選擇第一筆字幕(_F)"
 
-#: ../plugins/actions/bestfit/bestfit.cc:52
+#: ../plugins/actions/bestfit/bestfit.cc:50
 #, fuzzy
 msgid ""
-"Best fit the selected subtitles between the start of the first and the end "
-"of the last one."
+"Equalize the speed (in CPS) of the selected subtitles between the start of "
+"the first and the end of the last (while respecting the minimum gap between "
+"subtitles and their minima duration)"
 msgstr "延長所選字幕到下一字幕的開始時間"
 
-#: ../plugins/actions/bestfit/bestfit.cc:105
+#: ../plugins/actions/bestfit/bestfit.cc:100
 msgid "Best fit"
 msgstr ""
 
-#: ../plugins/actions/bestfit/bestfit.cc:125
+#: ../plugins/actions/bestfit/bestfit.cc:117
 #, fuzzy
 msgid "Best Fit needs at least 2 subtitles to work on."
 msgstr "請選擇至少二個字幕。"
 
-#: ../plugins/actions/bestfit/bestfit.cc:160
+#: ../plugins/actions/bestfit/bestfit.cc:147
 msgid "Best Fit only works on an uninterrupted selection of subtitles."
 msgstr ""
 
-#: ../plugins/actions/changeframerate/changeframerate.cc:186
+#: ../plugins/actions/changeframerate/changeframerate.cc:177
 msgid "Change _Framerate"
 msgstr "變更影格頻(_F)"
 
-#: ../plugins/actions/changeframerate/changeframerate.cc:186
-msgid "Convert framerate"
-msgstr "轉換影格頻"
+#: ../plugins/actions/changeframerate/changeframerate.cc:178
+msgid ""
+"Convert subtitles synced to video that has one framerate to a video with a "
+"different framerate"
+msgstr ""
 
-#: ../plugins/actions/changeframerate/changeframerate.cc:241
+#: ../plugins/actions/changeframerate/changeframerate.cc:229
 #: ../plugins/actions/changeframerate/dialog-change-framerate.ui.h:1
 #: ../plugins/actions/changeframerate/changeframerate.se-plugin.in.h:1
 msgid "Change Framerate"
 msgstr "變更影格頻"
 
-#: ../plugins/actions/changeframerate/changeframerate.cc:259
+#: ../plugins/actions/changeframerate/changeframerate.cc:247
 #, c-format
 msgid "The new framerate was applied. (%s to %s)"
 msgstr "新影格頻被套用。(%s 到 %s)"
@@ -237,129 +299,153 @@ msgid "All documents"
 msgstr "全部文件"
 
 #: ../plugins/actions/clipboard/clipboard.cc:70
+msgid "Copy"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:75
 msgid "_Copy"
 msgstr ""
 
-#: ../plugins/actions/clipboard/clipboard.cc:71
-#, fuzzy
-msgid "Copy selected subtitles to the clipboard."
-msgstr "只選擇字幕(_O)"
-
-#: ../plugins/actions/clipboard/clipboard.cc:75
-msgid "C_ut"
-msgstr ""
-
 #: ../plugins/actions/clipboard/clipboard.cc:76
-msgid "Copy selected subtitles to the clipboard and delete them."
+msgid ""
+"Copy selected subtitles to the clipboard, making only their text visible to "
+"other clipboard-using aplications"
 msgstr ""
 
 #: ../plugins/actions/clipboard/clipboard.cc:79
-#, fuzzy
-msgid "_Paste"
-msgstr "快放(_F)"
-
-#: ../plugins/actions/clipboard/clipboard.cc:80
-#: ../plugins/actions/clipboard/clipboard.cc:95
-#, fuzzy
-msgid ""
-"Paste subtitles from the clipboard AFTER the currently selected subtitle."
-msgstr "播放目前選擇字幕的下一字幕"
-
-#: ../plugins/actions/clipboard/clipboard.cc:84
 msgid "Copy With Timing"
 msgstr ""
 
-#: ../plugins/actions/clipboard/clipboard.cc:85
+#: ../plugins/actions/clipboard/clipboard.cc:80
+#, fuzzy
 msgid ""
-"Copy selected subtitles and make their timing visible to text-based "
-"applications."
+"Copy selected subtitles and make their timing visible to other clipboard-"
+"using applications"
+msgstr "只選擇字幕(_O)"
+
+#: ../plugins/actions/clipboard/clipboard.cc:86
+msgid "C_ut"
 msgstr ""
 
-#: ../plugins/actions/clipboard/clipboard.cc:90
-msgid "Paste Special"
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:94
+#: ../plugins/actions/clipboard/clipboard.cc:86
 #, fuzzy
-msgid "Paste At Current Player Position"
-msgstr "播放器位置："
-
-#: ../plugins/actions/clipboard/clipboard.cc:100
-#, fuzzy
-msgid "Paste As New Document"
-msgstr "新增一個字幕檔案"
-
-#: ../plugins/actions/clipboard/clipboard.cc:101
-msgid "Create a new document and paste the contents of the clipboard into it."
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:106
-msgid "Paste Over Text"
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:107
-msgid "Overwrite subtitle text with clipboard content."
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:111
-msgid "Paste Over Time"
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:112
-msgid "Overwrite subtitle time with clipboard content."
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:116
-msgid "Paste Unchanged"
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:117
-msgid "Paste without changing the time codes."
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:122
-msgid "Select Clipboard Overlap"
-msgstr ""
-
-#: ../plugins/actions/clipboard/clipboard.cc:123
-msgid "Select subtitles that overlap clipboard content."
-msgstr ""
+msgid "Copy selected subtitles to the clipboard and delete them"
+msgstr "只選擇字幕(_O)"
 
 #. clipboard will be pasted
 #. actually paste the data from clipdoc to the current document
-#: ../plugins/actions/clipboard/clipboard.cc:518
-#: ../plugins/actions/clipboard/clipboard.cc:902
+#: ../plugins/actions/clipboard/clipboard.cc:90
+#: ../plugins/actions/clipboard/clipboard.cc:504
+#: ../plugins/actions/clipboard/clipboard.cc:870
 #, fuzzy
 msgid "Paste"
 msgstr "快放(_F)"
 
-#: ../plugins/actions/clipboard/clipboard.cc:558
+#: ../plugins/actions/clipboard/clipboard.cc:94
+#, fuzzy
+msgid "_Paste"
+msgstr "快放(_F)"
+
+#: ../plugins/actions/clipboard/clipboard.cc:95
+msgid ""
+"Paste subtitles from the clipboard AFTER the currently selected subtitle, "
+"keeping their duration and gaps between them but setting the start of the "
+"first one right after with respect to the minimal gap between subtitles "
+"setting )"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:102
+#, fuzzy
+msgid "Paste At Current Player Position"
+msgstr "播放器位置："
+
+#: ../plugins/actions/clipboard/clipboard.cc:103
+msgid ""
+"Paste subtitles from the clipboard AFTER the currently selected subtitle, "
+"keeping their duration and gaps between them but setting the start of the "
+"first at the current player position"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:109
+#, fuzzy
+msgid "Paste As New Document"
+msgstr "新增一個字幕檔案"
+
+#: ../plugins/actions/clipboard/clipboard.cc:110
+msgid ""
+"Create a new document and paste the contents of the clipboard into it, "
+"keeping timecodes intact"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:114
+msgid "Paste Over Text"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:115
+msgid ""
+"Overwrite text of the first selected subtitle with clipboard content (if "
+"your clipboard holds copied subtitles and more subtitles are selected, their "
+"texts will get overwritten one by one)"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:119
+msgid "Paste Over Time"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:120
+msgid ""
+"Overwrite time of the first selected subtitle with clipboard content (if "
+"your clipboard holds copied subtitles and more subtitles are selected, their "
+"times will get overwritten one by one)"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:124
+msgid "Paste Unchanged"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:125
+#, fuzzy
+msgid ""
+"Paste subtitles from clipboard after AFTER the currently selected subtitle "
+"without changing their time codes at all"
+msgstr "播放目前選擇字幕的下一字幕"
+
+#: ../plugins/actions/clipboard/clipboard.cc:131
+msgid "Select Clipboard Overlap"
+msgstr ""
+
+#: ../plugins/actions/clipboard/clipboard.cc:131
+#, fuzzy
+msgid "Select subtitles that overlap with subtitles in the clipboard"
+msgstr "只選擇字幕(_O)"
+
+#: ../plugins/actions/clipboard/clipboard.cc:543
 #, fuzzy
 msgid "Nothing to copy. Select at least one subtitle first."
 msgstr "請至少選擇一個字幕"
 
-#: ../plugins/actions/clipboard/clipboard.cc:611
+#: ../plugins/actions/clipboard/clipboard.cc:596
 msgid "Cut"
 msgstr ""
 
 #. tell the user what happened
-#: ../plugins/actions/clipboard/clipboard.cc:652
+#: ../plugins/actions/clipboard/clipboard.cc:635
 #, fuzzy, c-format
 msgid "%i subtitle(s) overwritten."
 msgstr "Sami 字幕支援。"
 
 #. tell the user what happened
-#: ../plugins/actions/clipboard/clipboard.cc:687
+#: ../plugins/actions/clipboard/clipboard.cc:669
 #, fuzzy, c-format
 msgid "%i subtitle(s) pasted."
 msgstr "Sami 字幕支援。"
 
-#: ../plugins/actions/clipboard/clipboard.cc:808
+#: ../plugins/actions/clipboard/clipboard.cc:775
 #, fuzzy
 msgid "No subtitles on the clipboard."
 msgstr "排序字幕基於它們的起始時間。"
 
-#: ../plugins/actions/clipboard/clipboard.cc:822
+#: ../plugins/actions/clipboard/clipboard.cc:789
 #, fuzzy, c-format
 msgid "Selected %i subtitles."
 msgstr "選擇所有字幕"
@@ -369,72 +455,76 @@ msgid "_Combine"
 msgstr "組合(_C)"
 
 #: ../plugins/actions/combinesubtitles/combinesubtitles.cc:44
-msgid "Merge selected subtitles"
-msgstr "合併選擇的字幕"
+#, fuzzy
+msgid ""
+"Merge selected subtitles into one, with start being set by the start of the "
+"first selected subtitle and end being set by the end of the last selected "
+"subtitle"
+msgstr "延長所選字幕到下一字幕的開始時間"
 
-#: ../plugins/actions/combinesubtitles/combinesubtitles.cc:135
+#: ../plugins/actions/combinesubtitles/combinesubtitles.cc:132
 msgid "Please select at least two subtitles."
 msgstr "請選擇至少二個字幕。"
 
-#: ../plugins/actions/combinesubtitles/combinesubtitles.cc:139
+#: ../plugins/actions/combinesubtitles/combinesubtitles.cc:136
 msgid "Combine subtitles"
 msgstr "組合字幕"
 
-#: ../plugins/actions/command/command.cc:43
+#: ../plugins/actions/command/command.cc:42
 msgid "Undo the last action"
 msgstr "撤消上次作業"
 
-#: ../plugins/actions/command/command.cc:47
+#: ../plugins/actions/command/command.cc:45
 msgid "Redo the last undone action"
 msgstr "重做上次撤消的作業"
 
-#: ../plugins/actions/command/command.cc:105
+#: ../plugins/actions/command/command.cc:102
 #, c-format
 msgid "Undo: %s"
 msgstr "撤消(_U)：%s"
 
-#: ../plugins/actions/command/command.cc:123
+#: ../plugins/actions/command/command.cc:119
 #, c-format
 msgid "Redo: %s"
 msgstr "重做：%s"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:74
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:73
 msgid "Actions"
 msgstr "動作"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:96
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:95
 msgid "Shortcut"
 msgstr "快捷鍵"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:283
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:374
 msgid "Invalid shortcut."
 msgstr "無效的快捷鍵。"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:304
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:393
 msgid "Shortcut \"%1\" is already taken by \"%2\"."
 msgstr "快捷鍵「%1」已被設定為「%2」。"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:308
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:395
 msgid "Reassigning the shortcut will cause it to be removed from \"%1\"."
 msgstr "重新關聯該快捷鍵將會導致他被從「%1」的定義刪除。"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:314
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:400
 msgid "Conflicting Shortcuts"
 msgstr "快捷鍵衝突"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:320
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:405
 msgid "Changing shortcut failed."
 msgstr "變更快捷鍵失敗。"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:342
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:426
 msgid "Removing shortcut failed."
 msgstr "刪除快捷鍵失敗。"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:383
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:471
 msgid "Configure _Keyboard Shortcuts"
 msgstr "配置鍵盤快捷鍵(_K)"
 
-#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:384
+#: ../plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc:471
 #: ../plugins/actions/configurekeyboardshortcuts/dialog-configure-keyboard-shortcuts.ui.h:1
 msgid "Configure Keyboard Shortcuts"
 msgstr "配置快捷鍵"
@@ -464,15 +554,17 @@ msgstr ""
 msgid "only a dash ( \"-\" )"
 msgstr ""
 
-#: ../plugins/actions/dialoguize/dialoguize.cc:171
+#: ../plugins/actions/dialoguize/dialoguize.cc:162
 msgid "_Dialogue"
 msgstr "對話(_D)"
 
-#: ../plugins/actions/dialoguize/dialoguize.cc:172
-msgid "Add or remove dialogue line"
-msgstr "增加或去除對話破折號"
+#: ../plugins/actions/dialoguize/dialoguize.cc:163
+msgid ""
+"Add or remove symbols indicating that given line is a dialogue (symbols to "
+"be used can be set in plugin preferences)"
+msgstr ""
 
-#: ../plugins/actions/dialoguize/dialoguize.cc:247
+#: ../plugins/actions/dialoguize/dialoguize.cc:237
 #: ../plugins/actions/dialoguize/dialoguize.se-plugin.in.h:1
 msgid "Dialoguize"
 msgstr "對話"
@@ -481,169 +573,222 @@ msgstr "對話"
 msgid "Close _without Saving"
 msgstr "不儲存而關閉(_W)"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:43
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:42
 #, c-format
 msgid "Save the changes to document \"%s\" before closing?"
 msgstr "在關閉前先將變更儲存到文件「%s」嗎？"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:46
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:43
 msgid "If you don't save, the last changes will be permanently lost."
 msgstr "如果您不儲存，最後變動永久地將丟失。"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:74
+#. new document
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:70
 msgid "Create a new document"
 msgstr "新增一個字幕檔案"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:79
+#. open & save document
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:74
 msgid "Open a file"
 msgstr "開啟檔案"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:83
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:77
 msgid "Open Project"
 msgstr "開啟專案"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:84
-msgid "Open a Subtitle Editor Project"
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:77
+#, fuzzy
+msgid "Open a Subtitle Editor Project file"
 msgstr "開啟一個字幕編輯器項目"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:91
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:83
 msgid "Save the current file"
 msgstr "儲存目前檔案"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:97
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:87
 msgid "Save Project"
 msgstr "儲存項目"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:98
-msgid "Save the current file as Subtitle Editor Project"
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:87
+#, fuzzy
+msgid "Save the current file as Subtitle Editor Project file"
 msgstr "儲存目前檔案做為字幕編輯器項目"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:106
-msgid "Save the current file with a different name"
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:94
+#, fuzzy
+msgid "Save the current file with a different name or format"
 msgstr "用新檔案名稱儲存目前檔案"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:112
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:98
 msgid "Save _All"
 msgstr "儲存全部(_A)"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:112
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:98
 msgid "Save all open files"
 msgstr "儲存所有已開啟的檔案"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:118
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:105
 msgid "Open _Translation"
 msgstr "開啟翻譯(_T)"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:119
-msgid "Open translation from file"
-msgstr "從檔案開啟翻譯"
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:106
+msgid ""
+"Open a translation from a file (this will populate and overwrite the "
+"Translation column, taking only text from the opened file, which does not "
+"have to have the same timecodes or number of subtitles as your document)"
+msgstr ""
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:125
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:115
 msgid "Save Trans_lation"
 msgstr "儲存翻譯(_L)"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:126
-msgid "Save translation to file"
-msgstr "儲存翻譯檔案"
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:116
+msgid ""
+"Save translation to a file (like Save As, but instead using of Text for the "
+"text of the subtitles, Translation is used)"
+msgstr ""
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:132
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:122
 msgid "Open _Recent"
 msgstr "最近開啟(_R)"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:152
-msgid "Close the current file"
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:122
+#, fuzzy
+msgid "Open Recent files"
+msgstr "最近開啟(_R)"
+
+#. close
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:139
+#, fuzzy
+msgid "Close the current document"
 msgstr "關閉目前檔案"
 
 #. quit the program
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:156
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:143
 msgid "E_xit"
 msgstr "離開(_X)"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:157
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:143
 msgid "Quit the program"
 msgstr "離開程式"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:309
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:275
 msgid "I am already open"
 msgstr "我已經是開啟"
 
 #. "The file FILENAME (FORMAT, CHARSET, NEWLINE) has not been saved."
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:339
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:396
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:305
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:354
 #, c-format
 msgid "The file %s (%s, %s, %s) has not been saved."
 msgstr "檔案 %s (%s、%s，%s) 未被儲存。"
 
 #. "Saving file FILENAME (FORMAT, CHARSET, NEWLINE)."
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:345
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:401
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:309
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:357
 #, c-format
 msgid "Saving file %s (%s, %s, %s)."
 msgstr "正在儲存檔案 %s (%s、%s，%s)。"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:478
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:433
 msgid "Open translation"
 msgstr "開啟翻譯"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:503
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:457
 #, c-format
 msgid "1 subtitle was added with the translation"
 msgid_plural "%d subtitles were added with the translation"
 msgstr[0] "%d 條帶翻譯的字幕被加入"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:552
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:504
 #, c-format
 msgid "The translation file %s (%s, %s, %s) has not been saved."
 msgstr "翻譯檔案 %s (%s、%s，%s) 未被儲存。"
 
-#: ../plugins/actions/documentmanagement/documentmanagement.cc:555
+#: ../plugins/actions/documentmanagement/documentmanagement.cc:507
 #, c-format
 msgid "Saving translation file %s (%s, %s, %s)."
 msgstr "正在儲存翻譯檔案 %s (%s、%s，%s)。"
 
 #: ../plugins/actions/documentsnavigation/documentsnavigation.cc:45
-msgid "_Documents"
-msgstr "文件(_D)"
+msgid "_Tabs"
+msgstr ""
 
-#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:49
-msgid "_First Document"
-msgstr "首份文件(_F)"
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:45
+#, fuzzy
+msgid "Select a tab"
+msgstr "選擇最後的字幕(_L)"
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:48
+msgid "_First Tab"
+msgstr ""
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:48
+#, fuzzy
+msgid "Select the first (left-most) tab"
+msgstr "選擇第一筆字幕"
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:52
+msgid "_Last Tab"
+msgstr ""
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:52
+#, fuzzy
+msgid "Select the last (right-most) tab"
+msgstr "選擇最後一筆字幕"
 
 #: ../plugins/actions/documentsnavigation/documentsnavigation.cc:57
-msgid "_Last Document"
-msgstr "末份文件(_L)"
-
-#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:65
-msgid "_Previous Document"
+#, fuzzy
+msgid "_Previous Tab"
 msgstr "前份文件(_P)"
 
-#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:73
-msgid "_Next Document"
-msgstr "後份文件(_N)"
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:58
+msgid "Select the tab on the left (or cycle to the right-most one)"
+msgstr ""
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:63
+msgid "_Next Tab"
+msgstr ""
+
+#: ../plugins/actions/documentsnavigation/documentsnavigation.cc:64
+msgid "Select the tab on the right (or cycle to the left-most one)"
+msgstr ""
 
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:43
 msgid "_Duplicate"
 msgstr "複製(_D)"
 
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:44
+#, fuzzy
+msgid ""
+"Duplicate selected subtitles, inserting identical subtitle after each "
+"selected subtitle"
+msgstr "所有所選擇的字幕將被移動到時間軸指定的的位置"
+
+#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.cc:97
 msgid "Duplicate selected subtitles"
 msgstr "複製選擇的字幕"
 
-#: ../plugins/actions/editcell/editcell.cc:43
+#: ../plugins/actions/editcell/editcell.cc:44
 msgid "_Edit Cell"
 msgstr "編輯單元(_E)"
 
-#: ../plugins/actions/editcell/editcell.cc:44
-msgid "Start editing the focused cell"
-msgstr "開始編輯目前單元"
+#: ../plugins/actions/editcell/editcell.cc:45
+msgid ""
+"Start editing the focused cell (it is determined by active column (indicated "
+"by its label being bold) and the first selected subtitle)"
+msgstr ""
 
-#: ../plugins/actions/editcell/editcell.cc:49
+#: ../plugins/actions/editcell/editcell.cc:51
 msgid "Edit _Next Cell"
 msgstr "編輯下一單元(_N)"
 
-#: ../plugins/actions/editcell/editcell.cc:50
-msgid "Start editing the next cell"
-msgstr "開始編輯下一單元"
+#: ../plugins/actions/editcell/editcell.cc:52
+msgid ""
+"Start editing the next focused cell (it is determined by active column "
+"(indicated by its label being bold) and the subtitle next to the selected "
+"one)"
+msgstr ""
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:1
 msgid "Error Checking Preferences"
@@ -665,139 +810,140 @@ msgid "Timing Preferences"
 msgstr "<b>計時的偏好設定</b>"
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:5
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:44
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:45
 msgid "Minimum characters per second:"
 msgstr "每秒最小的字元數："
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:6
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:45
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:46
 msgid "Maximum characters per second:"
 msgstr "每秒最大字元數："
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:7
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:47
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:48
 msgid "Maximum characters per line:"
 msgstr "每行最大字元數："
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:8
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:48
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:49
 msgid "Minimum gap between subtitles in mseconds:"
 msgstr "最小字幕間隔的毫秒數："
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:9
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:49
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:50
 msgid "Minimum display of the subtitle in mseconds:"
 msgstr "字幕最小顯示毫秒數："
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:10
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:50
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:51
 msgid "Maximum number of lines per subtitle:"
 msgstr "每條字幕佔用的最大的列數："
 
 #: ../plugins/actions/errorchecking/dialog-error-checking-preferences.ui.h:11
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:56
-#: ../plugins/actions/viewmanager/viewmanager.cc:318
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:57
+#: ../plugins/actions/viewmanager/viewmanager.cc:302
 msgid "Timing"
 msgstr "計時"
 
 #. File
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:175
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:171
 msgid "_Error"
 msgstr "錯誤(_E)"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:181
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:174
 msgid "Try To _Fix All"
 msgstr "試著全部修復(_F)"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:189
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:181
 msgid "_View"
 msgstr "檢視(_V)"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:192
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:182
 msgid "By _Categories"
 msgstr "按分類(_C)"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:198
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:185
 msgid "By _Subtitles"
 msgstr "按字幕(_S)"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:204
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:190
 msgid "_Collapse All"
 msgstr "全部折疊(_C)"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:208
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:192
 msgid "_Expand All"
 msgstr "全部展開(_E)"
 
 #. menu option
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:212
-#: ../src/gui/menubar.cc:57
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:195
+#: ../src/gui/menubar.cc:54
 msgid "_Options"
 msgstr "選項(_O)"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:328
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:306
 msgid "No error was found."
 msgstr "沒有發現錯誤。"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:331
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:308
 #, c-format
 msgid "1 error was found."
 msgid_plural "%d errors were found."
 msgstr[0] "發現 %d 個錯誤。"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:343
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:317
 #, c-format
 msgid "Subtitle n°<b>%d</b>"
 msgstr "字幕 n°<b>%d</b>"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:614
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:584
 #, c-format
 msgid "%s (<b>1 error</b>)"
 msgid_plural "%s (<b>%d errors</b>)"
 msgstr[0] "%s (<b>%d 錯誤</b>)"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:620
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:588
 #, c-format
 msgid "Subtitle n°<b>%d</b> (<b>1 error</b>)"
 msgid_plural "Subtitle n°<b>%d</b> (<b>%d errors</b>)"
 msgstr[0] "字幕 n°<b>%d</b> (<b>%d 錯誤</b>)"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:691
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:654
 msgid "_Error Checking"
 msgstr "錯誤檢查(_E)"
 
-#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:692
-msgid "Launch the error checking."
+#: ../plugins/actions/errorchecking/errorcheckingplugin.cc:654
+#, fuzzy
+msgid "Launch the error-checking dialog"
 msgstr "啟動錯誤檢查。"
 
-#: ../plugins/actions/errorchecking/maxcharactersperline.h:29
+#: ../plugins/actions/errorchecking/maxcharactersperline.h:28
 #, fuzzy
 msgid "Maximum Characters per Line"
 msgstr "每行最大字元數："
 
-#: ../plugins/actions/errorchecking/maxcharactersperline.h:30
+#: ../plugins/actions/errorchecking/maxcharactersperline.h:28
 msgid "An error is detected if a line is too long."
 msgstr "如果一行太長則會導致一個錯誤被偵測到。"
 
-#: ../plugins/actions/errorchecking/maxcharactersperline.h:53
+#: ../plugins/actions/errorchecking/maxcharactersperline.h:50
 #, c-format
 msgid "Subtitle has a too long line: <b>1 character</b>"
 msgid_plural "Subtitle has a too long line: <b>%i characters</b>"
 msgstr[0] "一條超長行的字幕： <b>%i 個字</b>"
 
-#: ../plugins/actions/errorchecking/maxcharactersperline.h:58
+#: ../plugins/actions/errorchecking/maxcharactersperline.h:52
 #, fuzzy, c-format
 msgid ""
 "<b>Automatic correction:</b>\n"
 "%s"
 msgstr "<b>自動校正：</b> 變更目前字幕結束為 %s。"
 
-#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:30
+#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:31
 #, fuzzy
 msgid "Maximum Characters per Second"
 msgstr "每秒最大字元數："
 
-#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:31
+#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:32
 msgid ""
 "Detects and fixes subtitles when the number of characters per second is "
 "superior to the specified value."
@@ -808,65 +954,65 @@ msgstr "當每秒字數高於指定值時偵測並校正字幕。"
 msgid "There are too many characters per second: <b>%.1f chars/s</b>"
 msgstr "每秒的字數"
 
-#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:56
-#: ../plugins/actions/errorchecking/mincharacterspersecond.h:57
+#: ../plugins/actions/errorchecking/maxcharacterspersecond.h:55
+#: ../plugins/actions/errorchecking/mincharacterspersecond.h:55
 #, fuzzy, c-format
 msgid "<b>Automatic correction:</b> change current subtitle duration to %s."
 msgstr "<b>自動校正：</b> 變更目前字幕結束為 %s。"
 
-#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:29
+#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:28
 #, fuzzy
 msgid "Maximum Lines per Subtitle"
 msgstr "每條字幕最大列數"
 
-#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:30
+#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:28
 msgid "An error is detected if a subtitle has too many lines."
 msgstr "如果一條字幕有太多列則會導致一個錯誤被偵測到"
 
-#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:56
+#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:54
 #, c-format
 msgid "Subtitle has too many lines: <b>1 line</b>"
 msgid_plural "Subtitle has too many lines: <b>%i lines</b>"
 msgstr[0] "字幕有太多列： <b>%i 行</b>"
 
-#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:60
-#: ../plugins/actions/errorchecking/overlapping.h:57
+#: ../plugins/actions/errorchecking/maxlinepersubtitle.h:56
+#: ../plugins/actions/errorchecking/overlapping.h:56
 msgid "<b>Automatic correction:</b> unavailable, correct the error manually."
 msgstr "<b>自動校正：</b> 無法使用， 請手動校正該錯誤。"
 
-#: ../plugins/actions/errorchecking/mincharacterspersecond.h:30
+#: ../plugins/actions/errorchecking/mincharacterspersecond.h:31
 #, fuzzy
 msgid "Minimum Characters per Second"
 msgstr "每秒最小的字元數："
 
-#: ../plugins/actions/errorchecking/mincharacterspersecond.h:31
+#: ../plugins/actions/errorchecking/mincharacterspersecond.h:32
 msgid ""
 "Detects and fixes subtitles when the number of characters per second is "
 "inferior to the specified value."
 msgstr "當每秒字數低於指定值時偵測並校正字幕。"
 
-#: ../plugins/actions/errorchecking/mincharacterspersecond.h:54
+#: ../plugins/actions/errorchecking/mincharacterspersecond.h:53
 #, fuzzy, c-format
 msgid "There are too few characters per second: <b>%.1f chars/s</b>"
 msgstr "每秒的字數"
 
-#: ../plugins/actions/errorchecking/mindisplaytime.h:28
+#: ../plugins/actions/errorchecking/mindisplaytime.h:29
 #, fuzzy
 msgid "Minimum Display Time"
 msgstr "最短顯示時間"
 
-#: ../plugins/actions/errorchecking/mindisplaytime.h:29
+#: ../plugins/actions/errorchecking/mindisplaytime.h:30
 msgid ""
 "Detects and fixes subtitles when the duration is inferior to the specified "
 "value."
 msgstr "當字幕時間少於指定值時偵測並且校正字幕。"
 
-#: ../plugins/actions/errorchecking/mindisplaytime.h:53
+#: ../plugins/actions/errorchecking/mindisplaytime.h:52
 #, c-format
 msgid "Subtitle display time is too short: <b>%s</b>"
 msgstr "字幕顯示時間太短： <b>%s</b>"
 
-#: ../plugins/actions/errorchecking/mindisplaytime.h:57
+#: ../plugins/actions/errorchecking/mindisplaytime.h:54
 #, c-format
 msgid "<b>Automatic correction:</b> to change current subtitle end to %s."
 msgstr "<b>自動校正：</b> 變更目前字幕結束為 %s。"
@@ -882,12 +1028,13 @@ msgid ""
 "short."
 msgstr "當最字幕間小間隙太短時偵測並校正字幕。"
 
-#: ../plugins/actions/errorchecking/mingapbetweensubtitles.h:64
+#. only error & solution
+#: ../plugins/actions/errorchecking/mingapbetweensubtitles.h:62
 #, c-format
 msgid "Too short gap between subtitle: <b>%ims</b>"
 msgstr "字幕間隙太短： <b>%ims</b>"
 
-#: ../plugins/actions/errorchecking/mingapbetweensubtitles.h:67
+#: ../plugins/actions/errorchecking/mingapbetweensubtitles.h:64
 #, c-format
 msgid ""
 "<b>Automatic correction:</b> to clip current subtitle end to %s and to move "
@@ -895,15 +1042,15 @@ msgid ""
 msgstr ""
 "<b>自動校正：</b> 剪輯目前字幕結束為 %s 其餘部分做為下一字幕的開始為 %s。"
 
-#: ../plugins/actions/errorchecking/overlapping.h:28
+#: ../plugins/actions/errorchecking/overlapping.h:29
 msgid "Overlapping"
 msgstr "重疊的"
 
-#: ../plugins/actions/errorchecking/overlapping.h:29
+#: ../plugins/actions/errorchecking/overlapping.h:30
 msgid "An error is detected when the subtitle overlap on next subtitle."
 msgstr "錯誤被查出當字幕交疊在下個字幕。"
 
-#: ../plugins/actions/errorchecking/overlapping.h:54
+#: ../plugins/actions/errorchecking/overlapping.h:53
 #, c-format
 msgid "Subtitle overlap on next subtitle: <b>%ims overlap</b>"
 msgstr "字幕和下一字幕重疊：<b>%ims 重疊</b>"
@@ -914,23 +1061,26 @@ msgid "_Extend Length Forward"
 msgstr "擴大長度(_E)"
 
 #: ../plugins/actions/extendlength/extendlength.cc:44
-msgid "Extend the length of selected subtitles to the start time of the next"
+#, fuzzy
+msgid ""
+"Extend the length of the selected subtitles to the start time of the next "
+"subtitle (while respecting minimum gap between subtitles)"
 msgstr "延長所選字幕到下一字幕的開始時間"
 
-#: ../plugins/actions/extendlength/extendlength.cc:49
+#: ../plugins/actions/extendlength/extendlength.cc:50
 #, fuzzy
 msgid "E_xtend Length Backwards"
 msgstr "擴充長度"
 
-#: ../plugins/actions/extendlength/extendlength.cc:50
+#: ../plugins/actions/extendlength/extendlength.cc:51
 #, fuzzy
 msgid ""
-"Extend the length of selected subtitles backwards to the end time of the "
-"previous"
+"Extend the length of selected selected subtitles backwards to the end time "
+"of the previous subtitle (while respecting minimum gap between subtitles)"
 msgstr "延長所選字幕到下一字幕的開始時間"
 
 #: ../plugins/actions/extendlength/extendlength.cc:109
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:114
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:107
 #, fuzzy
 msgid "Please select at least 1 subtitle."
 msgstr "請選擇至少一個字幕。"
@@ -993,7 +1143,7 @@ msgstr ""
 
 #: ../plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui.h:12
 #: ../plugins/actions/template/dialog-template-save-as.ui.h:3
-#: ../src/gui/application.cc:306 ../share/ui/dialog-save-document.ui.h:4
+#: ../src/gui/application.cc:283 ../share/ui/dialog-save-document.ui.h:4
 msgid "Format:"
 msgstr "格式："
 
@@ -1002,39 +1152,49 @@ msgstr "格式："
 msgid "Offset in mseconds:"
 msgstr "間隔時間在幾秒鐘內："
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:93
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:83
 msgid "_External Video Player"
 msgstr "外部視訊播放器(_E)"
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:97
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:83
+#, fuzzy
+msgid "Play video or audio with an external player"
+msgstr "用外部的視訊播放器播放電影"
+
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:87
 msgid "_Open Movie"
 msgstr "開啟電影(_O)"
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:98
-msgid "Open movie with external video player"
-msgstr "用外部的視訊播放器開啟電影"
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:88
+msgid ""
+"Select a video or audio to be played by the external video player (only "
+"works if the option to use the video from the internal video player is "
+"unchecked in the preferences of the external video player)"
+msgstr ""
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:104
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:97
 msgid "_Play Movie"
 msgstr "播放視訊(_P)"
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:105
-msgid "Play movie with external video player"
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:97
+#, fuzzy
+msgid "Play a movie with the external video player"
 msgstr "用外部的視訊播放器播放電影"
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:112
-msgid "External video player preferences"
-msgstr "外部視訊播放器偏好設定"
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:102
+#, fuzzy
+msgid "Configure the external video player"
+msgstr "用外部的視訊播放器開啟電影"
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:179
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:169
 msgid "Please select a movie."
 msgstr "請選擇一部電影。"
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:206
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:195
 msgid "Failed to launch the external player."
 msgstr "啟動外部的播放器失敗。"
 
-#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:207
+#: ../plugins/actions/externalvideoplayer/externalvideoplayer.cc:196
 #, c-format
 msgid ""
 "%s\n"
@@ -1089,15 +1249,15 @@ msgid "<b>Columns</b>"
 msgstr "<b>欄目</b>"
 
 #: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:11
-#: ../plugins/actions/findandreplace/findandreplace.cc:537
-#: ../src/subtitleview.cc:1263
+#: ../plugins/actions/findandreplace/findandreplace.cc:508
+#: ../src/subtitleview.cc:1300
 msgid "Text"
 msgstr "文字"
 
 #: ../plugins/actions/findandreplace/dialog-find-and-replace.ui.h:12
-#: ../plugins/actions/findandreplace/findandreplace.cc:539
-#: ../plugins/actions/viewmanager/viewmanager.cc:317
-#: ../src/subtitleview.cc:1264
+#: ../plugins/actions/findandreplace/findandreplace.cc:510
+#: ../plugins/actions/viewmanager/viewmanager.cc:301
+#: ../src/subtitleview.cc:1301
 msgid "Translation"
 msgstr "翻譯"
 
@@ -1110,90 +1270,89 @@ msgstr "<b>套用於</b>"
 msgid "Target"
 msgstr "目標"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:166
+#: ../plugins/actions/findandreplace/findandreplace.cc:164
 msgid "Replace text"
 msgstr "替換文字"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:495
-#: ../plugins/actions/findandreplace/findandreplace.cc:860
+#: ../plugins/actions/findandreplace/findandreplace.cc:469
+#: ../plugins/actions/findandreplace/findandreplace.cc:820
 msgid "The document is empty"
 msgstr "檔案是空的"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:759
+#: ../plugins/actions/findandreplace/findandreplace.cc:725
 msgid "_Find And Replace"
 msgstr "搜尋替換(_F)"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:760
+#: ../plugins/actions/findandreplace/findandreplace.cc:725
 msgid "Search and replace text"
 msgstr "搜尋和替換文字"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:765
+#: ../plugins/actions/findandreplace/findandreplace.cc:729
 msgid "Find Ne_xt"
 msgstr "搜尋下一個(_X)"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:766
+#: ../plugins/actions/findandreplace/findandreplace.cc:729
 msgid "Search forwards for the same text"
 msgstr "正向搜尋相同的文字"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:770
+#: ../plugins/actions/findandreplace/findandreplace.cc:732
 msgid "Find Pre_vious"
 msgstr "搜尋上一個(_V)"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:771
+#: ../plugins/actions/findandreplace/findandreplace.cc:732
 msgid "Search backwards for the same text"
 msgstr "反向搜尋相同的文字"
 
-#: ../plugins/actions/findandreplace/findandreplace.cc:870
+#: ../plugins/actions/findandreplace/findandreplace.cc:829
 msgid "Not found"
 msgstr "沒有找到"
 
-#: ../plugins/actions/findbytime/findbytime.cc:56
+#: ../plugins/actions/findbytime/findbytime.cc:55
 #, fuzzy
 msgid "Find Subtitle By Time"
 msgstr "增加字幕"
 
-#: ../plugins/actions/findbytime/findbytime.cc:57
-#: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
+#: ../plugins/actions/findbytime/findbytime.cc:55
 #, fuzzy
-msgid "Finds the subtitle nearest to the current player position."
+msgid "Find the subtitle nearest to the current player position"
 msgstr "當一個字幕出現在螢幕。"
 
-#: ../plugins/actions/findbytime/findbytime.cc:114
+#: ../plugins/actions/findbytime/findbytime.cc:108
 #, fuzzy
 msgid "No subtitles, cannot find the nearest."
 msgstr "排序字幕基於它們的起始時間。"
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:47
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:46
 msgid "Create Subtitle From Player And Keyframes"
 msgstr "從播放器和關鍵影格建立字幕"
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:48
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:47
 msgid ""
 "Create subtitle automatically according to keyframes around the position of "
 "the player."
 msgstr "根據播放器位置周圍的關鍵影格自動建立字幕。"
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:56
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:53
 msgid "Create Subtitles According Keyframes"
 msgstr "根據關鍵影格建立字幕"
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:57
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:54
 msgid "Create subtitles automatically according to keyframes"
 msgstr "根據關鍵影格自動建立字幕"
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:135
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:128
 msgid "Insert Subtitle Between Keyframes"
 msgstr "在關鍵影格之間插入字幕"
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:183
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:175
 msgid "Can't insert subtitle between keyframes, not enough keyframes."
 msgstr "無法於關鍵影格之間插入字幕，關鍵影格數量不足。"
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:190
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:182
 msgid "Insert Subtitle Between Each Keyframes"
 msgstr "插入字幕介於每個關鍵影格"
 
-#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:210
+#: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc:202
 #, c-format
 msgid "1 subtitle has been inserted."
 msgid_plural "%d subtitles have been inserted."
@@ -1203,20 +1362,20 @@ msgstr[0] "已插入了 %d 個字幕。"
 msgid "Insert _Before"
 msgstr "在字幕前插入(_B)"
 
-#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:45
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:44
 msgid "Insert a blank subtitle before the first selected subtitle"
 msgstr "在選擇的字幕之前插入空白的字幕"
 
-#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:51
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:50
 msgid "Insert _After"
 msgstr "在字幕後插入(_A)"
 
-#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:52
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:50
 msgid "Insert a blank subtitle after the first selected subtitle"
 msgstr "在選擇的字幕後面插入空白的字幕"
 
-#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:117
-#: ../src/subtitles.cc:108
+#: ../plugins/actions/insertsubtitle/insertsubtitle.cc:115
+#: ../src/subtitles.cc:104
 #: ../plugins/actions/insertsubtitle/insertsubtitle.se-plugin.in.h:1
 msgid "Insert Subtitle"
 msgstr "插入字幕"
@@ -1226,27 +1385,67 @@ msgid "_Italic"
 msgstr "斜體字(_I)"
 
 #: ../plugins/actions/italicize/italicize.cc:45
-msgid "Italicize the text of the selected subtitles"
+#, fuzzy
+msgid ""
+"Italicize the text of the selected subtitles — note that this only works for "
+"Subrip (SRT) files"
 msgstr "用斜體字印刷選擇的字幕文字"
 
-#: ../plugins/actions/italicize/italicize.cc:110
+#: ../plugins/actions/italicize/italicize.cc:109
 msgid "Italic"
 msgstr "斜體"
 
-#: ../plugins/actions/joindocument/joindocument.cc:45
+#: ../plugins/actions/joindocument/dialog-join-offset.ui.h:1
+#, fuzzy
+msgid "Join Subtitles"
+msgstr "聯接字幕"
+
+#: ../plugins/actions/joindocument/dialog-join-offset.ui.h:2
+msgid "_Offset:"
+msgstr ""
+
+#: ../plugins/actions/joindocument/dialog-join-offset.ui.h:3
+msgid ""
+"Subtitles from the new file will be joined with this offset. If a video is "
+"open, its duration is offered as offset. If no video is open, the end time "
+"of the last subtitle is offered as the offset."
+msgstr ""
+
+#: ../plugins/actions/joindocument/joindocument.cc:85
 msgid "_Join Document"
 msgstr "連線字幕檔案(_J)"
 
-#: ../plugins/actions/joindocument/joindocument.cc:45
-msgid "Add subtitles from file"
-msgstr "從檔案附加字幕並用附加的檔案名稱命名"
+#: ../plugins/actions/joindocument/joindocument.cc:86
+msgid ""
+"Add subtitles from a file to the current document, adjusting timecodes by "
+"given offset. If a video is open, its duration is offered as the offset. If "
+"no video is open, the end time of the last subtitle is offered as the offset."
+msgstr ""
+
+#: ../plugins/actions/joindocument/joindocument.cc:93
+#, fuzzy
+msgid "_Append Document"
+msgstr "開啟文件"
+
+#: ../plugins/actions/joindocument/joindocument.cc:93
+msgid "Append subtitles from file without changing timecodes"
+msgstr ""
+
+#: ../plugins/actions/joindocument/joindocument.cc:187
+msgid "Join cancelled."
+msgstr ""
 
 #. needs with Document::open
-#: ../plugins/actions/joindocument/joindocument.cc:113
+#: ../plugins/actions/joindocument/joindocument.cc:197
 msgid "Join document"
 msgstr "加入檔案"
 
-#: ../plugins/actions/joindocument/joindocument.cc:142
+#: ../plugins/actions/joindocument/joindocument.cc:197
+#, fuzzy
+msgid "Append document"
+msgstr "開啟文件"
+
+#: ../plugins/actions/joindocument/joindocument.cc:235
 #, c-format
 msgid "One subtitle has been added to this document."
 msgid_plural "%d subtitles have been added to this document."
@@ -1257,125 +1456,134 @@ msgstr[0] "%d 條字幕被加入該檔案。"
 msgid "Generate Keyframes"
 msgstr "產生關鍵影格"
 
-#: ../plugins/actions/keyframesmanagement/keyframesgenerator.cc:38
-#: ../plugins/actions/keyframesmanagement/keyframesgenerator.cc:114
-#: ../plugins/actions/keyframesmanagement/keyframesgeneratorusingframe.cc:44
-#: ../plugins/actions/keyframesmanagement/keyframesgeneratorusingframe.cc:169
-#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:42
+#: ../plugins/actions/keyframesmanagement/keyframesgenerator.cc:39
+#: ../plugins/actions/keyframesmanagement/keyframesgeneratorusingframe.cc:45
+#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:41
 msgid "Waiting..."
 msgstr "請稍候…"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:52
+#. Open
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:49
 msgid "Open Keyframes"
 msgstr "開啟關鍵影格"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:53
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:49
 msgid "Open keyframes from a file"
 msgstr "開啟關鍵影格從檔案"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:59
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:264
+#. Save
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:53
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:250
 msgid "Save Keyframes"
 msgstr "儲存關鍵影格"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:60
-msgid "Save keyframes to the file"
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:53
+#, fuzzy
+msgid "Save keyframes to a file"
 msgstr "儲存關鍵影格到該檔案"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:66
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:59
 msgid "Generate Keyframes From Video"
 msgstr "從視訊產生關鍵影格"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:67
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:73
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:59
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:64
 msgid "Generate keyframes from the current video"
 msgstr "從目前視訊產生關鍵影格"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:72
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:63
 #, fuzzy
 msgid "Generate Keyframes From Video (Using Frame)"
 msgstr "從視訊產生關鍵影格"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-msgid "Close the keyframes"
+#. Close
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:67
+#, fuzzy
+msgid "Close keyframes"
 msgstr "關閉關鍵影格"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:79
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:86
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:91
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:97
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:104
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:111
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:117
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:47
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:54
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:63
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:68
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:74
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:80
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:87
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:93
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:93
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:98
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:103
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:141
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.se-plugin.in.h:2
-#: ../plugins/actions/template/template.se-plugin.in.h:2
-#: ../plugins/actions/textcorrection/textcorrection.se-plugin.in.h:2
-msgid "FIXME"
-msgstr "待修正"
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:67
+#, fuzzy
+msgid "Close the keyframes file"
+msgstr "關閉關鍵影格"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:86
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:73
 msgid "Seek To Previous Keyframe"
 msgstr "跳到上一關鍵影格"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:91
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:73
+#, fuzzy
+msgid "Seek to the previous keyframe"
+msgstr "跳到上一關鍵影格"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:77
 msgid "Seek To Next Keyframe"
 msgstr "跳到下一關鍵影格"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:97
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:77
+#, fuzzy
+msgid "Seek to the next keyframe"
+msgstr "跳到下一關鍵影格"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:82
 msgid "Snap Start To Previous Keyframe"
 msgstr "黏附開始到上一關鍵影格"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:104
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:83
+#, fuzzy
+msgid "Snap the start of the first selected subtitle to the previous keyframe"
+msgstr "定位到第一所選擇的字幕"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:89
 msgid "Snap Start To Next Keyframe"
 msgstr "黏附到下一關鍵影格的開始"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:111
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:90
+#, fuzzy
+msgid "Snap the start of the first selected subtitle to the next keyframe"
+msgstr "定位到第一所選擇的字幕"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:96
 msgid "Snap End To Previous Keyframe"
 msgstr "黏附到上一關鍵影格的結束"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:117
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:97
+#, fuzzy
+msgid "Snap the end of the first selected subtitle to the previous keyframe"
+msgstr "定位到第一所選擇的字幕"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:103
 msgid "Snap End To Next Keyframe"
 msgstr "黏附到下一關鍵影格的結束"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:122
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:285
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:166
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:104
+#, fuzzy
+msgid "Snap the end of the first selected subtitle to the next keyframe"
+msgstr "定位到第一所選擇的字幕"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:110
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:252
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:147
 msgid "_Recent Files"
 msgstr ""
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:434
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:110
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:252
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:147
+#, fuzzy
+msgid "Open a recent file"
+msgstr "開啟檔案"
+
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:412
 msgid "Snap Start to Keyframe"
 msgstr "黏附到關鍵影格的開始"
 
-#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:454
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.cc:431
 msgid "Snap End to Keyframe"
 msgstr "黏附到關鍵影格的結束"
 
-#: ../plugins/actions/keyframesmanagement/mediadecoder.h:172
-#: ../plugins/actions/keyframesmanagement/mediadecoder.h:183
-#: ../plugins/actions/waveformmanagement/mediadecoder.h:172
-#: ../plugins/actions/waveformmanagement/mediadecoder.h:183
-msgid "Media file could not be played.\n"
-msgstr "媒體檔案不能被播放。\n"
-
-#: ../plugins/actions/keyframesmanagement/mediadecoder.h:305
-#: ../plugins/actions/waveformmanagement/mediadecoder.h:305
+#: ../plugins/actions/keyframesmanagement/mediadecoder.h:320
+#: ../plugins/actions/waveformmanagement/mediadecoder.h:320
 #: ../src/gstreamer_utility.cc:50
 msgid ""
 "GStreamer plugins missing.\n"
@@ -1385,86 +1593,91 @@ msgstr ""
 "GStreamer 外掛程式沒找到。\n"
 "播放該影片所需的如下 GStreamer 解碼器沒有安裝："
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:48
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:47
 msgid "Minimize Duration From Start"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:49
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:48
 msgid ""
-"Compact each selected subtitle to its minimum permissible duration, start "
-"time is unchanged."
+"Compact all selected subtitles to their minimum permissible duration set in "
+"preferences by decreasing the end timecode, so start time is unchanged"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:55
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:53
 msgid "Minimize Duration From End"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:56
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:54
 msgid ""
-"Compact each selected subtitle to its minimum permissible duration, end time "
-"is unchanged."
+"Compact all selected subtitles to their minimum permissible duration set in "
+"preferences by increasing the start timecode, so end time is unchanged"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:63
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:60
 msgid "_Idealize Duration From Start"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:64
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:61
 msgid ""
-"Compact each selected subtitle to its ideal duration, start time is "
-"unchanged."
+"Compact all selected subtitles to their ideal duration set in preferences by "
+"decreasing the end timecode, so start time is unchanged"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:70
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:66
 msgid "_Idealize Duration From End"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:71
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:67
 msgid ""
-"Compact each selected subtitle to its ideal duration, end time is unchanged."
+"Compact all selected subtitles to their ideal duration set in preferences by "
+"increasing the start timecode, so end time is unchanged"
 msgstr ""
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:155
-msgid "Minimize Duration needs at least 1 subtitle to work on."
-msgstr ""
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:144
+#, fuzzy
+msgid "This action needs at least one subtitle to work on."
+msgstr "請選擇至少二個字幕。"
 
-#: ../plugins/actions/minimizeduration/minimizeduration.cc:162
+#: ../plugins/actions/minimizeduration/minimizeduration.cc:151
 #, fuzzy
 msgid "Minimize Durations"
 msgstr "從期間"
 
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:44
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:43
 msgid "_Move After Preceding"
 msgstr "向前移動字幕(_M)"
 
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:45
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:44
+#, fuzzy
 msgid ""
-"Move subtitle after the preceding with the respect of the minimum gap "
-"between subtitles"
-msgstr "以最小間隔的原則將字幕移至上一字幕之後(見工具的檢錯誤檢查誤功能)"
+"Move selected subtitles right after the previous ones (while respecting "
+"minimum gap between subtitles)"
+msgstr "以最小間隔的原則將字幕移至上一字幕之後(見工具的檢錯誤檢查誤功能)。"
 
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:50
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:48
 msgid "_Move Before Next"
 msgstr ""
 
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:51
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:49
 #, fuzzy
-msgid "Move subtitle just before the next one"
-msgstr "%d 個字幕被刪除了。"
+msgid ""
+"Move selected subtitles right before the next ones (while respecting minimum "
+"gap between subtitles)"
+msgstr "以最小間隔的原則將字幕移至上一字幕之後(見工具的檢錯誤檢查誤功能)。"
 
 #. move after preceding
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:122
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:115
 msgid "Move After Preceding"
 msgstr "向前移動字幕"
 
 #. move before next
-#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:138
+#: ../plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc:131
 #, fuzzy
 msgid "Before Next Preceding"
 msgstr "向前移動字幕"
 
 #: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:1
-#: ../plugins/actions/movesubtitles/movesubtitles.cc:161
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:153
 #: ../plugins/actions/movesubtitles/movesubtitles.se-plugin.in.h:1
 msgid "Move Subtitles"
 msgstr "移動字幕"
@@ -1478,62 +1691,61 @@ msgstr "<b>位置</b>"
 msgid "_New Start:"
 msgstr "新開始處(_N)："
 
+#. init label
 #: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:4
-#: ../plugins/actions/movesubtitles/movesubtitles.cc:49
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:44
 #: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:4
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:142
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:144
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:133
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:134
 msgid "_Start Time:"
 msgstr "開始時間(_S)："
 
-#: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:5
-msgid "_Only selected subtitles"
-msgstr "只選擇字幕(_O)"
-
-#: ../plugins/actions/movesubtitles/dialog-move-subtitles.ui.h:6
-msgid ""
-"If the option is activated, only the selected subtitles are moved. Without "
-"this option, it starts from the first selected subtitle until the last "
-"subtitle of the document without taking into account the selection."
-msgstr ""
-
-#: ../plugins/actions/movesubtitles/movesubtitles.cc:50
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:142
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:144
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:44
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:133
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:134
 msgid "_Start Frame:"
 msgstr "起始禎(_S)："
 
-#: ../plugins/actions/movesubtitles/movesubtitles.cc:99
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:93
 msgid "_Move Subtitles"
 msgstr "移動字幕(_M)"
 
-#: ../plugins/actions/movesubtitles/movesubtitles.cc:100
-msgid "All subtitles will be also moved after the first selected subtitle"
-msgstr "所有所選擇的字幕將被移動到時間軸指定的的位置"
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:94
+msgid ""
+"Move selected subtitles. If only one subtitle is selected, move it and all "
+"subsequent subtitles."
+msgstr ""
+
+#: ../plugins/actions/movesubtitles/movesubtitles.cc:163
+msgid "Old Start Time and New Start are the same. Nothing was moved."
+msgstr ""
 
 #: ../plugins/actions/plaintext/plaintext.cc:46
 msgid "_Import Plain Text"
 msgstr "匯入純文字(_I)"
 
 #: ../plugins/actions/plaintext/plaintext.cc:47
-#, fuzzy
-msgid "Create a new document from any text file."
-msgstr "用文字檔案新增一個新字幕檔案"
+msgid ""
+"Create a new document from a text file (one or more consecutive blank lines "
+"separate chunks of text that will be imported as separate subtitles) "
+msgstr ""
 
-#: ../plugins/actions/plaintext/plaintext.cc:51
+#: ../plugins/actions/plaintext/plaintext.cc:52
 msgid "_Export Plain Text"
 msgstr "匯出為純文字(_E)"
 
-#: ../plugins/actions/plaintext/plaintext.cc:52
-msgid "Export just a text in a file"
-msgstr "僅匯出字幕文字為檔案(藍本)"
+#: ../plugins/actions/plaintext/plaintext.cc:53
+msgid ""
+"Export text of subtitles into a file (blank lines separating the text of "
+"individual subtitles)"
+msgstr ""
 
-#: ../plugins/actions/plaintext/plaintext.cc:112
+#: ../plugins/actions/plaintext/plaintext.cc:109
 #, fuzzy, c-format
 msgid "Could not import from file \"%s\"."
 msgstr "不能從檔案「%s」匯入。"
 
-#: ../plugins/actions/plaintext/plaintext.cc:133
+#: ../plugins/actions/plaintext/plaintext.cc:128
 #, c-format
 msgid "Could not export to the file \"%s\"."
 msgstr "不能匯出到檔案「%s」。"
@@ -1611,7 +1823,7 @@ msgid "_Autosave files every"
 msgstr "自動儲存檔案， 每隔(_A)"
 
 #: ../plugins/actions/preferences/dialog-preferences.ui.h:18
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:19
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:55
 msgid "1"
 msgstr ""
 
@@ -1645,264 +1857,276 @@ msgid "<b>Video</b>"
 msgstr "<b>視訊</b>"
 
 #: ../plugins/actions/preferences/dialog-preferences.ui.h:26
-msgid "Force aspect _ratio"
-msgstr "強制導向比率(_R)"
+msgid "Do not _stretch video to fill view"
+msgstr ""
 
 #: ../plugins/actions/preferences/dialog-preferences.ui.h:27
+msgid ""
+"When unchecked, video will be stretched and deformed to fill its view. When "
+"checked, video ratio will always be kept, creating black bands around it as "
+"necessary."
+msgstr ""
+
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:28
 msgid "Automatically _choose video to open"
 msgstr "自動選擇要開啟的視訊(_C)"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:28
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:29
 msgid "<b>Text Subtitle</b>"
 msgstr "<b>文字字幕</b>"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:29
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:30
 msgid "_Font:"
 msgstr "字型(_F)："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:30
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:31
 msgid "Use shaded _background"
 msgstr "用於遮蔽的背景(_B)"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:31
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:32
 msgid "Display _translated subtitle"
 msgstr "顯示翻譯的字幕(_T)"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:32
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:33
 msgid "Display the translated subtitle instead of the original one."
 msgstr "顯示翻譯的字幕代替原始字幕。"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:33
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:34
 #, fuzzy
 msgid "Vertical Alignment:"
 msgstr "垂直："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:34
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:35
 #, fuzzy
 msgid "baseline"
 msgstr "換列符號："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:35
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:36
 msgid "bottom"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:36
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:37
 msgid "top"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:37
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:38
 #, fuzzy
 msgid "position"
 msgstr "編輯位置"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:38
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:39
 msgid "center"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:39
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:40
 msgid "<b>Output</b>"
 msgstr "<b>輸出</b>"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:40
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:41
 msgid "_Audio:"
 msgstr "音訊(_A)："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:41
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:42
 msgid "_Video:"
 msgstr "視訊(_V)："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:42
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:43
 msgid "Video Player"
 msgstr "視訊播放器"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:43
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:44
 msgid "<b>Timing Preferences</b>"
 msgstr "<b>計時的偏好設定</b>"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:46
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:47
 #, fuzzy
 msgid "Ideal characters per second:"
 msgstr "每秒最大字元數："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:51
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:52
 msgid "1.0"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:52
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:53
 #, fuzzy
 msgid "_Ignore space in subtitle"
 msgstr "插入一條空字幕。"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:53
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:54
 msgid "This setting takes effect only after Subtitle Editor is restarted"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:54
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:55
 msgid "<b>Automatic Timing Check</b>"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:55
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:56
 msgid "Automatically highlight timing errors\t"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:57
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:58
 msgid "<b>Waveform Color</b>"
 msgstr "<b>音訊波形顏色</b>"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:58
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:59
 msgid "Background:"
 msgstr "背景色："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:59
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:60
 msgid "Wave:"
 msgstr "波浪："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:60
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:61
 msgid "Wave fill:"
 msgstr "波形填充："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:61
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:62
 msgid "Subtitle:"
 msgstr "字幕："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:62
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:63
 msgid "Subtitle Selected:"
 msgstr "已選擇的字幕："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:63
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:64
 msgid "Subtitle Invalid:"
 msgstr "無效字幕："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:64
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:65
 msgid "Player Position:"
 msgstr "播放器位置："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:65
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:66
 #: ../plugins/actions/scalesubtitles/dialog-scale-subtitles.ui.h:6
 msgid "Text:"
 msgstr "文字："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:66
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:67
 msgid "Display background"
 msgstr "顯示背景"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:67
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:68
 msgid "Display waveform fill"
 msgstr "顯示音訊波形填充"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:68
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:69
 msgid "Display subtitle text"
 msgstr "顯示字幕文字"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:69
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:70
 msgid "Reset To _Defaults"
 msgstr "重設為預設值(_D)"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:70
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:71
 msgid "<b>Waveform Generator</b>"
 msgstr "<b>音訊波形產生器</b>"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:71
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:72
 msgid "Interval in seconds:"
 msgstr "間隔時間在幾秒鐘內："
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:72
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:73
 msgid "1000"
 msgstr ""
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:73
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:74
 msgid "Waveform"
 msgstr "音訊波形"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:74
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:75
 msgid "<b>Activate plugins</b>"
 msgstr "<b>啟用外掛程式</b>"
 
-#: ../plugins/actions/preferences/dialog-preferences.ui.h:75
+#: ../plugins/actions/preferences/dialog-preferences.ui.h:76
 msgid "Plugins"
 msgstr "外掛程式"
 
-#: ../plugins/actions/preferences/preferencesplugin.cc:86
+#: ../plugins/actions/preferences/preferencesplugin.cc:82
 msgid "Configure Subtitle Editor"
 msgstr "配置字幕編輯"
 
 #. audio output
-#: ../plugins/actions/preferences/videoplayerpage.h:102
-#: ../plugins/actions/preferences/videoplayerpage.h:122
+#: ../plugins/actions/preferences/videoplayerpage.h:94
+#: ../plugins/actions/preferences/videoplayerpage.h:110
 msgid "Autodetect"
 msgstr "自動偵測"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:103
+#: ../plugins/actions/preferences/videoplayerpage.h:95
 msgid "Pulse — PulseAudio Sound Server"
 msgstr "Pulse — PulseAudio 聲音伺服器"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:106
+#: ../plugins/actions/preferences/videoplayerpage.h:96
 msgid "ALSA — Advanced Linux Sound Architecture"
 msgstr "ALSA — 先進的 Linux 聲音架構"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:107
+#: ../plugins/actions/preferences/videoplayerpage.h:97
 msgid "ESD — Enlightenment Sound Daemon"
 msgstr "ESD — Enlightenment 聲音守護程式"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:109
+#: ../plugins/actions/preferences/videoplayerpage.h:98
 msgid "OSS — Open Sound System"
 msgstr "OSS — 開放聲音系統"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:110
-#: ../plugins/actions/preferences/videoplayerpage.h:127
+#: ../plugins/actions/preferences/videoplayerpage.h:99
+#: ../plugins/actions/preferences/videoplayerpage.h:113
 msgid "SDL — Simple DirectMedia Layer"
 msgstr "SDL — 簡單 DirectMedia 層"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:112
-#: ../plugins/actions/preferences/videoplayerpage.h:129
+#: ../plugins/actions/preferences/videoplayerpage.h:100
+#: ../plugins/actions/preferences/videoplayerpage.h:114
 msgid "GConf"
 msgstr "GConf"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:114
-#: ../plugins/actions/preferences/videoplayerpage.h:131
+#: ../plugins/actions/preferences/videoplayerpage.h:102
+#: ../plugins/actions/preferences/videoplayerpage.h:116
 msgid "OSX"
 msgstr "OSX"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:123
+#: ../plugins/actions/preferences/videoplayerpage.h:111
 msgid "X Window System (X11/XShm/Xv)"
 msgstr "X Window 系統 (X11/XShm/Xv)"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:125
+#: ../plugins/actions/preferences/videoplayerpage.h:112
 msgid "X Window System (No Xv)"
 msgstr "X Window 系統(無 Xv)"
 
-#: ../plugins/actions/preferences/videoplayerpage.h:134
+#: ../plugins/actions/preferences/videoplayerpage.h:119
 msgid "OpenGL"
 msgstr "開放圖形語言"
 
-#: ../plugins/actions/removesubtitle/removesubtitle.cc:44
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:42
+#, fuzzy
+msgid "_Delete"
+msgstr "刪除樣式"
+
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:42
 msgid "Delete selected subtitles"
 msgstr "刪除選擇的字幕"
 
-#: ../plugins/actions/removesubtitle/removesubtitle.cc:104
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:98
 msgid "Delete Subtitles"
 msgstr "刪除字幕"
 
-#: ../plugins/actions/removesubtitle/removesubtitle.cc:116
+#: ../plugins/actions/removesubtitle/removesubtitle.cc:109
 #, c-format
 msgid "1 subtitle has been deleted."
 msgid_plural "%d subtitles have been deleted."
 msgstr[0] "%d 個字幕被刪除了。"
 
-#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:44
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:43
 msgid "_Reverse Text And Translation"
 msgstr "切換原文和翻譯(_R)"
 
-#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:45
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:43
 msgid "Reverse the text and the translation"
 msgstr "扭轉文字和翻譯"
 
-#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:96
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:92
 #: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.se-plugin.in.h:1
 msgid "Reverse Text And Translation"
 msgstr "切換原文和翻譯"
 
-#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:110
+#: ../plugins/actions/reversetextandtranslation/reversetextandtranslation.cc:106
 msgid "Reverse the text and the translation was applied."
 msgstr "撤銷文字並且翻譯已被套用。"
 
@@ -1930,217 +2154,222 @@ msgstr "所選範圍(_S)"
 msgid "_All Subtitles"
 msgstr "所有字幕(_A)"
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:72
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:75
-msgid "You can't use <i>scale</i> with this values."
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:68
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:70
+#, fuzzy
+msgid "You can't use <i>scale</i> with these values."
 msgstr "您無法在<i>比例</i>上使用這個值。"
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:73
-msgid "The first point is superior to the last point."
-msgstr "第一個點優先於最後一點。"
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:68
+#, fuzzy
+msgid "The first point is before the last point."
+msgstr "第一個點等於最後一點。"
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:76
-msgid "The first point is equal to the last point."
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:70
+#, fuzzy
+msgid "The first point is the same as the last point."
 msgstr "第一個點等於最後一點。"
 
 #. apply change
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:91
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:83
 msgid "Scale subtitles"
 msgstr "縮放字幕"
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:110
-msgid "The scale was applied"
-msgstr "縮放已被套用"
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:102
+#, fuzzy
+msgid "The subtitles were scaled"
+msgstr "%d 個字幕被刪除了。"
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:128
-msgid "You can't use <i>scale</i> with this document."
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:119
+#, fuzzy
+msgid "You can't use the <i>scale</i> action with this document."
 msgstr "您無法對該檔案使用<i>縮放</i>。"
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:307
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:291
 msgid "_Scale"
 msgstr "縮放(_S)"
 
-#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:308
-msgid "Scale by two points"
-msgstr "按兩點縮放"
+#: ../plugins/actions/scalesubtitles/scalesubtitles.cc:292
+msgid ""
+"Scale subtitles by two points — this is a generalized version of the Change "
+"Framerate action"
+msgstr ""
 
-#: ../plugins/actions/selection/selection.cc:44
+#: ../plugins/actions/selection/selection.cc:43
 msgid "Select _First Subtitle"
 msgstr "選擇第一筆字幕(_F)"
 
-#: ../plugins/actions/selection/selection.cc:45
+#: ../plugins/actions/selection/selection.cc:43
 msgid "Select the first subtitle"
 msgstr "選擇第一筆字幕"
 
-#: ../plugins/actions/selection/selection.cc:50
+#: ../plugins/actions/selection/selection.cc:46
 msgid "Select _Last Subtitle"
 msgstr "選擇最後的字幕(_L)"
 
-#: ../plugins/actions/selection/selection.cc:51
+#: ../plugins/actions/selection/selection.cc:46
 msgid "Select the last subtitle"
 msgstr "選擇最後一筆字幕"
 
-#: ../plugins/actions/selection/selection.cc:56
+#: ../plugins/actions/selection/selection.cc:50
 msgid "Select _Previous Subtitle"
 msgstr "選擇上一字幕(_P)"
 
-#: ../plugins/actions/selection/selection.cc:57
+#: ../plugins/actions/selection/selection.cc:50
 msgid "Select the previous subtitle"
 msgstr "選擇上一字幕"
 
-#: ../plugins/actions/selection/selection.cc:62
+#: ../plugins/actions/selection/selection.cc:54
 msgid "Select _Next Subtitle"
 msgstr "選擇下一字幕(_N)"
 
-#: ../plugins/actions/selection/selection.cc:63
+#: ../plugins/actions/selection/selection.cc:54
 msgid "Select the next subtitle"
 msgstr "選擇下一筆字幕"
 
-#: ../plugins/actions/selection/selection.cc:69
+#: ../plugins/actions/selection/selection.cc:58
 msgid "Select _All Subtitles"
 msgstr "選擇所有字幕(_A)"
 
-#: ../plugins/actions/selection/selection.cc:69
+#: ../plugins/actions/selection/selection.cc:58
 msgid "Select all subtitles"
 msgstr "選擇所有字幕"
 
-#: ../plugins/actions/selection/selection.cc:75
+#: ../plugins/actions/selection/selection.cc:62
 #, fuzzy
 msgid "_Unselect All Subtitles"
 msgstr "選擇所有字幕(_A)"
 
-#: ../plugins/actions/selection/selection.cc:76
+#: ../plugins/actions/selection/selection.cc:62
 #, fuzzy
 msgid "Unselect all the subtitles"
 msgstr "選擇所有字幕"
 
-#: ../plugins/actions/selection/selection.cc:82
+#: ../plugins/actions/selection/selection.cc:66
 msgid "In_vert Selection"
 msgstr "反向選擇(_V)"
 
-#: ../plugins/actions/selection/selection.cc:83
+#: ../plugins/actions/selection/selection.cc:66
 msgid "Invert subtitles selection"
 msgstr "反轉字幕選擇"
 
-#: ../plugins/actions/selection/selection.cc:89
+#: ../plugins/actions/selection/selection.cc:70
 #, fuzzy
 msgid "Select to Start"
 msgstr "選擇最後的字幕(_L)"
 
-#: ../plugins/actions/selection/selection.cc:90
+#: ../plugins/actions/selection/selection.cc:70
 #, fuzzy
 msgid "Select all subtitles from current to start"
 msgstr "選擇所有字幕"
 
-#: ../plugins/actions/selection/selection.cc:95
+#: ../plugins/actions/selection/selection.cc:73
 #, fuzzy
 msgid "Select to End"
 msgstr "選擇"
 
-#: ../plugins/actions/selection/selection.cc:96
+#: ../plugins/actions/selection/selection.cc:73
 #, fuzzy
 msgid "Select all subtitles from current to end"
 msgstr "選擇所有字幕"
 
-#: ../plugins/actions/slidetimings/slidetimings.cc:58
+#: ../plugins/actions/slidetimings/slidetimings.cc:54
 msgid "_Bump Text Up"
 msgstr ""
 
-#: ../plugins/actions/slidetimings/slidetimings.cc:59
+#: ../plugins/actions/slidetimings/slidetimings.cc:54
 msgid ""
 "Moves the text field to the previous subtitle for all subtitles from the "
 "current one to the end."
 msgstr ""
 
-#: ../plugins/actions/slidetimings/slidetimings.cc:63
+#: ../plugins/actions/slidetimings/slidetimings.cc:59
 msgid "_Bump Text Down"
 msgstr ""
 
-#: ../plugins/actions/slidetimings/slidetimings.cc:64
+#: ../plugins/actions/slidetimings/slidetimings.cc:59
 msgid ""
 "Moves the text field to the next subtitle for all subtitles from the current "
 "one to the end."
 msgstr ""
 
-#: ../plugins/actions/slidetimings/slidetimings.cc:116
-#: ../plugins/actions/slidetimings/slidetimings.cc:146
-#: ../plugins/actions/slidewords/slidewords.cc:131
-#: ../plugins/actions/splitsubtitle/splitsubtitle.cc:90
-#: ../plugins/actions/typewriter/typewriter.cc:135
-msgid "Please select at least one subtitle."
-msgstr "請至少選擇一個字幕"
-
-#: ../plugins/actions/slidetimings/slidetimings.cc:120
+#: ../plugins/actions/slidetimings/slidetimings.cc:110
 msgid "Bump Down"
 msgstr ""
 
-#: ../plugins/actions/slidetimings/slidetimings.cc:150
+#: ../plugins/actions/slidetimings/slidetimings.cc:138
 msgid "Bump Up"
 msgstr ""
 
-#: ../plugins/actions/slidewords/slidewords.cc:50
+#: ../plugins/actions/slidewords/slidewords.cc:47
 #: ../plugins/actions/slidewords/slidewords.se-plugin.in.h:1
 #, fuzzy
 msgid "Slide Words"
 msgstr "加入單字(_A)"
 
-#: ../plugins/actions/slidewords/slidewords.cc:53
+#: ../plugins/actions/slidewords/slidewords.cc:47
+msgid "Move one word between lines or between two subtitles"
+msgstr ""
+
+#: ../plugins/actions/slidewords/slidewords.cc:50
 msgid "Slide Word To Next Line"
 msgstr ""
 
-#: ../plugins/actions/slidewords/slidewords.cc:54
+#: ../plugins/actions/slidewords/slidewords.cc:51
 msgid ""
 "Slides one word from the end of the first line to the beginning of the "
-"second one."
+"second one (this also works when exactly two subtitles are selected, moving "
+"the words between them then)"
 msgstr ""
 
-#: ../plugins/actions/slidewords/slidewords.cc:58
+#: ../plugins/actions/slidewords/slidewords.cc:56
 #, fuzzy
 msgid "Slide Word To Previous Line"
 msgstr "跳到上一關鍵影格"
 
-#: ../plugins/actions/slidewords/slidewords.cc:59
+#: ../plugins/actions/slidewords/slidewords.cc:57
 msgid ""
 "Slides one word from the beginning of the second line to the end of the "
-"first one."
+"first one (this also works when exactly two subtitles are selected, moving "
+"the words between them then)"
 msgstr ""
 
-#: ../plugins/actions/slidewords/slidewords.cc:135
+#: ../plugins/actions/slidewords/slidewords.cc:128
 msgid "Slide one word to the next line"
 msgstr ""
 
-#: ../plugins/actions/slidewords/slidewords.cc:135
+#: ../plugins/actions/slidewords/slidewords.cc:128
 #, fuzzy
 msgid "Slide one word to the previous line"
 msgstr "選擇上一字幕"
 
-#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:44
+#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:43
 msgid "S_ort Subtitles"
 msgstr "排序字幕(_O)"
 
-#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:45
+#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:43
 msgid "Sort subtitles based on their start time"
 msgstr "排序字幕基於它們的起始時間"
 
-#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:91
+#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:87
 #, c-format
 msgid "1 subtitle has been reordered."
 msgid_plural "%d subtitles have been reordered."
 msgstr[0] "%d 個字幕已被重新排序。"
 
-#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:95
+#: ../plugins/actions/sortsubtitles/sortsubtitles.cc:90
 msgid "No need to sort subtitles."
 msgstr "不需要排序字幕。"
 
 #: ../plugins/actions/spellchecking/dialog-spell-checking.ui.h:1
-#: ../plugins/actions/spellchecking/spellchecking.cc:138
+#: ../plugins/actions/spellchecking/spellchecking.cc:134
 #: ../plugins/actions/spellchecking/spellchecking.se-plugin.in.h:1
 msgid "Spell Checking"
 msgstr "拼寫檢查"
 
 #. Language
 #: ../plugins/actions/spellchecking/dialog-spell-checking.ui.h:2
-#: ../plugins/actions/textcorrection/patternspage.h:188
+#: ../plugins/actions/textcorrection/patternspage.h:186
 msgid "_Language:"
 msgstr "語言(_L)："
 
@@ -2156,7 +2385,7 @@ msgstr "全部忽略(_A)"
 msgid "A_dd Word"
 msgstr "加入單字(_A)"
 
-#: ../plugins/actions/spellchecking/spellchecking.cc:155
+#: ../plugins/actions/spellchecking/spellchecking.cc:151
 msgid ""
 "The spell check is applied to the column \"text\" as default. You can check "
 "the column \"translation\" by setting the focus to this column before "
@@ -2165,24 +2394,25 @@ msgstr ""
 "拼寫檢查預設被套用到「文字」欄 。您可以在開始拼寫檢查之前，藉由設定焦點到這個"
 "欄以檢查「翻譯」欄。"
 
-#: ../plugins/actions/spellchecking/spellchecking.cc:161
+#: ../plugins/actions/spellchecking/spellchecking.cc:157
 msgid "_Do not show this message again"
 msgstr "不再顯示此資訊(_D)"
 
-#: ../plugins/actions/spellchecking/spellchecking.cc:243
+#: ../plugins/actions/spellchecking/spellchecking.cc:227
 msgid "Suggestions"
 msgstr "建議"
 
-#: ../plugins/actions/spellchecking/spellchecking.cc:587
+#: ../plugins/actions/spellchecking/spellchecking.cc:550
 msgid "Completed spell checking."
 msgstr "拼寫檢查完成。"
 
-#: ../plugins/actions/spellchecking/spellchecking.cc:642
+#: ../plugins/actions/spellchecking/spellchecking.cc:603
 msgid "_Spell Check"
 msgstr "拼寫檢查(_S)"
 
-#: ../plugins/actions/spellchecking/spellchecking.cc:642
-msgid "Launch the spell checking"
+#: ../plugins/actions/spellchecking/spellchecking.cc:603
+#, fuzzy
+msgid "Launch the spellchecking dialog"
 msgstr "啟動拼寫檢查"
 
 #: ../plugins/actions/splitdocument/dialog-split-document.ui.h:1
@@ -2194,20 +2424,28 @@ msgstr "分割字幕檔案"
 msgid "The beginning for the new document:"
 msgstr "做為新檔案的起點："
 
-#: ../plugins/actions/splitdocument/splitdocument.cc:46
-msgid "You can't use <i>split</i> with this document."
+#: ../plugins/actions/splitdocument/splitdocument.cc:44
+#, fuzzy
+msgid "You can't use the <i>split</i> action with this document"
 msgstr "您無法使用<i>分割</i>以這個檔案。"
 
+#: ../plugins/actions/splitdocument/splitdocument.cc:45
+#, c-format
+msgid ""
+"There are no subtitles in document <b>%s</b>. It's empty and there is "
+"nothing to split."
+msgstr ""
+
 #. Remove subtitles used by the new one
-#: ../plugins/actions/splitdocument/splitdocument.cc:81
+#: ../plugins/actions/splitdocument/splitdocument.cc:80
 msgid "Split document"
 msgstr "分割字幕檔案"
 
-#: ../plugins/actions/splitdocument/splitdocument.cc:111
+#: ../plugins/actions/splitdocument/splitdocument.cc:108
 msgid "Spl_it Document"
 msgstr "分割字幕檔案(_I)"
 
-#: ../plugins/actions/splitdocument/splitdocument.cc:112
+#: ../plugins/actions/splitdocument/splitdocument.cc:108
 msgid "Split the current document in two"
 msgstr "將目前字幕檔案一分為二， 後半部形成的檔案從 1 開始編號"
 
@@ -2216,11 +2454,15 @@ msgid "_Split"
 msgstr "分割(_S)"
 
 #: ../plugins/actions/splitsubtitle/splitsubtitle.cc:45
-msgid "Split selected subtitles"
-msgstr "分割選擇的字幕"
+msgid ""
+"Split selected subtitles by lines (for each selected subtitle, as many new "
+"subtitles as it has lines will be created, with their total duration "
+"equaling the selected subtitle and set proportionately to their length while "
+"respecting the minimal gap between subtitles setting"
+msgstr ""
 
-#: ../plugins/actions/splitsubtitle/splitsubtitle.cc:94
-#: ../plugins/actions/typewriter/typewriter.cc:139
+#: ../plugins/actions/splitsubtitle/splitsubtitle.cc:93
+#: ../plugins/actions/typewriter/typewriter.cc:144
 msgid "Split subtitles"
 msgstr "分割字幕"
 
@@ -2234,27 +2476,27 @@ msgid ""
 "Stack selected subtitles after the first one as close together as possible."
 msgstr ""
 
-#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:55
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:53
 #, fuzzy
 msgid "Stack Subtitles From End"
 msgstr "設定字幕結束(_E)"
 
-#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:56
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:54
 msgid ""
 "Stack selected subtitles before the last one as close together as possible."
 msgstr ""
 
-#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:119
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:113
 #: ../plugins/actions/stacksubtitles/stacksubtitles.se-plugin.in.h:1
 #, fuzzy
 msgid "Stack Subtitles"
 msgstr "排序字幕"
 
-#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:178
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:170
 msgid "Stack Subtitles needs at least 2 subtitles to work on."
 msgstr ""
 
-#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:209
+#: ../plugins/actions/stacksubtitles/stacksubtitles.cc:200
 msgid "Stack Subtitles only works on a continuous selection."
 msgstr ""
 
@@ -2263,128 +2505,396 @@ msgid "Subtitle Editor — Style Editor"
 msgstr "字幕編輯器 — 樣式編輯器"
 
 #: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:2
+msgid "Close the dialog (changes to styles are saved on the fly)"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:3
+#, fuzzy
+msgid "New Style"
+msgstr "新增新樣式"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:4
+msgid "Delete Style"
+msgstr "刪除樣式"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:5
+#, fuzzy
+msgid "Duplicate Style"
+msgstr "複製字幕"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:6
+msgid "Set as Default ASS Style"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:7
+msgid "Video Resolution"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:8
+msgid ""
+"If it is disabled, it means your document has not set it. You can add it "
+"(recommended) by adding a new style."
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:9
+#: ../share/ui/dialog-script-properties.ui.h:16
+msgid "PlayResX:"
+msgstr "PlayResX:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:10
+msgid ""
+"Reference width for subtitle positioning and scaling. If it is disabled, it "
+"means your document has not set it. You can add it (recommended) by adding a "
+"new style."
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:11
+#: ../share/ui/dialog-script-properties.ui.h:17
+msgid "PlayResY:"
+msgstr "PlayResY:"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:12
+msgid ""
+"Reference height for subtitle positioning and scaling. If it is disabled, it "
+"means your document has not set it. You can add it (recommended) by adding a "
+"new style."
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:13
 #, fuzzy
 msgid "Font"
 msgstr "字型(_F)："
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:3
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:14
+#, fuzzy
+msgid "Change font properties"
+msgstr "變更影格頻"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:15
+msgid "Change font and its size"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:16
+msgid "Toggle bold"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:17
+msgid "Toggle italic"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:18
+msgid "Toggle underline"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:19
+msgid "Toggle strikethrough"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:20
 #, fuzzy
 msgid "Appearance"
 msgstr "<b>外觀</b>"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:4
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:21
+#, fuzzy
+msgid "Set subtitle color and background"
+msgstr "設定字幕開始和結束位置(_A)"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:22
 #, fuzzy
 msgid "Colors"
 msgstr "<b>顏色</b>"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:5
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:23
+#, fuzzy
+msgid "Set subtitle colors"
+msgstr "設定字幕"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:24
 msgid "Primary:"
 msgstr "主要："
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:6
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:25
+msgid "Set font color"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:26
 msgid "Secondary:"
 msgstr "次要："
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:7
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:27
+msgid "Set secondary font color (only used for some karaoke effects)"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:28
 msgid "Outline:"
 msgstr "概述："
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:8
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:29
+msgid "Set outline color"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:30
 msgid "Shadow:"
 msgstr "陰影："
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:9
-#, fuzzy
-msgid "Border"
-msgstr "<b>邊界</b>"
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:31
+msgid "Set shadow color"
+msgstr ""
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:10
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:32
+#, fuzzy
+msgid "Background"
+msgstr "背景色："
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:33
+#, fuzzy
+msgid "Set background"
+msgstr "背景色："
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:34
 msgid "Outline"
 msgstr "大綱"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:11
-msgid "Opaque Box"
-msgstr "不透明邊框"
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:35
+msgid ""
+"Letters will have an outline and a shadow in the colors set by Outline and "
+"Shadow (if Outline Size and Shadow Size are non-zero respectively)"
+msgstr ""
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:12
-msgid "Size:"
-msgstr "尺寸："
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:36
+msgid "Box per Line"
+msgstr ""
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:13
-msgid "Distance:"
-msgstr "距離："
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:37
+msgid ""
+"There will be rectangular boxes drawn for each line separately with the "
+"Color set by Outline (Outline Size sets the margin of the boxes and non-zero "
+"Shadow Size will draw shadow boxes)"
+msgstr ""
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:14
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:38
+msgid "Rectangular Box"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:39
+msgid ""
+"There will be a rectangular box drawn for the whole subtitle with the Color "
+"set by Shadow . Only players based on libass support this. That is all "
+"players on Linux, but Windows players using legacy VSFilter not based on "
+"libass might struggle."
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:40
 #, fuzzy
-msgid "Transformation"
+msgid "Outline size:"
+msgstr "概述："
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:41
+#, fuzzy
+msgid "Set the outline size"
+msgstr "選擇下一筆字幕"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:42
+#, fuzzy
+msgid "Shadow size:"
+msgstr "陰影："
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:43
+#, fuzzy
+msgid "Set the shadow size"
+msgstr "選擇最後一筆字幕"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:44
+#, fuzzy
+msgid "Transformatio&Position"
 msgstr "<b>變換</b>"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:15
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:45
+#, fuzzy
+msgid "Set subtitle position and effects"
+msgstr "設定字幕開始"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:46
+#, fuzzy
+msgid "Font effects"
+msgstr "編輯效果"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:47
 msgid "Angle:"
 msgstr "角度："
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:16
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:48
+msgid "Set rotation of the subtitle (breaks Rectangular box background)"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:49
 msgid "Spacing:"
 msgstr "間距："
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:17
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:50
+#, fuzzy
+msgid "Set letter spacing"
+msgstr "對選擇部分設定樣式"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:51
 msgid "Scale X:"
 msgstr "縮放 X："
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:18
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:52
+msgid ""
+"Set X scale, values under 100 will squeeze letters horizontally, values "
+"above 100 will expand letters horizontally"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:53
 msgid "Scale Y:"
 msgstr "縮放 Y："
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:20
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:54
+msgid ""
+"Set Y scale, values under 100 will squeeze letters vertically, values above "
+"100 will prolong letters vertically"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:56
 #, fuzzy
 msgid "Margins"
 msgstr "<b>邊距</b>"
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:21
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:57
+#, fuzzy
+msgid "Set margins"
+msgstr "<b>邊距</b>"
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:58
 msgid "Right:"
 msgstr "右："
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:22
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:59
+msgid ""
+"Size of the right margin (subtitles will be offset by this amount from the "
+"right edge of the video)"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:60
 msgid "Vertical:"
 msgstr "垂直："
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:23
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:61
+msgid ""
+"Size of the vertical margin (subtitles will be offset by this amount from "
+"the top or bottom edge of the video depending on Alignment)"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:62
 #: ../plugins/actions/timingfromplayer/dialog-timing-from-player-preferences.ui.h:4
 msgid "0"
 msgstr ""
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:24
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:63
 msgid "Left:"
 msgstr "左："
 
-#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:25
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:64
+msgid ""
+"Size of the left margin (subtitles will be offset by this amount from the "
+"left edge of the video)"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:65
 #, fuzzy
 msgid "Alignment"
 msgstr "<b>對齊</b>"
 
-#: ../plugins/actions/styleeditor/styleeditor.cc:128
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:66
+msgid "Set alignment of the text and default position of the subtitle"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:67
+msgid "Position left bottom corner, text aligns to the left"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:68
+msgid "Position bottom centre, text aligns to the centre"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:69
+msgid "Position right bottom corner, text aligns to the right"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:70
+msgid "Position left centre, text aligns to the left"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:71
+msgid "Position centre, text aligns to the centre"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:72
+msgid "Position right centre, text aligns to the right"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:73
+msgid "Position left top corner, text aligns to the left"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:74
+msgid "Position top centre, text aligns to the centre"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/dialog-style-editor.ui.h:75
+msgid "Position right top corner, text aligns to the right"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:112
 msgid "Styles"
 msgstr "樣式"
 
-#: ../plugins/actions/styleeditor/styleeditor.cc:402
+#: ../plugins/actions/styleeditor/styleeditor.cc:151
+msgid "Problems"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:153
+msgid "PlayResX or PlayResY not set"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:154
+msgid "Missing PlayRes Information"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:159
+msgid "Apply default PlayRes"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:237
+msgid "Default Style and PlayRes saved to configuration file"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:239
+msgid "Default Style saved to configuration file"
+msgstr ""
+
+#: ../plugins/actions/styleeditor/styleeditor.cc:468
 msgid "_Style Editor"
 msgstr "樣式編輯器(S)"
 
-#: ../plugins/actions/styleeditor/styleeditor.cc:402
+#: ../plugins/actions/styleeditor/styleeditor.cc:468
 msgid "Launch the style editor"
 msgstr "啟動樣式編輯"
 
-#: ../plugins/actions/stylize/stylize.cc:44
+#: ../plugins/actions/stylize/stylize.cc:45
 #, fuzzy
 msgid "_Stylize"
 msgstr "樣式"
 
-#: ../plugins/actions/stylize/stylize.cc:45
-#, fuzzy
-msgid "Stylize the selected subtitles text"
-msgstr "用斜體字印刷選擇的字幕文字"
+#: ../plugins/actions/stylize/stylize.cc:46
+msgid ""
+"Apply style to the selected subtitles (note that this will get saved only "
+"when using style-supporting format such as ASS)"
+msgstr ""
 
-#: ../plugins/actions/stylize/stylize.cc:163 ../src/subtitleview.cc:1152
+#: ../plugins/actions/stylize/stylize.cc:156 ../src/subtitleview.cc:1192
 msgid "Set style to selection"
 msgstr "對選擇部分設定樣式"
 
@@ -2393,12 +2903,12 @@ msgid "Save Template As:"
 msgstr ""
 
 #: ../plugins/actions/template/dialog-template-save-as.ui.h:2
-#: ../src/gui/application.cc:305
+#: ../src/gui/application.cc:277
 msgid "Name:"
 msgstr "名稱："
 
 #: ../plugins/actions/template/dialog-template-save-as.ui.h:4
-#: ../src/document.cc:435 ../src/gui/application.cc:305
+#: ../src/document.cc:432 ../src/gui/application.cc:281
 #: ../share/ui/dialog-export-text.ui.h:2 ../share/ui/dialog-import-text.ui.h:2
 #: ../share/ui/dialog-open-document.ui.h:2
 #: ../share/ui/dialog-save-document.ui.h:3
@@ -2415,17 +2925,22 @@ msgstr "換列符號："
 msgid "_Template"
 msgstr ""
 
-#: ../plugins/actions/template/template.cc:109
+#: ../plugins/actions/template/template.cc:105
+#, fuzzy
+msgid "Save a template or use a template"
+msgstr "將目前檔案一分為二。"
+
+#: ../plugins/actions/template/template.cc:108
 msgid "_Save As Template"
 msgstr ""
 
-#: ../plugins/actions/template/template.cc:110
+#: ../plugins/actions/template/template.cc:108
 #, fuzzy
-msgid "Save the current document as template."
+msgid "Save the current document as template"
 msgstr "將目前檔案一分為二。"
 
 #: ../plugins/actions/textcorrection/assistant-text-correction.ui.h:1
-#: ../plugins/actions/textcorrection/confirmationpage.h:164
+#: ../plugins/actions/textcorrection/confirmationpage.h:150
 #: ../plugins/actions/textcorrection/textcorrection.se-plugin.in.h:1
 msgid "Text Correction"
 msgstr "文字校正"
@@ -2459,48 +2974,48 @@ msgstr "刪除所有空字幕(_R)"
 msgid "Select Capitalization Patterns"
 msgstr "選取大寫胚騰"
 
-#: ../plugins/actions/textcorrection/capitalizationpage.h:29
+#: ../plugins/actions/textcorrection/capitalizationpage.h:28
 msgid "Capitalize texts"
 msgstr "字首大寫文字"
 
-#: ../plugins/actions/textcorrection/capitalizationpage.h:30
+#: ../plugins/actions/textcorrection/capitalizationpage.h:28
 msgid "Capitalize texts written in lower case"
 msgstr "以小寫書寫的字首大寫文字"
 
-#: ../plugins/actions/textcorrection/commonerrorpage.h:28
+#: ../plugins/actions/textcorrection/commonerrorpage.h:29
 msgid "Select Common Error Pattern"
 msgstr "選取共同錯誤胚騰"
 
-#: ../plugins/actions/textcorrection/commonerrorpage.h:29
+#: ../plugins/actions/textcorrection/commonerrorpage.h:30
 msgid "Correct common errors"
 msgstr "修正共同錯誤"
 
-#: ../plugins/actions/textcorrection/commonerrorpage.h:30
+#: ../plugins/actions/textcorrection/commonerrorpage.h:31
 msgid "Correct common errors made by humans or image recognition software"
 msgstr "修正由操作者或影像辨識軟體所造成的共同錯誤"
 
-#: ../plugins/actions/textcorrection/confirmationpage.h:66
-#: ../src/subtitleview.cc:1260
+#: ../plugins/actions/textcorrection/confirmationpage.h:64
+#: ../src/subtitleview.cc:1297
 msgid "Num"
 msgstr "序號"
 
-#: ../plugins/actions/textcorrection/confirmationpage.h:76
+#: ../plugins/actions/textcorrection/confirmationpage.h:73
 msgid "Accept"
 msgstr "接受"
 
-#: ../plugins/actions/textcorrection/confirmationpage.h:88
+#: ../plugins/actions/textcorrection/confirmationpage.h:83
 msgid "Original Text"
 msgstr "原始文字"
 
-#: ../plugins/actions/textcorrection/confirmationpage.h:99
+#: ../plugins/actions/textcorrection/confirmationpage.h:92
 msgid "Corrected Text"
 msgstr "修正文字"
 
-#: ../plugins/actions/textcorrection/confirmationpage.h:151
+#: ../plugins/actions/textcorrection/confirmationpage.h:138
 msgid "There Is No Change"
 msgstr "沒有任何變更"
 
-#: ../plugins/actions/textcorrection/confirmationpage.h:154
+#: ../plugins/actions/textcorrection/confirmationpage.h:140
 msgid "Confirm %1 Change"
 msgid_plural "Confirm %1 Changes"
 msgstr[0] "確認 %1 變更"
@@ -2518,48 +3033,94 @@ msgid "Remove explanatory texts meant for the hearing impaired"
 msgstr "移除原本打算用於聽障者的說明性文字"
 
 #. Script
-#: ../plugins/actions/textcorrection/patternspage.h:181
+#: ../plugins/actions/textcorrection/patternspage.h:179
 msgid "_Script:"
 msgstr "命令稿(_S)："
 
 #. Country
-#: ../plugins/actions/textcorrection/patternspage.h:195
+#: ../plugins/actions/textcorrection/patternspage.h:193
 msgid "_Country:"
 msgstr "國家/地區(_C)："
 
-#: ../plugins/actions/textcorrection/patternspage.h:355
-#: ../plugins/actions/textcorrection/patternspage.h:380
-#: ../plugins/actions/textcorrection/patternspage.h:406
+#: ../plugins/actions/textcorrection/patternspage.h:344
+#: ../plugins/actions/textcorrection/patternspage.h:369
+#: ../plugins/actions/textcorrection/patternspage.h:395
 msgid "Other"
 msgstr "其他"
 
-#: ../plugins/actions/textcorrection/taskspage.h:53
-#: ../plugins/actions/viewmanager/viewmanager.cc:105
+#: ../plugins/actions/textcorrection/taskspage.h:51
+#: ../plugins/actions/viewmanager/viewmanager.cc:101
 msgid "Display"
 msgstr "顯示"
 
-#: ../plugins/actions/textcorrection/taskspage.h:64
-#: ../plugins/actions/viewmanager/viewmanager.cc:117
-#: ../plugins/actions/viewmanager/viewmanager.cc:188
-#: ../src/subtitleview.cc:1258
+#: ../plugins/actions/textcorrection/taskspage.h:61
+#: ../plugins/actions/viewmanager/viewmanager.cc:112
+#: ../plugins/actions/viewmanager/viewmanager.cc:178
+#: ../src/subtitleview.cc:1295
 msgid "Name"
 msgstr "名稱"
 
-#: ../plugins/actions/textcorrection/textcorrection.cc:181
+#: ../plugins/actions/textcorrection/textcorrection.cc:177
 msgid "Text _Correction"
 msgstr "文字校正(_C)"
 
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:46
-msgid "_Times"
+#: ../plugins/actions/textcorrection/textcorrection.cc:177
+#, fuzzy
+msgid "Launch the text correction dialogue"
+msgstr "啟動拼寫檢查"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:45
+#, fuzzy
+msgid "_Timecodes"
 msgstr "時間(_T)"
 
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:53
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:45
+#, fuzzy
+msgid "Use timecodes"
+msgstr "萬國碼"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:48
 msgid "_Frames"
 msgstr "影格(_F)"
 
-#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:63
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:48
+#, fuzzy
+msgid "Use frames"
+msgstr "關鍵影格(_K)"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:54
 msgid "_Framerate"
 msgstr "影格頻率(_F)"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:54
+#, fuzzy
+msgid "Set subtitle framerate"
+msgstr "設定字幕開始"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:57
+#, fuzzy
+msgid "Set subtitle framerate to 23.976"
+msgstr "設定字幕開始"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:61
+#, fuzzy
+msgid "Set subtitle framerate to 24"
+msgstr "設定字幕開始"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:65
+#, fuzzy
+msgid "Set subtitle framerate to 25"
+msgstr "設定字幕開始"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:69
+#, fuzzy
+msgid "Set subtitle framerate to 29.7"
+msgstr "設定字幕開始"
+
+#: ../plugins/actions/timemodemanagement/timemodemanagement.cc:73
+#, fuzzy
+msgid "Set subtitle framerate to 30"
+msgstr "設定字幕開始"
 
 #: ../plugins/actions/timingfromplayer/dialog-timing-from-player-preferences.ui.h:1
 #, fuzzy
@@ -2582,352 +3143,481 @@ msgid ""
 "when the video player is running)"
 msgstr ""
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:75
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:71
 #: ../plugins/actions/timingfromplayer/timingfromplayer.se-plugin.in.h:1
 msgid "Timing From Player"
 msgstr "從播放器定時"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:76
-msgid "Use the current player position to set subtitle time"
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:71
+#, fuzzy
+msgid "Use the current player position to set subtitle timecodes"
 msgstr "使用目前的播放器位置以設定字幕時間"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:80
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:74
 msgid "Set Subtitle _Start"
 msgstr "設定字幕開始處(_F)"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:81
-msgid "Use the current player position to set the subtitle start"
-msgstr "將目前播放位置設為字幕開始"
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:75
+#, fuzzy
+msgid ""
+"Use the current player position to set the start of the first selected "
+"subtitle and then move all the other selected subtitles by the same distance "
+"(like the tool Move Subtitles, but without dialogue)"
+msgstr "將目前播放位置設為所選字幕開始以及下一個位置"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:86
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:81
 msgid "Set Subtitle _End"
 msgstr "設定字幕結束(_E)"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:87
-msgid "Use the current player position to set the subtitle end"
-msgstr "將目前播放位置設為字幕結束"
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:82
+#, fuzzy
+msgid ""
+"Use the current player position to set the end of the first selected subtitle"
+msgstr "將目前播放位置設為字幕結束並前往下一個"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:94
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:88
 msgid "Set Subtitle Start And Go Next"
 msgstr "設定字幕開始並前往下一個"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:95
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:89
+#, fuzzy
 msgid ""
-"Use the current player position to set the start of the selected subtitle "
-"and go to the next"
-msgstr "將目前播放位置設為字幕結束"
+"Use the current player position to set the start of the first selected "
+"subtitle, then move all the other selected subtitles by the same amount and "
+"select the subtitle next to the first selected one"
+msgstr "將目前播放位置設為所選字幕開始以及下一個位置"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:102
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:96
 msgid "Set Subtitle End And Go Next"
 msgstr "設定字幕結束並前往下一個"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:103
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:97
+#, fuzzy
 msgid ""
-"Use the current player position to set the end of the selected subtitle and "
-"go to the next"
-msgstr "將目前播放位置設為字幕結束並前往下一個"
+"Use the current player position to set the end of the first selected "
+"subtitle and select the subtitle next to the first selected one"
+msgstr "將目前播放位置設為所選字幕結束以及下一個位置"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:111
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:104
 msgid "Set Subtitle Start And Next"
 msgstr "設定字幕開始和結束位置(_A)"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:112
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:105
+#, fuzzy
 msgid ""
 "Use the current player position to set the start of the current selected "
-"subtitle and the position of the next"
+"subtitle and then create a new subtitle next to it — use this action only "
+"when your selected subtitle is the last one, otherwise the results are funny"
 msgstr "將目前播放位置設為所選字幕開始以及下一個位置"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:119
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:112
 msgid "Set Subtitle End And Next"
 msgstr "設定字幕結束和下一個"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:120
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:113
+#, fuzzy
 msgid ""
 "Use the current player position to set the end of the current selected "
-"subtitle and the position of the next"
+"subtitle and then create a new subtitle next to it — use this action only "
+"when your selected subtitle is the last one, otherwise the results are funny"
 msgstr "將目前播放位置設為所選字幕結束以及下一個位置"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:128
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:121
 msgid "Set Subtitle Start _And End"
 msgstr "設定字幕開始和結束位置(_A)"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:129
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:122
 msgid ""
-"Use only one key to set beginning of the subtitle when the key is pressed "
-"and the end when the key is released."
-msgstr "只使用一個鍵來設定字幕，按下時表示開始而放開時表示結束。"
+"Use this to time all your subtitles in one go as video plays. Press the "
+"associated (ideally) one-key shortcut to set the beginning and release to "
+"set the end of the subtitle. Then the next subtitle is selected or a new one "
+"created."
+msgstr ""
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:250
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:130
+#: ../plugins/actions/preferences/preferences.se-plugin.in.h:1
+msgid "Preferences"
+msgstr "偏好設定"
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:130
+msgid "Configure this submenu"
+msgstr ""
+
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:230
 msgid "Set subtitle start"
 msgstr "設定字幕開始"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:252
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:232
 msgid "Set subtitle end"
 msgstr "設定字幕結束"
 
-#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:253
+#: ../plugins/actions/timingfromplayer/timingfromplayer.cc:233
 msgid "Set subtitle"
 msgstr "設定字幕"
 
-#: ../plugins/actions/typewriter/typewriter.cc:43
+#: ../plugins/actions/typewriter/typewriter.cc:46
 msgid "_Typewriter"
 msgstr "打字機(_T)"
 
 #: ../plugins/actions/typewriter/typewriter.cc:47
+msgid ""
+"Produces a typewriter effect by creating several head-to-head subtitles "
+"instead of the selected ones in the same total duration making it appear as "
+"if letters or words are being added gradually"
+msgstr ""
+
+#: ../plugins/actions/typewriter/typewriter.cc:51
 msgid "Characters — Linear"
 msgstr "字元 — 順序打出"
 
-#: ../plugins/actions/typewriter/typewriter.cc:54
+#: ../plugins/actions/typewriter/typewriter.cc:52
+msgid ""
+"Produces a typewriter effect growing character by character with even delay "
+"between the characters"
+msgstr ""
+
+#: ../plugins/actions/typewriter/typewriter.cc:58
 msgid "Characters — Random"
 msgstr "字元 — 隨機打出"
 
-#: ../plugins/actions/typewriter/typewriter.cc:60
+#: ../plugins/actions/typewriter/typewriter.cc:59
+msgid ""
+"Produces a typewriter effect growing character by character with random "
+"delay between the characters"
+msgstr ""
+
+#: ../plugins/actions/typewriter/typewriter.cc:65
 msgid "Words — Linear"
 msgstr "字詞 — 順序打出"
 
 #: ../plugins/actions/typewriter/typewriter.cc:66
+msgid ""
+"Produces a typewriter effect growing word by word with even delay between "
+"the characters"
+msgstr ""
+
+#: ../plugins/actions/typewriter/typewriter.cc:72
 msgid "Words — Random"
 msgstr "字詞 — 隨機打出"
 
+#: ../plugins/actions/typewriter/typewriter.cc:73
+msgid ""
+"Produces a typewriter effect growing word by word with random delay between "
+"the characters"
+msgstr ""
+
 #. Already create in MenuBar.cc
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:45
-#: ../src/gui/menubar.cc:53
+#: ../src/gui/menubar.cc:50
 msgid "_Video"
 msgstr "視訊(_V)"
 
 #. _("_Open Media"),
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:49
-msgid "Open a multimedia file"
-msgstr "開啟一個多媒體檔案"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:50
+#, fuzzy
+msgid "Open an audio file or a video file"
+msgstr "從檔案開啟翻譯"
 
 #. _("_Close Media"),
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:56
-msgid "Close a multimedia file"
-msgstr "關閉一個多媒體檔案"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:57
+msgid "Close an audio file or a video file"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:69
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:61
+#, fuzzy
+msgid "Play"
+msgstr "PlayResX:"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:61
+#, fuzzy
+msgid "Play audio or video"
+msgstr "播放視訊(_P)"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:64
+msgid "Pause"
+msgstr ""
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:64
+msgid "Pause audio or video"
+msgstr ""
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:67
 msgid "_Play / Pause"
 msgstr "播放/暫停(_P)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:70
-msgid "Play or make a pause"
-msgstr "播放或暫停"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:67
+msgid "Play or pause audio or video"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:76
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:74
 msgid "Skip _Backwards"
 msgstr "快退(_B)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:80
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:133
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:74
+#, fuzzy
+msgid "Skip Backwards"
+msgstr "快退(_B)"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:77
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:128
 #, fuzzy
 msgid "Frame"
 msgstr "影格數"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:81
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:77
 #, fuzzy
-msgid "Frame skip backwards"
-msgstr "小幅向後倒"
+msgid "Skip backwards by a frame"
+msgstr "快退(_B)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:88
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:141
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:82
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:133
 msgid "Tiny"
 msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:89
-#, fuzzy
-msgid "Tiny skip backwards"
-msgstr "大幅向後倒"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:83
+msgid ""
+"Tiny skip backwards — Configure amount in miliseconds in your text "
+"configuration file under section [video-player]; the configuration file is "
+"usually located at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:96
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:149
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:91
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
 msgid "Very Short"
 msgstr "非常短"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:97
-msgid "Very short skip backwards"
-msgstr "極小幅向後倒"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:92
+msgid ""
+"Very short skip backwards — Configure amount in seconds in your text "
+"configuration file under section [video-player]; the configuration file is "
+"usually located at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:104
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:157
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:100
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:151
 msgid "Short"
 msgstr "短"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:105
-msgid "Short skip backwards"
-msgstr "小幅向後倒"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:101
+msgid ""
+"Short skip backwards — Configure amount in seconds in your text "
+"configuration file under section [video-player]; the configuration file is "
+"usually located at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:112
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:165
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:109
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:160
 msgid "Medium"
 msgstr "中等"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:113
-msgid "Medium skip backwards"
-msgstr "中幅向後倒"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:110
+msgid ""
+"Medium skip backwards — Configure amount in seconds in your text "
+"configuration file under section [video-player]; the configuration file is "
+"usually located at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:120
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:173
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:118
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:169
 msgid "Long"
 msgstr "長"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:121
-msgid "Long skip backwards"
-msgstr "大幅向後倒"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:119
+msgid ""
+"Long skip backwards — Configure amount in seconds in your text configuration "
+"file under section [video-player]; the configuration file is usually located "
+"at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:129
+#. Seek Forward
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:126
 msgid "Skip _Forward"
 msgstr "快轉(_F)"
 
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:126
+#, fuzzy
+msgid "Skip Forward"
+msgstr "快轉(_F)"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:128
+#, fuzzy
+msgid "Skip forward by a frame"
+msgstr "快轉(_F)"
+
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:134
-#, fuzzy
-msgid "Frame skip forward"
-msgstr "小幅向前進"
+msgid ""
+"Tiny skip forward — Configure amount in miliseconds in your text "
+"configuration file under section [video-player]; the configuration file is "
+"usually located at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:142
-#, fuzzy
-msgid "Tiny skip forward"
-msgstr "大幅向前進"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:143
+msgid ""
+"Very short skip forward — Configure amount in seconds in your text "
+"configuration file under section [video-player]; the configuration file is "
+"usually located at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:150
-msgid "Very short skip forward"
-msgstr "極小幅向前進"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:152
+msgid ""
+"Short skip forward — Configure amount in seconds in your text configuration "
+"file under section [video-player]; the configuration file is usually located "
+"at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:158
-msgid "Short skip forward"
-msgstr "小幅向前進"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:161
+msgid ""
+"Medium skip forward — Configure amount in seconds in your text configuration "
+"file under section [video-player]; the configuration file is usually located "
+"at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:166
-msgid "Medium skip forward"
-msgstr "中幅向前進"
-
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:174
-msgid "Long skip forward"
-msgstr "大幅向前進"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:170
+msgid ""
+"Long skip forward — Configure amount in seconds in your text configuration "
+"file under section [video-player]; the configuration file is usually located "
+"at ~/.config/subtitleeditor/default/config"
+msgstr ""
 
 #. Rate Slower & Faster
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:180
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:177
 msgid "Rate"
 msgstr "比率"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:181
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
-msgid "Define the playback rate"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:177
+#, fuzzy
+msgid "Set the playback rate"
 msgstr "定義重播率"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:184
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:179
 msgid "_Slower"
 msgstr "慢放(_S)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:189
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:179
+msgid "Decrease the playback rate by 0.1 (in range 0.1—1.5)"
+msgstr ""
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:182
 msgid "_Faster"
 msgstr "快放(_F)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:194
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:182
+msgid "Increase the playback rate by 0.1 (in range 0.1—1.5)"
+msgstr ""
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
 msgid "_Normal"
 msgstr "普通(_N)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:201
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:185
+#, fuzzy
+msgid "Set the playback rate to normal (1.0)"
+msgstr "定義重播率"
+
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
 msgid "_Seek To Selection"
 msgstr "定位到選擇處(_E)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:202
-msgid "Seek to the first selected subtitle"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:190
+#, fuzzy
+msgid "Seek to the start of the first selected subtitle"
 msgstr "定位到第一所選擇的字幕"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
 #, fuzzy
 msgid "_Seek To Selection End"
 msgstr "定位到選擇處(_E)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:209
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:195
 #, fuzzy
 msgid "Seek to the end of the last selected subtitle"
 msgstr "定位到第一所選擇的字幕"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:216
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:201
 msgid "_Repeat"
 msgstr "重複(_R)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:217
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:201
 msgid "Enable or disable the repeat mode"
 msgstr "開啟或關閉重複模式"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:226
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:207
 msgid "Play _Previous Subtitle"
 msgstr "播放上一字幕(_R)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:227
-msgid "Play previous subtitle from the first selected subtitle"
-msgstr "播放目前選擇字幕的上一字幕"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:208
+#, fuzzy
+msgid "Play the subtitle that is previous to the first selected subtitle"
+msgstr "播放目前選擇字幕的下一字幕"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:233
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:213
 msgid "Play _Selection"
 msgstr "播放選擇(_S)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:234
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:213
 msgid "Play the selected subtitle"
 msgstr "播放選擇的字幕"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:240
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:218
 msgid "Play _Next Subtitle"
 msgstr "播放下一字幕(_N)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:241
-msgid "Play next subtitle from the first selected subtitle"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:219
+#, fuzzy
+msgid "Play the subtitle that is next to the first selected subtitle"
 msgstr "播放目前選擇字幕的下一字幕"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:247
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:225
 msgid "Play Previous Second"
 msgstr "播放上一秒"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:248
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:225
 msgid "Play the second preceding the first selected subtitle"
 msgstr "播放選擇字幕的第一筆的上一秒"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:253
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:230
 msgid "Play First Second"
 msgstr "播放第一秒"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:254
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:230
 msgid "Play the first second of the subtitle currently selected"
 msgstr "播放目前選擇的字幕的第一秒"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:259
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:234
 msgid "Play Last Second"
 msgstr "播放最後一秒"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:260
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:234
 msgid "Play the last second of the subtitle currently selected"
 msgstr "播放目前選擇的字幕的最後秒"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:265
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:238
 msgid "Play Next Second"
 msgstr "播放下一秒"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:266
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:238
 msgid "Play the second following the subtitle currently selected"
 msgstr "播放目前選擇的字幕後的一秒"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:274
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:245
 msgid "_Video Player"
 msgstr "視訊播放器(_V)"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:275
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:245
 msgid "Show or hide the video player in the current window"
 msgstr "在目前視窗顯示或隱藏視訊播放"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:280
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:248
 msgid "Audio Track"
 msgstr "音軌"
 
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:281
-msgid "Choice of an audio track"
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:248
+#, fuzzy
+msgid "Choose an audio track"
 msgstr "選擇一個音軌"
 
 #. A default track "Auto"
-#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:550
+#: ../plugins/actions/videoplayermanagement/videoplayermanagement.cc:502
 msgid "Auto"
 msgstr "自動"
 
@@ -2950,150 +3640,206 @@ msgstr "檢視管理"
 msgid "View"
 msgstr "檢視(_V)"
 
-#: ../plugins/actions/viewmanager/viewmanager.cc:238
+#: ../plugins/actions/viewmanager/viewmanager.cc:226
 msgid "Untitled"
 msgstr "未命名"
 
-#: ../plugins/actions/viewmanager/viewmanager.cc:314
+#: ../plugins/actions/viewmanager/viewmanager.cc:299
 msgid "Simple"
 msgstr "簡單"
 
-#: ../plugins/actions/viewmanager/viewmanager.cc:315
+#: ../plugins/actions/viewmanager/viewmanager.cc:300
 msgid "Advanced"
 msgstr "進階"
 
-#: ../plugins/actions/viewmanager/viewmanager.cc:330
+#. If the current displayed columns are from a view, display
+#. radiobuttons
+#. Note that on X11 with appmentu-gtk3 (aka global menus),  this will
+#. not work if we first load from config column configuration that does
+#. not correspond to any view, then until restarted, no radio buttons
+#. will show even if we later set up a menu
+#. Create as regular menu item if no defined view is set
+#: ../plugins/actions/viewmanager/viewmanager.cc:340
+#: ../plugins/actions/viewmanager/viewmanager.cc:344
 msgid "Switches to this view"
 msgstr "切換到該檢視"
 
-#: ../plugins/actions/viewmanager/viewmanager.cc:338
+#. Set View preferences menu item
+#: ../plugins/actions/viewmanager/viewmanager.cc:350
 msgid "View _Manager"
 msgstr "檢視管理(_V)"
 
-#: ../plugins/actions/viewmanager/viewmanager.cc:338
+#: ../plugins/actions/viewmanager/viewmanager.cc:350
 msgid "Manage the views"
 msgstr "管理該檢視"
 
-#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:32
+#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:33
 msgid "Generate Waveform"
 msgstr "產生音訊波形"
 
-#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:179
+#: ../plugins/actions/waveformmanagement/waveformgenerator.cc:164
 msgid "Could not determinate the duration of the stream."
 msgstr "無法確定串流的持續時間。"
 
 #. Already create in MenuBar.cc
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:50
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:159
-#: ../src/gui/menubar.cc:55
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:142
+#: ../src/gui/menubar.cc:52
 msgid "_Waveform"
 msgstr "音訊波形(_W)"
 
 #: ../plugins/actions/waveformmanagement/waveformmanagement.cc:55
-msgid "_Open Waveform From File"
+#, fuzzy
+msgid "_Create Waveform From File"
 msgstr "開啟音訊波形檔案(_O)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:56
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:55
 #, fuzzy
-msgid "Open waveform from a file or create from a video"
+msgid "Create a waveform from a video file or an audio file"
 msgstr "開啟音訊波形檔案或從視訊新增"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:63
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:60
 msgid "_Generate Waveform From Video"
 msgstr "從影片產生音訊波形(_G)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:64
-msgid "Generate the waveform from the current video file"
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:61
+#, fuzzy
+msgid "Generate a waveform from the current video or audio file"
 msgstr "從目前影片檔案產生音訊波形"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:70
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:65
 msgid "_Generate Dummy Waveform"
 msgstr "產生 Dummy 音訊波形(_G)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:71
-msgid "Generate an dummy waveform (sine)"
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:65
+#, fuzzy
+msgid "Generate a dummy waveform (a sinusoidal wave)"
 msgstr "產生一個 Dummy 音訊波形"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:68
 msgid "_Save Waveform"
 msgstr "儲存音訊波形(_S)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:68
 #, fuzzy
-msgid "Save waveform to file"
+msgid "Save the waveform to a file"
 msgstr "儲存音訊波形為檔案"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:72
 #, fuzzy
 msgid "_Close Waveform"
 msgstr "儲存音訊波形(_S)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:82
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:72
 #, fuzzy
-msgid "Close waveform"
+msgid "Close the waveform"
 msgstr "儲存音訊波形"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
+#. zoom
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
 msgid "Zoom _In"
 msgstr "放大(_I)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:93
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:76
+msgid "Zoom in a little"
+msgstr ""
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:79
 msgid "Zoom _Out"
 msgstr "縮小(_O)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:98
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:79
+msgid "Zoom out a little"
+msgstr ""
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:84
 msgid "Zoom _Selection"
 msgstr "放大選擇(_S)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:103
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:84
+#, fuzzy
+msgid "Center the selected subtitle and zoom in a little"
+msgstr "用斜體字印刷選擇的字幕文字"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
 msgid "Zoom _All"
 msgstr "放大所有(_A)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:109
-msgid "_Center With Selected Subtitle"
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:88
+msgid "Zoom out so the whole waveform is visible"
+msgstr ""
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:93
+#, fuzzy
+msgid "_Center Selected Subtitle"
 msgstr "置中對齊選擇的字幕(_C)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:119
-msgid "Scrolling With _Player"
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:94
+#, fuzzy
+msgid "Center the waveform view on the first selected subtitle"
+msgstr "定位到第一所選擇的字幕"
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:101
+#, fuzzy
+msgid "Scrolling With _Video"
 msgstr "跟隨播放器捲動"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:131
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:102
+msgid "Scroll waveform as the video plays so they keep in sync"
+msgstr ""
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:112
 #, fuzzy
 msgid "Select With _Player"
 msgstr "跟隨播放器捲動"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:141
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:113
+msgid ""
+"Select subtitles as video or audio plays so the selected subtitle is "
+"synchronized with what is playing"
+msgstr ""
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:122
 msgid "Scrolling With _Selection"
 msgstr "按選擇捲動(_S)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:150
-msgid "_Respect The Timing"
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:123
+msgid ""
+"Scroll the waveform when subtitle selection changes so that waveform display "
+"is in sync with the first selected subtitle"
+msgstr ""
+
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:132
+#, fuzzy
+msgid "_Respect Timing"
 msgstr "時間優先(_R)"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:151
-msgid "Try to respect the timing preferences"
-msgstr "嘗試時間優先的偏好設定"
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:133
+msgid ""
+"Try to respect the timing preferences when manipulating subtitles by "
+"dragging the mouse over waveform"
+msgstr ""
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:160
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:142
 msgid "Show or hide the waveform in the current window"
 msgstr "在目前視窗顯示或隱藏音訊波形"
 
-#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:386
+#: ../plugins/actions/waveformmanagement/waveformmanagement.cc:353
 msgid "Save Waveform"
 msgstr "儲存音訊波形"
 
-#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:37
-#: ../plugins/subtitleformats/substationalpha/substationalpha.cc:37
+#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:36
+#: ../plugins/subtitleformats/substationalpha/substationalpha.cc:36
 msgid "Soft"
 msgstr "軟式"
 
-#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:38
-#: ../plugins/subtitleformats/substationalpha/substationalpha.cc:38
+#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:37
+#: ../plugins/subtitleformats/substationalpha/substationalpha.cc:37
 msgid "Hard"
 msgstr "硬式"
 
-#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:39
-#: ../plugins/subtitleformats/substationalpha/substationalpha.cc:39
+#: ../plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc:38
+#: ../plugins/subtitleformats/substationalpha/substationalpha.cc:38
 msgid "Intelligent"
 msgstr "智慧"
 
@@ -3108,17 +3854,17 @@ msgid "Policy"
 msgstr "方案"
 
 #: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:36
-#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:45
+#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:44
 #: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.cc:52
 #: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.cc:63
 #: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:36
-#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:57
+#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:59
 msgid "Failed to open the file for reading."
 msgstr "為讀作業開啟檔案失敗。"
 
-#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:100
+#: ../plugins/subtitleformats/dcsubtitle/dcsubtitle.cc:109
 #: ../plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.cc:83
-#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:82
+#: ../plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc:92
 msgid "Failed to write to the file."
 msgstr "寫入檔案失敗。"
 
@@ -3140,71 +3886,71 @@ msgstr ""
 msgid "Subtitle Selection"
 msgstr "字幕選擇"
 
-#: ../src/document.cc:201
+#: ../src/document.cc:203
 #, c-format
 msgid "Could not save the file \"%s\" using the character coding %s."
 msgstr "不能儲存檔案「%s」以字元編碼 %s。"
 
-#: ../src/document.cc:204
+#: ../src/document.cc:205
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character coding."
 msgstr "文件包含無法使用指定字元編碼表示的一個或多個字元。"
 
-#: ../src/document.cc:211 ../src/document.cc:213
+#: ../src/document.cc:212 ../src/document.cc:214
 msgid "Save Document Failed."
 msgstr "儲存檔案失敗。"
 
-#: ../src/document.cc:405
+#: ../src/document.cc:404
 #, c-format
 msgid "Could not recognize the subtitle format for the file \"%s\"."
 msgstr "不能識別字幕格式的檔案「%s」。"
 
-#: ../src/document.cc:408
+#: ../src/document.cc:406
 msgid "Please check that the file contains subtitles in a supported format."
 msgstr "請檢查字幕檔案是否符合被支援的格式。"
 
-#: ../src/document.cc:417
+#: ../src/document.cc:416
 #, c-format
 msgid "Could not open automatically the file \"%s\"."
 msgstr "不能自動開啟檔案「%s」。"
 
-#: ../src/document.cc:420
+#: ../src/document.cc:418
 msgid ""
 "Subtitle Editor was not able to automatically determine the file encoding. "
 "Select a different character coding from the menu and try again."
 msgstr ""
 "字幕編輯起不能自動偵測該檔案編碼。 請從選單中選擇不同的字元編碼然後重試。"
 
-#: ../src/document.cc:425
+#: ../src/document.cc:422
 #, c-format
 msgid "Could not open the file \"%s\" using the character coding %s."
 msgstr "無法開啟檔案「%s」用字元編碼 %s。"
 
-#: ../src/document.cc:428
+#: ../src/document.cc:425
 msgid "Select a different character coding from the menu and try again."
 msgstr "從選單中選擇一種不同的字元編碼， 然後重試一次。"
 
-#: ../src/document.cc:451 ../src/document.cc:459 ../src/document.cc:467
+#: ../src/document.cc:447 ../src/document.cc:454 ../src/document.cc:461
 #, c-format
 msgid "Could not open the file \"%s\""
 msgstr "無法開啟檔案「%s」"
 
-#: ../src/document.cc:468
+#: ../src/document.cc:462
 msgid "An unknown error occurred while opening the file."
 msgstr "在開啟該檔案時發現一個不明錯誤。"
 
-#: ../src/documents.cc:113 ../src/documents.cc:116
+#: ../src/documents.cc:114 ../src/documents.cc:117
 #, c-format
 msgid "Untitled %d"
 msgstr "未命名 %d"
 
-#: ../src/encodings.cc:27 ../src/encodings.cc:40 ../src/encodings.cc:64
-#: ../src/encodings.cc:86
+#: ../src/encodings.cc:27 ../src/encodings.cc:40 ../src/encodings.cc:65
+#: ../src/encodings.cc:87
 msgid "Western"
 msgstr "西歐"
 
-#: ../src/encodings.cc:28 ../src/encodings.cc:65 ../src/encodings.cc:84
+#: ../src/encodings.cc:28 ../src/encodings.cc:66 ../src/encodings.cc:85
 msgid "Central European"
 msgstr "中歐"
 
@@ -3212,20 +3958,20 @@ msgstr "中歐"
 msgid "South European"
 msgstr "南歐"
 
-#: ../src/encodings.cc:30 ../src/encodings.cc:38 ../src/encodings.cc:91
+#: ../src/encodings.cc:30 ../src/encodings.cc:38 ../src/encodings.cc:92
 msgid "Baltic"
 msgstr "波羅的語"
 
-#: ../src/encodings.cc:31 ../src/encodings.cc:66 ../src/encodings.cc:73
-#: ../src/encodings.cc:75 ../src/encodings.cc:85
+#: ../src/encodings.cc:31 ../src/encodings.cc:67 ../src/encodings.cc:74
+#: ../src/encodings.cc:76 ../src/encodings.cc:86
 msgid "Cyrillic"
 msgstr "斯拉夫語"
 
-#: ../src/encodings.cc:32 ../src/encodings.cc:69 ../src/encodings.cc:90
+#: ../src/encodings.cc:32 ../src/encodings.cc:70 ../src/encodings.cc:91
 msgid "Arabic"
 msgstr "阿拉伯語"
 
-#: ../src/encodings.cc:33 ../src/encodings.cc:87
+#: ../src/encodings.cc:33 ../src/encodings.cc:88
 msgid "Greek"
 msgstr "希臘語"
 
@@ -3233,11 +3979,11 @@ msgstr "希臘語"
 msgid "Hebrew Visual"
 msgstr "可視希伯來語"
 
-#: ../src/encodings.cc:35 ../src/encodings.cc:68 ../src/encodings.cc:89
+#: ../src/encodings.cc:35 ../src/encodings.cc:69 ../src/encodings.cc:90
 msgid "Hebrew"
 msgstr "希伯來"
 
-#: ../src/encodings.cc:36 ../src/encodings.cc:67 ../src/encodings.cc:88
+#: ../src/encodings.cc:36 ../src/encodings.cc:68 ../src/encodings.cc:89
 msgid "Turkish"
 msgstr "土耳其語"
 
@@ -3253,521 +3999,531 @@ msgstr "凱爾特語"
 msgid "Romanian"
 msgstr "羅馬尼亞語"
 
-#: ../src/encodings.cc:43 ../src/encodings.cc:44 ../src/encodings.cc:45
-#: ../src/encodings.cc:46 ../src/encodings.cc:47
+#: ../src/encodings.cc:43 ../src/encodings.cc:45 ../src/encodings.cc:46
+#: ../src/encodings.cc:47 ../src/encodings.cc:48
 msgid "Unicode"
 msgstr "萬國碼"
 
-#: ../src/encodings.cc:49
+#: ../src/encodings.cc:44
+msgid "Unicode (with BOM)"
+msgstr ""
+
+#: ../src/encodings.cc:50
 msgid "Armenian"
 msgstr "亞美尼亞"
 
-#: ../src/encodings.cc:50 ../src/encodings.cc:51 ../src/encodings.cc:56
+#: ../src/encodings.cc:51 ../src/encodings.cc:52 ../src/encodings.cc:57
 msgid "Chinese Traditional"
 msgstr "傳統字漢語"
 
-#: ../src/encodings.cc:52
+#: ../src/encodings.cc:53
 msgid "Cyrillic/Russian"
 msgstr "斯拉夫語/俄語"
 
-#: ../src/encodings.cc:54 ../src/encodings.cc:71 ../src/encodings.cc:78
+#: ../src/encodings.cc:55 ../src/encodings.cc:72 ../src/encodings.cc:79
 msgid "Japanese"
 msgstr "日語"
 
-#: ../src/encodings.cc:55 ../src/encodings.cc:72 ../src/encodings.cc:74
-#: ../src/encodings.cc:81
+#: ../src/encodings.cc:56 ../src/encodings.cc:73 ../src/encodings.cc:75
+#: ../src/encodings.cc:82
 msgid "Korean"
 msgstr "韓語"
 
-#: ../src/encodings.cc:58 ../src/encodings.cc:59 ../src/encodings.cc:60
-#: ../src/encodings.cc:62
+#: ../src/encodings.cc:59 ../src/encodings.cc:60 ../src/encodings.cc:61
+#: ../src/encodings.cc:63
 msgid "Chinese Simplified"
 msgstr "簡化字漢語"
 
-#: ../src/encodings.cc:61
+#: ../src/encodings.cc:62
 msgid "Georgian"
 msgstr "喬治亞"
 
-#: ../src/encodings.cc:76
+#: ../src/encodings.cc:77
 msgid "Cyrillic/Ukrainian"
 msgstr "斯拉夫語/烏克蘭語"
 
-#: ../src/encodings.cc:79 ../src/encodings.cc:82 ../src/encodings.cc:92
+#: ../src/encodings.cc:80 ../src/encodings.cc:83 ../src/encodings.cc:93
 msgid "Vietnamese"
 msgstr "越南語"
 
-#: ../src/encodings.cc:80
+#: ../src/encodings.cc:81
 msgid "Thai"
 msgstr "泰國語"
 
-#: ../src/encodings.cc:154
+#: ../src/encodings.cc:159
 msgid "It's not valid UTF-8."
 msgstr "不是合法的 UTF-8 編碼。"
 
-#: ../src/encodings.cc:163 ../src/encodings.cc:169 ../src/encodings.cc:173
+#: ../src/encodings.cc:167 ../src/encodings.cc:170 ../src/encodings.cc:173
 #, c-format
 msgid "Couldn't convert from %s to UTF-8"
 msgstr "不能轉換編碼從 %s 從 UTF-8"
 
-#: ../src/encodings.cc:248
+#: ../src/encodings.cc:254
 msgid ""
 "subtitleeditor was not able to automatically determine the encoding of the "
 "file you want to open."
 msgstr "subtitleeditor 不能自動偵測您要開啟的檔案的編碼。"
 
-#: ../src/encodings.cc:265
+#: ../src/encodings.cc:277
 #, c-format
 msgid "Could not convert the text to the character coding '%s'"
 msgstr "不能轉換文字的字元編碼為『%s』"
 
-#: ../src/filereader.cc:43 ../src/filewriter.cc:48
+#: ../src/filereader.cc:41 ../src/filewriter.cc:46
 msgid "Couldn't open the file."
 msgstr "無法開啟該檔案。"
 
-#: ../src/filereader.cc:50
+#: ../src/filereader.cc:48
 msgid "Couldn't read the contents of the file."
 msgstr "不能讀取該檔案的內容。"
 
-#: ../src/gstreamer_utility.cc:68
+#: ../src/gstreamer_utility.cc:67
 #, c-format
 msgid "Failed to create a GStreamer element '%s'."
 msgstr "建立一個 GStreamer 要素『%s』失敗。"
 
-#: ../src/gstreamer_utility.cc:70
+#: ../src/gstreamer_utility.cc:67
 msgid "Please check your GStreamer installation."
 msgstr "請檢查您安裝的 GStreamer。"
 
-#: ../src/gui/application.cc:296
+#: ../src/gui/application.cc:268
 msgid "Times"
 msgstr "時間"
 
-#: ../src/gui/application.cc:296
+#: ../src/gui/application.cc:268
 msgid "Frames"
 msgstr "影格數"
 
-#: ../src/gui/application.cc:305
+#: ../src/gui/application.cc:279
 msgid "Path:"
 msgstr "路徑："
 
-#: ../src/gui/application.cc:306
+#: ../src/gui/application.cc:285
 msgid "Newline:"
 msgstr "換列符號："
 
-#: ../src/gui/application.cc:307
+#: ../src/gui/application.cc:287
 msgid "Timing Mode:"
 msgstr "時間模式："
 
-#: ../src/gui/automaticspellchecker.cc:343
+#: ../src/gui/automaticspellchecker.cc:318
 msgid "_Languages"
 msgstr "語言(_L)"
 
-#: ../src/gui/automaticspellchecker.cc:405
+#. ignore all
+#: ../src/gui/automaticspellchecker.cc:375
 msgid "_Ignore all"
 msgstr "略過全部(_I)"
 
-#: ../src/gui/automaticspellchecker.cc:413
+#: ../src/gui/automaticspellchecker.cc:381
 msgid "_Add \"%1\" to Dictionary"
 msgstr "加入「%1」到字典(_A)"
 
-#: ../src/gui/automaticspellchecker.cc:425
+#: ../src/gui/automaticspellchecker.cc:391
 msgid "(no suggested words)"
 msgstr "(沒有建議的單字)"
 
-#: ../src/gui/automaticspellchecker.cc:449
+#. menu more
+#: ../src/gui/automaticspellchecker.cc:412
 msgid "_More..."
 msgstr "更多(_M)…"
 
-#: ../src/gui/comboboxencoding.cc:96
+#: ../src/gui/comboboxencoding.cc:91
 msgid "Auto Detected"
 msgstr "自動偵測"
 
-#: ../src/gui/comboboxencoding.cc:111
+#: ../src/gui/comboboxencoding.cc:106
 msgid "Current Locale"
 msgstr "目前語區"
 
-#: ../src/gui/comboboxencoding.cc:120
+#: ../src/gui/comboboxencoding.cc:115
 msgid "Add or Remove..."
 msgstr "加入或刪除"
 
-#: ../src/gui/comboboxvideo.cc:66
+#: ../src/gui/comboboxvideo.cc:63
 msgid "None"
 msgstr "無"
 
 #. column description
-#: ../src/gui/dialogcharactercodings.cc:58
+#: ../src/gui/dialogcharactercodings.cc:54
 msgid "_Description"
 msgstr "描述(_D)"
 
 #. column encoding
-#: ../src/gui/dialogcharactercodings.cc:71
+#: ../src/gui/dialogcharactercodings.cc:67
 msgid "_Encoding"
 msgstr "編碼(_E)"
 
-#: ../src/gui/dialogfilechooser.cc:41
+#: ../src/gui/dialogfilechooser.cc:42
 msgid "All files (*.*)"
 msgstr "所有檔案 (*.*)"
 
 #. all supported formats
-#: ../src/gui/dialogfilechooser.cc:47
+#: ../src/gui/dialogfilechooser.cc:48
 msgid "All supported formats (*.ass, *.ssa, *.srt, ...)"
 msgstr "所有支援的格式 (*.ass，*.ssa，*.srt，…)"
 
-#: ../src/gui/dialogfilechooser.cc:370
+#. Open Movie
+#: ../src/gui/dialogfilechooser.cc:350
 msgid "Open Video"
 msgstr "開啟視訊"
 
-#: ../src/gui/dialogfilechooser.cc:375
+#: ../src/gui/dialogfilechooser.cc:355
 msgid "Audio or Video"
 msgstr ""
 
-#: ../src/gui/dialogfilechooser.cc:390 ../src/gui/dialogfilechooser.cc:471
+#: ../src/gui/dialogfilechooser.cc:370 ../src/gui/dialogfilechooser.cc:447
 msgid "Audio"
 msgstr "音訊"
 
-#: ../src/gui/dialogfilechooser.cc:399 ../src/gui/dialogfilechooser.cc:460
-#: ../src/gui/dialogfilechooser.cc:525
+#: ../src/gui/dialogfilechooser.cc:379 ../src/gui/dialogfilechooser.cc:436
+#: ../src/gui/dialogfilechooser.cc:498
 msgid "Video"
 msgstr "視訊"
 
-#: ../src/gui/dialogfilechooser.cc:410 ../src/gui/dialogfilechooser.cc:480
-#: ../src/gui/dialogfilechooser.cc:536
+#: ../src/gui/dialogfilechooser.cc:389 ../src/gui/dialogfilechooser.cc:456
+#: ../src/gui/dialogfilechooser.cc:509
 msgid "ALL"
 msgstr "所有檔案 (*.*)"
 
-#: ../src/gui/dialogfilechooser.cc:432
+#. Waveform or Audio/Video
+#: ../src/gui/dialogfilechooser.cc:409
 msgid "Open Waveform"
 msgstr "開啟音訊波形檔案或選擇媒體檔案產生音訊波形"
 
-#: ../src/gui/dialogfilechooser.cc:438
+#: ../src/gui/dialogfilechooser.cc:414
 msgid "Waveform & Media"
 msgstr "音訊波形 & 媒體"
 
-#: ../src/gui/dialogfilechooser.cc:454
+#: ../src/gui/dialogfilechooser.cc:430
 msgid "Waveform (*.wf)"
 msgstr "音訊波形檔案 (*.wf)"
 
-#: ../src/gui/dialogfilechooser.cc:501
+#. Keyframes or Video
+#: ../src/gui/dialogfilechooser.cc:475
 msgid "Open Keyframe"
 msgstr "開啟關鍵影格"
 
-#: ../src/gui/dialogfilechooser.cc:507
+#: ../src/gui/dialogfilechooser.cc:480
 msgid "Keyframe & Media"
 msgstr "關鍵影格和媒體"
 
-#: ../src/gui/dialogfilechooser.cc:519
+#: ../src/gui/dialogfilechooser.cc:492
 msgid "Keyframe (*.kf)"
 msgstr "影格頻檔案 (*.kf)"
 
-#: ../src/gui/dialogutility.cc:71
+#: ../src/gui/dialogutility.cc:66
 msgid "At what frame rate do you want to import?"
 msgstr "您習慣於用何種影格頻匯入？"
 
 #. == EXPORT
-#: ../src/gui/dialogutility.cc:73
+#: ../src/gui/dialogutility.cc:68
 msgid "At what frame rate do you want to export?"
 msgstr "您習慣於用何種影格頻匯出？"
 
 #. label2 (framerate:)
-#: ../src/gui/dialogutility.cc:99
+#: ../src/gui/dialogutility.cc:92
 msgid "_Framerate:"
 msgstr "影格頻(_F)："
 
 #. create all menu
-#: ../src/gui/menubar.cc:48
+#: ../src/gui/menubar.cc:45
 msgid "_File"
 msgstr "檔案(_F)"
 
-#: ../src/gui/menubar.cc:49
+#: ../src/gui/menubar.cc:46
 msgid "_Selection"
 msgstr "選擇(_S)"
 
-#: ../src/gui/menubar.cc:50
+#: ../src/gui/menubar.cc:47
 msgid "_Edit"
 msgstr "編輯(_E)"
 
-#: ../src/gui/menubar.cc:51
+#: ../src/gui/menubar.cc:48
 msgid "_Timings"
 msgstr "時間軸(_T)"
 
-#: ../src/gui/menubar.cc:52
+#: ../src/gui/menubar.cc:49
 msgid "T_ools"
 msgstr "工具(_O)"
 
-#: ../src/gui/menubar.cc:54
+#: ../src/gui/menubar.cc:51
 msgid "_Keyframes"
 msgstr "關鍵影格(_K)"
 
-#: ../src/gui/menubar.cc:56
+#: ../src/gui/menubar.cc:53
 msgid "V_iew"
 msgstr "檢視(_I)"
 
-#: ../src/gui/menubar.cc:58
+#: ../src/gui/menubar.cc:55
 msgid "E_xtensions"
 msgstr "擴充(_X)"
 
-#: ../src/gui/menubar.cc:59
+#: ../src/gui/menubar.cc:56
 msgid "_Help"
 msgstr "求助(_H)"
 
 #. file submenu
-#: ../src/gui/menubar.cc:61
+#: ../src/gui/menubar.cc:58
 msgid "_Open"
 msgstr "開啟(_O)"
 
-#: ../src/gui/menubar.cc:62
+#: ../src/gui/menubar.cc:58
+#, fuzzy
+msgid "Open a document or translation"
+msgstr "開啟翻譯"
+
+#: ../src/gui/menubar.cc:59
 msgid "_Save"
 msgstr "儲存(_S)"
 
-#: ../src/gui/menubar.cc:63
-msgid "_Import"
-msgstr "匯入(_I)"
+#: ../src/gui/menubar.cc:59
+#, fuzzy
+msgid "Save document, documents or translation"
+msgstr "將目前檔案一分為二。"
 
-#: ../src/gui/menubar.cc:64
-msgid "_Export"
-msgstr "匯出(_E)"
-
-#: ../src/keyframes.cc:72 ../src/keyframes.cc:79
-#: ../src/subtitleformatsystem.cc:74
+#: ../src/keyframes.cc:74 ../src/keyframes.cc:81
+#: ../src/subtitleformatsystem.cc:99
 msgid "Couldn't recognize format of the file."
 msgstr "不能識別該檔案的格式。"
 
-#: ../src/keyframes.cc:95
+#: ../src/keyframes.cc:96
 msgid "Couldn't get the keyframe size on the file."
 msgstr "無法獲取該檔案的關鍵影格尺寸。"
 
-#: ../src/main.cc:59
+#: ../src/main.cc:62
 msgid " — edit subtitles files"
 msgstr " — 編輯字幕檔案"
 
-#: ../src/options.cc:35
+#: ../src/options.cc:27
+msgid "Application Options"
+msgstr ""
+
+#: ../src/options.cc:27
+#, fuzzy
+msgid "Edit subtitle files"
+msgstr " — 編輯字幕檔案"
+
+#: ../src/options.cc:30
+#, fuzzy
+msgid "Debug Options"
+msgstr "選項(_O)"
+
+#: ../src/options.cc:30
+msgid "Show debug-related options"
+msgstr ""
+
+#: ../src/options.cc:42
 msgid "[FILE...]"
 msgstr "[檔案…]"
 
-#: ../src/options.cc:43 ../src/options.cc:67 ../src/options.cc:75
+#: ../src/options.cc:53 ../src/options.cc:77 ../src/options.cc:85
+#: ../src/options.cc:93
 msgid "FILE"
 msgstr "檔案"
 
-#: ../src/options.cc:51
+#: ../src/options.cc:61
 msgid "NAME"
 msgstr "名稱"
 
-#: ../src/options.cc:59
+#: ../src/options.cc:69
 msgid "ENCODING"
 msgstr "編碼"
 
 #. reader
 #. writer
-#: ../src/subtitleformatio.cc:40 ../src/subtitleformatio.cc:44
+#: ../src/subtitleformatio.cc:41 ../src/subtitleformatio.cc:45
 msgid "This function is not implemented for this format."
 msgstr "對於該字幕格式本功能還未實作。"
 
-#: ../src/subtitleformatsystem.cc:115
+#: ../src/subtitleformatsystem.cc:134
 #, c-format
 msgid "Couldn't create the subtitle format '%s'."
 msgstr "不能建立字幕格式『%s』。"
 
-#: ../src/subtitlemodel.cc:31
+#: ../src/subtitlemodel.cc:32
 msgid "Add Subtitle"
 msgstr "增加字幕"
 
-#: ../src/subtitlemodel.cc:64
+#: ../src/subtitlemodel.cc:62
 #: ../plugins/actions/removesubtitle/removesubtitle.se-plugin.in.h:1
 msgid "Remove Subtitle"
 msgstr "取消字幕"
 
-#: ../src/subtitlemodel.cc:394
+#: ../src/subtitlemodel.cc:384
 msgid "Reordered Subtitle"
 msgstr "被重新安排的字幕"
 
-#: ../src/subtitles.cc:31
+#: ../src/subtitles.cc:32
 msgid "Append subtitle"
 msgstr "添附字幕"
 
-#: ../src/subtitles.cc:55
+#: ../src/subtitles.cc:54
 msgid "Remove Subtitles"
 msgstr "取消字幕"
 
-#: ../src/subtitles.cc:141
+#: ../src/subtitles.cc:136
 msgid "Reorder Subtitles"
 msgstr "重新安排字幕"
 
-#: ../src/subtitleview.cc:242
+#: ../src/subtitleview.cc:232
 msgid "Use Ctrl+Return for exit and Return for line-break"
 msgstr "使用 Ctrl+Return 為出口並且回返為線打破"
 
-#: ../src/subtitleview.cc:245
+#: ../src/subtitleview.cc:234
 msgid "Use Return for exit and Ctrl+Return for line-break"
 msgstr "用 Return 離開 用 Ctrl+Return 換列"
 
-#: ../src/subtitleview.cc:406
+#: ../src/subtitleview.cc:387
 msgid "The line number"
 msgstr "列號"
 
-#: ../src/subtitleview.cc:534
+#: ../src/subtitleview.cc:541
 msgid "When a subtitle appears on the screen."
 msgstr "當一個字幕出現在螢幕。"
 
-#: ../src/subtitleview.cc:541
+#: ../src/subtitleview.cc:549
 msgid "When a subtitle disappears from the screen."
 msgstr "當一個字幕從螢幕上消失。"
 
-#: ../src/subtitleview.cc:548
+#: ../src/subtitleview.cc:557
 msgid "The duration of the subtitle."
 msgstr "該條字幕的時間。"
 
-#: ../src/subtitleview.cc:609
+#: ../src/subtitleview.cc:614
 msgid "The number of characters per second"
 msgstr "每秒的字數"
 
-#: ../src/subtitleview.cc:824
+#: ../src/subtitleview.cc:814
 msgid "Editing layer"
 msgstr "編輯層"
 
-#: ../src/subtitleview.cc:848 ../src/subtitleview.cc:857
+#: ../src/subtitleview.cc:837 ../src/subtitleview.cc:846
 msgid "Editing start"
 msgstr "編輯開始"
 
-#: ../src/subtitleview.cc:881 ../src/subtitleview.cc:890
+#: ../src/subtitleview.cc:869 ../src/subtitleview.cc:878
 msgid "Editing end"
 msgstr "編輯結束"
 
-#: ../src/subtitleview.cc:914 ../src/subtitleview.cc:923
+#: ../src/subtitleview.cc:901 ../src/subtitleview.cc:910
 msgid "Editing duration"
 msgstr "編輯時間"
 
-#: ../src/subtitleview.cc:938
+#: ../src/subtitleview.cc:924
 msgid "Editing text"
 msgstr "編輯文字"
 
-#: ../src/subtitleview.cc:955
+#: ../src/subtitleview.cc:940
 msgid "Editing translation"
 msgstr "編輯翻譯"
 
-#: ../src/subtitleview.cc:970
+#: ../src/subtitleview.cc:954
 msgid "Editing note"
 msgstr "編輯附註"
 
-#: ../src/subtitleview.cc:984
+#: ../src/subtitleview.cc:967
 msgid "Editing effect"
 msgstr "編輯效果"
 
-#: ../src/subtitleview.cc:999
+#: ../src/subtitleview.cc:981
 msgid "Editing style"
 msgstr "編輯樣式"
 
-#: ../src/subtitleview.cc:1014
+#: ../src/subtitleview.cc:995
 msgid "Editing name"
 msgstr "編輯命名"
 
-#: ../src/subtitleview.cc:1029
+#: ../src/subtitleview.cc:1009
 msgid "Editing margin-l"
 msgstr "編輯邊際 -l"
 
-#: ../src/subtitleview.cc:1044
+#: ../src/subtitleview.cc:1023
 msgid "Editing margin-r"
 msgstr "編輯邊際 -r"
 
-#: ../src/subtitleview.cc:1059
+#: ../src/subtitleview.cc:1037
 msgid "Editing margin-v"
 msgstr "編輯邊際 -v"
 
-#: ../src/subtitleview.cc:1250
+#: ../src/subtitleview.cc:1287
 msgid "CPS"
 msgstr "每秒周(波)數"
 
-#: ../src/subtitleview.cc:1251
+#: ../src/subtitleview.cc:1288
 msgid "Duration"
 msgstr "時間"
 
-#: ../src/subtitleview.cc:1252
+#: ../src/subtitleview.cc:1289
 msgid "Effect"
 msgstr "效果"
 
-#: ../src/subtitleview.cc:1253
+#: ../src/subtitleview.cc:1290
 msgid "End"
 msgstr "結束"
 
-#: ../src/subtitleview.cc:1254
+#: ../src/subtitleview.cc:1291
 msgid "Layer"
 msgstr "層"
 
-#: ../src/subtitleview.cc:1255
+#: ../src/subtitleview.cc:1292
 msgid "L"
 msgstr "左"
 
-#: ../src/subtitleview.cc:1256
+#: ../src/subtitleview.cc:1293
 msgid "R"
 msgstr "右"
 
-#: ../src/subtitleview.cc:1257
+#: ../src/subtitleview.cc:1294
 msgid "V"
 msgstr "V"
 
-#: ../src/subtitleview.cc:1259
+#: ../src/subtitleview.cc:1296
 msgid "Note"
 msgstr "備忘"
 
-#: ../src/subtitleview.cc:1261
+#: ../src/subtitleview.cc:1298
 msgid "Start"
 msgstr "開始"
 
-#: ../src/subtitleview.cc:1262
+#: ../src/subtitleview.cc:1299
 msgid "Style"
 msgstr "樣式"
 
-#: ../src/timeutility.cc:30
+#: ../src/timeutility.cc:31
 msgid "23.976 fps"
 msgstr "23.976 影格/秒"
 
-#: ../src/timeutility.cc:33
+#: ../src/timeutility.cc:34
 msgid "24 fps"
 msgstr "24 影格/秒"
 
-#: ../src/timeutility.cc:36
+#: ../src/timeutility.cc:37
 msgid "25 fps"
 msgstr "25 影格/秒"
 
-#: ../src/timeutility.cc:39
+#: ../src/timeutility.cc:40
 msgid "29.97 fps"
 msgstr "29.97 影格/秒"
 
-#: ../src/timeutility.cc:42
+#: ../src/timeutility.cc:43
 msgid "30 fps"
 msgstr "30 影格/秒"
 
-#: ../src/timeutility.cc:45
+#: ../src/timeutility.cc:46
 msgid "Invalid fps"
 msgstr "無效的每秒影格數"
 
-#: ../src/vp/gstplayer.cc:369
+#. Warn and attempt a sensible fallback
+#: ../src/vp/gstplayer.cc:327
 #, c-format
 msgid ""
 "Failed to create a GStreamer audio output (%s). Please check your GStreamer "
 "installation."
 msgstr "建立 GStreamer 音訊輸出 (%s)失敗。 請檢查您的 GStreamer 的安裝情況。"
 
-#: ../src/vp/gstplayer.cc:406
-#, c-format
-msgid ""
-"Failed to create a GStreamer converts video (%s). Please check your "
-"GStreamer installation."
-msgstr "建立 GStreamer 轉換視訊 (%s) 失敗。 請檢查您安裝的 GStreamer。"
-
-#: ../src/vp/gstplayer.cc:414
-#, fuzzy, c-format
-msgid ""
-"Failed to create a GStreamer text overlay (%s). Please check your GStreamer "
-"installation."
-msgstr "建立 GStreamer 文字覆寫層 (%s)失敗。 請檢查您的 GStreamer 的安裝情況。"
-
-#: ../src/vp/gstplayer.cc:427
-#, c-format
-msgid ""
-"Failed to create a GStreamer sink (%s). Please check your GStreamer "
-"installation."
-msgstr "建立 GStreamer sink (%s)失敗。 請檢查您的 GStreamer 的安裝情況。"
-
-#: ../src/vp/gstplayer.cc:676
+#: ../src/vp/gstplayer.cc:549
 #, c-format
 msgid ""
 "Media file could not be played.\n"
@@ -3776,11 +4532,11 @@ msgstr ""
 "媒體檔案不能被播放。\n"
 "%s"
 
-#: ../src/we/waveformeditor.cc:707 ../src/we/waveformeditor.cc:711
+#: ../src/we/waveformeditor.cc:679 ../src/we/waveformeditor.cc:682
 msgid "Editing position"
 msgstr "編輯位置"
 
-#: ../src/we/waveformrenderergl.cc:297
+#: ../src/we/waveformrenderergl.cc:285
 msgid ""
 "Window system doesn't support OpenGL.\n"
 "Please try with another renderer."
@@ -3888,14 +4644,6 @@ msgstr "更新細節："
 msgid "<b>Basic</b>"
 msgstr "<b>基本的</b>"
 
-#: ../share/ui/dialog-script-properties.ui.h:16
-msgid "PlayResX:"
-msgstr "PlayResX:"
-
-#: ../share/ui/dialog-script-properties.ui.h:17
-msgid "PlayResY:"
-msgstr "PlayResY:"
-
 #: ../share/ui/dialog-script-properties.ui.h:18
 msgid "PlayDepth:"
 msgstr "PlayDepth:"
@@ -3920,12 +4668,9 @@ msgstr "定時器："
 msgid "<b>Miscellaneous</b>"
 msgstr "<b>雜項</b>"
 
-#: ../plugins/actions/about/about.se-plugin.in.h:1
-msgid "About"
-msgstr "關於"
-
 #: ../plugins/actions/about/about.se-plugin.in.h:2
-msgid "Displays the application's information."
+#, fuzzy
+msgid "Displays information about the application."
 msgstr "顯示該套用的資訊。"
 
 #: ../plugins/actions/adjusttime/adjusttime.se-plugin.in.h:1
@@ -3943,6 +4688,15 @@ msgstr "套用翻譯"
 #: ../plugins/actions/applytranslation/applytranslation.se-plugin.in.h:2
 msgid "Replaces the text of the subtitle by the translation."
 msgstr "用翻譯結果替換字幕文字。"
+
+#: ../plugins/actions/autowrap/autowrap.se-plugin.in.h:1
+#, fuzzy
+msgid "Auto Wrap"
+msgstr "自動"
+
+#: ../plugins/actions/autowrap/autowrap.se-plugin.in.h:2
+msgid "Automatically wraps the lines in a subtitle."
+msgstr ""
 
 #: ../plugins/actions/bestfit/bestfit.se-plugin.in.h:1
 msgid "Best Fit"
@@ -4000,17 +4754,22 @@ msgid "Manages the document (Open, Save, Save As...)."
 msgstr "管理文件(開啟、儲存、另存為…)。"
 
 #: ../plugins/actions/documentsnavigation/documentsnavigation.se-plugin.in.h:1
-msgid "Documents Navigation"
+#, fuzzy
+msgid "Tab Navigation"
 msgstr "文件巡覽"
 
 #: ../plugins/actions/documentsnavigation/documentsnavigation.se-plugin.in.h:2
-#: ../plugins/actions/typewriter/typewriter.se-plugin.in.h:2
-msgid "FIXME."
-msgstr "待修正。"
+msgid "Adds actions to select tabs."
+msgstr ""
 
 #: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.se-plugin.in.h:1
 msgid "Duplicate Subtitle"
 msgstr "複製字幕"
+
+#: ../plugins/actions/duplicatesubtitle/duplicatesubtitle.se-plugin.in.h:2
+#, fuzzy
+msgid "Duplicates the selected subtitles."
+msgstr "分割所選字幕。"
 
 #: ../plugins/actions/editcell/editcell.se-plugin.in.h:1
 msgid "Edit Cell"
@@ -4049,6 +4808,11 @@ msgstr "搜尋和替換(支援正規表示式)。"
 msgid "Find By Time"
 msgstr "最短顯示時間"
 
+#: ../plugins/actions/findbytime/findbytime.se-plugin.in.h:2
+#, fuzzy
+msgid "Finds the subtitle nearest to the current player position."
+msgstr "當一個字幕出現在螢幕。"
+
 #: ../plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.se-plugin.in.h:1
 msgid "Insert Subtitle From Keyframe"
 msgstr "從關鍵影格插入字幕"
@@ -4081,6 +4845,10 @@ msgstr "從其他檔案加入字幕。"
 msgid "Keyframes Management"
 msgstr "關鍵影格管理"
 
+#: ../plugins/actions/keyframesmanagement/keyframesmanagement.se-plugin.in.h:2
+msgid "Adds support for keyframes, or scene cuts."
+msgstr ""
+
 #: ../plugins/actions/minimizeduration/minimizeduration.se-plugin.in.h:1
 #, fuzzy
 msgid "Minimize Duration"
@@ -4111,10 +4879,6 @@ msgstr "純文字"
 #: ../plugins/actions/plaintext/plaintext.se-plugin.in.h:2
 msgid "Imports or exports any text file."
 msgstr "匯入倒出文字檔案。"
-
-#: ../plugins/actions/preferences/preferences.se-plugin.in.h:1
-msgid "Preferences"
-msgstr "偏好設定"
 
 #: ../plugins/actions/preferences/preferences.se-plugin.in.h:2
 msgid "Manages Subtitle Editor's preferences."
@@ -4212,6 +4976,16 @@ msgstr "設定所選字幕文字格式為斜體。"
 msgid "Template Management"
 msgstr "時間軸模式管理"
 
+#: ../plugins/actions/template/template.se-plugin.in.h:2
+msgid "Provides subtitle templates functionality."
+msgstr ""
+
+#: ../plugins/actions/textcorrection/textcorrection.se-plugin.in.h:2
+msgid ""
+"Provides tools to automatically common errors in subtitle text cause by "
+"people or by OCR software."
+msgstr ""
+
 #: ../plugins/actions/timemodemanagement/timemodemanagement.se-plugin.in.h:1
 msgid "Time Mode Management"
 msgstr "時間軸模式管理"
@@ -4227,6 +5001,10 @@ msgstr "使用目前的播放器位置以設定字幕時間。"
 #: ../plugins/actions/typewriter/typewriter.se-plugin.in.h:1
 msgid "Type Writer"
 msgstr "打字機"
+
+#: ../plugins/actions/typewriter/typewriter.se-plugin.in.h:2
+msgid "FIXME."
+msgstr "待修正。"
 
 #: ../plugins/actions/videoplayermanagement/videoplayermanagement.se-plugin.in.h:1
 msgid "Video Player Management"
@@ -4660,6 +5438,191 @@ msgstr "數字之間的空格"
 msgid "Remove space between digits of a number"
 msgstr "移除數字字母之間的空格"
 
+#~ msgid "Convert framerate"
+#~ msgstr "轉換影格頻"
+
+#~ msgid "Merge selected subtitles"
+#~ msgstr "合併選擇的字幕"
+
+#~ msgid "Add or remove dialogue line"
+#~ msgstr "增加或去除對話破折號"
+
+#~ msgid "Save translation to file"
+#~ msgstr "儲存翻譯檔案"
+
+#~ msgid "_Documents"
+#~ msgstr "文件(_D)"
+
+#~ msgid "_First Document"
+#~ msgstr "首份文件(_F)"
+
+#~ msgid "_Last Document"
+#~ msgstr "末份文件(_L)"
+
+#~ msgid "_Next Document"
+#~ msgstr "後份文件(_N)"
+
+#~ msgid "Start editing the focused cell"
+#~ msgstr "開始編輯目前單元"
+
+#~ msgid "Start editing the next cell"
+#~ msgstr "開始編輯下一單元"
+
+#~ msgid "External video player preferences"
+#~ msgstr "外部視訊播放器偏好設定"
+
+#~ msgid "Add subtitles from file"
+#~ msgstr "從檔案附加字幕並用附加的檔案名稱命名"
+
+#~ msgid "FIXME"
+#~ msgstr "待修正"
+
+#~ msgid "Media file could not be played.\n"
+#~ msgstr "媒體檔案不能被播放。\n"
+
+#~ msgid ""
+#~ "Move subtitle after the preceding with the respect of the minimum gap "
+#~ "between subtitles"
+#~ msgstr "以最小間隔的原則將字幕移至上一字幕之後(見工具的檢錯誤檢查誤功能)"
+
+#, fuzzy
+#~ msgid "Move subtitle just before the next one"
+#~ msgstr "%d 個字幕被刪除了。"
+
+#~ msgid "_Only selected subtitles"
+#~ msgstr "只選擇字幕(_O)"
+
+#, fuzzy
+#~ msgid "Create a new document from any text file."
+#~ msgstr "用文字檔案新增一個新字幕檔案"
+
+#~ msgid "Export just a text in a file"
+#~ msgstr "僅匯出字幕文字為檔案(藍本)"
+
+#~ msgid "Force aspect _ratio"
+#~ msgstr "強制導向比率(_R)"
+
+#~ msgid "The first point is superior to the last point."
+#~ msgstr "第一個點優先於最後一點。"
+
+#~ msgid "The scale was applied"
+#~ msgstr "縮放已被套用"
+
+#~ msgid "Scale by two points"
+#~ msgstr "按兩點縮放"
+
+#~ msgid "Split selected subtitles"
+#~ msgstr "分割選擇的字幕"
+
+#, fuzzy
+#~ msgid "Border"
+#~ msgstr "<b>邊界</b>"
+
+#~ msgid "Opaque Box"
+#~ msgstr "不透明邊框"
+
+#~ msgid "Size:"
+#~ msgstr "尺寸："
+
+#~ msgid "Distance:"
+#~ msgstr "距離："
+
+#~ msgid "Use the current player position to set the subtitle start"
+#~ msgstr "將目前播放位置設為字幕開始"
+
+#~ msgid "Use the current player position to set the subtitle end"
+#~ msgstr "將目前播放位置設為字幕結束"
+
+#~ msgid ""
+#~ "Use the current player position to set the start of the selected subtitle "
+#~ "and go to the next"
+#~ msgstr "將目前播放位置設為字幕結束"
+
+#~ msgid ""
+#~ "Use only one key to set beginning of the subtitle when the key is pressed "
+#~ "and the end when the key is released."
+#~ msgstr "只使用一個鍵來設定字幕，按下時表示開始而放開時表示結束。"
+
+#~ msgid "Open a multimedia file"
+#~ msgstr "開啟一個多媒體檔案"
+
+#~ msgid "Close a multimedia file"
+#~ msgstr "關閉一個多媒體檔案"
+
+#~ msgid "Play or make a pause"
+#~ msgstr "播放或暫停"
+
+#, fuzzy
+#~ msgid "Frame skip backwards"
+#~ msgstr "小幅向後倒"
+
+#, fuzzy
+#~ msgid "Tiny skip backwards"
+#~ msgstr "大幅向後倒"
+
+#~ msgid "Very short skip backwards"
+#~ msgstr "極小幅向後倒"
+
+#~ msgid "Short skip backwards"
+#~ msgstr "小幅向後倒"
+
+#~ msgid "Medium skip backwards"
+#~ msgstr "中幅向後倒"
+
+#~ msgid "Long skip backwards"
+#~ msgstr "大幅向後倒"
+
+#, fuzzy
+#~ msgid "Frame skip forward"
+#~ msgstr "小幅向前進"
+
+#, fuzzy
+#~ msgid "Tiny skip forward"
+#~ msgstr "大幅向前進"
+
+#~ msgid "Very short skip forward"
+#~ msgstr "極小幅向前進"
+
+#~ msgid "Short skip forward"
+#~ msgstr "小幅向前進"
+
+#~ msgid "Medium skip forward"
+#~ msgstr "中幅向前進"
+
+#~ msgid "Long skip forward"
+#~ msgstr "大幅向前進"
+
+#~ msgid "Play previous subtitle from the first selected subtitle"
+#~ msgstr "播放目前選擇字幕的上一字幕"
+
+#~ msgid "Try to respect the timing preferences"
+#~ msgstr "嘗試時間優先的偏好設定"
+
+#~ msgid "_Import"
+#~ msgstr "匯入(_I)"
+
+#~ msgid "_Export"
+#~ msgstr "匯出(_E)"
+
+#, c-format
+#~ msgid ""
+#~ "Failed to create a GStreamer converts video (%s). Please check your "
+#~ "GStreamer installation."
+#~ msgstr "建立 GStreamer 轉換視訊 (%s) 失敗。 請檢查您安裝的 GStreamer。"
+
+#, fuzzy, c-format
+#~ msgid ""
+#~ "Failed to create a GStreamer text overlay (%s). Please check your "
+#~ "GStreamer installation."
+#~ msgstr ""
+#~ "建立 GStreamer 文字覆寫層 (%s)失敗。 請檢查您的 GStreamer 的安裝情況。"
+
+#, c-format
+#~ msgid ""
+#~ "Failed to create a GStreamer sink (%s). Please check your GStreamer "
+#~ "installation."
+#~ msgstr "建立 GStreamer sink (%s)失敗。 請檢查您的 GStreamer 的安裝情況。"
+
 #~ msgid "<b>Framerate</b>"
 #~ msgstr "<b>影格頻</b>"
 
@@ -4707,12 +5670,6 @@ msgstr "移除數字字母之間的空格"
 
 #~ msgid "Copy Style"
 #~ msgstr "複製樣式"
-
-#~ msgid "Create New Style"
-#~ msgstr "新增新樣式"
-
-#~ msgid "Delete Style"
-#~ msgstr "刪除樣式"
 
 #~ msgid "Manage Styles"
 #~ msgstr "處理樣式"

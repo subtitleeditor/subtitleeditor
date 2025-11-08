@@ -18,9 +18,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+#include "subtitleformatio.h"
+
 #include "error.h"
 #include "i18n.h"
-#include "subtitleformatio.h"
 
 SubtitleFormatIO::SubtitleFormatIO() {
 }
@@ -29,17 +30,17 @@ SubtitleFormatIO::~SubtitleFormatIO() {
 }
 
 void SubtitleFormatIO::set_document(Document *document) {
-  m_document = document;
+    m_document = document;
 }
 
 Document *SubtitleFormatIO::document() {
-  return m_document;
+    return m_document;
 }
 
 void SubtitleFormatIO::open(Reader & /*reader*/) {
-  throw IOFileError(_("This function is not implemented for this format."));
+    throw IOFileError(_("This function is not implemented for this format."));
 }
 
 void SubtitleFormatIO::save(Writer & /*writer*/) {
-  throw IOFileError(_("This function is not implemented for this format."));
+    throw IOFileError(_("This function is not implemented for this format."));
 }
