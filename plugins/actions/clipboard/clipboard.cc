@@ -133,6 +133,7 @@ class ClipboardPlugin : public Action {
     Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
     ui_id = ui->new_merge_id();
+    ui_id_edit = ui->new_merge_id();
 
     ui->insert_action_group(action_group);
 
@@ -162,7 +163,7 @@ class ClipboardPlugin : public Action {
       </ui>
     )";
 
-    ui_id = ui->add_ui_from_string(submenu_edit);
+    ui_id_edit = ui->add_ui_from_string(submenu_edit);
 
     Glib::ustring submenu_selection = R"(
       <ui>
@@ -176,7 +177,7 @@ class ClipboardPlugin : public Action {
       </ui>
     )";
 
-    ui_id = ui->add_ui_from_string(submenu_selection);
+    ui_id_selection = ui->add_ui_from_string(submenu_selection);
     // clear the clipdoc
     clear_clipdoc();
 
@@ -226,7 +227,8 @@ class ClipboardPlugin : public Action {
     clear_clipdoc();
     clear_pastedoc();
 
-    ui->remove_ui(ui_id);
+    ui->remove_ui(ui_id_selection);
+    ui->remove_ui(ui_id_edit);
     ui->remove_action_group(action_group);
   }
 
@@ -965,7 +967,8 @@ class ClipboardPlugin : public Action {
   }
 
  protected:
-  Gtk::UIManager::ui_merge_id ui_id;
+  Gtk::UIManager::ui_merge_id ui_id_edit;
+  Gtk::UIManager::ui_merge_id ui_id_selection;
   Glib::RefPtr<Gtk::ActionGroup> action_group;
 
   // data store
