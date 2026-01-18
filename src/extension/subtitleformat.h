@@ -24,8 +24,8 @@
 #include "subtitleformatio.h"
 
 class SubtitleFormat : public Extension {
- public:
-  virtual SubtitleFormatInfo get_info() = 0;
+  public:
+   virtual SubtitleFormatInfo get_info() = 0;
 
-  virtual SubtitleFormatIO* create() = 0;
+   virtual SubtitleFormatIO* create() = 0;
 };

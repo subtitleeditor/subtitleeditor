@@ -27,178 +27,163 @@
 #include <utility.h>
 
 class MinimizeDurationPlugin : public Action {
- public:
-  MinimizeDurationPlugin() {
-    activate();
-    update_ui();
-  }
+  public:
+   MinimizeDurationPlugin() {
+      activate();
+      update_ui();
+   }
 
-  ~MinimizeDurationPlugin() {
-    deactivate();
-  }
+   ~MinimizeDurationPlugin() {
+      deactivate();
+   }
 
-  void activate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void activate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    // actions
-    action_group = Gtk::ActionGroup::create("MinimizeDurationPlugin");
+      // actions
+      action_group = Gtk::ActionGroup::create("MinimizeDurationPlugin");
 
-    action_group->add(
-        Gtk::Action::create(
-            "minimize-duration", _("Minimize Duration From Start"),
-            _("Compact all selected subtitles to their minimum permissible "
-              "duration set in preferences by decreasing the end timecode, so "
-              "start time is unchanged")),
-        sigc::mem_fun(
-            *this, &MinimizeDurationPlugin::on_minimize_duration_from_start));
-    action_group->add(
-        Gtk::Action::create(
-            "minimize-duration-from-end", _("Minimize Duration From End"),
-            _("Compact all selected subtitles to their minimum permissible "
-              "duration set in preferences by increasing the start timecode, "
-              "so end time is unchanged")),
-        sigc::mem_fun(*this,
-                      &MinimizeDurationPlugin::on_minimize_duration_from_end));
+      action_group->add(Gtk::Action::create("minimize-duration",
+                                            _("Minimize Duration From Start"),
+                                            _("Compact all selected subtitles to their minimum permissible "
+                                              "duration set in preferences by decreasing the end timecode, so "
+                                              "start time is unchanged")),
+                        sigc::mem_fun(*this, &MinimizeDurationPlugin::on_minimize_duration_from_start));
+      action_group->add(Gtk::Action::create("minimize-duration-from-end",
+                                            _("Minimize Duration From End"),
+                                            _("Compact all selected subtitles to their minimum permissible "
+                                              "duration set in preferences by increasing the start timecode, "
+                                              "so end time is unchanged")),
+                        sigc::mem_fun(*this, &MinimizeDurationPlugin::on_minimize_duration_from_end));
 
-    action_group->add(
-        Gtk::Action::create("idealize-duration",
-                            _("_Idealize Duration From Start"),
-                            _("Compact all selected subtitles to their ideal "
-                              "duration set in preferences by decreasing the "
-                              "end timecode, so start time is unchanged")),
-        sigc::mem_fun(
-            *this, &MinimizeDurationPlugin::on_idealize_duration_from_start));
-    action_group->add(
-        Gtk::Action::create("idealize-duration-from-end",
-                            _("_Idealize Duration From End"),
-                            _("Compact all selected subtitles to their ideal "
-                              "duration set in preferences by increasing the "
-                              "start timecode, so end time is unchanged")),
-        sigc::mem_fun(*this,
-                      &MinimizeDurationPlugin::on_idealize_duration_from_end));
+      action_group->add(Gtk::Action::create("idealize-duration",
+                                            _("_Idealize Duration From Start"),
+                                            _("Compact all selected subtitles to their ideal "
+                                              "duration set in preferences by decreasing the "
+                                              "end timecode, so start time is unchanged")),
+                        sigc::mem_fun(*this, &MinimizeDurationPlugin::on_idealize_duration_from_start));
+      action_group->add(Gtk::Action::create("idealize-duration-from-end",
+                                            _("_Idealize Duration From End"),
+                                            _("Compact all selected subtitles to their ideal "
+                                              "duration set in preferences by increasing the "
+                                              "start timecode, so end time is unchanged")),
+                        sigc::mem_fun(*this, &MinimizeDurationPlugin::on_idealize_duration_from_end));
 
-    // ui
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      // ui
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui_id = ui->new_merge_id();
+      ui_id = ui->new_merge_id();
 
-    ui->insert_action_group(action_group);
+      ui->insert_action_group(action_group);
 
-    ui->add_ui(ui_id, "/menubar/menu-timings/idealize-duration",
-               "idealize-duration", "idealize-duration");
-    ui->add_ui(ui_id, "/menubar/menu-timings/idealize-duration-from-end",
-               "idealize-duration-from-end", "idealize-duration-from-end");
-    ui->add_ui(ui_id, "/menubar/menu-timings/minimize-duration",
-               "minimize-duration", "minimize-duration");
-    ui->add_ui(ui_id, "/menubar/menu-timings/minimize-duration-from-end",
-               "minimize-duration-from-end", "minimize-duration-from-end");
-  }
+      ui->add_ui(ui_id, "/menubar/menu-timings/idealize-duration", "idealize-duration", "idealize-duration");
+      ui->add_ui(ui_id, "/menubar/menu-timings/idealize-duration-from-end", "idealize-duration-from-end", "idealize-duration-from-end");
+      ui->add_ui(ui_id, "/menubar/menu-timings/minimize-duration", "minimize-duration", "minimize-duration");
+      ui->add_ui(ui_id, "/menubar/menu-timings/minimize-duration-from-end", "minimize-duration-from-end", "minimize-duration-from-end");
+   }
 
-  void deactivate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void deactivate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui->remove_ui(ui_id);
-    ui->remove_action_group(action_group);
-  }
+      ui->remove_ui(ui_id);
+      ui->remove_action_group(action_group);
+   }
 
-  void update_ui() {
-    se_dbg(SE_DBG_PLUGINS);
+   void update_ui() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    bool visible = (get_current_document() != NULL);
+      bool visible = (get_current_document() != NULL);
 
-    action_group->get_action("minimize-duration")->set_sensitive(visible);
-    action_group->get_action("minimize-duration-from-end")
-        ->set_sensitive(visible);
-    action_group->get_action("idealize-duration")->set_sensitive(visible);
-    action_group->get_action("idealize-duration-from-end")
-        ->set_sensitive(visible);
-  }
+      action_group->get_action("minimize-duration")->set_sensitive(visible);
+      action_group->get_action("minimize-duration-from-end")->set_sensitive(visible);
+      action_group->get_action("idealize-duration")->set_sensitive(visible);
+      action_group->get_action("idealize-duration-from-end")->set_sensitive(visible);
+   }
 
- protected:
-  void on_idealize_duration_from_start() {
-    se_dbg(SE_DBG_PLUGINS);
+  protected:
+   void on_idealize_duration_from_start() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    execute(cfg::get_double("timing", "ideal-characters-per-second"),true);
-  }
+      execute(cfg::get_double("timing", "ideal-characters-per-second"), true);
+   }
 
-  void on_idealize_duration_from_end() {
-    se_dbg(SE_DBG_PLUGINS);
+   void on_idealize_duration_from_end() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    execute(cfg::get_double("timing", "ideal-characters-per-second"),false);
-  }
+      execute(cfg::get_double("timing", "ideal-characters-per-second"), false);
+   }
 
-  void on_minimize_duration_from_start() {
-    se_dbg(SE_DBG_PLUGINS);
+   void on_minimize_duration_from_start() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    execute(cfg::get_double("timing", "max-characters-per-second"),true);
-  }
+      execute(cfg::get_double("timing", "max-characters-per-second"), true);
+   }
 
-  void on_minimize_duration_from_end() {
-    se_dbg(SE_DBG_PLUGINS);
+   void on_minimize_duration_from_end() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    execute(cfg::get_double("timing", "max-characters-per-second"),false);
-  }
+      execute(cfg::get_double("timing", "max-characters-per-second"), false);
+   }
 
-  bool execute(double maxcps, bool from_start) {
-    se_dbg(SE_DBG_PLUGINS);
+   bool execute(double maxcps, bool from_start) {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Document *doc = get_current_document();
+      Document* doc = get_current_document();
 
-    g_return_val_if_fail(doc, false);
+      g_return_val_if_fail(doc, false);
 
-    Subtitles subtitles = doc->subtitles();
+      Subtitles subtitles = doc->subtitles();
 
-    // NOTE: the selection returned is always sorted regardless of the order the
-    // user clicked on the subtitles in or at least it was when I tried it.
-    std::vector<Subtitle> selection = subtitles.get_selection();
+      // NOTE: the selection returned is always sorted regardless of the order the
+      // user clicked on the subtitles in or at least it was when I tried it.
+      std::vector<Subtitle> selection = subtitles.get_selection();
 
-    if (selection.size() < 1) {
-      doc->flash_message(
-          _("This action needs at least one subtitle to work on."));
-      return false;
-    }
-
-    // get relevant preferences
-    SubtitleTime mindur = cfg::get_int("timing", "min-display");
-
-    doc->start_command(_("Minimize Durations"));
-
-    Glib::ustring subtext = "";
-
-    // take each subtitle and set its duration to the permissible minimum
-    unsigned long subchars = 0;
-    SubtitleTime dur;
-
-    for (auto &sub : selection) {
-      subtext = sub.get_text();
-      subchars = utility::get_text_length_for_timing(subtext);
-      dur.totalmsecs = utility::get_min_duration_msecs(subchars, maxcps);
-      // doc->flash_message ( _("duration calculated is 1000 * %i / %i = %i"),
-      // (int)subchars, (int)maxcps, (int)dur.totalmsecs ); make sure we have at
-      // least the minimum duration
-      if (dur < mindur)
-        dur = mindur;
-
-      if (from_start) {
-        // the start time is fixed, we are changind the end time
-        sub.set_duration(dur);
-      } else {
-        // the end time is fixed, we are changing the start time
-        SubtitleTime endtime = sub.get_end();
-        sub.set_start_and_end(endtime - dur, endtime);
+      if (selection.size() < 1) {
+         doc->flash_message(_("This action needs at least one subtitle to work on."));
+         return false;
       }
-    }
 
-    doc->emit_signal("subtitle-time-changed");
-    doc->finish_command();
-    return true;
-  }
+      // get relevant preferences
+      SubtitleTime mindur = cfg::get_int("timing", "min-display");
 
- protected:
-  Gtk::UIManager::ui_merge_id ui_id;
-  Glib::RefPtr<Gtk::ActionGroup> action_group;
+      doc->start_command(_("Minimize Durations"));
+
+      Glib::ustring subtext = "";
+
+      // take each subtitle and set its duration to the permissible minimum
+      unsigned long subchars = 0;
+      SubtitleTime dur;
+
+      for (auto& sub : selection) {
+         subtext = sub.get_text();
+         subchars = utility::get_text_length_for_timing(subtext);
+         dur.totalmsecs = utility::get_min_duration_msecs(subchars, maxcps);
+         // doc->flash_message ( _("duration calculated is 1000 * %i / %i = %i"),
+         // (int)subchars, (int)maxcps, (int)dur.totalmsecs ); make sure we have at
+         // least the minimum duration
+         if (dur < mindur)
+            dur = mindur;
+
+         if (from_start) {
+            // the start time is fixed, we are changind the end time
+            sub.set_duration(dur);
+         } else {
+            // the end time is fixed, we are changing the start time
+            SubtitleTime endtime = sub.get_end();
+            sub.set_start_and_end(endtime - dur, endtime);
+         }
+      }
+
+      doc->emit_signal("subtitle-time-changed");
+      doc->finish_command();
+      return true;
+   }
+
+  protected:
+   Gtk::UIManager::ui_merge_id ui_id;
+   Glib::RefPtr<Gtk::ActionGroup> action_group;
 };
 
 REGISTER_EXTENSION(MinimizeDurationPlugin)

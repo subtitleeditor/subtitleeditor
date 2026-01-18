@@ -21,23 +21,23 @@
 #include "adobeencoredvd.h"
 
 class AdobeEncoreDVDNTSCPlugin : public SubtitleFormat {
- public:
-  // First line should simply be:
-  // number start_time stop_time some_text
-  // 1 00;00;00;1 00;00;10;5 text (NTSC)
-  SubtitleFormatInfo get_info() {
-    SubtitleFormatInfo info;
+  public:
+   // First line should simply be:
+   // number start_time stop_time some_text
+   // 1 00;00;00;1 00;00;10;5 text (NTSC)
+   SubtitleFormatInfo get_info() {
+      SubtitleFormatInfo info;
 
-    info.name = "Adobe Encore DVD (NTSC)";
-    info.extension = "txt";
-    info.pattern = "^\\d+\\s(\\d+(;)\\d+\\2\\d+\\2\\d+ ){2}.*?\\R";
+      info.name = "Adobe Encore DVD (NTSC)";
+      info.extension = "txt";
+      info.pattern = "^\\d+\\s(\\d+(;)\\d+\\2\\d+\\2\\d+ ){2}.*?\\R";
 
-    return info;
-  }
+      return info;
+   }
 
-  SubtitleFormatIO* create() {
-    return new AdobeEncoreDVD(FRAMERATE_29_97);
-  }
+   SubtitleFormatIO* create() {
+      return new AdobeEncoreDVD(FRAMERATE_29_97);
+   }
 };
 
 REGISTER_EXTENSION(AdobeEncoreDVDNTSCPlugin)

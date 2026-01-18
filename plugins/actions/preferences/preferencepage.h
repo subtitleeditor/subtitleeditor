@@ -22,39 +22,40 @@
 
 #include <gtkmm.h>
 #include <widget_config_utility.h>
+
 #include "utility.h"
 
 class PreferencePage : public Gtk::Box {
- public:
-  explicit PreferencePage(BaseObjectType *cobject) : Gtk::Box(cobject) {
-  }
+  public:
+   explicit PreferencePage(BaseObjectType* cobject) : Gtk::Box(cobject) {
+   }
 
-  // Get widget from.ui::xml and init/connect with config.
-  Gtk::Widget *init_widget(const Glib::RefPtr<Gtk::Builder> &builder,
-                           const Glib::ustring &widget_name,
-                           const Glib::ustring &config_group,
-                           const Glib::ustring &config_key) {
-    Gtk::Widget *widget = NULL;
+   // Get widget from.ui::xml and init/connect with config.
+   Gtk::Widget* init_widget(const Glib::RefPtr<Gtk::Builder>& builder,
+                            const Glib::ustring& widget_name,
+                            const Glib::ustring& config_group,
+                            const Glib::ustring& config_key) {
+      Gtk::Widget* widget = NULL;
 
-    builder->get_widget(widget_name, widget);
+      builder->get_widget(widget_name, widget);
 
-    widget_config::read_config_and_connect(widget, config_group, config_key);
+      widget_config::read_config_and_connect(widget, config_group, config_key);
 
-    return widget;
-  }
+      return widget;
+   }
 
-  // Get widget from.ui::xml and init/connect with config.
-  template <class W>
-  W *init_widget_derived(const Glib::RefPtr<Gtk::Builder> &builder,
-                         const Glib::ustring &widget_name,
-                         const Glib::ustring &config_group,
-                         const Glib::ustring &config_key) {
-    W *widget = NULL;
+   // Get widget from.ui::xml and init/connect with config.
+   template <class W>
+   W* init_widget_derived(const Glib::RefPtr<Gtk::Builder>& builder,
+                          const Glib::ustring& widget_name,
+                          const Glib::ustring& config_group,
+                          const Glib::ustring& config_key) {
+      W* widget = NULL;
 
-    builder->get_widget_derived(widget_name, widget);
+      builder->get_widget_derived(widget_name, widget);
 
-    widget_config::read_config_and_connect(widget, config_group, config_key);
+      widget_config::read_config_and_connect(widget, config_group, config_key);
 
-    return widget;
-  }
+      return widget;
+   }
 };

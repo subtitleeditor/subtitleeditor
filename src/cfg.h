@@ -22,6 +22,7 @@
 
 #include <glibmm.h>
 #include <sigc++/sigc++.h>
+
 #include <map>
 #include <vector>
 
@@ -32,59 +33,58 @@ using sigc::signal;
 using std::vector;
 
 // connect a signal to the group, notify when a key change
-signal<void, ustring, ustring> &signal_changed(const ustring &group);
+signal<void, ustring, ustring>& signal_changed(const ustring& group);
 
 // check if a key exists on the group
-bool has_key(const ustring &group, const ustring &key);
+bool has_key(const ustring& group, const ustring& key);
 
 // return the keys of the group
-vector<ustring> get_keys(const ustring &group);
+vector<ustring> get_keys(const ustring& group);
 
 // check if a group exists
-bool has_group(const ustring &group);
+bool has_group(const ustring& group);
 
 // remove the group and associated keys
-void remove_group(const ustring &group);
+void remove_group(const ustring& group);
 
 // set a comment to the key
-void set_comment(const ustring &group, const ustring &key, const ustring &text);
+void set_comment(const ustring& group, const ustring& key, const ustring& text);
 
 // set the string value to the key
-void set_string(const ustring &group, const ustring &key, const ustring &value);
+void set_string(const ustring& group, const ustring& key, const ustring& value);
 
 // return a string value of the key
-ustring get_string(const ustring &group, const ustring &key);
+ustring get_string(const ustring& group, const ustring& key);
 
 // set the string values to the key
-void set_string_list(const ustring &group, const ustring &key,
-                     const vector<ustring> &values);
+void set_string_list(const ustring& group, const ustring& key, const vector<ustring>& values);
 
 // return a strings value of the key
-vector<ustring> get_string_list(const ustring &group, const ustring &key);
+vector<ustring> get_string_list(const ustring& group, const ustring& key);
 
 // set the boolean value to the key
-void set_boolean(const ustring &group, const ustring &key, const bool &value);
+void set_boolean(const ustring& group, const ustring& key, const bool& value);
 
 // return a boolean value of the key
-bool get_boolean(const ustring &group, const ustring &key);
+bool get_boolean(const ustring& group, const ustring& key);
 
 // set the integer value to the key
-void set_int(const ustring &group, const ustring &key, const int &value);
+void set_int(const ustring& group, const ustring& key, const int& value);
 
 // return a integer value of the key
-int get_int(const ustring &group, const ustring &key);
+int get_int(const ustring& group, const ustring& key);
 
 // set the double value to the key
-void set_double(const ustring &group, const ustring &key, const double &value);
+void set_double(const ustring& group, const ustring& key, const double& value);
 
 // return a double value of the key
-double get_double(const ustring &group, const ustring &key);
+double get_double(const ustring& group, const ustring& key);
 
 // FIXME: remove me
 // return a float value of the key
-float get_float(const ustring &group, const ustring &key);
+float get_float(const ustring& group, const ustring& key);
 
 // return the default value of the key
-ustring get_default(const ustring &group, const ustring &key);
+ustring get_default(const ustring& group, const ustring& key);
 
 }  // namespace cfg

@@ -24,15 +24,15 @@
 
 // Helper to write data.
 class Writer {
- public:
-  Writer();
+  public:
+   Writer();
 
-  virtual ~Writer();
+   virtual ~Writer();
 
-  const Glib::ustring& get_data() const;
+   const Glib::ustring& get_data() const;
 
-  void write(const Glib::ustring& buf);
+   void write(const Glib::ustring& buf);
 
- protected:
-  Glib::ustring m_data;
+  protected:
+   Glib::ustring m_data;
 };

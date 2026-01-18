@@ -23,11 +23,12 @@
 #include "patternspage.h"
 
 class CommonErrorPage : public PatternsPage {
- public:
-  CommonErrorPage()
-      : PatternsPage("common-error", _("Select Common Error Pattern"),
-                     _("Correct common errors"),
-                     _("Correct common errors made by humans or image "
-                       "recognition software")) {
-  }
+  public:
+   CommonErrorPage()
+       : PatternsPage("common-error",
+                      _("Select Common Error Pattern"),
+                      _("Correct common errors"),
+                      _("Correct common errors made by humans or image "
+                        "recognition software")) {
+   }
 };

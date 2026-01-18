@@ -25,35 +25,35 @@
 class Document;
 
 class Style {
-  friend class Styles;
+   friend class Styles;
 
- public:
-  Style();
-  Style(Document *doc, const Gtk::TreeIter &iter);
-  ~Style();
+  public:
+   Style();
+   Style(Document* doc, const Gtk::TreeIter& iter);
+   ~Style();
 
-  operator bool() const;
+   operator bool() const;
 
-  Style &operator++();
+   Style& operator++();
 
-  Style &operator--();
+   Style& operator--();
 
-  bool operator==(const Style &style) const;
+   bool operator==(const Style& style) const;
 
-  bool operator!=(const Style &style) const;
+   bool operator!=(const Style& style) const;
 
-  void set(const Glib::ustring &name, const Glib::ustring &value);
+   void set(const Glib::ustring& name, const Glib::ustring& value);
 
-  Glib::ustring get(const Glib::ustring &name) const;
+   Glib::ustring get(const Glib::ustring& name) const;
 
-  void set(const std::map<Glib::ustring, Glib::ustring> &values);
+   void set(const std::map<Glib::ustring, Glib::ustring>& values);
 
-  void get(std::map<Glib::ustring, Glib::ustring> &values);
+   void get(std::map<Glib::ustring, Glib::ustring>& values);
 
-  void copy_to(Style &style);
+   void copy_to(Style& style);
 
- protected:
-  static StyleColumnRecorder column;
-  Document *m_document{nullptr};
-  Gtk::TreeIter m_iter;
+  protected:
+   static StyleColumnRecorder column;
+   Document* m_document{nullptr};
+   Gtk::TreeIter m_iter;
 };

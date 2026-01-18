@@ -25,12 +25,9 @@
 #include "preferencepage.h"
 
 class DocumentPage : public PreferencePage {
- public:
-  DocumentPage(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& xml)
-      : PreferencePage(cobject) {
-    init_widget_derived<ComboBoxSubtitleFormat>(xml, "combo-format", "document",
-                                                "format");
-    init_widget_derived<ComboBoxNewLine>(xml, "combo-newline", "document",
-                                         "newline");
-  }
+  public:
+   DocumentPage(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& xml) : PreferencePage(cobject) {
+      init_widget_derived<ComboBoxSubtitleFormat>(xml, "combo-format", "document", "format");
+      init_widget_derived<ComboBoxNewLine>(xml, "combo-newline", "document", "newline");
+   }
 };

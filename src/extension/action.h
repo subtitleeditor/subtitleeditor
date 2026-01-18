@@ -21,28 +21,29 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <gtkmm.h>
+
 #include "cfg.h"
 #include "document.h"
 #include "extension.h"
 #include "subtitleeditorwindow.h"
 
 class Action : public Extension, public sigc::trackable {
- public:
-  Action();
+  public:
+   Action();
 
-  virtual ~Action();
+   virtual ~Action();
 
-  virtual void activate();
+   virtual void activate();
 
-  virtual void deactivate();
+   virtual void deactivate();
 
-  virtual void update_ui();
+   virtual void update_ui();
 
-  // static method
+   // static method
 
-  static SubtitleEditorWindow* get_subtitleeditor_window();
+   static SubtitleEditorWindow* get_subtitleeditor_window();
 
-  static Document* get_current_document();
+   static Document* get_current_document();
 
-  static Glib::RefPtr<Gtk::UIManager> get_ui_manager();
+   static Glib::RefPtr<Gtk::UIManager> get_ui_manager();
 };

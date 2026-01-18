@@ -23,98 +23,94 @@
 #include <i18n.h>
 
 class ReverseTextAndTranslationPlugin : public Action {
- public:
-  ReverseTextAndTranslationPlugin() {
-    activate();
-    update_ui();
-  }
+  public:
+   ReverseTextAndTranslationPlugin() {
+      activate();
+      update_ui();
+   }
 
-  ~ReverseTextAndTranslationPlugin() {
-    deactivate();
-  }
+   ~ReverseTextAndTranslationPlugin() {
+      deactivate();
+   }
 
-  void activate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void activate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    // actions
-    action_group = Gtk::ActionGroup::create("ReverseTextAndTranslationPlugin");
+      // actions
+      action_group = Gtk::ActionGroup::create("ReverseTextAndTranslationPlugin");
 
-    action_group->add(
-        Gtk::Action::create("reverse-text-and-translation",
-                            _("_Reverse Text And Translation"),
-                            _("Reverse the text and the translation")),
-        sigc::mem_fun(*this, &ReverseTextAndTranslationPlugin::on_execute));
+      action_group->add(
+         Gtk::Action::create("reverse-text-and-translation", _("_Reverse Text And Translation"), _("Reverse the text and the translation")),
+         sigc::mem_fun(*this, &ReverseTextAndTranslationPlugin::on_execute));
 
-    // ui
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      // ui
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui_id = ui->new_merge_id();
+      ui_id = ui->new_merge_id();
 
-    ui->insert_action_group(action_group);
+      ui->insert_action_group(action_group);
 
-    ui->add_ui(ui_id, "/menubar/menu-tools/reverse-text-and-translation",
-               "reverse-text-and-translation", "reverse-text-and-translation");
-  }
+      ui->add_ui(ui_id, "/menubar/menu-tools/reverse-text-and-translation", "reverse-text-and-translation", "reverse-text-and-translation");
+   }
 
-  void deactivate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void deactivate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui->remove_ui(ui_id);
-    ui->remove_action_group(action_group);
-  }
+      ui->remove_ui(ui_id);
+      ui->remove_action_group(action_group);
+   }
 
-  void update_ui() {
-    se_dbg(SE_DBG_PLUGINS);
+   void update_ui() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    bool visible = (get_current_document() != NULL);
+      bool visible = (get_current_document() != NULL);
 
-    action_group->get_action("reverse-text-and-translation")
-        ->set_sensitive(visible);
-  }
+      action_group->get_action("reverse-text-and-translation")->set_sensitive(visible);
+   }
 
- protected:
-  void on_execute() {
-    se_dbg(SE_DBG_PLUGINS);
+  protected:
+   void on_execute() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    execute();
-  }
+      execute();
+   }
 
-  bool execute() {
-    se_dbg(SE_DBG_PLUGINS);
+   bool execute() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Document *doc = get_current_document();
+      Document* doc = get_current_document();
 
-    g_return_val_if_fail(doc, false);
+      g_return_val_if_fail(doc, false);
 
-    Subtitles subtitles = doc->subtitles();
+      Subtitles subtitles = doc->subtitles();
 
-    Glib::ustring text;
-    Glib::ustring translation;
+      Glib::ustring text;
+      Glib::ustring translation;
 
-    doc->start_command(_("Reverse Text And Translation"));
+      doc->start_command(_("Reverse Text And Translation"));
 
-    for (Subtitle sub = subtitles.get_first(); sub; ++sub) {
-      text = sub.get_text();
-      translation = sub.get_translation();
+      for (Subtitle sub = subtitles.get_first(); sub; ++sub) {
+         text = sub.get_text();
+         translation = sub.get_translation();
 
-      if (text.empty() && translation.empty())
-        continue;
+         if (text.empty() && translation.empty())
+            continue;
 
-      sub.set_text(translation);
-      sub.set_translation(text);
-    }
+         sub.set_text(translation);
+         sub.set_translation(text);
+      }
 
-    doc->finish_command();
-    doc->flash_message(_("Reverse the text and the translation was applied."));
+      doc->finish_command();
+      doc->flash_message(_("Reverse the text and the translation was applied."));
 
-    return true;
-  }
+      return true;
+   }
 
- protected:
-  Gtk::UIManager::ui_merge_id ui_id;
-  Glib::RefPtr<Gtk::ActionGroup> action_group;
+  protected:
+   Gtk::UIManager::ui_merge_id ui_id;
+   Glib::RefPtr<Gtk::ActionGroup> action_group;
 };
 
 REGISTER_EXTENSION(ReverseTextAndTranslationPlugin)

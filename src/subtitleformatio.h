@@ -25,26 +25,26 @@
 #include "writer.h"
 
 class SubtitleFormatInfo {
- public:
-  Glib::ustring name;
-  Glib::ustring extension;
-  Glib::ustring pattern;
+  public:
+   Glib::ustring name;
+   Glib::ustring extension;
+   Glib::ustring pattern;
 };
 
 class SubtitleFormatIO {
- public:
-  SubtitleFormatIO();
+  public:
+   SubtitleFormatIO();
 
-  void set_document(Document *document);
+   void set_document(Document* document);
 
-  Document *document();
+   Document* document();
 
-  virtual ~SubtitleFormatIO();
+   virtual ~SubtitleFormatIO();
 
-  virtual void open(Reader &);
+   virtual void open(Reader&);
 
-  virtual void save(Writer &);
+   virtual void save(Writer&);
 
- private:
-  Document *m_document{nullptr};
+  private:
+   Document* m_document{nullptr};
 };

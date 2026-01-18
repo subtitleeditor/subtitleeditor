@@ -25,122 +25,113 @@
 
 #include <debug.h>
 #include <extension/action.h>
-//#include <i18n.h>
+// #include <i18n.h>
 #include <player.h>
 #include <utility.h>
+
 #include <algorithm>
 #include <cmath>
 
 class FindByTimePlugin : public Action {
- public:
-  FindByTimePlugin() {
-    activate();
-    update_ui();
-  }
+  public:
+   FindByTimePlugin() {
+      activate();
+      update_ui();
+   }
 
- 	~FindByTimePlugin()
-	{
-		deactivate();
-	}
+   ~FindByTimePlugin() {
+      deactivate();
+   }
 
-	/*
-	 */
-	void activate()
-	{
-		se_dbg(SE_DBG_PLUGINS);
+   /*
+    */
+   void activate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-		// actions
-		action_group = Gtk::ActionGroup::create("FindByTimePlugin");
+      // actions
+      action_group = Gtk::ActionGroup::create("FindByTimePlugin");
 
-		action_group->add(
-				Gtk::Action::create("find-by-time", _("Find Subtitle By Time"),
-				_("Find the subtitle nearest to the current player position")),
-					sigc::mem_fun(*this, &FindByTimePlugin::on_find_by_time));
+      action_group->add(
+         Gtk::Action::create("find-by-time", _("Find Subtitle By Time"), _("Find the subtitle nearest to the current player position")),
+         sigc::mem_fun(*this, &FindByTimePlugin::on_find_by_time));
 
-		// ui
-		Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      // ui
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-		ui_id = ui->new_merge_id();
+      ui_id = ui->new_merge_id();
 
-		ui->insert_action_group(action_group);
+      ui->insert_action_group(action_group);
 
-		ui->add_ui(ui_id, "/menubar/menu-tools/find-by-time", "find-by-time", "find-by-time");
-	}
+      ui->add_ui(ui_id, "/menubar/menu-tools/find-by-time", "find-by-time", "find-by-time");
+   }
 
-	/*
-	 */
-	void deactivate()
-	{
-		se_dbg(SE_DBG_PLUGINS);
+   /*
+    */
+   void deactivate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-		Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-		ui->remove_ui(ui_id);
-		ui->remove_action_group(action_group);
-	}
+      ui->remove_ui(ui_id);
+      ui->remove_action_group(action_group);
+   }
 
-	/*
-	 */
-	void update_ui()
-	{
-		se_dbg(SE_DBG_PLUGINS);
+   /*
+    */
+   void update_ui() {
+      se_dbg(SE_DBG_PLUGINS);
 
-		bool visible = (get_current_document() != NULL);
+      bool visible = (get_current_document() != NULL);
 
-		action_group->get_action("find-by-time")->set_sensitive(visible);
-	}
+      action_group->get_action("find-by-time")->set_sensitive(visible);
+   }
 
-protected:
+  protected:
+   /*
+    */
+   void on_find_by_time() {
+      se_dbg(SE_DBG_PLUGINS);
 
-	/*
-	 */
-	void on_find_by_time()
-	{
-		se_dbg(SE_DBG_PLUGINS);
+      Document* doc = get_current_document();
+      g_return_if_fail(doc);
 
-		Document *doc = get_current_document();
-		g_return_if_fail(doc);
+      Subtitles subs = doc->subtitles();
 
-    Subtitles subs = doc->subtitles();
+      long playerpos = get_subtitleeditor_window()->get_player()->get_position();
+      long min_distance = 36000000;
+      bool no_inside = true;
+      Subtitle closest_sub;
+      long distance;
 
-    long playerpos = get_subtitleeditor_window()->get_player()->get_position();
-	long min_distance = 36000000;
-	bool no_inside = true;
-	Subtitle closest_sub; 
-	long distance;
+      Subtitle cursub = subs.get_first();
+      if (!cursub) {
+         doc->flash_message(_("No subtitles, cannot find the nearest."));
+         return;
+      }
 
-    Subtitle cursub = subs.get_first();
-    if( !cursub ) {
-			doc->flash_message(_("No subtitles, cannot find the nearest."));
-    return;
-  }
-
-    for(Subtitle cursub = subs.get_first(); cursub; cursub = subs.get_next(cursub)) {
-       if((cursub.get_start().totalmsecs <= playerpos) &&
-          (cursub.get_end().totalmsecs >= playerpos)) {
-			no_inside = false;
+      for (Subtitle cursub = subs.get_first(); cursub; cursub = subs.get_next(cursub)) {
+         if ((cursub.get_start().totalmsecs <= playerpos) && (cursub.get_end().totalmsecs >= playerpos)) {
+            no_inside = false;
             doc->subtitles().select(cursub);
             doc->emit_signal("subtitle-selection-changed");
             break;
-          }
-	   else{
-		   distance = std::min(std::abs(playerpos - cursub.get_start().totalmsecs), std::abs(playerpos - cursub.get_end().totalmsecs));
-		   if(distance < min_distance){
-		       min_distance = distance;
-			   closest_sub = cursub;
-		   }
-       }
-	}
-	if (no_inside){
-		doc->subtitles().select(closest_sub);
-        doc->emit_signal("subtitle-selection-changed");
+         } else {
+            distance = std::min(std::abs(playerpos - cursub.get_start().totalmsecs), std::abs(playerpos - cursub.get_end().totalmsecs));
+            if (distance < min_distance) {
+               min_distance = distance;
+               closest_sub = cursub;
+            }
+         }
+      }
+      if (no_inside) {
+         doc->subtitles().select(closest_sub);
+         doc->emit_signal("subtitle-selection-changed");
+      }
+   }
 
-	}
-}
-
-protected:
-	Gtk::UIManager::ui_merge_id ui_id;
-	Glib::RefPtr<Gtk::ActionGroup> action_group;
+  protected:
+   Gtk::UIManager::ui_merge_id ui_id;
+   Glib::RefPtr<Gtk::ActionGroup> action_group;
 };
 
 REGISTER_EXTENSION(FindByTimePlugin)

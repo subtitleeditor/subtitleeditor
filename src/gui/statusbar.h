@@ -23,19 +23,19 @@
 #include <gtkmm.h>
 
 class Statusbar : public Gtk::Statusbar {
- public:
-  Statusbar(BaseObjectType *cobject, const Glib::RefPtr<Gtk::Builder> &builder);
-  ~Statusbar();
+  public:
+   Statusbar(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& builder);
+   ~Statusbar();
 
-  void push_text(const Glib::ustring &text);
-  void pop_text();
+   void push_text(const Glib::ustring& text);
+   void pop_text();
 
-  // affiche un message pendant 3 sec
-  void flash_message(const Glib::ustring &text);
+   // affiche un message pendant 3 sec
+   void flash_message(const Glib::ustring& text);
 
- protected:
-  bool on_timeout();
+  protected:
+   bool on_timeout();
 
- protected:
-  sigc::connection m_connection_timeout;
+  protected:
+   sigc::connection m_connection_timeout;
 };

@@ -18,19 +18,20 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-#include "debug.h"
 #include "extension.h"
 
+#include "debug.h"
+
 Extension::Extension() {
-  se_dbg(SE_DBG_PLUGINS);
+   se_dbg(SE_DBG_PLUGINS);
 }
 
 Extension::~Extension() {
-  se_dbg(SE_DBG_PLUGINS);
+   se_dbg(SE_DBG_PLUGINS);
 }
 
 bool Extension::is_configurable() {
-  return false;
+   return false;
 }
 
 void Extension::create_configure_dialog() {

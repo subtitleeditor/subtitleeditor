@@ -22,77 +22,76 @@
 
 #include <glibmm.h>
 #include <math.h>
+
 #include <string>
 
 /**
  **/
 class SubtitleTime {
- public:
-  SubtitleTime();
+  public:
+   SubtitleTime();
 
-  SubtitleTime(const long &total_msecs);
+   SubtitleTime(const long& total_msecs);
 
-  // e.g "0:10:50.600"
-  SubtitleTime(const Glib::ustring &srt);
+   // e.g "0:10:50.600"
+   SubtitleTime(const Glib::ustring& srt);
 
-  SubtitleTime(const int &h, const int &m, const int &s, const int &ms);
+   SubtitleTime(const int& h, const int& m, const int& s, const int& ms);
 
-  void set(const int &h, const int &m, const int &s, const int &ms);
+   void set(const int& h, const int& m, const int& s, const int& ms);
 
-  int hours() const;
+   int hours() const;
 
-  void set_hours(int value);
+   void set_hours(int value);
 
-  int minutes() const;
+   int minutes() const;
 
-  void set_minutes(int value);
+   void set_minutes(int value);
 
-  int seconds() const;
+   int seconds() const;
 
-  void set_seconds(int value);
+   void set_seconds(int value);
 
-  int mseconds() const;
+   int mseconds() const;
 
-  void set_mseconds(int value);
+   void set_mseconds(int value);
 
-  SubtitleTime operator-(const SubtitleTime &b) const;
-  SubtitleTime operator+(const SubtitleTime &b) const;
-  SubtitleTime operator*(const double &mult) const;
-  double operator/(const SubtitleTime &b) const;
-  SubtitleTime operator/(const double &div) const;
-  SubtitleTime operator/(const long &div) const;
+   SubtitleTime operator-(const SubtitleTime& b) const;
+   SubtitleTime operator+(const SubtitleTime& b) const;
+   SubtitleTime operator*(const double& mult) const;
+   double operator/(const SubtitleTime& b) const;
+   SubtitleTime operator/(const double& div) const;
+   SubtitleTime operator/(const long& div) const;
 
-  bool operator==(const SubtitleTime &time) const;
-  bool operator!=(const SubtitleTime &time) const;
-  bool operator>(const SubtitleTime &time) const;
-  bool operator>=(const SubtitleTime &time) const;
-  bool operator<(const SubtitleTime &time) const;
-  bool operator<=(const SubtitleTime &time) const;
+   bool operator==(const SubtitleTime& time) const;
+   bool operator!=(const SubtitleTime& time) const;
+   bool operator>(const SubtitleTime& time) const;
+   bool operator>=(const SubtitleTime& time) const;
+   bool operator<(const SubtitleTime& time) const;
+   bool operator<=(const SubtitleTime& time) const;
 
-  Glib::ustring str() const;
+   Glib::ustring str() const;
 
-  // Check if the string has the good format 'H:MM:SS.MS'
-  static bool validate(const Glib::ustring &str);
+   // Check if the string has the good format 'H:MM:SS.MS'
+   static bool validate(const Glib::ustring& str);
 
-  // Return "0:00:00.000"
-  static Glib::ustring null();
+   // Return "0:00:00.000"
+   static Glib::ustring null();
 
-  // Convert the time to a frame using a framerate
-  // e.g (450, 23.976)
-  static SubtitleTime frame_to_time(const long int &frame,
-                                    const float &framerate);
+   // Convert the time to a frame using a framerate
+   // e.g (450, 23.976)
+   static SubtitleTime frame_to_time(const long int& frame, const float& framerate);
 
-  // Convert the frame to the time using a framerate
-  static long int time_to_frame(const SubtitleTime &time,
-                                const float &framerate);
+   // Convert the frame to the time using a framerate
+   static long int time_to_frame(const SubtitleTime& time, const float& framerate);
 
- public:
-  long totalmsecs{0};
+  public:
+   long totalmsecs{0};
 };
 
 // return hours:mins:secs,msecs
-std::string getTime2String(const SubtitleTime &time);
+std::string getTime2String(const SubtitleTime& time);
 
-long getMSecs(const SubtitleTime &time);
+long getMSecs(const SubtitleTime& time);
 
-SubtitleTime getTime2MSecs(const long &total);
+SubtitleTime getTime2MSecs(const long& total);

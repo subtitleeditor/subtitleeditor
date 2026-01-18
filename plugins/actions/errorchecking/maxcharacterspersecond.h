@@ -21,45 +21,44 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <i18n.h>
+
 #include "errorchecking.h"
 
 class MaxCharactersPerSecond : public ErrorChecking {
- public:
-  MaxCharactersPerSecond()
-      : ErrorChecking(
-            "max-characters-per-second", _("Maximum Characters per Second"),
-            _("Detects and fixes subtitles when the number of characters per "
-              "second is superior to the specified value.")) {
-    m_maxCPS = 25;
-  }
+  public:
+   MaxCharactersPerSecond()
+       : ErrorChecking("max-characters-per-second",
+                       _("Maximum Characters per Second"),
+                       _("Detects and fixes subtitles when the number of characters per "
+                         "second is superior to the specified value.")) {
+      m_maxCPS = 25;
+   }
 
-  virtual void init() {
-    m_maxCPS = cfg::get_double("timing", "max-characters-per-second");
-  }
+   virtual void init() {
+      m_maxCPS = cfg::get_double("timing", "max-characters-per-second");
+   }
 
-  bool execute(Info &info) {
-    if ((info.currentSub.check_cps_text(0, m_maxCPS) <= 0) || m_maxCPS == 0)
-      return false;
+   bool execute(Info& info) {
+      if ((info.currentSub.check_cps_text(0, m_maxCPS) <= 0) || m_maxCPS == 0)
+         return false;
 
-    SubtitleTime duration(
-        utility::get_min_duration_msecs(info.currentSub.get_text(), m_maxCPS));
+      SubtitleTime duration(utility::get_min_duration_msecs(info.currentSub.get_text(), m_maxCPS));
 
-    if (info.tryToFix) {
-      info.currentSub.set_duration(duration);
+      if (info.tryToFix) {
+         info.currentSub.set_duration(duration);
+         return true;
+      }
+
+      info.error =
+         build_message(_("There are too many characters per second: <b>%.1f chars/s</b>"), info.currentSub.get_characters_per_second_text());
+
+      info.solution = build_message(_("<b>Automatic correction:</b> change "
+                                      "current subtitle duration to %s."),
+                                    duration.str().c_str());
+
       return true;
-    }
+   }
 
-    info.error = build_message(
-        _("There are too many characters per second: <b>%.1f chars/s</b>"),
-        info.currentSub.get_characters_per_second_text());
-
-    info.solution = build_message(_("<b>Automatic correction:</b> change "
-                                    "current subtitle duration to %s."),
-                                  duration.str().c_str());
-
-    return true;
-  }
-
- protected:
-  double m_maxCPS;
+  protected:
+   double m_maxCPS;
 };

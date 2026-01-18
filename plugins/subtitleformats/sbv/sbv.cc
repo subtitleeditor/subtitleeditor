@@ -41,85 +41,82 @@ we're presenting today.
 */
 
 class SBV : public SubtitleFormatIO {
- public:
-  void open(Reader &file) {
-    Glib::RefPtr<Glib::Regex> re_time = Glib::Regex::create(
-        "^(\\d):(\\d+):(\\d+)\\.(\\d+),(\\d):(\\d+):(\\d+)\\.(\\d+)");
+  public:
+   void open(Reader& file) {
+      Glib::RefPtr<Glib::Regex> re_time = Glib::Regex::create("^(\\d):(\\d+):(\\d+)\\.(\\d+),(\\d):(\\d+):(\\d+)\\.(\\d+)");
 
-    int start[4], end[4];
-    Subtitles subtitles = document()->subtitles();
+      int start[4], end[4];
+      Subtitles subtitles = document()->subtitles();
 
-    Glib::ustring line;
+      Glib::ustring line;
 
-    while (file.getline(line)) {
-      // Read the subtitle times
-      if (re_time->match(line)) {
-        std::vector<Glib::ustring> group = re_time->split(line);
+      while (file.getline(line)) {
+         // Read the subtitle times
+         if (re_time->match(line)) {
+            std::vector<Glib::ustring> group = re_time->split(line);
 
-        start[0] = utility::string_to_int(group[1]);
-        start[1] = utility::string_to_int(group[2]);
-        start[2] = utility::string_to_int(group[3]);
-        start[3] = utility::string_to_int(group[4]);
+            start[0] = utility::string_to_int(group[1]);
+            start[1] = utility::string_to_int(group[2]);
+            start[2] = utility::string_to_int(group[3]);
+            start[3] = utility::string_to_int(group[4]);
 
-        end[0] = utility::string_to_int(group[5]);
-        end[1] = utility::string_to_int(group[6]);
-        end[2] = utility::string_to_int(group[7]);
-        end[3] = utility::string_to_int(group[8]);
+            end[0] = utility::string_to_int(group[5]);
+            end[1] = utility::string_to_int(group[6]);
+            end[2] = utility::string_to_int(group[7]);
+            end[3] = utility::string_to_int(group[8]);
 
-        Glib::ustring text;
-        // Read the text lines
-        while (file.getline(line) && !line.empty()) {
-          if (!text.empty())
-            text += '\n';
-          text += line;
-        }
+            Glib::ustring text;
+            // Read the text lines
+            while (file.getline(line) && !line.empty()) {
+               if (!text.empty())
+                  text += '\n';
+               text += line;
+            }
 
-        // Append a subtitle
-        Subtitle sub = subtitles.append();
+            // Append a subtitle
+            Subtitle sub = subtitles.append();
 
-        sub.set_text(text);
-        sub.set_start_and_end(
-            SubtitleTime(start[0], start[1], start[2], start[3]),
-            SubtitleTime(end[0], end[1], end[2], end[3]));
-      } else {
-        se_dbg_msg(SE_DBG_PLUGINS, "can not match time line: '%s'",
-                   line.c_str());
+            sub.set_text(text);
+            sub.set_start_and_end(SubtitleTime(start[0], start[1], start[2], start[3]), SubtitleTime(end[0], end[1], end[2], end[3]));
+         } else {
+            se_dbg_msg(SE_DBG_PLUGINS, "can not match time line: '%s'", line.c_str());
+         }
       }
-    }
-  }
+   }
 
-  void save(Writer &file) {
-    for (Subtitle sub = document()->subtitles().get_first(); sub; ++sub) {
-      Glib::ustring text = sub.get_text();
+   void save(Writer& file) {
+      for (Subtitle sub = document()->subtitles().get_first(); sub; ++sub) {
+         Glib::ustring text = sub.get_text();
 
-      file.write(Glib::ustring::compose(
-          "%1,%2\n"
-          "%3\n\n",
-          time_to_sbv(sub.get_start()), time_to_sbv(sub.get_end()), text));
-    }
-  }
+         file.write(
+            Glib::ustring::compose("%1,%2\n"
+                                   "%3\n\n",
+                                   time_to_sbv(sub.get_start()),
+                                   time_to_sbv(sub.get_end()),
+                                   text));
+      }
+   }
 
-  Glib::ustring time_to_sbv(const SubtitleTime &t) {
-    return build_message("%i:%02i:%02i.%03i", t.hours(), t.minutes(),
-                         t.seconds(), t.mseconds());
-  }
+   Glib::ustring time_to_sbv(const SubtitleTime& t) {
+      return build_message("%i:%02i:%02i.%03i", t.hours(), t.minutes(), t.seconds(), t.mseconds());
+   }
 };
 
 class SBVPlugin : public SubtitleFormat {
- public:
-  SubtitleFormatInfo get_info() {
-    SubtitleFormatInfo info;
-    info.name = "SBV";
-    info.extension = "sbv";
-    info.pattern = "\\d:\\d{2}:\\d{2}\\.\\d{3},\\d:\\d{2}:\\d{2}\\.\\d{3}\\R";
+  public:
+   SubtitleFormatInfo get_info() {
+      SubtitleFormatInfo info;
+      info.name = "SBV";
+      info.extension = "sbv";
+      info.pattern = "\\d:\\d{2}:\\d{2}\\.\\d{3},\\d:\\d{2}:\\d{2}\\.\\d{3}\\R";
 
-    return info;
-  }
+      return info;
+   }
 
-  SubtitleFormatIO *create() {
-    SBV *sf = new SBV();
-    return sf;
-  }
+   SubtitleFormatIO* create() {
+      SBV* sf = new SBV();
+      return sf;
+   }
 };
 
 REGISTER_EXTENSION(SBVPlugin)

@@ -23,43 +23,39 @@
 #include "errorchecking.h"
 
 class MinDisplayTime : public ErrorChecking {
- public:
-  MinDisplayTime()
-      : ErrorChecking("min-display-time", _("Minimum Display Time"),
-                      _("Detects and fixes subtitles when the duration is "
-                        "inferior to the specified value.")) {
-    m_min_display = 1000;  // a second
-  }
+  public:
+   MinDisplayTime()
+       : ErrorChecking("min-display-time",
+                       _("Minimum Display Time"),
+                       _("Detects and fixes subtitles when the duration is "
+                         "inferior to the specified value.")) {
+      m_min_display = 1000;  // a second
+   }
 
-  virtual void init() {
-    m_min_display = cfg::get_int("timing", "min-display");
-  }
+   virtual void init() {
+      m_min_display = cfg::get_int("timing", "min-display");
+   }
 
-  bool execute(Info &info) {
-    SubtitleTime duration = info.currentSub.get_duration();
+   bool execute(Info& info) {
+      SubtitleTime duration = info.currentSub.get_duration();
 
-    if (duration.totalmsecs >= m_min_display)
-      return false;
+      if (duration.totalmsecs >= m_min_display)
+         return false;
 
-    SubtitleTime new_end =
-        info.currentSub.get_start() + SubtitleTime(m_min_display);
+      SubtitleTime new_end = info.currentSub.get_start() + SubtitleTime(m_min_display);
 
-    if (info.tryToFix) {
-      info.currentSub.set_end(new_end);
+      if (info.tryToFix) {
+         info.currentSub.set_end(new_end);
+         return true;
+      }
+
+      info.error = build_message(_("Subtitle display time is too short: <b>%s</b>"), duration.str().c_str());
+
+      info.solution = build_message(_("<b>Automatic correction:</b> to change current subtitle end to %s."), new_end.str().c_str());
+
       return true;
-    }
+   }
 
-    info.error =
-        build_message(_("Subtitle display time is too short: <b>%s</b>"),
-                      duration.str().c_str());
-
-    info.solution = build_message(
-        _("<b>Automatic correction:</b> to change current subtitle end to %s."),
-        new_end.str().c_str());
-
-    return true;
-  }
-
- protected:
-  int m_min_display;
+  protected:
+   int m_min_display;
 };

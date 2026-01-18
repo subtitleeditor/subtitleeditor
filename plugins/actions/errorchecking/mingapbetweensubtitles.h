@@ -23,54 +23,52 @@
 #include "errorchecking.h"
 
 class MinGapBetweenSubtitles : public ErrorChecking {
- public:
-  MinGapBetweenSubtitles()
-      : ErrorChecking("min-gap-between-subtitles",
-                      _("Minimum Gap between Subtitles"),
-                      _("Detects and fixes subtitles when the minimum gap "
-                        "between subtitles is too short.")) {
-    m_minGBS = 100;
-  }
+  public:
+   MinGapBetweenSubtitles()
+       : ErrorChecking("min-gap-between-subtitles",
+                       _("Minimum Gap between Subtitles"),
+                       _("Detects and fixes subtitles when the minimum gap "
+                         "between subtitles is too short.")) {
+      m_minGBS = 100;
+   }
 
-  virtual void init() {
-    m_minGBS = cfg::get_int("timing", "min-gap-between-subtitles");
-  }
+   virtual void init() {
+      m_minGBS = cfg::get_int("timing", "min-gap-between-subtitles");
+   }
 
-  bool execute(Info &info) {
-    if (!info.nextSub)
-      return false;
+   bool execute(Info& info) {
+      if (!info.nextSub)
+         return false;
 
-    long gap =
-        (info.nextSub.get_start() - info.currentSub.get_end()).totalmsecs;
+      long gap = (info.nextSub.get_start() - info.currentSub.get_end()).totalmsecs;
 
-    if (gap >= m_minGBS)
-      return false;
+      if (gap >= m_minGBS)
+         return false;
 
-    long middle = info.currentSub.get_end().totalmsecs + (gap / 2);
-    long halfGBS = m_minGBS / 2;
+      long middle = info.currentSub.get_end().totalmsecs + (gap / 2);
+      long halfGBS = m_minGBS / 2;
 
-    SubtitleTime new_current(middle - halfGBS);
-    SubtitleTime new_next(middle + halfGBS);
+      SubtitleTime new_current(middle - halfGBS);
+      SubtitleTime new_next(middle + halfGBS);
 
-    if (info.tryToFix) {
-      info.currentSub.set_end(new_current);
-      info.nextSub.set_start(new_next);
+      if (info.tryToFix) {
+         info.currentSub.set_end(new_current);
+         info.nextSub.set_start(new_next);
+
+         return true;
+      }
+
+      // only error & solution
+      info.error = build_message(_("Too short gap between subtitle: <b>%ims</b>"), gap);
+
+      info.solution = build_message(_("<b>Automatic correction:</b> to clip current subtitle "
+                                      "end to %s and to move next subtitle start to %s."),
+                                    new_current.str().c_str(),
+                                    new_next.str().c_str());
 
       return true;
-    }
+   }
 
-    // only error & solution
-    info.error =
-        build_message(_("Too short gap between subtitle: <b>%ims</b>"), gap);
-
-    info.solution =
-        build_message(_("<b>Automatic correction:</b> to clip current subtitle "
-                        "end to %s and to move next subtitle start to %s."),
-                      new_current.str().c_str(), new_next.str().c_str());
-
-    return true;
-  }
-
- protected:
-  int m_minGBS;
+  protected:
+   int m_minGBS;
 };

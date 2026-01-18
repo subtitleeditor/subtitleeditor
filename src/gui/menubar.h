@@ -21,26 +21,27 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <gtkmm.h>
+
 #include <map>
+
 #include "cfg.h"
 #include "statusbar.h"
 
 class MenuBar : public Gtk::VBox {
- public:
-  MenuBar();
+  public:
+   MenuBar();
 
-  void create(Gtk::Window &window, Statusbar &statusbar);
+   void create(Gtk::Window& window, Statusbar& statusbar);
 
-  Glib::RefPtr<Gtk::UIManager> get_ui_manager();
+   Glib::RefPtr<Gtk::UIManager> get_ui_manager();
 
- protected:
-  void create_ui_from_file();
+  protected:
+   void create_ui_from_file();
 
-  // Use to show the tooltip in the statusbar.
-  void connect_proxy(const Glib::RefPtr<Gtk::Action> &action,
-                     Gtk::Widget *widget);
+   // Use to show the tooltip in the statusbar.
+   void connect_proxy(const Glib::RefPtr<Gtk::Action>& action, Gtk::Widget* widget);
 
- protected:
-  Statusbar *m_statusbar{nullptr};
-  Glib::RefPtr<Gtk::UIManager> m_refUIManager;
+  protected:
+   Statusbar* m_statusbar{nullptr};
+   Glib::RefPtr<Gtk::UIManager> m_refUIManager;
 };

@@ -23,39 +23,42 @@
 #include <i18n.h>
 
 class EditCellPlugin : public Action {
- public:
-  EditCellPlugin() {
-    activate();
-    update_ui();
-  }
+  public:
+   EditCellPlugin() {
+      activate();
+      update_ui();
+   }
 
-  ~EditCellPlugin() {
-    deactivate();
-  }
+   ~EditCellPlugin() {
+      deactivate();
+   }
 
-  void activate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void activate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    // actions
-    action_group = Gtk::ActionGroup::create("EditCellPlugin");
+      // actions
+      action_group = Gtk::ActionGroup::create("EditCellPlugin");
 
-    action_group->add(
-        Gtk::Action::create("edit-cell", Gtk::Stock::EDIT, _("_Edit Cell"),
-                            _("Start editing the focused cell (it is determined by active column (indicated by its label being bold) and the first selected subtitle)")),
-        sigc::mem_fun(*this, &EditCellPlugin::on_edit_cell));
+      action_group->add(Gtk::Action::create("edit-cell",
+                                            Gtk::Stock::EDIT,
+                                            _("_Edit Cell"),
+                                            _("Start editing the focused cell (it is determined by active column (indicated by its label being "
+                                              "bold) and the first selected subtitle)")),
+                        sigc::mem_fun(*this, &EditCellPlugin::on_edit_cell));
 
-    action_group->add(
-        Gtk::Action::create("edit-next-cell", Gtk::Stock::EDIT,
-                            _("Edit _Next Cell"),
-                            _("Start editing the next focused cell (it is determined by active column (indicated by its label being bold) and the subtitle next to the selected one)")),
-        sigc::mem_fun(*this, &EditCellPlugin::on_edit_next_cell));
+      action_group->add(Gtk::Action::create("edit-next-cell",
+                                            Gtk::Stock::EDIT,
+                                            _("Edit _Next Cell"),
+                                            _("Start editing the next focused cell (it is determined by active column (indicated by its label being "
+                                              "bold) and the subtitle next to the selected one)")),
+                        sigc::mem_fun(*this, &EditCellPlugin::on_edit_next_cell));
 
-    // ui
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      // ui
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui->insert_action_group(action_group);
+      ui->insert_action_group(action_group);
 
-    Glib::ustring submenu = R"(
+      Glib::ustring submenu = R"(
       <ui>
         <menubar name='menubar'>
           <menu name='menu-edit' action='menu-edit'>
@@ -68,58 +71,58 @@ class EditCellPlugin : public Action {
       </ui>
     )";
 
-    ui_id = ui->add_ui_from_string(submenu);
-  }
+      ui_id = ui->add_ui_from_string(submenu);
+   }
 
-  void deactivate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void deactivate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui->remove_ui(ui_id);
-    ui->remove_action_group(action_group);
-  }
+      ui->remove_ui(ui_id);
+      ui->remove_action_group(action_group);
+   }
 
-  void update_ui() {
-    se_dbg(SE_DBG_PLUGINS);
+   void update_ui() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    bool visible = (get_current_document() != NULL);
+      bool visible = (get_current_document() != NULL);
 
-    action_group->get_action("edit-cell")->set_sensitive(visible);
-    action_group->get_action("edit-next-cell")->set_sensitive(visible);
-  }
+      action_group->get_action("edit-cell")->set_sensitive(visible);
+      action_group->get_action("edit-next-cell")->set_sensitive(visible);
+   }
 
- protected:
-  void on_edit_cell() {
-    se_dbg(SE_DBG_PLUGINS);
+  protected:
+   void on_edit_cell() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Document *doc = get_current_document();
+      Document* doc = get_current_document();
 
-    g_return_if_fail(doc);
+      g_return_if_fail(doc);
 
-    Subtitle sub = doc->subtitles().get_first_selected();
-    if (sub)
-      doc->subtitles().select(sub, true);
-  }
-
-  void on_edit_next_cell() {
-    se_dbg(SE_DBG_PLUGINS);
-
-    Document *doc = get_current_document();
-
-    g_return_if_fail(doc);
-
-    Subtitle sub = doc->subtitles().get_first_selected();
-    if (sub) {
-      sub = doc->subtitles().get_next(sub);
+      Subtitle sub = doc->subtitles().get_first_selected();
       if (sub)
-        doc->subtitles().select(sub, true);
-    }
-  }
+         doc->subtitles().select(sub, true);
+   }
 
- protected:
-  Gtk::UIManager::ui_merge_id ui_id;
-  Glib::RefPtr<Gtk::ActionGroup> action_group;
+   void on_edit_next_cell() {
+      se_dbg(SE_DBG_PLUGINS);
+
+      Document* doc = get_current_document();
+
+      g_return_if_fail(doc);
+
+      Subtitle sub = doc->subtitles().get_first_selected();
+      if (sub) {
+         sub = doc->subtitles().get_next(sub);
+         if (sub)
+            doc->subtitles().select(sub, true);
+      }
+   }
+
+  protected:
+   Gtk::UIManager::ui_merge_id ui_id;
+   Glib::RefPtr<Gtk::ActionGroup> action_group;
 };
 
 REGISTER_EXTENSION(EditCellPlugin)

@@ -21,42 +21,40 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <gtkmm.h>
+
 #include "extensionmanager.h"
 
 // Help to create a view to manage the extension.
 class TreeViewExtensionManager : public Gtk::TreeView {
- public:
-  // Call automatically create_view().
-  TreeViewExtensionManager(BaseObjectType *cobject,
-                           Glib::RefPtr<Gtk::Builder> &);
+  public:
+   // Call automatically create_view().
+   TreeViewExtensionManager(BaseObjectType* cobject, Glib::RefPtr<Gtk::Builder>&);
 
-  // Call automatically create_view().
-  TreeViewExtensionManager();
+   // Call automatically create_view().
+   TreeViewExtensionManager();
 
-  // Filter the model and display only one categorie
-  // ExtensionInfo->categorie
-  void set_filter(const Glib::ustring &categorie);
+   // Filter the model and display only one categorie
+   // ExtensionInfo->categorie
+   void set_filter(const Glib::ustring& categorie);
 
-  // Return the current extension selected or NULL.
-  ExtensionInfo *get_selected_extension();
+   // Return the current extension selected or NULL.
+   ExtensionInfo* get_selected_extension();
 
- protected:
-  // Create column with cell toggle (active state) and text (label and
-  // description). All extensions are added to the model.
-  void create_view();
+  protected:
+   // Create column with cell toggle (active state) and text (label and
+   // description). All extensions are added to the model.
+   void create_view();
 
-  // Try to update the active state of the extension.
-  void on_active_toggled(const Glib::ustring &path);
+   // Try to update the active state of the extension.
+   void on_active_toggled(const Glib::ustring& path);
 
-  // Used by the filter.
-  bool on_filter_visible(const Gtk::TreeModel::const_iterator &iter,
-                         Glib::ustring categorie);
+   // Used by the filter.
+   bool on_filter_visible(const Gtk::TreeModel::const_iterator& iter, Glib::ustring categorie);
 
-  // Used to define the separator
-  // "---"
-  bool on_row_separator_func(const Glib::RefPtr<Gtk::TreeModel> &model,
-                             const Gtk::TreeModel::iterator &it);
+   // Used to define the separator
+   // "---"
+   bool on_row_separator_func(const Glib::RefPtr<Gtk::TreeModel>& model, const Gtk::TreeModel::iterator& it);
 
- protected:
-  Glib::RefPtr<Gtk::ListStore> m_model;
+  protected:
+   Glib::RefPtr<Gtk::ListStore> m_model;
 };

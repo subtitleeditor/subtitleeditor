@@ -23,11 +23,11 @@
 #include "patternspage.h"
 
 class HearingImpairedPage : public PatternsPage {
- public:
-  HearingImpairedPage()
-      : PatternsPage(
-            "hearing-impaired", _("Select Hearing Impaired Patterns"),
-            _("Remove hearing impaired texts"),
-            _("Remove explanatory texts meant for the hearing impaired")) {
-  }
+  public:
+   HearingImpairedPage()
+       : PatternsPage("hearing-impaired",
+                      _("Select Hearing Impaired Patterns"),
+                      _("Remove hearing impaired texts"),
+                      _("Remove explanatory texts meant for the hearing impaired")) {
+   }
 };

@@ -22,60 +22,60 @@
 
 #include <list>
 #include <map>
+
 #include "extensioninfo.h"
 
 class ExtensionManager {
- public:
-  // Return the ExtensionManager instance.
-  static ExtensionManager &instance();
+  public:
+   // Return the ExtensionManager instance.
+   static ExtensionManager& instance();
 
-  // Return all ExtensionInfo.
-  std::list<ExtensionInfo *> get_extension_info_list();
+   // Return all ExtensionInfo.
+   std::list<ExtensionInfo*> get_extension_info_list();
 
-  // Return all ExtensionInfo in the categorie.
-  std::list<ExtensionInfo *> get_info_list_from_categorie(
-      const Glib::ustring &categorie);
+   // Return all ExtensionInfo in the categorie.
+   std::list<ExtensionInfo*> get_info_list_from_categorie(const Glib::ustring& categorie);
 
-  // Return an ExtensionInfo from this name or NULL if failed.
-  ExtensionInfo *get_extension_info(const Glib::ustring &name);
+   // Return an ExtensionInfo from this name or NULL if failed.
+   ExtensionInfo* get_extension_info(const Glib::ustring& name);
 
-  // Enable or disable extension.
-  bool set_extension_active(const Glib::ustring &name, bool state);
+   // Enable or disable extension.
+   bool set_extension_active(const Glib::ustring& name, bool state);
 
-  // Active and create extensions
-  void create_extensions();
+   // Active and create extensions
+   void create_extensions();
 
-  // Delete and close all extensions
-  void destroy_extensions();
+   // Delete and close all extensions
+   void destroy_extensions();
 
- protected:
-  // Constructor
-  ExtensionManager();
+  protected:
+   // Constructor
+   ExtensionManager();
 
-  // Destructor
-  ~ExtensionManager();
+   // Destructor
+   ~ExtensionManager();
 
-  // Load the path and sub path to find extension description.
-  // se-plugin file.
-  void load_path(const Glib::ustring &path, bool fhs_directory);
+   // Load the path and sub path to find extension description.
+   // se-plugin file.
+   void load_path(const Glib::ustring& path, bool fhs_directory);
 
-  // Try to load an ExtensionInfo file.
-  bool load_extension_info(const Glib::ustring &file, bool fhs_directory);
+   // Try to load an ExtensionInfo file.
+   bool load_extension_info(const Glib::ustring& file, bool fhs_directory);
 
-  // Try to activate the extension.
-  // Load and create Extension.
-  bool activate(ExtensionInfo *info);
+   // Try to activate the extension.
+   // Load and create Extension.
+   bool activate(ExtensionInfo* info);
 
-  // Deactivate the extension.
-  // Delete the extension and the module.
-  bool deactivate(ExtensionInfo *info);
+   // Deactivate the extension.
+   // Delete the extension and the module.
+   bool deactivate(ExtensionInfo* info);
 
-  // Open a module and create the extension.
-  // If failed return a SubtitleError.
-  void open_module(ExtensionInfo *info);
+   // Open a module and create the extension.
+   // If failed return a SubtitleError.
+   void open_module(ExtensionInfo* info);
 
- protected:
-  typedef std::map<Glib::ustring, std::list<ExtensionInfo *> > ExtensionInfoMap;
+  protected:
+   typedef std::map<Glib::ustring, std::list<ExtensionInfo*> > ExtensionInfoMap;
 
-  ExtensionInfoMap m_extension_info_map;
+   ExtensionInfoMap m_extension_info_map;
 };

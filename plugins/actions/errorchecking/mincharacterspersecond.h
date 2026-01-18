@@ -21,46 +21,43 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <i18n.h>
+
 #include "errorchecking.h"
 
 class MinCharactersPerSecond : public ErrorChecking {
- public:
-  MinCharactersPerSecond()
-      : ErrorChecking(
-            "minimum-characters-per-second", _("Minimum Characters per Second"),
-            _("Detects and fixes subtitles when the number of characters per "
-              "second is inferior to the specified value.")) {
-    m_minCPS = 5;
-  }
+  public:
+   MinCharactersPerSecond()
+       : ErrorChecking("minimum-characters-per-second",
+                       _("Minimum Characters per Second"),
+                       _("Detects and fixes subtitles when the number of characters per "
+                         "second is inferior to the specified value.")) {
+      m_minCPS = 5;
+   }
 
-  virtual void init() {
-    m_minCPS = cfg::get_double("timing", "min-characters-per-second");
-  }
+   virtual void init() {
+      m_minCPS = cfg::get_double("timing", "min-characters-per-second");
+   }
 
-  bool execute(Info &info) {
-    if ((info.currentSub.check_cps_text(m_minCPS, (m_minCPS + 1)) >= 0) ||
-        m_minCPS == 0)
-      return false;
+   bool execute(Info& info) {
+      if ((info.currentSub.check_cps_text(m_minCPS, (m_minCPS + 1)) >= 0) || m_minCPS == 0)
+         return false;
 
-    SubtitleTime duration(
-        utility::get_min_duration_msecs(info.currentSub.get_text(), m_minCPS));
+      SubtitleTime duration(utility::get_min_duration_msecs(info.currentSub.get_text(), m_minCPS));
 
-    if (info.tryToFix) {
-      info.currentSub.set_duration(duration);
+      if (info.tryToFix) {
+         info.currentSub.set_duration(duration);
+         return true;
+      }
+
+      info.error = build_message(_("There are too few characters per second: <b>%.1f chars/s</b>"), info.currentSub.get_characters_per_second_text());
+
+      info.solution = build_message(_("<b>Automatic correction:</b> change "
+                                      "current subtitle duration to %s."),
+                                    duration.str().c_str());
+
       return true;
-    }
+   }
 
-    info.error = build_message(
-        _("There are too few characters per second: <b>%.1f chars/s</b>"),
-        info.currentSub.get_characters_per_second_text());
-
-    info.solution = build_message(_("<b>Automatic correction:</b> change "
-                                    "current subtitle duration to %s."),
-                                  duration.str().c_str());
-
-    return true;
-  }
-
- protected:
-  double m_minCPS;
+  protected:
+   double m_minCPS;
 };

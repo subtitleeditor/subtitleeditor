@@ -19,6 +19,7 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include "action.h"
+
 #include "debug.h"
 #include "document.h"
 
@@ -28,47 +29,46 @@ Action::Action() {
 Action::~Action() {
 }
 
-SubtitleEditorWindow *Action::get_subtitleeditor_window() {
-  se_dbg(SE_DBG_PLUGINS);
+SubtitleEditorWindow* Action::get_subtitleeditor_window() {
+   se_dbg(SE_DBG_PLUGINS);
 
-  SubtitleEditorWindow *window = SubtitleEditorWindow::get_instance();
+   SubtitleEditorWindow* window = SubtitleEditorWindow::get_instance();
 
-  return window;
+   return window;
 }
 
-Document *Action::get_current_document() {
-  se_dbg(SE_DBG_PLUGINS);
+Document* Action::get_current_document() {
+   se_dbg(SE_DBG_PLUGINS);
 
-  SubtitleEditorWindow *window = SubtitleEditorWindow::get_instance();
+   SubtitleEditorWindow* window = SubtitleEditorWindow::get_instance();
 
-  g_return_val_if_fail(window, NULL);
+   g_return_val_if_fail(window, NULL);
 
-  Document *doc = window->get_current_document();
+   Document* doc = window->get_current_document();
 
-  se_dbg_msg(SE_DBG_PLUGINS, "document=%s",
-             ((doc == NULL) ? "NULL" : doc->getFilename().c_str()));
+   se_dbg_msg(SE_DBG_PLUGINS, "document=%s", ((doc == NULL) ? "NULL" : doc->getFilename().c_str()));
 
-  return doc;
+   return doc;
 }
 
 Glib::RefPtr<Gtk::UIManager> Action::get_ui_manager() {
-  se_dbg(SE_DBG_PLUGINS);
+   se_dbg(SE_DBG_PLUGINS);
 
-  SubtitleEditorWindow *window = SubtitleEditorWindow::get_instance();
+   SubtitleEditorWindow* window = SubtitleEditorWindow::get_instance();
 
-  g_return_val_if_fail(window, Glib::RefPtr<Gtk::UIManager>());
+   g_return_val_if_fail(window, Glib::RefPtr<Gtk::UIManager>());
 
-  return window->get_ui_manager();
+   return window->get_ui_manager();
 }
 
 void Action::activate() {
-  se_dbg(SE_DBG_PLUGINS);
+   se_dbg(SE_DBG_PLUGINS);
 }
 
 void Action::deactivate() {
-  se_dbg(SE_DBG_PLUGINS);
+   se_dbg(SE_DBG_PLUGINS);
 }
 
 void Action::update_ui() {
-  se_dbg(SE_DBG_PLUGINS);
+   se_dbg(SE_DBG_PLUGINS);
 }

@@ -21,15 +21,12 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <glibmm.h>
+
 #include <list>
 
-#define GSTREAMERMM_CHECK_VERSION(major, minor, micro) \
-  (GSTREAMERMM_MAJOR_VERSION > (major) ||              \
-   (GSTREAMERMM_MAJOR_VERSION == (major) &&            \
-    GSTREAMERMM_MINOR_VERSION > (minor)) ||            \
-   (GSTREAMERMM_MAJOR_VERSION == (major) &&            \
-    GSTREAMERMM_MINOR_VERSION == (minor) &&            \
-    GSTREAMERMM_MICRO_VERSION >= (micro)))
+#define GSTREAMERMM_CHECK_VERSION(major, minor, micro)                                                                      \
+   (GSTREAMERMM_MAJOR_VERSION > (major) || (GSTREAMERMM_MAJOR_VERSION == (major) && GSTREAMERMM_MINOR_VERSION > (minor)) || \
+    (GSTREAMERMM_MAJOR_VERSION == (major) && GSTREAMERMM_MINOR_VERSION == (minor) && GSTREAMERMM_MICRO_VERSION >= (micro)))
 
 namespace gstreamer_utility {
 
@@ -38,11 +35,10 @@ namespace gstreamer_utility {
 Glib::ustring time_to_string(gint64 nanoseconds);
 
 // Display a message for missing plugins.
-void dialog_missing_plugins(const std::list<Glib::ustring> &missings);
+void dialog_missing_plugins(const std::list<Glib::ustring>& missings);
 
 // Checks if the element exists and whether its version is at least the version
 // required. Display a dialog error if failed.
-bool check_registry(const Glib::ustring &name, int min_major, int min_minor,
-                    int min_micro);
+bool check_registry(const Glib::ustring& name, int min_major, int min_minor, int min_micro);
 
 }  // namespace gstreamer_utility

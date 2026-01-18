@@ -23,146 +23,136 @@
 #include <i18n.h>
 
 class MoveAfterPrecedingSubtitlePlugin : public Action {
- public:
-  MoveAfterPrecedingSubtitlePlugin() {
-    activate();
-    update_ui();
-  }
+  public:
+   MoveAfterPrecedingSubtitlePlugin() {
+      activate();
+      update_ui();
+   }
 
-  ~MoveAfterPrecedingSubtitlePlugin() {
-    deactivate();
-  }
+   ~MoveAfterPrecedingSubtitlePlugin() {
+      deactivate();
+   }
 
-  void activate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void activate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    // actions
-    action_group = Gtk::ActionGroup::create("MoveAfterPrecedingSubtitlePlugin");
+      // actions
+      action_group = Gtk::ActionGroup::create("MoveAfterPrecedingSubtitlePlugin");
 
-    action_group->add(
-        Gtk::Action::create(
-            "move-after-preceding-subtitle", _("_Move After Preceding"),
-            _("Move selected subtitles right after the previous ones (while "
-              "respecting minimum gap between subtitles)")),
-        sigc::mem_fun(*this,
-                      &MoveAfterPrecedingSubtitlePlugin::on_execute_after));
-    action_group->add(
-        Gtk::Action::create(
-            "move-before-next-subtitle", _("_Move Before Next"),
-            _("Move selected subtitles right before the next ones (while "
-              "respecting minimum gap between subtitles)")),
-        sigc::mem_fun(*this,
-                      &MoveAfterPrecedingSubtitlePlugin::on_execute_before));
+      action_group->add(Gtk::Action::create("move-after-preceding-subtitle",
+                                            _("_Move After Preceding"),
+                                            _("Move selected subtitles right after the previous ones (while "
+                                              "respecting minimum gap between subtitles)")),
+                        sigc::mem_fun(*this, &MoveAfterPrecedingSubtitlePlugin::on_execute_after));
+      action_group->add(Gtk::Action::create("move-before-next-subtitle",
+                                            _("_Move Before Next"),
+                                            _("Move selected subtitles right before the next ones (while "
+                                              "respecting minimum gap between subtitles)")),
+                        sigc::mem_fun(*this, &MoveAfterPrecedingSubtitlePlugin::on_execute_before));
 
-    // ui
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      // ui
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui_id = ui->new_merge_id();
+      ui_id = ui->new_merge_id();
 
-    ui->insert_action_group(action_group);
+      ui->insert_action_group(action_group);
 
-    ui->add_ui(ui_id, "/menubar/menu-timings/move-after-preceding-subtitle",
-               "move-after-preceding-subtitle",
-               "move-after-preceding-subtitle");
-    ui->add_ui(ui_id, "/menubar/menu-timings/move-before-next-subtitle",
-               "move-before-next-subtitle", "move-before-next-subtitle");
-  }
+      ui->add_ui(ui_id, "/menubar/menu-timings/move-after-preceding-subtitle", "move-after-preceding-subtitle", "move-after-preceding-subtitle");
+      ui->add_ui(ui_id, "/menubar/menu-timings/move-before-next-subtitle", "move-before-next-subtitle", "move-before-next-subtitle");
+   }
 
-  void deactivate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void deactivate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui->remove_ui(ui_id);
-    ui->remove_action_group(action_group);
-  }
+      ui->remove_ui(ui_id);
+      ui->remove_action_group(action_group);
+   }
 
-  void update_ui() {
-    se_dbg(SE_DBG_PLUGINS);
+   void update_ui() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    bool visible = (get_current_document() != NULL);
+      bool visible = (get_current_document() != NULL);
 
-    action_group->get_action("move-after-preceding-subtitle")
-        ->set_sensitive(visible);
-    action_group->get_action("move-before-next-subtitle")
-        ->set_sensitive(visible);
-  }
+      action_group->get_action("move-after-preceding-subtitle")->set_sensitive(visible);
+      action_group->get_action("move-before-next-subtitle")->set_sensitive(visible);
+   }
 
- protected:
-  void on_execute_after() {
-    se_dbg(SE_DBG_PLUGINS);
+  protected:
+   void on_execute_after() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    execute(true);
-  }
+      execute(true);
+   }
 
-  void on_execute_before() {
-    se_dbg(SE_DBG_PLUGINS);
+   void on_execute_before() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    execute(false);
-  }
+      execute(false);
+   }
 
-  bool execute(bool after_preceding) {
-    se_dbg(SE_DBG_PLUGINS);
+   bool execute(bool after_preceding) {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Document *doc = get_current_document();
+      Document* doc = get_current_document();
 
-    g_return_val_if_fail(doc, false);
+      g_return_val_if_fail(doc, false);
 
-    Subtitles subtitles = doc->subtitles();
+      Subtitles subtitles = doc->subtitles();
 
-    std::vector<Subtitle> selection = subtitles.get_selection();
+      std::vector<Subtitle> selection = subtitles.get_selection();
 
-    if (selection.empty()) {
-      doc->flash_message(_("Please select at least 1 subtitle."));
-      return false;
-    }
-
-    SubtitleTime gap = cfg::get_int("timing", "min-gap-between-subtitles");
-    SubtitleTime min_display = cfg::get_int("timing", "min-display");
-
-    if (after_preceding) {  // move after preceding
-      doc->start_command(_("Move After Preceding"));
-
-      for (auto &sub : selection) {
-        Subtitle previous = subtitles.get_previous(sub);
-
-        if (previous) {
-          SubtitleTime previous_end = previous.get_end();
-          SubtitleTime duration = sub.get_duration();
-          if (duration.totalmsecs == 0)
-            duration = min_display;
-
-          sub.set_start(previous_end + gap);
-          sub.set_duration(duration);
-        }
+      if (selection.empty()) {
+         doc->flash_message(_("Please select at least 1 subtitle."));
+         return false;
       }
-    } else {  // move before next
-      doc->start_command(_("Before Next Preceding"));
-      for (int i = selection.size() - 1; i >= 0; --i) {
-        Subtitle sub = selection[i];
 
-        Subtitle next = subtitles.get_next(sub);
+      SubtitleTime gap = cfg::get_int("timing", "min-gap-between-subtitles");
+      SubtitleTime min_display = cfg::get_int("timing", "min-display");
 
-        if (next) {
-          SubtitleTime next_start = next.get_start();
-          SubtitleTime duration = sub.get_duration();
-          if (duration.totalmsecs == 0)
-            duration = min_display;
+      if (after_preceding) {  // move after preceding
+         doc->start_command(_("Move After Preceding"));
 
-          sub.set_start_and_end(next_start - (gap + duration),
-                                next_start - gap);
-        }
+         for (auto& sub : selection) {
+            Subtitle previous = subtitles.get_previous(sub);
+
+            if (previous) {
+               SubtitleTime previous_end = previous.get_end();
+               SubtitleTime duration = sub.get_duration();
+               if (duration.totalmsecs == 0)
+                  duration = min_display;
+
+               sub.set_start(previous_end + gap);
+               sub.set_duration(duration);
+            }
+         }
+      } else {  // move before next
+         doc->start_command(_("Before Next Preceding"));
+         for (int i = selection.size() - 1; i >= 0; --i) {
+            Subtitle sub = selection[i];
+
+            Subtitle next = subtitles.get_next(sub);
+
+            if (next) {
+               SubtitleTime next_start = next.get_start();
+               SubtitleTime duration = sub.get_duration();
+               if (duration.totalmsecs == 0)
+                  duration = min_display;
+
+               sub.set_start_and_end(next_start - (gap + duration), next_start - gap);
+            }
+         }
       }
-    }
-    doc->emit_signal("subtitle-time-changed");
-    doc->finish_command();
+      doc->emit_signal("subtitle-time-changed");
+      doc->finish_command();
 
-    return true;
-  }
+      return true;
+   }
 
- protected:
-  Gtk::UIManager::ui_merge_id ui_id;
-  Glib::RefPtr<Gtk::ActionGroup> action_group;
+  protected:
+   Gtk::UIManager::ui_merge_id ui_id;
+   Glib::RefPtr<Gtk::ActionGroup> action_group;
 };
 
 REGISTER_EXTENSION(MoveAfterPrecedingSubtitlePlugin)

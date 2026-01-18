@@ -25,24 +25,22 @@
 // The combobox display all videos on the current folder.
 // Try to found the good video from the selected subtitle.
 class ComboBoxVideo : public Gtk::ComboBoxText {
- public:
-  // Constructor
-  ComboBoxVideo(BaseObjectType *cobject,
-                const Glib::RefPtr<Gtk::Builder> &builder);
+  public:
+   // Constructor
+   ComboBoxVideo(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& builder);
 
-  // Search all videos in the folder.
-  bool set_current_folder(const Glib::ustring &path);
+   // Search all videos in the folder.
+   bool set_current_folder(const Glib::ustring& path);
 
-  // Try to select the good video from the subtitle.
-  // Only if the option "automatically-open-video" is enabled.
-  bool auto_select_video(const Glib::ustring &subtitle);
+   // Try to select the good video from the subtitle.
+   // Only if the option "automatically-open-video" is enabled.
+   bool auto_select_video(const Glib::ustring& subtitle);
 
-  // Return the video selected or a empty string.
-  Glib::ustring get_value() const;
+   // Return the video selected or a empty string.
+   Glib::ustring get_value() const;
 
- protected:
-  // Used to define the separator.
-  // label = "<separator>"
-  bool on_row_separator_func(const Glib::RefPtr<Gtk::TreeModel> &model,
-                             const Gtk::TreeModel::iterator &it);
+  protected:
+   // Used to define the separator.
+   // label = "<separator>"
+   bool on_row_separator_func(const Glib::RefPtr<Gtk::TreeModel>& model, const Gtk::TreeModel::iterator& it);
 };

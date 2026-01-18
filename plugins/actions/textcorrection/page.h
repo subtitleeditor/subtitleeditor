@@ -24,21 +24,20 @@
 #include <gtkmm_utility.h>
 
 class AssistantPage : public Gtk::VBox {
- public:
-  AssistantPage(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>&)
-      : Gtk::VBox(cobject) {
-  }
+  public:
+   AssistantPage(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>&) : Gtk::VBox(cobject) {
+   }
 
-  AssistantPage() : Gtk::VBox(false, 6) {
-    set_border_width(12);
-  }
+   AssistantPage() : Gtk::VBox(false, 6) {
+      set_border_width(12);
+   }
 
-  virtual void prepare() {
-  }
+   virtual void prepare() {
+   }
 
-  virtual void apply(Document*) {
-  }
+   virtual void apply(Document*) {
+   }
 
-  virtual void save_cfg() {
-  }
+   virtual void save_cfg() {
+   }
 };

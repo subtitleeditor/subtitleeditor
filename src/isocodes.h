@@ -26,18 +26,18 @@ namespace isocodes {
 
 // Convert ISO 639 code to localized language name.
 // ex: "fr" to "French"
-Glib::ustring to_language(const Glib::ustring &code);
+Glib::ustring to_language(const Glib::ustring& code);
 
 // Convert ISO 3166 code to localized country name.
 // ex: "FR" to "France"
-Glib::ustring to_country(const Glib::ustring &code);
+Glib::ustring to_country(const Glib::ustring& code);
 
 // Convert ISO 15924 code to localized country name.
 // ex: "Latn" to "Latin"
-Glib::ustring to_script(const Glib::ustring &code);
+Glib::ustring to_script(const Glib::ustring& code);
 
 // Convert from ISO XXX to good localized name:
 // ex: "fr_FR" to "French (France)", "US" to "United States"...
-Glib::ustring to_name(const Glib::ustring &code);
+Glib::ustring to_name(const Glib::ustring& code);
 
 }  // namespace isocodes

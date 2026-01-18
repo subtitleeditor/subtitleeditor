@@ -23,39 +23,39 @@
 #include "waveform.h"
 
 class WaveformManager {
- public:
-  // Virtual destructor
-  virtual ~WaveformManager() {
-    // nothing
-  }
+  public:
+   // Virtual destructor
+   virtual ~WaveformManager() {
+      // nothing
+   }
 
-  // Try to open a waveform file and show or hide the editor.
-  virtual bool open_waveform(const Glib::ustring &uri) = 0;
+   // Try to open a waveform file and show or hide the editor.
+   virtual bool open_waveform(const Glib::ustring& uri) = 0;
 
-  // Init the Waveform Editor and the WaveformRenderer with this wf
-  virtual void set_waveform(const Glib::RefPtr<Waveform> &wf) = 0;
+   // Init the Waveform Editor and the WaveformRenderer with this wf
+   virtual void set_waveform(const Glib::RefPtr<Waveform>& wf) = 0;
 
-  // Return the state of waveform. Cab be NULL.
-  virtual bool has_waveform() = 0;
+   // Return the state of waveform. Cab be NULL.
+   virtual bool has_waveform() = 0;
 
-  // Return a pointer to the waveform.
-  virtual Glib::RefPtr<Waveform> get_waveform() = 0;
+   // Return a pointer to the waveform.
+   virtual Glib::RefPtr<Waveform> get_waveform() = 0;
 
-  // A current waveform has changed.
-  virtual sigc::signal<void> &signal_waveform_changed() = 0;
+   // A current waveform has changed.
+   virtual sigc::signal<void>& signal_waveform_changed() = 0;
 
-  // Try to display the current subtitle at the center of the view.
-  virtual void center_with_selected_subtitle() = 0;
+   // Try to display the current subtitle at the center of the view.
+   virtual void center_with_selected_subtitle() = 0;
 
-  // Increment the zoom
-  virtual void zoom_in() = 0;
+   // Increment the zoom
+   virtual void zoom_in() = 0;
 
-  // Decrement the zoom
-  virtual void zoom_out() = 0;
+   // Decrement the zoom
+   virtual void zoom_out() = 0;
 
-  // Décrément completely the zoom
-  virtual void zoom_all() = 0;
+   // Décrément completely the zoom
+   virtual void zoom_all() = 0;
 
-  // Zooming on the current subtitle.
-  virtual void zoom_selection() = 0;
+   // Zooming on the current subtitle.
+   virtual void zoom_selection() = 0;
 };

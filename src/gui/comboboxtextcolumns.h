@@ -23,12 +23,12 @@
 #include <gtkmm.h>
 
 class ComboBoxTextColumns : public Gtk::TreeModel::ColumnRecord {
- public:
-  ComboBoxTextColumns() {
-    add(m_col_name);
-    add(m_col_id);
-  }
+  public:
+   ComboBoxTextColumns() {
+      add(m_col_name);
+      add(m_col_id);
+   }
 
-  Gtk::TreeModelColumn<Glib::ustring> m_col_id;
-  Gtk::TreeModelColumn<Glib::ustring> m_col_name;
+   Gtk::TreeModelColumn<Glib::ustring> m_col_id;
+   Gtk::TreeModelColumn<Glib::ustring> m_col_name;
 };

@@ -27,23 +27,23 @@ class SubtitleModel;
 class SubtitleView;
 
 class Command {
- public:
-  Command(Document* doc, const Glib::ustring& description);
-  virtual ~Command();
+  public:
+   Command(Document* doc, const Glib::ustring& description);
+   virtual ~Command();
 
-  virtual void restore() = 0;
+   virtual void restore() = 0;
 
-  virtual void execute() = 0;
+   virtual void execute() = 0;
 
-  Document* document();
+   Document* document();
 
-  Glib::RefPtr<SubtitleModel> get_document_subtitle_model();
+   Glib::RefPtr<SubtitleModel> get_document_subtitle_model();
 
-  SubtitleView* get_document_subtitle_view();
+   SubtitleView* get_document_subtitle_view();
 
-  Glib::ustring description() const;
+   Glib::ustring description() const;
 
- protected:
-  Document* m_document;
-  Glib::ustring m_description;
+  protected:
+   Document* m_document;
+   Glib::ustring m_description;
 };

@@ -26,42 +26,42 @@
 #include <vector>
 
 class OptionGroup : public Glib::OptionGroup {
- public:
-  OptionGroup();
+  public:
+   OptionGroup();
 
-  int get_debug_flags();
+   int get_debug_flags();
 
 #ifdef DEBUG
-  Glib::OptionGroup& get_debug_group() {
-    return debug_group;
-  }
+   Glib::OptionGroup& get_debug_group() {
+      return debug_group;
+   }
 #endif
 
- public:
-  std::vector<Glib::ustring> files;
-  std::vector<Glib::ustring> files_list;  // simple file (glibmm Bug #526831)
+  public:
+   std::vector<Glib::ustring> files;
+   std::vector<Glib::ustring> files_list;  // simple file (glibmm Bug #526831)
 
-  Glib::ustring profile;    // profile name
-  Glib::ustring encoding;   // subtitle encoding to be used
-  Glib::ustring video;      // video file location
-  Glib::ustring waveform;   // waveform file location
-  Glib::ustring keyframes;  // keyframes file location
+   Glib::ustring profile;                  // profile name
+   Glib::ustring encoding;                 // subtitle encoding to be used
+   Glib::ustring video;                    // video file location
+   Glib::ustring waveform;                 // waveform file location
+   Glib::ustring keyframes;                // keyframes file location
 
 #ifdef DEBUG
-  Glib::OptionGroup debug_group;
+   Glib::OptionGroup debug_group;
 
-  bool debug_all;
-  bool debug_app;
-  bool debug_view;
-  bool debug_io;
-  bool debug_search;
-  bool debug_regex;
-  bool debug_video_player;
-  bool debug_spell_checking;
-  bool debug_waveform;
-  bool debug_utility;
-  bool debug_command;
-  bool debug_plugins;
-  bool debug_no_profiling;
+   bool debug_all;
+   bool debug_app;
+   bool debug_view;
+   bool debug_io;
+   bool debug_search;
+   bool debug_regex;
+   bool debug_video_player;
+   bool debug_spell_checking;
+   bool debug_waveform;
+   bool debug_utility;
+   bool debug_command;
+   bool debug_plugins;
+   bool debug_no_profiling;
 #endif  // DEBUG
 };

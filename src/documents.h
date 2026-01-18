@@ -21,8 +21,10 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <glibmm/ustring.h>
+
 #include <string>
 #include <vector>
+
 #include "document.h"
 
 namespace se {
@@ -33,26 +35,26 @@ using sigc::signal;
 using std::string;
 using std::vector;
 
-typedef signal<void, Document *> signal_document;
-typedef signal<void, Document *, const string &> signal_document_modified;
+typedef signal<void, Document*> signal_document;
+typedef signal<void, Document*, const string&> signal_document_modified;
 
-void append(Document *doc);
+void append(Document* doc);
 
-void remove(Document *doc);
+void remove(Document* doc);
 
-vector<Document *> all();
+vector<Document*> all();
 
-void active(Document *);
-Document *active();
+void active(Document*);
+Document* active();
 
-signal_document &signal_created();
-signal_document &signal_deleted();
-signal_document &signal_active_changed();
-signal_document_modified &signal_modified();
+signal_document& signal_created();
+signal_document& signal_deleted();
+signal_document& signal_active_changed();
+signal_document_modified& signal_modified();
 
-Document *find_by_name(const ustring &name);
+Document* find_by_name(const ustring& name);
 
-ustring generate_untitled_name(const ustring &ext = "");
+ustring generate_untitled_name(const ustring& ext = "");
 
 }  // namespace documents
 }  // namespace se
