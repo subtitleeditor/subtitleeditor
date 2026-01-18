@@ -22,94 +22,89 @@
 #include <utility.h>
 
 class SubViewer2 : public SubtitleFormatIO {
- public:
-  void open(Reader &file) {
-    Glib::RefPtr<Glib::Regex> re_time = Glib::Regex::create(
-        "^(\\d+):(\\d+):(\\d+)\\.(\\d+),(\\d+):(\\d+):(\\d+)\\.(\\d+)");
+  public:
+   void open(Reader& file) {
+      Glib::RefPtr<Glib::Regex> re_time = Glib::Regex::create("^(\\d+):(\\d+):(\\d+)\\.(\\d+),(\\d+):(\\d+):(\\d+)\\.(\\d+)");
 
-    Subtitles subtitles = document()->subtitles();
+      Subtitles subtitles = document()->subtitles();
 
-    Glib::ustring line;
-    int start[4], end[4];
+      Glib::ustring line;
+      int start[4], end[4];
 
-    while (file.getline(line)) {
-      // Read the subtitle time "start --> end"
-      if (!re_time->match(line))
-        continue;
+      while (file.getline(line)) {
+         // Read the subtitle time "start --> end"
+         if (!re_time->match(line))
+            continue;
 
-      std::vector<Glib::ustring> group = re_time->split(line);
+         std::vector<Glib::ustring> group = re_time->split(line);
 
-      start[0] = utility::string_to_int(group[1]);
-      start[1] = utility::string_to_int(group[2]);
-      start[2] = utility::string_to_int(group[3]);
-      start[3] = utility::string_to_int(group[4]);
+         start[0] = utility::string_to_int(group[1]);
+         start[1] = utility::string_to_int(group[2]);
+         start[2] = utility::string_to_int(group[3]);
+         start[3] = utility::string_to_int(group[4]);
 
-      end[0] = utility::string_to_int(group[5]);
-      end[1] = utility::string_to_int(group[6]);
-      end[2] = utility::string_to_int(group[7]);
-      end[3] = utility::string_to_int(group[8]);
+         end[0] = utility::string_to_int(group[5]);
+         end[1] = utility::string_to_int(group[6]);
+         end[2] = utility::string_to_int(group[7]);
+         end[3] = utility::string_to_int(group[8]);
 
-      if (file.getline(line)) {
-        utility::replace(line, "[br]", "\n");
+         if (file.getline(line)) {
+            utility::replace(line, "[br]", "\n");
 
-        // Append a subtitle
-        Subtitle sub = subtitles.append();
+            // Append a subtitle
+            Subtitle sub = subtitles.append();
 
-        sub.set_text(line);
-        sub.set_start_and_end(
-            SubtitleTime(start[0], start[1], start[2], start[3] * 10),
-            SubtitleTime(end[0], end[1], end[2], end[3] * 10));
+            sub.set_text(line);
+            sub.set_start_and_end(SubtitleTime(start[0], start[1], start[2], start[3] * 10), SubtitleTime(end[0], end[1], end[2], end[3] * 10));
+         }
       }
-    }
-  }
+   }
 
-  void save(Writer &file) {
-    ScriptInfo &script = document()->get_script_info();
+   void save(Writer& file) {
+      ScriptInfo& script = document()->get_script_info();
 
-    file.write(Glib::ustring::compose(
-        "[INFORMATION]\n"
-        "[TITLE]%1\n"
-        "[AUTHOR]%2\n"
-        "[COMMENT]%3\n"
-        "[END INFORMATION]\n"
-        "[SUBTITLE]\n",
-        script.data["Title"], script.data["OriginalEditing"],
-        script.data["Comment"]));
+      file.write(
+         Glib::ustring::compose("[INFORMATION]\n"
+                                "[TITLE]%1\n"
+                                "[AUTHOR]%2\n"
+                                "[COMMENT]%3\n"
+                                "[END INFORMATION]\n"
+                                "[SUBTITLE]\n",
+                                script.data["Title"],
+                                script.data["OriginalEditing"],
+                                script.data["Comment"]));
 
-    for (Subtitle sub = document()->subtitles().get_first(); sub; ++sub) {
-      Glib::ustring text = sub.get_text();
+      for (Subtitle sub = document()->subtitles().get_first(); sub; ++sub) {
+         Glib::ustring text = sub.get_text();
 
-      utility::replace(text, "\n", "[br]");
+         utility::replace(text, "\n", "[br]");
 
-      file.write(Glib::ustring::compose(
-          "%1,%2\n%3\n\n", to_subviewer_time(sub.get_start()),
-          to_subviewer_time(sub.get_end()), text));
-    }
-  }
+         file.write(Glib::ustring::compose("%1,%2\n%3\n\n", to_subviewer_time(sub.get_start()), to_subviewer_time(sub.get_end()), text));
+      }
+   }
 
-  Glib::ustring to_subviewer_time(const SubtitleTime &t) {
-    auto hundredths = static_cast<int>((t.mseconds() + 5) / 10);
-    return build_message("%02i:%02i:%02i.%02i", t.hours(), t.minutes(),
-                         t.seconds(), hundredths);
-  }
+   Glib::ustring to_subviewer_time(const SubtitleTime& t) {
+      auto hundredths = static_cast<int>((t.mseconds() + 5) / 10);
+      return build_message("%02i:%02i:%02i.%02i", t.hours(), t.minutes(), t.seconds(), hundredths);
+   }
 };
 
 class SubViewer2Plugin : public SubtitleFormat {
- public:
-  SubtitleFormatInfo get_info() {
-    SubtitleFormatInfo info;
-    info.name = "SubViewer 2.0";
-    info.extension = "sub";
+  public:
+   SubtitleFormatInfo get_info() {
+      SubtitleFormatInfo info;
+      info.name = "SubViewer 2.0";
+      info.extension = "sub";
 
-    info.pattern = "\\d{2}:\\d{2}:\\d{2}.\\d+,\\d{2}:\\d{2}:\\d{2}.\\d+\\s*\\R";
+      info.pattern = "\\d{2}:\\d{2}:\\d{2}.\\d+,\\d{2}:\\d{2}:\\d{2}.\\d+\\s*\\R";
 
-    return info;
-  }
+      return info;
+   }
 
-  SubtitleFormatIO *create() {
-    SubViewer2 *sf = new SubViewer2();
-    return sf;
-  }
+   SubtitleFormatIO* create() {
+      SubViewer2* sf = new SubViewer2();
+      return sf;
+   }
 };
 
 REGISTER_EXTENSION(SubViewer2Plugin)

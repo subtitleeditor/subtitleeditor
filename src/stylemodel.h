@@ -21,95 +21,96 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <gtkmm.h>
+
 #include "color.h"
 
 class StyleColumnRecorder : public Gtk::TreeModel::ColumnRecord {
- public:
-  StyleColumnRecorder() {
-    add(name);
-    add(font_name);
-    add(font_size);
+  public:
+   StyleColumnRecorder() {
+      add(name);
+      add(font_name);
+      add(font_size);
 
-    add(primary_colour);
-    add(secondary_colour);
-    add(outline_colour);  // outline_color
-    add(shadow_colour);   // shadow
+      add(primary_colour);
+      add(secondary_colour);
+      add(outline_colour);  // outline_color
+      add(shadow_colour);   // shadow
 
-    add(bold);
-    add(italic);
-    add(underline);
-    add(strikeout);
+      add(bold);
+      add(italic);
+      add(underline);
+      add(strikeout);
 
-    add(scale_x);  // percent
-    add(scale_y);  // percent
-    add(spacing);  // pixel
-    add(angle);    // degrees
+      add(scale_x);       // percent
+      add(scale_y);       // percent
+      add(spacing);       // pixel
+      add(angle);         // degrees
 
-    add(border_style);  // 1=Outline + drop shadow, 3=Opaque box
-    add(outline);       // if border_style is 1, 0,1,2,3 or 4
-    add(shadow);        // if border_style is 1
-    // TODO : check field 13 style+
-    add(alignment);  // 1=left, 2=centered, 3=right, 4=toptitle, 8=midtitle,
-                     // 5=left-justified toptitle
+      add(border_style);  // 1=Outline + drop shadow, 3=Opaque box
+      add(outline);       // if border_style is 1, 0,1,2,3 or 4
+      add(shadow);        // if border_style is 1
+      // TODO : check field 13 style+
+      add(alignment);  // 1=left, 2=centered, 3=right, 4=toptitle, 8=midtitle,
+                       // 5=left-justified toptitle
 
-    add(margin_l);
-    add(margin_r);
-    add(margin_v);
-    // TODO > not present in ASS
-    add(alpha_level);
-    add(encoding);
-  }
+      add(margin_l);
+      add(margin_r);
+      add(margin_v);
+      // TODO > not present in ASS
+      add(alpha_level);
+      add(encoding);
+   }
 
- public:
+  public:
 #define data(type, name) Gtk::TreeModelColumn<type> name;
 
-  data(Glib::ustring, name);
-  data(Glib::ustring, font_name);
-  data(double, font_size);
+   data(Glib::ustring, name);
+   data(Glib::ustring, font_name);
+   data(double, font_size);
 
-  data(Glib::ustring, primary_colour);
-  data(Glib::ustring, secondary_colour);
-  data(Glib::ustring, outline_colour);  // outline_color
-  data(Glib::ustring, shadow_colour);   // shadow
+   data(Glib::ustring, primary_colour);
+   data(Glib::ustring, secondary_colour);
+   data(Glib::ustring, outline_colour);  // outline_color
+   data(Glib::ustring, shadow_colour);   // shadow
 
-  data(bool, bold);
-  data(bool, italic);
-  data(bool, underline);
-  data(bool, strikeout);
+   data(bool, bold);
+   data(bool, italic);
+   data(bool, underline);
+   data(bool, strikeout);
 
-  data(unsigned int, scale_x);  // percent
-  data(unsigned int, scale_y);  // percent
-  data(unsigned int, spacing);  // pixel
-  data(unsigned int, angle);    // degrees
+   data(unsigned int, scale_x);       // percent
+   data(unsigned int, scale_y);       // percent
+   data(unsigned int, spacing);       // pixel
+   data(unsigned int, angle);         // degrees
 
-  data(unsigned int, border_style);  // 1=Outline + drop shadow, 3=Opaque box
-  data(unsigned int, outline);       // if border_style is 1,	0,1,2,3 or 4
-  data(unsigned int, shadow);        // if border_style is 1
-  // TODO : check field 13 style+
-  data(unsigned int, alignment);  // 1=left, 2=centered, 3=right, 4=toptitle,
-                                  // 8=midtitle, 5=left-justified toptitle
+   data(unsigned int, border_style);  // 1=Outline + drop shadow, 3=Opaque box
+   data(unsigned int, outline);       // if border_style is 1,	0,1,2,3 or 4
+   data(unsigned int, shadow);        // if border_style is 1
+   // TODO : check field 13 style+
+   data(unsigned int, alignment);  // 1=left, 2=centered, 3=right, 4=toptitle,
+                                   // 8=midtitle, 5=left-justified toptitle
 
-  data(unsigned int, margin_l);
-  data(unsigned int, margin_r);
-  data(unsigned int, margin_v);
-  // TODO > not present in ASS
-  data(int, alpha_level);
-  data(int, encoding);
+   data(unsigned int, margin_l);
+   data(unsigned int, margin_r);
+   data(unsigned int, margin_v);
+   // TODO > not present in ASS
+   data(int, alpha_level);
+   data(int, encoding);
 #undef data
 };
 
 class StyleModel : public Gtk::ListStore {
- public:
-  StyleModel();
+  public:
+   StyleModel();
 
-  Gtk::TreeIter append();
+   Gtk::TreeIter append();
 
-  // retourne une copy de iter
-  Gtk::TreeIter copy(Gtk::TreeIter iter);
+   // retourne une copy de iter
+   Gtk::TreeIter copy(Gtk::TreeIter iter);
 
-  // copy src dans this
-  void copy(Glib::RefPtr<StyleModel> src);
+   // copy src dans this
+   void copy(Glib::RefPtr<StyleModel> src);
 
- public:
-  StyleColumnRecorder m_column;
+  public:
+   StyleColumnRecorder m_column;
 };

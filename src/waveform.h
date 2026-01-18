@@ -21,46 +21,47 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <glibmm.h>
+
 #include <vector>
 
 class Waveform {
- public:
-  Waveform();
-  ~Waveform();
+  public:
+   Waveform();
+   ~Waveform();
 
-  // Open Wavefrom from file
-  static Glib::RefPtr<Waveform> create_from_file(const Glib::ustring &uri);
+   // Open Wavefrom from file
+   static Glib::RefPtr<Waveform> create_from_file(const Glib::ustring& uri);
 
-  guint get_size();
+   guint get_size();
 
-  // long = SubtitleTime.totalmsec
-  gint64 get_duration();
+   // long = SubtitleTime.totalmsec
+   gint64 get_duration();
 
-  // long = SubtitleTime.totalmsecs
-  double get_channel(unsigned int channel, guint64 pos);
+   // long = SubtitleTime.totalmsecs
+   double get_channel(unsigned int channel, guint64 pos);
 
-  unsigned int get_n_channels();
+   unsigned int get_n_channels();
 
-  bool open(const Glib::ustring &uri);
+   bool open(const Glib::ustring& uri);
 
-  bool save(const Glib::ustring &uri);
+   bool save(const Glib::ustring& uri);
 
-  // l'uri de la video source du waveform
-  Glib::ustring get_video_uri();
+   // l'uri de la video source du waveform
+   Glib::ustring get_video_uri();
 
-  Glib::ustring get_uri();
+   Glib::ustring get_uri();
 
-  void reference() const;
-  void unreference() const;
+   void reference() const;
+   void unreference() const;
 
-  // protected:
+   // protected:
 
-  Glib::ustring m_waveform_uri;
-  Glib::ustring m_video_uri;
-  guint m_n_channels{0};
-  std::vector<double> m_channels[3];
-  gint64 m_duration{0};
+   Glib::ustring m_waveform_uri;
+   Glib::ustring m_video_uri;
+   guint m_n_channels{0};
+   std::vector<double> m_channels[3];
+   gint64 m_duration{0};
 
- protected:
-  mutable int ref_count_{0};
+  protected:
+   mutable int ref_count_{0};
 };

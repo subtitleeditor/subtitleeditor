@@ -21,42 +21,42 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <gtkmm.h>
+
 #include "subtitletime.h"
 #include "timeutility.h"
 
 class SpinButtonTime : public Gtk::SpinButton {
- public:
-  SpinButtonTime();
+  public:
+   SpinButtonTime();
 
-  SpinButtonTime(BaseObjectType *cobject,
-                 const Glib::RefPtr<Gtk::Builder> &builder);
+   SpinButtonTime(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& builder);
 
-  void set_timing_mode(TIMING_MODE mode);
+   void set_timing_mode(TIMING_MODE mode);
 
-  TIMING_MODE get_timing_mode();
+   TIMING_MODE get_timing_mode();
 
-  void set_negative(bool state);
+   void set_negative(bool state);
 
- protected:
-  void default_init();
+  protected:
+   void default_init();
 
-  void init_frame_mode();
+   void init_frame_mode();
 
-  void init_time_mode();
+   void init_time_mode();
 
-  int on_input(double *new_value);
+   int on_input(double* new_value);
 
-  bool on_output();
+   bool on_output();
 
-  void get_preferred_width_vfunc(int &minimum_width, int &natural_width) const;
+   void get_preferred_width_vfunc(int& minimum_width, int& natural_width) const;
 
-  bool on_scroll_event(GdkEventScroll *ev);
+   bool on_scroll_event(GdkEventScroll* ev);
 
-  void on_insert_text(const Glib::ustring &str, int *pos);
+   void on_insert_text(const Glib::ustring& str, int* pos);
 
-  void init_range();
+   void init_range();
 
- protected:
-  TIMING_MODE m_timing_mode;
-  bool m_negative;
+  protected:
+   TIMING_MODE m_timing_mode;
+   bool m_negative;
 };

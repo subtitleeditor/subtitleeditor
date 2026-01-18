@@ -22,46 +22,46 @@
 
 // Constructor
 ComboBoxFramerate::ComboBoxFramerate() : ComboBox() {
-  liststore = Gtk::ListStore::create(column);
-  set_model(liststore);
+   liststore = Gtk::ListStore::create(column);
+   set_model(liststore);
 
-  Gtk::CellRendererText* renderer = manage(new Gtk::CellRendererText);
-  pack_start(*renderer);
-  add_attribute(*renderer, "text", 0);
+   Gtk::CellRendererText* renderer = manage(new Gtk::CellRendererText);
+   pack_start(*renderer);
+   add_attribute(*renderer, "text", 0);
 
-  liststore->set_sort_column(0, Gtk::SORT_ASCENDING);
+   liststore->set_sort_column(0, Gtk::SORT_ASCENDING);
 
-  append(FRAMERATE_23_976);
-  append(FRAMERATE_24);
-  append(FRAMERATE_25, " (PAL)");
-  append(FRAMERATE_29_97, " (NTSC)");
-  append(FRAMERATE_30);
+   append(FRAMERATE_23_976);
+   append(FRAMERATE_24);
+   append(FRAMERATE_25, " (PAL)");
+   append(FRAMERATE_29_97, " (NTSC)");
+   append(FRAMERATE_30);
 
-  set_active(0);
+   set_active(0);
 }
 
 // Return the current framerate value
 FRAMERATE ComboBoxFramerate::get_value() {
-  Gtk::TreeIter it = get_active();
-  return (*it)[column.value];
+   Gtk::TreeIter it = get_active();
+   return (*it)[column.value];
 }
 
 // Set the current framerate value
 void ComboBoxFramerate::set_value(FRAMERATE value) {
-  Gtk::TreeIter it = get_model()->children().begin();
-  while (it) {
-    FRAMERATE framerate = (*it)[column.value];
-    if (framerate == value) {
-      set_active(it);
-      return;
-    }
-    ++it;
-  }
+   Gtk::TreeIter it = get_model()->children().begin();
+   while (it) {
+      FRAMERATE framerate = (*it)[column.value];
+      if (framerate == value) {
+         set_active(it);
+         return;
+      }
+      ++it;
+   }
 }
 
 // Add a new item
 void ComboBoxFramerate::append(FRAMERATE framerate, const Glib::ustring& text) {
-  Gtk::TreeIter it = liststore->append();
-  (*it)[column.label] = get_framerate_label(framerate) + text;
-  (*it)[column.value] = framerate;
+   Gtk::TreeIter it = liststore->append();
+   (*it)[column.label] = get_framerate_label(framerate) + text;
+   (*it)[column.value] = framerate;
 }

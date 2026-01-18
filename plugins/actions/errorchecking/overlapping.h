@@ -23,40 +23,39 @@
 #include "errorchecking.h"
 
 class Overlapping : public ErrorChecking {
- public:
-  Overlapping()
-      : ErrorChecking("overlapping", _("Overlapping"),
-                      _("An error is detected when the subtitle overlap on "
-                        "next subtitle.")) {
-  }
+  public:
+   Overlapping()
+       : ErrorChecking("overlapping",
+                       _("Overlapping"),
+                       _("An error is detected when the subtitle overlap on "
+                         "next subtitle.")) {
+   }
 
-  virtual void init() {
-    // mode = number
-  }
+   virtual void init() {
+      // mode = number
+   }
 
-  // Check if the currentSub overlap on the next.
-  bool execute(Info &info) {
-    if (!info.nextSub)
-      return false;
+   // Check if the currentSub overlap on the next.
+   bool execute(Info& info) {
+      if (!info.nextSub)
+         return false;
 
-    if (info.currentSub.get_end() <= info.nextSub.get_start())
-      return false;
+      if (info.currentSub.get_end() <= info.nextSub.get_start())
+         return false;
 
-    long overlap =
-        (info.currentSub.get_end() - info.nextSub.get_start()).totalmsecs;
+      long overlap = (info.currentSub.get_end() - info.nextSub.get_start()).totalmsecs;
 
-    if (info.tryToFix) {
-      // not implemented
-      return false;
-    }
+      if (info.tryToFix) {
+         // not implemented
+         return false;
+      }
 
-    info.error = build_message(
-        _("Subtitle overlap on next subtitle: <b>%ims overlap</b>"), overlap);
+      info.error = build_message(_("Subtitle overlap on next subtitle: <b>%ims overlap</b>"), overlap);
 
-    info.solution =
-        _("<b>Automatic correction:</b> unavailable, correct the error "
-          "manually.");
+      info.solution =
+         _("<b>Automatic correction:</b> unavailable, correct the error "
+           "manually.");
 
-    return true;
-  }
+      return true;
+   }
 };

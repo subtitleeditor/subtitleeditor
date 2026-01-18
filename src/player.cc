@@ -29,58 +29,57 @@ Player::~Player() {
 // Sets the current state of the pipeline.
 // Block or unblock the timeout signal and emit the signal state_changed.
 void Player::set_player_state(Player::State state) {
-  m_player_state = state;
+   m_player_state = state;
 
-  // create the timeout callback
-  // the signal is directly blocked
-  if (!m_timeout_connection) {
-    unsigned int msec = 100;
-    m_timeout_connection = Glib::signal_timeout().connect(
-        sigc::mem_fun(*this, &Player::on_timeout), msec);
-    m_timeout_connection.block();
-  }
-
-  switch (state) {
-    case NONE:
-    case PAUSED: {
-      // Update with the last position, block the signal and
-      // send a player state message
-      got_tick();
+   // create the timeout callback
+   // the signal is directly blocked
+   if (!m_timeout_connection) {
+      unsigned int msec = 100;
+      m_timeout_connection = Glib::signal_timeout().connect(sigc::mem_fun(*this, &Player::on_timeout), msec);
       m_timeout_connection.block();
-      send_message((state == NONE) ? STATE_NONE : STATE_PAUSED);
-    } break;
-    case PLAYING: {
-      m_timeout_connection.unblock();
-      got_tick();
-      send_message(STATE_PLAYING);
-    } break;
-  }
+   }
+
+   switch (state) {
+      case NONE:
+      case PAUSED: {
+         // Update with the last position, block the signal and
+         // send a player state message
+         got_tick();
+         m_timeout_connection.block();
+         send_message((state == NONE) ? STATE_NONE : STATE_PAUSED);
+      } break;
+      case PLAYING: {
+         m_timeout_connection.unblock();
+         got_tick();
+         send_message(STATE_PLAYING);
+      } break;
+   }
 }
 
 void Player::got_tick() {
-  long current_time = get_position();
-  long stream_length = get_duration();
-  double current_position = 0.0;
-  if (stream_length != 0)
-    current_position = static_cast<double>(current_time) / stream_length;
+   long current_time = get_position();
+   long stream_length = get_duration();
+   double current_position = 0.0;
+   if (stream_length != 0)
+      current_position = static_cast<double>(current_time) / stream_length;
 
-  m_signal_tick(current_time, stream_length, current_position);
+   m_signal_tick(current_time, stream_length, current_position);
 }
 
 bool Player::on_timeout() {
-  got_tick();
+   got_tick();
 
-  return is_playing();
+   return is_playing();
 }
 
 // Callback used by the player to send message to the application
 // like the change of the state of the player or change on the stream...
 sigc::signal<void, Player::Message>& Player::signal_message() {
-  return m_signal_message;
+   return m_signal_message;
 }
 
 void Player::send_message(Player::Message msg) {
-  m_signal_message(msg);
+   m_signal_message(msg);
 }
 
 // void my_tick(long current_time, long stream_length, double current_position)
@@ -90,20 +89,20 @@ void Player::send_message(Player::Message msg) {
 // Emitted every time event happens or at regular intervals during playing
 // state.
 sigc::signal<void, long, long, double>& Player::signal_tick() {
-  return m_signal_tick;
+   return m_signal_tick;
 }
 
 // Return the state of the player.
 // NONE can be considerate as NULL, the pipeline is not create.
 Player::State Player::get_state() {
-  return m_player_state;
+   return m_player_state;
 }
 
 void Player::set_keyframes(Glib::RefPtr<KeyFrames> keyframes) {
-  m_keyframes = keyframes;
-  send_message(KEYFRAME_CHANGED);
+   m_keyframes = keyframes;
+   send_message(KEYFRAME_CHANGED);
 }
 
 Glib::RefPtr<KeyFrames> Player::get_keyframes() {
-  return m_keyframes;
+   return m_keyframes;
 }

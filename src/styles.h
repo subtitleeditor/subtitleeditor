@@ -25,22 +25,22 @@
 class Document;
 
 class Styles {
- public:
-  explicit Styles(Document &doc);
-  ~Styles();
+  public:
+   explicit Styles(Document& doc);
+   ~Styles();
 
-  unsigned int size();
+   unsigned int size();
 
-  Style get(unsigned int num);
+   Style get(unsigned int num);
 
-  Style first();
+   Style first();
 
-  Style last();
+   Style last();
 
-  Style append();
+   Style append();
 
-  void remove(const Style &style);
+   void remove(const Style& style);
 
- protected:
-  Document &m_document;
+  protected:
+   Document& m_document;
 };

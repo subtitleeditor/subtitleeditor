@@ -21,8 +21,10 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <glibmm.h>
+
 #include <sstream>
 #include <string>
+
 #include "reader.h"
 
 // Helper to read file.
@@ -30,21 +32,20 @@
 // Detect the newline type.
 // Return lines without character of newline (CR,LF or CRLF)
 class FileReader : public Reader {
- public:
-  // Constructor.
-  // Open the file from an uri and convert the contents from charset to UTF-8.
-  // If charset is empty, try to autodetect the character coding.
-  // Error: throw an IOFileError exception if failed.
-  FileReader(const Glib::ustring &uri, const Glib::ustring &charset,
-             int max_data_size = -1);
+  public:
+   // Constructor.
+   // Open the file from an uri and convert the contents from charset to UTF-8.
+   // If charset is empty, try to autodetect the character coding.
+   // Error: throw an IOFileError exception if failed.
+   FileReader(const Glib::ustring& uri, const Glib::ustring& charset, int max_data_size = -1);
 
-  // Return the uri of the file.
-  Glib::ustring get_uri() const;
+   // Return the uri of the file.
+   Glib::ustring get_uri() const;
 
-  // Return the charset of the file.
-  Glib::ustring get_charset() const;
+   // Return the charset of the file.
+   Glib::ustring get_charset() const;
 
- protected:
-  Glib::ustring m_uri;
-  Glib::ustring m_charset;
+  protected:
+   Glib::ustring m_uri;
+   Glib::ustring m_charset;
 };

@@ -23,35 +23,35 @@
 #include <i18n.h>
 
 class ItalicizeSelectedSubtitlesPlugin : public Action {
- public:
-  ItalicizeSelectedSubtitlesPlugin() {
-    activate();
-    update_ui();
-  }
+  public:
+   ItalicizeSelectedSubtitlesPlugin() {
+      activate();
+      update_ui();
+   }
 
-  ~ItalicizeSelectedSubtitlesPlugin() {
-    deactivate();
-  }
+   ~ItalicizeSelectedSubtitlesPlugin() {
+      deactivate();
+   }
 
-  void activate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void activate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    // actions
-    action_group = Gtk::ActionGroup::create("ItalicizeSelectedSubtitlesPlugin");
+      // actions
+      action_group = Gtk::ActionGroup::create("ItalicizeSelectedSubtitlesPlugin");
 
-    action_group->add(
-        Gtk::Action::create("italicize-selected-subtitles", Gtk::Stock::ITALIC,
-                            _("_Italic"),
-                            _("Italicize the text of the selected subtitles — note that this only works for Subrip (SRT) files")),
-        Gtk::AccelKey("I"),
-        sigc::mem_fun(*this, &ItalicizeSelectedSubtitlesPlugin::on_execute));
+      action_group->add(Gtk::Action::create("italicize-selected-subtitles",
+                                            Gtk::Stock::ITALIC,
+                                            _("_Italic"),
+                                            _("Italicize the text of the selected subtitles — note that this only works for Subrip (SRT) files")),
+                        Gtk::AccelKey("I"),
+                        sigc::mem_fun(*this, &ItalicizeSelectedSubtitlesPlugin::on_execute));
 
-    // ui
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      // ui
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui->insert_action_group(action_group);
+      ui->insert_action_group(action_group);
 
-    Glib::ustring submenu = R"(
+      Glib::ustring submenu = R"(
       <ui>
         <menubar name='menubar'>
           <menu name='menu-edit' action='menu-edit'>
@@ -63,96 +63,93 @@ class ItalicizeSelectedSubtitlesPlugin : public Action {
       </ui>
     )";
 
-    ui_id = ui->add_ui_from_string(submenu);
-  }
+      ui_id = ui->add_ui_from_string(submenu);
+   }
 
-  void deactivate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void deactivate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui->remove_ui(ui_id);
-    ui->remove_action_group(action_group);
-  }
+      ui->remove_ui(ui_id);
+      ui->remove_action_group(action_group);
+   }
 
-  void update_ui() {
-    se_dbg(SE_DBG_PLUGINS);
+   void update_ui() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    bool visible = (get_current_document() != NULL);
+      bool visible = (get_current_document() != NULL);
 
-    action_group->get_action("italicize-selected-subtitles")
-        ->set_sensitive(visible);
-  }
+      action_group->get_action("italicize-selected-subtitles")->set_sensitive(visible);
+   }
 
- protected:
-  void on_execute() {
-    se_dbg(SE_DBG_PLUGINS);
+  protected:
+   void on_execute() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    execute();
-  }
+      execute();
+   }
 
-  bool execute() {
-    se_dbg(SE_DBG_PLUGINS);
+   bool execute() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Document *doc = get_current_document();
+      Document* doc = get_current_document();
 
-    g_return_val_if_fail(doc, false);
+      g_return_val_if_fail(doc, false);
 
-    Subtitles subtitles = doc->subtitles();
+      Subtitles subtitles = doc->subtitles();
 
-    std::vector<Subtitle> selection = subtitles.get_selection();
+      std::vector<Subtitle> selection = subtitles.get_selection();
 
-    if (selection.empty()) {
-      doc->flash_message(_("Please select at least a subtitle."));
+      if (selection.empty()) {
+         doc->flash_message(_("Please select at least a subtitle."));
+         return false;
+      }
+
+      doc->start_command(_("Italic"));
+
+      bool state = !parial_match(selection, "<(i)>(.*?)</\\1>");
+
+      global_replace(selection, "<(i)>(.*)</\\1>", "\\2");
+
+      if (state)
+         global_replace(selection, "^(.*)$", "<i>\\1</i>");
+
+      doc->finish_command();
+
+      return true;
+   }
+
+   bool parial_match(std::vector<Subtitle>& subs, const std::string& pattern) {
+      se_dbg(SE_DBG_PLUGINS);
+
+      Glib::RefPtr<Glib::Regex> re = Glib::Regex::create(pattern);
+
+      for (const auto& sub : subs) {
+         if (re->match(sub.get_text()))
+            return true;
+      }
+
       return false;
-    }
+   }
 
-    doc->start_command(_("Italic"));
+   void global_replace(std::vector<Subtitle>& subs, const std::string& pattern, const std::string& replace) {
+      se_dbg(SE_DBG_PLUGINS);
 
-    bool state = !parial_match(selection, "<(i)>(.*?)</\\1>");
+      Glib::RefPtr<Glib::Regex> re = Glib::Regex::create(pattern, Glib::REGEX_MULTILINE);
 
-    global_replace(selection, "<(i)>(.*)</\\1>", "\\2");
+      for (auto& sub : subs) {
+         Glib::ustring text = sub.get_text();
 
-    if (state)
-      global_replace(selection, "^(.*)$", "<i>\\1</i>");
+         text = re->replace(text, 0, replace, (Glib::RegexMatchFlags)0);
 
-    doc->finish_command();
+         sub.set_text(text);
+      }
+   }
 
-    return true;
-  }
-
-  bool parial_match(std::vector<Subtitle> &subs, const std::string &pattern) {
-    se_dbg(SE_DBG_PLUGINS);
-
-    Glib::RefPtr<Glib::Regex> re = Glib::Regex::create(pattern);
-
-    for (const auto &sub : subs) {
-      if (re->match(sub.get_text()))
-        return true;
-    }
-
-    return false;
-  }
-
-  void global_replace(std::vector<Subtitle> &subs, const std::string &pattern,
-                      const std::string &replace) {
-    se_dbg(SE_DBG_PLUGINS);
-
-    Glib::RefPtr<Glib::Regex> re =
-        Glib::Regex::create(pattern, Glib::REGEX_MULTILINE);
-
-    for (auto &sub : subs) {
-      Glib::ustring text = sub.get_text();
-
-      text = re->replace(text, 0, replace, (Glib::RegexMatchFlags)0);
-
-      sub.set_text(text);
-    }
-  }
-
- protected:
-  Gtk::UIManager::ui_merge_id ui_id;
-  Glib::RefPtr<Gtk::ActionGroup> action_group;
+  protected:
+   Gtk::UIManager::ui_merge_id ui_id;
+   Glib::RefPtr<Gtk::ActionGroup> action_group;
 };
 
 REGISTER_EXTENSION(ItalicizeSelectedSubtitlesPlugin)

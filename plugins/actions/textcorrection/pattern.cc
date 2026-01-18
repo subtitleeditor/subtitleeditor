@@ -22,57 +22,57 @@
 
 // Constructor
 Pattern::Pattern() {
-  m_enabled = true;
+   m_enabled = true;
 }
 
 // Destructor
 // Delete rules.
 Pattern::~Pattern() {
-  for (auto r : m_rules) {
-    delete r;
-  }
-  m_rules.clear();
+   for (auto r : m_rules) {
+      delete r;
+   }
+   m_rules.clear();
 }
 
 // Return the name of the pattern.
 Glib::ustring Pattern::get_name() const {
-  return m_name;
+   return m_name;
 }
 
 // Return the name of the pattern.
 Glib::ustring Pattern::get_label() const {
-  return m_label;
+   return m_label;
 }
 
 // Return the name of the pattern.
 Glib::ustring Pattern::get_description() const {
-  return m_description;
+   return m_description;
 }
 
 // Return the active state of the pattern. (Enable by default)
 bool Pattern::is_enable() const {
-  return m_enabled;
+   return m_enabled;
 }
 
 // Apply the pattern if it is enabled.
 // With the repeat support.
-void Pattern::execute(Glib::ustring &text, const Glib::ustring &previous) {
-  if (!m_enabled)
-    return;
+void Pattern::execute(Glib::ustring& text, const Glib::ustring& previous) {
+   if (!m_enabled)
+      return;
 
-  Glib::RegexMatchFlags flag = (Glib::RegexMatchFlags)0;
+   Glib::RegexMatchFlags flag = (Glib::RegexMatchFlags)0;
 
-  for (auto pattern : m_rules) {
-    bool previous_match = true;
-    if (pattern->m_previous_match)
-      previous_match = pattern->m_previous_match->match(previous);
+   for (auto pattern : m_rules) {
+      bool previous_match = true;
+      if (pattern->m_previous_match)
+         previous_match = pattern->m_previous_match->match(previous);
 
-    if (pattern->m_repeat) {
-      while (pattern->m_regex->match(text) && previous_match) {
-        text = pattern->m_regex->replace(text, 0, pattern->m_replacement, flag);
+      if (pattern->m_repeat) {
+         while (pattern->m_regex->match(text) && previous_match) {
+            text = pattern->m_regex->replace(text, 0, pattern->m_replacement, flag);
+         }
+      } else if (previous_match) {
+         text = pattern->m_regex->replace(text, 0, pattern->m_replacement, flag);
       }
-    } else if (previous_match) {
-      text = pattern->m_regex->replace(text, 0, pattern->m_replacement, flag);
-    }
-  }
+   }
 }

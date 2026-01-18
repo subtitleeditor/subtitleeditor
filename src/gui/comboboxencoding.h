@@ -26,39 +26,37 @@
 // Only the encoding preferences are displayed.
 // The support of "Auto Detected" is enable by default.
 class ComboBoxEncoding : public Gtk::ComboBoxText {
- public:
-  // Constructor
-  explicit ComboBoxEncoding(bool auto_detected);
+  public:
+   // Constructor
+   explicit ComboBoxEncoding(bool auto_detected);
 
-  // Constructor
-  ComboBoxEncoding(BaseObjectType *cobject,
-                   const Glib::RefPtr<Gtk::Builder> &builder);
+   // Constructor
+   ComboBoxEncoding(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& builder);
 
-  // Sets the current value.
-  void set_value(const Glib::ustring &charset);
+   // Sets the current value.
+   void set_value(const Glib::ustring& charset);
 
-  // Returns only the charset value.
-  // ex: "UTF-8", "ISO-8859-15" ...
-  // Return empty charset if it's "Auto Detected".
-  Glib::ustring get_value() const;
+   // Returns only the charset value.
+   // ex: "UTF-8", "ISO-8859-15" ...
+   // Return empty charset if it's "Auto Detected".
+   Glib::ustring get_value() const;
 
-  // Enable or disable the auto detected mode.
-  void show_auto_detected(bool value);
+   // Enable or disable the auto detected mode.
+   void show_auto_detected(bool value);
 
- protected:
-  // Rebuild the combobox with encoding user preferences.
-  void init_encodings();
+  protected:
+   // Rebuild the combobox with encoding user preferences.
+   void init_encodings();
 
-  // Gtk::ComboBox::on_changed
-  // Used for intercepte "Add or Remove..."
-  void on_combo_changed();
+   // Gtk::ComboBox::on_changed
+   // Used for intercepte "Add or Remove..."
+   void on_combo_changed();
 
-  // Used to define the separator.
-  // label = "<separator>"
-  bool on_row_separator_func(const Glib::RefPtr<Gtk::TreeModel> &model,
-                             const Gtk::TreeModel::iterator &it);
+   // Used to define the separator.
+   // label = "<separator>"
+   bool on_row_separator_func(const Glib::RefPtr<Gtk::TreeModel>& model, const Gtk::TreeModel::iterator& it);
 
- protected:
-  bool m_with_auto_detected;
-  sigc::connection m_connection_changed;
+  protected:
+   bool m_with_auto_detected;
+   sigc::connection m_connection_changed;
 };

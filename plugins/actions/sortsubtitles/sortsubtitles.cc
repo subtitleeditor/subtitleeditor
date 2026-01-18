@@ -23,81 +23,76 @@
 #include <i18n.h>
 
 class SortSubtitlesPlugin : public Action {
- public:
-  SortSubtitlesPlugin() {
-    activate();
-    update_ui();
-  }
+  public:
+   SortSubtitlesPlugin() {
+      activate();
+      update_ui();
+   }
 
-  ~SortSubtitlesPlugin() {
-    deactivate();
-  }
+   ~SortSubtitlesPlugin() {
+      deactivate();
+   }
 
-  void activate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void activate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    // actions
-    action_group = Gtk::ActionGroup::create("SortSubtitlesPlugin");
+      // actions
+      action_group = Gtk::ActionGroup::create("SortSubtitlesPlugin");
 
-    action_group->add(
-        Gtk::Action::create("sort-subtitles", Gtk::Stock::SORT_ASCENDING,
-                            _("S_ort Subtitles"),
-                            _("Sort subtitles based on their start time")),
-        sigc::mem_fun(*this, &SortSubtitlesPlugin::sort_subtitles));
-    // ui
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
-    ui_id = ui->new_merge_id();
-    ui->insert_action_group(action_group);
-    ui->add_ui(ui_id, "/menubar/menu-timings/placeholder", "sort-subtitles",
-               "sort-subtitles");
-  }
+      action_group->add(
+         Gtk::Action::create("sort-subtitles", Gtk::Stock::SORT_ASCENDING, _("S_ort Subtitles"), _("Sort subtitles based on their start time")),
+         sigc::mem_fun(*this, &SortSubtitlesPlugin::sort_subtitles));
+      // ui
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      ui_id = ui->new_merge_id();
+      ui->insert_action_group(action_group);
+      ui->add_ui(ui_id, "/menubar/menu-timings/placeholder", "sort-subtitles", "sort-subtitles");
+   }
 
-  void deactivate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void deactivate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui->remove_ui(ui_id);
-    ui->remove_action_group(action_group);
-  }
+      ui->remove_ui(ui_id);
+      ui->remove_action_group(action_group);
+   }
 
-  void update_ui() {
-    se_dbg(SE_DBG_PLUGINS);
+   void update_ui() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    bool visible = (get_current_document() != NULL);
-    action_group->get_action("sort-subtitles")->set_sensitive(visible);
-  }
+      bool visible = (get_current_document() != NULL);
+      action_group->get_action("sort-subtitles")->set_sensitive(visible);
+   }
 
- protected:
-  void sort_subtitles() {
-    se_dbg(SE_DBG_PLUGINS);
+  protected:
+   void sort_subtitles() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Document *doc = get_current_document();
-    g_return_if_fail(doc);
+      Document* doc = get_current_document();
+      g_return_if_fail(doc);
 
-    Subtitles subtitles = doc->subtitles();
-    if (subtitles.size() < 2)
-      return;
+      Subtitles subtitles = doc->subtitles();
+      if (subtitles.size() < 2)
+         return;
 
-    guint number_of_sub_reorder = 0;
+      guint number_of_sub_reorder = 0;
 
-    doc->start_command("Sort Subtitle");
-    number_of_sub_reorder = doc->subtitles().sort_by_time();
-    doc->finish_command();
-    doc->emit_signal("subtitle-time-changed");
+      doc->start_command("Sort Subtitle");
+      number_of_sub_reorder = doc->subtitles().sort_by_time();
+      doc->finish_command();
+      doc->emit_signal("subtitle-time-changed");
 
-    if (number_of_sub_reorder > 0)
-      doc->flash_message(
-          ngettext("1 subtitle has been reordered.",
-                   "%d subtitles have been reordered.", number_of_sub_reorder),
-          number_of_sub_reorder);
-    else
-      doc->flash_message(_("No need to sort subtitles."));
-  }
+      if (number_of_sub_reorder > 0)
+         doc->flash_message(ngettext("1 subtitle has been reordered.", "%d subtitles have been reordered.", number_of_sub_reorder),
+                            number_of_sub_reorder);
+      else
+         doc->flash_message(_("No need to sort subtitles."));
+   }
 
- protected:
-  Gtk::UIManager::ui_merge_id ui_id;
-  Glib::RefPtr<Gtk::ActionGroup> action_group;
+  protected:
+   Gtk::UIManager::ui_merge_id ui_id;
+   Glib::RefPtr<Gtk::ActionGroup> action_group;
 };
 
 REGISTER_EXTENSION(SortSubtitlesPlugin)

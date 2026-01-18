@@ -24,173 +24,159 @@
  *	You should have received a copy of the GNU General Public License
  *	along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
- 
+
+#include <debug.h>
 #include <extension/action.h>
 #include <i18n.h>
-#include <debug.h>
 #include <utility.h>
 
-class SlideTimingsPlugin : public Action
-{
-public:
+class SlideTimingsPlugin : public Action {
+  public:
+   SlideTimingsPlugin() {
+      activate();
+      update_ui();
+   }
 
-	SlideTimingsPlugin()
-	{
-		activate();
-		update_ui();
-	}
+   ~SlideTimingsPlugin() {
+      deactivate();
+   }
 
-	~SlideTimingsPlugin()
-	{
-		deactivate();
-	}
+   /*
+    */
+   void activate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-	/*
-	 */
-	void activate()
-	{
-		se_dbg(SE_DBG_PLUGINS);
+      // actions
+      action_group = Gtk::ActionGroup::create("SlideTimingsPlugin");
 
-		// actions
-		action_group = Gtk::ActionGroup::create("SlideTimingsPlugin");
+      action_group->add(
+         Gtk::Action::create(
+            "bump-up", _("_Bump Text Up"), _("Moves the text field to the previous subtitle for all subtitles from the current one to the end.")),
+         sigc::mem_fun(*this, &SlideTimingsPlugin::on_bump_up));
 
-		action_group->add(
-				Gtk::Action::create("bump-up", _("_Bump Text Up"),
-				_("Moves the text field to the previous subtitle for all subtitles from the current one to the end.")),
-					sigc::mem_fun(*this, &SlideTimingsPlugin::on_bump_up));
+      action_group->add(
+         Gtk::Action::create(
+            "bump-down", _("_Bump Text Down"), _("Moves the text field to the next subtitle for all subtitles from the current one to the end.")),
+         sigc::mem_fun(*this, &SlideTimingsPlugin::on_bump_down));
 
-		action_group->add(
-				Gtk::Action::create("bump-down", _("_Bump Text Down"),
-				_("Moves the text field to the next subtitle for all subtitles from the current one to the end.")),
-					sigc::mem_fun(*this, &SlideTimingsPlugin::on_bump_down));
+      // ui
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-		// ui
-		Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      ui_id = ui->new_merge_id();
 
-		ui_id = ui->new_merge_id();
+      ui->insert_action_group(action_group);
 
-		ui->insert_action_group(action_group);
+      ui->add_ui(ui_id, "/menubar/menu-timings/bump-up", "bump-up", "bump-up");
+      ui->add_ui(ui_id, "/menubar/menu-timings/bump-down", "bump-down", "bump-down");
+   }
 
-		ui->add_ui(ui_id, "/menubar/menu-timings/bump-up", "bump-up", "bump-up");
-		ui->add_ui(ui_id, "/menubar/menu-timings/bump-down", "bump-down", "bump-down");
-	}
+   /*
+    */
+   void deactivate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-	/*
-	 */
-	void deactivate()
-	{
-		se_dbg(SE_DBG_PLUGINS);
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-		Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      ui->remove_ui(ui_id);
+      ui->remove_action_group(action_group);
+   }
 
-		ui->remove_ui(ui_id);
-		ui->remove_action_group(action_group);
-	}
+   /*
+    */
+   void update_ui() {
+      se_dbg(SE_DBG_PLUGINS);
 
-	/*
-	 */
-	void update_ui()
-	{
-		se_dbg(SE_DBG_PLUGINS);
+      bool visible = (get_current_document() != NULL);
 
-		bool visible = (get_current_document() != NULL);
+      action_group->get_action("bump-up")->set_sensitive(visible);
+      action_group->get_action("bump-down")->set_sensitive(visible);
+   }
 
-		action_group->get_action("bump-up")->set_sensitive(visible);
-		action_group->get_action("bump-down")->set_sensitive(visible);
-	}
+  protected:
+   /*
+    */
+   void on_bump_down() {
+      se_dbg(SE_DBG_PLUGINS);
 
-protected:
+      Document* doc = get_current_document();
+      g_return_if_fail(doc);
 
-	/*
-	 */
-	void on_bump_down()
-	{
-		se_dbg(SE_DBG_PLUGINS);
+      std::vector<Subtitle> selection = doc->subtitles().get_selection();
+      if (selection.empty()) {
+         doc->flash_message(_("Please select at least one subtitle."));
+         return;
+      }
 
-		Document *doc = get_current_document();
-		g_return_if_fail(doc);
+      doc->start_command(_("Bump Down"));
 
-		std::vector<Subtitle> selection = doc->subtitles().get_selection();
-		if(selection.empty())
-		{
-			doc->flash_message(_("Please select at least one subtitle."));
-			return;
-		}
+      if (selection.size() == 1) {
+         select_to_end(doc, selection);
+         Subtitle overflow = doc->subtitles().insert_after(selection[selection.size() - 1]);
+         selection.push_back(overflow);
+      }
 
-		doc->start_command(_("Bump Down"));
+      creep_to_pos(selection.rbegin(), selection.rend());
 
-		if( selection.size() == 1 ) {
-			select_to_end( doc, selection );
-      Subtitle overflow = doc->subtitles().insert_after( selection[ selection.size()-1 ] );
-      selection.push_back( overflow );
-		}
+      doc->emit_signal("subtitle-time-changed");
+      doc->finish_command();
+   }
 
-		creep_to_pos( selection.rbegin(), selection.rend() );
+   /*
+    */
+   void on_bump_up() {
+      se_dbg(SE_DBG_PLUGINS);
 
-		doc->emit_signal("subtitle-time-changed");
-		doc->finish_command();
-	}
+      Document* doc = get_current_document();
+      g_return_if_fail(doc);
 
-	/*
-	 */
-	void on_bump_up()
-	{
-		se_dbg(SE_DBG_PLUGINS);
+      std::vector<Subtitle> selection = doc->subtitles().get_selection();
+      if (selection.empty()) {
+         doc->flash_message(_("Please select at least one subtitle."));
+         return;
+      }
 
-		Document *doc = get_current_document();
-		g_return_if_fail(doc);
+      doc->start_command(_("Bump Up"));
 
-		std::vector<Subtitle> selection = doc->subtitles().get_selection();
-		if(selection.empty())
-		{
-			doc->flash_message(_("Please select at least one subtitle."));
-			return;
-		}
+      if (selection.size() == 1) {
+         select_to_end(doc, selection);
+      }
 
-		doc->start_command(_("Bump Up"));
+      creep_to_pos(selection.begin(), selection.end());
 
-		if( selection.size() == 1 ) {
-			select_to_end( doc, selection );
-		}
+      doc->emit_signal("subtitle-time-changed");
+      doc->finish_command();
+   }
 
-		creep_to_pos( selection.begin(), selection.end() );
+   template <class Iterator>
+   void creep_to_pos(Iterator pos, Iterator end) {
+      if (pos == end)
+         return;
+      Iterator lastpos = pos;
+      ++pos;
+      while (pos != end) {
+         lastpos->set_text(pos->get_text());
+         ++pos;
+         ++lastpos;
+      }
+      lastpos->set_text("");
+   }
 
-		doc->emit_signal("subtitle-time-changed");
-		doc->finish_command();
-	}
+   /*
+    * Adds to the selection all the subtitles that come after it in the subtitles in the document.
+    */
+   void select_to_end(Document* doc, std::vector<Subtitle>& selection) {
+      Subtitles subtitles = doc->subtitles();
+      Subtitle sub = selection[selection.size() - 1];
+      sub = subtitles.get_next(sub);
+      while (sub) {
+         selection.push_back(sub);
+         sub = subtitles.get_next(sub);
+      }
+   }
 
-	template <class Iterator>
-	void creep_to_pos( Iterator pos, Iterator end )
-	{
-		if( pos == end ) return;
-		Iterator lastpos = pos;
-		++pos;
-		while( pos != end ) {
-			lastpos->set_text( pos->get_text() );
-			++pos;
-			++lastpos;
-		}
-		lastpos->set_text("");
-	}
-
-	/*
-	 * Adds to the selection all the subtitles that come after it in the subtitles in the document. 
-	 */
-	void select_to_end( Document *doc, std::vector<Subtitle> &selection )
-	{
-		Subtitles subtitles = doc->subtitles();
-		Subtitle sub = selection[ selection.size() - 1 ]; 
-		sub = subtitles.get_next( sub );
-		while( sub ) {
-			selection.push_back( sub ); 
-			sub = subtitles.get_next( sub );
-		}
-	}
-
-protected:
-	Gtk::UIManager::ui_merge_id ui_id;
-	Glib::RefPtr<Gtk::ActionGroup> action_group;
+  protected:
+   Gtk::UIManager::ui_merge_id ui_id;
+   Glib::RefPtr<Gtk::ActionGroup> action_group;
 };
 
 REGISTER_EXTENSION(SlideTimingsPlugin)
-

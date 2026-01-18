@@ -23,24 +23,16 @@
 #include "preferencepage.h"
 
 class TimingPage : public PreferencePage {
- public:
-  TimingPage(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& xml)
-      : PreferencePage(cobject) {
-    init_widget(xml, "spin-min-characters-per-second", "timing",
-                "min-characters-per-second");
-    init_widget(xml, "spin-max-characters-per-second", "timing",
-                "max-characters-per-second");
-    init_widget(xml, "spin-ideal-characters-per-second", "timing",
-                "ideal-characters-per-second");
-    init_widget(xml, "spin-min-gap-between-subtitles", "timing",
-                "min-gap-between-subtitles");
-    init_widget(xml, "spin-min-display", "timing", "min-display");
-    init_widget(xml, "spin-max-characters-per-line", "timing",
-                "max-characters-per-line");
-    init_widget(xml, "spin-max-line-per-subtitle", "timing",
-                "max-line-per-subtitle");
-    init_widget(xml, "check-ignore-space", "timing", "ignore-space");
-    init_widget(xml, "check-do-auto-timing-check", "timing",
-                "do-auto-timing-check");
-  }
+  public:
+   TimingPage(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& xml) : PreferencePage(cobject) {
+      init_widget(xml, "spin-min-characters-per-second", "timing", "min-characters-per-second");
+      init_widget(xml, "spin-max-characters-per-second", "timing", "max-characters-per-second");
+      init_widget(xml, "spin-ideal-characters-per-second", "timing", "ideal-characters-per-second");
+      init_widget(xml, "spin-min-gap-between-subtitles", "timing", "min-gap-between-subtitles");
+      init_widget(xml, "spin-min-display", "timing", "min-display");
+      init_widget(xml, "spin-max-characters-per-line", "timing", "max-characters-per-line");
+      init_widget(xml, "spin-max-line-per-subtitle", "timing", "max-line-per-subtitle");
+      init_widget(xml, "check-ignore-space", "timing", "ignore-space");
+      init_widget(xml, "check-do-auto-timing-check", "timing", "do-auto-timing-check");
+   }
 };

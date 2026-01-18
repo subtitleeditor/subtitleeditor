@@ -19,23 +19,22 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include "comboboxsubtitleformat.h"
+
 #include "subtitleformatsystem.h"
 
 // Constructor
-ComboBoxSubtitleFormat::ComboBoxSubtitleFormat(
-    BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& /*builder*/)
-    : Gtk::ComboBoxText(cobject) {
-  for (const auto& sf_info : SubtitleFormatSystem::instance().get_infos()) {
-    append(sf_info.name);
-  }
-  set_active(0);
+ComboBoxSubtitleFormat::ComboBoxSubtitleFormat(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& /*builder*/) : Gtk::ComboBoxText(cobject) {
+   for (const auto& sf_info : SubtitleFormatSystem::instance().get_infos()) {
+      append(sf_info.name);
+   }
+   set_active(0);
 }
 
 void ComboBoxSubtitleFormat::set_value(const Glib::ustring& value) {
-  set_active_text(value);
+   set_active_text(value);
 }
 
 // Returns the subtitle format selected.
 Glib::ustring ComboBoxSubtitleFormat::get_value() const {
-  return get_active_text();
+   return get_active_text();
 }

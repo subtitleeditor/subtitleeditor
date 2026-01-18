@@ -21,35 +21,36 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <glibmm.h>
+
 #include <vector>
 
 class KeyFrames : public std::vector<long> {
- public:
-  static Glib::RefPtr<KeyFrames> create_from_file(const Glib::ustring &uri);
+  public:
+   static Glib::RefPtr<KeyFrames> create_from_file(const Glib::ustring& uri);
 
-  bool open(const Glib::ustring &uri);
+   bool open(const Glib::ustring& uri);
 
-  bool save(const Glib::ustring &uri);
+   bool save(const Glib::ustring& uri);
 
-  void set_uri(const Glib::ustring &uri);
+   void set_uri(const Glib::ustring& uri);
 
-  Glib::ustring get_uri() const;
+   Glib::ustring get_uri() const;
 
-  void set_video_uri(const Glib::ustring &uri);
+   void set_video_uri(const Glib::ustring& uri);
 
-  Glib::ustring get_video_uri() const;
+   Glib::ustring get_video_uri() const;
 
- public:
-  void reference() const;
+  public:
+   void reference() const;
 
-  void unreference() const;
+   void unreference() const;
 
-  KeyFrames();
+   KeyFrames();
 
-  ~KeyFrames();
+   ~KeyFrames();
 
- protected:
-  mutable int ref_count_{0};
-  Glib::ustring m_uri;
-  Glib::ustring m_video_uri;
+  protected:
+   mutable int ref_count_{0};
+   Glib::ustring m_uri;
+   Glib::ustring m_video_uri;
 };

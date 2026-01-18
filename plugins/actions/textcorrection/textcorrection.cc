@@ -32,195 +32,186 @@
 #include "taskspage.h"
 
 class AssistantTextCorrection : public Gtk::Assistant {
- public:
-  AssistantTextCorrection(BaseObjectType* cobject,
-                          const Glib::RefPtr<Gtk::Builder>& builder)
-      : Gtk::Assistant(cobject) {
-    se_dbg(SE_DBG_PLUGINS);
+  public:
+   AssistantTextCorrection(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& builder) : Gtk::Assistant(cobject) {
+      se_dbg(SE_DBG_PLUGINS);
 
-    doc = SubtitleEditorWindow::get_instance()->get_current_document();
+      doc = SubtitleEditorWindow::get_instance()->get_current_document();
 
-    builder->get_widget_derived("vbox-tasks", m_tasksPage);
-    builder->get_widget_derived("vbox-comfirmation", m_comfirmationPage);
+      builder->get_widget_derived("vbox-tasks", m_tasksPage);
+      builder->get_widget_derived("vbox-comfirmation", m_comfirmationPage);
 
-    add_tasks();
+      add_tasks();
 
-    se_dbg_msg(SE_DBG_PLUGINS, "Init tasks pages");
-    // Init tasks pages
-    for (int i = 0; i < get_n_pages(); ++i) {
-      PatternsPage* page = dynamic_cast<PatternsPage*>(get_nth_page(i));
-      if (page)
-        m_tasksPage->add_task(page);
-    }
+      se_dbg_msg(SE_DBG_PLUGINS, "Init tasks pages");
+      // Init tasks pages
+      for (int i = 0; i < get_n_pages(); ++i) {
+         PatternsPage* page = dynamic_cast<PatternsPage*>(get_nth_page(i));
+         if (page)
+            m_tasksPage->add_task(page);
+      }
 
-    set_page_type(*get_nth_page(0), Gtk::ASSISTANT_PAGE_INTRO);
-    set_page_type(*get_nth_page(get_n_pages() - 1),
-                  Gtk::ASSISTANT_PAGE_CONFIRM);
-  }
+      set_page_type(*get_nth_page(0), Gtk::ASSISTANT_PAGE_INTRO);
+      set_page_type(*get_nth_page(get_n_pages() - 1), Gtk::ASSISTANT_PAGE_CONFIRM);
+   }
 
-  ~AssistantTextCorrection() {
-    se_dbg(SE_DBG_PLUGINS);
-  }
+   ~AssistantTextCorrection() {
+      se_dbg(SE_DBG_PLUGINS);
+   }
 
-  void add_tasks() {
-    se_dbg(SE_DBG_PLUGINS);
+   void add_tasks() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    add_page(manage(new HearingImpairedPage), 1);
-    add_page(manage(new CommonErrorPage), 2);
-    add_page(manage(new CapitalizationPage), 3);
-  }
+      add_page(manage(new HearingImpairedPage), 1);
+      add_page(manage(new CommonErrorPage), 2);
+      add_page(manage(new CapitalizationPage), 3);
+   }
 
-  void add_page(PatternsPage* page, unsigned int pos) {
-    se_dbg_msg(SE_DBG_PLUGINS, "new task page '%s' to the position '%d'",
-               page->get_page_title().c_str(), pos);
+   void add_page(PatternsPage* page, unsigned int pos) {
+      se_dbg_msg(SE_DBG_PLUGINS, "new task page '%s' to the position '%d'", page->get_page_title().c_str(), pos);
 
-    insert_page(*page, pos);
-    set_page_title(*page, page->get_page_title());
-    set_page_type(*page, Gtk::ASSISTANT_PAGE_CONTENT);
-  }
+      insert_page(*page, pos);
+      set_page_title(*page, page->get_page_title());
+      set_page_type(*page, Gtk::ASSISTANT_PAGE_CONTENT);
+   }
 
-  // Catch the comfirmation page and initialize with the current document
-  // and patterns available.
-  void on_prepare(Gtk::Widget* page) {
-    se_dbg(SE_DBG_PLUGINS);
+   // Catch the comfirmation page and initialize with the current document
+   // and patterns available.
+   void on_prepare(Gtk::Widget* page) {
+      se_dbg(SE_DBG_PLUGINS);
 
-    AssistantPage* ap = dynamic_cast<AssistantPage*>(page);
-    if (ap && ap == m_comfirmationPage) {
-      bool res = m_comfirmationPage->comfirme(doc, get_patterns());
-      set_page_complete(*page, true);
-      set_page_title(*page, m_comfirmationPage->get_page_title());
-      // No change, only display the close button
-      if (!res)
-        set_page_type(*m_comfirmationPage, Gtk::ASSISTANT_PAGE_SUMMARY);
-    } else {
-      set_page_complete(*page, true);
-    }
-  }
+      AssistantPage* ap = dynamic_cast<AssistantPage*>(page);
+      if (ap && ap == m_comfirmationPage) {
+         bool res = m_comfirmationPage->comfirme(doc, get_patterns());
+         set_page_complete(*page, true);
+         set_page_title(*page, m_comfirmationPage->get_page_title());
+         // No change, only display the close button
+         if (!res)
+            set_page_type(*m_comfirmationPage, Gtk::ASSISTANT_PAGE_SUMMARY);
+      } else {
+         set_page_complete(*page, true);
+      }
+   }
 
-  // Return all patterns activated.
-  std::list<Pattern*> get_patterns() {
-    se_dbg(SE_DBG_PLUGINS);
+   // Return all patterns activated.
+   std::list<Pattern*> get_patterns() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    std::list<Pattern*> patterns;
+      std::list<Pattern*> patterns;
 
-    for (int i = 0; i < get_n_pages(); ++i) {
-      PatternsPage* page = dynamic_cast<PatternsPage*>(get_nth_page(i));
-      if (page == NULL)
-        continue;
-      if (page->is_enable() == false)
-        continue;
+      for (int i = 0; i < get_n_pages(); ++i) {
+         PatternsPage* page = dynamic_cast<PatternsPage*>(get_nth_page(i));
+         if (page == NULL)
+            continue;
+         if (page->is_enable() == false)
+            continue;
 
-      std::list<Pattern*> p = page->get_patterns();
-      patterns.merge(p);
-    }
-    return patterns;
-  }
+         std::list<Pattern*> p = page->get_patterns();
+         patterns.merge(p);
+      }
+      return patterns;
+   }
 
-  // Apply the change and destroy the window.
-  void on_apply() {
-    se_dbg(SE_DBG_PLUGINS);
+   // Apply the change and destroy the window.
+   void on_apply() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    m_comfirmationPage->apply(doc);
+      m_comfirmationPage->apply(doc);
 
-    save_cfg();
-  }
+      save_cfg();
+   }
 
-  // Destroy the window.
-  void on_cancel() {
-    se_dbg(SE_DBG_PLUGINS);
+   // Destroy the window.
+   void on_cancel() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    save_cfg();
+      save_cfg();
 
-    // destroy_();
-    delete this;
-  }
+      // destroy_();
+      delete this;
+   }
 
-  // Close signal, destroy the window.
-  void on_close() {
-    se_dbg(SE_DBG_PLUGINS);
+   // Close signal, destroy the window.
+   void on_close() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    save_cfg();
+      save_cfg();
 
-    // destroy_();
-    delete this;
-  }
+      // destroy_();
+      delete this;
+   }
 
-  // Save the configuration for each pages.
-  void save_cfg() {
-    se_dbg(SE_DBG_PLUGINS);
+   // Save the configuration for each pages.
+   void save_cfg() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    for (int i = 0; i < get_n_pages(); ++i) {
-      PatternsPage* page = dynamic_cast<PatternsPage*>(get_nth_page(i));
-      if (page != NULL)
-        page->save_cfg();
-    }
-  }
+      for (int i = 0; i < get_n_pages(); ++i) {
+         PatternsPage* page = dynamic_cast<PatternsPage*>(get_nth_page(i));
+         if (page != NULL)
+            page->save_cfg();
+      }
+   }
 
- protected:
-  TasksPage* m_tasksPage;
-  ComfirmationPage* m_comfirmationPage;
-  Document* doc;
+  protected:
+   TasksPage* m_tasksPage;
+   ComfirmationPage* m_comfirmationPage;
+   Document* doc;
 };
 
 class TextCorrectionPlugin : public Action {
- public:
-  TextCorrectionPlugin() {
-    activate();
-    update_ui();
-  }
+  public:
+   TextCorrectionPlugin() {
+      activate();
+      update_ui();
+   }
 
-  ~TextCorrectionPlugin() {
-    deactivate();
-  }
+   ~TextCorrectionPlugin() {
+      deactivate();
+   }
 
-  void activate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void activate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    // actions
-    action_group = Gtk::ActionGroup::create("TextCorrectionPlugin");
-    action_group->add(
-        Gtk::Action::create("text-correction", _("Text _Correction"),
-                            _("Launch the text correction dialogue")),
-        sigc::mem_fun(*this, &TextCorrectionPlugin::on_execute));
+      // actions
+      action_group = Gtk::ActionGroup::create("TextCorrectionPlugin");
+      action_group->add(Gtk::Action::create("text-correction", _("Text _Correction"), _("Launch the text correction dialogue")),
+                        sigc::mem_fun(*this, &TextCorrectionPlugin::on_execute));
 
-    // ui
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      // ui
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui_id = ui->new_merge_id();
-    ui->insert_action_group(action_group);
-    ui->add_ui(ui_id, "/menubar/menu-tools/checking", "text-correction",
-               "text-correction");
-  }
+      ui_id = ui->new_merge_id();
+      ui->insert_action_group(action_group);
+      ui->add_ui(ui_id, "/menubar/menu-tools/checking", "text-correction", "text-correction");
+   }
 
-  void deactivate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void deactivate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui->remove_ui(ui_id);
-    ui->remove_action_group(action_group);
-  }
+      ui->remove_ui(ui_id);
+      ui->remove_action_group(action_group);
+   }
 
-  void update_ui() {
-    se_dbg(SE_DBG_PLUGINS);
+   void update_ui() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    bool visible = (get_current_document() != NULL);
+      bool visible = (get_current_document() != NULL);
 
-    action_group->get_action("text-correction")->set_sensitive(visible);
-  }
+      action_group->get_action("text-correction")->set_sensitive(visible);
+   }
 
-  void on_execute() {
-    // create dialog
-    AssistantTextCorrection* assistant =
-        gtkmm_utility::get_widget_derived<AssistantTextCorrection>(
-            SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV),
-            "assistant-text-correction.ui", "assistant");
-    assistant->show();
-  }
+   void on_execute() {
+      // create dialog
+      AssistantTextCorrection* assistant = gtkmm_utility::get_widget_derived<AssistantTextCorrection>(
+         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "assistant-text-correction.ui", "assistant");
+      assistant->show();
+   }
 
- protected:
-  Gtk::UIManager::ui_merge_id ui_id;
-  Glib::RefPtr<Gtk::ActionGroup> action_group;
+  protected:
+   Gtk::UIManager::ui_merge_id ui_id;
+   Glib::RefPtr<Gtk::ActionGroup> action_group;
 };
 
 REGISTER_EXTENSION(TextCorrectionPlugin)

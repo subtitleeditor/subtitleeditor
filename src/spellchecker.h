@@ -21,57 +21,57 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <glibmm.h>
+
 #include <memory>
 #include <vector>
 
 class SEEnchantDict;
 
 class SpellChecker {
- public:
-  // Return an instance of the SpellChecker.
-  static SpellChecker *instance();
+  public:
+   // Return an instance of the SpellChecker.
+   static SpellChecker* instance();
 
-  // Add this word to the dictionary only the time of the session.
-  void add_word_to_session(const Glib::ustring &word);
+   // Add this word to the dictionary only the time of the session.
+   void add_word_to_session(const Glib::ustring& word);
 
-  // Add this word to the personal dictionary.
-  void add_word_to_personal(const Glib::ustring &word);
+   // Add this word to the personal dictionary.
+   void add_word_to_personal(const Glib::ustring& word);
 
-  // Spell a word.
-  bool check(const Glib::ustring &word);
+   // Spell a word.
+   bool check(const Glib::ustring& word);
 
-  // Returns a list of suggestions from the misspelled word.
-  std::vector<Glib::ustring> get_suggest(const Glib::ustring &word);
+   // Returns a list of suggestions from the misspelled word.
+   std::vector<Glib::ustring> get_suggest(const Glib::ustring& word);
 
-  // Set the current dictionary. ("en_US", "de", ...)
-  bool set_dictionary(const Glib::ustring &lang);
+   // Set the current dictionary. ("en_US", "de", ...)
+   bool set_dictionary(const Glib::ustring& lang);
 
-  // Returns the current dictionary as isocode. ("en_US", "de", ...)
-  Glib::ustring get_dictionary();
+   // Returns the current dictionary as isocode. ("en_US", "de", ...)
+   Glib::ustring get_dictionary();
 
-  // Returns a list of the dictionaries available.
-  std::vector<Glib::ustring> get_dictionaries();
+   // Returns a list of the dictionaries available.
+   std::vector<Glib::ustring> get_dictionaries();
 
-  // The current dictionary's changed.
-  sigc::signal<void> &signal_dictionary_changed();
+   // The current dictionary's changed.
+   sigc::signal<void>& signal_dictionary_changed();
 
-  // Notes that you replaced 'bad' with 'good', so it's possibly more likely
-  // that future occurrences of 'bad' will be replaced with 'good'.
-  // So it might bump 'good' up in the suggestion list.
-  void store_replacement(const Glib::ustring &utf8bad,
-                         const Glib::ustring &utf8good);
+   // Notes that you replaced 'bad' with 'good', so it's possibly more likely
+   // that future occurrences of 'bad' will be replaced with 'good'.
+   // So it might bump 'good' up in the suggestion list.
+   void store_replacement(const Glib::ustring& utf8bad, const Glib::ustring& utf8good);
 
- protected:
-  // Constructor
-  SpellChecker();
+  protected:
+   // Constructor
+   SpellChecker();
 
-  // Desctructor
-  ~SpellChecker();
+   // Desctructor
+   ~SpellChecker();
 
-  // Setup the default dictionary.
-  bool init_dictionary();
+   // Setup the default dictionary.
+   bool init_dictionary();
 
- protected:
-  std::unique_ptr<SEEnchantDict> m_spellcheckerDict;
-  sigc::signal<void> m_signal_dictionary_changed;
+  protected:
+   std::unique_ptr<SEEnchantDict> m_spellcheckerDict;
+   sigc::signal<void> m_signal_dictionary_changed;
 };

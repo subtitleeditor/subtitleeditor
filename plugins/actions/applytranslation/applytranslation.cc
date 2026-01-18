@@ -23,93 +23,91 @@
 #include <i18n.h>
 
 class ApplyTranslationPlugin : public Action {
- public:
-  ApplyTranslationPlugin() {
-    activate();
-    update_ui();
-  }
+  public:
+   ApplyTranslationPlugin() {
+      activate();
+      update_ui();
+   }
 
-  ~ApplyTranslationPlugin() {
-    deactivate();
-  }
+   ~ApplyTranslationPlugin() {
+      deactivate();
+   }
 
-  void activate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void activate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    // actions
-    action_group = Gtk::ActionGroup::create("ApplyTranslationPlugin");
+      // actions
+      action_group = Gtk::ActionGroup::create("ApplyTranslationPlugin");
 
-    action_group->add(
-        Gtk::Action::create(
-            "apply-translation", Gtk::Stock::APPLY, _("Apply _Translation"),
-            _("Replace the text of all subtitles by the translation")),
-        sigc::mem_fun(*this, &ApplyTranslationPlugin::on_execute));
+      action_group->add(
+         Gtk::Action::create(
+            "apply-translation", Gtk::Stock::APPLY, _("Apply _Translation"), _("Replace the text of all subtitles by the translation")),
+         sigc::mem_fun(*this, &ApplyTranslationPlugin::on_execute));
 
-    // ui
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      // ui
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui_id = ui->new_merge_id();
+      ui_id = ui->new_merge_id();
 
-    ui->insert_action_group(action_group);
+      ui->insert_action_group(action_group);
 
-    ui->add_ui(ui_id, "/menubar/menu-tools/apply-translation",
-               "apply-translation", "apply-translation");
-  }
+      ui->add_ui(ui_id, "/menubar/menu-tools/apply-translation", "apply-translation", "apply-translation");
+   }
 
-  void deactivate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void deactivate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui->remove_ui(ui_id);
-    ui->remove_action_group(action_group);
-  }
+      ui->remove_ui(ui_id);
+      ui->remove_action_group(action_group);
+   }
 
-  void update_ui() {
-    se_dbg(SE_DBG_PLUGINS);
+   void update_ui() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    bool visible = (get_current_document() != NULL);
+      bool visible = (get_current_document() != NULL);
 
-    action_group->get_action("apply-translation")->set_sensitive(visible);
-  }
+      action_group->get_action("apply-translation")->set_sensitive(visible);
+   }
 
- protected:
-  void on_execute() {
-    se_dbg(SE_DBG_PLUGINS);
+  protected:
+   void on_execute() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    execute();
-  }
+      execute();
+   }
 
-  bool execute() {
-    se_dbg(SE_DBG_PLUGINS);
+   bool execute() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Document *doc = get_current_document();
+      Document* doc = get_current_document();
 
-    g_return_val_if_fail(doc, false);
+      g_return_val_if_fail(doc, false);
 
-    Subtitles subtitles = doc->subtitles();
+      Subtitles subtitles = doc->subtitles();
 
-    Glib::ustring translation;
+      Glib::ustring translation;
 
-    doc->start_command(_("Apply translation"));
+      doc->start_command(_("Apply translation"));
 
-    for (Subtitle sub = subtitles.get_first(); sub; ++sub) {
-      translation = sub.get_translation();
+      for (Subtitle sub = subtitles.get_first(); sub; ++sub) {
+         translation = sub.get_translation();
 
-      if (!translation.empty()) {
-        sub.set_text(translation);
+         if (!translation.empty()) {
+            sub.set_text(translation);
+         }
       }
-    }
 
-    doc->finish_command();
-    doc->flash_message(_("The translation was applied."));
+      doc->finish_command();
+      doc->flash_message(_("The translation was applied."));
 
-    return true;
-  }
+      return true;
+   }
 
- protected:
-  Gtk::UIManager::ui_merge_id ui_id;
-  Glib::RefPtr<Gtk::ActionGroup> action_group;
+  protected:
+   Gtk::UIManager::ui_merge_id ui_id;
+   Glib::RefPtr<Gtk::ActionGroup> action_group;
 };
 
 REGISTER_EXTENSION(ApplyTranslationPlugin)

@@ -25,16 +25,15 @@
 // ComboBox for choosing the NewLine type.
 // Windows or Unix.
 class ComboBoxNewLine : public Gtk::ComboBoxText {
- public:
-  // Constructor
-  ComboBoxNewLine(BaseObjectType* cobject,
-                  const Glib::RefPtr<Gtk::Builder>& builder);
+  public:
+   // Constructor
+   ComboBoxNewLine(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& builder);
 
-  // Sets current value.
-  // "Unix" or "Windows"
-  void set_value(const Glib::ustring& value);
+   // Sets current value.
+   // "Unix" or "Windows"
+   void set_value(const Glib::ustring& value);
 
-  // Returns the NewLine type.
-  // Windows or Unix.
-  Glib::ustring get_value() const;
+   // Returns the NewLine type.
+   // Windows or Unix.
+   Glib::ustring get_value() const;
 };

@@ -25,39 +25,37 @@
 #include <gui/comboboxframerate.h>
 
 class DialogActionMultiDoc : public Gtk::Dialog {
- public:
-  // Constructor
-  DialogActionMultiDoc(BaseObjectType* cobject,
-                       const Glib::RefPtr<Gtk::Builder>& builder);
+  public:
+   // Constructor
+   DialogActionMultiDoc(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& builder);
 
-  // Return true if the user choose to apply the action on all documents.
-  bool apply_to_all_documents();
+   // Return true if the user choose to apply the action on all documents.
+   bool apply_to_all_documents();
 
-  // Return a list of documents that the user wants to change.
-  DocumentList get_documents_to_apply();
+   // Return a list of documents that the user wants to change.
+   DocumentList get_documents_to_apply();
 
- protected:
-  Gtk::RadioButton* m_radioCurrentDocument;
-  Gtk::RadioButton* m_radioAllDocuments;
+  protected:
+   Gtk::RadioButton* m_radioCurrentDocument;
+   Gtk::RadioButton* m_radioAllDocuments;
 };
 
 class ErrorDialog : public Gtk::MessageDialog {
- public:
-  ErrorDialog(const Glib::ustring& primary,
-              const Glib::ustring& secondary = Glib::ustring());
+  public:
+   ErrorDialog(const Glib::ustring& primary, const Glib::ustring& secondary = Glib::ustring());
 };
 
 class FramerateChooserDialog : public Gtk::Dialog {
- public:
-  enum Action { IMPORT, EXPORT };
+  public:
+   enum Action { IMPORT, EXPORT };
 
-  explicit FramerateChooserDialog(Action action = IMPORT);
+   explicit FramerateChooserDialog(Action action = IMPORT);
 
-  // Launch the dialog and return the framerate value.
-  FRAMERATE execute();
+   // Launch the dialog and return the framerate value.
+   FRAMERATE execute();
 
-  void set_default_framerate(FRAMERATE framerate);
+   void set_default_framerate(FRAMERATE framerate);
 
- protected:
-  Gtk::ComboBox* m_comboFramerate;
+  protected:
+   Gtk::ComboBox* m_comboFramerate;
 };

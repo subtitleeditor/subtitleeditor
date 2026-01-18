@@ -25,11 +25,11 @@
 enum TIMING_MODE { TIME, FRAME };
 
 enum FRAMERATE {
-  FRAMERATE_23_976,
-  FRAMERATE_24,
-  FRAMERATE_25,     // PAL
-  FRAMERATE_29_97,  // NTSC
-  FRAMERATE_30
+   FRAMERATE_23_976,
+   FRAMERATE_24,
+   FRAMERATE_25,     // PAL
+   FRAMERATE_29_97,  // NTSC
+   FRAMERATE_30
 };
 
 // Return the label of the framerate.

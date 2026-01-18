@@ -22,76 +22,74 @@
 #include <utility.h>
 
 class AboutPlugin : public Action {
- public:
-  AboutPlugin() {
-    activate();
-  }
+  public:
+   AboutPlugin() {
+      activate();
+   }
 
-  ~AboutPlugin() {
-    deactivate();
-  }
+   ~AboutPlugin() {
+      deactivate();
+   }
 
-  void activate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void activate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    // actions
-    action_group = Gtk::ActionGroup::create("AboutPlugin");
+      // actions
+      action_group = Gtk::ActionGroup::create("AboutPlugin");
 
-    action_group->add(
-        Gtk::Action::create("about", Gtk::Stock::ABOUT, _("About"),
-                            _("Display information about the program")),
-        sigc::mem_fun(*this, &AboutPlugin::on_about));
+      action_group->add(Gtk::Action::create("about", Gtk::Stock::ABOUT, _("About"), _("Display information about the program")),
+                        sigc::mem_fun(*this, &AboutPlugin::on_about));
 
-    // ui
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      // ui
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui_id = ui->new_merge_id();
+      ui_id = ui->new_merge_id();
 
-    ui->insert_action_group(action_group);
+      ui->insert_action_group(action_group);
 
-    ui->add_ui(ui_id, "/menubar/menu-help/about", "about", "about");
-  }
+      ui->add_ui(ui_id, "/menubar/menu-help/about", "about", "about");
+   }
 
-  void deactivate() {
-    se_dbg(SE_DBG_PLUGINS);
+   void deactivate() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
+      Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-    ui->remove_ui(ui_id);
-    ui->remove_action_group(action_group);
-  }
+      ui->remove_ui(ui_id);
+      ui->remove_action_group(action_group);
+   }
 
- protected:
-  void on_about() {
-    se_dbg(SE_DBG_PLUGINS);
+  protected:
+   void on_about() {
+      se_dbg(SE_DBG_PLUGINS);
 
-    Gtk::AboutDialog dialog;
-    utility::set_transient_parent(dialog);
+      Gtk::AboutDialog dialog;
+      utility::set_transient_parent(dialog);
 
-    // name
-    dialog.set_name("Subtitle Editor");
-    // version
-    dialog.set_version(VERSION);
-    // copyright
-    dialog.set_copyright("kitone (IDJAAD djamel)");
-    // comments
-    dialog.set_comments(_("A tool for editing subtitles"));
-    // logo
-    dialog.set_logo_icon_name("subtitleeditor");
-    // authors
-    std::vector<Glib::ustring> authors;
-    authors.push_back("kitone (IDJAAD djamel)");
+      // name
+      dialog.set_name("Subtitle Editor");
+      // version
+      dialog.set_version(VERSION);
+      // copyright
+      dialog.set_copyright("kitone (IDJAAD djamel)");
+      // comments
+      dialog.set_comments(_("A tool for editing subtitles"));
+      // logo
+      dialog.set_logo_icon_name("subtitleeditor");
+      // authors
+      std::vector<Glib::ustring> authors;
+      authors.push_back("kitone (IDJAAD djamel)");
 
-    dialog.set_authors(authors);
+      dialog.set_authors(authors);
 
-    // translator-credits
-    dialog.set_translator_credits(_("translator-credits"));
+      // translator-credits
+      dialog.set_translator_credits(_("translator-credits"));
 
-    // website
-    dialog.set_website("https://subtitleeditor.github.io/subtitleeditor/");
+      // website
+      dialog.set_website("https://subtitleeditor.github.io/subtitleeditor/");
 
-    // license
-    Glib::ustring license = R"(
+      // license
+      Glib::ustring license = R"(
         This program is free software; you can redistribute it and/or modify
         it under the terms of the GNU General Public License as published by
         the Free Software Foundation; either version 3 of the License, or
@@ -106,14 +104,14 @@ class AboutPlugin : public Action {
         along with this program; if not, write to the Free Software
         Foundation, Inc., 59 Temple Place — Suite 330, Boston, MA 02111 USA
       )";
-    dialog.set_license(license);
+      dialog.set_license(license);
 
-    dialog.run();
-  }
+      dialog.run();
+   }
 
- protected:
-  Gtk::UIManager::ui_merge_id ui_id;
-  Glib::RefPtr<Gtk::ActionGroup> action_group;
+  protected:
+   Gtk::UIManager::ui_merge_id ui_id;
+   Glib::RefPtr<Gtk::ActionGroup> action_group;
 };
 
 REGISTER_EXTENSION(AboutPlugin)

@@ -26,99 +26,99 @@
 // plain-text/export-bl-between-subtitles
 // plain-text/import-bl-between-subtitles
 class PlainTextFormat : public SubtitleFormatIO {
- public:
-  void open(Reader &file) {
-    Subtitles subtitles = document()->subtitles();
-    Glib::ustring line;
-    bool usebl = cfg::get_boolean("plain-text", "import-bl-between-subtitles");
+  public:
+   void open(Reader& file) {
+      Subtitles subtitles = document()->subtitles();
+      Glib::ustring line;
+      bool usebl = cfg::get_boolean("plain-text", "import-bl-between-subtitles");
 
-    if (!usebl) {
-      // ignore blank lines
-      while (file.getline(line)) {
-        Subtitle sub = subtitles.append();
-        sub.set_text(line);
-      }
-    } else {
-      // separate subtitles at blank lines
-      Glib::ustring subtext;
-      subtext.clear();
-      int textlines = 0;
+      if (!usebl) {
+         // ignore blank lines
+         while (file.getline(line)) {
+            Subtitle sub = subtitles.append();
+            sub.set_text(line);
+         }
+      } else {
+         // separate subtitles at blank lines
+         Glib::ustring subtext;
+         subtext.clear();
+         int textlines = 0;
 
-      while (file.getline(line)) {
-        if (line.empty()) {
-          if (textlines > 0) {
+         while (file.getline(line)) {
+            if (line.empty()) {
+               if (textlines > 0) {
+                  Subtitle sub = subtitles.append();
+                  sub.set_text(subtext);
+                  subtext.clear();
+                  textlines = 0;
+               }
+            } else {
+               if (textlines > 0)
+                  subtext += "\n";
+               subtext += line;
+               textlines++;
+            }
+         }
+
+         // if the file didn't end with a blank line, we need to append leftover
+         // lines as one more subtitle
+         if (textlines > 0) {
             Subtitle sub = subtitles.append();
             sub.set_text(subtext);
             subtext.clear();
-            textlines = 0;
-          }
-        } else {
-          if (textlines > 0)
-            subtext += "\n";
-          subtext += line;
-          textlines++;
-        }
+         }
+      }  // separate with blank lines
+   }
+
+   void save(Writer& file) {
+      Document* doc = document();
+      bool usebl = cfg::get_boolean("plain-text", "export-bl-between-subtitles");
+
+      // how many subtitles does this document have?
+      int subcnt = doc->subtitles().size();
+      if (subcnt <= 0)  // no subtitles, nothing to do
+         return;
+
+      // initialize the output loop
+      subcnt--;  // output all subtitles except the last one.
+      int i = 0;
+      Subtitle sub = doc->subtitles().get_first();
+
+      while (i < subcnt) {
+         file.write(sub.get_text() + "\n");
+         if (usebl)
+            file.write("\n");
+         ++sub;
+         i++;
       }
 
-      // if the file didn't end with a blank line, we need to append leftover
-      // lines as one more subtitle
-      if (textlines > 0) {
-        Subtitle sub = subtitles.append();
-        sub.set_text(subtext);
-        subtext.clear();
-      }
-    }  // separate with blank lines
-  }
-
-  void save(Writer &file) {
-    Document *doc = document();
-    bool usebl = cfg::get_boolean("plain-text", "export-bl-between-subtitles");
-
-    // how many subtitles does this document have?
-    int subcnt = doc->subtitles().size();
-    if (subcnt <= 0)  // no subtitles, nothing to do
-      return;
-
-    // initialize the output loop
-    subcnt--;  // output all subtitles except the last one.
-    int i = 0;
-    Subtitle sub = doc->subtitles().get_first();
-
-    while (i < subcnt) {
+      // Now, output the last subtitle with no blank line appended.
       file.write(sub.get_text() + "\n");
-      if (usebl)
-        file.write("\n");
-      ++sub;
-      i++;
-    }
-
-    // Now, output the last subtitle with no blank line appended.
-    file.write(sub.get_text() + "\n");
-  }
+   }
 };
 
 class PlainTextFormatPlugin : public SubtitleFormat {
- public:
-  SubtitleFormatInfo get_info() {
-    SubtitleFormatInfo info;
-    info.name = "Plain Text Format";
-    info.extension = "txt";
+  public:
+   SubtitleFormatInfo get_info() {
+      SubtitleFormatInfo info;
+      info.name = "Plain Text Format";
+      info.extension = "txt";
 
-    // The Plaint Text Format can import any text file regardless of its
-    // contents, so the actual pattern would be ".*". But then it would steal
-    // all subtitle files, such as .srt, .mpsub, etc, from their correct format
-    // interpreters and digest them all as plain text, which would be wrong. For
-    // that reason, it must never identify any file as its own and let the more
-    // picky subtitle formats decide if they want to process a file or not.
-    info.pattern = "nEvEr MaTcH a PlAiN-texT fILe autOmatIcallY";
+      // The Plaint Text Format can import any text file regardless of its
+      // contents, so the actual pattern would be ".*". But then it would steal
+      // all subtitle files, such as .srt, .mpsub, etc, from their correct format
+      // interpreters and digest them all as plain text, which would be wrong. For
+      // that reason, it must never identify any file as its own and let the more
+      // picky subtitle formats decide if they want to process a file or not.
+      info.pattern = "nEvEr MaTcH a PlAiN-texT fILe autOmatIcallY";
 
-    return info;
-  }
+      return info;
+   }
 
-  SubtitleFormatIO *create() {
-    PlainTextFormat *sf = new PlainTextFormat();
-    return sf;
-  }
+   SubtitleFormatIO* create() {
+      PlainTextFormat* sf = new PlainTextFormat();
+      return sf;
+   }
 };
 
 REGISTER_EXTENSION(PlainTextFormatPlugin)

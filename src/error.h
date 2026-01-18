@@ -24,35 +24,35 @@
 
 // Base class
 class SubtitleError : public std::exception {
- public:
-  explicit SubtitleError(const std::string &msg) : m_msg(msg) {
-  }
+  public:
+   explicit SubtitleError(const std::string& msg) : m_msg(msg) {
+   }
 
-  virtual ~SubtitleError() throw() {
-  }
+   virtual ~SubtitleError() throw() {
+   }
 
-  virtual const char *what() const throw() {
-    return m_msg.c_str();
-  }
+   virtual const char* what() const throw() {
+      return m_msg.c_str();
+   }
 
- private:
-  std::string m_msg;
+  private:
+   std::string m_msg;
 };
 
 class UnrecognizeFormatError : public SubtitleError {
- public:
-  explicit UnrecognizeFormatError(const std::string &msg) : SubtitleError(msg) {
-  }
+  public:
+   explicit UnrecognizeFormatError(const std::string& msg) : SubtitleError(msg) {
+   }
 };
 
 class IOFileError : public SubtitleError {
- public:
-  explicit IOFileError(const std::string &msg) : SubtitleError(msg) {
-  }
+  public:
+   explicit IOFileError(const std::string& msg) : SubtitleError(msg) {
+   }
 };
 
 class EncodingConvertError : public SubtitleError {
- public:
-  explicit EncodingConvertError(const std::string &msg) : SubtitleError(msg) {
-  }
+  public:
+   explicit EncodingConvertError(const std::string& msg) : SubtitleError(msg) {
+   }
 };

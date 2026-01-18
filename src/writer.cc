@@ -18,10 +18,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+#include "writer.h"
+
 #include "debug.h"
 #include "encodings.h"
 #include "error.h"
-#include "writer.h"
 
 Writer::Writer() {
 }
@@ -30,9 +31,9 @@ Writer::~Writer() {
 }
 
 const Glib::ustring& Writer::get_data() const {
-  return m_data;
+   return m_data;
 }
 
 void Writer::write(const Glib::ustring& buf) {
-  m_data += buf;
+   m_data += buf;
 }

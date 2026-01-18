@@ -23,62 +23,55 @@
 #include "errorchecking.h"
 
 class MaxCharactersPerLine : public ErrorChecking {
- public:
-  MaxCharactersPerLine()
-      : ErrorChecking("max-characters-per-line",
-                      _("Maximum Characters per Line"),
-                      _("An error is detected if a line is too long.")) {
-    m_maxCPL = 40;
-  }
+  public:
+   MaxCharactersPerLine()
+       : ErrorChecking("max-characters-per-line", _("Maximum Characters per Line"), _("An error is detected if a line is too long.")) {
+      m_maxCPL = 40;
+   }
 
-  virtual void init() {
-    m_maxCPL = cfg::get_int("timing", "max-characters-per-line");
-  }
+   virtual void init() {
+      m_maxCPL = cfg::get_int("timing", "max-characters-per-line");
+   }
 
-  virtual bool execute(Info &info) {
-    std::istringstream iss(info.currentSub.get_characters_per_line_text());
-    std::string line;
+   virtual bool execute(Info& info) {
+      std::istringstream iss(info.currentSub.get_characters_per_line_text());
+      std::string line;
 
-    while (std::getline(iss, line)) {
-      int number = utility::string_to_int(line);
+      while (std::getline(iss, line)) {
+         int number = utility::string_to_int(line);
 
-      if (number > m_maxCPL) {
-        if (info.tryToFix) {
-          info.currentSub.set_text(
-              word_wrap(info.currentSub.get_text(), m_maxCPL));
-          return true;
-        }
+         if (number > m_maxCPL) {
+            if (info.tryToFix) {
+               info.currentSub.set_text(word_wrap(info.currentSub.get_text(), m_maxCPL));
+               return true;
+            }
 
-        info.error = build_message(
-            ngettext("Subtitle has a too long line: <b>1 character</b>",
-                     "Subtitle has a too long line: <b>%i characters</b>",
-                     number),
-            number);
-        info.solution = build_message(
-            _("<b>Automatic correction:</b>\n%s"),
-            word_wrap(info.currentSub.get_text(), m_maxCPL).c_str());
-        return true;
+            info.error = build_message(
+               ngettext("Subtitle has a too long line: <b>1 character</b>", "Subtitle has a too long line: <b>%i characters</b>", number), number);
+            info.solution = build_message(_("<b>Automatic correction:</b>\n%s"), word_wrap(info.currentSub.get_text(), m_maxCPL).c_str());
+            return true;
+         }
       }
-    }
 
-    return false;
-  }
+      return false;
+   }
 
-  Glib::ustring word_wrap(Glib::ustring str, Glib::ustring::size_type width) {
-    Glib::ustring::size_type curWidth = width;
-    Glib::ustring::size_type spacePos;
-    while (curWidth < str.length()) {
-      spacePos = str.rfind(' ', curWidth);
-      if (spacePos == Glib::ustring::npos)
-        spacePos = str.find(' ', curWidth);
-      if (spacePos != Glib::ustring::npos) {
-        str.replace(spacePos, 1, "\n");
-        curWidth = spacePos + width + 1;
-      } else break;
-    }
-    return str;
-  }
+   Glib::ustring word_wrap(Glib::ustring str, Glib::ustring::size_type width) {
+      Glib::ustring::size_type curWidth = width;
+      Glib::ustring::size_type spacePos;
+      while (curWidth < str.length()) {
+         spacePos = str.rfind(' ', curWidth);
+         if (spacePos == Glib::ustring::npos)
+            spacePos = str.find(' ', curWidth);
+         if (spacePos != Glib::ustring::npos) {
+            str.replace(spacePos, 1, "\n");
+            curWidth = spacePos + width + 1;
+         } else
+            break;
+      }
+      return str;
+   }
 
- protected:
-  int m_maxCPL;
+  protected:
+   int m_maxCPL;
 };

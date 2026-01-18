@@ -22,74 +22,73 @@
 #include <utility.h>
 
 class MPL2 : public SubtitleFormatIO {
- public:
-  void open(Reader &file) {
-    Glib::RefPtr<Glib::Regex> re =
-        Glib::Regex::create("^\\[(\\d+)\\]\\[(\\d+)\\](.*?)$");
+  public:
+   void open(Reader& file) {
+      Glib::RefPtr<Glib::Regex> re = Glib::Regex::create("^\\[(\\d+)\\]\\[(\\d+)\\](.*?)$");
 
-    Subtitles subtitles = document()->subtitles();
+      Subtitles subtitles = document()->subtitles();
 
-    Glib::ustring line;
-    long start, end;
-    Glib::ustring text;
-    int ds = 100;  // decaseconds (0,1 s)
+      Glib::ustring line;
+      long start, end;
+      Glib::ustring text;
+      int ds = 100;  // decaseconds (0,1 s)
 
-    while (file.getline(line)) {
-      if (!re->match(line))
-        continue;
+      while (file.getline(line)) {
+         if (!re->match(line))
+            continue;
 
-      std::vector<Glib::ustring> group = re->split(line);
+         std::vector<Glib::ustring> group = re->split(line);
 
-      start = utility::string_to_int(group[1]);
-      end = utility::string_to_int(group[2]);
-      text = group[3];
+         start = utility::string_to_int(group[1]);
+         end = utility::string_to_int(group[2]);
+         text = group[3];
 
-      // Append a subtitle
-      Subtitle sub = subtitles.append();
+         // Append a subtitle
+         Subtitle sub = subtitles.append();
 
-      utility::replace(text, "|", "\n");
+         utility::replace(text, "|", "\n");
 
-      sub.set_text(text);
-      sub.set_start(SubtitleTime(start * ds));
-      sub.set_end(SubtitleTime(end * ds));
-    }
-  }
+         sub.set_text(text);
+         sub.set_start(SubtitleTime(start * ds));
+         sub.set_end(SubtitleTime(end * ds));
+      }
+   }
 
-  void save(Writer &file) {
-    Glib::ustring text;
-    double ds = 100;
+   void save(Writer& file) {
+      Glib::ustring text;
+      double ds = 100;
 
-    // subtitles
-    for (Subtitle sub = document()->subtitles().get_first(); sub; ++sub) {
-      text = sub.get_text();
+      // subtitles
+      for (Subtitle sub = document()->subtitles().get_first(); sub; ++sub) {
+         text = sub.get_text();
 
-      utility::replace(text, "\n", "|");
+         utility::replace(text, "\n", "|");
 
-      long start = (long)(sub.get_start().totalmsecs / ds);
-      long end = (long)(sub.get_end().totalmsecs / ds);
+         long start = (long)(sub.get_start().totalmsecs / ds);
+         long end = (long)(sub.get_end().totalmsecs / ds);
 
-      // [start][end]text
-      file.write(Glib::ustring::compose("[%1][%2]%3\n", start, end, text));
-    }
-  }
+         // [start][end]text
+         file.write(Glib::ustring::compose("[%1][%2]%3\n", start, end, text));
+      }
+   }
 };
 
 class MPL2Plugin : public SubtitleFormat {
- public:
-  SubtitleFormatInfo get_info() {
-    SubtitleFormatInfo info;
+  public:
+   SubtitleFormatInfo get_info() {
+      SubtitleFormatInfo info;
 
-    info.name = "MPL2";
-    info.extension = "txt";
-    info.pattern = "^\\[(\\d+)\\]\\[(\\d+)\\](.*?)\\R";
+      info.name = "MPL2";
+      info.extension = "txt";
+      info.pattern = "^\\[(\\d+)\\]\\[(\\d+)\\](.*?)\\R";
 
-    return info;
-  }
+      return info;
+   }
 
-  SubtitleFormatIO *create() {
-    MPL2 *sf = new MPL2();
-    return sf;
-  }
+   SubtitleFormatIO* create() {
+      MPL2* sf = new MPL2();
+      return sf;
+   }
 };
 
 REGISTER_EXTENSION(MPL2Plugin)

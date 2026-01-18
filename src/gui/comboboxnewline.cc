@@ -21,22 +21,20 @@
 #include "comboboxnewline.h"
 
 // Constructor
-ComboBoxNewLine::ComboBoxNewLine(BaseObjectType* cobject,
-                                 const Glib::RefPtr<Gtk::Builder>& /*builder*/)
-    : Gtk::ComboBoxText(cobject) {
-  append("Macintosh");
-  append("Unix");
-  append("Windows");
+ComboBoxNewLine::ComboBoxNewLine(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& /*builder*/) : Gtk::ComboBoxText(cobject) {
+   append("Macintosh");
+   append("Unix");
+   append("Windows");
 
-  set_active_text("Unix");
+   set_active_text("Unix");
 }
 
 void ComboBoxNewLine::set_value(const Glib::ustring& value) {
-  set_active_text(value);
+   set_active_text(value);
 }
 
 // Returns the NewLine type.
 // Windows or Unix.
 Glib::ustring ComboBoxNewLine::get_value() const {
-  return get_active_text();
+   return get_active_text();
 }

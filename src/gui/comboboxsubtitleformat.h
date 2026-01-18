@@ -24,13 +24,12 @@
 
 // ComboBox for choosing the format of subtitle.
 class ComboBoxSubtitleFormat : public Gtk::ComboBoxText {
- public:
-  // Constructor
-  ComboBoxSubtitleFormat(BaseObjectType* cobject,
-                         const Glib::RefPtr<Gtk::Builder>& builder);
+  public:
+   // Constructor
+   ComboBoxSubtitleFormat(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& builder);
 
-  void set_value(const Glib::ustring& value);
+   void set_value(const Glib::ustring& value);
 
-  // Returns the subtitle format selected.
-  Glib::ustring get_value() const;
+   // Returns the subtitle format selected.
+   Glib::ustring get_value() const;
 };

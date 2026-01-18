@@ -23,17 +23,17 @@
 #include <glibmm.h>
 
 class Extension {
- public:
-  Extension();
+  public:
+   Extension();
 
-  virtual ~Extension();
+   virtual ~Extension();
 
-  virtual bool is_configurable();
+   virtual bool is_configurable();
 
-  virtual void create_configure_dialog();
+   virtual void create_configure_dialog();
 };
 
-#define REGISTER_EXTENSION(classname)          \
-  extern "C" Extension* extension_register() { \
-    return new classname;                      \
-  }
+#define REGISTER_EXTENSION(classname)           \
+   extern "C" Extension* extension_register() { \
+      return new classname;                     \
+   }

@@ -22,72 +22,72 @@
 
 #include <deque>
 #include <list>
+
 #include "command.h"
 
 class Document;
 
 class CommandGroup : public Command {
- public:
-  explicit CommandGroup(const Glib::ustring &description);
-  ~CommandGroup();
+  public:
+   explicit CommandGroup(const Glib::ustring& description);
+   ~CommandGroup();
 
-  void add(Command *cmd);
+   void add(Command* cmd);
 
-  void restore();
-  void execute();
+   void restore();
+   void execute();
 
- protected:
-  std::list<Command *> m_stack;
+  protected:
+   std::list<Command*> m_stack;
 };
 
 class CommandSystem {
- public:
-  explicit CommandSystem(Document &doc);
+  public:
+   explicit CommandSystem(Document& doc);
 
-  virtual ~CommandSystem();
+   virtual ~CommandSystem();
 
-  // return the description of the last undo command or NULL
-  Glib::ustring get_undo_description();
+   // return the description of the last undo command or NULL
+   Glib::ustring get_undo_description();
 
-  // return the description of the last redo command or NULL
-  Glib::ustring get_redo_description();
+   // return the description of the last redo command or NULL
+   Glib::ustring get_redo_description();
 
-  // Start recording
-  void start(const Glib::ustring &description);
+   // Start recording
+   void start(const Glib::ustring& description);
 
-  // Add a new command
-  void add(Command *cmd);
+   // Add a new command
+   void add(Command* cmd);
 
-  // return true if it is recording. You can add your command if it's.
-  bool is_recording();
+   // return true if it is recording. You can add your command if it's.
+   bool is_recording();
 
-  // Stop recording
-  void finish();
+   // Stop recording
+   void finish();
 
-  // Undo the last command
-  void undo();
+   // Undo the last command
+   void undo();
 
-  // Redo the last undone commande
-  void redo();
+   // Redo the last undone commande
+   void redo();
 
-  // Clear all stack (undo/redo)
-  void clear();
+   // Clear all stack (undo/redo)
+   void clear();
 
-  // emit with undo/redo/start/finish
-  sigc::signal<void> &signal_changed();
+   // emit with undo/redo/start/finish
+   sigc::signal<void>& signal_changed();
 
- protected:
-  void clearRedo();
+  protected:
+   void clearRedo();
 
-  void on_config_interface_changed(const Glib::ustring &name,
-                                   const Glib::ustring &value);
+   void on_config_interface_changed(const Glib::ustring& name, const Glib::ustring& value);
 
- protected:
-  Document &m_document;
-  int m_max_undo_stack{10};
-  bool m_is_recording{false};
-  std::deque<Command *> m_undo_stack;
-  std::deque<Command *> m_redo_stack;
+  protected:
+   Document& m_document;
+   int m_max_undo_stack{10};
+   bool m_is_recording{false};
+   std::deque<Command*> m_undo_stack;
+   std::deque<Command*> m_redo_stack;
 
-  sigc::signal<void> m_signal_changed;
+   sigc::signal<void> m_signal_changed;
 };

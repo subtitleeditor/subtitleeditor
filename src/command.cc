@@ -19,30 +19,30 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include "command.h"
+
 #include "debug.h"
 #include "document.h"
 
-Command::Command(Document *doc, const Glib::ustring &description)
-    : m_document(doc), m_description(description) {
-  se_dbg_msg(SE_DBG_COMMAND, "description=%s", description.c_str());
+Command::Command(Document* doc, const Glib::ustring& description) : m_document(doc), m_description(description) {
+   se_dbg_msg(SE_DBG_COMMAND, "description=%s", description.c_str());
 }
 
 Command::~Command() {
-  se_dbg_msg(SE_DBG_COMMAND, "description=%s", m_description.c_str());
+   se_dbg_msg(SE_DBG_COMMAND, "description=%s", m_description.c_str());
 }
 
-Document *Command::document() {
-  return m_document;
+Document* Command::document() {
+   return m_document;
 }
 
 Glib::ustring Command::description() const {
-  return m_description;
+   return m_description;
 }
 
 SubtitleModelPtr Command::get_document_subtitle_model() {
-  return document()->get_subtitle_model();
+   return document()->get_subtitle_model();
 }
 
 SubtitleViewPtr Command::get_document_subtitle_view() {
-  return document()->get_subtitle_view();
+   return document()->get_subtitle_view();
 }

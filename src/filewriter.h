@@ -26,16 +26,15 @@
 // Convert from UTF-8 to the character coding.
 // Convert Unix newline to Windows or Macintosh if need.
 class FileWriter : public Writer {
- public:
-  FileWriter(const Glib::ustring &uri, const Glib::ustring &charset,
-             const Glib::ustring &newline);
+  public:
+   FileWriter(const Glib::ustring& uri, const Glib::ustring& charset, const Glib::ustring& newline);
 
-  // Write to the file.
-  // Error: throw an IOFileError exception if failed.
-  void to_file();
+   // Write to the file.
+   // Error: throw an IOFileError exception if failed.
+   void to_file();
 
- protected:
-  Glib::ustring m_uri;
-  Glib::ustring m_charset;
-  Glib::ustring m_newline;
+  protected:
+   Glib::ustring m_uri;
+   Glib::ustring m_charset;
+   Glib::ustring m_newline;
 };
