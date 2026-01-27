@@ -136,7 +136,7 @@ class ClipboardPlugin : public Action {
       // ui
       Glib::RefPtr<Gtk::UIManager> ui = get_ui_manager();
 
-      ui_id = ui->new_merge_id();
+      ui_id_selection = ui->new_merge_id();
       ui_id_edit = ui->new_merge_id();
 
       ui->insert_action_group(action_group);
@@ -722,7 +722,7 @@ class ClipboardPlugin : public Action {
 
       if (flags & PASTE_TIMING_AFTER) {
          // We use the old selection to know how-to apply the time shift
-         guint selection_size = subtitles.get_selection().size();
+         auto selection_size = subtitles.get_selection().size();
 
          if (selection_size == 0) {
             // There're no subtitles, we want to keep the original subtitles times
