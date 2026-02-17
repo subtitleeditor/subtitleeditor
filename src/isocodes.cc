@@ -44,7 +44,7 @@ bool iso_codes_load_file(const Glib::ustring& iso_id, const Glib::ustring& id_co
       if (root->get_name() != Glib::ustring::compose("%1_entries", iso_id))
          return false;
 
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
       xmlpp::Node::const_NodeList entries =
 #else
       xmlpp::Node::NodeList entries =

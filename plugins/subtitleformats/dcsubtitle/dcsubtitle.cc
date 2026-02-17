@@ -67,7 +67,7 @@ class DCSubtitle : public SubtitleFormatIO {
          // element MovieTitle
          // xmlpp::Element* xml_movietitle =
 
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
          xml_dcsubtitle->add_child_element("MovieTitle");
          // element ReelNumber
          xmlpp::Element* xml_reelnumber = xml_dcsubtitle->add_child_element("ReelNumber");
@@ -83,7 +83,7 @@ class DCSubtitle : public SubtitleFormatIO {
 // xmlpp::Element* xml_loadfont = xml_dcsubtitle->add_child("LoadFont");
 
 // Font
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
          xmlpp::Element* xml_font = xml_dcsubtitle->add_child_element("Font");
 #else
          xmlpp::Element* xml_font = xml_dcsubtitle->add_child("Font");
@@ -164,7 +164,7 @@ class DCSubtitle : public SubtitleFormatIO {
 // attribute VPosition
 
 // text (child)
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
          Glib::ustring text = xml_text->get_first_child_text()->get_content();
 #else
          Glib::ustring text = xml_text->get_child_text()->get_content();
@@ -184,7 +184,7 @@ class DCSubtitle : public SubtitleFormatIO {
       Glib::ustring FadeUpTime = "0";
       Glib::ustring FadeDownTime = "0";
 
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
       xmlpp::Element* xml_subtitle = xml_root->add_child_element("Subtitle");
 #else
       xmlpp::Element* xml_subtitle = xml_root->add_child("Subtitle");
@@ -206,7 +206,7 @@ class DCSubtitle : public SubtitleFormatIO {
          Glib::ustring VAlign = "bottom";
          Glib::ustring VPosition = "0.0";  // FIXME ?
 
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
          xmlpp::Element* xml_text = xml_subtitle->add_child_element("Text");
 #else
          xmlpp::Element* xml_text = xml_subtitle->add_child("Text");
@@ -217,7 +217,7 @@ class DCSubtitle : public SubtitleFormatIO {
          xml_text->set_attribute("HPosition", HPosition);
          xml_text->set_attribute("VAlign", VAlign);
          xml_text->set_attribute("VPosition", VPosition);
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
          xml_text->set_first_child_text(line);
 #else
          xml_text->set_child_text(line);
