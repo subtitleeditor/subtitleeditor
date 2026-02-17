@@ -108,7 +108,7 @@ class SubtitleEditorProject : public SubtitleFormatIO {
    }
 
    const xmlpp::Element* get_unique_children(const xmlpp::Node* root, const Glib::ustring& name) {
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
       const xmlpp::Node::const_NodeList children = root->get_children(name);
 #else
       const xmlpp::Node::NodeList children = root->get_children(name);
@@ -145,7 +145,7 @@ class SubtitleEditorProject : public SubtitleFormatIO {
       if (uri.empty())
          return;
 
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
       xmlpp::Element* xmlpl = root->add_child_element("player");
 #else
       xmlpp::Element* xmlpl = root->add_child("player");
@@ -177,7 +177,7 @@ class SubtitleEditorProject : public SubtitleFormatIO {
       if (!wf)
          return;
 
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
       xmlpp::Element* xmlwf = root->add_child_element("waveform");
 #else
       xmlpp::Element* xmlwf = root->add_child("waveform");
@@ -208,7 +208,7 @@ class SubtitleEditorProject : public SubtitleFormatIO {
       if (!kf)
          return;  // don't need to save without KeyFrames...
 
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
       xmlpp::Element* xmlwf = root->add_child_element("keyframes");
 #else
       xmlpp::Element* xmlwf = root->add_child("keyframes");
@@ -224,7 +224,7 @@ class SubtitleEditorProject : public SubtitleFormatIO {
 
       Styles styles = document()->styles();
 
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
       const xmlpp::Node::const_NodeList list_styles = xmlstyles->get_children("style");
 #else
       const xmlpp::Node::NodeList list_styles = xmlstyles->get_children("style");
@@ -244,7 +244,7 @@ class SubtitleEditorProject : public SubtitleFormatIO {
    }
 
    void save_styles(xmlpp::Element* root) {
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
       xmlpp::Element* xmlstyles = root->add_child_element("styles");
 #else
       xmlpp::Element* xmlstyles = root->add_child("styles");
@@ -253,7 +253,7 @@ class SubtitleEditorProject : public SubtitleFormatIO {
       Styles styles = document()->styles();
 
       for (Style style = styles.first(); style; ++style) {
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
          xmlpp::Element* xml = xmlstyles->add_child_element("style");
 #else
          xmlpp::Element* xml = xmlstyles->add_child("style");
@@ -314,7 +314,7 @@ class SubtitleEditorProject : public SubtitleFormatIO {
    }
 
    void save_subtitles(xmlpp::Element* root) {
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
       xmlpp::Element* xmlsubtitles = root->add_child_element("subtitles");
 #else
       xmlpp::Element* xmlsubtitles = root->add_child("subtitles");
@@ -329,7 +329,7 @@ class SubtitleEditorProject : public SubtitleFormatIO {
       Subtitles subtitles = document()->subtitles();
 
       for (Subtitle sub = subtitles.get_first(); sub; ++sub) {
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
          xmlpp::Element* xmlsub = xmlsubtitles->add_child_element("subtitle");
 #else
          xmlpp::Element* xmlsub = xmlsubtitles->add_child("subtitle");
@@ -366,7 +366,7 @@ class SubtitleEditorProject : public SubtitleFormatIO {
    }
 
    void save_subtitles_selection(xmlpp::Element* root) {
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
       xmlpp::Element* xml = root->add_child_element("subtitles-selection");
 #else
       xmlpp::Element* xml = root->add_child("subtitles-selection");
@@ -375,7 +375,7 @@ class SubtitleEditorProject : public SubtitleFormatIO {
       std::vector<Subtitle> selection = document()->subtitles().get_selection();
 
       for (const auto& subtitle : selection) {
-#ifdef HAVE_LIBXMLXX_3
+#ifdef HAVE_LIBXMLXX_NEW
          xmlpp::Element* xmlsub = xml->add_child_element("subtitle");
 #else
          xmlpp::Element* xmlsub = xml->add_child("subtitle");

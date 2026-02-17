@@ -20,7 +20,7 @@ AC_C_INLINE
 # Checks for programs.
 AC_LANG([C++])
 AC_PROG_CXX
-AX_CXX_COMPILE_STDCXX([14], [noext], [mandatory])
+AX_CXX_COMPILE_STDCXX([17], [noext], [mandatory])
 
 # Checks for library functions.
 AC_FUNC_SELECT_ARGTYPES
@@ -87,14 +87,29 @@ else
 fi
 
 # =========================================================================
-# check libxml++
+# check libxml++, prefer 4, but then fall back to 3, 2.6 or 5: 5 has the worst unicode support, apparently, so it is at the end, though in practice it should not matter
 
-# PKG_CHECK_MODULES(LIBXML, libxml++-2.6 >= 2.20)
-PKG_CHECK_MODULES(LIBXML, [libxml++-3.0 >= 3.0.0], [
-  AC_DEFINE([HAVE_LIBXMLXX_3], [1], [Define if libxml++-3.0 is available])
-], [
-  PKG_CHECK_MODULES(LIBXML, [libxml++-2.6 >= 2.20])
-])
+PKG_CHECK_MODULES(LIBXML,
+                  [libxml++-4.0 >= 4.0.0],
+                  [AC_DEFINE([HAVE_LIBXMLXX_NEW],
+                             [1],
+                             [Define if libxml++-4.0 is available])],
+                  [PKG_CHECK_MODULES(LIBXML,
+                                     [libxml++-3.0 >= 3.0.0],
+                                     [AC_DEFINE([HAVE_LIBXMLXX_NEW],
+                                                [1],
+                                                [Define if libxml++-3.0 is available])],
+                                     [PKG_CHECK_MODULES(LIBXML,
+                                                        [libxml++-2.6 >= 2.20],
+                                                        [],
+                                                        [PKG_CHECK_MODULES(LIBXML,
+                                                                           [libxml++-5.0 >= 5.0.0],
+                                                                           [AC_DEFINE([HAVE_LIBXMLXX_NEW],
+                                                                                      [1],
+                                                                                      [Define if libxml++-5.0 is available])])
+                                                        ])
+                                     ])
+                  ])
 
 # =========================================================================
 # check gstreamer
