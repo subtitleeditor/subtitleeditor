@@ -204,8 +204,8 @@ class TextCorrectionPlugin : public Action {
 
    void on_execute() {
       // create dialog
-      AssistantTextCorrection* assistant = gtkmm_utility::get_widget_derived<AssistantTextCorrection>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "assistant-text-correction.ui", "assistant");
+      AssistantTextCorrection* assistant =
+         gtkmm_utility::get_widget_derived<AssistantTextCorrection>(RESOURCE_PATH(SE_PLUGIN_PATH_UI), "assistant-text-correction.ui", "assistant");
       assistant->show();
    }
 

@@ -8,7 +8,7 @@ AM_CPPFLAGS = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/src \
 	$(SUBTITLEEDITOR_CFLAGS) \
-	-DSE_PLUGIN_PATH_DEV=\"$(actionplugindevdir)\" \
+	-DSE_PLUGIN_PATH_UI_DEV=\"$(actionplugindevdir)\" \
 	-DSE_PLUGIN_PATH_UI=\"$(uidir)\"
 
 pluginlib_LTLIBRARIES = libscalesubtitles.la

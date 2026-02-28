@@ -172,8 +172,8 @@ void DialogOpenDocument::show_video(bool state) {
 
 // Create a instance of the dialog.
 DialogOpenDocument::unique_ptr DialogOpenDocument::create() {
-   unique_ptr ptr(gtkmm_utility::get_widget_derived<DialogOpenDocument>(
-      SE_DEV_VALUE(PACKAGE_UI_DIR, PACKAGE_UI_DIR_DEV), "dialog-open-document.ui", "dialog-open-document"));
+   unique_ptr ptr(
+      gtkmm_utility::get_widget_derived<DialogOpenDocument>(RESOURCE_PATH(PACKAGE_UI_DIR), "dialog-open-document.ui", "dialog-open-document"));
 
    return ptr;
 }
@@ -262,8 +262,8 @@ void DialogSaveDocument::on_combo_format_changed() {
 
 // Create a instance of the dialog.
 DialogSaveDocument::unique_ptr DialogSaveDocument::create() {
-   unique_ptr ptr(gtkmm_utility::get_widget_derived<DialogSaveDocument>(
-      SE_DEV_VALUE(PACKAGE_UI_DIR, PACKAGE_UI_DIR_DEV), "dialog-save-document.ui", "dialog-save-document"));
+   unique_ptr ptr(
+      gtkmm_utility::get_widget_derived<DialogSaveDocument>(RESOURCE_PATH(PACKAGE_UI_DIR), "dialog-save-document.ui", "dialog-save-document"));
 
    return ptr;
 }
@@ -297,8 +297,7 @@ bool DialogImportText::get_blank_line_mode() const {
 
 // Create a instance of the dialog.
 DialogImportText::unique_ptr DialogImportText::create() {
-   unique_ptr ptr(gtkmm_utility::get_widget_derived<DialogImportText>(
-      SE_DEV_VALUE(PACKAGE_UI_DIR, PACKAGE_UI_DIR_DEV), "dialog-import-text.ui", "dialog-import-text"));
+   unique_ptr ptr(gtkmm_utility::get_widget_derived<DialogImportText>(RESOURCE_PATH(PACKAGE_UI_DIR), "dialog-import-text.ui", "dialog-import-text"));
 
    return ptr;
 }
@@ -340,9 +339,7 @@ bool DialogExportText::get_blank_line_mode() const {
 
 // Create a instance of the dialog.
 DialogExportText::unique_ptr DialogExportText::create() {
-   unique_ptr ptr(gtkmm_utility::get_widget_derived<DialogExportText>(
-      SE_DEV_VALUE(PACKAGE_UI_DIR, PACKAGE_UI_DIR_DEV), "dialog-export-text.ui", "dialog-export-text"));
-
+   unique_ptr ptr(gtkmm_utility::get_widget_derived<DialogExportText>(RESOURCE_PATH(PACKAGE_UI_DIR), "dialog-export-text.ui", "dialog-export-text"));
    return ptr;
 }
 

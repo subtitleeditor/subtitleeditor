@@ -138,7 +138,7 @@ class MoveSubtitlesPlugin : public Action {
 
       // create dialog
       std::unique_ptr<DialogMoveSubtitles> dialog(gtkmm_utility::get_widget_derived<DialogMoveSubtitles>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-move-subtitles.ui", "dialog-move-subtitles"));
+         RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-move-subtitles.ui", "dialog-move-subtitles"));
 
       Subtitle first_selected_subtitle = doc->subtitles().get_first_selected();
       Subtitle last_selected_subtitle = doc->subtitles().get_last_selected();

@@ -54,8 +54,8 @@ class DialogPreferences : public Gtk::Dialog {
    }
 
    static void create() {
-      std::unique_ptr<DialogPreferences> dialog(gtkmm_utility::get_widget_derived<DialogPreferences>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-preferences.ui", "dialog-preferences"));
+      std::unique_ptr<DialogPreferences> dialog(
+         gtkmm_utility::get_widget_derived<DialogPreferences>(RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-preferences.ui", "dialog-preferences"));
 
       dialog->run();
    }

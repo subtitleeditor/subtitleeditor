@@ -639,7 +639,7 @@ class SpellCheckingPlugin : public Action {
 
       // create dialog
       std::unique_ptr<DialogSpellChecking> dialog(gtkmm_utility::get_widget_derived<DialogSpellChecking>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-spell-checking.ui", "dialog-spell-checking"));
+         RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-spell-checking.ui", "dialog-spell-checking"));
 
       dialog->execute(doc);
    }

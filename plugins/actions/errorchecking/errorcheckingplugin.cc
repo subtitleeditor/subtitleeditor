@@ -96,7 +96,7 @@ class DialogErrorChecking : public Gtk::Dialog {
 
       if (m_static_instance == NULL)
          m_static_instance = gtkmm_utility::get_widget_derived<DialogErrorChecking>(
-            SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-error-checking.ui", "dialog-error-checking");
+            RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-error-checking.ui", "dialog-error-checking");
 
       g_return_if_fail(m_static_instance);
 

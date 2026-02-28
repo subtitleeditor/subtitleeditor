@@ -495,7 +495,7 @@ class ConfigureKeyboardShortcuts : public Action {
       se_dbg(SE_DBG_PLUGINS);
 
       std::unique_ptr<DialogConfigureKeyboardShortcuts> dialog(gtkmm_utility::get_widget_derived<DialogConfigureKeyboardShortcuts>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-configure-keyboard-shortcuts.ui", "dialog-configure-keyboard-shortcuts"));
+         RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-configure-keyboard-shortcuts.ui", "dialog-configure-keyboard-shortcuts"));
 
       dialog->execute(get_ui_manager());
    }

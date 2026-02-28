@@ -8,10 +8,11 @@ uidir = $(PACKAGE_PLUGIN_SHARE_DIR)/$(plugin_name)
 AM_CPPFLAGS = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/src \
-	$(SUBTITLEEDITOR_CFLAGS) \
 	$(LIBXML_CFLAGS) \
-	-DSE_PLUGIN_PATH_DEV=\"$(actionplugindevdir)\" \
+	$(SUBTITLEEDITOR_CFLAGS) \
+	-DSE_PLUGIN_PATH_UI_DEV=\"$(actionplugindevdir)\" \
 	-DSE_PLUGIN_PATH_UI=\"$(uidir)\" \
+	-DSE_PLUGIN_PATH_PATTERN_DEV=\"$(actionplugindevdir)\" \
 	-DSE_PLUGIN_PATH_PATTERN=\"$(patterndir)\"
 
 pluginlib_LTLIBRARIES = \

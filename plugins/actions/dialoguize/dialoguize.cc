@@ -130,7 +130,7 @@ class DialogDialoguizePreferences : public Gtk::Dialog {
 
    static void create() {
       std::unique_ptr<DialogDialoguizePreferences> dialog(gtkmm_utility::get_widget_derived<DialogDialoguizePreferences>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-dialoguize-preferences.ui", "dialog-dialoguize-preferences"));
+         RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-dialoguize-preferences.ui", "dialog-dialoguize-preferences"));
 
       dialog->run();
    }

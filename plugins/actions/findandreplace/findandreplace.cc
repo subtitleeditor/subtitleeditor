@@ -428,7 +428,7 @@ class DialogFindAndReplace : public DialogActionMultiDoc {
    static void create() {
       if (m_instance == nullptr) {
          m_instance = gtkmm_utility::get_widget_derived<DialogFindAndReplace>(
-            SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-find-and-replace.ui", "dialog-find-and-replace");
+            RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-find-and-replace.ui", "dialog-find-and-replace");
       }
       m_instance->show();
       m_instance->present();

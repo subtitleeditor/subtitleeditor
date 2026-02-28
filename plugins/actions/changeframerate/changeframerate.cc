@@ -214,7 +214,7 @@ class ChangeFrameratePlugin : public Action {
 
       // create dialog
       std::unique_ptr<DialogChangeFramerate> dialog(gtkmm_utility::get_widget_derived<DialogChangeFramerate>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-change-framerate.ui", "dialog-change-framerate"));
+         RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-change-framerate.ui", "dialog-change-framerate"));
 
       dialog->signal_change_framerate.connect(sigc::mem_fun(*this, &ChangeFrameratePlugin::change_framerate));
 
