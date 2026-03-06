@@ -49,10 +49,8 @@ class DialogExternalVideoPreferences : public Gtk::Dialog {
    }
 
    static void create() {
-      std::unique_ptr<DialogExternalVideoPreferences> dialog(
-         gtkmm_utility::get_widget_derived<DialogExternalVideoPreferences>(SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV),
-                                                                           "dialog-external-video-player-preferences.ui",
-                                                                           "dialog-external-video-player-preferences"));
+      std::unique_ptr<DialogExternalVideoPreferences> dialog(gtkmm_utility::get_widget_derived<DialogExternalVideoPreferences>(
+         RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-external-video-player-preferences.ui", "dialog-external-video-player-preferences"));
 
       dialog->run();
    }

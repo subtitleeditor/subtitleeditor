@@ -91,8 +91,7 @@ int main(int argc, char* argv[]) {
    gst_init(&argc, &argv);
 
    // Run Application
-   Application* application =
-      gtkmm_utility::get_widget_derived<Application>(SE_DEV_VALUE(PACKAGE_UI_DIR, PACKAGE_UI_DIR_DEV), "subtitleeditor.ui", "window-main");
+   Application* application = gtkmm_utility::get_widget_derived<Application>(RESOURCE_PATH(PACKAGE_UI_DIR), "subtitleeditor.ui", "window-main");
    if (!application)
       return EXIT_FAILURE;
 

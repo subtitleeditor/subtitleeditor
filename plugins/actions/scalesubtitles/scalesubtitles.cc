@@ -329,7 +329,7 @@ class ScaleSubtitlesPlugin : public Action {
 
       // create dialog
       std::unique_ptr<DialogScaleSubtitles> dialog(gtkmm_utility::get_widget_derived<DialogScaleSubtitles>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-scale-subtitles.ui", "dialog-scale-subtitles"));
+         RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-scale-subtitles.ui", "dialog-scale-subtitles"));
 
       dialog->execute(doc);
    }

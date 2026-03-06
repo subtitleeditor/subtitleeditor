@@ -37,7 +37,7 @@ class DialogTimingFromPlayerPreferences : public Gtk::Dialog {
 
    static void create() {
       std::unique_ptr<DialogTimingFromPlayerPreferences> dialog(gtkmm_utility::get_widget_derived<DialogTimingFromPlayerPreferences>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-timing-from-player-preferences.ui", "dialog-timing-from-player-preferences"));
+         RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-timing-from-player-preferences.ui", "dialog-timing-from-player-preferences"));
 
       dialog->run();
    }

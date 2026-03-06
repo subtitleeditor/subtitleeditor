@@ -176,8 +176,8 @@ class JoinDocumentPlugin : public Action {
          Subtitle last_orig_sub = doc->subtitles().get(subtitle_size);
 
          // Show offset dialog
-         std::unique_ptr<DialogJoinOffset> offset_dialog(gtkmm_utility::get_widget_derived<DialogJoinOffset>(
-            SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-join-offset.ui", "dialog-join-offset"));
+         std::unique_ptr<DialogJoinOffset> offset_dialog(
+            gtkmm_utility::get_widget_derived<DialogJoinOffset>(RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-join-offset.ui", "dialog-join-offset"));
 
          offset_dialog->init(doc, last_orig_sub);
 

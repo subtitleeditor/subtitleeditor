@@ -75,10 +75,8 @@ class DialogAdvancedSubStationAlphaPreferences : public Gtk::Dialog {
    }
 
    static void create() {
-      std::unique_ptr<DialogAdvancedSubStationAlphaPreferences> dialog(
-         gtkmm_utility::get_widget_derived<DialogAdvancedSubStationAlphaPreferences>(SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV),
-                                                                                     "dialog-advancedsubstationalpha-preferences.ui",
-                                                                                     "dialog-advancedsubstationalpha-preferences"));
+      std::unique_ptr<DialogAdvancedSubStationAlphaPreferences> dialog(gtkmm_utility::get_widget_derived<DialogAdvancedSubStationAlphaPreferences>(
+         RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-advancedsubstationalpha-preferences.ui", "dialog-advancedsubstationalpha-preferences"));
 
       dialog->run();
    }

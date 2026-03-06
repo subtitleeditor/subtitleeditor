@@ -30,7 +30,7 @@ PatternManager::PatternManager(const Glib::ustring& type) {
    se_dbg_msg(SE_DBG_PLUGINS, "pattern manager for '%s'", type.c_str());
    m_type = type;
 
-   Glib::ustring path = SE_DEV_VALUE(SE_PLUGIN_PATH_PATTERN, SE_PLUGIN_PATH_DEV);
+   Glib::ustring path = RESOURCE_PATH(SE_PLUGIN_PATH_PATTERN);
    load_path(path);
    // Read the user patterns in '$config/plugins/textcorrection'
    load_path(get_config_dir("plugins/textcorrection"));

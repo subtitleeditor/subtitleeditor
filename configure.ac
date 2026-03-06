@@ -300,6 +300,14 @@ ACX_CCACHE
 # =========================================================================
 # Set SUBTITLEEDITOR_LIBS and SUBTITLEEDITOR_CFLAGS
 
+# transform -I to -isystem to avoid warning on header dependencies files
+INTLCFLAGS="$(echo $INTLCFLAGS | sed 's/-I/-isystem /g')"
+GTKMM_CFLAGS="$(echo $GTKMM_CFLAGS| sed 's/-I/-isystem /g')"
+GSTREAMER_CFLAGS="$(echo $GSTREAMER_CFLAGS| sed 's/-I/-isystem /g')"
+LIBXML_CFLAGS="$(echo $LIBXML_CFLAGS| sed 's/-I/-isystem /g')"
+GTKGLEXT_CFLAGS="$(echo $GTKGLEXT_CFLAGS| sed 's/-I/-isystem /g')"
+GL_CFLAGS="$(echo $GL_CFLAGS| sed 's/-I/-isystem /g')"
+
 SUBTITLEEDITOR_LIBS="$GTKMM_LIBS"
 SUBTITLEEDITOR_CFLAGS="$GTKMM_CFLAGS $INTLCFLAGS"
 

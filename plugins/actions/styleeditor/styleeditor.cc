@@ -505,8 +505,8 @@ class StyleEditorPlugin : public Action {
       g_return_if_fail(doc);
 
       // create dialog
-      std::unique_ptr<DialogStyleEditor> dialog(gtkmm_utility::get_widget_derived<DialogStyleEditor>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-style-editor.ui", "dialog-style-editor"));
+      std::unique_ptr<DialogStyleEditor> dialog(
+         gtkmm_utility::get_widget_derived<DialogStyleEditor>(RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-style-editor.ui", "dialog-style-editor"));
 
       dialog->execute(doc);
    }

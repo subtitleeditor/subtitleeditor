@@ -11,7 +11,7 @@ libsubstationalpha_la_CXXFLAGS = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/src \
 	$(SUBTITLEEDITOR_CFLAGS) \
-	-DSE_PLUGIN_PATH_DEV=\"$(subtitleformatplugindevdir)\" \
+	-DSE_PLUGIN_PATH_UI_DEV=\"$(subtitleformatplugindevdir)\" \
 	-DSE_PLUGIN_PATH_UI=\"$(uidir)\"
 
 libsubstationalpha_la_SOURCES = \

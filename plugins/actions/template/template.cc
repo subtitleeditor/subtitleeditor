@@ -225,7 +225,7 @@ class TemplatePlugin : public Action {
 
       // create dialog
       std::unique_ptr<DialogTemplate> dialog(gtkmm_utility::get_widget_derived<DialogTemplate>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-template-save-as.ui", "dialog-template-save-as"));
+         RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-template-save-as.ui", "dialog-template-save-as"));
 
       dialog->set_name(current->getName());
       dialog->set_format(current->getFormat());

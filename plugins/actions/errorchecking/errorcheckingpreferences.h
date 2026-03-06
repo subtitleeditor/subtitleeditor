@@ -60,7 +60,7 @@ class DialogErrorCheckingPreferences : public Gtk::Dialog {
 
    static void create(Gtk::Window& parent, std::vector<ErrorChecking*>& list) {
       std::unique_ptr<DialogErrorCheckingPreferences> dialog(gtkmm_utility::get_widget_derived<DialogErrorCheckingPreferences>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-error-checking-preferences.ui", "dialog-error-checking-preferences"));
+         RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-error-checking-preferences.ui", "dialog-error-checking-preferences"));
 
       dialog->set_transient_for(parent);
       dialog->init_treeview(list);

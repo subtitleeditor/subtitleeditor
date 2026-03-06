@@ -242,8 +242,8 @@ class DialogViewManager : public Gtk::Dialog {
    void on_edit() {
       Gtk::TreeIter selected = m_treeview->get_selection()->get_selected();
       if (selected) {
-         std::unique_ptr<DialogViewEdit> dialog(gtkmm_utility::get_widget_derived<DialogViewEdit>(
-            SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-view-manager.ui", "dialog-view-edit"));
+         std::unique_ptr<DialogViewEdit> dialog(
+            gtkmm_utility::get_widget_derived<DialogViewEdit>(RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-view-manager.ui", "dialog-view-edit"));
 
          Glib::ustring columns = (*selected)[m_column_record.columns];
 
@@ -405,8 +405,8 @@ class ViewManagerPlugin : public Action {
 
    void on_view_manager() {
       se_dbg(SE_DBG_VIEW);
-      std::unique_ptr<DialogViewManager> dialog(gtkmm_utility::get_widget_derived<DialogViewManager>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-view-manager.ui", "dialog-view-manager"));
+      std::unique_ptr<DialogViewManager> dialog(
+         gtkmm_utility::get_widget_derived<DialogViewManager>(RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-view-manager.ui", "dialog-view-manager"));
 
       dialog->execute();
       on_set_view(m_current_view_name);

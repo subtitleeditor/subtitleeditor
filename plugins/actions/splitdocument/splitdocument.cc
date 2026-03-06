@@ -144,7 +144,7 @@ class SplitDocumentPlugin : public Action {
 
       // create dialog
       std::unique_ptr<DialogSplitDocument> dialog(gtkmm_utility::get_widget_derived<DialogSplitDocument>(
-         SE_DEV_VALUE(SE_PLUGIN_PATH_UI, SE_PLUGIN_PATH_DEV), "dialog-split-document.ui", "dialog-split-document"));
+         RESOURCE_PATH(SE_PLUGIN_PATH_UI), "dialog-split-document.ui", "dialog-split-document"));
 
       dialog->execute(doc);
    }

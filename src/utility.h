@@ -41,9 +41,9 @@
    (GTKMM_MAJOR_VERSION > (major) || (GTKMM_MAJOR_VERSION == (major) && GTKMM_MINOR_VERSION > (minor)) || \
     (GTKMM_MAJOR_VERSION == (major) && GTKMM_MINOR_VERSION == (minor) && GTKMM_MICRO_VERSION >= (micro)))
 
-// Return one of the values depending on whether
-// environment variable SE_DEV is defined or not.
-#define SE_DEV_VALUE(value, dev_value) ((Glib::getenv("SE_DEV") != "1") ? (value) : (dev_value))
+// Return the local development path (`value` with _DEV suffix) or the installed path (value)
+// depending on whether the SE_DEV environment variable is set to "1".
+#define RESOURCE_PATH(value) ((Glib::getenv("SE_DEV") != "1") ? (value) : (value##_DEV))
 
 // the profile name for the config dir
 // ~/config/subtitleeditor/{profile}
