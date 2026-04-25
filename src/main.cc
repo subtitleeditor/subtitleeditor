@@ -23,6 +23,7 @@
 
 #include <iostream>
 
+#include "glibmm/miscutils.h"
 #include "gtkmm_utility.h"
 #include "gui/application.h"
 #include "options.h"
@@ -54,7 +55,8 @@ int main(int argc, char* argv[]) {
    Gtk::GL::init_check(argc, argv);
 #endif  // ENABLE_GL
 
-   Glib::set_application_name("subtitleeditor");
+   Glib::set_application_name("Subtitle Editor");
+   Glib::set_prgname("org.kitone.subtitleeditor");
 
    // SubtitleEditor Options
    OptionGroup options;
