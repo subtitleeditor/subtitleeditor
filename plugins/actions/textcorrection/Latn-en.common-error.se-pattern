@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patterns type="Common Error">
+  <pattern name="Letter &quot;I&quot; in a lower case word" description="Replace letter &quot;I&quot; with letter &quot;l&quot; in a lower case word" classes="OCR;">
+    <rule regex="(?&lt;=[a-z])I" flags="DOTALL;MULTILINE;UNICODE;" replacement="l" repeat="True"/>
+    <rule regex="(?&lt;=\b[A-Z])I(?=[a-z])" flags="DOTALL;MULTILINE;UNICODE;" replacement="l" repeat="True"/>
+    <rule regex="'[Il][Il]\b" flags="DOTALL;MULTILINE;UNICODE;" replacement="'ll" repeat="False"/>
+  </pattern>
+  <pattern name="Letter &quot;l&quot; in an upper case word" description="Replace letter &quot;l&quot; with letter &quot;I&quot; in an upper case word" classes="OCR;">
+    <rule regex="(?&lt;=[A-Z][A-Z])l" flags="DOTALL;MULTILINE;UNICODE;" replacement="I" repeat="True"/>
+    <rule regex="l(?=[A-Z])" flags="DOTALL;MULTILINE;UNICODE;" replacement="I" repeat="True"/>
+    <rule regex="(?&lt;![a-hj-z]-)\bl\b(?!-[a-hj-z])" flags="DOTALL;MULTILINE;UNICODE;" replacement="I" repeat="True"/>
+    <rule regex="((\s|^)[&quot;'«»]?)l(?!bs)(?!lama)([bcdfghjklmnpqrstvwxz])" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1I\3" repeat="False"/>
+  </pattern>
+  <pattern name="Zero in an upper case word" description="Replace zero with letter &quot;O&quot; in an upper case word" classes="OCR;">
+    <rule regex="(?&lt;=[A-Z])0(?!\d)" flags="DOTALL;MULTILINE;UNICODE;" replacement="O" repeat="True"/>
+    <rule regex="(?&lt;!\d)0(?=[A-Z])" flags="DOTALL;MULTILINE;UNICODE;" replacement="O" repeat="True"/>
+  </pattern>
+  <pattern name="Spaces around an apostrophe" description="Remove spaces around an apostrophe" classes="OCR;">
+    <rule regex="(\w)(' +| +')(d|ll|m|re|s|t|ve)\b" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1'\3" repeat="False"/>
+  </pattern>
+  <pattern name="Okay" description="Convert various two-letter spellings of okay to &quot;OK&quot;" classes="Human;">
+    <rule regex="\b(ok|Ok|O\.K\.)\b" flags="DOTALL;MULTILINE;UNICODE;" replacement="OK" repeat="False"/>
+  </pattern>
+</patterns>

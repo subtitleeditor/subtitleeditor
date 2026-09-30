@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Remove Subtitle
-_Description=Deletes the selected subtitles.
-Categorie=action
-Type=module
-Module=removesubtitle
-Authors=kitone <kitone at free dot fr>

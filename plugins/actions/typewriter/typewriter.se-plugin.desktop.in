@@ -1,0 +1,8 @@
+[SubtitleEditor Extension]
+Name=Type Writer
+Description=FIXME.
+Categorie=action
+Hidden=false
+Type=module
+Module=typewriter
+Authors=kitone <kitone at free dot fr>

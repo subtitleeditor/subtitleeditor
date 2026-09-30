@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=SubViewer2
+Description=SubViewer2 subtitles support.
+Categorie=subtitleformat
+Type=module
+Module=subviewer2
+Authors=kitone <kitone at free dot fr>

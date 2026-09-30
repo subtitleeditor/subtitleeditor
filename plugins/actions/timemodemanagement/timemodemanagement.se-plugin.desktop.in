@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Time Mode Management
+Description=Manages time modes (Framerate, Timing Mode ...).
+Categorie=action
+Type=module
+Module=timemodemanagement
+Authors=kitone <kitone at free dot fr>

@@ -1,8 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Stack Subtitles
-_Description=Moves the selected subtitles as close together as possible after the first subtitle in the selection.
-Categorie=action
-Type=module
-Module=stacksubtitles
-Authors=eltomito <tomaspartl at centrum dot cz>
-

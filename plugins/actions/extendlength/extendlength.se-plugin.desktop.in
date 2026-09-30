@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Extend Length
+Description=Extends the length of selected subtitles.
+Categorie=action
+Type=module
+Module=extendlength
+Authors=kitone <kitone at free dot fr>

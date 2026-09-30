@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patterns type="Common Error">
+  <pattern name="Spaces around guillemets" description="Add spaces around guillemets" classes="Human;OCR;">
+    <rule regex="(\S)(«)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1 \2" repeat="False"/>
+    <rule regex="(»)(\w)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1 \2" repeat="False"/>
+    <rule regex="(«)(\S)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1 \2" repeat="False"/>
+    <rule regex="(\S)(»)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1 \2" repeat="False"/>
+  </pattern>
+  <pattern name="Space before punctuation marks" description="Add or remove space before various punctuation marks" classes="Human;OCR;" policy="Replace">
+    <rule regex=" +([&quot;'«»]?(?!\.\.)([,.])(?!\d))" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1" repeat="False"/>
+    <rule regex="([^\s?!;:])([?!;:])(?!\d)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1 \2" repeat="False"/>
+  </pattern>
+</patterns>

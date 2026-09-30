@@ -1,0 +1,2 @@
+option('default-video-sink', type: 'string', value: 'xvimagesink', description: 'Default GStreamer video sink')
+option('default-audio-sink', type: 'string', value: 'autoaudiosink', description: 'Default GStreamer audio sink')

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patterns type="Common Error">
+  <pattern name="Leading and trailing spaces" description="Remove spaces from the beginning and end of lines" classes="Human;OCR;">
+    <rule regex="^ +" flags="DOTALL;MULTILINE;UNICODE;" replacement="" repeat="False"/>
+    <rule regex=" +$" flags="DOTALL;MULTILINE;UNICODE;" replacement="" repeat="False"/>
+  </pattern>
+  <pattern name="Multiple consecutive spaces" description="Replace multiple consecutive spaces with only one" classes="Human;OCR;">
+    <rule regex=" {2,}" flags="DOTALL;MULTILINE;UNICODE;" replacement="\040" repeat="False"/>
+  </pattern>
+  <pattern name="Space between digits" description="Remove space between digits of a number" classes="OCR;">
+    <rule regex="(\b\d+) +(\d+\b)(?![-/])" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1\2" repeat="True"/>
+  </pattern>
+</patterns>

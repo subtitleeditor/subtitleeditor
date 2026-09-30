@@ -1,8 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Template Management
-_Description=Provides subtitle templates functionality.
-Categorie=action
-Hidden=true
-Type=module
-Module=template
-Authors=kitone <kitone at free dot fr>

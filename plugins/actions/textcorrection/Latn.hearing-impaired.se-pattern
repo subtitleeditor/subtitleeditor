@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patterns type="Hearing Impaired">
+  <pattern name="Sound in brackets" description="Remove description of a sound between square brackets" classes="">
+    <rule regex="\[.*?\]" flags="DOTALL;MULTILINE;UNICODE;" replacement="" repeat=""/>
+  </pattern>
+  <pattern name="Sound in parentheses" description="Remove description of a sound between parentheses" classes="">
+    <rule regex="\(.*?\)" flags="DOTALL;MULTILINE;UNICODE;" replacement="" repeat=""/>
+  </pattern>
+  <pattern name="Song lyrics between number signs" description="Remove song lyrics starting with or between number signs" classes="">
+    <rule regex="#+.+?(#+|\Z)" flags="DOTALL;MULTILINE;UNICODE;" replacement="" repeat=""/>
+  </pattern>
+  <pattern name="One-line song lyrics between number signs" description="Remove one-line song lyrics starting with or between number signs" classes="">
+    <rule regex="#+.+?(#+|$)" flags="DOTALL;MULTILINE;UNICODE;" replacement="" repeat=""/>
+  </pattern>
+  <pattern name="Song lyrics between asterisks" description="Remove song lyrics starting with or between asterisks" classes="">
+    <rule regex="\*+.+?(\*+|\Z)" flags="DOTALL;MULTILINE;UNICODE;" replacement="" repeat=""/>
+  </pattern>
+  <pattern name="One-line song lyrics between asterisks" description="Remove one-line song lyrics starting with or between asterisks" classes="">
+    <rule regex="\*+.+?(\*+|$)" flags="DOTALL;MULTILINE;UNICODE;" replacement="" repeat=""/>
+  </pattern>
+  <pattern name="Speaker before a colon" description="Replace the name of the speaker before a colon with a dialogue dash" classes="">
+    <rule regex="^-?\s*?[\w\[][^,;:?!]*?:\s" flags="MULTILINE;UNICODE;" replacement="-\040" repeat=""/>
+  </pattern>
+</patterns>

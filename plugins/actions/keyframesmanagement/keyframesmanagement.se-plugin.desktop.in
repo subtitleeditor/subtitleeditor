@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Keyframes Management
+Description=Adds support for keyframes, or scene cuts.
+Categorie=action
+Type=module
+Module=keyframesmanagement
+Authors=kitone <kitone at free dot fr>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<patterns type="Hearing Impaired">
-  <pattern _name="Uppercase speaker before a colon" _description="Replace the uppercase name of the speaker before a colon with a dialogue dash" classes="">
-    <rule regex="^-?\s*?[A-Z\[][A-Zc\d'.\-\[\] ]+?:\s" flags="MULTILINE;UNICODE;" replacement="-\040" repeat=""/>
-  </pattern>
-</patterns>

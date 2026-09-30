@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patterns type="Common Error">
+  <pattern name="Period after title" description="Add period after a shortened title, such as &quot;Mr&quot; and &quot;Dr&quot;" classes="Human;">
+    <rule regex="\b(Dr|Jr|Mr|Mrs|Ms|Sr|St)\b(?!\.)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1." repeat="False"/>
+  </pattern>
+</patterns>

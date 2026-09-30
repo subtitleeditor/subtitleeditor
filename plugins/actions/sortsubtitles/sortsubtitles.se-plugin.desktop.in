@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Sort Subtitles
+Description=Sort subtitles based on their start time.
+Categorie=action
+Type=module
+Module=sortsubtitles
+Authors=kitone <kitone at free dot fr>

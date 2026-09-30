@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<patterns type="Common Error">
-  <pattern _name="Space after punctuation marks" _description="Add space after various punctuation marks" classes="Human;OCR;" policy="Replace">
-    <rule regex="((\w|^|[&quot;'«»])[,;?!])(?![&quot;'«»])([^\W\d][\w\s])" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1 \3" repeat="False"/>
-  </pattern>
-</patterns>

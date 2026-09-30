@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Video Player Management
+Description=Controls the video player.
+Categorie=action
+Type=module
+Module=videoplayermanagement
+Authors=kitone <kitone at free dot fr>

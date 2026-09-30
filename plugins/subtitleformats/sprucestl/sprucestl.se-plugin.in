@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Spruce STL
-_Description=Spruce subtitles support.
-Categorie=subtitleformat
-Type=module
-Module=sprucestl
-Authors=kitone <kitone at free dot fr>

@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=MicroDVD
+Description=MicroDVD subtitles support.
+Categorie=subtitleformat
+Type=module
+Module=microdvd
+Authors=kitone <kitone at free dot fr>

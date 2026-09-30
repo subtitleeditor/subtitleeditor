@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Timed Text Authoring Format 1.0
+Description=Timed Text Authoring Format 1.0 subtitles support.
+Categorie=subtitleformat
+Type=module
+Module=timedtextauthoringformat1
+Authors=kitone <kitone at free dot fr>

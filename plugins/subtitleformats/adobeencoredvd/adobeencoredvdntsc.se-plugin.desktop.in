@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Adobe Encore DVD (NTSC)
+Description=Adobe Encore DVD subtitles support.
+Categorie=subtitleformat
+Type=module
+Module=adobeencoredvdntsc
+Authors=kitone <kitone at free dot fr>

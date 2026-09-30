@@ -63,10 +63,9 @@ License (GPL3).
 Source tarballs, installing from a source tarball:
 
 ```bash
-./autogen.sh
-./configure
-make
-sudo make install
+meson setup build
+meson compile -C build
+sudo meson install -C build
 ```
 
 Required dependencies:
@@ -75,26 +74,28 @@ Required dependencies:
 * gtkmm version >=3.10
 * glibmm version >= 2.18.0
 * gstreamer 1.0 (gstreamer1.0-x, gst-plugins-base, gst-plugins-good ...)
-* gstreamermm version >= 1.0
 * enchant version >=1.4.0 (spell check)
 * libxml++ >=2.20
+* meson >= 0.60 and ninja (to build)
+
+To install into your home directory instead, without sudo, use `meson setup build --prefix=$HOME/.local`
+and run `~/.local/bin/subtitleeditor`. The default GStreamer sinks can be set with
+`-Ddefault-video-sink=…` and `-Ddefault-audio-sink=…`.
 
 ## Developement
-After building with `make`, it is possible to run Subtitle Editor before installing it from the directory where it was built with:
+After building, it is possible to run Subtitle Editor without installing it:
 ```
- SE_DEV=1 ./src/subtitleeditor
+SE_DEV=1 build/src/subtitleeditor
 ```
 To update the translations files when strings or files get added, one needs to run the following:
 ```
-./prepare-po.sh # checks for potential new files that could include translatable strings
-cd po # move to po directory
-intltool-update --maintain # does the same, potentially can produce files missing and notexist listing deleted files or not-included files
-intltool-update --headers # creates headers, do not run any git commands now as a lot of unwanted files would get staged    
-intltool-update --pot #this generates a new pot file
-for po in *po; do intltool-update ${po%.po} ; done #this finally applies the changes to the master pot file to individual translations
+./prepare-po.sh # lists the files that can contain translatable strings in po/POTFILES.in
+meson compile -C build subtitleeditor-pot # generates a new pot file
+meson compile -C build subtitleeditor-update-po # applies the pot file to the individual translations
 ```
 
 To prepare a release:
-- bump the version in configure.ac
+- bump the version in meson.build
+- packages should be built with `meson setup --buildtype=release`; the default `debugoptimized` includes the messages of the `--debug-*` options
 - check the log (git log) to create release notes in GitHub
 - draft a release, when it’s ok, add a new bumped tag

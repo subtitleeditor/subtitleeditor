@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Error Checking
-_Description=Detects and fixes errors.
-Categorie=action
-Type=module
-Module=errorchecking
-Authors=kitone

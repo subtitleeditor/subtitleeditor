@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Join Document
-_Description=Adds subtitles from another file.
-Categorie=action
-Type=module
-Module=joindocument
-Authors=kitone <kitone at free dot fr>

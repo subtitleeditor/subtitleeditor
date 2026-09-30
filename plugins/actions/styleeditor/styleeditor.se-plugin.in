@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Style Editor
-_Description=An ASS/SSA style editor.
-Categorie=action
-Type=module
-Module=styleeditor
-Authors=kitone <kitone at free dot fr>

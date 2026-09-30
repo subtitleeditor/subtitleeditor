@@ -1,8 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Preferences
-_Description=Manages Subtitle Editor's preferences.
-Hidden=true
-Categorie=action
-Type=module
-Module=preferences
-Authors=kitone <kitone at free dot fr>

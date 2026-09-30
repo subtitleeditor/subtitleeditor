@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Spell Checking
+Description=Checks the spelling of the current document.
+Categorie=action
+Type=module
+Module=spellchecking
+Authors=kitone <kitone at free dot fr>

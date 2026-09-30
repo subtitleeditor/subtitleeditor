@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Plain Text Format
+Description=Plain text import and export.
+Categorie=subtitleformat
+Type=module
+Module=plaintextformat
+Authors=<tomaspartl at centrum dot cz>

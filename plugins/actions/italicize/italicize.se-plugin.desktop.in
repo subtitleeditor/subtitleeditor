@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Italicize
+Description=Italicizes the selected subtitles text.
+Categorie=action
+Type=module
+Module=italicize
+Authors=kitone <kitone at free dot fr>

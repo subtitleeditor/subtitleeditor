@@ -1,0 +1,8 @@
+[SubtitleEditor Extension]
+Name=Best Fit
+Description=Gives each subtitle in a selection a fair share of the total selection time.
+Categorie=action
+Type=module
+Module=bestfit
+Authors=eltomito <tomaspartl at centrum dot cz>
+

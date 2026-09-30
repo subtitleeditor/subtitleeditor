@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patterns type="Capitalization">
+  <!-- \u is not supported by gaupol, gaupol used a special pattern 'capitalization' -->
+  <pattern name="First person pronoun" description="Capitalize the first person pronoun &quot;I&quot;" classes="Human;OCR;">
+    <rule regex="(\bi\b)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\u\1" repeat="False"/>
+  </pattern>
+</patterns>

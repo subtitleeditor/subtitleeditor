@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Reverse Text And Translation
+Description=Reverses the original subtitle and the translated text.
+Categorie=action
+Type=module
+Module=reversetextandtranslation
+Authors=kitone <kitone at free dot fr>

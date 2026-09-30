@@ -1,0 +1,8 @@
+[SubtitleEditor Extension]
+Name=About
+Description=Displays information about the application.
+Categorie=action
+Hidden=true
+Type=module
+Module=about
+Authors=kitone <kitone at free dot fr>

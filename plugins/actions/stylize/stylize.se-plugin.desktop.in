@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Stylize
+Description=Stylize the selected subtitles text.
+Categorie=action
+Type=module
+Module=stylize
+Authors=kitone <kitone at free dot fr>

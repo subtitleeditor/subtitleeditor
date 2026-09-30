@@ -1,8 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Minimize Duration
-_Description=Sets subtitle duration to the minimum acceptable.
-Categorie=action
-Type=module
-Module=minimizeduration
-Authors=eltomito <tomaspartl at centrum dot cz>
-

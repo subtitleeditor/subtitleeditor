@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Slide Timings
-_Description=Bumps the text fields of following subtitles up or down with respect to their timings.
-Categorie=action
-Type=module
-Module=slidetimings
-Authors=eltomito <tomaspartl at centrum dot cz>

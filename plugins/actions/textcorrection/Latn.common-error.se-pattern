@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patterns type="Common Error">
+  <pattern name="Letter &quot;O&quot; in a number" description="Replace letter &quot;O&quot; with a zero in a number" classes="OCR;">
+    <rule regex="((?&lt;![^\W\d])(\d|\d[,.]))[oO]" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1\060" repeat="True"/>
+    <rule regex="[oO]((?!2\W)(\d|[,.]\d)(?![^\W\d]))" flags="DOTALL;MULTILINE;UNICODE;" replacement="\060\1" repeat="True"/>
+  </pattern>
+  <pattern name="Double apostrophe" description="Replace a double apostrophe with a quotation mark" classes="OCR;">
+    <rule regex="''" flags="DOTALL;MULTILINE;UNICODE;" replacement="&quot;" repeat="False"/>
+  </pattern>
+  <pattern name="Spaces around brackets" description="Add or remove spaces around parentheses and square brackets" classes="Human;OCR;">
+    <rule regex="(\S)(\(|\[)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1 \2" repeat="False"/>
+    <rule regex="(\)|\])(\w)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1 \2" repeat="False"/>
+    <rule regex="(\(|\[)( )" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1" repeat="False"/>
+    <rule regex="( )(\)|\])" flags="DOTALL;MULTILINE;UNICODE;" replacement="\2" repeat="False"/>
+  </pattern>
+  <pattern name="Space after a dialogue dash" description="Add space after a dialogue dash" classes="Human;OCR;">
+    <rule regex="^-([^-\s])" flags="DOTALL;MULTILINE;UNICODE;" replacement="- \1" repeat="False"/>
+  </pattern>
+  <pattern name="Space before punctuation marks" description="Remove space before various punctuation marks" classes="Human;OCR;">
+    <rule regex=" +([&quot;'«»]?(?!\.\.)([,;:.?!])(?!\d))" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1" repeat="False"/>
+  </pattern>
+  <pattern name="Space after punctuation marks" description="Add space after various punctuation marks" classes="Human;OCR;">
+    <rule regex="((\w|^|[&quot;'«»]) ?[,;:?!])(?![&quot;'«»])([^\W\d][\w\s])" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1 \3" repeat="False"/>
+  </pattern>
+  <pattern name="Space after an ellipsis" description="Add space after an ellipsis" classes="Human;OCR;">
+    <rule regex="(\w[^\w\s]*?\.\.\.)([&quot;'«»]?\w)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1 \2" repeat="False"/>
+  </pattern>
+  <pattern name="Space after a starting ellipsis" description="Remove space after an ellipsis that starts a line" classes="Human;OCR;">
+    <rule regex="(^\W*?\.\.\.)( +)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1" repeat="False"/>
+  </pattern>
+  <pattern name="Spaces around a quotation mark" description="Remove space after a starting- and before an ending quotation mark" classes="OCR;">
+    <rule regex="(\A[^&quot;]*)(&quot; +)([^&quot;]*&quot;[^&quot;]*\Z)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1&quot;\3" repeat="False"/>
+    <rule regex="(\A[^&quot;]*&quot;[^&quot;]*)( +&quot;)([^&quot;]*\Z)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1&quot;\3" repeat="False"/>
+    <rule regex="^(\W*?[&quot;'])( +)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1" repeat="False"/>
+    <rule regex="( +)([&quot;']\W*?)$" flags="DOTALL;MULTILINE;UNICODE;" replacement="\2" repeat="False"/>
+  </pattern>
+  <pattern name="Multiple question- and exclamation marks" description="Replace multiple consecutive question- and exclamation marks with only one" classes="Human;">
+    <rule regex="(\w\W*)(?&lt;!^)(?&lt;!\?)\?{2,}" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1?" repeat="False"/>
+    <rule regex="(\w\W*)(?&lt;!^)(?&lt;!\!)\!{2,}" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1!" repeat="False"/>
+  </pattern>
+  <pattern name="Periods around a punctuation mark" description="Remove period before or after various punctuation marks" classes="OCR;">
+    <rule regex="(?&lt;=[:?!])\.(?!\.)" flags="DOTALL;MULTILINE;UNICODE;" replacement="" repeat="False"/>
+    <rule regex="(?&lt;!\.\w)(?&lt;!\.)\.(?=[:?!])" flags="DOTALL;MULTILINE;UNICODE;" replacement="" repeat="False"/>
+  </pattern>
+</patterns>

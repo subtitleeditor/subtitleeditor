@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=SubRip
+Description=SubRip subtitles support.
+Categorie=subtitleformat
+Type=module
+Module=subrip
+Authors=kitone <kitone at free dot fr>
