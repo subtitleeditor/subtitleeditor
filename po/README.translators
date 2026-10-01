@@ -11,16 +11,19 @@ https://github.com/subtitleeditor/subtitleeditor/tree/master/po/
 
 
 To start a new translation:
-cd subtitleeditor/po
-intltool-update --pot
+cd subtitleeditor
+meson setup build # only once
+meson compile -C build subtitleeditor-pot
+cd po
 msginit -l XX # where XX is your locale code
+add XX to LINGUAS
 then start translating the strings in XX.po (or whatever your locale is).
 
 
 To update an existing translation:
-cd subtitleeditor/po
-intltool-update XX
-Edit the XX.po file.
+cd subtitleeditor
+meson compile -C build subtitleeditor-update-po
+Edit the po/XX.po file.
 
 
 Send your translation by email to <kitone at free dot fr>

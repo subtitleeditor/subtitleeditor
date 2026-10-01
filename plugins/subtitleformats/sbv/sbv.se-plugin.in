@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=SBV
-_Description=SBV subtitles support.
-Categorie=subtitleformat
-Type=module
-Module=sbv
-Authors=kitone <kitone at free dot fr>

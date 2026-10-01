@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Move After Preceding Subtitle
-_Description=Moves a subtitle after the preceding one respecting the minimum gap between subtitles.
-Categorie=action
-Type=module
-Module=moveafterprecedingsubtitle
-Authors=kitone <kitone at free dot fr>

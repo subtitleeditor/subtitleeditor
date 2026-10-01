@@ -1,0 +1,8 @@
+[SubtitleEditor Extension]
+Name=Command
+Description=Manages Undo/Redo.
+Categorie=action
+Hidden=true
+Type=module
+Module=command
+Authors=kitone <kitone at free dot fr>

@@ -1,8 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Document Management
-_Description=Manages the document (Open, Save, Save As...).
-Categorie=action
-Hidden=true
-Type=module
-Module=documentmanagement
-Authors=kitone <kitone at free dot fr>

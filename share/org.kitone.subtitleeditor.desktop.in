@@ -1,7 +1,7 @@
 [Desktop Entry]
-_Name=Subtitle Editor
+Name=Subtitle Editor
 GenericName=Subtitle Editor
-_Comment=A subtitle editor based on GStreamer and Gtk+
+Comment=A subtitle editor based on GStreamer and Gtk+
 Exec=subtitleeditor %F
 Terminal=false
 Type=Application
@@ -10,4 +10,4 @@ Categories=Video;AudioVideo;AudioVideoEditing;
 StartupNotify=true
 MimeType=application/x-microdvd;application/x-subrip;application/x-subviewer;text/x-mpsub;text/x-ssa;
 # TRANSLATORS: Please, don't translate or localize the semicolons
-_Keywords=subtitles;subtitle;captions;video;
+Keywords=subtitles;subtitle;captions;video;

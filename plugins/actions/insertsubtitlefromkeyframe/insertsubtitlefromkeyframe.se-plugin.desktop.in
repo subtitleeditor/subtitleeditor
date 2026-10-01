@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Insert Subtitle From Keyframe
+Description=Inserts subtitle using keyframe.
+Categorie=action
+Type=module
+Module=insertsubtitlefromkeyframe
+Authors=kitone <kitone at free dot fr>

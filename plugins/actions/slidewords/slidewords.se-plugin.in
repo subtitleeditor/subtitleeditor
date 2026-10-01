@@ -1,8 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Slide Words
-_Description=Let's you slide words between lines and between subtitles.
-Categorie=action
-Type=module
-Module=slidewords
-Authors=eltomito <tomaspartl at centrum dot cz>
-

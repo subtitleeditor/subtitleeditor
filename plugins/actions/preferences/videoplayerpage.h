@@ -98,9 +98,6 @@ class VideoPlayerPage : public PreferencePage {
       m_comboAudioOutput->append_output(_("OSS — Open Sound System"), "osssink");
       m_comboAudioOutput->append_output(_("SDL — Simple DirectMedia Layer"), "sdlaudiosink");
       m_comboAudioOutput->append_output(_("GConf"), "gconfaudiosink");
-#ifdef USE_OSX
-      m_comboAudioOutput->append_output(_("OSX"), "osxaudiosink");
-#endif
 
       // video output
 #ifdef GDK_WINDOWING_WAYLAND
@@ -112,9 +109,6 @@ class VideoPlayerPage : public PreferencePage {
          m_comboVideoOutput->append_output(_("X Window System (No Xv)"), "ximagesink");
          m_comboVideoOutput->append_output(_("SDL — Simple DirectMedia Layer"), "sdlvideosink");
          m_comboVideoOutput->append_output(_("GConf"), "gconfvideosink");
-#ifdef USE_OSX
-         m_comboVideoOutput->append_output(_("OSX"), "osxvideosink");
-#endif
       }
       m_comboVideoOutput->append_output(_("OpenGL"), "glimagesink");
 

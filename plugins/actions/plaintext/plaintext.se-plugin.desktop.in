@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Plain Text
+Description=Imports or exports any text file.
+Categorie=action
+Type=module
+Module=plaintext
+Authors=kitone <kitone at free dot fr>

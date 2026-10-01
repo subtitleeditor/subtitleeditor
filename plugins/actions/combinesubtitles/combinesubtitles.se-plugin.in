@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Combine Subtitles
-_Description=Merges the selected subtitles.
-Categorie=action
-Type=module
-Module=combinesubtitles
-Authors=kitone <kitone at free dot fr>

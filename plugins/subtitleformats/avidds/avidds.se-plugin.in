@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Avid DS
-_Description=Format used by the Avid software.
-Categorie=subtitleformat
-Type=module
-Module=avidds
-Authors=eltomito <tomaspartl at centrum dot cz>

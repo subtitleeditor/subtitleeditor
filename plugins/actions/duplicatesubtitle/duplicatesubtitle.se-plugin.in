@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Duplicate Subtitle
-_Description=Duplicates the selected subtitles.
-Categorie=action
-Type=module
-Module=duplicatesubtitle
-Authors=kitone <kitone at free dot fr>

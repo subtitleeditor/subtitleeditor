@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Edit Cell
+Description=Starts editing of the focused or the next cell.
+Categorie=action
+Type=module
+Module=editcell
+Authors=kitone <kitone at free dot fr>

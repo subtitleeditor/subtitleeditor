@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Waveform Management
+Description=Manages a waveform.
+Categorie=action
+Type=module
+Module=waveformmanagement
+Authors=kitone <kitone at free dot fr>

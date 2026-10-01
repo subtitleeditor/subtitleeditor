@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Timing From Player
-_Description=Use the current player position to set the subtitle time.
-Categorie=action
-Type=module
-Module=timingfromplayer
-Authors=kitone <kitone at free dot fr>

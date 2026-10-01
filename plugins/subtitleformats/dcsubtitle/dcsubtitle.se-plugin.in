@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=DCSubtitle
-_Description=DCSubtitle subtitles support.
-Categorie=subtitleformat
-Type=module
-Module=dcsubtitle
-Authors=kitone <kitone at free dot fr>

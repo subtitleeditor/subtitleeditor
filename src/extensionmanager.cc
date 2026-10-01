@@ -336,11 +336,8 @@ void ExtensionManager::open_module(ExtensionInfo* info) {
 
    Glib::ustring dirname = Glib::path_get_dirname(info->file);
 
-   // It's only used for reading plugin without installing SE
-   if (Glib::getenv("SE_DEV") == "1") {
-      // ext/.libs/libext.so
-      dirname = Glib::build_filename(dirname, ".libs");
-   } else if (info->fhs_directory) {
+   // Uninstalled (SE_DEV=1), the module is next to its description
+   if (Glib::getenv("SE_DEV") != "1" && info->fhs_directory) {
       // If the extension is installed in the system,
       // Filesystem Hierarchy Standard is used for the directory
       // The description and the module are not in the same directory

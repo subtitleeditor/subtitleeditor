@@ -1,0 +1,8 @@
+[SubtitleEditor Extension]
+Name=Clipboard
+Description=Provides the Three Commandments of user-friendly computing: Copy, Cut and Paste.
+Categorie=action
+Type=module
+Module=clipboard
+Authors=eltomito <tomaspartl at centrum dot cz>
+

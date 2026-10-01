@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Apply Translation
+Description=Replaces the text of the subtitle by the translation.
+Categorie=action
+Type=module
+Module=applytranslation
+Authors=kitone <kitone at free dot fr>

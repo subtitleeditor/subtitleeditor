@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Advanced Sub Station Alpha
-_Description=Advanced Sub Station Alpha subtitles support.
-Categorie=subtitleformat
-Type=module
-Module=advancedsubstationalpha
-Authors=kitone <kitone at free dot fr>

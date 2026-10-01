@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Sami
-_Description=Sami subtitles support.
-Categorie=subtitleformat
-Type=module
-Module=sami
-Authors=Dongsu Park <advance38 at gmail dot com>

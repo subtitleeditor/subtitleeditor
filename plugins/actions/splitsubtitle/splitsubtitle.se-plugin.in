@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Split Subtitle
-_Description=Splits the selected subtitles.
-Categorie=action
-Type=module
-Module=splitsubtitle
-Authors=kitone <kitone at free dot fr>

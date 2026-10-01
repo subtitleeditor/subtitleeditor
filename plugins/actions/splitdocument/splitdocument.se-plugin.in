@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Split Document
-_Description=Splits the current document in two.
-Categorie=action
-Type=module
-Module=splitdocument
-Authors=kitone <kitone at free dot fr>

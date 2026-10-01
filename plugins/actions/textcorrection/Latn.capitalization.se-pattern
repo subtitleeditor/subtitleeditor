@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patterns type="Capitalization">
+  <!-- 
+    \u is not supported by gaupol, gaupol used a special pattern 'capitalization'.
+    'previousmatch' is also not supported by gaupol.
+  -->
+  <pattern name="Sentence" description="Capitalize the first word of a sentence" classes="Human;OCR;">
+    <rule regex="((?&lt;!\.\.)\.|[?!])[&quot;']?([ $\n])(\w+)" flags="DOTALL;MULTILINE;UNICODE;" replacement="\1\2\u\3" repeat="False"/>
+    <!-- The next rule capitalize the first letter of the subtitle only if the previous subtitle finished with a punctuation. -->
+    <rule regex="^(\b[a-z]+\b)" flags="DOTALL;UNICODE;" replacement="\u\1" repeat="False">
+      <previousmatch regex="((?&lt;!\.\.)\.|[?!]|^)$" flags=""/>
+    </rule>
+  </pattern>
+</patterns>

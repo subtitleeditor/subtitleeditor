@@ -1,27 +1,42 @@
-[encoding: UTF-8]
 plugins/actions/about/about.cc
+plugins/actions/about/about.se-plugin.desktop.in
 plugins/actions/adjusttime/adjusttime.cc
+plugins/actions/adjusttime/adjusttime.se-plugin.desktop.in
 plugins/actions/applytranslation/applytranslation.cc
+plugins/actions/applytranslation/applytranslation.se-plugin.desktop.in
 plugins/actions/autowrap/autowrap.cc
+plugins/actions/autowrap/autowrap.se-plugin.desktop.in
 plugins/actions/bestfit/bestfit.cc
+plugins/actions/bestfit/bestfit.se-plugin.desktop.in
 plugins/actions/changeframerate/changeframerate.cc
+plugins/actions/changeframerate/changeframerate.se-plugin.desktop.in
 plugins/actions/changeframerate/dialog-change-framerate.ui
 plugins/actions/clipboard/clipboard.cc
+plugins/actions/clipboard/clipboard.se-plugin.desktop.in
 plugins/actions/combinesubtitles/combinesubtitles.cc
+plugins/actions/combinesubtitles/combinesubtitles.se-plugin.desktop.in
 plugins/actions/command/command.cc
+plugins/actions/command/command.se-plugin.desktop.in
 plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.cc
+plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.se-plugin.desktop.in
 plugins/actions/configurekeyboardshortcuts/dialog-configure-keyboard-shortcuts.ui
 plugins/actions/dialoguize/dialog-dialoguize-preferences.ui
 plugins/actions/dialoguize/dialoguize.cc
+plugins/actions/dialoguize/dialoguize.se-plugin.desktop.in
 plugins/actions/documentmanagement/documentmanagement.cc
+plugins/actions/documentmanagement/documentmanagement.se-plugin.desktop.in
 plugins/actions/documentsnavigation/documentsnavigation.cc
+plugins/actions/documentsnavigation/documentsnavigation.se-plugin.desktop.in
 plugins/actions/duplicatesubtitle/duplicatesubtitle.cc
+plugins/actions/duplicatesubtitle/duplicatesubtitle.se-plugin.desktop.in
 plugins/actions/editcell/editcell.cc
+plugins/actions/editcell/editcell.se-plugin.desktop.in
 plugins/actions/errorchecking/dialog-error-checking-preferences.ui
 plugins/actions/errorchecking/dialog-error-checking.ui
 plugins/actions/errorchecking/errorchecking.h
 plugins/actions/errorchecking/errorcheckingplugin.cc
 plugins/actions/errorchecking/errorcheckingpreferences.h
+plugins/actions/errorchecking/errorchecking.se-plugin.desktop.in
 plugins/actions/errorchecking/maxcharactersperline.h
 plugins/actions/errorchecking/maxcharacterspersecond.h
 plugins/actions/errorchecking/maxlinepersubtitle.h
@@ -30,59 +45,96 @@ plugins/actions/errorchecking/mindisplaytime.h
 plugins/actions/errorchecking/mingapbetweensubtitles.h
 plugins/actions/errorchecking/overlapping.h
 plugins/actions/extendlength/extendlength.cc
+plugins/actions/extendlength/extendlength.se-plugin.desktop.in
 plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui
 plugins/actions/externalvideoplayer/externalvideoplayer.cc
+plugins/actions/externalvideoplayer/externalvideoplayer.se-plugin.desktop.in
 plugins/actions/findandreplace/dialog-find-and-replace.ui
 plugins/actions/findandreplace/findandreplace.cc
+plugins/actions/findandreplace/findandreplace.se-plugin.desktop.in
 plugins/actions/findbytime/findbytime.cc
+plugins/actions/findbytime/findbytime.se-plugin.desktop.in
 plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.cc
+plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.se-plugin.desktop.in
 plugins/actions/insertsubtitle/insertsubtitle.cc
+plugins/actions/insertsubtitle/insertsubtitle.se-plugin.desktop.in
 plugins/actions/italicize/italicize.cc
+plugins/actions/italicize/italicize.se-plugin.desktop.in
 plugins/actions/joindocument/dialog-join-offset.ui
 plugins/actions/joindocument/joindocument.cc
+plugins/actions/joindocument/joindocument.se-plugin.desktop.in
 plugins/actions/keyframesmanagement/keyframesgenerator.cc
 plugins/actions/keyframesmanagement/keyframesgeneratorusingframe.cc
 plugins/actions/keyframesmanagement/keyframesmanagement.cc
+plugins/actions/keyframesmanagement/keyframesmanagement.se-plugin.desktop.in
 plugins/actions/keyframesmanagement/mediadecoder.h
 plugins/actions/minimizeduration/minimizeduration.cc
+plugins/actions/minimizeduration/minimizeduration.se-plugin.desktop.in
 plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.cc
+plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.se-plugin.desktop.in
 plugins/actions/movesubtitles/dialog-move-subtitles.ui
 plugins/actions/movesubtitles/movesubtitles.cc
+plugins/actions/movesubtitles/movesubtitles.se-plugin.desktop.in
 plugins/actions/plaintext/plaintext.cc
+plugins/actions/plaintext/plaintext.se-plugin.desktop.in
 plugins/actions/preferences/dialog-preferences.ui
 plugins/actions/preferences/documentpage.h
 plugins/actions/preferences/extensionpage.h
 plugins/actions/preferences/interfacepage.h
 plugins/actions/preferences/preferencepage.h
 plugins/actions/preferences/preferencesplugin.cc
+plugins/actions/preferences/preferences.se-plugin.desktop.in
 plugins/actions/preferences/timingpage.h
 plugins/actions/preferences/videoplayerpage.h
 plugins/actions/preferences/waveformpage.h
 plugins/actions/removesubtitle/removesubtitle.cc
+plugins/actions/removesubtitle/removesubtitle.se-plugin.desktop.in
 plugins/actions/reversetextandtranslation/reversetextandtranslation.cc
+plugins/actions/reversetextandtranslation/reversetextandtranslation.se-plugin.desktop.in
 plugins/actions/scalesubtitles/dialog-scale-subtitles.ui
 plugins/actions/scalesubtitles/scalesubtitles.cc
+plugins/actions/scalesubtitles/scalesubtitles.se-plugin.desktop.in
 plugins/actions/selection/selection.cc
+plugins/actions/selection/selection.se-plugin.desktop.in
 plugins/actions/slidetimings/slidetimings.cc
+plugins/actions/slidetimings/slidetimings.se-plugin.desktop.in
 plugins/actions/slidewords/slidewords.cc
+plugins/actions/slidewords/slidewords.se-plugin.desktop.in
 plugins/actions/sortsubtitles/sortsubtitles.cc
+plugins/actions/sortsubtitles/sortsubtitles.se-plugin.desktop.in
 plugins/actions/spellchecking/dialog-spell-checking.ui
 plugins/actions/spellchecking/spellchecking.cc
+plugins/actions/spellchecking/spellchecking.se-plugin.desktop.in
 plugins/actions/splitdocument/dialog-split-document.ui
 plugins/actions/splitdocument/splitdocument.cc
+plugins/actions/splitdocument/splitdocument.se-plugin.desktop.in
 plugins/actions/splitsubtitle/splitsubtitle.cc
+plugins/actions/splitsubtitle/splitsubtitle.se-plugin.desktop.in
 plugins/actions/stacksubtitles/stacksubtitles.cc
+plugins/actions/stacksubtitles/stacksubtitles.se-plugin.desktop.in
 plugins/actions/styleeditor/dialog-style-editor.ui
 plugins/actions/styleeditor/styleeditor.cc
 plugins/actions/styleeditor/styleeditor.h
+plugins/actions/styleeditor/styleeditor.se-plugin.desktop.in
 plugins/actions/stylize/stylize.cc
+plugins/actions/stylize/stylize.se-plugin.desktop.in
 plugins/actions/template/dialog-template-save-as.ui
 plugins/actions/template/template.cc
+plugins/actions/template/template.se-plugin.desktop.in
 plugins/actions/textcorrection/assistant-text-correction.ui
 plugins/actions/textcorrection/capitalizationpage.h
 plugins/actions/textcorrection/commonerrorpage.h
 plugins/actions/textcorrection/confirmationpage.h
 plugins/actions/textcorrection/hearingimpairedpage.h
+plugins/actions/textcorrection/Latn.capitalization.se-pattern
+plugins/actions/textcorrection/Latn.common-error.se-pattern
+plugins/actions/textcorrection/Latn-en.capitalization.se-pattern
+plugins/actions/textcorrection/Latn-en.common-error.se-pattern
+plugins/actions/textcorrection/Latn-en.hearing-impaired.se-pattern
+plugins/actions/textcorrection/Latn-en-US.common-error.se-pattern
+plugins/actions/textcorrection/Latn-fi.common-error.se-pattern
+plugins/actions/textcorrection/Latn-fr.common-error.se-pattern
+plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern
 plugins/actions/textcorrection/page.h
 plugins/actions/textcorrection/pattern.cc
 plugins/actions/textcorrection/pattern.h
@@ -91,38 +143,71 @@ plugins/actions/textcorrection/patternmanager.h
 plugins/actions/textcorrection/patternspage.h
 plugins/actions/textcorrection/taskspage.h
 plugins/actions/textcorrection/textcorrection.cc
+plugins/actions/textcorrection/textcorrection.se-plugin.desktop.in
+plugins/actions/textcorrection/Zyyy.common-error.se-pattern
 plugins/actions/timemodemanagement/timemodemanagement.cc
+plugins/actions/timemodemanagement/timemodemanagement.se-plugin.desktop.in
 plugins/actions/timingfromplayer/dialog-timing-from-player-preferences.ui
 plugins/actions/timingfromplayer/timingfromplayer.cc
+plugins/actions/timingfromplayer/timingfromplayer.se-plugin.desktop.in
 plugins/actions/typewriter/typewriter.cc
+plugins/actions/typewriter/typewriter.se-plugin.desktop.in
 plugins/actions/videoplayermanagement/videoplayermanagement.cc
+plugins/actions/videoplayermanagement/videoplayermanagement.se-plugin.desktop.in
 plugins/actions/viewmanager/dialog-view-manager.ui
 plugins/actions/viewmanager/viewmanager.cc
+plugins/actions/viewmanager/viewmanager.se-plugin.desktop.in
 plugins/actions/waveformmanagement/mediadecoder.h
 plugins/actions/waveformmanagement/waveformgenerator.cc
 plugins/actions/waveformmanagement/waveformmanagement.cc
+plugins/actions/waveformmanagement/waveformmanagement.se-plugin.desktop.in
 plugins/subtitleformats/adobeencoredvd/adobeencoredvd.h
 plugins/subtitleformats/adobeencoredvd/adobeencoredvdntsc.cc
+plugins/subtitleformats/adobeencoredvd/adobeencoredvdntsc.se-plugin.desktop.in
 plugins/subtitleformats/adobeencoredvd/adobeencoredvdpal.cc
+plugins/subtitleformats/adobeencoredvd/adobeencoredvdpal.se-plugin.desktop.in
 plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc
+plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.se-plugin.desktop.in
 plugins/subtitleformats/advancedsubstationalpha/dialog-advancedsubstationalpha-preferences.ui
 plugins/subtitleformats/avidds/avidds.cc
+plugins/subtitleformats/avidds/avidds.se-plugin.desktop.in
 plugins/subtitleformats/bitc/bitc.cc
+plugins/subtitleformats/bitc/bitc.se-plugin.desktop.in
 plugins/subtitleformats/dcsubtitle/dcsubtitle.cc
+plugins/subtitleformats/dcsubtitle/dcsubtitle.se-plugin.desktop.in
 plugins/subtitleformats/microdvd/microdvd.cc
+plugins/subtitleformats/microdvd/microdvd.se-plugin.desktop.in
 plugins/subtitleformats/mpl2/mpl2.cc
+plugins/subtitleformats/mpl2/mpl2.se-plugin.desktop.in
 plugins/subtitleformats/mpsub/mpsub.cc
+plugins/subtitleformats/mpsub/mpsub.se-plugin.desktop.in
 plugins/subtitleformats/plaintextformat/plaintextformat.cc
+plugins/subtitleformats/plaintextformat/plaintextformat.se-plugin.desktop.in
 plugins/subtitleformats/sami/sami.cc
+plugins/subtitleformats/sami/sami.se-plugin.desktop.in
 plugins/subtitleformats/sbv/sbv.cc
+plugins/subtitleformats/sbv/sbv.se-plugin.desktop.in
 plugins/subtitleformats/sprucestl/sprucestl.cc
+plugins/subtitleformats/sprucestl/sprucestl.se-plugin.desktop.in
 plugins/subtitleformats/subrip/subrip.cc
+plugins/subtitleformats/subrip/subrip.se-plugin.desktop.in
 plugins/subtitleformats/substationalpha/dialog-substationalpha-preferences.ui
 plugins/subtitleformats/substationalpha/substationalpha.cc
+plugins/subtitleformats/substationalpha/substationalpha.se-plugin.desktop.in
 plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.cc
+plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.se-plugin.desktop.in
 plugins/subtitleformats/subviewer2/subviewer2.cc
+plugins/subtitleformats/subviewer2/subviewer2.se-plugin.desktop.in
 plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.cc
+plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.se-plugin.desktop.in
 share/org.kitone.subtitleeditor.desktop.in
+share/ui/dialog-character-codings.ui
+share/ui/dialog-export-text.ui
+share/ui/dialog-import-text.ui
+share/ui/dialog-open-document.ui
+share/ui/dialog-save-document.ui
+share/ui/dialog-script-properties.ui
+share/ui/subtitleeditor.ui
 src/cfg.cc
 src/cfg.h
 src/color.cc
@@ -251,109 +336,3 @@ src/widget_config_utility.cc
 src/widget_config_utility.h
 src/writer.cc
 src/writer.h
-[type: gettext/glade] plugins/actions/changeframerate/dialog-change-framerate.ui
-[type: gettext/glade] plugins/actions/configurekeyboardshortcuts/dialog-configure-keyboard-shortcuts.ui
-[type: gettext/glade] plugins/actions/dialoguize/dialog-dialoguize-preferences.ui
-[type: gettext/glade] plugins/actions/errorchecking/dialog-error-checking-preferences.ui
-[type: gettext/glade] plugins/actions/errorchecking/dialog-error-checking.ui
-[type: gettext/glade] plugins/actions/externalvideoplayer/dialog-external-video-player-preferences.ui
-[type: gettext/glade] plugins/actions/findandreplace/dialog-find-and-replace.ui
-[type: gettext/glade] plugins/actions/joindocument/dialog-join-offset.ui
-[type: gettext/glade] plugins/actions/movesubtitles/dialog-move-subtitles.ui
-[type: gettext/glade] plugins/actions/preferences/dialog-preferences.ui
-[type: gettext/glade] plugins/actions/scalesubtitles/dialog-scale-subtitles.ui
-[type: gettext/glade] plugins/actions/spellchecking/dialog-spell-checking.ui
-[type: gettext/glade] plugins/actions/splitdocument/dialog-split-document.ui
-[type: gettext/glade] plugins/actions/styleeditor/dialog-style-editor.ui
-[type: gettext/glade] plugins/actions/template/dialog-template-save-as.ui
-[type: gettext/glade] plugins/actions/textcorrection/assistant-text-correction.ui
-[type: gettext/glade] plugins/actions/timingfromplayer/dialog-timing-from-player-preferences.ui
-[type: gettext/glade] plugins/actions/viewmanager/dialog-view-manager.ui
-[type: gettext/glade] plugins/subtitleformats/advancedsubstationalpha/dialog-advancedsubstationalpha-preferences.ui
-[type: gettext/glade] plugins/subtitleformats/substationalpha/dialog-substationalpha-preferences.ui
-[type: gettext/glade] share/ui/dialog-character-codings.ui
-[type: gettext/glade] share/ui/dialog-export-text.ui
-[type: gettext/glade] share/ui/dialog-import-text.ui
-[type: gettext/glade] share/ui/dialog-open-document.ui
-[type: gettext/glade] share/ui/dialog-save-document.ui
-[type: gettext/glade] share/ui/dialog-script-properties.ui
-[type: gettext/glade] share/ui/subtitleeditor.ui
-[type: gettext/ini] plugins/actions/about/about.se-plugin.in
-[type: gettext/ini] plugins/actions/adjusttime/adjusttime.se-plugin.in
-[type: gettext/ini] plugins/actions/applytranslation/applytranslation.se-plugin.in
-[type: gettext/ini] plugins/actions/autowrap/autowrap.se-plugin.in
-[type: gettext/ini] plugins/actions/bestfit/bestfit.se-plugin.in
-[type: gettext/ini] plugins/actions/changeframerate/changeframerate.se-plugin.in
-[type: gettext/ini] plugins/actions/clipboard/clipboard.se-plugin.in
-[type: gettext/ini] plugins/actions/combinesubtitles/combinesubtitles.se-plugin.in
-[type: gettext/ini] plugins/actions/command/command.se-plugin.in
-[type: gettext/ini] plugins/actions/configurekeyboardshortcuts/configurekeyboardshortcuts.se-plugin.in
-[type: gettext/ini] plugins/actions/dialoguize/dialoguize.se-plugin.in
-[type: gettext/ini] plugins/actions/documentmanagement/documentmanagement.se-plugin.in
-[type: gettext/ini] plugins/actions/documentsnavigation/documentsnavigation.se-plugin.in
-[type: gettext/ini] plugins/actions/duplicatesubtitle/duplicatesubtitle.se-plugin.in
-[type: gettext/ini] plugins/actions/editcell/editcell.se-plugin.in
-[type: gettext/ini] plugins/actions/errorchecking/errorchecking.se-plugin.in
-[type: gettext/ini] plugins/actions/extendlength/extendlength.se-plugin.in
-[type: gettext/ini] plugins/actions/externalvideoplayer/externalvideoplayer.se-plugin.in
-[type: gettext/ini] plugins/actions/findandreplace/findandreplace.se-plugin.in
-[type: gettext/ini] plugins/actions/findbytime/findbytime.se-plugin.in
-[type: gettext/ini] plugins/actions/insertsubtitlefromkeyframe/insertsubtitlefromkeyframe.se-plugin.in
-[type: gettext/ini] plugins/actions/insertsubtitle/insertsubtitle.se-plugin.in
-[type: gettext/ini] plugins/actions/italicize/italicize.se-plugin.in
-[type: gettext/ini] plugins/actions/joindocument/joindocument.se-plugin.in
-[type: gettext/ini] plugins/actions/keyframesmanagement/keyframesmanagement.se-plugin.in
-[type: gettext/ini] plugins/actions/minimizeduration/minimizeduration.se-plugin.in
-[type: gettext/ini] plugins/actions/moveafterprecedingsubtitle/moveafterprecedingsubtitle.se-plugin.in
-[type: gettext/ini] plugins/actions/movesubtitles/movesubtitles.se-plugin.in
-[type: gettext/ini] plugins/actions/plaintext/plaintext.se-plugin.in
-[type: gettext/ini] plugins/actions/preferences/preferences.se-plugin.in
-[type: gettext/ini] plugins/actions/removesubtitle/removesubtitle.se-plugin.in
-[type: gettext/ini] plugins/actions/reversetextandtranslation/reversetextandtranslation.se-plugin.in
-[type: gettext/ini] plugins/actions/scalesubtitles/scalesubtitles.se-plugin.in
-[type: gettext/ini] plugins/actions/selection/selection.se-plugin.in
-[type: gettext/ini] plugins/actions/slidetimings/slidetimings.se-plugin.in
-[type: gettext/ini] plugins/actions/slidewords/slidewords.se-plugin.in
-[type: gettext/ini] plugins/actions/sortsubtitles/sortsubtitles.se-plugin.in
-[type: gettext/ini] plugins/actions/spellchecking/spellchecking.se-plugin.in
-[type: gettext/ini] plugins/actions/splitdocument/splitdocument.se-plugin.in
-[type: gettext/ini] plugins/actions/splitsubtitle/splitsubtitle.se-plugin.in
-[type: gettext/ini] plugins/actions/stacksubtitles/stacksubtitles.se-plugin.in
-[type: gettext/ini] plugins/actions/styleeditor/styleeditor.se-plugin.in
-[type: gettext/ini] plugins/actions/stylize/stylize.se-plugin.in
-[type: gettext/ini] plugins/actions/template/template.se-plugin.in
-[type: gettext/ini] plugins/actions/textcorrection/textcorrection.se-plugin.in
-[type: gettext/ini] plugins/actions/timemodemanagement/timemodemanagement.se-plugin.in
-[type: gettext/ini] plugins/actions/timingfromplayer/timingfromplayer.se-plugin.in
-[type: gettext/ini] plugins/actions/typewriter/typewriter.se-plugin.in
-[type: gettext/ini] plugins/actions/videoplayermanagement/videoplayermanagement.se-plugin.in
-[type: gettext/ini] plugins/actions/viewmanager/viewmanager.se-plugin.in
-[type: gettext/ini] plugins/actions/waveformmanagement/waveformmanagement.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/adobeencoredvd/adobeencoredvdntsc.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/adobeencoredvd/adobeencoredvdpal.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/avidds/avidds.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/bitc/bitc.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/dcsubtitle/dcsubtitle.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/microdvd/microdvd.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/mpl2/mpl2.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/mpsub/mpsub.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/plaintextformat/plaintextformat.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/sami/sami.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/sbv/sbv.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/sprucestl/sprucestl.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/subrip/subrip.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/substationalpha/substationalpha.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/subtitleeditorproject/subtitleeditorproject.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/subviewer2/subviewer2.se-plugin.in
-[type: gettext/ini] plugins/subtitleformats/timedtextauthoringformat1/timedtextauthoringformat1.se-plugin.in
-[type: gettext/xml] plugins/actions/textcorrection/Latn.capitalization.se-pattern.in
-[type: gettext/xml] plugins/actions/textcorrection/Latn.common-error.se-pattern.in
-[type: gettext/xml] plugins/actions/textcorrection/Latn-en.capitalization.se-pattern.in
-[type: gettext/xml] plugins/actions/textcorrection/Latn-en.common-error.se-pattern.in
-[type: gettext/xml] plugins/actions/textcorrection/Latn-en.hearing-impaired.se-pattern.in
-[type: gettext/xml] plugins/actions/textcorrection/Latn-en-US.common-error.se-pattern.in
-[type: gettext/xml] plugins/actions/textcorrection/Latn-fi.common-error.se-pattern.in
-[type: gettext/xml] plugins/actions/textcorrection/Latn-fr.common-error.se-pattern.in
-[type: gettext/xml] plugins/actions/textcorrection/Latn.hearing-impaired.se-pattern.in
-[type: gettext/xml] plugins/actions/textcorrection/Zyyy.common-error.se-pattern.in

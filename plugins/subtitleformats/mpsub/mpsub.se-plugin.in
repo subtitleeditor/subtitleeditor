@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=MPsub
-_Description=MPsub subtitles support.
-Categorie=subtitleformat
-Type=module
-Module=mpsub
-Authors=kitone <kitone at free dot fr>

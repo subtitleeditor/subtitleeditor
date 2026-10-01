@@ -88,7 +88,6 @@ po/stamp-it
 po/notexist
 
 *.gmo
-*.se-pattern
 *.se-plugin
 share/org.kitone.subtitleeditor.desktop
 *.libs
@@ -97,6 +96,9 @@ share/org.kitone.subtitleeditor.desktop
 
 #joe and some other editors generate backup files by default. Ignore them:
 *~
+
+# meson
+/build/
 
 #kate stuff
 compile_commands.json

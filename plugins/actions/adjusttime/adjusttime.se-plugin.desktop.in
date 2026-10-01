@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Adjust Time
+Description=Adjusts subtitle times.
+Categorie=action
+Type=module
+Module=adjusttime
+Authors=kitone <kitone at free dot fr>

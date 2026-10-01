@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Adobe Encore DVD (PAL)
-_Description=Adobe Encore DVD subtitles support.
-Categorie=subtitleformat
-Type=module
-Module=adobeencoredvdpal
-Authors=kitone <kitone at free dot fr>

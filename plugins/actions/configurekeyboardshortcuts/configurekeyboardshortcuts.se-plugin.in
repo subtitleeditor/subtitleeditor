@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Keyboard Shortcuts
-_Description=Configures keyboard shortcuts.
-Categorie=action
-Type=module
-Module=configurekeyboardshortcuts
-Authors=kitone <kitone at free dot fr>

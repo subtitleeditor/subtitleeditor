@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=MPL2
-_Description=MPL2 subtitles support.
-Categorie=subtitleformat
-Type=module
-Module=mpl2
-Authors=kitone <kitone at free dot fr>

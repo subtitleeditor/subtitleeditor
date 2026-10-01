@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Move Subtitles
-_Description=Moves subtitles.
-Categorie=action
-Type=module
-Module=movesubtitles
-Authors=kitone <kitone at free dot fr>

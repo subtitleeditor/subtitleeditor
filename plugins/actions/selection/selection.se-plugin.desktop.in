@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Selection
+Description=Manages selection of subtitles.
+Categorie=action
+Type=module
+Module=selection
+Authors=kitone <kitone at free dot fr>

@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=BITC (Burnt-in timecode)
-_Description=BITC (Burnt-in timecode) subtitles support.
-Categorie=subtitleformat
-Type=module
-Module=bitc
-Authors=kitone <kitone at free dot fr>

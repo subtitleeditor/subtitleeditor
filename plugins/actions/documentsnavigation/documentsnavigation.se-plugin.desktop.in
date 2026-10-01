@@ -1,0 +1,8 @@
+[SubtitleEditor Extension]
+Name=Tab Navigation
+Description=Adds actions to select tabs.
+Categorie=action
+Hidden=false
+Type=module
+Module=documentsnavigation
+Authors=kitone <kitone at free dot fr>

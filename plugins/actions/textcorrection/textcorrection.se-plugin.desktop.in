@@ -1,0 +1,7 @@
+[SubtitleEditor Extension]
+Name=Text Correction
+Description=Provides tools to automatically common errors in subtitle text cause by people or by OCR software.
+Categorie=action
+Type=module
+Module=textcorrection
+Authors=kitone <kitone at free dot fr>

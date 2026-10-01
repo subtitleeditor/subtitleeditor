@@ -1,7 +1,0 @@
-[SubtitleEditor Extension]
-_Name=Scale Subtitles
-_Description=Scales by two points.
-Categorie=action
-Type=module
-Module=scalesubtitles
-Authors=kitone <kitone at free dot fr>
